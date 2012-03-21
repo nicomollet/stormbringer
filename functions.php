@@ -8,7 +8,7 @@ define('NAVBAR_LOGIN', true);
 define('BREADCRUMB_ACTIVE', true);
 define('BREADCRUMB_SEPARATOR', '/');
 define('BREADCRUMB_HOME', __( 'Accueil', "stormbringer" ));
-define('BREADCRUMB_BEFORE', __( 'Vous êtes ici&nbsp;:', "stormbringer" ));
+define('BREADCRUMB_BEFORE', __( 'You are here:', "stormbringer" ));
 
 define('WRAP_CLASSES', 'container');
 define("CONTAINER_CLASSES", "row");

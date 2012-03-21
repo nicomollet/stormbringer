@@ -4,6 +4,7 @@ Stormbringer
 Stormbringer is a starting WordPress theme based on Bootstrap from Twitter. Created by Nicolas Mollet (http://twitter.com/nicomollet).
 
 It includes many functions from:
+
 * Bones (https://github.com/eddiemachado/bones)
 * Alien Ship (https://github.com/mindctrl/alienship)
 * Roots (https://github.com/retlehs/roots)
@@ -30,7 +31,7 @@ TODO
 * Include Font-Awesome
 ...
 
-Major components
+Major components 
 -----------
 
 * HTML5 Boilerplate: The Unlicense
