@@ -21,7 +21,7 @@ The comments page for Bones
 	<h3 id="comments"><?php comments_number('<span>' . __("No","bonestheme") . '</span> ' . __("Responses","bonestheme") . '', '<span>' . __("One","bonestheme") . '</span> ' . __("Response","bonestheme") . '', '<span>%</span> ' . __("Responses","bonestheme") );?> <?php _e("to","bonestheme"); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 
 	<ol class="commentlist">
-		<?php wp_list_comments('type=comment&callback=bones_comments'); ?>
+		<?php wp_list_comments('type=comment&callback=stormbringer_comments'); ?>
 	</ol>
 	
 	<nav id="comment-nav">

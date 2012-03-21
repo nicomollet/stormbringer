@@ -1,34 +1,7 @@
 <?php
-/**
- * Breadcrumb Trail - A breadcrumb menu script for WordPress.
- *
- * Breadcrumb Trail is a script for showing a breadcrumb trail for any type of page.  It tries to anticipate
- * any type of structure and display the best possible trail that matches your site's permalink structure.
- * While not perfect, it attempts to fill in the gaps left by many other breadcrumb scripts.
- *
- * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
- * General Public License version 2, as published by the Free Software Foundation.  You may NOT assume
- * that you can use any other version of the GPL.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
- * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- * @package BreadcrumbTrail
- * @version 0.4.1
- * @author Justin Tadlock <justin@justintadlock.com>
- * @copyright Copyright (c) 2008 - 2011, Justin Tadlock
- * @link http://justintadlock.com/archives/2009/04/05/breadcrumb-trail-wordpress-plugin
- * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- */
 
 /**
- * Shows a breadcrumb for all types of pages.  This function is formatting the final output of the
- * breadcrumb trail.  The breadcrumb_trail_get_items() function returns the items and this function
- * formats those items.
- *
- * @since 0.1.0
- * @param array $args Mixed arguments for the menu.
- * @return string Output of the breadcrumb menu.
+ * Breadcrumb Trail - Thanks to Justin Tadlock (http://justintadlock.com/archives/2009/04/05/breadcrumb-trail-wordpress-plugin)
  */
 function breadcrumb_trail( $args = array() ) {
 	/* Get the textdomain. */
@@ -39,11 +12,11 @@ function breadcrumb_trail( $args = array() ) {
 
 	/* Set up the default arguments for the breadcrumb. */
 	$defaults = array(
-		'separator' => BREADCRUMB_SEPARATOR,
-		'before' =>  BREADCRUMB_BEFORE ,
+		'separator' => '/',
+		'before' => '<span class="breadcrumb-title">' . __( 'Browse:', $textdomain ) . '</span>',
 		'after' => false,
 		'front_page' => true,
-		'show_home' => BREADCRUMB_HOME,
+		'show_home' => __( 'Home', $textdomain ),
 		'echo' => true
 	);
 
@@ -330,8 +303,10 @@ function breadcrumb_trail_get_items( $args = array() ) {
 	}
 
 	/* If viewing search results. */
-	elseif ( is_search() )
+	elseif ( is_search() ){
 		$trail['trail_end'] = sprintf( __( 'Search results for &quot;%1$s&quot;', $textdomain ), esc_attr( get_search_query() ) );
+	}
+
 
 	/* If viewing a 404 error page. */
 	elseif ( is_404() )

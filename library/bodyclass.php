@@ -1,17 +1,11 @@
 <?php
 
-
-add_filter('body_class', 'hybrid_body_class');
+add_filter('body_class', 'stormbringer_body_class');
 
 /**
- * Provides classes for the <body> element depending on page context.
- *
- * @since 0.1.0
- * @uses $wp_query
- * @param string|array $class Additional classes for more control.
- * @return string
+ * Body Class - Thanks to Theme Hyprid (http://themehybrid.com/)
  */
-function hybrid_body_class( $class = '' ) {
+function stormbringer_body_class( $class = '' ) {
 	global $wp_query;
 
 	/* Text direction (which direction does the text flow). */
@@ -38,7 +32,7 @@ function hybrid_body_class( $class = '' ) {
 		$classes[] = 'admin-bar';
 
 	/* Merge base contextual classes with $classes. */
-	$classes = array_merge( $classes, hybrid_get_context() );
+	$classes = array_merge( $classes, stormbringer_get_context() );
 
 	/* Singular post (post_type) classes. */
 	if ( is_singular() ) {
@@ -101,7 +95,7 @@ function hybrid_body_class( $class = '' ) {
  * @global $hybrid The global Hybrid object.
  * @return array $classes Several contexts based on the current page.
  */
-function hybrid_get_context() {
+function stormbringer_get_context() {
 	global $hybrid;
 
 	/* If $classes has been set, don't run through the conditionals again. Just return the variable. */
@@ -113,6 +107,7 @@ function hybrid_get_context() {
 	$object = get_queried_object();
 	$object_id = get_queried_object_id();
 
+  // WPML language
   if (ICL_LANGUAGE_CODE!="ICL_LANGUAGE_CODE") $classes[] = "lang-" . ICL_LANGUAGE_CODE;
 
 

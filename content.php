@@ -67,13 +67,13 @@
     
 <?php endwhile; /* End loop */ ?>
 
-<?php if (function_exists('page_navi')) { // if expirimental feature is active ?>
+<?php if (function_exists('stormbringer_pagination')) { // if expirimental feature is active ?>
   <?php page_navi(); // use the page navi function ?>
 <?php } else { // if it is disabled, display regular wp prev & next links ?>
   <nav class="wp-prev-next">
     <ul class="clearfix">
-      <li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', "bonestheme")) ?></li>
-      <li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', "bonestheme")) ?></li>
+      <li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', "stormbringer")) ?></li>
+      <li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', "stormbringer")) ?></li>
     </ul>
   </nav>
 <?php } ?>

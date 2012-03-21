@@ -1,6 +1,9 @@
 <?php
-// Cleaning up the Wordpress Head
-function bones_head_cleanup() {
+
+/**
+ * Cleaning up the Wordpress Head - Thanks to Roots Theme (Thanks to Roots Theme (http://www.rootstheme.com))
+ */
+function stormbringer_head_cleanup() {
 	// remove header links
 	remove_action( 'wp_head', 'feed_links_extra', 3 );                    // Category Feeds
 	remove_action( 'wp_head', 'feed_links', 2 );                          // Post and Comment Feeds
@@ -13,12 +16,14 @@ function bones_head_cleanup() {
 	remove_action( 'wp_head', 'wp_generator' );                           // WP version
   remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
   remove_action('wp_head', 'noindex', 1);
-  add_action('wp_head', 'staging_noindex');
-  add_action('wp_head', 'roots_remove_recent_comments_style', 1);
-  add_filter('gallery_style', 'roots_gallery_style');
+  add_action('wp_head', 'stormbringer_staging_noindex');
+  add_action('wp_head', 'stormbringer_remove_recent_comments_style', 1);
+  add_filter('use_default_gallery_style', '__return_false');
+  add_filter('the_generator', 'stormbringer_rss_version');
+  add_filter( 'the_category', 'stormbringer_remove_rel_category' );
 	if (!is_admin()) {
 		wp_deregister_script('jquery');                                   // De-Register jQuery
-		wp_register_script('jquery', '', '', '', true);                   // It's already in the Header
+		wp_register_script('jquery', '', '', '', true);
 	}
   if(false === get_option("medium_crop")) {
       add_option("medium_crop", "1");
@@ -27,38 +32,23 @@ function bones_head_cleanup() {
   }
 
 }
-
-// launching operation cleanup
-add_action('init', 'bones_head_cleanup');
-// remove WP version from RSS
-function bones_rss_version() { return ''; }
-add_filter('the_generator', 'bones_rss_version');
+add_action('init', 'stormbringer_head_cleanup');
 
 // staging: noindex
-function staging_noindex() {
+function stormbringer_staging_noindex() {
   if (get_option('blog_public') === '0') {
     echo '<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">', "\n";
   }
 }
 
-function ietweaks() {
-     echo "\n". '<!-- ie tweaks -->' . "\n";
-     echo '<meta http-equiv="imagetoolbar" content="no">' . "\n";
-     echo '<meta name="MSSmartTagsPreventParsing" content="true">' . "\n";
-}
-//add_action('wp_head', 'ietweaks',100);
+// remove WP version from RSS
+function stormbringer_rss_version() { return ''; }
 
-function meta() {
-     echo "\n". '<!-- compat -->' . "\n";
-     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
-}
-add_action('wp_head', 'meta',1);
 
 // remove rel=”category tag”
-function remove_rel_category( $text ) {
-$text = str_replace('rel="category tag"', "", $text); return $text;
+function stormbringer_remove_rel_category( $text ) {
+  $text = str_replace('rel="category tag"', "", $text); return $text;
 }
-add_filter( 'the_category', 'remove_rel_category' );
 
 // root relative URLs for everything
 // inspired by http://www.456bereastreet.com/archive/201010/how_to_make_wordpress_urls_root_relative/
@@ -98,8 +88,8 @@ if (!is_admin() && !in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-regi
   add_filter('theme_root_uri', 'roots_root_relative_url');
   add_filter('stylesheet_directory_uri', 'roots_root_relative_url');
   add_filter('template_directory_uri', 'roots_root_relative_url');
-  add_filter('script_loader_src', 'roots_fix_duplicate_subfolder_urls');
-  add_filter('style_loader_src', 'roots_fix_duplicate_subfolder_urls');
+  //add_filter('script_loader_src', 'roots_fix_duplicate_subfolder_urls');
+  //add_filter('style_loader_src', 'roots_fix_duplicate_subfolder_urls');
   add_filter('plugins_url', 'roots_root_relative_url');
   add_filter('the_permalink', 'roots_root_relative_url');
   add_filter('wp_list_pages', 'roots_root_relative_url');
@@ -125,74 +115,26 @@ function roots_root_relative_attachment_urls() {
 }
 add_action('pre_get_posts', 'roots_root_relative_attachment_urls');
 
-// remove CSS from recent comments widget
-function roots_remove_recent_comments_style() {
+/**
+ * Remove CSS from recent comments widget - Thanks to Roots Theme (http://www.rootstheme.com)
+ */
+function stormbringer_remove_recent_comments_style() {
   global $wp_widget_factory;
   if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
     remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
   }
 }
 
-// remove CSS from gallery
-function roots_gallery_style($css) {
-  return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
-}
-
-
-// http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
-function roots_caption($output, $attr, $content) {
-  /* We're not worried abut captions in feeds, so just return the output here. */
-  if ( is_feed()) {
-    return $output;
-  }
-
-  /* Set up the default arguments. */
-  $defaults = array(
-    'id' => '',
-    'align' => 'alignnone',
-    'width' => '',
-    'caption' => ''
-  );
-
-  /* Merge the defaults with user input. */
-  $attr = shortcode_atts($defaults, $attr);
-
-  /* If the width is less than 1 or there is no caption, return the content wrapped between the [caption]< tags. */
-  if (1 > $attr['width'] || empty($attr['caption'])) {
-    return $content;
-  }
-
-  /* Set up the attributes for the caption <div>. */
-  $attributes = (!empty($attr['id']) ? ' id="' . esc_attr($attr['id']) . '"' : '' );
-  $attributes .= ' class="thumbnail wp-caption ' . esc_attr($attr['align']) . '"';
-  $attributes .= ' style="width: ' . esc_attr($attr['width']) . 'px"';
-
-  /* Open the caption <div>. */
-  $output = '<div' . $attributes .'>';
-
-  /* Allow shortcodes for the content the caption was created for. */
-  $output .= do_shortcode($content);
-
-  /* Append the caption text. */
-  $output .= '<div class="caption"><p class="wp-caption-text">' . $attr['caption'] . '</p></div>';
-
-  /* Close the caption </div>. */
-  $output .= '</div>';
-
-  /* Return the formatted, clean caption. */
-  return $output;
-}
-
-add_filter('img_caption_shortcode', 'roots_caption', 10, 3);
-
-// excerpt cleanup
-function roots_excerpt_length($length) {
+/**
+ * Excerpt - Thanks to Roots Theme (http://www.rootstheme.com)
+ */
+function stormbringer_excerpt_length($length) {
   return POST_EXCERPT_LENGTH;
 }
 
-function roots_excerpt_more($more) {
+function stormbringer_excerpt_more($more) {
   return ' [&hellip;] <a href="' . get_permalink() . '">' . __( 'Read more&hellip;', 'roots' ) . '</a>';
 }
 
-add_filter('excerpt_length', 'roots_excerpt_length');
-add_filter('excerpt_more', 'roots_excerpt_more');
+add_filter('excerpt_length', 'stormbringer_excerpt_length');
+add_filter('excerpt_more', 'stormbringer_excerpt_more');

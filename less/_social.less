@@ -1,12 +1,16 @@
-@twitter_color:       #5CCCF2;
+@twitter_color:       #4BCAF4;
 @facebook_color:       #3B5998;
 @googleplus_color:       #DD674D;
 @share_color:       #009251;
+@rss_color:       #FF9400;
 
 // Set the backgrounds
 // -------------------------
 .btn-twitter {
-  .buttonBackground(@twitter_color, darken(@twitter_color,20%));
+  .buttonBackground(lighten(@twitter_color,10%), @twitter_color);
+}
+.btn-rss {
+  .buttonBackground(lighten(@rss_color,10%), @rss_color);
 }
 .btn-facebook {
   .buttonBackground(lighten(@facebook_color,10%), @facebook_color);
@@ -23,6 +27,8 @@
 .btn-twitter:hover,
 .btn-facebook,
 .btn-facebook:hover,
+.btn-rss,
+.btn-rss:hover,
 .btn-googleplus,
 .btn-googleplus:hover {
   text-shadow: 0 -1px 0 rgba(0,0,0,.25);
@@ -32,6 +38,7 @@
 .btn-share.active,
 .btn-twitter.active,
 .btn-facebook.active,
+.btn-rss.active,
 .btn-googleplus.active
  {
   color: rgba(255,255,255,.75);

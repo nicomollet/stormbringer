@@ -3,8 +3,6 @@
 add_editor_style('css/application.css');
 
 
-
-
 add_filter( 'tiny_mce_before_init', 'my_mce_before_init' );
 
 function my_mce_before_init( $settings ) {

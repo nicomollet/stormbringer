@@ -4,7 +4,7 @@
 
   <div id="main" class="<?php echo MAIN_CLASSES; ?>" role="main">
 
-    <?php if (BREADCRUMB_ACTIVE) breadcrumb_trail();?>
+    <?php if ( function_exists( 'breadcrumb_trail' )) { breadcrumb_trail(unserialize(BREADCRUMB_ARGS)); } ?>
     
     <div class="page-header">
       <?php if (is_category()) { ?>

@@ -4,11 +4,7 @@ define('NAVBAR_SITENAME', true);
 define('NAVBAR_SEARCH', false);
 define('NAVBAR_LOGIN', true);
 
-
-define('BREADCRUMB_ACTIVE', true);
-define('BREADCRUMB_SEPARATOR', '/');
-define('BREADCRUMB_HOME', __( 'Accueil', "stormbringer" ));
-define('BREADCRUMB_BEFORE', __( 'You are here:', "stormbringer" ));
+define('BREADCRUMB_ARGS', serialize(array('separator' => '/','before' =>  __( 'You are here:', "stormbringer" ) ,'after' => false,'front_page' => true,'show_home' => __( 'Home', "stormbringer" ),'echo' => true)));
 
 define('WRAP_CLASSES', 'container');
 define("CONTAINER_CLASSES", "row");
@@ -25,6 +21,7 @@ define("POST_EXCERPT_LENGTH", 40);
 define("JQUERY_VERSION", "1.7.1");
 
 define("FANCYBOX", true);
+define("FANCYBOX_VERSION", "1.3.4");
 
 define("GOOGLE_WEBFONTS", serialize(array('Marvel:700')));
 
@@ -98,7 +95,6 @@ function stormbringer_support() {
 	add_theme_support('automatic-feed-links'); // rss thingy
   add_theme_support( 'post-thumbnails' );
 	stormbringer_register_menus();            // wp menus
-  add_action('wp_head', 'staging_noindex');
 }
 
 // launching this stuff after theme setup

@@ -1,6 +1,6 @@
 <?php
 // Comment Layout
-function bones_comments($comment, $args, $depth) {
+function stormbringer_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?>>
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
