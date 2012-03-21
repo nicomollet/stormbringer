@@ -1,4 +1,5 @@
-# Stormbringer
+Stormbringer
+=================
 
 Stormbringer is a starting WordPress theme based on Bootstrap from Twitter. Created by Nicolas Mollet (http://twitter.com/nicomollet).
 
@@ -8,26 +9,32 @@ It includes many functions from:
 * Roots (https://github.com/retlehs/roots)
 * Wordpress Bootstrap (https://github.com/320press/wordpress-bootstrap)
 
-### Features
+Features
+-----------
 
-* LessPHP: Less compilation for anonymous users
+* LessPHP: Less server-side compilation with PHP for anonymous users (file is cached)
 * Less.js: serves .less files for admin users
 * Gravity Forms integration
+* Social share buttons/icons
+* Gallery with caption over the thumbnail
 ...
 
-### TODO
+TODO
+-----------
 
 Refactor functions
 ...
 
-### Major components:
+Major components
+-----------
 
 * HTML5 Boilerplate: The Unlicense
 * Modernizr: MIT/BSD license
 * jQuery: MIT/GPL license
 * Bootstrap: Apache 2.0 license
 
-### Copyright and license
+Copyright and license
+-----------
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this work except in compliance with the License.
