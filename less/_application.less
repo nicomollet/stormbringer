@@ -1,0 +1,88 @@
+// Bootstrap
+@import "_variables.less";
+@import "bootstrap.less";
+
+// Social
+@import "_social.less";
+
+// Gravity Forms
+@import "_gravityforms.less";
+
+// Wordpress
+@import "_admin.less";
+@import "_comments.less";
+@import "_htmleditor.less";
+@import "_image.less";
+@import "_video.less";
+@import "_widgets.less";
+
+/* --------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+body {padding-top: 60px}
+
+/* for fun */
+* {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition:    all 0.2s ease;
+  -ms-transition:     all 0.2s ease;
+  -o-transition:      all 0.2s ease;
+}
+
+#browsernotsupported { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+/* Bootstrap: NavBar */
+.navbar-search label{display: none;}
+.navbar-form, .navbar-search {
+	margin: 0 0 9px;
+}
+
+#main article{
+	margin-bottom: 18px;
+	border-bottom: 1px solid #eeeeee;
+	padding: 0 0 9px;
+}
+.singular #main article {border: 0}
+.singular article .entry-meta {
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+	padding: 16px 0  9px;margin-top: 18px;
+}
+#main p.entry-date, #main p.entry-tags, #main p.entry-categories{
+	font-style: italic;
+	color: #808080;
+}
+
+.hero-unit{
+  background:url("../img/hero-unit.gif") 200px -50px #EFEEEE;
+  h1 {
+    font-size: 3em;
+  }
+}
+.breadcrumb {margin-bottom: 30px;}
+
+// HEADINGS
+// --------
+
+h1 {
+  font-size: 40px;
+  small {
+    font-size: 22px;
+  }
+}
+h2 {
+  font-size: 28px;
+  small {
+    font-size: 22px;
+  }
+}
+h3 {
+  font-size: 24px;
+  small {
+    font-size: 18px;
+  }
+}
+.navbar .brand{font-size: 24px;line-height: 0.8;}
+h1, h2, h3, .brand {font-family: @altFontFamily;}
+

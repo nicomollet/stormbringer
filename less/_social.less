@@ -1,0 +1,63 @@
+@twitter_color:       #5CCCF2;
+@facebook_color:       #3B5998;
+@googleplus_color:       #DD674D;
+@share_color:       #009251;
+
+// Set the backgrounds
+// -------------------------
+.btn-twitter {
+  .buttonBackground(@twitter_color, darken(@twitter_color,20%));
+}
+.btn-facebook {
+  .buttonBackground(lighten(@facebook_color,10%), @facebook_color);
+}
+.btn-googleplus {
+  .buttonBackground(lighten(@googleplus_color,10%), @googleplus_color);
+}
+.btn-share {
+  .buttonBackground(lighten(@share_color,10%), @share_color);
+}
+.btn-share,
+.btn-share:hover,
+.btn-twitter,
+.btn-twitter:hover,
+.btn-facebook,
+.btn-facebook:hover,
+.btn-googleplus,
+.btn-googleplus:hover {
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  color: @white;
+}
+
+.btn-share.active,
+.btn-twitter.active,
+.btn-facebook.active,
+.btn-googleplus.active
+ {
+  color: rgba(255,255,255,.75);
+}
+
+/* Social Icons */
+[class^="icon-social"], [class*=" icon-social"] {
+  background-image: url("../img/social-halflings.png") !important;
+}
+/* Social Icons */
+[class^="icon-social-white"], [class*=" icon-social-white"] {
+  background-image: url("../img/social-halflings-white.png") !important;
+}
+
+.icon-heart {
+  background-position: 0px 0;
+}
+.icon-facebook {
+  background-position: -24px 0;
+}
+.icon-twitter {
+  background-position: -48px 0;
+}
+.icon-share {
+  background-position: -72px 0;
+}
+.icon-googleplus {
+  background-position: -192px 0;
+}
