@@ -22,7 +22,12 @@ Features
 TODO
 -----------
 
-Refactor functions
+* Clean-up
+* Comment
+* Login system
+* Activate sharing buttons
+* WPML language switcher
+* Include Font-Awesome
 ...
 
 Major components

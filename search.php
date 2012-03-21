@@ -4,7 +4,7 @@
 
       <div id="main" class="<?php echo MAIN_CLASSES; ?>" role="main">
 				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'alienship' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'stormbringer' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header>
         <?php get_template_part('content', 'index'); ?>
       </div><!-- /#main -->

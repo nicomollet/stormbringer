@@ -2,7 +2,7 @@
 <?php if (!have_posts()) { ?>
   <article id="post-not-found">
       <header class="entry-header page-header">
-        <h1 class="entry-title""><?php _e("No Posts Yet", "bonestheme"); ?></h1>
+        <h1 class="entry-title"><?php _e("No Posts Yet", "bonestheme"); ?></h1>
       </header>
       <section class="entry-content">
         <p><?php _e("Sorry, What you were looking for is not here.", "bonestheme"); ?></p>

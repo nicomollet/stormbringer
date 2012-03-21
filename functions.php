@@ -29,10 +29,6 @@ define("FANCYBOX", true);
 define("GOOGLE_WEBFONTS", serialize(array('Marvel:700')));
 
 
-
-
-
-
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
@@ -92,13 +88,7 @@ function stormbringer_support() {
   require_once locate_template('library/widgets.php');
   require_once locate_template('library/wpml.php');
 
-  /**
-   * Make theme available for translation
-   * Translations can be filed in the /languages/ directory
-   * If you're building a theme based on alienship, use a find and replace
-   * to change 'alienship' to the name of your theme in all the template files
-   */
-  load_theme_textdomain( 'alienship', get_template_directory() . '/languages' );
+  load_theme_textdomain( 'stormbringer', get_template_directory() . '/languages' );
 
   $locale = get_locale();
   $locale_file = get_template_directory() . "/languages/$locale.php";

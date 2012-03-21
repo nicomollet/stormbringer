@@ -117,12 +117,13 @@ function roots_gallery_shortcode($attr) {
   return $output;
 }
 
+/* The following shortcodes are from Alien Ship theme by mindctrl https://github.com/mindctrl/alienship
 
 /* =Alerts - Types are 'info', 'error', 'success', and unspecified(which displays a default color). Specify a heading text. See example.
  *  Example: [alert type="success" heading="Congrats!"]You won the lottery![/alert]
 ----------------------------------------------- */
-if ( ! function_exists( 'alienship_alert' ) ):
-function alienship_alert($atts, $content = null) {
+if ( ! function_exists( 'stormbringer_alert' ) ):
+function stormbringer_alert($atts, $content = null) {
    extract(shortcode_atts(array('type' => 'alert', 'heading' => ''), $atts));
    if ($type != "alert") {
    return '<div class="alert alert-'.$type.' fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>'. do_shortcode($heading) .'</strong><p> ' . do_shortcode($content) . '</p></div>';
@@ -130,7 +131,7 @@ function alienship_alert($atts, $content = null) {
    return '<div class="'.$type.' fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>'. do_shortcode($heading) .'</strong>' . do_shortcode($content) . '</div>';
    }
 }
-add_shortcode('alert', 'alienship_alert');
+add_shortcode('alert', 'stormbringer_alert');
 endif;
 
 
@@ -139,8 +140,8 @@ endif;
 -----------------------------------------------
 * [badge] shortcode. Options for type are default, success, warning, error, info, and inverse. If a type of not specified, default is used.
 * Example: [badge type="important"]1[/badge] */
-if ( ! function_exists( 'alienship_badge' ) ):
-function alienship_badge($atts, $content = null) {
+if ( ! function_exists( 'stormbringer_badge' ) ):
+function stormbringer_badge($atts, $content = null) {
    extract(shortcode_atts(array('type' => 'badge'), $atts));
    if ($type != "badge") {
    return '<span class="badge badge-'.$type.'">' . do_shortcode($content) . '</span>';
@@ -148,7 +149,7 @@ function alienship_badge($atts, $content = null) {
    return '<span class="'.$type.'">' . do_shortcode($content) . '</span>';
    }
 }
-add_shortcode('badge', 'alienship_badge');
+add_shortcode('badge', 'stormbringer_badge');
 endif;
 
 
@@ -158,8 +159,8 @@ endif;
 /* [button] shortcode. Options for type= are "primary", "info", "success", "warning", "danger", and "inverse".
  * Options for size are mini, small, medium and large. If none is specified it defaults to medium size.
  * Example: [button type="info" size="large" link="http://yourlink.com"]Button Text[/button] */
-if ( ! function_exists( 'alienship_button' ) ):
-function alienship_button($atts, $content = null) {
+if ( ! function_exists( 'stormbringer_button' ) ):
+function stormbringer_button($atts, $content = null) {
    extract(shortcode_atts(array('link' => '#', 'type' => '', 'size' => 'medium'), $atts));
 
    if (empty($type)) {
@@ -176,7 +177,7 @@ function alienship_button($atts, $content = null) {
 
    return '<a class="'.$type.' '.$size.'" href="'.$link.'">' . do_shortcode($content) . '</a>';
 }
-add_shortcode('button', 'alienship_button');
+add_shortcode('button', 'stormbringer_button');
 endif;
 
 
@@ -185,8 +186,8 @@ endif;
 -----------------------------------------------
 * [label] shortcode. Options for type= are "default", important", "info", "success", "warning", and "inverse". If a type of not specified, default is used.
 * Example: [label type="important"]Label text[/label] */
-if ( ! function_exists( 'alienship_label' ) ):
-function alienship_label($atts, $content = null) {
+if ( ! function_exists( 'stormbringer_label' ) ):
+function stormbringer_label($atts, $content = null) {
    extract(shortcode_atts(array('type' => 'label'), $atts));
    if ($type != "label") {
    return '<span class="label label-'.$type.'">' . do_shortcode($content) . '</span>';
@@ -194,7 +195,7 @@ function alienship_label($atts, $content = null) {
    return '<span class="'.$type.'">' . do_shortcode($content) . '</span>';
    }
 }
-add_shortcode('label', 'alienship_label');
+add_shortcode('label', 'stormbringer_label');
 endif;
 
 
@@ -203,8 +204,8 @@ endif;
 -----------------------------------------------
 * [panel] shortcode. Columns defaults to 6. You can specify columns in the shortcode.
 * Example: [panel columns="4"]Your panel text here.[/panel] */
-if ( ! function_exists( 'alienship_panel' ) ):
-function alienship_panel( $atts, $content = null ) {
+if ( ! function_exists( 'stormbringer_panel' ) ):
+function stormbringer_panel( $atts, $content = null ) {
    extract(shortcode_atts(array('columns' => '6'), $atts));
    $gridsize = '12';
    $span = '"span';
@@ -217,7 +218,7 @@ function alienship_panel( $atts, $content = null ) {
       return '<div class="row-fluid"><div class='.$span.'><div class="panel"><p>' . do_shortcode($content) . '</p></div></div></div><div class="clear"></div>';
    }
 }
-add_shortcode('panel', 'alienship_panel');
+add_shortcode('panel', 'stormbringer_panel');
 endif;
 
 
@@ -226,15 +227,15 @@ endif;
 -----------------------------------------------
 * [well] shortcode.
 * Example: [well]Your text here.[/well] */
-if ( ! function_exists( 'alienship_well' ) ):
-function alienship_well($atts, $content = null) {
+if ( ! function_exists( 'stormbringer_well' ) ):
+function stormbringer_well($atts, $content = null) {
    return '<div class="well">' . do_shortcode($content) .'</div>';
 }
-add_shortcode('well', 'alienship_well');
+add_shortcode('well', 'stormbringer_well');
 endif;
 
 // Block Messages
-function blockquotes( $atts, $content = null ) {
+function stormbringer_blockquotes( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 	'float' => '', /* left, right */
 	'cite' => '', /* text for cite */
@@ -258,7 +259,7 @@ function blockquotes( $atts, $content = null ) {
 	return $output;
 }
 
-add_shortcode('blockquote', 'blockquotes'); 
+add_shortcode('blockquote', 'stormbringer_blockquotes');
  
 
 

@@ -103,7 +103,7 @@ The comments page for Bones
 
 	<?php endif; ?>
 	
-  <label for="comment" class="control-label"><?php _e('Comment', 'alienship'); ?></label>
+  <label for="comment" class="control-label"><?php _e('Comment', 'stormbringer'); ?></label>
   <div class="input-prepend"><span class="add-on"><i class="icon-comment"></i></span><textarea placeholder="<?php _e("Your Comment Here…","bonestheme"); ?>" name="comment" id="comment" class="input-large" rows="6" tabindex="4"></textarea>
   </div>
 	
