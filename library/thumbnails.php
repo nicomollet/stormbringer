@@ -38,3 +38,10 @@ function give_linked_images_class($html, $id, $caption, $title, $align, $url, $s
   return $html;
 }
 add_filter('image_send_to_editor','give_linked_images_class',11,8);
+
+
+function change_avatar_css($class) {
+  $class = str_replace("class='avatar", "class='avatar media-object", $class) ;
+  return $class;
+}
+add_filter('get_avatar','change_avatar_css');
