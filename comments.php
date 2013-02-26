@@ -1,48 +1,52 @@
 <?php
-/*
-The comments page for Bones
-*/
+/**
+ * The template for displaying Comments.
+ *
+ * The area of the page that contains both current comments
+ * and the comment form. The actual display of comments is
+ * handled by a callback to alienship_comment() which is
+ * located in the inc/template-tags.php file.
+ *
+ * @package StormBringer
+ * @since StormBringer 0.1
+ */
+?>
 
-// Do not delete these lines
-  if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-    die ("N'accédez pas à ce fichier directement, merci.");
-
-  if ( post_password_required() ) { ?>
+<section id="comments">
+<?php if ( post_password_required() ) : ?>
   	<div class="alert alert-info"><?php _e("Ce contenu est protégé par un mot de passe. Saisissez le mot de passe pour voir les commentaires.","stormbringer"); ?></div>
   <?php
     return;
-  }
+  endif;
 ?>
-
-<!-- You can start editing here. -->
 
 <?php if ( have_comments() ) : ?>
 	
-	<h3 id="comments"><?php comments_number('<span>' . __("Aucun","stormbringer") . '</span> ' . __("commentaire","stormbringer") . '', '<span>' . __("Un","stormbringer") . '</span> ' . __("commentaire","stormbringer") . '', '<span>%</span> ' . __("commentaires","stormbringer") );?> <?php _e("sur","stormbringer"); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
+	<h3 class="comments-title"><?php comments_number('<span>' . __("Aucun","stormbringer") . '</span> ' . __("commentaire","stormbringer") . '', '<span>' . __("Un","stormbringer") . '</span> ' . __("commentaire","stormbringer") . '', '<span>%</span> ' . __("commentaires","stormbringer") );?> <?php _e("sur","stormbringer"); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 
-	<ol class="commentlist">
+	<ol class="comments-list media-list">
 		<?php wp_list_comments('type=comment&callback=stormbringer_comments'); ?>
 	</ol>
-	
-	<nav id="comment-nav">
-		<ul class="clearfix">
-	  		<li><?php previous_comments_link( __("Précédents commentaires","stormbringer") ) ?></li>
-	  		<li><?php next_comments_link( __("Commentaires suivants","stormbringer") ) ?></li>
-		</ul>
-	</nav>
+
+  <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+    <nav id="comments-nav" class="pager">
+      <div class="nav-previous pull-left"><?php previous_comments_link( __( '&larr; Précédents commentaires', 'stormbringer' ) ); ?></div>
+      <div class="nav-next pull-right"><?php next_comments_link( __( 'Commentaires suivants &rarr;', 'stormbringer' ) ); ?></div>
+    </nav>
+  <?php endif; // check for comment navigation ?>
+
   
 	<?php else : // this is displayed if there are no comments so far ?>
 
 	<?php if ( comments_open() ) : ?>
-    	<!-- If comments are open, but there are no comments. -->
+    <!-- If comments are open, but there are no comments. -->
 
 	<?php else : // comments are closed 
 	?>
 	
+    <!-- If comments are closed. -->
+    <p class="alert alert-info comments-closed"><?php _e("Les commentaires sont fermés","stormbringer"); ?>.</p>
 
-			<!-- If comments are closed. -->
-			<p class="alert alert-info comments-closed"><?php _e("Les commentaires sont fermés","stormbringer"); ?>.</p>
-			
 
 	<?php endif; ?>
 
@@ -104,10 +108,12 @@ The comments page for Bones
 	<?php endif; ?>
 	
   <label for="comment" class="control-label"><?php _e('Commentaire', 'stormbringer'); ?></label>
-  <div class="input-prepend"><span class="add-on"><i class="icon-comments"></i></span><textarea placeholder="<?php _e("Votre commentaire…","stormbringer"); ?>" name="comment" id="comment" class="input-medium" rows="6" tabindex="4"></textarea>
+  <div class="input-prepend"><span class="add-on"><i class="icon-comment"></i></span><textarea placeholder="<?php _e("Votre commentaire…","stormbringer"); ?>" name="comment" id="comment" class="input-large" rows="6" tabindex="4"></textarea>
   </div>
-	
-  <input class="btn btn-primary" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e("Envoyer le commentaire","stormbringer"); ?>" />
+
+  <div class="form-actions">
+    <input class="btn btn-primary" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e("Envoyer le commentaire","stormbringer"); ?>" />
+  </div>
   <?php comment_id_fields(); ?>
 
 	<?php 
@@ -122,3 +128,4 @@ The comments page for Bones
 </section>
 
 <?php endif; // if you delete this the sky will fall on your head ?>
+</section>

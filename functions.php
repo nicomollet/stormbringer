@@ -2,27 +2,31 @@
 
 // Adding WP 3+ Functions & Theme Support
 function stormbringer_support() {
-  locate_template('library/addthis.php',true);
-  locate_template('library/bodyclass.php',true);
-  locate_template('library/bootstrap.php',true);
-  locate_template('library/breadcrumbtrail.php',true);
-  locate_template('library/cleanup.php',true);
-  locate_template('library/comments.php',true);
-  locate_template('library/fancybox.php',true);
-  locate_template('library/favicon.php',true);
-  locate_template('library/googlewebfonts.php',true);
-  locate_template('library/gravityforms.php',true);
-  locate_template('library/htmleditor.php',true);
-  locate_template('library/lessc.inc.php',true);
-  locate_template('library/menu.php',true);
-  locate_template('library/pagination.php',true);
-  locate_template('library/password.php',true);
-  locate_template('library/profile.php',true);
-  locate_template('library/shortcodes.php',true);
-  locate_template('library/tags.php',true);
-  locate_template('library/thumbnails.php',true);
-  locate_template('library/widgets.php',true);
-  //locate_template('library/wpml.php',true);
+
+  if(is_admin()){
+    locate_template('inc/admin/htmleditor.php',true);
+    locate_template('inc/admin/profile.php',true);
+  }
+
+  locate_template('inc/admin/secure.php',true);
+  locate_template('inc/front/addthis.php',true);
+  locate_template('inc/front/bodyclass.php',true);
+  locate_template('inc/front/bootstrap.php',true);
+  locate_template('inc/front/breadcrumb.php',true);
+  locate_template('inc/front/cleanup.php',true);
+  locate_template('inc/front/comments.php',true);
+  locate_template('inc/front/fancybox.php',true);
+  locate_template('inc/front/favicon.php',true);
+  locate_template('inc/front/googlewebfonts.php',true);
+  locate_template('inc/plugins/gravityforms.php',true);
+  locate_template('inc/library/lessc.inc.php',true);
+  locate_template('inc/front/menu.php',true);
+  locate_template('inc/front/pagination.php',true);
+  locate_template('inc/front/shortcodes.php',true);
+  locate_template('inc/front/tags.php',true);
+  locate_template('inc/front/thumbnails.php',true);
+  locate_template('inc/front/widgets.php',true);
+  locate_template('inc/plugins/wpml.php',true);
 
   load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
 

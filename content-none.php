@@ -7,10 +7,10 @@
  */
 ?>
 
-<article id="post-not-found">
+<article id="post-not-found" class="404-post">
 
-  <header class="page-header entry-header 404-header">
-    <h1 class="page-title entry-title"><?php _e("Page non trouvée", "stormbringer"); ?></h1>
+  <header class="page-header 404-header">
+    <h1 class="page-title 404-title"><?php _e("Page non trouvée", "stormbringer"); ?></h1>
   </header>
 
   <section class="entry-content">

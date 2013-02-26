@@ -35,12 +35,15 @@
           <span><?php post_type_archive_title(); ?></span>
       <?php } ?>
     </h1>
+
     <?php
+    /* Author or Taxonomy description template */
     if(is_category() || is_tag())
       get_template_part( 'archive', 'taxonomy');
     if(is_author())
       get_template_part( 'archive', 'author');
     ?>
+
   </header>
 
   <?php if ( have_posts() ) : ?>
