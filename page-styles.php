@@ -1,8 +1,14 @@
 <?php
-/*
-Template Name: Styles
-*/
+/**
+ * The template for displaying Twitter Bootstrap Styles.
+ *
+ * @package StormBringer
+ * @since StormBringer 0.1
+ *
+ * Template Name: Styles
+ */
 ?>
+
 <?php get_header(); ?>
 
 <aside id="sidebar" class="<?php echo apply_filters('stormbringer_sidebar_container_class', 'span3'); ?>" role="complementary">
@@ -869,54 +875,40 @@ Template Name: Styles
   </div>
 
   <h3>Highly customizable</h3>
-
   <div class="row-fluid">
     <ul class="thumbnails">
       <li class="span4">
         <div class="thumbnail">
-          <img alt="" src="http://placehold.it/300x200">
-
+          <img alt="400x200" src="http://placehold.it/200x400"/>
           <div class="caption">
             <h3>Thumbnail label</h3>
-
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-              metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-            <p><a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a></p>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+            <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a></p>
           </div>
         </div>
       </li>
       <li class="span4">
         <div class="thumbnail">
-          <img alt="" src="http://placehold.it/300x200">
-
+          <img alt="400x200" src="http://placehold.it/200x400"/>
           <div class="caption">
             <h3>Thumbnail label</h3>
-
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-              metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-            <p><a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a></p>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+            <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a></p>
           </div>
         </div>
       </li>
       <li class="span4">
         <div class="thumbnail">
-          <img alt="" src="http://placehold.it/300x200">
-
+          <img alt="400x200" src="http://placehold.it/200x400"/>
           <div class="caption">
             <h3>Thumbnail label</h3>
-
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-              metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-            <p><a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a></p>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget qua.</p>
+            <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a></p>
           </div>
         </div>
       </li>
     </ul>
   </div>
-
 
 </section>
 

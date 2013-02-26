@@ -1,27 +1,19 @@
+<?php
+/**
+ * The template for displaying the Footer.
+ *
+ * @package StormBringer
+ * @since StormBringer 0.1
+ */
+?>
+
     </div>
   </div>
 </div>
 <!-- /#main -->
 
-<footer role="contentinfo" id="prefooter" class="do-not-print">
-  <div class="container">
-    <div class="row">
-      <div class="span5">
-        <div id="prefooter-brand">
-        </div>
-      </div>
-      <div class="span7">
-        <div id="prefooter-formnewsletter">
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
 <footer role="contentinfo" id="footer">
   <div class="container">
-
     <div class="row">
       <?php if (is_active_sidebar('footer_widgets')) : ?>
         <?php dynamic_sidebar('footer_widgets'); ?>

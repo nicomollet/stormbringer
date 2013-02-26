@@ -1,10 +1,18 @@
-<div class="inside">
+<?php
+/**
+ * The template for displaying the default Sidebar.
+ *
+ * @package StormBringer
+ * @since StormBringer 0.1
+ */
+?>
+<div class="sidebar-inside">
   <?php if (is_active_sidebar('sidebar_main')) : ?>
-  <?php dynamic_sidebar('sidebar_main'); ?>
-<?php else : ?>
+    <?php dynamic_sidebar('sidebar_main'); ?>
+  <?php else : ?>
   <div class="alert alert-block fade in">
     <a class="close" data-dismiss="alert">×</a>
     <p><?php _e('Veuillez activer des widgets de Sidebar', 'stormbringer'); ?></p>
   </div>
-<?php endif; ?>
+  <?php endif; ?>
 </div>

@@ -1,19 +1,28 @@
+<?php
+/**
+ * The template for displaying the Loop Content.
+ *
+ * @package StormBringer
+ * @since StormBringer 0.1
+ */
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(""); ?>>
 
   <?php // only show edit button if user has permission to edit posts
   global $user_level;
   if ($user_level > 0) $edit_link = '<a href="'.get_edit_post_link(get_the_ID()).'" class="btn btn-success edit-post pull-right"><i class="icon-pencil icon-white"></i> '.__("Modifier", "stormbringer").'</a>';
   ?>
-  <?php  if ( is_single() || is_page() || is_singular() ) { ?>
-  <header class="page-header">
-    <?php echo $edit_link;?>
-    <h1 class="entry-title"><?php the_title(); ?></h1>
-  </header>
-  <?php } else { ?>
-  <header class="entry-header">
-    <?php echo $edit_link;?>
-    <h2 class="entry-title"><a class="entry-title" title="<?php printf( esc_attr__( 'Lien vers %s', 'stormbringer' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-  </header>
+    <?php  if ( is_single() || is_page() || is_singular() ) { ?>
+      <header class="page-header">
+        <?php echo $edit_link;?>
+        <h1 class="page-title"><?php the_title(); ?></h1>
+      </header>
+    <?php } else { ?>
+      <header class="entry-header">
+        <?php echo $edit_link;?>
+        <h2 class="entry-title"><a class="entry-title" title="<?php printf( esc_attr__( 'Lien vers %s', 'stormbringer' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+      </header>
   <?php } ?>
   <!-- /.entry-header -->
 
@@ -51,16 +60,9 @@
 
 
     </footer>
-    <!-- /.entry-meta -->
-      <?php
-      $place = get_post_meta($post->ID, 'fk_lieu', true);
-      $date_exploded = explode(' ', get_the_time('j F l',$post->ID));
-      $date_day = ($date_exploded[0]>=10?'':'0').$date_exploded[0];
-      $date_monthname = $date_exploded[1];
-      $date_dayofweek = $date_exploded[2];
-      if($place)print '<p class="events-date"><span class="dayofweek">'.$date_dayofweek . '</span> <span class="day">'.$date_day . '</span> <span class="monthname">' . $date_monthname .'</span> '.__('à','stormbringer').' '.$place.'</p>';
-      ?>
+
   <?php endif;?>
+  <!-- /.entry-meta -->
 
   <section class="entry-content">
     <?php the_post_thumbnail('medium'); ?>
@@ -71,8 +73,6 @@
     <?php } ?>
   </section>
   <!-- /.entry-content -->
-
-
 
 </article>
 <!-- /#post -->

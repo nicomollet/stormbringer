@@ -1,3 +1,11 @@
+<?php
+/**
+ * The template for displaying Archive pages.
+ *
+ * @package StormBringer
+ * @since StormBringer 0.1
+ */
+?>
 <?php get_header(); ?>
 
 <aside id="sidebar" class="<?php echo apply_filters('stormbringer_sidebar_container_class', 'span3'); ?>" role="complementary">

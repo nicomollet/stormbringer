@@ -7,8 +7,7 @@
  * @package StormBringer
  * @since StormBringer 0.1
  */
-
-get_header(); ?>
+?>
 <?php get_header(); ?>
 
 <div id="content" class="<?php echo apply_filters('stormbringer_content_container_class', 'span9');?>" role="main">
@@ -16,7 +15,7 @@ get_header(); ?>
   <?php stormbringer_breadcrumb();?>
 
   <header class="page-header archive-header">
-    <h1 class="archive-title">
+    <h1 class="page-title archive-title">
       <?php if (is_category()) { ?>
           <span><?php _e("Catégorie :", "stormbringer"); ?></span> <?php single_cat_title(); ?>
       <?php } elseif (is_tag()) { ?>
