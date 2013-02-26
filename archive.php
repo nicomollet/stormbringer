@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying Archive pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package StormBringer
+ * @since StormBringer 0.1
+ */
+
+get_header(); ?>
 <?php get_header(); ?>
 
 <div id="content" class="<?php echo apply_filters('stormbringer_content_container_class', 'span9');?>" role="main">
@@ -7,7 +18,7 @@
   <header class="page-header archive-header">
     <h1 class="archive-title">
       <?php if (is_category()) { ?>
-          <span><?php _e("Catégorie :", "stormbringthe_contenter"); ?></span> <?php single_cat_title(); ?>
+          <span><?php _e("Catégorie :", "stormbringer"); ?></span> <?php single_cat_title(); ?>
       <?php } elseif (is_tag()) { ?>
           <span><?php _e("Mot-clé :", "stormbringer"); ?></span> <?php single_tag_title(); ?>
       <?php } elseif (is_tax()) { ?>
@@ -71,7 +82,5 @@
   <?php get_sidebar('blog'); ?>
 </aside>
 <!-- /#sidebar -->
-
-
 
 <?php get_footer(); ?>
