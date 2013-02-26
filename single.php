@@ -1,3 +1,12 @@
+<?php
+/**
+ * The template for displaying all single posts.
+ *
+ * @package StormBringer
+ * @since StormBringer 0.1
+ */
+?>
+
 <?php get_header(); ?>
 
 <div id="content" class="<?php echo apply_filters('stormbringer_content_container_class', 'span9');?>" role="main">

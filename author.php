@@ -1,3 +1,12 @@
+<?php
+/**
+ * The template for displaying Author Archive pages.
+ *
+ * @package StormBringer
+ * @since StormBringer 0.1
+ */
+?>
+
 <?php get_header(); ?>
 
 <div id="content" class="<?php echo apply_filters('stormbringer_content_container_class', 'span9');?>" role="main">
@@ -40,7 +49,7 @@
 
     <?php endwhile; ?>
 
-    <?php get_template_part( 'pagination', 'archive' ); ?>
+    <?php stormbringer_pagination();?>
 
   <?php else : ?>
 
