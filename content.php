@@ -65,12 +65,14 @@
   <!-- /.entry-meta -->
 
   <section class="entry-content">
+    <?php do_action( 'stormbringer_content_before' ); ?>
     <?php the_post_thumbnail('medium'); ?>
     <?php if (is_archive() || is_search()) { ?>
       <?php echo get_the_excerpt(); ?>
     <?php } else { ?>
       <?php the_content(); ?>
     <?php } ?>
+    <?php do_action( 'stormbringer_content_after' ); ?>
   </section>
   <!-- /.entry-content -->
 

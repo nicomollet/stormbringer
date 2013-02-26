@@ -3,30 +3,36 @@
 // Adding WP 3+ Functions & Theme Support
 function stormbringer_support() {
 
+  locate_template('inc/admin/secure.php',true);
+  locate_template('inc/front/thumbnails.php',true);
+
+  // Admin only
   if(is_admin()){
     locate_template('inc/admin/htmleditor.php',true);
     locate_template('inc/admin/profile.php',true);
   }
 
-  locate_template('inc/admin/secure.php',true);
-  locate_template('inc/front/addthis.php',true);
-  locate_template('inc/front/bodyclass.php',true);
+  // Front only
   locate_template('inc/front/bootstrap.php',true);
-  locate_template('inc/front/breadcrumb.php',true);
-  locate_template('inc/front/cleanup.php',true);
-  locate_template('inc/front/comments.php',true);
+  locate_template('inc/front/addthis.php',true);
   locate_template('inc/front/fancybox.php',true);
+  locate_template('inc/plugins/gravityforms.php',true);
+  locate_template('inc/front/cleanup.php',true);
+  locate_template('inc/front/bodyclass.php',true);
+  locate_template('inc/front/breadcrumb.php',true);
+  locate_template('inc/front/comments.php',true);
   locate_template('inc/front/favicon.php',true);
   locate_template('inc/front/googlewebfonts.php',true);
-  locate_template('inc/plugins/gravityforms.php',true);
+  locate_template('inc/front/shortcodes.php',true);
   locate_template('inc/library/lessc.inc.php',true);
   locate_template('inc/front/menu.php',true);
   locate_template('inc/front/pagination.php',true);
-  locate_template('inc/front/shortcodes.php',true);
-  locate_template('inc/front/tags.php',true);
-  locate_template('inc/front/thumbnails.php',true);
   locate_template('inc/front/widgets.php',true);
-  locate_template('inc/plugins/wpml.php',true);
+  locate_template('inc/front/tags.php',true);
+
+  // Plugins
+  if (class_exists('RGForms') && !is_admin()) locate_template('inc/plugins/wpml.php',true);
+  if(function_exists('icl_object_id') && !is_admin()) locate_template('inc/plugins/wpml.php',true);
 
   load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
 
@@ -133,7 +139,6 @@ function stormbringer_register_menus() {
 		array(
 			'main_nav' => 'The Main Menu',   // main nav in header
 			'footer_links' => 'Footer Links', // secondary nav in footer
-			'top_links' => 'Top Links' // secondary nav in footer
 		)
 	);
 }
@@ -197,25 +202,10 @@ function custom_content_container_class($class){
 }
 add_filter( 'stormbringer_content_container_class', 'custom_content_container_class',100 );
 
-// share add this
-function share_addthis_excerpt($excerpt){
-  return   $excerpt. share_addthis();
-}
-function share_addthis_content($content){
-  return   $content.  share_addthis();
-}
-function share_addthis(){
-  if((!is_home() && is_singular('post')) || is_category() || is_archive()){
-    return  '
-    <div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a><a class="addthis_button_compact"></a><a class="addthis_button_email"></a>
-    </div>
-    ';
-  }
-  else
-    return '';
-}
-add_filter ( 'get_the_excerpt', 'share_addthis_excerpt',50);
-add_filter ( 'the_content', 'share_addthis_content',50);
+
+// ********************************************
+// SEO Title
+// ********************************************
 
 function stormbringer_wp_title( $title, $sep ) {
   global $paged, $page;
@@ -238,3 +228,16 @@ function stormbringer_wp_title( $title, $sep ) {
   return $title;
 }
 add_filter( 'wp_title', 'stormbringer_wp_title', 10, 2 );
+
+// ********************************************
+// Addthis
+// ********************************************
+add_action( 'stormbringer_content_after', 'share_addthis', 10, 2 );
+function share_addthis(){
+  if((!is_home() && is_singular('post')) || is_category() || is_archive()){
+    echo  '
+    <div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a><a class="addthis_button_compact"></a><a class="addthis_button_email"></a>
+    </div>
+    ';
+  }
+}

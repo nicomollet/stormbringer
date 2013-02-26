@@ -32,7 +32,7 @@ function stormbringer_staging_noindex() {
 
 
 
-// remove rel=�category tag�
+// remove rel=category tag
 function stormbringer_remove_rel_category( $text ) {
   $text = str_replace('rel="category tag"', "", $text); return $text;
 }
@@ -102,7 +102,7 @@ function add_filters($tags, $function) {
   }
 }
 
-// Disable rel=�next� on home
+// Disable rel=next on home
 function wpseo_disable_rel_next_home( $link ) {
   if ( is_home() ) {
     return false;
@@ -139,11 +139,3 @@ function paragraph_to_unorderedlist($text, $class = '',$multi=false)
   $text .= '</ul>';
   return $text;
 }
-
-function remove_contactmethods( $contactmethods ) {
-  unset($contactmethods['aim']);
-  unset($contactmethods['jabber']);
-  unset($contactmethods['yim']);
-  return $contactmethods;
-}
-add_filter('user_contactmethods','remove_contactmethods',10,1);
