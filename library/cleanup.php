@@ -139,3 +139,11 @@ function paragraph_to_unorderedlist($text, $class = '',$multi=false)
   $text .= '</ul>';
   return $text;
 }
+
+function remove_contactmethods( $contactmethods ) {
+  unset($contactmethods['aim']);
+  unset($contactmethods['jabber']);
+  unset($contactmethods['yim']);
+  return $contactmethods;
+}
+add_filter('user_contactmethods','remove_contactmethods',10,1);
