@@ -6,15 +6,15 @@ function stormbringer_comments($comment, $args, $depth) {
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
 			<div class="comment-author vcard row-fluid clearfix">
 				<div class="avatar span3">
-					<?php echo get_avatar($comment,$size='80',$default='<path_to_url>' ); ?>
+					<?php echo get_avatar($comment,80 ); ?>
 				</div>
 				<div class="span8 offset1 comment-text">
-					<?php printf(__('<h4>%s</h4>','bonestheme'), get_comment_author_link()) ?>
-					<?php edit_comment_link(__('Edit','bonestheme'),'<span class="edit-comment btn btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
+					<?php printf(__('<h4>%s</h4>','stormbringer'), get_comment_author_link()) ?>
+					<?php edit_comment_link(__('Modifier','stormbringer'),'<span class="edit-comment btn btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
 
                     <?php if ($comment->comment_approved == '0') : ?>
        					<div class="alert-message success">
-          				<p><?php _e('Your comment is awaiting moderation.','bonestheme') ?></p>
+          				<p><?php _e('Votre commentaire est en cours de modération.','stormbringer') ?></p>
           				</div>
 					      <?php endif; ?>
 

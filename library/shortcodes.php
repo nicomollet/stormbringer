@@ -87,13 +87,14 @@ function roots_gallery_shortcode($attr) {
 
   $i = 0;
   foreach ($attachments as $id => $attachment) {
+    $class='';
     $link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, true, false);
 
-    $class="span2";
+/*    $class="span2";
     if($size=="thumbnail")$class=GALLERY_THUMBNAIL_CLASSES;
     if($size=="medium")$class=GALLERY_MEDIUM_CLASSES;
-    if($size=="large")$class=GALLERY_LARGE_CLASSES;
-
+    if($size=="large")$class=GALLERY_LARGE_CLASSES;*/
+    $class.=($i %$columns ==1 ?'endofline':'');
     $output .= "<{$icontag} class=\"".$class."\"><div class=\"thumbnail\">";
 
     $output .=  $link;

@@ -67,7 +67,7 @@ code {
 a img {
     border: none
 }
-
+img{display: block;}
 p img.top {
     margin-top: 0
 }
@@ -109,6 +109,6 @@ h1, h2, h3, h4, h5 {
     clear: both
 }
 
-.do-not-print, object, embed, iframe, select, input, button, textarea, .button, #skip-to-nav, .presaisine-steps-wrapper, .navigation, #header-tools, #subcontent, #footer, #navigation-secondary, #colophon, #slideshow, #sidebar, .submit-button, .subheader, .content-header, .button-print, .backlink, .admin #header, .admin .secondary-navigation {
+.do-not-print, .edit-post, nav, object, embed, iframe, select, input, button, textarea, .button, #skip-to-nav, .presaisine-steps-wrapper, .navigation, #header-tools, #subcontent, #footer, #navigation-secondary, #colophon, #slideshow, #sidebar, .submit-button, .subheader, .content-header, .button-print, .backlink, .admin #header, .admin .secondary-navigation {
     display: none
 }

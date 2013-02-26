@@ -5,28 +5,21 @@ Template Name: Timeline
 ?>
 <?php get_header(); ?>
 
-<div id="content" class="<?php echo CONTAINER_CLASSES; ?>">
+  <aside id="sidebar" class="<?php echo apply_filters('stormbringer_sidebar_container_class', 'span3'); ?>" role="complementary">
+    <?php get_sidebar(); ?>
+  </aside>
+  <!-- /#sidebar -->
 
-  <div id="main" class="<?php echo MAIN_CLASSES; ?>" role="main">
+  <div id="content" class="<?php echo apply_filters('stormbringer_content_container_class', 'span9');?>" role="main">
 
-    <?php if (BREADCRUMB_ACTIVE) breadcrumb_trail();?>
+    <?php stormbringer_breadcrumb();?>
 
     <?php if (have_posts()) : the_post(); ?>
-
-    <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-
-      <header class="entry-header page-header">
-        <?php // only show edit button if user has permission to edit posts
-        if ($user_level > 0) {?>
-          <a href="<?php echo get_edit_post_link(); ?>" class="btn btn-success edit-post pull-right"><i class="icon-pencil icon-white"></i> <?php _e("Edit post", "bonestheme"); ?></a>
-        <?php } ?>
-        <h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
-      </header>
-      <!-- /.entry-header -->
-
-      <section class="entry-content">
-        <?php the_content(); ?>
-      </section>
+      <?php $format = get_post_format();
+        if ( false === $format )
+        $format = 'standard';
+        get_template_part( 'content', 'page' );
+      ?>
 
       <section class="timeline-content">
 
@@ -83,7 +76,7 @@ Template Name: Timeline
                 ?>
                   <li><span class="date"><?php the_time('F j'); ?><sup><?php the_time('S') ?></sup></span> <span class="linked"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></span>
                     <?php if (get_comments_number()!=0):?>
-                      <span class="badge"><?php comments_popup_link(__('', 'woothemes'), __('1', 'woothemes'), __('%', 'woothemes')); ?></span>
+                      <span class="badge"><?php comments_popup_link(__('', 'stormbringer'), __('1', 'stormbringer'), __('%', 'stormbringer')); ?></span>
                     <?php endif;?>
                   </li>
                 <?php
@@ -97,44 +90,12 @@ Template Name: Timeline
                   ?>
                 </ul>
                 <?php } ?>
-
-
-
-
-
-
-
       </section>
 
 
-    </article>
-
-    <?php comments_template(); ?>
-
-
-    <?php else : ?>
-
-    <article id="post-not-found">
-      <header>
-        <h1><?php _e("No Posts Yet", "bonestheme"); ?></h1>
-      </header>
-      <section class="entry-content">
-        <p><?php _e("Sorry, What you were looking for is not here.", "bonestheme"); ?></p>
-      </section>
-      <footer>
-      </footer>
-    </article>
-
-    <?php endif; ?>
+    <?php endif;?>
 
   </div>
-  <!-- /#main -->
-
-  <aside id="sidebar" class="<?php echo SIDEBAR_CLASSES; ?>" role="complementary">
-    <?php get_sidebar(); ?>
-  </aside>
-  <!-- /#sidebar -->
-
-</div><!-- /#content -->
+  <!-- /#content -->
 
 <?php get_footer(); ?>

@@ -5,11 +5,22 @@ add_filter('body_class', 'stormbringer_body_class');
 /**
  * Body Class - Thanks to Theme Hyprid (http://themehybrid.com/)
  */
-function stormbringer_body_class( $class = '' ) {
+function stormbringer_body_class( $classes = '' ) {
 	global $wp_query;
+  global $current_user;
+  global $user_level;
 
+  // User role
+  get_currentuserinfo();
+  $current_user->ID;
+  $user = new WP_User( $current_user->ID ); // $user->roles
+  foreach($user->roles as $role){
+    $classes[] = 'role-'.$role;
+  }
 	/* Text direction (which direction does the text flow). */
-	$classes = array( 'wordpress', get_bloginfo( 'text_direction' ), get_locale() );
+	$classes[] = 'wordpress';
+  $classes[] = get_bloginfo( 'text_direction' );
+  $classes[] = get_locale();
 
 	/* Check if the current theme is a parent or child theme. */
 	$classes[] = ( is_child_theme() ? 'child-theme' : 'parent-theme' );
@@ -96,7 +107,7 @@ function stormbringer_body_class( $class = '' ) {
  * @return array $classes Several contexts based on the current page.
  */
 function stormbringer_get_context() {
-	global $hybrid;
+	global $post;
 
 	/* If $classes has been set, don't run through the conditionals again. Just return the variable. */
 	if ( isset( $classes ) )
@@ -108,7 +119,7 @@ function stormbringer_get_context() {
 	$object_id = get_queried_object_id();
 
   // WPML language
-  if (ICL_LANGUAGE_CODE!="ICL_LANGUAGE_CODE") $classes[] = "lang-" . ICL_LANGUAGE_CODE;
+  if (defined('ICL_LANGUAGE_CODE')) $classes[] = "lang-" . ICL_LANGUAGE_CODE;
 
 
 	/* Front page of the site. */
@@ -116,8 +127,8 @@ function stormbringer_get_context() {
 		$classes[] = 'home';
 
 	/* Blog page. */
-	if ( is_home() ) {
-		$classes[] = 'blog';
+	if ( is_category() || is_singular('post') || is_tag() || is_post_type_archive('post') || is_search() || is_author()) {
+		  $classes[] = 'blog';
 	}
 
 	/* Singular views. */
@@ -135,7 +146,7 @@ function stormbringer_get_context() {
     // parents top level
     $parents = array();
     $parents = get_post_ancestors($object);
-    $classes[] = (end($parents) > 0 ? " level1-page-" . end($parents) : "");
+    $classes[] = (end($parents) > 0 ? "level1-page-" . end($parents) : "level1-page-{$object_id}");
 
     // category
     foreach ((get_the_category($post->ID)) as $category)

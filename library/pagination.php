@@ -35,12 +35,12 @@ function stormbringer_pagination($before = '', $after = '') {
 	echo $before.'<div class="pagination"><ul class="clearfix">'."";
 	if ($paged > 1) {
 		$first_page_text = "&laquo";
-		echo '<li class="prev"><a href="'.get_pagenum_link().'" title="First">'.$first_page_text.'</a></li>';
+		echo '<li class="prev"><a href="'.get_pagenum_link().'" title="'.__("Premier",'stormbringer').'">'.$first_page_text.'</a></li>';
 	}
 
-	$prevposts = get_previous_posts_link('&larr; Previous');
+	$prevposts = get_previous_posts_link('&larr; '.__("Précédent",'stormbringer'));
 	if($prevposts) { echo '<li>' . $prevposts  . '</li>'; }
-	else { echo '<li class="disabled"><a href="#">&larr; Previous</a></li>'; }
+	else { echo '<li class="disabled"><a href="#">&larr; '.__("Précédent",'stormbringer').'</a></li>'; }
 
 	for($i = $start_page; $i  <= $end_page; $i++) {
 		if($i == $paged) {
@@ -50,11 +50,11 @@ function stormbringer_pagination($before = '', $after = '') {
 		}
 	}
 	echo '<li class="">';
-	next_posts_link('Next &rarr;');
+	next_posts_link(__("Suivant",'stormbringer').' &rarr;');
 	echo '</li>';
 	if ($end_page < $max_page) {
 		$last_page_text = "&raquo;";
-		echo '<li class="next"><a href="'.get_pagenum_link($max_page).'" title="Last">'.$last_page_text.'</a></li>';
+		echo '<li class="next"><a href="'.get_pagenum_link($max_page).'" title="'.__("Dernier",'stormbringer').'">'.$last_page_text.'</a></li>';
 	}
 	echo '</ul></div>'.$after."";
 }

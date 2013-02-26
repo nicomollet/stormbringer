@@ -1,21 +1,50 @@
 <?php get_header(); ?>
 
-    <div id="content" class="<?php echo CONTAINER_CLASSES; ?>">
+<div id="content" class="<?php echo apply_filters('stormbringer_content_container_class', 'span9');?>" role="main">
 
-      <div id="main" class="<?php echo MAIN_CLASSES; ?>" role="main">
+  <?php stormbringer_breadcrumb();?>
 
-        <?php if (BREADCRUMB_ACTIVE) breadcrumb_trail();?>
+    <header class="page-header search-header">
+      <h1 class="search-title"><span><?php printf( __( 'Résultats de la recherche : %s', 'stormbringer' ), '</span>' . get_search_query() . '' ); ?></h1>
+    </header>
 
-				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'stormbringer' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				</header>
-        <?php get_template_part('content', 'index'); ?>
-      </div><!-- /#main -->
+    <?php if ( have_posts() ) : ?>
+      <?php /* Start the Loop */ ?>
+      <?php while ( have_posts() ) : the_post(); ?>
 
-      <aside id="sidebar" class="<?php echo SIDEBAR_CLASSES; ?>" role="complementary">
-        <?php get_sidebar(); ?>
-      </aside><!-- /#sidebar -->
+        <?php
+        /* Include the Post-Format-specific template for the content.
+        * If you want to overload this in a child theme then include a file
+        * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+        */
+        $format = get_post_format();
+        if ( false === $format )
+        $format = 'standard';
+        get_template_part( 'content', $format );
+        ?>
 
-    </div><!-- /#content -->
+      <?php endwhile; ?>
+
+      <?php stormbringer_pagination();?>
+
+    <?php else : ?>
+
+      <?php
+        /* No results */
+        get_template_part( 'content', 'none' );
+      ?>
+
+    <?php endif; ?>
+
+  </div>
+  <!-- /#main -->
+
+  <aside id="sidebar" class="<?php echo apply_filters('stormbringer_sidebar_container_class', 'span3'); ?>" role="complementary">
+    <?php get_sidebar('blog'); ?>
+  </aside>
+  <!-- /#sidebar -->
+
+</div>
+<!-- /#content -->
 
 <?php get_footer(); ?>

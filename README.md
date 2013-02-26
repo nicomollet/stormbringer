@@ -29,6 +29,8 @@ TODO
 * Activate sharing buttons
 * WPML language switcher
 * Include Font-Awesome
+* Localize theme
+* Include Chosen http://ajkochanowicz.github.com/Kickstrap/components.html#chosenInputs
 ...
 
 Major components 

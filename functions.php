@@ -1,35 +1,86 @@
 <?php
 
-define('NAVBAR_SITENAME', true);
-define('NAVBAR_SEARCH', false);
-define('NAVBAR_LOGIN', true);
+// Adding WP 3+ Functions & Theme Support
+function stormbringer_support() {
+  locate_template('library/addthis.php',true);
+  locate_template('library/bodyclass.php',true);
+  locate_template('library/bootstrap.php',true);
+  locate_template('library/breadcrumbtrail.php',true);
+  locate_template('library/cleanup.php',true);
+  locate_template('library/comments.php',true);
+  locate_template('library/fancybox.php',true);
+  locate_template('library/favicon.php',true);
+  locate_template('library/googlewebfonts.php',true);
+  locate_template('library/gravityforms.php',true);
+  locate_template('library/htmleditor.php',true);
+  locate_template('library/lessc.inc.php',true);
+  locate_template('library/menu.php',true);
+  locate_template('library/pagination.php',true);
+  locate_template('library/password.php',true);
+  locate_template('library/profile.php',true);
+  locate_template('library/shortcodes.php',true);
+  locate_template('library/tags.php',true);
+  locate_template('library/thumbnails.php',true);
+  locate_template('library/widgets.php',true);
+  //locate_template('library/wpml.php',true);
 
-define('BREADCRUMB_ARGS', serialize(array('separator' => '/','before' =>  __( 'You are here:', "stormbringer" ) ,'after' => false,'front_page' => true,'show_home' => __( 'Home', "stormbringer" ),'echo' => true)));
+  load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
 
-define('WRAP_CLASSES', 'container');
-define("CONTAINER_CLASSES", "row");
-define("MAIN_CLASSES", "span8");
-define("SIDEBAR_CLASSES", "span4");
-define("GALLERY_THUMBNAIL_CLASSES", "span2");
-define("GALLERY_MEDIUM_CLASSES", "span4");
-define("GALLERY_LARGE_CLASSES", "span6");
-define("GALLERY_CLASSES", "span2");
+  $locale = get_locale();
+  $locale_file = get_template_directory() . "/lang/$locale.php";
+  if ( is_readable( $locale_file ) )
+    require_once( $locale_file );
+
+	add_theme_support('automatic-feed-links'); // rss thingy
+  add_theme_support( 'post-thumbnails' );
+	stormbringer_register_menus();            // wp menus
+}
+add_action('after_setup_theme','stormbringer_support');
+add_action('widgets_init', 'custom_register_sidebars' );
+
+// ********************************************
+// Variables
+// ********************************************
+
+
 define('BOOTSTRAP_RESPONSIVE', true);
 
-define("POST_EXCERPT_LENGTH", 40);
+define("POST_EXCERPT_LENGTH", 100);
 
 define("JQUERY_VERSION", "1.7.1");
+//define("ADDTHIS_PROFILE", "ra-502e8ca67b06ffb4");
 
 define("FANCYBOX", true);
-define("FANCYBOX_VERSION", "1.3.4");
 
-define("GOOGLE_WEBFONTS", serialize(array('Marvel:700')));
+define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')));
 
 
-/************* ACTIVE SIDEBARS ********************/
+// ********************************************
+// Thumbnails
+// ********************************************
+//add_image_size( 'mini', 80, 80 );
 
-// Sidebars & Widgetizes Areas
-function stormbringer_register_sidebars() {
+// ********************************************
+// Breadcrumb
+// ********************************************
+function custom_breadcrumb_trail_args(){
+  $args = array(
+    'separator' => '›',
+    'before' => '' ,
+    'after' => false,
+    'front_page' => true,
+    'show_home' => __( 'Accueil', "stormbringer" ),
+    'echo' => true
+  );
+  return $args;
+}
+add_filter('breadcrumb_trail_args', 'custom_breadcrumb_trail_args');
+
+
+// ********************************************
+// Sidebars
+// ********************************************
+function custom_register_sidebars() {
     register_sidebar(array(
     	'id' => 'sidebar_main',
     	'name' => 'Main Sidebar',
@@ -49,58 +100,116 @@ function stormbringer_register_sidebars() {
     	'after_title' => '</h3>',
     ));
 
-} // don't remove this bracket!
+    register_sidebar(array(
+      'id' => 'sidebar_blog',
+      'name' => 'Blog Sidebar',
+    	'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
+    	'after_widget' => '</div></div>',
+    	'before_title' => '<h3 class="widgettitle">',
+    	'after_title' => '</h3>',
+    ));
 
-// Sidebars & Widgetizes Areas
+    register_sidebar(array(
+      'id' => 'sidebar_home',
+      'name' => 'Home Sidebar',
+    	'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
+    	'after_widget' => '</div></div>',
+    	'before_title' => '<h3 class="widgettitle">',
+    	'after_title' => '</h3>',
+    ));
+
+}
+
+
+// ********************************************
+// Menus
+// ********************************************
 function stormbringer_register_menus() {
 	register_nav_menus(                      // wp3+ menus
 		array(
 			'main_nav' => 'The Main Menu',   // main nav in header
-			'footer_links' => 'Footer Links' // secondary nav in footer
+			'footer_links' => 'Footer Links', // secondary nav in footer
+			'top_links' => 'Top Links' // secondary nav in footer
 		)
 	);
 }
 
 
-// Adding WP 3+ Functions & Theme Support
-function stormbringer_support() {
-  require_once locate_template('library/bodyclass.php');
-  require_once locate_template('library/bootstrap.php');
-  require_once locate_template('library/breadcrumb.php');
-  require_once locate_template('library/cleanup.php');
-  require_once locate_template('library/comments.php');
-  require_once locate_template('library/fancybox.php');
-  require_once locate_template('library/favicon.php');
-  require_once locate_template('library/googlewebfonts.php');
-  require_once locate_template('library/gravityforms.php');
-  require_once locate_template('library/htmleditor.php');
-  require_once locate_template('library/lessc.inc.php');
-  require_once locate_template('library/menu.php');
-  require_once locate_template('library/pagination.php');
-  require_once locate_template('library/password.php');
-  require_once locate_template('library/profile.php');
-  require_once locate_template('library/shortcodes.php');
-  require_once locate_template('library/tags.php');
-  require_once locate_template('library/thumbnails.php');
-  require_once locate_template('library/widgets.php');
-  require_once locate_template('library/wpml.php');
 
-  load_theme_textdomain( 'stormbringer', get_template_directory() . '/languages' );
-
-  $locale = get_locale();
-  $locale_file = get_template_directory() . "/languages/$locale.php";
-  if ( is_readable( $locale_file ) )
-    require_once( $locale_file );
-
-	add_theme_support('automatic-feed-links'); // rss thingy
-  add_theme_support( 'post-thumbnails' );
-	stormbringer_register_menus();            // wp menus
+// ********************************************
+// JS footer
+// ********************************************
+function custom_js_footer() {
+  wp_enqueue_script('jquery.cycle.js', get_template_directory_uri().'/js/jquery.cycle.js', array(),false, true );
+  wp_enqueue_script('jquery.easing.js', get_template_directory_uri().'/js/jquery.easing.js', array(),false, true );
+  //wp_enqueue_script('jquery.slideleft.js', get_template_directory_uri().'/js/jquery.slideleft.js', array(),false, true );
+  //wp_enqueue_script('jquery.mousewheel.js', get_template_directory_uri().'/js/jquery.mousewheel.js', array(),false, true );
+  //wp_enqueue_script('jquery.validate.js', get_template_directory_uri().'/js/jquery.validate.js', array(),false, true );
+  //wp_enqueue_script('curvycorners.js', get_template_directory_uri().'/js/curvycorners.js', array(),false, true );
+  //wp_enqueue_script('selectivizr.js', get_template_directory_uri().'/js/selectivizr.js', array(),false, true );
 }
+add_action('wp_enqueue_scripts', 'custom_js_footer',300);
 
-// launching this stuff after theme setup
-add_action('after_setup_theme','stormbringer_support');
-// adding sidebars to Wordpress (these are created in functions.php)
-add_action( 'widgets_init', 'stormbringer_register_sidebars' );
+// ********************************************
+// HTML editor styles
+// ********************************************
+function custom_tinymce_styles( $settings ) {
 
+    $style_formats_original = json_decode($settings['style_formats']);
+    $style_formats = array(
+        array(
+        	'title' => 'Color Red',
+        	'inline' => 'span',
+        	'classes' => 'red',
+        ),
+        array(
+        	'title' => 'Color Blue',
+        	'inline' => 'span',
+        	'classes' => 'blue',
+        ),
 
-?>
+    );
+
+    $settings['style_formats'] = json_encode( array_merge($style_formats,$style_formats_original) );
+
+    return $settings;
+
+}
+add_filter( 'tiny_mce_before_init', 'custom_tinymce_styles',100 );
+
+// ********************************************
+// Content container classes
+// ********************************************
+
+function custom_sidebar_container_class($class){
+    $class = 'span3';
+  return $class;
+}
+add_filter( 'stormbringer_sidebar_container_class', 'custom_sidebar_container_class',100 );
+
+function custom_content_container_class($class){
+  $class = 'span9';
+  return $class;
+}
+add_filter( 'stormbringer_content_container_class', 'custom_content_container_class',100 );
+
+// share add this
+function share_addthis_excerpt($excerpt){
+  return   $excerpt. share_addthis();
+}
+function share_addthis_content($content){
+  return   $content.  share_addthis();
+}
+function share_addthis(){
+  if((!is_home() && is_singular('post')) || is_category() || is_archive()){
+    return  '
+    <div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a><a class="addthis_button_compact"></a><a class="addthis_button_email"></a>
+    </div>
+    ';
+  }
+  else
+    return '';
+}
+add_filter ( 'get_the_excerpt', 'share_addthis_excerpt',50);
+add_filter ( 'the_content', 'share_addthis_content',50);
+

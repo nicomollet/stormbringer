@@ -7,15 +7,13 @@
 
 
 input, textarea, select, .uneditable-input {
-	margin-bottom: 0;
+	//margin-bottom: 0;
 }
 
 .gform_wrapper textarea {
 	outline-style: none;
-	font-size: 11px;
 	font-family: inherit;
 	letter-spacing: normal;
-	padding: 2px 0 2px 0;
 	resize: none
 }
 .gform_wrapper ul {
@@ -42,3 +40,31 @@ html>body .entry ul,
 }
 .gform_wrapper .checkbox, .gform_wrapper .radio { padding-top: 5px}
 .gfield_required {margin-left: 5px}
+
+
+.input-mini {  width: 20%;}
+.input-small {  width: 40%;}
+.input-medium {  width: 60%;}
+.input-large {    width: 80%;}
+.input-max {    width: 100%;}
+
+select.input-mini{  width: 22%;}
+select.input-small{  width: 42%;}
+select.input-medium{  width: 62%;}
+select.input-large{  width: 82%;}
+select.input-max{  width: 100%;}
+form.placeholder .control-label{display: none}
+
+.gform_next_button, .gform_previous_button {
+  .btn();
+}
+.gsection_title{
+}
+.field_address textarea{height: @baseLineHeight*3;}
+.field_inline .radio {
+  padding-left:0;
+  input {float:left;margin-left: 0;}
+  label{float:left;margin: 1px 15px 0 3px;}
+}
+textarea[data-disabled="1"]{
+}

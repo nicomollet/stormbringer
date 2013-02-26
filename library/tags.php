@@ -2,7 +2,7 @@
 /*********** update standard wp tag cloud widget so it looks better ************/
 function my_widget_tag_cloud_args( $args ) {
 	$args['number'] = 20; // show less tags
-	$args['largest'] = 7.75; // make largest and smallest the same - i don't like the varying font-size look
+	$args['largest'] = 16; // make largest and smallest the same - i don't like the varying font-size look
 	$args['smallest'] = 10;
 	$args['unit'] = 'px';
 	return $args;
@@ -14,7 +14,8 @@ function add_tag_class( $taglinks ) {
     $tags = explode('</a>', $taglinks);
     $regex = "#(.*tag-link[-])(.*)(' title.*)#e";
         foreach( $tags as $tag ) {
-        	$tagn[] = preg_replace($regex, "('$1$2 label tag-'.get_tag($2)->slug.'$3')", $tag );
+        	//$tagn[] = preg_replace($regex, "('$1$2 label tag-'.get_tag($2)->slug.'$3')", $tag );
+        	$tagn[] = preg_replace($regex, "('$1$2 tag-'.get_tag($2)->slug.'$3')", $tag );
         }
     $taglinks = implode('</a>', $tagn);
     return $taglinks;

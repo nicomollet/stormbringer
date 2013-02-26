@@ -1,7 +1,7 @@
 <?php
 
 function google_webfonts() {
-  if(GOOGLE_WEBFONTS) :
+  if(defined("GOOGLE_WEBFONTS")) :
     echo "\n". '<!-- google webfonts -->' . "\n";
     echo '<script type="text/javascript">' . "\n";
     echo "WebFontConfig = {google:{families:['".implode("','", unserialize(GOOGLE_WEBFONTS))."']}};" . "\n";

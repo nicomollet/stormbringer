@@ -1,5 +1,3 @@
-// Bootstrap
-@import "_variables.less";
 @import "bootstrap.less";
 
 // Social
@@ -9,81 +7,35 @@
 @import "_gravityforms.less";
 
 // Wordpress
+@import "_common.less";
 @import "_admin.less";
 @import "_comments.less";
 @import "_htmleditor.less";
 @import "_image.less";
 @import "_video.less";
 @import "_widgets.less";
+//@import "_icomoon.less";
+//@import "_fonts.less";
 
-/* --------------------------------------------------------------------------- */
-/* --------------------------------------------------------------------------- */
-/* --------------------------------------------------------------------------- */
 
-body {padding-top: 60px}
-
-/* for fun */
-* {
-  -webkit-transition: all 0.2s ease;
-  -moz-transition:    all 0.2s ease;
-  -ms-transition:     all 0.2s ease;
-  -o-transition:      all 0.2s ease;
+.bs-docs-example:after {
+    background-color: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    .border-radius(4px 0 4px 0);
+    color: #9DA0A4;
+    content: "Example";
+    font-size: 12px;
+    font-weight: bold;
+    left: -1px;
+    padding: 3px 7px;
+    position: absolute;
+    top: -1px;
 }
-
-#browsernotsupported { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
-
-/* Bootstrap: NavBar */
-.navbar-search label{display: none;}
-.navbar-form, .navbar-search {
-	margin: 0 0 9px;
+.bs-docs-example {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    .border-radius(4px);
+    margin: 15px 0;
+    padding: 39px 19px 14px;
+    position: relative;
 }
-
-#main article{
-	margin-bottom: 18px;
-	border-bottom: 1px solid #eeeeee;
-	padding: 0 0 9px;
-}
-.singular #main article {border: 0}
-.singular article .entry-meta {
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
-	padding: 16px 0  9px;margin-top: 18px;
-}
-#main p.entry-date, #main p.entry-tags, #main p.entry-categories{
-	font-style: italic;
-	color: #808080;
-}
-
-.hero-unit{
-  background:url("../img/hero-unit.gif") 200px -50px #EFEEEE;
-  h1 {
-    font-size: 3em;
-  }
-}
-.breadcrumb {margin-bottom: 30px;}
-.breadcrumb-before {padding-left: 0 !important;}
-
-// HEADINGS
-// --------
-
-h1 {
-  font-size: 40px;
-  small {
-    font-size: 22px;
-  }
-}
-h2 {
-  font-size: 28px;
-  small {
-    font-size: 22px;
-  }
-}
-h3 {
-  font-size: 24px;
-  small {
-    font-size: 18px;
-  }
-}
-.navbar .brand{font-size: 24px;line-height: 0.8;}
-h1, h2, h3, .brand {font-family: @altFontFamily;}
-

@@ -1,20 +1,20 @@
 <?php get_header(); ?>
 
-    <div id="content" class="<?php echo CONTAINER_CLASSES; ?>">
+<aside id="sidebar" class="<?php echo apply_filters('stormbringer_sidebar_container_class', 'span3'); ?>" role="complementary">
+  <?php get_sidebar(); ?>
+</aside>
+<!-- /#sidebar -->
 
-      <div id="main" class="<?php echo MAIN_CLASSES; ?>" role="main">
-        <div class="page-header 404-header">
-          <h1><?php _e("No Posts Yet", "bonestheme"); ?></h1>
-        </div>
-        <div class="entry-content">
-          <p><?php _e("Sorry, What you were looking for is not here.", "bonestheme"); ?></p>
-        </div>
-      </div><!-- /#main -->
+<div id="content" class="<?php echo apply_filters('stormbringer_content_container_class', 'span9');?>" role="main">
 
-      <aside id="sidebar" class="<?php echo SIDEBAR_CLASSES; ?>" role="complementary">
-        <?php get_sidebar(); ?>
-      </aside><!-- /#sidebar -->
+  <?php stormbringer_breadcrumb();?>
 
-    </div><!-- /#content -->
+    <?php
+      /* No results */
+      get_template_part( 'content', 'none' );
+    ?>
+
+</div>
+<!-- /#content -->
 
 <?php get_footer(); ?>

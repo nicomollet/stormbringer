@@ -1,9 +1,17 @@
-#main article a.edit-post{
-	right: 0;
-	top: 0;
-	display: none;
+a.edit-post{
+  right: 0;
+  top: 0;
+  display: none;
+  position: absolute;
+}
+.the-content {position: relative;}
+//#content article:hover {background: lighten(@green, 45%);}
+.the-content:hover {
+  background: lighten(@green, 45%);
+  a.edit-post{
+    display: inline;z-index: 800;
+  }
+
 }
 
-#main article:hover a.edit-post{
-	display: inline;
-}
+#tinymce  {min-width: inherit !important;border: 0 !important; background: none !important; }

@@ -9,6 +9,16 @@ function my_mce_before_init( $settings ) {
 
     $style_formats = array(
         array(
+        	'title' => 'Big',
+        	'block' => 'p',
+        	'classes' => 'big',
+        ),
+        array(
+        	'title' => 'Small',
+        	'block' => 'p',
+        	'classes' => 'small',
+        ),
+        array(
         	'title' => 'Alert Heading',
         	'block' => 'h4',
         	'classes' => 'alert-heading',
@@ -101,6 +111,6 @@ function extended_editor_mce_buttons_2($buttons) {
 return array(
     'justifyleft', 'justifycenter', 'justifyright', '|',
     'pastetext', 'pasteword', 'removeformat', '|',
-    'outdent', 'indent', 'wp_more','|',
+    'outdent', 'indent', 'hr','wp_more','|',
      );
 }

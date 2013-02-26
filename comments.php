@@ -5,10 +5,10 @@ The comments page for Bones
 
 // Do not delete these lines
   if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-    die ('Please do not load this page directly. Thanks!');
+    die ("N'accédez pas à ce fichier directement, merci.");
 
   if ( post_password_required() ) { ?>
-  	<div class="alert alert-info"><?php _e("This post is password protected. Enter the password to view comments.","bonestheme"); ?></div>
+  	<div class="alert alert-info"><?php _e("Ce contenu est protégé par un mot de passe. Saisissez le mot de passe pour voir les commentaires.","stormbringer"); ?></div>
   <?php
     return;
   }
@@ -18,7 +18,7 @@ The comments page for Bones
 
 <?php if ( have_comments() ) : ?>
 	
-	<h3 id="comments"><?php comments_number('<span>' . __("No","bonestheme") . '</span> ' . __("Responses","bonestheme") . '', '<span>' . __("One","bonestheme") . '</span> ' . __("Response","bonestheme") . '', '<span>%</span> ' . __("Responses","bonestheme") );?> <?php _e("to","bonestheme"); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
+	<h3 id="comments"><?php comments_number('<span>' . __("Aucun","stormbringer") . '</span> ' . __("commentaire","stormbringer") . '', '<span>' . __("Un","stormbringer") . '</span> ' . __("commentaire","stormbringer") . '', '<span>%</span> ' . __("commentaires","stormbringer") );?> <?php _e("sur","stormbringer"); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 
 	<ol class="commentlist">
 		<?php wp_list_comments('type=comment&callback=stormbringer_comments'); ?>
@@ -26,8 +26,8 @@ The comments page for Bones
 	
 	<nav id="comment-nav">
 		<ul class="clearfix">
-	  		<li><?php previous_comments_link( __("Older comments","bonestheme") ) ?></li>
-	  		<li><?php next_comments_link( __("Newer comments","bonestheme") ) ?></li>
+	  		<li><?php previous_comments_link( __("Précédents commentaires","stormbringer") ) ?></li>
+	  		<li><?php next_comments_link( __("Commentaires suivants","stormbringer") ) ?></li>
 		</ul>
 	</nav>
   
@@ -41,7 +41,7 @@ The comments page for Bones
 	
 
 			<!-- If comments are closed. -->
-			<p class="alert alert-info"><?php _e("Comments are closed","bonestheme"); ?>.</p>
+			<p class="alert alert-info comments-closed"><?php _e("Les commentaires sont fermés","stormbringer"); ?>.</p>
 			
 
 	<?php endif; ?>
@@ -53,15 +53,15 @@ The comments page for Bones
 
 <section id="respond" class="respond-form">
 
-	<h3 id="comment-form-title"><?php comment_form_title( __("Leave a Reply","bonestheme"), __("Leave a Reply to","bonestheme") . ' %s' ); ?></h3>
+	<h3 id="comment-form-title"><?php comment_form_title( __("Laisser un commentaire","stormbringer"), __("Laisse un commentaire en réponse à","stormbringer") . ' %s' ); ?></h3>
 
 	<div id="cancel-comment-reply">
-		<p class="small"><?php cancel_comment_reply_link( __("Cancel","bonestheme") ); ?></p>
+		<p class="small"><?php cancel_comment_reply_link( __("Annuler","stormbringer") ); ?></p>
 	</div>
 
 	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
   	<div class="help">
-  		<p><?php _e("You must be","bonestheme"); ?> <a href="<?php echo wp_login_url( get_permalink() ); ?>"><?php _e("logged in","bonestheme"); ?></a> <?php _e("to post a comment","bonestheme"); ?>.</p>
+  		<p><?php _e("Vous devez être","stormbringer"); ?> <a href="<?php echo wp_login_url( get_permalink() ); ?>"><?php _e("identifié","stormbringer"); ?></a> <?php _e("pour laisser un commentaire","stormbringer"); ?>.</p>
   	</div>
 	<?php else : ?>
 
@@ -69,7 +69,7 @@ The comments page for Bones
 
 	<?php if ( is_user_logged_in() ) : ?>
 
-	<p class="comments-logged-in-as"><?php _e("Logged in as","bonestheme"); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e("Log out of this account","bonestheme"); ?>"><?php _e("Log out","bonestheme"); ?> &raquo;</a></p>
+	<p class="comments-logged-in-as"><?php _e("Identifié en tant que","stormbringer"); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e("Se déconnecter de ce compte","stormbringer"); ?>"><?php _e("Se déconnecter","stormbringer"); ?> &raquo;</a></p>
 
 	<?php else : ?>
 	
@@ -77,25 +77,25 @@ The comments page for Bones
 		
 		<li>
 			<div class="control-group">
-			  <label for="author"><?php _e("Name","bonestheme"); ?> <?php if ($req) echo "(required)"; ?></label>
-			  <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e("Your Name","bonestheme"); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+			  <label for="author"><?php _e("Nom","stormbringer"); ?> <?php if ($req) _e("(obligatoire)","stormbringer"); ?></label>
+			  <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input class="input-small" type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e("Votre nom","stormbringer"); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
 			  </div>
 		  	</div>
 		</li>
 		
 		<li>
 			<div class="control-group">
-			  <label for="email"><?php _e("Mail","bonestheme"); ?> <?php if ($req) echo "(required)"; ?></label>
-			  <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span><input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Your Email","bonestheme"); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-			  	<span class="help-inline">(<?php _e("will not be published","bonestheme"); ?>)</span>
+			  <label for="email"><?php _e("Email","stormbringer"); ?> <?php if ($req) _e("(obligatoire)","stormbringer"); ?></label>
+			  <div class="input-prepend"><span class="add-on"><i class="icon-mail"></i></span><input class="input-small" type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Votre email","stormbringer"); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+			  	<span class="help-inline">(<?php _e("ne sera pas publié","stormbringer"); ?>)</span>
 			  </div>
 		  	</div>
 		</li>
 		
 		<li>
 			<div class="control-group">
-			  <label for="url"><?php _e("Website","bonestheme"); ?></label>
-			  <div class="input-prepend"><span class="add-on"><i class="icon-home"></i></span><input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e("Your Website","bonestheme"); ?>" tabindex="3" />
+			  <label for="url"><?php _e("Site web","stormbringer"); ?></label>
+			  <div class="input-prepend"><span class="add-on"><i class="icon-home"></i></span><input class="input-small" type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e("Votre site web","stormbringer"); ?>" tabindex="3" />
 			  </div>
 		  	</div>
 		</li>
@@ -103,11 +103,11 @@ The comments page for Bones
 
 	<?php endif; ?>
 	
-  <label for="comment" class="control-label"><?php _e('Comment', 'stormbringer'); ?></label>
-  <div class="input-prepend"><span class="add-on"><i class="icon-comment"></i></span><textarea placeholder="<?php _e("Your Comment Here…","bonestheme"); ?>" name="comment" id="comment" class="input-large" rows="6" tabindex="4"></textarea>
+  <label for="comment" class="control-label"><?php _e('Commentaire', 'stormbringer'); ?></label>
+  <div class="input-prepend"><span class="add-on"><i class="icon-comments"></i></span><textarea placeholder="<?php _e("Votre commentaire…","stormbringer"); ?>" name="comment" id="comment" class="input-medium" rows="6" tabindex="4"></textarea>
   </div>
 	
-  <input class="btn btn-primary" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e("Submit Comment","bonestheme"); ?>" />
+  <input class="btn btn-primary" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e("Envoyer le commentaire","stormbringer"); ?>" />
   <?php comment_id_fields(); ?>
 
 	<?php 
