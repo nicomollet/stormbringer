@@ -90,7 +90,7 @@
 		<li>
 			<div class="control-group">
 			  <label for="email"><?php _e("Email","stormbringer"); ?> <?php if ($req) _e("(obligatoire)","stormbringer"); ?></label>
-			  <div class="input-prepend"><span class="add-on"><i class="icon-mail"></i></span><input class="input-small" type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Votre email","stormbringer"); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+			  <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span><input class="input-small" type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Votre email","stormbringer"); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
 			  	<span class="help-inline">(<?php _e("ne sera pas publié","stormbringer"); ?>)</span>
 			  </div>
 		  	</div>
