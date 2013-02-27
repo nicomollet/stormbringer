@@ -168,3 +168,51 @@ function stormbringer_wp_title( $title, $sep ) {
   return $title;
 }
 add_filter( 'wp_title', 'stormbringer_wp_title', 10, 2 );
+
+/**
+ * Show an admin notice if .htaccess isn't writable
+ */
+function stormbringer_htaccess_writable() {
+  if (defined('H5BP_HTACCESS') && H5BP_HTACCESS==true) {
+    if (!is_writable(get_home_path() . '.htaccess')) {
+      if (current_user_can('administrator')) {
+      add_action('admin_notices', create_function('', "echo '<div class=\"error\"><p>" . sprintf(__('Please make sure your <a href="%s">.htaccess</a> file is writable ', 'roots'), admin_url('options-permalink.php')) . "</p></div>';"));
+    }
+    }
+  }
+}
+add_action('admin_init', 'stormbringer_htaccess_writable');
+
+/**
+ * Wrap embedded media as suggested by Readability
+ *
+ * @link https://gist.github.com/965956
+ * @link http://www.readability.com/publishers/guidelines#publisher
+ */
+function stormbringer_embed_wrap($cache, $url, $attr = '', $post_ID = '') {
+  return '<div class="embed">' . $cache . '</div>';
+}
+add_filter('embed_oembed_html', 'stormbringer_embed_wrap', 10, 4);
+add_filter('embed_googlevideo', 'stormbringer_embed_wrap', 10, 2);
+
+/**
+ * Remove unnecessary dashboard widgets
+ *
+ * @link http://www.deluxeblogtips.com/2011/01/remove-dashboard-widgets-in-wordpress.html
+ */
+function stormbringer_remove_dashboard_widgets() {
+  remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');
+  remove_meta_box('dashboard_plugins', 'dashboard', 'normal');
+  remove_meta_box('dashboard_primary', 'dashboard', 'normal');
+  remove_meta_box('dashboard_secondary', 'dashboard', 'normal');
+}
+add_action('admin_init', 'stormbringer_remove_dashboard_widgets');
+
+/**
+ * Don't return the default description in the RSS feed if it hasn't been changed
+ */
+function roots_remove_default_description($bloginfo) {
+  $default_tagline = 'Just another WordPress site';
+  return ($bloginfo === $default_tagline) ? '' : $bloginfo;
+}
+add_filter('get_bloginfo_rss', 'roots_remove_default_description');

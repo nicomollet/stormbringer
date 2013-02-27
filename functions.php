@@ -13,6 +13,7 @@ function stormbringer_support() {
   }
 
   // Front only
+  locate_template('inc/front/htaccess.php',true);
   locate_template('inc/front/analytics.php',true);
   locate_template('inc/front/bootstrap.php',true);
   locate_template('inc/front/addthis.php',true);
@@ -54,6 +55,7 @@ add_action('widgets_init', 'custom_register_sidebars' );
 // Variables
 // ********************************************
 
+define('H5BP_HTACCESS', true);
 define('BOOTSTRAP_RESPONSIVE', true);
 define("POST_EXCERPT_LENGTH", 100);
 define("ADDTHIS_PROFILE", '');
