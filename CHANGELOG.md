@@ -5,6 +5,7 @@
 * New template for attachements
 * New template page for TB styles
 * Moved sidebar containers to sidebar templates
+* Comments: now use .media-list
 
 ### 0.0.1: September 18th, 2012
 * Started the theme with Twitter Bootstrap

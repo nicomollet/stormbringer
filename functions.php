@@ -13,6 +13,7 @@ function stormbringer_support() {
   }
 
   // Front only
+  locate_template('inc/front/analytics.php',true);
   locate_template('inc/front/bootstrap.php',true);
   locate_template('inc/front/addthis.php',true);
   locate_template('inc/front/fancybox.php',true);
@@ -58,10 +59,10 @@ define('BOOTSTRAP_RESPONSIVE', true);
 define("POST_EXCERPT_LENGTH", 100);
 
 define("JQUERY_VERSION", "1.7.1");
-//define("ADDTHIS_PROFILE", "ra-502e8ca67b06ffb4");
+define("ADDTHIS_PROFILE", "");
 
 define("FANCYBOX", true);
-
+define("GOOGLE_ANALYTICS", '');
 define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')));
 
 

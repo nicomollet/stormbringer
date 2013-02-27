@@ -45,7 +45,13 @@ function stormbringer_bootstrap_css() {
       echo '<link rel="stylesheet/less" href="'.get_template_directory_uri().'/less/_application.less" media="screen,projection"/>' . "\n";
       if(BOOTSTRAP_RESPONSIVE==true)echo '<link rel="stylesheet/less" href="'.get_template_directory_uri().'/less/responsive.less" media="screen,projection"/>' . "\n";
       echo '<script src="'.get_template_directory_uri().'/js/less.js"></script>' . "\n";
-      echo "<script>less.env = 'development'; less.watch();</script>" . "\n";
+      echo "
+      <script type='text/javascript'>
+        less.env = 'development';
+        less.async = true;
+        less.poll = 100;
+        less.watch();
+      </script>";
     }
     // compile with lessphp http://leafo.net/lessphp/ for users
     else{
