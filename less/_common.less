@@ -111,3 +111,40 @@ a.edit-post{
   }
 
 }
+
+
+/* Thumbnails/Captions */
+figure {margin: 0}
+.alignleft{
+  margin-right: 20px;
+  float: left;
+  clear: left;
+}
+
+.alignright{
+  margin-left: 20px;
+  float: right;
+  clear: right;
+}
+
+.aligncenter{
+  display: block;
+  margin: 0 auto;
+}
+
+.thumbnail {
+  position: relative;
+  margin-bottom:20px;
+
+  .caption{
+    color: @white;
+    padding: 5px 9px;
+    position:absolute;
+    background:rgba(0,0,0,0.5);
+    position: absolute;left:4px; bottom:4px; right:4px;
+    h5 {
+      font-size: 16px;color: #fff
+    }
+    p { font-size: 11px;color: #fff}
+  }
+}

@@ -31,10 +31,10 @@
     </div>
 </div>
 
-<div class="modal hide do-not-print" id="modal-item" tabindex="-1" aria-hidden="true">
+<div class="modal hide fade do-not-print" id="modal-item" tabindex="-1" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <p class="modal-title"></p>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title"></h4>
   </div>
   <div class="modal-body">
     <p>Chargement…</p>

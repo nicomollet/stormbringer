@@ -11,7 +11,7 @@ $(document).ready(function() {
       title= $(this).attr('title');
     if($(this).data('modal-title')!='')
       title= $(this).data('modal-title');
-    
+
     $($(this).data('target')+' .modal-title').text(title);
     if($(this).attr('href')!='')
       $($(this).data('target')+' .modal-body').html('<iframe src="'+$(this).attr('href')+'" width="100%" height="350" frameborder="0" allowfullscreen="0"></iframe>');
