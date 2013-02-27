@@ -49,17 +49,14 @@ function stormbringer_support() {
 add_action('after_setup_theme','stormbringer_support');
 add_action('widgets_init', 'custom_register_sidebars' );
 
+
 // ********************************************
 // Variables
 // ********************************************
 
-
 define('BOOTSTRAP_RESPONSIVE', true);
-
 define("POST_EXCERPT_LENGTH", 100);
-
-define("ADDTHIS_PROFILE", "");
-
+define("ADDTHIS_PROFILE", '');
 define("FANCYBOX", true);
 define("GOOGLE_ANALYTICS", '');
 define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')));
@@ -160,12 +157,14 @@ function stormbringer_js_header() {
 add_action('wp_enqueue_scripts', 'stormbringer_js_header',50);
 
 function stormbringer_js_footer() {
+
   wp_enqueue_script('jquery-cycle','//cdnjs.cloudflare.com/ajax/libs/jquery.cycle/2.9999.8/jquery.cycle.all.min.js', array('jquery'), null, true);
   wp_enqueue_script('jquery-easing','//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', array('jquery'), null, true);
   wp_enqueue_script('jquery-mousewheel','//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js', array('jquery'), null, true);
   wp_enqueue_script('jquery-validate','//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.10.0/jquery.validate.min.js', array('jquery'), null, true);
   wp_enqueue_script('selectivizr','//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js', array(), null, true);
   wp_enqueue_script('jquery-easing','//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', array('jquery'), null, true);
+  wp_enqueue_script('bootstrap','//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.0/js/bootstrap.min.js', null, true);
 
   wp_enqueue_script('common.js', get_template_directory_uri().'/js/common.js', array('jquery'),null, true );
   wp_enqueue_script('app.js', get_template_directory_uri().'/js/app.js', array('jquery'),null, true );
@@ -201,6 +200,7 @@ function custom_tinymce_styles( $settings ) {
 }
 add_filter( 'tiny_mce_before_init', 'custom_tinymce_styles',100 );
 
+
 // ********************************************
 // Content container classes
 // ********************************************
@@ -219,35 +219,9 @@ add_filter( 'stormbringer_content_container_class', 'custom_content_container_cl
 
 
 // ********************************************
-// SEO Title
-// ********************************************
-
-function stormbringer_wp_title( $title, $sep ) {
-  global $paged, $page;
-
-  if ( is_feed() )
-    return $title;
-
-  // Add the site name.
-  $title .= get_bloginfo( 'name' );
-
-  // Add the site description for the home/front page.
-  $site_description = get_bloginfo( 'description', 'display' );
-  if ( $site_description && ( is_home() || is_front_page() ) )
-    $title = "$title $sep $site_description";
-
-  // Add a page number if necessary.
-  if ( $paged >= 2 || $page >= 2 )
-    $title = "$title $sep " . sprintf( __( 'Page %s', 'stormbringer' ), max( $paged, $page ) );
-
-  return $title;
-}
-add_filter( 'wp_title', 'stormbringer_wp_title', 10, 2 );
-
-// ********************************************
 // Addthis
 // ********************************************
-add_action( 'stormbringer_content_after', 'share_addthis', 10, 2 );
+
 function share_addthis(){
   if((!is_home() && is_singular('post')) || is_category() || is_archive()){
     echo  '
@@ -256,3 +230,4 @@ function share_addthis(){
     ';
   }
 }
+add_action( 'stormbringer_content_after', 'share_addthis', 10, 2 );

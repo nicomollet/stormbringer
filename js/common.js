@@ -1,3 +1,7 @@
+// add in-frame class
+if(self !== top){
+  document.documentElement.className ='in-iframe';
+}
 $(document).ready(function() {
 
   // Modals remote
@@ -134,7 +138,7 @@ $(document).ready(function() {
   $("ul li:last-child").addClass("last");
 
 
-  // Modals remote
+  // GRavity Forms disabled fields
   $('input[data-disabled="1"],textarea[data-disabled="1"]').each(function (e) {
     if($(this).val()!='')
       $(this).attr('readonly','readonly');

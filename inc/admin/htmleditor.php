@@ -58,7 +58,7 @@ function my_mce_before_init( $settings ) {
         	'selector' => 'a',
         	'classes' => 'btn btn-primary',
         ),
-        array(
+/*        array(
         	'title' => 'Button Info',
         	'selector' => 'a',
         	'classes' => 'btn btn-info',
@@ -82,7 +82,7 @@ function my_mce_before_init( $settings ) {
         	'title' => 'Button Inverse',
         	'selector' => 'a',
         	'classes' => 'btn btn-inverse',
-        ),
+        ),*/
 
 
     );

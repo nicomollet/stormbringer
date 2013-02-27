@@ -25,20 +25,12 @@
 
 <?php wp_head(); ?>
 
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> <?php _e('Flux RSS', 'stormbringer');?>" href="<?php echo home_url(); ?>/feed/">
-
 <?php
 // check current user
 global $current_user;
 global $user_level;
 get_currentuserinfo();
 ?>
-<script type="text/javascript">
-// add in-frame class
-if(self !== top){
-  document.documentElement.className ='in-iframe';
-}
-</script>
 </head>
 
 <body <?php body_class(''); ?> data-grid-framework="bo" data-grid-color="blue" data-grid-opacity="0.5" data-grid-zindex="10" data-grid-nbcols="12">

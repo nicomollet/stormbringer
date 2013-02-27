@@ -1,7 +1,7 @@
 // Fancybox
 if(jQuery().fancybox)
 {
-// Fancybox : Parametres par defaut
+  // Fancybox : default config
   $.extend($.fn.fancybox.defaults, {
     padding : 20,
     margin :20,
