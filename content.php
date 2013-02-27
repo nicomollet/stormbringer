@@ -46,9 +46,9 @@
       $categories_list = get_the_category_list(__(', ','stormbringer'));
       if ($categories_list): ?>
         <p class="entry-categories">
-          <?php if ($categories_list) printf(__('<span class="%1$s"><i class="icon-book"></i> Catégories&nbsp;:</span> %2$s', 'stormbringer'), 'intro', $categories_list);?>
+          <?php printf(__('<span class="%1$s"><i class="icon-book"></i> Catégories&nbsp;:</span> %2$s', 'stormbringer'), 'intro', $categories_list);?>
         </p>
-      <?php endif; // End if categories ?>
+      <?php endif; // End if $categories_list ?>
 
       <?php
       $tags_list = get_the_tag_list('', __(', ','stormbringer'));
@@ -65,17 +65,20 @@
   <!-- /.entry-meta -->
 
   <section class="entry-content">
+
     <?php do_action( 'stormbringer_content_before' ); ?>
+
     <?php the_post_thumbnail('medium'); ?>
     <?php if (is_archive() || is_search()) { ?>
       <?php echo get_the_excerpt(); ?>
     <?php } else { ?>
       <?php the_content(); ?>
     <?php } ?>
+
     <?php do_action( 'stormbringer_content_after' ); ?>
+
   </section>
   <!-- /.entry-content -->
 
 </article>
 <!-- /#post -->
-    

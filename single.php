@@ -17,9 +17,10 @@
     <?php $format = get_post_format();
       if ( false === $format )
       $format = 'standard';
+      if(is_attachment())$format = 'image';
       get_template_part( 'content', $format );
     ?>
-    <?php get_template_part( 'archive', 'author'); ?>
+    <?php if(!is_attachment())get_template_part( 'archive', 'author'); ?>
     <?php
     // If comments are open or we have at least one comment, load up the comment template
     if ( comments_open() || 0 != get_comments_number() )

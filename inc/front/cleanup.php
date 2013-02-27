@@ -102,6 +102,11 @@ function add_filters($tags, $function) {
   }
 }
 
+function is_element_empty($element) {
+  $element = trim($element);
+  return empty($element) ? false : true;
+}
+
 // Disable rel=next on home
 function wpseo_disable_rel_next_home( $link ) {
   if ( is_home() ) {

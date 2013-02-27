@@ -1,102 +1,110 @@
 <?php
-
 /**
- * Main Menu Walker - Thanks to Alien Ship (http://www.johnparris.com/alienship)
+ * Cleaner walker for wp_nav_menu()
+ *
+ * Walker_Nav_Menu (WordPress default) example output:
+ *   <li id="menu-item-8" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8"><a href="/">Home</a></li>
+ *   <li id="menu-item-9" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9"><a href="/sample-page/">Sample Page</a></l
+ *
+ * stormbringer_Nav_Walker example output:
+ *   <li class="menu-home"><a href="/">Home</a></li>
+ *   <li class="menu-sample-page"><a href="/sample-page/">Sample Page</a></li>
  */
-class stormbringer_Navbar_Nav_Walker extends Walker_Nav_Menu
-{
-  function start_el(&$output, $item, $depth, $args)
-  {
-    global $wp_query;
-    $indent = ($depth) ? str_repeat("\t", $depth) : '';
-
-    $class_names = $value = '';
-
-    // If the item has children, add the dropdown class for bootstrap
-    if ($args->has_children) {
-      $class_names = "dropdown ";
-    }
-
-    $classes = empty($item->classes) ? array() : (array)$item->classes;
-
-    $class_names .= join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item));
-    $class_names = ' class="' . esc_attr($class_names) . '"';
-
-    $output .= $indent . '<li id="' . $args->menu . '_menu_item_' . $item->ID . '"' . $value . $class_names . '>';
-
-    $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
-    $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
-    $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
-    $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
-    // if the item has children add these two attributes to the anchor tag
-    if ($args->has_children) {
-      $attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
-    }
-
-    $item_output = $args->before;
-    $item_output .= '<a' . $attributes . '>';
-    $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID);
-    $item_output .= $args->link_after;
-    // if the item has children add the caret just before closing the anchor tag
-    if ($args->has_children) {
-      $item_output .= '<b class="caret"></b>';
-      $item_output .= '</a>';
-    }
-    else {
-      $item_output .= '</a>';
-    }
-    $item_output .= $args->after;
-
-    $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+class stormbringer_Navbar_Nav_Walker extends Walker_Nav_Menu {
+  function check_current($classes) {
+    return preg_match('/(current[-_])|active|dropdown/', $classes);
   }
 
-  function start_lvl(&$output, $depth)
-  {
-    $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"dropdown-menu\">\n";
+  function start_lvl(&$output, $depth = 0, $args = array()) {
+    $output .= "\n<ul class=\"dropdown-menu\">\n";
   }
 
-  function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output)
-  {
-    $id_field = $this->db_fields['id'];
-    if (is_object($args[0])) {
-      $args[0]->has_children = !empty($children_elements[$element->$id_field]);
+  function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+    $item_html = '';
+    parent::start_el($item_html, $item, $depth, $args);
+
+    if ($item->is_dropdown && ($depth === 0)) {
+      $item_html = str_replace('<a', '<a class="dropdown-toggle" data-toggle="dropdown" data-target="#"', $item_html);
+      $item_html = str_replace('</a>', ' <b class="caret"></b></a>', $item_html);
     }
-    return parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+    elseif (stristr($item_html, 'li class="divider')) {
+      $item_html = preg_replace('/<a[^>]*>.*?<\/a>/iU', '', $item_html);
+    }
+    elseif (stristr($item_html, 'li class="nav-header')) {
+      $item_html = preg_replace('/<a[^>]*>(.*)<\/a>/iU', '$1', $item_html);
+    }
+
+    $output .= $item_html;
   }
 
+  function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
+    $element->is_dropdown = !empty($children_elements[$element->ID]);
 
+    if ($element->is_dropdown) {
+      if ($depth === 0) {
+        $element->classes[] = 'dropdown';
+      } elseif ($depth === 1) {
+        $element->classes[] = 'dropdown-submenu';
+      }
+    }
+
+    parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+  }
 }
 
 /**
- * Top Menu fallback callback. If no menu is assigned, let's assign one - and optionally create one if needed.
- * Thanks to Alin Ship (http://www.johnparris.com/alienship)
+ * Remove the id="" on nav menu items
+ * Return 'menu-slug' for nav menu classes
  */
-function stormbringer_menu_fallback()
-{
-  $locations = get_theme_mod('nav_menu_locations');
-  if (!has_nav_menu('top') && !is_nav_menu('Blank Top Menu')) {
-    //$locations['top'] = wp_create_nav_menu('Blank Top Menu', array('slug' => 'top'));
-    set_theme_mod('nav_menu_locations', $locations);
-  } else {
-    $locations['top'] = 'Blank Top Menu';
-    set_theme_mod('nav_menu_locations', $locations);
-  }
+function stormbringer_nav_menu_css_class($classes, $item) {
+  $slug = sanitize_title($item->title);
+  $classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'active', $classes);
+  $classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
+
+  $classes[] = 'menu-' . $slug;
+
+  $classes = array_unique($classes);
+
+  return array_filter($classes, 'is_element_empty');
 }
+add_filter('nav_menu_css_class', 'stormbringer_nav_menu_css_class', 10, 2);
+add_filter('nav_menu_item_id', '__return_null');
+
+/**
+ * Clean up wp_nav_menu_args
+ *
+ * Remove the container
+ * Use stormbringer_Nav_Walker() by default
+ */
+function stormbringer_nav_menu_args($args = '') {
+  $stormbringer_nav_menu_args['container'] = false;
+
+  if (!$args['items_wrap']) {
+    $stormbringer_nav_menu_args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
+  }
+
+  if (current_theme_supports('bootstrap-top-navbar')) {
+    $stormbringer_nav_menu_args['depth'] = 3;
+  }
+
+  //if (!$args['walker']) {
+    //$stormbringer_nav_menu_args['walker'] = new stormbringer_Nav_Walker();
+  //}
+
+  return array_merge($args, $stormbringer_nav_menu_args);
+}
+add_filter('wp_nav_menu_args', 'stormbringer_nav_menu_args');
 
 // add order class to first levels or a menu
 function stormbringer_menu_order($items)
 {
-
   $i = 0;
   foreach ($items as $key => $value) {
     if ($value->menu_item_parent == 0) {
       $i++;
-      $items[$key]->classes[] = 'menu_order_' . $i;
+      $items[$key]->classes[] = 'order-' . $i;
     }
-
   }
   return $items;
 }
-
 add_filter('wp_nav_menu_objects', 'stormbringer_menu_order');
