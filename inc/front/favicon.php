@@ -1,6 +1,6 @@
 <?php
 function favicon() {
-  echo "\n". '<!-- favicon -->' . "\n";
+  echo "\n". '<!-- Favicon -->' . "\n";
   echo '<link rel="icon" href="/favicon.ico" type="image/x-icon"/>' . "\n";
   echo '<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon"/>' . "\n";
   echo '<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>' . "\n";

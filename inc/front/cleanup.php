@@ -13,10 +13,7 @@ function stormbringer_head_cleanup() {
   add_filter( 'excerpt_more', 'mc_auto_excerpt_more' );
   add_filter( 'get_the_excerpt', 'stormbringer_excerpt_more',500 );
   add_filter( 'wpseo_next_rel_link', 'wpseo_disable_rel_next_home' );
-	if (!is_admin()) {
-		wp_deregister_script('jquery');                                   // De-Register jQuery
-		wp_register_script('jquery', '', '', '', true);
-	}
+
 
 }
 add_action('init', 'stormbringer_head_cleanup');

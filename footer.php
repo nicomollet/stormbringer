@@ -33,7 +33,8 @@
 
 <?php //get_template_part('modal', 'login'); ?>
 
-<?php wp_footer(); // js scripts are inserted using this function ?>
+<?php wp_footer(); ?>
+
 <script type="text/javascript">
 var template_url = '<?php bloginfo("template_url"); ?>';
 </script>

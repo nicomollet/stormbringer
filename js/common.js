@@ -50,7 +50,7 @@ $(document).ready(function() {
     });
 
     // ajaxload fancybox
-    $('a.fancybox-ajaxload').live('click', function() {
+    $('a.fancybox-ajaxload').on('click', function() {
         href = $(this).attr('href');
         box_from = '#content';
         fancybox_ajaxload(href, box_from,"fancybox-ajaxinner");
@@ -122,10 +122,10 @@ $(document).ready(function() {
   }
 
   // Open external links in a new window or tab
-  $('a[rel$="external"]').live('click', function() {
+  $('a[rel$="external"]').on('click', function() {
     $(this).attr('target', "_blank");
   });
-  $("a[href^='http:']:not([href*='" + window.location.host + "'])").live('click', function() {
+  $("a[href^='http:']:not([href*='" + window.location.host + "'])").on('click', function() {
     $(this).attr("target", "_blank");
   });
 

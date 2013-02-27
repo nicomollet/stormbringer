@@ -1,37 +1,6 @@
 <?php
 
 
-// -------------------------------------------------------
-// JS header
-
-function stormbringer_modernizr_js_header() {
-  wp_enqueue_script('modernizr.js', get_template_directory_uri().'/js/modernizr.js', array(),false, false );
-
-}
-add_action('wp_enqueue_scripts', 'stormbringer_modernizr_js_header',50);
-
-
-
-// -------------------------------------------------------
-// JS footer
-
-function stormbringer_jquery_js_header() {
-    if (!is_admin()) {
-      echo '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.JQUERY_VERSION.'/jquery.min.js"></script>' . "\n";
-      echo '<script>window.jQuery || document.write(\'<script src="'.get_template_directory_uri().'/js/jquery.js"><\/script>\')</script>' . "\n";
-
-    }
-}
-add_action('wp_head', 'stormbringer_jquery_js_header',0);
-
-
-function stormbringer_bootstrap_js_footer() {
-  wp_enqueue_script('bootstrap.min.js', get_template_directory_uri().'/js/bootstrap.js', array('jquery'),'2.03', true );
-  wp_enqueue_script('common.js', get_template_directory_uri().'/js/common.js', array('jquery'),false, true );
-  wp_enqueue_script('app.js', get_template_directory_uri().'/js/app.js', array('jquery'),false, true );
-
-}
-add_action('wp_enqueue_scripts', 'stormbringer_bootstrap_js_footer',100);
 
 
 // -------------------------------------------------------
@@ -40,37 +9,32 @@ add_action('wp_enqueue_scripts', 'stormbringer_bootstrap_js_footer',100);
 function stormbringer_bootstrap_css() {
 
 
-    // less.js for admin (developemet only)
-    if ( current_user_can('administrator') && (ENVIRONMENT == "dev" || ENVIRONMENT == "local")) {
-      echo '<link rel="stylesheet/less" href="'.get_template_directory_uri().'/less/_application.less" media="screen,projection"/>' . "\n";
-      if(BOOTSTRAP_RESPONSIVE==true)echo '<link rel="stylesheet/less" href="'.get_template_directory_uri().'/less/responsive.less" media="screen,projection"/>' . "\n";
-      echo '<script src="'.get_template_directory_uri().'/js/less.js"></script>' . "\n";
-      echo "
-      <script type='text/javascript'>
-        less.env = 'development';
-        less.async = true;
-        less.poll = 100;
-        less.watch();
-      </script>";
-    }
-    // compile with lessphp http://leafo.net/lessphp/ for users
-    else{
-      try {
-          lessc::ccompile(STYLESHEETPATH.'/less/_application.less', STYLESHEETPATH.'/css/application.css');
-          if(BOOTSTRAP_RESPONSIVE==true)lessc::ccompile(STYLESHEETPATH.'/less/responsive.less', STYLESHEETPATH.'/css/responsive.css');
-      } catch (exception $ex) {
-          exit('Lessc fatal error:<br />'.$ex->getMessage());
-      }
-      wp_register_style ('stormbringer-app',  get_template_directory_uri() . '/css/application.css',   array(), false,    'screen,projection' );
-      wp_enqueue_style  ('stormbringer-app');
-      if(BOOTSTRAP_RESPONSIVE==true){
-        wp_register_style ('stormbringer-responsive',  get_template_directory_uri() . '/css/responsive.css',   array(), false,    'screen,projection' );
-        wp_enqueue_style  ('stormbringer-responsive');
-      }
-    }
+// less.js for admin (developemet only)
+if ( current_user_can('administrator') && (ENVIRONMENT == "dev" || ENVIRONMENT == "local")) {
+  echo '<!-- Less -->' . "\n";
+  echo '<link rel="stylesheet/less" href="'.get_template_directory_uri().'/less/_application.less" media="screen,projection"/>' . "\n";
+  if(BOOTSTRAP_RESPONSIVE==true)echo '<link rel="stylesheet/less" href="'.get_template_directory_uri().'/less/responsive.less" media="screen,projection"/>' . "\n";
+  echo '<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.3.3/less.min.js"></script>' . "\n";
+  echo "<script type='text/javascript'>less.env = 'development';less.async = true;less.poll = 100;less.watch();</script>" . "\n";
+}
+// compile with lessphp http://leafo.net/lessphp/ for users
+else{
+  try {
+      lessc::ccompile(STYLESHEETPATH.'/less/_application.less', STYLESHEETPATH.'/css/application.css');
+      if(BOOTSTRAP_RESPONSIVE==true)lessc::ccompile(STYLESHEETPATH.'/less/responsive.less', STYLESHEETPATH.'/css/responsive.css');
+  } catch (exception $ex) {
+      exit('Lessc fatal error:<br />'.$ex->getMessage());
+  }
+  wp_register_style ('stormbringer-app',  get_template_directory_uri() . '/css/application.css',   array(), null,    'screen,projection' );
+  wp_enqueue_style  ('stormbringer-app');
+  if(BOOTSTRAP_RESPONSIVE==true){
+    wp_register_style ('stormbringer-responsive',  get_template_directory_uri() . '/css/responsive.css',   array(), null,    'screen,projection' );
+    wp_enqueue_style  ('stormbringer-responsive');
+  }
+}
 
-    wp_register_style( 'stormbringer-print',  get_template_directory_uri() . '/css/print.css',   array(), false,    'print' );
-    wp_enqueue_style( 'stormbringer-print' );
+wp_register_style( 'stormbringer-print',  get_template_directory_uri() . '/css/print.css',   array(), null,    'print' );
+wp_enqueue_style( 'stormbringer-print' );
 }
 add_action('wp_enqueue_scripts', 'stormbringer_bootstrap_css',10);
 
