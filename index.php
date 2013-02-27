@@ -52,9 +52,6 @@
 </div>
 <!-- /#content -->
 
-<aside id="sidebar" class="<?php echo apply_filters('stormbringer_sidebar_container_class', 'span3'); ?>" role="complementary">
-  <?php get_sidebar(); ?>
-</aside>
-<!-- /#sidebar -->
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
