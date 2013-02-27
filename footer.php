@@ -21,7 +21,7 @@
     </div>
   </div>
 </footer>
-  <!-- /#footer -->
+<!-- /#footer -->
 
 <div id="fancybox-ajaxcontainer">
     <div id="fancybox-ajaxcontent">
@@ -30,6 +30,17 @@
         </div>
     </div>
 </div>
+
+<div class="modal hide do-not-print" id="modal-item" tabindex="-1" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <p class="modal-title"></p>
+  </div>
+  <div class="modal-body">
+    <p>Chargement…</p>
+  </div>
+</div>
+<!-- /#modal-item -->
 
 <?php //get_template_part('modal', 'login'); ?>
 
