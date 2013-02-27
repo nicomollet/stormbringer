@@ -3,7 +3,7 @@
  * The template for displaying a Sitemap.
  *
  * @package StormBringer
- * @since StormBringer 0.1
+ * @since StormBringer 0.0.1
  *
  * Template Name: Sitemap
  */
@@ -35,55 +35,36 @@
       </div>
 
       <div class="span6">
-        <h3><?php _e('Solutions', 'stormbringer') ?></h3>
-        <ul>
-          <?php
-          $args = array('numberposts' => -1, 'post_type' => 'solution', 'orderby' => 'post_title', 'order' => 'ASC', 'suppress_filters' => 0);
-          $clients = get_posts($args);
-          $i = 0;
-          if ($clients) {
-            foreach ($clients as $post) :
-              setup_postdata($post);
-              ?>
-              <li><a href="<?php the_permalink();?>"><?php the_title();?></a></li>
-              <?php
-            endforeach;
-          }
-          ?>
-        </ul>
-        <h3><?php _e('Clients', 'stormbringer') ?></h3>
-        <ul>
-          <?php
-          $args = array('numberposts' => -1, 'post_type' => 'client', 'orderby' => 'post_title', 'order' => 'ASC', 'suppress_filters' => 0);
-          $clients = get_posts($args);
-          $i = 0;
-          if ($clients) {
-            foreach ($clients as $post) :
-              setup_postdata($post);
-              ?>
-              <li><a href="<?php the_permalink();?>" class="fancybox-frame"><?php the_title();?></a></li>
-              <?php
-            endforeach;
-          }
-          ?>
-        </ul>
-        <h3><?php _e('Partenaires', 'stormbringer') ?></h3>
-        <ul>
-          <?php
-          $args = array('numberposts' => -1, 'post_type' => 'partner', 'orderby' => 'post_title', 'order' => 'ASC', 'suppress_filters' => 0);
-          $clients = get_posts($args);
-          $i = 0;
-          if ($clients) {
-            foreach ($clients as $post) :
-              setup_postdata($post);
-              ?>
-              <li><a href="<?php the_permalink();?>" class="fancybox-frame"><?php the_title();?></a></li>
-              <?php
-            endforeach;
-          }
-          ?>
-        </ul>
+
+        <?php
+        $args=array(
+          'public'   => true,
+          '_builtin' => false
+        );
+        $output = 'objects'; // names or objects, note names is the default
+        $operator = 'and'; // 'and' or 'or'
+        $post_types=get_post_types($args,$output,$operator);
+        foreach ($post_types as $post_type ) : ?>
+          <h3><?php echo $post_type->labels->name; ?></h3>
+          <ul>
+            <?php
+            $args = array('numberposts' => -1, 'post_type' => $post_type->name, 'orderby' => 'post_title', 'order' => 'ASC', 'suppress_filters' => 0);
+            $posts = get_posts($args);
+            $i = 0;
+            if ($posts) {
+              foreach ($posts as $post) :
+                setup_postdata($post);
+                ?>
+                <li><a href="<?php the_permalink();?>"><?php the_title();?></a></li>
+                <?php
+              endforeach;
+            }
+            ?>
+          </ul>
+        <?php endforeach;?>
+
       </div>
+
     </div>
   </section>
   <!-- /.sitemap-content -->
