@@ -1,32 +1,33 @@
 <?php
 // Comment Layout
 function stormbringer_comments($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment; ?>
-	<li <?php comment_class(); ?>>
-		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
-			<div class="comment-author vcard row-fluid clearfix">
-				<div class="avatar span3">
-					<?php echo get_avatar($comment,80 ); ?>
-				</div>
-				<div class="span8 offset1 comment-text">
-					<?php printf(__('<h4>%s</h4>','stormbringer'), get_comment_author_link()) ?>
-					<?php edit_comment_link(__('Modifier','stormbringer'),'<span class="edit-comment btn btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
+  $GLOBALS['comment'] = $comment; ?>
+	<li <?php comment_class('media'); ?>>
+    <div class="pull-left">
+      <div class="comment-avatar vcard">
+        <?php echo get_avatar($comment,apply_filters('twentyeleven_author_bio_avatar_size', 100) ); ?>
+      </div>
+    </div>
+    <!-- /.comment-avatar -->
+    <div class="media-body">
+      <div class="comment-message">
+        <?php printf(__('<h4 class="media-heading">%s</h4>','stormbringer'), get_comment_author_link()) ?>
+        <?php edit_comment_link(__('Modifier','stormbringer'),'<span class="edit-comment btn btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
 
-                    <?php if ($comment->comment_approved == '0') : ?>
-       					<div class="alert-message success">
-          				<p><?php _e('Votre commentaire est en cours de modération.','stormbringer') ?></p>
-          				</div>
-					      <?php endif; ?>
+        <?php if ($comment->comment_approved == '0') : ?>
+          <div class="alert-message success">
+            <p><?php _e('Votre commentaire est en cours de modération.','stormbringer') ?></p>
+          </div>
+        <?php endif; ?>
 
-                    <?php comment_text() ?>
+        <?php comment_text() ?>
 
-                    <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
 
-                    <!-- removing reply link on each comment since we're not nesting them -->
-					<?php //comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-                </div>
-			</div>
-		</article>
+      </div>
+    </div>
+    <!-- /.comment-message	-->
+
     <!-- </li> is added by wordpress automatically -->
 <?php
 } // don't remove this bracket!

@@ -1,7 +1,7 @@
+/* Common text styles */
 .underline {text-decoration: underline}
 .bold{font-weight: bold;}
 .thin{font-weight: normal;}
-
 
 /* Variable colors */
 .blue{color:@blue}
@@ -26,10 +26,7 @@
     color: #fff
 }
 
-
-
 /* Fancybox */
-
 #fancybox-ajaxcontainer{
   display: none;
 
@@ -39,14 +36,12 @@
   .breadcrumb{display: none;}
   .entry-meta{display: none}
 }
-
 #fancybox-loadingicon{margin: 150px 45% 0 45%}
 #fancybox-frame{
     background:url('../img/ajax-loader.gif') #fff  no-repeat 50% 50% !important;
 }
 
-
-// hide elements when displayed in iframe
+/* Iframe load */
 .in-iframe{
   margin:0 !important;
   body{border:none;margin: 0;}
@@ -63,6 +58,39 @@
   }
 }
 
+/* Emulate table 100% width */
 .emulate-table{display: table; width: 100%}
 .emulate-table-row{display: table-row}
 .emulate-table-cell{display: table-cell;vertical-align: top;}
+
+
+/* Comments */
+.edit-comment{
+  color: @white;
+}
+.comment-message .edit-comment{
+  display: inline-block;
+}
+
+/* Page template "Styles" */
+.bs-docs-example:after {
+  background-color: #F5F5F5;
+  border: 1px solid #DDDDDD;
+  .border-radius(4px 0 4px 0);
+  color: #9DA0A4;
+  content: "Example";
+  font-size: 12px;
+  font-weight: bold;
+  left: -1px;
+  padding: 3px 7px;
+  position: absolute;
+  top: -1px;
+}
+.bs-docs-example {
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  .border-radius(4px);
+  margin: 15px 0;
+  padding: 39px 19px 14px;
+  position: relative;
+}
