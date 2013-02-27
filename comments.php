@@ -8,7 +8,7 @@
  * located in the inc/template-tags.php file.
  *
  * @package StormBringer
- * @since StormBringer 0.1
+ * @since StormBringer 0.0.1
  */
 ?>
 

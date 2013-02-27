@@ -3,7 +3,7 @@
  * The template for displaying a Search Form
  *
  * @package StormBringer
- * @since StormBringer 0.1
+ * @since StormBringer 0.0.1
  */
 ?>
 <form action="<?php echo home_url( '/' ); ?>" method="get" class="form-stacked">

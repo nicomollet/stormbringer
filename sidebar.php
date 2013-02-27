@@ -3,7 +3,7 @@
  * The template for displaying the default Sidebar.
  *
  * @package StormBringer
- * @since StormBringer 0.1
+ * @since StormBringer 0.0.1
  */
 ?>
 <aside id="sidebar" class="<?php echo apply_filters('stormbringer_sidebar_container_class', 'span3'); ?>" role="complementary">

@@ -3,7 +3,7 @@
  * The template for displaying a Timeline.
  *
  * @package StormBringer
- * @since StormBringer 0.1
+ * @since StormBringer 0.0.1
  *
  * Template Name: Timeline
  */

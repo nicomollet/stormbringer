@@ -3,7 +3,7 @@
  * The template for displaying Twitter Bootstrap Styles.
  *
  * @package StormBringer
- * @since StormBringer 0.1
+ * @since StormBringer 0.0.1
  *
  * Template Name: Styles
  */

@@ -3,7 +3,7 @@
  * The template for displaying a 404 content.
  *
  * @package StormBringer
- * @since StormBringer 0.1
+ * @since StormBringer 0.0.1
  */
 ?>
 

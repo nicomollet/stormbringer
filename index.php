@@ -3,7 +3,7 @@
  * The template for displaying a default Homepage with last posts.
  *
  * @package StormBringer
- * @since StormBringer 0.1
+ * @since StormBringer 0.0.1
  */
 ?>
 

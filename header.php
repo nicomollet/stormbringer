@@ -3,7 +3,7 @@
  * The template for displaying the Header.
  *
  * @package StormBringer
- * @since StormBringer 0.1
+ * @since StormBringer 0.0.1
  */
 ?>
 <!doctype html>
