@@ -1,5 +1,5 @@
 <?php
-
+//test
 // Adding WP 3+ Functions & Theme Support
 function stormbringer_support() {
 
