@@ -1,6 +1,21 @@
 <?php
 
-// Adding WP 3+ Functions & Theme Support
+// ********************************************
+// Variables
+// ********************************************
+
+define('H5BP_HTACCESS', true);
+define('BOOTSTRAP_RESPONSIVE', true);
+define("POST_EXCERPT_LENGTH", 100);
+define("ADDTHIS_PROFILE", '');
+define("LIGHTBOX", 'tbmodal'); // tbmodal or fancybox
+define("GOOGLE_ANALYTICS", '');
+define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')));
+
+
+// ********************************************
+// Theme Support
+// ********************************************
 function stormbringer_support() {
 
   locate_template('inc/front/secure.php',true);
@@ -8,17 +23,16 @@ function stormbringer_support() {
 
   // Admin only
   if(is_admin()){
+    locate_template('inc/admin/cleanup.php',true);
     locate_template('inc/admin/htmleditor.php',true);
     locate_template('inc/admin/profile.php',true);
+    locate_template('inc/admin/htaccess.php',true);
   }
 
   // Front only
-  locate_template('inc/front/htaccess.php',true);
   locate_template('inc/front/analytics.php',true);
   locate_template('inc/front/bootstrap.php',true);
   locate_template('inc/front/addthis.php',true);
-  locate_template('inc/front/fancybox.php',true);
-  locate_template('inc/plugins/gravityforms.php',true);
   locate_template('inc/front/cleanup.php',true);
   locate_template('inc/front/bodyclass.php',true);
   locate_template('inc/front/breadcrumb.php',true);
@@ -51,17 +65,6 @@ add_action('after_setup_theme','stormbringer_support');
 add_action('widgets_init', 'custom_register_sidebars' );
 
 
-// ********************************************
-// Variables
-// ********************************************
-
-define('H5BP_HTACCESS', true);
-define('BOOTSTRAP_RESPONSIVE', true);
-define("POST_EXCERPT_LENGTH", 100);
-define("ADDTHIS_PROFILE", '');
-define("FANCYBOX", true);
-define("GOOGLE_ANALYTICS", '');
-define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')));
 
 
 // ********************************************
@@ -145,21 +148,22 @@ function stormbringer_register_menus() {
 
 
 // ********************************************
-// JS
+// JS/CSS
 // ********************************************
 
 function stormbringer_js_header() {
   if (!is_admin()) {
     wp_deregister_script('jquery');
-  }
 
   wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js', array(),null, false );
   wp_enqueue_script('modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(),null, false );
 
+  }
 }
 add_action('wp_enqueue_scripts', 'stormbringer_js_header',50);
 
 function stormbringer_js_footer() {
+
 
   //wp_enqueue_script('jquery-cycle','//cdnjs.cloudflare.com/ajax/libs/jquery.cycle/2.9999.8/jquery.cycle.all.min.js', array('jquery'), null, true);
   //wp_enqueue_script('jquery-easing','//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', array('jquery'), null, true);
@@ -174,6 +178,9 @@ function stormbringer_js_footer() {
   //wp_enqueue_script('bootstrap-datepicker','//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.0.0/js/bootstrap-datepicker.min.js', array('bootstrap'), null, true);
   //wp_enqueue_script('bootstrap-growl','//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js', array('bootstrap'), null, true);
 
+  if(LIGHTBOX=='fancybox')
+    wp_enqueue_script('jquery.fancybox.js', get_template_directory_uri().'/js/fancybox/jquery.fancybox-1.3.4_patch.js', array('jquery'),null, true );
+
   //wp_enqueue_script('bootstrap-modal', get_template_directory_uri().'/js/bootstrap-modal.js', array('bootstrap'),null, true );
   //wp_enqueue_script('bootstrap-modalmanager', get_template_directory_uri().'/js/bootstrap-modalmanager.js', array('bootstrap'),null, true );
   wp_enqueue_script('bootstrap-loadimage', get_template_directory_uri().'/js/bootstrap-loadimage.js', array('bootstrap','jquery'),null, true );
@@ -184,7 +191,13 @@ function stormbringer_js_footer() {
 }
 add_action('wp_enqueue_scripts', 'stormbringer_js_footer',300);
 
-
+function stormbringer_css() {
+  if(LIGHTBOX=='fancybox'){
+    wp_register_style( 'fancybox',  get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css', array(), null, 'screen,projection' );
+    wp_enqueue_style( 'fancybox' );
+  }
+}
+add_action('wp_enqueue_scripts', 'stormbringer_css',0);
 
 // ********************************************
 // HTML editor styles

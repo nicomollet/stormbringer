@@ -1035,12 +1035,12 @@
     <h2>Code</h2>
   </div>
 
-  <h2>Inline</h2>
+  <h3>Inline</h3>
 
   <div class="bs-docs-example">
     For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   </div>
-  <h2>Basic block</h2>
+  <h3>Basic block</h3>
 
   <p>Use <code>&lt;pre&gt;</code> for multiple lines of code. Be sure to escape any angle brackets in the code for
     proper rendering.</p>
