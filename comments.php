@@ -103,8 +103,7 @@
 	<?php endif; ?>
 	
   <label for="comment" class="control-label"><?php _e('Commentaire', 'stormbringer'); ?></label>
-  <div class="input-prepend"><span class="add-on"><i class="icon-comment"></i></span><textarea placeholder="<?php _e("Votre commentaire…","stormbringer"); ?>" name="comment" id="comment" class="input-large" rows="6" tabindex="4"></textarea>
-  </div>
+  <textarea placeholder="<?php _e("Votre commentaire…","stormbringer"); ?>" name="comment" id="comment" class="input-large" rows="6" tabindex="4"></textarea>
 
   <div class="form-actions">
     <input class="btn btn-primary" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e("Envoyer le commentaire","stormbringer"); ?>" />

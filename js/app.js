@@ -20,6 +20,4 @@ if(jQuery().fancybox)
 $(document).ready(function() {
 
 
-  
-
 });

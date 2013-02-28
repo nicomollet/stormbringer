@@ -1,0 +1,44 @@
+
+@color1: #5F084B;
+@color2: #472255;
+@color3: #2F3C5E;
+@color4: #175567;
+@color5: #006F71;
+
+
+@bodyBackground:        #f5f5f5;
+@linkColor:             @color5;
+@linkColorHover:        darken(@linkColor, 10%);
+
+@inputBorder:                   lighten(@color3, 40%);
+.input-append,
+.input-prepend {
+  .add-on{border-color: lighten(@color3, 40%);background: @white}
+}
+.input-append input{border-right: none;}
+.input-prepend input{border-left: none;}
+
+@btnPrimaryBackground:              @color3;
+@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);;
+
+// Inverted navbar
+@navbarInverseText:                      @white;
+@navbarInverseLinkColor:                 @white;
+@navbarInverseLinkColorHover:            @grayLighter;
+
+@navbarInverseBackgroundHighlight:       @color1;
+@navbarInverseBackground:                darken(@navbarInverseBackgroundHighlight, 5%);
+@navbarInverseBorder:                    darken(@navbarInverseBackground, 12%);
+
+@heroUnitBackground:              @color5;
+@heroUnitHeadingColor:            @white;
+@heroUnitLeadColor:               @white;
+
+@wellBackground:                  @white;
+
+@hrBorder:                @color4;
+.breadcrumb{background: @white}
+.page-header, .form-actions{border-color: @white}
+.thumbnail{background: @white}
+#footer .container{border-top: 1px solid @white}
+.modal{background: @bodyBackground}

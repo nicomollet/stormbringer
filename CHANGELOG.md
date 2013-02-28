@@ -1,5 +1,8 @@
 ### HEAD
 * Replace Fancybox by a better lightbox, compaible with TB, responsive, and compatible with iPad
+* Create variable to load modal : bootstrap, fancybox 1 or none
+* Modal compatible with Gravity Forms
+* Make a poll plugin compatible with TB
 
 ### 0.0.2: February 27th, 2013
 * New template for attachements

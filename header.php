@@ -31,9 +31,15 @@ global $current_user;
 global $user_level;
 get_currentuserinfo();
 ?>
+<script type="text/javascript">
+// add in-frame class
+if(self !== top){
+  document.documentElement.className ='in-frame';
+}
+</script>
 </head>
 
-<body <?php body_class(''); ?> data-grid-framework="bo" data-grid-color="blue" data-grid-opacity="0.5" data-grid-zindex="10" data-grid-nbcols="12">
+<body <?php body_class(''); ?> data-grid-framework="bo" data-grid-color="yellow" data-grid-opacity="0.2" data-grid-zindex="-30" data-grid-nbcols="12">
 
 <!--[if lt IE 7]>
 <p id="browsernotsupported"><?php _e('Votre navigateur est obsolète, <a href="http://browsehappy.com/">téléchargez un navigateur plus moderne</a> pour une bonne utilisation de ce site.', 'stormbringer');?>
@@ -64,6 +70,7 @@ get_currentuserinfo();
         </div><!-- #main-nav -->
 
       </header>
+
     </div>
   </div>
 </div>

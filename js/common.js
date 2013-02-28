@@ -1,21 +1,104 @@
-// add in-frame class
-if(self !== top){
-  document.documentElement.className ='in-iframe';
-}
 $(document).ready(function() {
 
-  // Modals remote
-  $('a[data-toggle="modal"]').click(function (e) {
-    title='Info';
+  // Modal, remove frame content on hiding
+  $('.modal').bind('hide', function () {
+    var iframe = $(this).children('div.modal-body').find('iframe');
+    iframe.attr('src', '');
+  });
+
+  // Modal simgle image open by class
+  $( ".modal-open-image" ).click(function (e) {
+
+    var rand = $.Random(0,100);
+    $(this).attr('id','randomlink-'+rand);
+    $(this).data('selector','#randomlink-'+rand);
+    $(this).data('toggle','modal-gallery');
+    $(this).data('target','#modal-gallery');
+
+    var $this = $(this),
+      options = $this.data(),
+      modal = $(options.target),
+      data = modal.data('modal'),
+      link;
+
+    link = $(e.target).closest(options.selector);
+
+    if (link.length && modal.length) {
+      e.preventDefault();
+      options.href = link.prop('href') || link.data('href');
+      options.delegate = link[0] !== this ? this : document;
+      if (data) {
+        $.extend(data.options, options);
+      }
+      modal.modal(options);
+    }
+
+  });
+
+
+  // Modal gallery open by class
+  $( ".modal-open-gallery" ).click(function (e) {
+
+    $(this).data('selector','.modal-open-gallery');
+    $(this).data('toggle','modal-gallery');
+    $(this).data('target','#modal-gallery');
+
+    var $this = $(this),
+      options = $this.data(),
+      modal = $(options.target),
+      data = modal.data('modal'),
+      link;
+
+    link = $(e.target).closest(options.selector);
+
+    if (link.length && modal.length) {
+      e.preventDefault();
+      options.href = link.prop('href') || link.data('href');
+      options.delegate = link[0] !== this ? this : document;
+      if (data) {
+        $.extend(data.options, options);
+      }
+      modal.modal(options);
+    }
+
+  });
+
+
+  // Modal frame
+  //$('a[data-toggle="modal"]').click(function (e) {
+  $('a.modal-open-frame').click(function (e) {
+    height = $(this).data('height');
+    target = $(this).data('target');
+    target = '#modal-default';
+    title='';
     if($(this).attr('title')!='')
       title= $(this).attr('title');
-    if($(this).data('modal-title')!='')
-      title= $(this).data('modal-title');
+    else
+      if($(this).data('modal-title')!='')
+        title= $(this).data('modal-title');
 
-    $($(this).data('target')+' .modal-title').text(title);
-    if($(this).attr('href')!='')
-      $($(this).data('target')+' .modal-body').html('<iframe src="'+$(this).attr('href')+'" width="100%" height="350" frameborder="0" allowfullscreen="0"></iframe>');
+    $(target+' .modal-title').text(title);
+    if($(this).attr('href')!=''){
+      $('#modal-frame').attr('src','');
+      $('#modal-frame').html('');
+      //$($(this).data('target')+' .modal-body').html('<iframe src="'+$(this).attr('href')+'" width="100%" height="350" frameborder="0" allowfullscreen="0"></iframe>');
+      //$(target+' .modal-body').html('');
+      //$modalframe =$('<iframe width="100%" height="'+height+'" id="modal-frame" name="modal-frame' + new Date().getTime() + '" frameborder="0" hspace="0" ' + (navigator.userAgent.match(/msie/i) ? 'allowtransparency="true""' : '') +  '" src="' + $(this).attr('href') + '"></iframe>');
+      //$modalframe.appendTo(target+' .modal-body');
+      $('#modal-frame').attr('src',$(this).attr('href'));
+      $('#modal-frame').load(resizeModal);
+      function resizeModal(){
+        if(!height)
+          height = Math.max($('#modal-frame').contents().find("html").height(),350);
+        $(target+' .modal-body').height( height + 15);
+      }
+      //$('<iframe id="fancybox-frame" name="fancybox-frame' + new Date().getTime() + '" frameborder="0" hspace="0" ' + (navigator.userAgent.match(/msie/i) ? 'allowtransparency="true""' : '') +  ' src="/form"></iframe>').appendTo($(this).data('target')+' .modal-body');
+    }
+    $(target).modal();
+
+    return false;
   });
+
   
   // Detect if page is open in a (i)frame, assuming in a fancybox
   if(self !== top){
@@ -133,7 +216,7 @@ $(document).ready(function() {
     $(this).attr("target", "_blank");
   });
 
-  // adds last and first classes to UL lists
+  // Adds last and first classes to UL lists
   $("ul li:first-child").addClass("first");
   $("ul li:last-child").addClass("last");
 
@@ -144,17 +227,28 @@ $(document).ready(function() {
       $(this).attr('readonly','readonly');
   });
 
+
+  /* Email obfuscation */
+  $("span.cryptemail").each(function(){
+    var spt = $(this);
+    var at = / at /;
+    var dot = / dot /g;
+    var addr = $(spt).attr("title").replace(at,"@").replace(dot,".");
+    $(spt).after('<a class="cryptemail" href="mailto:'+addr+'" alt="'+$(spt).attr("title")+'">'+addr+'</a>')
+      .hover(function(){window.status="Contact";}, function(){window.status="";});
+    $(spt).remove();
+  });
+
 });
 
-/*
-// crypt emails
-$(function(){
-  var spt = $('span.cryptemail');
-  var at = / at /;
-  var dot = / dot /g;
-  var addr = $(spt).attr("title").replace(at,"@").replace(dot,".");
-  $(spt).after('<a class="cryptemail" href="mailto:'+addr+'" alt="'+$(spt).attr("title")+'">'+addr+'</a>')
-  .hover(function(){window.status="Contact";}, function(){window.status="";});
-  $(spt).remove();
-});
-*/
+/* Randon function */
+jQuery.Random = function(m,n)
+{
+  m = parseInt(m);
+  n = parseInt(n);
+  return Math.floor( Math.random() * (n - m + 1) ) + m;
+}
+
+/* Addthis configuration */
+var addthis_config = {"data_track_clickback":false,"data_track_addressbar":false,"ui_language":"fr","ui_508_compliant":true};if (typeof(addthis_share) == "undefined"){ addthis_share = {"templates":{"twitter":"{{title}} {{url}}"}};}
+

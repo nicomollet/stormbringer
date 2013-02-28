@@ -15,7 +15,7 @@ if ( current_user_can('administrator') && (ENVIRONMENT == "dev" || ENVIRONMENT =
   echo '<link rel="stylesheet/less" href="'.get_template_directory_uri().'/less/_application.less" media="screen,projection"/>' . "\n";
   if(BOOTSTRAP_RESPONSIVE==true)echo '<link rel="stylesheet/less" href="'.get_template_directory_uri().'/less/responsive.less" media="screen,projection"/>' . "\n";
   echo '<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.3.3/less.min.js"></script>' . "\n";
-  echo "<script type='text/javascript'>less.env = 'development';less.async = true;less.poll = 100;less.watch();</script>" . "\n";
+  echo "<script type='text/javascript'>less.env = 'development';less.async = true;less.poll = 300;less.watch();</script>" . "\n";
 }
 // compile with lessphp http://leafo.net/lessphp/ for users
 else{

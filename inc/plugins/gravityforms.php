@@ -16,7 +16,6 @@ function stormbringer_gform_validation_message($message, $form)
   $message .= '</div>';
   return $message;
 }
-
 add_filter('gform_validation_message', 'stormbringer_gform_validation_message', 10, 2);
 
 /*
@@ -33,7 +32,6 @@ function stormbringer_gform_field_css_class($classes, $field, $form)
   if ($field["failed_validation"] == 1) $classes .= " error";
   return $classes;
 }
-
 add_action('gform_field_css_class', 'stormbringer_gform_field_css_class', 10, 3);
 
 /*
@@ -48,7 +46,6 @@ function stormbringer_gform_submit_button($button, $form)
       </button>
       ";
 }
-
 add_filter('gform_submit_button', 'stormbringer_gform_submit_button', 10, 2);
 
 /*
@@ -67,7 +64,6 @@ function stormbringer_gform_form_tag($form_tag, $form)
   $form_tag = preg_replace("|class='(.*?)'|", "class='" . $class . "'", $form_tag);
   return $form_tag;
 }
-
 add_filter("gform_form_tag", "stormbringer_gform_form_tag", 10, 2);
 
 
@@ -169,7 +165,6 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
 
   return $content;
 }
-
 add_filter("gform_field_content", "stormbringer_gform_field_content", 10, 5);
 
 /*
