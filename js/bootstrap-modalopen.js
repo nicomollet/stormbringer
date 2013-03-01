@@ -83,6 +83,7 @@ $(document).ready(function() {
 
   // Modal frame
   $('a.modal-open-frame').click(function (e) {
+    height=0;
     height = $(this).data('height');
     target = $(this).data('target');
     target = '#modal-default';
@@ -96,6 +97,9 @@ $(document).ready(function() {
     $(target+' .modal-title').text(title);
 
     if($(this).attr('href')!=''){
+      if(height)
+        $(target+' .modal-body').height( height + 15);
+      //$(target+' .modal-body').height( height + 15); //not animated
       $('#modal-frame').attr('src','');
       $('#modal-frame').html('');
       //$($(this).data('target')+' .modal-body').html('<iframe src="'+$(this).attr('href')+'" width="100%" height="350" frameborder="0" allowfullscreen="0"></iframe>');
@@ -107,7 +111,8 @@ $(document).ready(function() {
       function resizeModal(){
         if(!height)
           height = Math.max($('#modal-frame').contents().find("html").height(),350);
-        $(target+' .modal-body').height( height + 15);
+        //$(target+' .modal-body').height( height + 15); //not animated
+        $(target+' .modal-body').animate({height:height + 15+"px"}); // animated
       }
     }
     $(target).modal();

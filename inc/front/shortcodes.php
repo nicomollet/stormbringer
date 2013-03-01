@@ -98,12 +98,11 @@ function roots_gallery_shortcode($attr) {
     $output .= "<{$icontag} class=\"".$class."\"><div class=\"thumbnail\">";
 
     $output .=  $link;
-    if ($captiontag && trim($attachment->post_title)) {
-      $output .= "
-        <{$captiontag} class=\"caption\">
-          <{$titletag}>" . wptexturize($attachment->post_title) . "</{$titletag}>";
-       if(trim($attachment->post_excerpt))$output .= "<{$excerpttag}>" . wptexturize($attachment->post_excerpt) . "</{$excerpttag}>";
-
+    //if ($captiontag && trim($attachment->post_title)) {
+    if ($attachment->post_excerpt) {
+      $output .= "<{$captiontag} class=\"caption\">";
+      //$output .= "<{$titletag}>" . wptexturize($attachment->post_title) . "</{$titletag}>";
+      if(trim($attachment->post_excerpt))$output .= "<{$excerpttag}>" . wptexturize($attachment->post_excerpt) . "</{$excerpttag}>";
       $output .= "</{$captiontag}>";
     }
 
