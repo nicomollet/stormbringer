@@ -5,8 +5,6 @@
 * Make a poll plugin compatible with TB
 * Fix gallery page
 * Add widgets from JetPack http://jetpack.me/support/extra-sidebar-widgets/
-* Test
-* Test
 
 ### 0.0.2: February 27th, 2013
 * New template for attachements
