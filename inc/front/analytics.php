@@ -1,6 +1,5 @@
 <?php
 function stormbringer_wp_head_analytics() {
-if(defined('GOOGLE_ANALYTICS') && GOOGLE_ANALYTICS!='') :
   echo "\n". '<!-- Google Analytics Tracking -->' . "\n";
   echo '<script type="text/javascript">' . "\n";
   echo 'var analyticsFileTypes = [""];' . "\n";
@@ -17,6 +16,5 @@ if(defined('GOOGLE_ANALYTICS') && GOOGLE_ANALYTICS!='') :
   echo 'var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);' . "\n";
   echo '})();' . "\n";
   echo '</script>' . "\n";
-endif;
 }
 add_action('wp_head', 'stormbringer_wp_head_analytics',1);

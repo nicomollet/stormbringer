@@ -11,6 +11,8 @@ define("ADDTHIS_PROFILE", '');
 define("LIGHTBOX", 'tbmodal'); // tbmodal or fancybox
 define("GOOGLE_ANALYTICS", '');
 define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')));
+define('WP_POST_REVISIONS', 2); // Keep only 2 revisions (including the autosave)
+define('AUTOSAVE_INTERVAL', 900 ); // Autosave every 15 minutes
 
 
 // ********************************************
@@ -18,37 +20,38 @@ define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')
 // ********************************************
 function stormbringer_support() {
 
-  locate_template('inc/front/secure.php',true);
-  locate_template('inc/front/thumbnails.php',true);
+  locate_template('inc/front/secure.php',true);           // Secure Wordpress
+  locate_template('inc/front/thumbnails.php',true);       // Thumbnails for Bootstrap
 
   // Admin only
   if(is_admin()){
-    locate_template('inc/admin/cleanup.php',true);
-    locate_template('inc/admin/htmleditor.php',true);
-    locate_template('inc/admin/profile.php',true);
-    locate_template('inc/admin/htaccess.php',true);
+    locate_template('inc/admin/cleanup.php',true);        // Clean admin
+    locate_template('inc/admin/htmleditor.php',true);     // HTML editor Bootstrap styles
+    locate_template('inc/admin/profile.php',true);        // Profile fields
+    locate_template('inc/admin/htaccess.php',true);       // HTML%Boilerplate htaccess for Apache
   }
 
   // Front only
-  locate_template('inc/front/analytics.php',true);
-  locate_template('inc/front/bootstrap.php',true);
-  locate_template('inc/front/addthis.php',true);
-  locate_template('inc/front/cleanup.php',true);
-  locate_template('inc/front/bodyclass.php',true);
-  locate_template('inc/front/breadcrumb.php',true);
-  locate_template('inc/front/comments.php',true);
-  locate_template('inc/front/favicon.php',true);
-  locate_template('inc/front/googlewebfonts.php',true);
-  locate_template('inc/front/shortcodes.php',true);
-  locate_template('inc/library/lessphp.php',true);
-  locate_template('inc/front/menu.php',true);
-  locate_template('inc/front/pagination.php',true);
-  locate_template('inc/front/widgets.php',true);
-  locate_template('inc/front/tags.php',true);
+  if(!is_admin()){
+    if(defined('GOOGLE_ANALYTICS') && GOOGLE_ANALYTICS!='')
+      locate_template('inc/front/analytics.php',true);    // Analytics tracking code
+    locate_template('inc/front/bootstrap.php',true);      // Load Bootstrap LESS or CSS
+    locate_template('inc/front/addthis.php',true);        // Sharing with Addthis
+    locate_template('inc/front/cleanup.php',true);        // Cleanup frontend
+    locate_template('inc/front/bodyclass.php',true);      // Body classes
+    locate_template('inc/front/breadcrumb.php',true);     // Breadcrumb
+    locate_template('inc/front/comments.php',true);       // Comments function
+    locate_template('inc/front/googlewebfonts.php',true); // Google Web fonts
+    locate_template('inc/front/shortcodes.php',true);     // Shortcodes for Bootstrap: alert, badge, label, button, gallery
+    locate_template('inc/library/lessphp.php',true);      // LessCss library
+    locate_template('inc/front/menu.php',true);           // Menu walker for Bootstrap nav
+    locate_template('inc/front/pagination.php',true);     // Pagination for Boostrap
+    locate_template('inc/front/widgets.php',true);        // Widgets cleanup
+  }
 
   // Plugins
-  if (class_exists('RGForms') && !is_admin()) locate_template('inc/plugins/gravityforms.php',true);
-  if(function_exists('icl_object_id') && !is_admin()) locate_template('inc/plugins/wpml.php',true);
+  if (class_exists('RGForms') && !is_admin()) locate_template('inc/plugins/gravityforms.php',true); // Gravity Forms compatibility with Boostrap
+  if(function_exists('icl_object_id') && !is_admin()) locate_template('inc/plugins/wpml.php',true); // WPML switcher for Boostrap + cleanup styles
 
   load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
 
@@ -164,6 +167,7 @@ add_action('wp_enqueue_scripts', 'stormbringer_js_header',50);
 
 function stormbringer_js_footer() {
 
+  /* Disable comments to load/unload scripts */
 
   //wp_enqueue_script('jquery-cycle','//cdnjs.cloudflare.com/ajax/libs/jquery.cycle/2.9999.8/jquery.cycle.all.min.js', array('jquery'), null, true);
   //wp_enqueue_script('jquery-easing','//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', array('jquery'), null, true);
@@ -178,13 +182,16 @@ function stormbringer_js_footer() {
   //wp_enqueue_script('bootstrap-datepicker','//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.0.0/js/bootstrap-datepicker.min.js', array('bootstrap'), null, true);
   //wp_enqueue_script('bootstrap-growl','//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js', array('bootstrap'), null, true);
 
-  if(LIGHTBOX=='fancybox')
-    wp_enqueue_script('jquery.fancybox.js', get_template_directory_uri().'/js/fancybox/jquery.fancybox-1.3.4_patch.js', array('jquery'),null, true );
+  if(LIGHTBOX=='fancybox'){
+    wp_enqueue_script('jquery-fancybox', get_template_directory_uri().'/js/fancybox/jquery.fancybox-1.3.4_patch.js', array('jquery'),null, true );
+    wp_enqueue_script('fancybox-open', get_template_directory_uri().'/js/fancybox/fancybox-open.js', array('jquery'),null, true );
+  }
 
-  //wp_enqueue_script('bootstrap-modal', get_template_directory_uri().'/js/bootstrap-modal.js', array('bootstrap'),null, true );
-  //wp_enqueue_script('bootstrap-modalmanager', get_template_directory_uri().'/js/bootstrap-modalmanager.js', array('bootstrap'),null, true );
-  wp_enqueue_script('bootstrap-loadimage', get_template_directory_uri().'/js/bootstrap-loadimage.js', array('bootstrap','jquery'),null, true );
-  wp_enqueue_script('bootstrap-modalgallery', get_template_directory_uri().'/js/bootstrap-modalgallery.js', array('bootstrap'),null, true );
+  if(LIGHTBOX=='tbmodal'){
+    wp_enqueue_script('bootstrap-loadimage', get_template_directory_uri().'/js/bootstrap-loadimage.js', array('bootstrap','jquery'),null, true );
+    wp_enqueue_script('bootstrap-modalgallery', get_template_directory_uri().'/js/bootstrap-modalgallery.js', array('bootstrap','jquery'),null, true );
+    wp_enqueue_script('bootstrap-modalopen', get_template_directory_uri().'/js/bootstrap-modalopen.js', array('bootstrap','jquery'),null, true );
+  }
   wp_enqueue_script('common.js', get_template_directory_uri().'/js/common.js', array('jquery'),null, true );
   wp_enqueue_script('app.js', get_template_directory_uri().'/js/app.js', array('jquery'),null, true );
 
@@ -193,8 +200,8 @@ add_action('wp_enqueue_scripts', 'stormbringer_js_footer',300);
 
 function stormbringer_css() {
   if(LIGHTBOX=='fancybox'){
-    wp_register_style( 'fancybox',  get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css', array(), null, 'screen,projection' );
-    wp_enqueue_style( 'fancybox' );
+    wp_register_style('fancybox',  get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css', array(), null, 'screen,projection' );
+    wp_enqueue_style('fancybox' );
   }
 }
 add_action('wp_enqueue_scripts', 'stormbringer_css',0);

@@ -17,20 +17,26 @@ function remove_thumbnail_dimensions( $html ) {
 
 // Add thumbnail class to thumbnail links
 function add_class_attachment_link($html){
-    if(FANCYBOX==true){
-      $html = str_replace('<a','<a class="fancybox"',$html);
-    }
+  $classes='';
+  if(LIGHTBOX=='fancybox')$classes='fancybox';
+  if(LIGHTBOX=='tbmodal')$classes='modal-open-image';
 
-    return $html;
+  if($classes!=''){
+    $html = str_replace('<a','<a class="'.$classes.'"',$html);
+  }
+
+  return $html;
 }
 add_filter('wp_get_attachment_link','add_class_attachment_link',10,1);
 
 
 function give_linked_images_class($html, $id, $caption, $title, $align, $url, $size, $alt = '' ){
 
-  if(FANCYBOX==true)
+  $classes='';
+  if(LIGHTBOX=='fancybox')$classes='fancybox';
+  if(LIGHTBOX=='tbmodal')$classes='modal-open-image';
+  if($classes!='')
   {
-    $classes = 'fancybox';
     // check if there are already classes assigned to the anchor
     if ( preg_match('/<a.*? class=".*?">/', $html) ) {
       $html = preg_replace('/(<a.*? class=".*?)(".*?>)/', '$1 ' . $classes . '$2', $html);
@@ -39,7 +45,7 @@ function give_linked_images_class($html, $id, $caption, $title, $align, $url, $s
     }
   } // separated by spaces, e.g. 'img image-link'
   $html = str_replace("wp-image","thumbnail wp-image",$html);
-  $html = str_replace("<a","<a caption='".$caption."' title=\"".$title."\"",$html);
+  $html = str_replace(    '<a',    '<a title="'.$caption.'"',    $html  );
 
   return $html;
 }
@@ -115,13 +121,6 @@ function roots_caption($output, $attr, $content) {
   return $output;
 }
 add_filter('img_caption_shortcode', 'roots_caption', 10, 3);
-
-
-
-
-
-
-
 
 
 function change_avatar_css($class) {

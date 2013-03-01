@@ -5208,6 +5208,8 @@ a.badge:focus {
 }
 #footer .container {
   border-top: 1px solid #fff;
+  padding-top: 20px;
+  margin-top: 20px;
 }
 .modal {
   background: #f5f5f5;
@@ -5661,7 +5663,6 @@ figure {
   padding: 5px 9px;
   position: absolute;
   background: rgba(0,0,0,0.5);
-  position: absolute;
   left: 4px;
   bottom: 4px;
   right: 4px;
@@ -5673,6 +5674,14 @@ figure {
 .thumbnail .caption p {
   font-size: 11px;
   color: #fff;
+}
+.thumbnail .thumbnail {
+  position: inherit;
+  left: 0;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  padding: 0;
 }
 video {
   max-width: 100%;
