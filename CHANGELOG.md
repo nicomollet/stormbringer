@@ -1,6 +1,6 @@
 ### HEAD
-* Replace Fancybox by a better lightbox, compaible with TB, responsive, and compatible with iPad
-* Create variable to load modal : bootstrap, fancybox 1 or none
+* Replace Fancybox by a better lightbox, compatible with TB, responsive, and compatible with iPad
+* Create variable for modal  : bootstrap, fancybox 1 or none
 * Modal compatible with Gravity Forms
 * Make a poll plugin compatible with TB
 * Fix gallery page

@@ -44,11 +44,12 @@ $(document).ready(function() {
   }
 
   // Open external links in a new window or tab
-  $('a[rel$="external"]').on('click', function() {
+  $('a[rel$="external"]').each(function() {
     $(this).attr('target', "_blank");
   });
-  $("a[href^='http:']:not([href*='" + window.location.host + "'])").on('click', function() {
+  $("a[href^='http:']:not([href*='" + window.location.host + "'])").each(function() {
     $(this).attr("target", "_blank");
+    $(this).attr("rel", "external");
   });
 
   // Adds last and first classes to UL lists

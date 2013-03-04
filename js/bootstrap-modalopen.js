@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+  var iframe_height;
+  var iframe_external;
+
   // Auto gallery tbmodal
   $('ul.gallery').each(function(){
     $('a.modal-open-image').addClass('modal-open-gallery').removeClass('modal-open-image');
@@ -39,6 +42,7 @@ $(document).ready(function() {
     }
 
 
+    $('#modal-gallery '+' .modal-footer').hide(); // hide footer when single image
     $('#modal-gallery '+' .modal-title').text(title);
 
     if (link.length && modal.length) {
@@ -75,6 +79,7 @@ $(document).ready(function() {
       if (data) {
         $.extend(data.options, options);
       }
+      $('#modal-gallery '+' .modal-footer').show(); // show footer when single image
       modal.modal(options);
     }
 
@@ -83,8 +88,12 @@ $(document).ready(function() {
 
   // Modal frame
   $('a.modal-open-frame').click(function (e) {
-    height=0;
-    height = $(this).data('height');
+    iframe_height=0;
+    iframe_external=false;
+    iframe_external = $(this).attr('rel')=='external';
+    iframe_height = $(this).data('height');
+    //console.log('height userdefined 1: '+iframe_height);
+    //console.log('external: '+iframe_external);
     target = $(this).data('target');
     target = '#modal-default';
 
@@ -97,29 +106,37 @@ $(document).ready(function() {
     $(target+' .modal-title').text(title);
 
     if($(this).attr('href')!=''){
-      if(height)
-        $(target+' .modal-body').height( height + 15);
-      //$(target+' .modal-body').height( height + 15); //not animated
+      e.preventDefault();
+      if(iframe_height){
+        $(target+' .modal-body').height( iframe_height + 15);
+      }
       $('#modal-frame').attr('src','');
       $('#modal-frame').html('');
-      //$($(this).data('target')+' .modal-body').html('<iframe src="'+$(this).attr('href')+'" width="100%" height="350" frameborder="0" allowfullscreen="0"></iframe>');
-      //$(target+' .modal-body').html('');
-      //$modalframe =$('<iframe width="100%" height="'+height+'" id="modal-frame" name="modal-frame' + new Date().getTime() + '" frameborder="0" hspace="0" ' + (navigator.userAgent.match(/msie/i) ? 'allowtransparency="true""' : '') +  '" src="' + $(this).attr('href') + '"></iframe>');
-      //$modalframe.appendTo(target+' .modal-body');
       $('#modal-frame').attr('src',$(this).attr('href'));
-      $('#modal-frame').load(resizeModal);
-      function resizeModal(){
-        if(!height)
-          height = Math.max($('#modal-frame').contents().find("html").height(),350);
-        //$(target+' .modal-body').height( height + 15); //not animated
-        $(target+' .modal-body').animate({height:height + 15+"px"}); // animated
-      }
     }
     $(target).modal();
-
-    return false;
   });
 
+
+  var getIFrameHeight = function() {
+    tmp=0;
+    if(iframe_height)
+      //console.log('height userdefined 2: '+iframe_height);
+    else
+    {
+      //console.log('height not userdefined');
+      iframe_height = 350;
+      if(!iframe_external){
+
+        tmp = $(this).contents().find("html").height();
+        //console.log('height iframe external: '+tmp);
+        iframe_height = Math.max(tmp,iframe_height);
+      }
+    }
+    //console.log('height final: '+iframe_height);
+    $('#modal-default'+' .modal-body').animate({height:iframe_height + 15+"px"}); // animated
+  };
+  $('#modal-frame').bind('load', getIFrameHeight );
 
 });
 
