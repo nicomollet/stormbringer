@@ -39,7 +39,8 @@ input, textarea, select, .uneditable-input {
 	overflow: hidden
 }
 .form-wrapper .checkbox, .form-wrapper .radio { padding-top: 5px}
-.field-required {margin-left: 5px}
+//.field-required {margin-left: 5px}
+.form-required {color: @errorText;}
 
 .form-header{margin-bottom: @baseLineHeight}
 
@@ -54,18 +55,32 @@ select.input-small{  width: 42%;}
 select.input-medium{  width: 62%;}
 select.input-large{  width: 82%;}
 select.input-max{  width: 100%;}
-.form-placeholder .hide-label .control-label{display: none}
+
 
 .gform_next_button, .gform_previous_button {
   .btn();
 }
 .form-section-title{}
 
+
+
+/* Form Horizontal Left Label */
+.form-horizontal-leftlabel .control-label {
+  text-align: left;
+}
+
+/* Form Placeholder */
+.form-placeholder .hide-label .control-label{display: none}
+
+
+/* Special Fields */
 .field-address textarea{height: @baseLineHeight*3;}
-.field-inline .radio {
-  padding-left:0;
-  input {float:left;margin-left: 0;}
-  label{float:left;margin: 1px 15px 0 3px;}
+.field-inline {
+  .radio, .checkbox {
+    padding-left:0;
+    input {float:left;margin-left: 0;}
+    label{float:left;margin: 1px 15px 0 3px;}
+  }
 }
 textarea[data-disabled="1"]{
 }

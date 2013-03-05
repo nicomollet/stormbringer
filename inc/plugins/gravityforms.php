@@ -67,7 +67,7 @@ function stormbringer_gform_form_tag($form_tag, $form)
   $class = "form ";
   if ($form["labelPlacement"] == "right_label") $class .= "form-horizontal";
   if ($form["labelPlacement"] == "top_label") $class .= "form-vertical";
-  if ($form["labelPlacement"] == "left_label") $class .= "form-inline";
+  if ($form["labelPlacement"] == "left_label") $class .= "form-horizontal form-horizontal-leftlabel";
   $class .= ' ' . $form['cssClass'];
   //$form_tag = preg_replace("|action='(.*?)'|", "action='custom_handler.php'", $form_tag);
   //$form_tag = str_replace("<form",'<form class="'.$class.' '.$form['cssClass'].'"',$form_tag);
@@ -227,6 +227,7 @@ function stormbringer_gform_cdata_close($content)
 add_filter("gform_get_form_filter", "stormbringer_gform_get_form_filter", 10, 4);
 function stormbringer_gform_get_form_filter($content)
 {
+  $content = str_replace('gfield_required', 'form-required', $content);
   $content = str_replace('gform_description', 'form-description', $content);
   $content = str_replace('gform_title', 'form-title', $content);
   $content = str_replace('gform_wrapper', 'form-wrapper', $content);
