@@ -120,10 +120,7 @@ $(document).ready(function() {
 
   var getIFrameHeight = function() {
     tmp=0;
-    if(iframe_height)
-      //console.log('height userdefined 2: '+iframe_height);
-    else
-    {
+    if(!iframe_height){
       //console.log('height not userdefined');
       iframe_height = 350;
       if(!iframe_external){

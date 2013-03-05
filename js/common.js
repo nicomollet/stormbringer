@@ -7,16 +7,6 @@ $(document).ready(function() {
     $(this).val("");
   });
 
-  // GravityForms auto placeholder
-	/*$.each($('.gform_wrapper input, .gform_wrapper textarea, .gform_wrapper select'), function () {
-		var gfapId = this.id;
-		var gfapLabel = $('label[for=' + gfapId + ']');
-		$(gfapLabel).hide();
-		//var gfapLabelValue = $(gfapLabel).text().replace("*","");
-		var gfapLabelValue = $(gfapLabel).text().replace("*"," *");
-		$(this).attr('placeholder',gfapLabelValue);
-	});
-  */
   // Applies placeholder attribute behavior in web browsers that don't support it
   if (!('placeholder' in document.createElement('input'))) {
 

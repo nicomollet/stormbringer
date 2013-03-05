@@ -10,37 +10,38 @@ input, textarea, select, .uneditable-input {
 	//margin-bottom: 0;
 }
 
-.gform_wrapper textarea {
+.form-wrapper textarea {
 	outline-style: none;
 	font-family: inherit;
 	letter-spacing: normal;
 	resize: none
 }
-.gform_wrapper ul {
+.form-wrapper ul {
 	margin: 0;
 	list-style-type: none
 }
-html>body .entry ul,
-.gform_wrapper ul {
+
+.form-wrapper ul {
 	text-indent: 0
 }
-.gform_wrapper li,
-.gform_wrapper form li {
+.form-wrapper li,
+.form-wrapper form li {
 	list-style-type: none !important;
 	list-style-image: none !important;
 	list-style: none !important;
 	overflow: visible
 }
-.gform_wrapper ul li.gfield {
+.form-wrapper ul li.gfield {
 	clear: both
 }
-.gform_wrapper ul.gfield_radio li,
-.gform_wrapper ul.gfield_checkbox li {
+.form-wrapper ul.gfield_radio li,
+.form-wrapper ul.gfield_checkbox li {
 	overflow: hidden
 }
-.gform_wrapper .checkbox, .gform_wrapper .radio { padding-top: 5px}
-.gfield_required {margin-left: 5px}
+.form-wrapper .checkbox, .form-wrapper .radio { padding-top: 5px}
+.field-required {margin-left: 5px}
 
+.form-header{margin-bottom: @baseLineHeight}
 
 .input-mini {  width: 20%;}
 .input-small {  width: 40%;}
@@ -53,15 +54,15 @@ select.input-small{  width: 42%;}
 select.input-medium{  width: 62%;}
 select.input-large{  width: 82%;}
 select.input-max{  width: 100%;}
-form.placeholder .control-label{display: none}
+.form-placeholder .hide-label .control-label{display: none}
 
 .gform_next_button, .gform_previous_button {
   .btn();
 }
-.gsection_title{
-}
-.field_address textarea{height: @baseLineHeight*3;}
-.field_inline .radio {
+.form-section-title{}
+
+.field-address textarea{height: @baseLineHeight*3;}
+.field-inline .radio {
   padding-left:0;
   input {float:left;margin-left: 0;}
   label{float:left;margin: 1px 15px 0 3px;}

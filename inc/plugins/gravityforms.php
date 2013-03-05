@@ -23,11 +23,21 @@ add_filter('gform_validation_message', 'stormbringer_gform_validation_message', 
 */
 function stormbringer_gform_field_css_class($classes, $field, $form)
 {
+  $form_css = $form['cssClass'];
+
   $classes = str_replace('input-mini', '', $classes);
   $classes = str_replace('input-max', '', $classes);
   $classes = str_replace('input-append', '', $classes);
   $classes = str_replace('input-prepend', '', $classes);
   $classes = str_replace('icon-', 'dummy-', $classes);
+  $classes = str_replace('gfield', '', $classes);
+
+  if ($field["type"] == 'textarea' || $field["type"] == 'text') {
+    if (strpos($form_css, 'form-placeholder') !== false)
+      $classes .= " hide-label";
+
+  }
+
   $classes .= " control-group";
   if ($field["failed_validation"] == 1) $classes .= " error";
   return $classes;
@@ -61,7 +71,9 @@ function stormbringer_gform_form_tag($form_tag, $form)
   $class .= ' ' . $form['cssClass'];
   //$form_tag = preg_replace("|action='(.*?)'|", "action='custom_handler.php'", $form_tag);
   //$form_tag = str_replace("<form",'<form class="'.$class.' '.$form['cssClass'].'"',$form_tag);
-  $form_tag = preg_replace("|class='(.*?)'|", "class='" . $class . "'", $form_tag);
+  //$form_tag = preg_replace("|class='(.*?)'|", "class='" . $class . "'", $form_tag);
+  $form_tag = preg_replace("|class='(.*?)'|", "", $form_tag);
+  $form_tag = str_replace("<form",'<form class="'.$class.'"',$form_tag);
   return $form_tag;
 }
 add_filter("gform_form_tag", "stormbringer_gform_form_tag", 10, 2);
@@ -74,7 +86,16 @@ add_filter("gform_form_tag", "stormbringer_gform_form_tag", 10, 2);
 */
 function stormbringer_gform_field_content($content, $field, $value, $lead_id, $form_id)
 {
-  $content = str_replace('gfield_label', 'gfield_label control-label', $content);
+  global $form_css;
+  if(!$form_css){
+    $form_css='';
+    $forminfo = RGFormsModel::get_form_meta($form_id);
+    $form_css = $forminfo['cssClass'];
+  }
+
+  //$content = str_replace('gfield_label', 'gfield_label control-label', $content);
+  $content = str_replace('gfield_label', 'control-label', $content);
+
   $content = str_replace('gfield_error', 'gfield_error error', $content);
   $content = str_replace('validation_message', 'help-inline', $content);
   $content = str_replace('ginput_container', 'ginput_container controls', $content);
@@ -102,7 +123,9 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
   if ($field["type"] == 'text' || $field["type"] == 'email') {
 
     // placeholder
-    if (GRAVITYFORMS_PLACEHOLDER == true)
+    //if (GRAVITYFORMS_PLACEHOLDER == true)
+    //if ($form_css == 'placeholder')
+    if (strpos($form_css, 'form-placeholder') !== false)
       $content = str_replace('/>', ' placeholder=\'' . $field['label'] . '\'/>', $content);
     if (strpos($field["cssClass"], 'field_disabled') !== false)
       $content = str_replace('/>', ' disabled=\'disabled\'/>', $content);
@@ -143,7 +166,7 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
 
   if ($field["type"] == 'textarea') {
     // placeholder
-    if (GRAVITYFORMS_PLACEHOLDER == true)
+    if (strpos($form_css, 'form-placeholder') !== false)
       $content = str_replace('<textarea', '<textarea placeholder="' . $field['label'] . '"', $content);
     if (strpos($field["cssClass"], 'field_disabled') !== false)
       $content = str_replace('<textarea', '<textarea disabled=\'disabled\'', $content);
@@ -204,8 +227,21 @@ function stormbringer_gform_cdata_close($content)
 add_filter("gform_get_form_filter", "stormbringer_gform_get_form_filter", 10, 4);
 function stormbringer_gform_get_form_filter($content)
 {
-  $content = str_replace('gform_footer', 'gform_footer form-actions', $content);
+  $content = str_replace('gform_description', 'form-description', $content);
+  $content = str_replace('gform_title', 'form-title', $content);
+  $content = str_replace('gform_wrapper', 'form-wrapper', $content);
+  $content = str_replace('gform_heading', 'form-header', $content);
+  $content = str_replace('gform_body', 'form-body', $content);
+  $content = str_replace('class=\'gform_fields', 'class=\'form-fields', $content);
+  $content = str_replace('gform_footer', 'form-actions', $content);
+  $content = str_replace('gsection_title', 'form-section-title', $content);
+  $content = str_replace('gsection_description', 'form-section-description', $content);
+  $content = str_replace('gsection', 'form-section', $content);
   $content = str_replace('gform_page_footer', 'gform_page_footer form-actions', $content);
+
+
+
+
   return $content;
 }
 
