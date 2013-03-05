@@ -32,7 +32,7 @@ function stormbringer_gform_field_css_class($classes, $field, $form)
   $classes = str_replace('icon-', 'dummy-', $classes);
   $classes = str_replace('gfield', '', $classes);
 
-  if ($field["type"] == 'textarea' || $field["type"] == 'text') {
+  if ($field["type"] == 'textarea' || $field["type"] == 'text' || $field["type"] == 'email' || $field["type"] == 'name') {
     if (strpos($form_css, 'form-placeholder') !== false)
       $classes .= " hide-label";
 
@@ -78,7 +78,6 @@ function stormbringer_gform_form_tag($form_tag, $form)
 }
 add_filter("gform_form_tag", "stormbringer_gform_form_tag", 10, 2);
 
-
 /*
 * This filter is executed before creating the field's content, allowing users to completely
 * modify the way the field is rendered. It can also be used to create custom field types.
@@ -95,22 +94,24 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
 
   //$content = str_replace('gfield_label', 'gfield_label control-label', $content);
   $content = str_replace('gfield_label', 'control-label', $content);
-
   $content = str_replace('gfield_error', 'gfield_error error', $content);
   $content = str_replace('validation_message', 'help-inline', $content);
   $content = str_replace('ginput_container', 'ginput_container controls', $content);
   $content = str_replace('small', 'input-small', $content);
   $content = str_replace('medium', 'input-medium', $content);
   $content = str_replace('large', 'input-large', $content);
-  $content = str_replace('gfield_description', 'gfield_description help-block', $content);
+  $content = str_replace('gfield_description', 'help-inline', $content);
+  $content = str_replace('help-inline help-inline', 'help-inline', $content);
 
   // validation message
-  if ($field["failed_validation"] == 1) {
+/*  if ($field["failed_validation"] == 1) {
     $content = str_replace('help-block help-inline', 'help-inline', $content);
     $content = preg_replace('/<\/div>(<div class=\'help-block\'>.*?<\/div>)/', '</div>', $content);
   } else
     $content = preg_replace('/<\/div>(<div class=\'help-block\'>.*?<\/div>)/', '\\1</div>', $content);
-  $content = preg_replace('/<\/div>(<div class=\'help-inline\'>.*?<\/div>)/', '\\1</div>', $content);
+*/
+  $content = preg_replace('/<\/div>(<div class=\'help-inline\'>.*?<\/div>)/', '\\1</div>', $content); //1st time for description
+  $content = preg_replace('/<\/div>(<div class=\'help-inline\'>.*?<\/div>)/', '\\1</div>', $content); //2nd time for error
 
   // append button
   $button = false;
@@ -119,17 +120,40 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
     $button = true;
   }
 
+  // field-inline
+  $inline='';
+  if (strpos($field["cssClass"], 'field-inline') !== false)
+    $inline=' inline';
+
   // append/prepend icon
-  if ($field["type"] == 'text' || $field["type"] == 'email') {
+  if ($field["type"] == 'text' || $field["type"] == 'email' || $field["type"] == 'name') {
 
     // placeholder
     //if (GRAVITYFORMS_PLACEHOLDER == true)
     //if ($form_css == 'placeholder')
-    if (strpos($form_css, 'form-placeholder') !== false)
-      $content = str_replace('/>', ' placeholder=\'' . $field['label'] . '\'/>', $content);
-    if (strpos($field["cssClass"], 'field_disabled') !== false)
+    if (strpos($form_css, 'form-placeholder') !== false){
+      if($field["type"] == 'name'){
+        foreach($field["inputs"] as $key=>$value){
+
+          $content = str_replace('name=\'input_'.$value['id'].'\'', 'name=\'input_'.$value['id'].'\' placeholder=\'' . $value['label'] . '\'', $content);
+          $content = str_replace('<label', '<label class=\'hide\'', $content);
+        }
+
+      }
+    else{
+        $content = str_replace('/>', ' placeholder=\'' . $field['label'] . '\'/>', $content);
+      }
+    }
+
+    // input-small for name
+    if($field["type"] == 'name'){
+      foreach($field["inputs"] as $key=>$value){
+        $content = str_replace('name=\'input_'.$value['id'].'\'', 'name="input_'.$value['id'].'" input class=\'input-mini input-name-'.($key+1).'\'', $content);
+      }
+    }
+    if (strpos($field["cssClass"], 'field-disabled') !== false)
       $content = str_replace('/>', ' disabled=\'disabled\'/>', $content);
-    if (strpos($field["cssClass"], 'field_force') !== false)
+    if (strpos($field["cssClass"], 'field-force') !== false)
       $content = str_replace('/>', ' data-force=\'1\'/>', $content);
     if (strpos($field["cssClass"], 'input-append') !== false) {
       //$content = str_replace('controls','controls input-append',$content);
@@ -168,23 +192,28 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
     // placeholder
     if (strpos($form_css, 'form-placeholder') !== false)
       $content = str_replace('<textarea', '<textarea placeholder="' . $field['label'] . '"', $content);
-    if (strpos($field["cssClass"], 'field_disabled') !== false)
+    if (strpos($field["cssClass"], 'field-disabled') !== false)
       $content = str_replace('<textarea', '<textarea disabled=\'disabled\'', $content);
-    if (strpos($field["cssClass"], 'field_force') !== false)
+    if (strpos($field["cssClass"], 'field-force') !== false)
       $content = str_replace('<textarea', '<textarea data-force=\'1\'', $content);
   }
   if ($field["type"] == 'select') {
-    if (strpos($field["cssClass"], 'field_disabled') !== false)
+    if (strpos($field["cssClass"], 'field-disabled') !== false)
       $content = str_replace('<select', '<select disabled=\'disabled\'', $content);
-    if (strpos($field["cssClass"], 'field_force') !== false)
+    if (strpos($field["cssClass"], 'field-force') !== false)
       $content = str_replace('<select', '<select data-force=\'1\'', $content);
   }
-  if ($field["type"] == 'radio') {
-    if (strpos($field["cssClass"], 'field_disabled') !== false)
+  if ($field["type"] == 'radio' || $field["type"] == 'checkbox') {
+    //$content = preg_replace('/<\/div>(<div class=\'help-inline\'>.*?<\/div>)/', '\\1</div>', $content);
+    //$content = preg_replace('/<input .*? ><label .*? >.*?<\/label>)/', '<label \\2><input \\1>\\3<\/label>', $content);
+    $content = preg_replace('/<input(.*?)><label(.*?)>(.*?)<\/label>/', '<label class="'.$field["type"].$inline.'"\\2><input\\1>\\3</label>', $content); // insert input into label tag
+    //$content = preg_replace('/<label(.*?)>(.*?)<\/label>/', '\\2', $content);
+    if (strpos($field["cssClass"], 'field-disabled') !== false)
       $content = str_replace('<input', '<input disabled=\'disabled\'', $content);
-    if (strpos($field["cssClass"], 'field_force') !== false)
+    if (strpos($field["cssClass"], 'field-force') !== false)
       $content = str_replace('<input', '<input data-force=\'1\'', $content);
   }
+
 
   return $content;
 }
@@ -197,7 +226,9 @@ add_filter("gform_field_content", "stormbringer_gform_field_content", 10, 5);
 function stormbringer_gform_field_choices($choices, $field)
 {
   $choices = strip_tags($choices, '<input><label>');
-  return '<div class="' . $field["type"] . '">' . $choices . '</div>';
+  //print_r($field);
+  //return '<div class="' . $field["type"] . '">' . $choices . '</div>';
+  return '<div id="input_' . $field["formId"] . '_' . $field["id"] . '">' . $choices . '</div>';
 }
 
 add_filter("gform_field_choices", "stormbringer_gform_field_choices", 10, 5);
@@ -239,9 +270,15 @@ function stormbringer_gform_get_form_filter($content)
   $content = str_replace('gsection_description', 'form-section-description', $content);
   $content = str_replace('gsection', 'form-section', $content);
   $content = str_replace('gform_page_footer', 'gform_page_footer form-actions', $content);
+  $content = str_replace('div class="radio"', 'div', $content);
+  $content = str_replace('div class="checkbox"', 'div', $content);
+  $content = str_replace('right_label', '', $content);
+  $content = str_replace('left_label', '', $content);
+  $content = str_replace('top_label', '', $content);
+  $content = str_replace('ginput_container', '', $content);
 
-
-
+  $content = preg_replace('/<ul class=\'gfield_checkbox\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
+  $content = preg_replace('/<ul class=\'gfield_radio\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
 
   return $content;
 }

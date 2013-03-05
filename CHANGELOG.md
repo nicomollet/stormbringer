@@ -2,6 +2,8 @@
 * Make a poll plugin compatible with TB
 * Add widgets from JetPack http://jetpack.me/support/extra-sidebar-widgets/
 * Carousel shortcode
+* Login/Register plugin compatible with TB
+
 ### 0.0.2: February 27th, 2013
 * Created variable for modal  : bootstrap, fancybox 1 or none
 * Modal compatible with Gravity Forms

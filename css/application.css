@@ -604,7 +604,7 @@ h6 {
   font-family: inherit;
   font-weight: bold;
   line-height: 20px;
-  color: #5F084B;
+  color: inherit;
   text-rendering: optimizelegibility;
 }
 h1 small,
@@ -5213,6 +5213,7 @@ a.badge:focus {
 .help-block,
 .help-inline {
   color: #999;
+  margin-right: 10px;
 }
 .form-wrapper textarea {
   outline-style: none;
@@ -5245,7 +5246,8 @@ a.badge:focus {
 .form-wrapper .radio {
   padding-top: 5px;
 }
-.field-required {
+.form-required {
+  color: #b94a48;
   margin-left: 5px;
 }
 .form-header {
@@ -5281,8 +5283,14 @@ select.input-large {
 select.input-max {
   width: 100%;
 }
-.form-placeholder .hide-label .control-label {
-  display: none;
+.controls-row .input-mini {
+  width: 18%;
+}
+.controls-row .input-small {
+  width: 38%;
+}
+.controls-row .input-name-1 {
+  margin-right: 2%;
 }
 .gform_next_button,
 .gform_previous_button {
@@ -5394,19 +5402,44 @@ select.input-max {
   position: relative;
   top: -1px;
 }
+.form-horizontal-leftlabel .control-label {
+  text-align: left;
+}
+.form-placeholder .hide-label .control-label {
+  display: none;
+}
+.form-placeholder input,
+.form-placeholder textarea,
+.form-placeholder select,
+.form-placeholder .help-inline,
+.form-placeholder .uneditable-input,
+.form-placeholder .input-prepend,
+.form-placeholder .input-append {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+.form-vertical input,
+.form-vertical textarea,
+.form-vertical select,
+.form-vertical .help-inline,
+.form-vertical .uneditable-input,
+.form-vertical .input-prepend,
+.form-vertical .input-append {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
 .field-address textarea {
   height: 60px;
 }
-.field-inline .radio {
+.field-inline .help-inline,
+.field-inline .help-block {
   padding-left: 0;
-}
-.field-inline .radio input {
-  float: left;
-  margin-left: 0;
-}
-.field-inline .radio label {
-  float: left;
-  margin: 1px 15px 0 3px;
 }
 .underline {
   text-decoration: underline;
@@ -5470,6 +5503,9 @@ select.input-max {
 }
 #fancybox-frame {
   background: url('../img/ajax-loader.gif') #fff no-repeat 50% 50% !important;
+}
+iframe {
+  border: 0;
 }
 .in-frame {
   margin: 0 !important;

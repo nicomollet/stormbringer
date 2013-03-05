@@ -22,6 +22,7 @@ function stormbringer_support() {
 
   locate_template('inc/front/secure.php',true);           // Secure Wordpress
   locate_template('inc/front/thumbnails.php',true);       // Thumbnails for Bootstrap
+  locate_template('inc/widgets/widget-login-form.php',true);        // Widgets login
 
   // Admin only
   if(is_admin()){
@@ -47,6 +48,7 @@ function stormbringer_support() {
     locate_template('inc/front/menu.php',true);           // Menu walker for Bootstrap nav
     locate_template('inc/front/pagination.php',true);     // Pagination for Boostrap
     locate_template('inc/front/widgets.php',true);        // Widgets cleanup
+
   }
 
   // Plugins
