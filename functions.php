@@ -22,7 +22,7 @@ function stormbringer_support() {
 
   locate_template('inc/front/secure.php',true);           // Secure Wordpress
   locate_template('inc/front/thumbnails.php',true);       // Thumbnails for Bootstrap
-  locate_template('inc/widgets/widget-login-form.php',true);        // Widgets login
+  //locate_template('inc/widgets/widget-login-form.php',true);        // Widgets login
 
   // Admin only
   if(is_admin()){
@@ -52,8 +52,9 @@ function stormbringer_support() {
   }
 
   // Plugins
-  if (class_exists('RGForms') && !is_admin()) locate_template('inc/plugins/gravityforms.php',true); // Gravity Forms compatibility with Boostrap
+  if(class_exists('RGForms') && !is_admin()) locate_template('inc/plugins/gravityforms.php',true); // Gravity Forms compatibility with Boostrap
   if(function_exists('icl_object_id') && !is_admin()) locate_template('inc/plugins/wpml.php',true); // WPML switcher for Boostrap + cleanup styles
+  if(class_exists( 'Theme_My_Login') && !is_admin()) locate_template('inc/plugins/thememylogin.php',true); // Theme My Login custom titles and custom pages
 
   load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
 
@@ -92,6 +93,31 @@ function custom_breadcrumb_trail_args(){
   return $args;
 }
 add_filter('breadcrumb_trail_args', 'custom_breadcrumb_trail_args');
+
+// ********************************************
+// Theme My Login
+// ********************************************
+function custom_thememylogin_options(){
+  $args = array(
+    'pageid_login' => 236,
+    'pageid_register' => 198,
+    'pageid_lostpassword' => 247,
+    'pageid_profile' => 267,
+    'action_login' => __( 'Identification111', "stormbringer" ),
+    'action_lostpassword' => __( 'Mot de passe oublié222', "stormbringer" ),
+    'action_retrievepassword' => __( 'Mot de passe oublié333', "stormbringer" ),
+    'action_resetpass' => __( 'Mot de passe oublié', "stormbringer" ),
+    'action_register' => __( 'Créer un compte444', "stormbringer" ),
+    'action_profile' => __( 'Votre compte555', "stormbringer" ),
+    'message_error' => __( 'Erreur666', "stormbringer" ),
+    'message_info' => __( 'Info', "stormbringer" ),
+    'message_success' => __( 'Succès', "stormbringer" ),
+    'menu_login' => __( 'S\'identifier777', "stormbringer" ),
+    'menu_logout' => __( 'Se déconnecter888', "stormbringer" ),
+  );
+  return $args;
+}
+add_filter('thememylogin_options', 'custom_thememylogin_options');
 
 
 // ********************************************
@@ -266,3 +292,4 @@ function share_addthis(){
   }
 }
 add_action( 'stormbringer_content_after', 'share_addthis', 10, 2 );
+

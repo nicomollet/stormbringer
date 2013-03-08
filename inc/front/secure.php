@@ -67,7 +67,8 @@ global $wp_version;
 /**
 * remove Error-information
 */
-add_filter( 'login_errors', create_function( '$a', "return null;" ) );
+  if(!class_exists( 'Theme_My_Login')) // disable hiding errors with Theme My Login, if not errors won't be displayed to user
+    add_filter( 'login_errors', create_function( '$a', "return null;" ) );
 
 
 /**

@@ -196,7 +196,6 @@ add_filter('embed_googlevideo', 'stormbringer_embed_wrap', 10, 2);
 // Other
 
 function meta() {
-  //echo "\n". '<!-- compat -->' . "\n";
   echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 }
 add_action('wp_head', 'meta',1);
@@ -207,3 +206,8 @@ function ietweaks() {
   echo '<meta name="MSSmartTagsPreventParsing" content="true">' . "\n";
 }
 //add_action('wp_head', 'ietweaks',100);
+
+// show admin bar only for admins and editors
+if (!current_user_can('edit_posts')) {
+  add_filter('show_admin_bar', '__return_false');
+}
