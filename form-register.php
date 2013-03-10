@@ -43,7 +43,7 @@
   <div class="movetomodal-footer">
     <p class="pull-right">
       <?php
-      _e('Déjà un compte ?','stormbringer');
+      _e('Déjà un compte ?','stormbringer'); print'&nbsp;';
       printf('<a href="%s" class="btn btn-primary" title="">%s</a>',$this->get_action_url( 'login' ),$this->get_title( 'login' ),$this->get_title( 'login' ));
       ?>
     </p>

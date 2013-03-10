@@ -128,14 +128,20 @@ $(document).ready(function() {
       $('#modal-default').append('<div class="modal-footer">'+$formfooter+'</div>');
     }
   }
-  var getIFrameHeight = function() {
+  var updateModalTitle = function() {
+    $title_id = $(this).contents().find(".page-header h1");
+    if($title_id && $title_id.text()!=undefined && $title_id.text()!=''){
+      $('#modal-default .modal-title').text($title_id.text());
+    }
+  }
+  var getIframeHeight = function() {
     tmp=0;
     if(!iframe_height){
       iframe_height = 150;
       if(!iframe_external){
         $(this).contents().find(".movetomodal-footer").remove();
         tmp = $(this).contents().find("html").height();
-        console.log('height iframe external: '+tmp);
+        //console.log('height iframe external: '+tmp);
         iframe_height = Math.max(tmp,iframe_height);
       }
     }
@@ -143,7 +149,8 @@ $(document).ready(function() {
     $('#modal-default'+' .modal-body').animate({height:iframe_height + 15+"px"}); // animated
   };
   $('#modal-frame').bind('load', moveModalFooter );
-  $('#modal-frame').bind('load', getIFrameHeight );
+  $('#modal-frame').bind('load', getIframeHeight );
+  $('#modal-frame').bind('load', updateModalTitle );
 
 });
 
