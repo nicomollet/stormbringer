@@ -131,11 +131,11 @@ $(document).ready(function() {
   var getIFrameHeight = function() {
     tmp=0;
     if(!iframe_height){
-      iframe_height = 350;
+      iframe_height = 150;
       if(!iframe_external){
         $(this).contents().find(".movetomodal-footer").remove();
         tmp = $(this).contents().find("html").height();
-        //console.log('height iframe external: '+tmp);
+        console.log('height iframe external: '+tmp);
         iframe_height = Math.max(tmp,iframe_height);
       }
     }

@@ -55,7 +55,6 @@ function stormbringer_thememylogin_options(){
     'action_resetpass' => __( 'Mot de passe oublié', "stormbringer" ),
     'action_register' => __( 'Créer un compte', "stormbringer" ),
     'action_profile' => __( 'Votre compte', "stormbringer" ),
-    'message_noaccount' => __('Pas encore de compte','stormbringer'),
     'message_error' => __( 'Erreur', "stormbringer" ),
     'message_info' => __( 'Info', "stormbringer" ),
     'message_success' => __( 'Success', "stormbringer" ),
@@ -69,6 +68,14 @@ function stormbringer_thememylogin_options(){
   $args = wp_parse_args( $args, $defaults );
   return $args;
 }
+
+
+function stormbringer_thememylogin_enqueue_scripts() {
+  wp_deregister_script('password-strength');
+  wp_dequeue_style('password-strength');
+}
+
+add_action('wp_enqueue_scripts', 'stormbringer_thememylogin_enqueue_scripts',60);
 
 function stormbringer_thememylogin_init() {
   global $theme_my_login;

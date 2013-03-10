@@ -23,12 +23,12 @@ function stormbringer_support() {
   locate_template('inc/front/secure.php',true);           // Secure Wordpress
   locate_template('inc/front/thumbnails.php',true);       // Thumbnails for Bootstrap
   //locate_template('inc/widgets/widget-login-form.php',true);        // Widgets login
+  locate_template('inc/admin/profile.php',true);        // Profile fields
 
   // Admin only
   if(is_admin()){
     locate_template('inc/admin/cleanup.php',true);        // Clean admin
     locate_template('inc/admin/htmleditor.php',true);     // HTML editor Bootstrap styles
-    locate_template('inc/admin/profile.php',true);        // Profile fields
     locate_template('inc/admin/htaccess.php',true);       // HTML%Boilerplate htaccess for Apache
   }
 
@@ -99,18 +99,17 @@ add_filter('breadcrumb_trail_args', 'custom_breadcrumb_trail_args');
 // ********************************************
 function custom_thememylogin_options(){
   $args = array(
-    'action_login' => __( 'Identification111', "stormbringer" ),
-    'action_lostpassword' => __( 'Mot de passe oublié222', "stormbringer" ),
-    'action_retrievepassword' => __( 'Mot de passe oublié333', "stormbringer" ),
+    'action_login' => __( 'Identification', "stormbringer" ),
+    'action_lostpassword' => __( 'Mot de passe oublié', "stormbringer" ),
+    'action_retrievepassword' => __( 'Mot de passe oublié', "stormbringer" ),
     'action_resetpass' => __( 'Mot de passe oublié', "stormbringer" ),
-    'action_register' => __( 'Créer un compte444', "stormbringer" ),
-    'action_profile' => __( 'Votre compte555', "stormbringer" ),
-    'message_error' => __( 'Erreur666', "stormbringer" ),
+    'action_register' => __( 'Créer un compte', "stormbringer" ),
+    'action_profile' => __( 'Votre compte', "stormbringer" ),
+    'message_error' => __( 'Erreur', "stormbringer" ),
     'message_info' => __( 'Info', "stormbringer" ),
     'message_success' => __( 'Succès', "stormbringer" ),
-    'menu_login' => __( 'S\'identifier777', "stormbringer" ),
-    'menu_logout' => __( 'Se déconnecter888', "stormbringer" ),
-    'message_noaccount' => __('Pas encore de compte?','stormbringer'),
+    'menu_login' => __( 'S\'identifier', "stormbringer" ),
+    'menu_logout' => __( 'Se déconnecter', "stormbringer" ),
   );
   return $args;
 }
