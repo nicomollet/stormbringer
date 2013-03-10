@@ -193,7 +193,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 a {
   color: #006F71;
@@ -1707,7 +1707,7 @@ table {
   border-top: 2px solid #ddd;
 }
 .table .table {
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 .table-condensed th,
 .table-condensed td {
@@ -2565,8 +2565,8 @@ table th[class*="span"],
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #fff;
-  border: 1px solid #ededed;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -3402,7 +3402,7 @@ input[type="submit"].btn.btn-mini {
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
   color: #555;
-  background-color: #f5f5f5;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -5185,15 +5185,6 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
-.breadcrumb {
-  background: #fff;
-}
-.page-header,
-.form-actions,
-.modal-header,
-.modal-footer {
-  border-color: #fff;
-}
 .thumbnail {
   background: #fff;
 }
@@ -5203,7 +5194,7 @@ a.badge:focus {
   margin-top: 20px;
 }
 .modal {
-  background: #f5f5f5;
+  background: #fff;
 }
 .modal-footer {
   -webkit-box-shadow: none;
@@ -5522,6 +5513,7 @@ iframe {
 .in-frame #prefooter,
 .in-frame #footer,
 .in-frame .page-header,
+.in-frame .movetomodal-footer,
 .in-frame #wpadminbar {
   display: none;
 }

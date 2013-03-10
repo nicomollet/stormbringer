@@ -54,7 +54,7 @@
     <h4 class="modal-title"></h4>
   </div>
   <div class="modal-body in-frame">
-    <iframe id="modal-frame" width="100%" height="98%" src="about:blank"></iframe>
+    <iframe id="modal-frame" name="modal-frame" width="100%" height="98%" src="about:blank"></iframe>
   </div>
 </div>
 <!-- /#modal-default -->

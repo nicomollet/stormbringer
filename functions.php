@@ -99,10 +99,6 @@ add_filter('breadcrumb_trail_args', 'custom_breadcrumb_trail_args');
 // ********************************************
 function custom_thememylogin_options(){
   $args = array(
-    'pageid_login' => 236,
-    'pageid_register' => 198,
-    'pageid_lostpassword' => 247,
-    'pageid_profile' => 267,
     'action_login' => __( 'Identification111', "stormbringer" ),
     'action_lostpassword' => __( 'Mot de passe oublié222', "stormbringer" ),
     'action_retrievepassword' => __( 'Mot de passe oublié333', "stormbringer" ),
@@ -114,6 +110,7 @@ function custom_thememylogin_options(){
     'message_success' => __( 'Succès', "stormbringer" ),
     'menu_login' => __( 'S\'identifier777', "stormbringer" ),
     'menu_logout' => __( 'Se déconnecter888', "stormbringer" ),
+    'message_noaccount' => __('Pas encore de compte?','stormbringer'),
   );
   return $args;
 }

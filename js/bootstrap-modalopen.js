@@ -118,13 +118,22 @@ $(document).ready(function() {
   });
 
 
+  var moveModalFooter = function() {
+    $('#modal-default .modal-footer').remove();
+    $formfooter_id = $(this).contents().find(".movetomodal-footer");
+    $formfooter_id.find('a').each(function(){$(this).attr('target','modal-frame');});
+    if($formfooter_id && $formfooter_id.html()!=undefined){
+      $formfooter = $formfooter_id.html();
+      $formfooter_id.remove();
+      $('#modal-default').append('<div class="modal-footer">'+$formfooter+'</div>');
+    }
+  }
   var getIFrameHeight = function() {
     tmp=0;
     if(!iframe_height){
-      //console.log('height not userdefined');
       iframe_height = 350;
       if(!iframe_external){
-
+        $(this).contents().find(".movetomodal-footer").remove();
         tmp = $(this).contents().find("html").height();
         //console.log('height iframe external: '+tmp);
         iframe_height = Math.max(tmp,iframe_height);
@@ -133,6 +142,7 @@ $(document).ready(function() {
     //console.log('height final: '+iframe_height);
     $('#modal-default'+' .modal-body').animate({height:iframe_height + 15+"px"}); // animated
   };
+  $('#modal-frame').bind('load', moveModalFooter );
   $('#modal-frame').bind('load', getIFrameHeight );
 
 });
