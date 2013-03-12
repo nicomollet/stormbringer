@@ -5531,6 +5531,10 @@ iframe {
   margin-left: 0;
   width: 100%;
 }
+#modal-frame {
+  width: 100%;
+  height: 98%;
+}
 .emulate-table {
   display: table;
   width: 100%;

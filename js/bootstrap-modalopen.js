@@ -137,7 +137,7 @@ $(document).ready(function() {
   var getIframeHeight = function() {
     tmp=0;
     if(!iframe_height){
-      iframe_height = 150;
+      iframe_height = 300;
       if(!iframe_external){
         $(this).contents().find(".movetomodal-footer").remove();
         tmp = $(this).contents().find("html").height();
