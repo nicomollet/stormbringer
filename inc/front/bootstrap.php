@@ -7,7 +7,7 @@ function stormbringer_bootstrap_css() {
   if(!is_admin()){
     // less.js for admin (development only)
     //if ( current_user_can('administrator') && (ENVIRONMENT == "dev" || ENVIRONMENT == "local")) {
-    if ( current_user_can('administrator') && $_GET['lesscompile']!='1') {
+    if ( current_user_can('administrator') &&  $_GET['lesscompile']!='1') {
       echo '<!-- Less -->' . "\n";
       echo '<link rel="stylesheet/less" href="'.get_template_directory_uri().'/less/_application.less" media="screen,projection"/>' . "\n";
       if(BOOTSTRAP_RESPONSIVE==true)echo '<link rel="stylesheet/less" href="'.get_template_directory_uri().'/less/responsive.less" media="screen,projection"/>' . "\n";
