@@ -3,6 +3,7 @@
 * Add widgets from JetPack http://jetpack.me/support/extra-sidebar-widgets/
 * Carousel shortcode
 * Find an Events plugin
+* WooCommerce compatibility
 
 ### 0.0.3: February 27th, 2013
 * Login/Register plugin compatible with TB (Theme My Login)

@@ -1,5 +1,7 @@
 <?php
 
+add_theme_support( 'woocommerce' );
+
 // ********************************************
 // Variables
 // ********************************************
@@ -22,7 +24,6 @@ function stormbringer_support() {
 
   locate_template('inc/front/secure.php',true);           // Secure Wordpress
   locate_template('inc/front/thumbnails.php',true);       // Thumbnails for Bootstrap
-  //locate_template('inc/widgets/widget-login-form.php',true);        // Widgets login
   locate_template('inc/admin/profile.php',true);        // Profile fields
 
   // Admin only
@@ -37,6 +38,7 @@ function stormbringer_support() {
     if(defined('GOOGLE_ANALYTICS') && GOOGLE_ANALYTICS!='')
       locate_template('inc/front/analytics.php',true);    // Analytics tracking code
     locate_template('inc/front/bootstrap.php',true);      // Load Bootstrap LESS or CSS
+    locate_template('inc/front/carousel.php',true);       // Load Carousel shortcode
     locate_template('inc/front/addthis.php',true);        // Sharing with Addthis
     locate_template('inc/front/cleanup.php',true);        // Cleanup frontend
     locate_template('inc/front/bodyclass.php',true);      // Body classes
@@ -83,16 +85,36 @@ add_action('widgets_init', 'custom_register_sidebars' );
 // ********************************************
 function custom_breadcrumb_trail_args(){
   $args = array(
-    'separator' => '›',
-    'before' => '' ,
-    'after' => false,
-    'front_page' => true,
-    'show_home' => __( 'Accueil', "stormbringer" ),
-    'echo' => true
+    'separator' => '›', //Separator text
+    'before' => '' , // HTML displayed before
+    'after' => false, // HTML displayed after
+    'front_page' => true, // Display the homepage link
+    'show_home' => __( 'Accueil', "stormbringer" ), // Homepage text link
+    'echo' => true // Echo or not
   );
   return $args;
 }
 add_filter('breadcrumb_trail_args', 'custom_breadcrumb_trail_args');
+
+// ********************************************
+// Carousel
+// ********************************************
+function custom_bootstrap_carousel_shortcode_atts(){
+  $args = array(
+    'order'             => 'ASC', // Order
+    'orderby'           => 'ID', // Orderby
+    'width'             => '100%', // Carousel width
+    'image_size'        => 'large', // Image size
+    'rel'               => '', // Rel attribute
+    'file'              => 0, // Link image to attachement page
+    'comments'          => 0, // Display attachment comments link
+    'interval'          => 4000, // Interval delay
+    'pause'             => 'hover', // Pause on hover
+    'start'             => 1, // Autostart carousel*/
+  );
+  return $args;
+}
+add_filter('stormbringer_bootstrap_carousel_shortcode_atts', 'custom_bootstrap_carousel_shortcode_atts');
 
 // ********************************************
 // Theme My Login
