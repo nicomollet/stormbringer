@@ -66,51 +66,48 @@ if ( ! class_exists( 'Stormbringer_Bootstrap_Carousel' ) ) {
 
       $carousel = '';
 
-
-      $carousel .= '<div id="bootstrap-carousel-' . $vars['id'] . '" class="carousel' . ( ( $vars['slide'] ) ? " slide" : "" ) . '"'.($width_int?' style="width:' . $width_int. ';"':'').($interval?' data-interval="' . $interval. '"':'').($interval?' data-pause="' . $pause. '"':'').' >
-  <!-- Carousel items -->
-  <div class="carousel-inner">';
-
+      $carousel .= '
+<div id="bootstrap-carousel-' . $vars['id'] . '" class="carousel' . ( ( $vars['slide'] ) ? " slide" : "" ) . '"'.($width_int?' style="width:' . $width_int. ';"':'').($interval?' data-interval="' . $interval. '"':'').($pause?' data-pause="' . $pause. '"':'').' >
+';
       $i = 0;
+      $carousel_indicators ='';
+      $carousel_inner ='';
       foreach ( $items as $item_id => $item )
       {
+        $carousel_indicators .= '<li data-target="#bootstrap-carousel-' . $vars['id'] . '" data-slide-to="'.$i.'"'.($i==0?' class="active"':'').'></li>';
         $full   = wp_get_attachment_image_src( $item_id, 'full', false );               // full size
         $thumb  = wp_get_attachment_image_src( $item_id, $vars['image_size'], false );  // thumbnail size
         $link   = ( $vars['file'] ) ? $full[0] : get_attachment_link( $item_id );
         $text   = wpautop( wptexturize( $item->post_content ) );
 
-        $carousel .= '<div id="item-' . $item_id . '" class="' . ( ( $i == 0 ) ? "active" : "" ) . ' item">
+        $carousel_inner .= '<div id="item-' . $item_id . '" class="' . ( ( $i == 0 ) ? "active" : "" ) . ' item">
                 <a class="' . ( ( $vars['file'] && $vars['thickbox'] ) ? "thickbox " : "" ) . '" rel="' . $vars['rel'] . '" href="' . $link . '"><img src="' . $thumb[0] . '" width="' . $vars['width'] . '" alt="' . $item->post_title . '"/></a>';
 
-        $carousel .= '<div class="carousel-caption">';
+        $carousel_inner .= '<div class="carousel-caption">';
 
-        $carousel .= '<h4>' . $item->post_title;
+        $carousel_inner .= '<h4>' . $item->post_title;
 
         if( $vars['comments'] && comments_open( $item_id ) ) :
 
           $comments = ( get_comments_number( $item_id ) != 0 ) ? sprintf( _n( '1 Comment', '%1$s Comments', get_comments_number( $item_id ), 'wp_bootstrap_carousel' ), number_format_i18n( get_comments_number( $item_id ) ) ) : __( '0 Comments', 'wp_bootstrap_carousel' );
 
-          $carousel .= '<span class="carousel-comments-link">
+          $carousel_inner .= '<span class="carousel-comments-link">
                     <a href="' . get_comments_link( $item_id ) . '" rel="bookmark">' . $comments . '</a>
                 </span>';
 
         endif;
 
-        $carousel .= '</h4>';
-
-        $carousel .= apply_filters( 'stormbringer_bootstrap_carousel_caption_text', $text, $item_id );
-
-        $carousel .= '</div>';
-
-        $carousel .= '</div>';
-
+        $carousel_inner .= '</h4>';
+        $carousel_inner .= apply_filters( 'stormbringer_bootstrap_carousel_caption_text', $text, $item_id );
+        $carousel_inner .= '</div>';
+        $carousel_inner .= '</div>';
         $i++;
       }
-
-      $carousel .= '</div><!-- .carousel-inner -->
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#bootstrap-carousel-' . $vars['id'] . '" data-slide="prev">' . __( '&lsaquo;', 'wp_bootstrap_carousel' ) . '</a>
-  <a class="carousel-control right" href="#bootstrap-carousel-' . $vars['id'] . '" data-slide="next">' . __( '&rsaquo;', 'wp_bootstrap_carousel' ) . '</a>
+      $carousel .= '<ol class="carousel-indicators">'.$carousel_indicators.'</ol>';
+      $carousel .= '<div class="carousel-inner">'.$carousel_inner.'</div>';
+      $carousel .='
+<a class="carousel-control left" href="#bootstrap-carousel-' . $vars['id'] . '" data-slide="prev">' . __( '&lsaquo;', 'wp_bootstrap_carousel' ) . '</a>
+<a class="carousel-control right" href="#bootstrap-carousel-' . $vars['id'] . '" data-slide="next">' . __( '&rsaquo;', 'wp_bootstrap_carousel' ) . '</a>
 </div>';
       if($start==1) :
         $carousel .= '
