@@ -33,9 +33,7 @@
 
   <div class="bs-docs-example">
     <h1>h1. Heading 1</h1>
-
     <h2>h2. Heading 2</h2>
-
     <h3>h3. Heading 3</h3>
     <h4>h4. Heading 4</h4>
     <h5>h5. Heading 5</h5>
@@ -75,14 +73,14 @@
   </div>
 
 
-  <h3 id="abbreviations">Abbreviations</h3>
+  <h3 id="abbreviations">Abbreviations <code>&lt;abbr&gt;</code></h3>
 
   <div class="bs-docs-example">
     <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
   </div>
 
 
-  <h3 id="blockquotes">Blockquotes</h3>
+  <h3 id="blockquotes">Blockquotes <code>&lt;blockquote&gt;</code></h3>
 
   <div class="bs-docs-example">
     <blockquote>
@@ -635,7 +633,7 @@
     <h2>Nav: tabs, pills, and lists</h2>
   </div>
 
-  <h3>Basic tabs</h3>
+  <h3>Basic tabs <code>.nav-tabs</code></h3>
 
   <div class="bs-docs-example">
     <ul class="nav nav-tabs">
@@ -645,7 +643,7 @@
     </ul>
   </div>
 
-  <h3>Basic pills</h3>
+  <h3>Basic pills <code>.nav-pills</code></h3>
 
   <div class="bs-docs-example">
     <ul class="nav nav-pills">
@@ -665,7 +663,7 @@
     </ul>
   </div>
 
-  <h3>Stacked tabs</h3>
+  <h3>Stacked tabs <code>.nav-stacked</code></h3>
 
   <div class="bs-docs-example">
     <ul class="nav nav-tabs nav-stacked">
@@ -675,7 +673,7 @@
     </ul>
   </div>
 
-  <h3>Stacked pills</h3>
+  <h3>Stacked pills <code>.nav-pills.nav-stacked</code></h3>
 
   <div class="bs-docs-example">
     <ul class="nav nav-pills nav-stacked">
@@ -725,7 +723,7 @@
   </div>
 
 
-  <h3>Example nav list</h3>
+  <h3>Example nav list <code>.nav-list</code></h3>
 
   <div class="bs-docs-example">
     <div style="max-width: 340px; padding: 8px 0;" class="well">
@@ -814,7 +812,7 @@
   <div class="page-header">
     <h2>Labels and badges</h2>
   </div>
-  <h3>Labels</h3>
+  <h3>Labels <code>.label</code></h3>
 
   <div class="bs-docs-example">
     <span class="label">Default</span>
@@ -824,7 +822,7 @@
     <span class="label label-info">Info</span>
     <span class="label label-inverse">Inverse</span>
   </div>
-  <h3>Badges</h3>
+  <h3>Badges <code>.badge</code></h3>
 
   <div class="bs-docs-example">
     <span class="badge">1</span>
@@ -1008,14 +1006,14 @@
     <h2>Miscellaneous</h2>
   </div>
 
-  <h3>Wells</h3>
+  <h3>Wells <code>.well</code></h3>
 
   <div class="bs-docs-example">
     <div class="well">
       Look, I'm in a well!
     </div>
   </div>
-  <h3>Well options</h3>
+  <h3>Well options <code>.well-large .well-small</code></h3>
 
   <div class="bs-docs-example">
     <div class="well well-large">
@@ -1035,15 +1033,12 @@
     <h2>Code</h2>
   </div>
 
-  <h3>Inline</h3>
+  <h3>Inline <code>&lt;code&gt;</code></h3>
 
   <div class="bs-docs-example">
     For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   </div>
-  <h3>Basic block</h3>
-
-  <p>Use <code>&lt;pre&gt;</code> for multiple lines of code. Be sure to escape any angle brackets in the code for
-    proper rendering.</p>
+  <h3>Basic block <code>&lt;pre&gt;</code></h3>
 
   <div class="bs-docs-example">
     <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>

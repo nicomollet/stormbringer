@@ -1,12 +1,12 @@
 ### HEAD
 * Make a poll plugin compatible with TB
 * Add widgets from JetPack http://jetpack.me/support/extra-sidebar-widgets/
-* Carousel shortcode
 * Find an Events plugin
 * WooCommerce compatibility
 
 ### 0.0.3: February 27th, 2013
 * Login/Register plugin compatible with TB (Theme My Login)
+* Carousel shortcode
 
 ### 0.0.2: February 27th, 2013
 * Created variable for modal  : bootstrap, fancybox 1 or none

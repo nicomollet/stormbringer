@@ -24,7 +24,8 @@ function stormbringer_support() {
 
   locate_template('inc/front/secure.php',true);           // Secure Wordpress
   locate_template('inc/front/thumbnails.php',true);       // Thumbnails for Bootstrap
-  locate_template('inc/admin/profile.php',true);        // Profile fields
+  locate_template('inc/admin/profile.php',true);          // Profile fields
+  locate_template('inc/front/twitter.php',true);          // Twitter widget
 
   // Admin only
   if(is_admin()){
@@ -39,6 +40,7 @@ function stormbringer_support() {
       locate_template('inc/front/analytics.php',true);    // Analytics tracking code
     locate_template('inc/front/bootstrap.php',true);      // Load Bootstrap LESS or CSS
     locate_template('inc/front/carousel.php',true);       // Load Carousel shortcode
+
     locate_template('inc/front/addthis.php',true);        // Sharing with Addthis
     locate_template('inc/front/cleanup.php',true);        // Cleanup frontend
     locate_template('inc/front/bodyclass.php',true);      // Body classes
