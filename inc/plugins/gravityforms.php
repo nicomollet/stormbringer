@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /**
  * Apply Bootstrap markup/classes to Gravity Forms - extended from stormbringer Theme (http://www.stormbringertheme.com)
@@ -237,11 +237,13 @@ add_filter("gform_field_choices", "stormbringer_gform_field_choices", 10, 5);
 * This filter can be used to dynamically change the confirmation message or redirect URL for a form
 */
 add_filter("gform_confirmation", "stormbringer_gform_confirmation", 10, 4);
-function stormbringer_gform_confirmation($confirmation, $form, $lead, $ajax)
-{
-  return stormbringer_alert(array("type" => "success"), $confirmation);
+function stormbringer_gform_confirmation($confirmation, $form, $lead, $ajax){
+  if($form['confirmation']['type']=='message')
+    return stormbringer_alert(array("type"=>"success"),$confirmation);
+  else
+    return $confirmation;
 }
-
+	
 
 //add_filter("gform_cdata_open", "stormbringer_gform_cdata_open", 10, 4);
 function stormbringer_gform_cdata_open($content)
