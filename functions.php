@@ -230,7 +230,6 @@ function stormbringer_js_footer() {
   //wp_enqueue_script('bootstrap-datepicker','//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.0.0/js/bootstrap-datepicker.min.js', array('bootstrap'), null, true);
   //wp_enqueue_script('bootstrap-growl','//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js', array('bootstrap'), null, true);
 
-  echo 'lightbox:'.LIGHTBOX;
   if(LIGHTBOX==='fancybox'){
     wp_enqueue_script('jquery-fancybox', get_template_directory_uri().'/js/fancybox/jquery.fancybox-1.3.4_patch.js', array('jquery'),null, true );
     wp_enqueue_script('fancybox-open', get_template_directory_uri().'/js/fancybox/fancybox-open.js', array('jquery'),null, true );
