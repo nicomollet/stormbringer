@@ -7,10 +7,9 @@ add_theme_support( 'woocommerce' );
 // ********************************************
 
 define('H5BP_HTACCESS', true);
-define('BOOTSTRAP_RESPONSIVE', true);
 define("POST_EXCERPT_LENGTH", 100);
 define("ADDTHIS_PROFILE", '');
-define("LIGHTBOX", 'tbmodal'); // tbmodal or fancybox
+define("LIGHTBOX", 0); // tbmodal or fancybox
 define("GOOGLE_ANALYTICS", '');
 define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')));
 define('WP_POST_REVISIONS', 2); // Keep only 2 revisions (including the autosave)

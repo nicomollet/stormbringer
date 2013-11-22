@@ -4,6 +4,9 @@
 * Find an Events plugin
 * WooCommerce compatibility
 
+### 0.1.1: November 22nd, 2013
+* Upgrade Boostrap to v3.0.2
+
 ### 0.0.3: February 27th, 2013
 * Login/Register plugin compatible with TB (Theme My Login)
 * Carousel shortcode
