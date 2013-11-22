@@ -2,28 +2,18 @@
 .underline {text-decoration: underline}
 .bold{font-weight: bold;}
 .thin{font-weight: normal;}
-
-/* Variable colors */
-.blue{color:@blue}
-.bluedark{color:@blueDark}
-.green{color:@green}
-.red{color:@red}
-.yellow{color:@yellow}
-.orange{color:@orange}
-.pink{color:@pink}
-.purple{color:@purple}
-.textcolor{color:@textColor}
+.text-color{color:@text-color}
 
 
 
 /* Focus */
 ::-moz-selection {
-    background: @linkColor !important;
+    background: @link-color !important;
     color: #fff
 }
 
 ::selection {
-    background: @linkColor !important;
+    background: @link-color !important;
     color: #fff
 }
 
@@ -81,7 +71,6 @@ iframe{border: 0}
 .bs-docs-example:after {
   background-color: #F5F5F5;
   border: 1px solid #DDDDDD;
-  .border-radius(4px 0 4px 0);
   color: #9DA0A4;
   content: "Example";
   font-size: 12px;
@@ -94,7 +83,6 @@ iframe{border: 0}
 .bs-docs-example {
   background-color: #FFFFFF;
   border: 1px solid #DDDDDD;
-  .border-radius(4px);
   margin: 15px 0;
   padding: 39px 19px 14px;
   position: relative;
@@ -110,7 +98,7 @@ a.edit-post{
 .post {position: relative;}
 
 .post:hover {
-  background: lighten(@green, 45%);
+  background: lighten(@gray-lighter, 45%);
   a.edit-post{
     display: inline;z-index: 800;
   }

@@ -4,38 +4,27 @@
 @color3: #2F3C5E;
 @color4: #175567;
 @color5: #006F71;
+@white: #ffffff;
 
 
-@bodyBackground:        #fff;
-@linkColor:             @color5;
-@linkColorHover:        darken(@linkColor, 10%);
-//@headingsColor:         @color1;
+@body-bg:        #fff;
+@link-color:             @color5;
+@link-hover-color:        darken(@link-color, 10%);
 
-/*
-@inputBorder:                   lighten(@color4, 40%);
-.input-append,
-.input-prepend {
-  .add-on{border-color: lighten(@color4, 40%);background: @white}
-}
-.input-append input{border-right: none;}
-.input-prepend input{border-left: none;}
-*/
-
-@btnPrimaryBackground:              @color4;
-@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);;
+@btn-primary-bg:              @color4;
 
 // Inverted navbar
-@navbarInverseText:                      @white;
-@navbarInverseLinkColor:                 @white;
-@navbarInverseLinkColorHover:            @grayLighter;
+@navbar-inverse-color:                      @white;
+@navbar-inverse-link-color:                 @white;
+@navbar-inverse-link-hover-color:           @gray-lighter;
 
-@navbarInverseBackgroundHighlight:       @color1;
-@navbarInverseBackground:                darken(@navbarInverseBackgroundHighlight, 5%);
-@navbarInverseBorder:                    darken(@navbarInverseBackground, 12%);
+@navbar-inverse-link-hover-bg:       @color1;
+//@navbar-inverse-bg:                darken(@navbar-inverse-bg, 5%);
+@navbar-inverse-border:                    darken(@navbar-inverse-bg, 12%);
 
-@heroUnitBackground:              @color5;
-@heroUnitHeadingColor:            @white;
-@heroUnitLeadColor:               @white;
+@jumbotron-bg:              @color5;
+@jumbotron-heading-color:            @white;
+@jumbotron-color:               @white;
 
 //@wellBackground:                  @white;
 
@@ -44,5 +33,5 @@
 //.page-header, .form-actions, .modal-header, .modal-footer{border-color: @white}
 .thumbnail{background: @white}
 #footer .container{border-top: 1px solid @white;  padding-top: 20px;  margin-top: 20px;}
-.modal{background: @bodyBackground}
+.modal{background: @body-bg}
 .modal-footer {.box-shadow(none);}

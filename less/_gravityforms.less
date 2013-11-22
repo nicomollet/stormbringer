@@ -2,7 +2,7 @@
 /* Gravity forms plugin */
 .help-block,
 .help-inline {
-  color: @grayLight; // lighten the text some for contrast
+  color: @gray-light; // lighten the text some for contrast
   margin-right: 10px;
 }
 
@@ -41,9 +41,9 @@ input, textarea, select, .uneditable-input {
 }
 .form-wrapper .checkbox, .form-wrapper .radio { padding-top: 5px}
 //.field-required {margin-left: 5px}
-.form-required {color: @errorText; margin-left: 5px;}
+.form-required {color: @alert-danger-text; margin-left: 5px;}
 
-.form-header{margin-bottom: @baseLineHeight}
+.form-header{margin-bottom: @line-height-base}
 
 .input-mini {  width: 20%;}
 .input-small {  width: 40%;}
@@ -86,7 +86,6 @@ select.input-max{  width: 100%;}
   .input-prepend,
   .input-append {
     display: inline-block;
-    .ie7-inline-block();
     margin-bottom: 0;
     vertical-align: middle;
   }
@@ -101,7 +100,6 @@ select.input-max{  width: 100%;}
   .input-prepend,
   .input-append {
     display: inline-block;
-    .ie7-inline-block();
     margin-bottom: 0;
     vertical-align: middle;
   }
@@ -109,7 +107,7 @@ select.input-max{  width: 100%;}
 
 
 /* Special Fields */
-.field-address textarea{height: @baseLineHeight*3;}
+.field-address textarea{height: @line-height-base*3;}
 .field-inline {
   .help-inline, .help-block{padding-left: 0}
 }

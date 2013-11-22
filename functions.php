@@ -47,7 +47,8 @@ function stormbringer_support() {
     locate_template('inc/front/comments.php',true);       // Comments function
     locate_template('inc/front/googlewebfonts.php',true); // Google Web fonts
     locate_template('inc/front/shortcodes.php',true);     // Shortcodes for Bootstrap: alert, badge, label, button, gallery
-    locate_template('inc/library/lessphp.php',true);      // LessCss library
+    locate_template('inc/library/lessphp.php',true);      // Lessphp library
+    locate_template('inc/library/lessphp-oyejorge.php',true);      // Lessphp-Oyejorge library
     locate_template('inc/front/menu.php',true);           // Menu walker for Bootstrap nav
     locate_template('inc/front/pagination.php',true);     // Pagination for Boostrap
     locate_template('inc/front/widgets.php',true);        // Widgets cleanup
