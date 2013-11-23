@@ -12,7 +12,7 @@
 
 <form name="form-lostpassword" id="form-lostpassword<?php $template->the_instance(); ?>" action="<?php $template->the_action_url('lostpassword'); ?>" method="post" class="form-horizontal form-lostpassword">
 
-  <div class="control-group">
+  <div class="form-group">
     <label class="control-label" for="userlogin<?php $template->the_instance(); ?>"><?php _e('Username or E-mail:', 'stormbringer') ?></label>
 
     <div class="controls">

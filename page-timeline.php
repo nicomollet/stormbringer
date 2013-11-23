@@ -13,7 +13,7 @@
 
 <?php get_sidebar(); ?>
 
-<div id="content" class="<?php echo apply_filters('stormbringer_content_container_class', 'span9');?>" role="main">
+<div id="content" class="<?php echo apply_filters('stormbringer_content_container_class', 'col-md-9');?>" role="main">
 
   <?php stormbringer_breadcrumb();?>
 

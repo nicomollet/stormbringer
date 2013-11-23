@@ -56,7 +56,7 @@ function stormbringer_support() {
   }
 
   // Plugins
-  if(class_exists('RGForms') && !is_admin()) locate_template('inc/plugins/gravityforms.php',true); // Gravity Forms compatibility with Boostrap
+  //if(class_exists('RGForms') && !is_admin()) locate_template('inc/plugins/gravityforms.php',true); // Gravity Forms compatibility with Boostrap
   if(function_exists('icl_object_id') && !is_admin()) locate_template('inc/plugins/wpml.php',true); // WPML switcher for Boostrap + cleanup styles
   if(class_exists( 'Theme_My_Login') && !is_admin()) locate_template('inc/plugins/thememylogin.php',true); // Theme My Login custom titles and custom pages
 
@@ -287,13 +287,13 @@ add_filter( 'tiny_mce_before_init', 'custom_tinymce_styles',100 );
 // ********************************************
 
 function custom_sidebar_container_class($class){
-    $class = 'span3';
+    $class = 'col-md-3';
   return $class;
 }
 add_filter( 'stormbringer_sidebar_container_class', 'custom_sidebar_container_class',100 );
 
 function custom_content_container_class($class){
-  $class = 'span9';
+  $class = 'col-md-9';
   return $class;
 }
 add_filter( 'stormbringer_content_container_class', 'custom_content_container_class',100 );

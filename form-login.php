@@ -12,7 +12,7 @@
 
 <form name="form-login" id="form-login<?php $template->the_instance(); ?>" action="<?php $template->the_action_url('login'); ?>" method="post" class="form-horizontal form-login">
 
-  <div class="control-group">
+  <div class="form-group">
     <label class="control-label" for="userlogin<?php $template->the_instance(); ?>"><?php _e('Username', 'stormbringer') ?></label>
 
     <div class="controls">
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="control-group">
+  <div class="form-group">
     <label class="control-label" for="userpass-<?php $template->the_instance(); ?>"><?php _e('Password', 'stormbringer') ?></label>
 
     <div class="controls">
@@ -29,7 +29,7 @@
   </div>
 
 
-  <div class="control-group">
+  <div class="form-group">
     <div class="controls">
       <label class="checkbox">
         <input name="rememberme" type="checkbox" id="rememberme<?php $template->the_instance(); ?>" value="forever"/> <?php _e('Remember Me', 'stormbringer'); ?>

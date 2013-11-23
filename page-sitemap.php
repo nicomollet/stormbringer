@@ -13,7 +13,7 @@
 
 <?php get_sidebar(); ?>
 
-<div id="content" class="<?php echo apply_filters('stormbringer_content_container_class', 'span9');?>" role="main">
+<div id="content" class="<?php echo apply_filters('stormbringer_content_container_class', 'col-md-9');?>" role="main">
 
   <?php stormbringer_breadcrumb();?>
 
@@ -26,15 +26,15 @@
 
   <!-- .sitemap-content -->
   <section class="sitemap-content">
-    <div class="row-fluid">
-      <div class="span6">
+    <div class="row">
+      <div class="col-md-6">
         <h3><?php _e('Pages', 'stormbringer') ?></h3>
         <ul>
           <?php wp_list_pages('depth=0&sort_column=menu_order&title_li='); ?>
         </ul>
       </div>
 
-      <div class="span6">
+      <div class="col-md-6">
 
         <?php
         $args=array(

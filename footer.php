@@ -7,21 +7,20 @@
  */
 ?>
 
-    </div>
-  </div>
-</div>
-<!-- /#main -->
+  </main>
+  <!-- /#main -->
 
-<footer role="contentinfo" id="footer">
-  <div class="container">
-    <div class="row">
-      <?php if (is_active_sidebar('footer_widgets')) : ?>
-        <?php dynamic_sidebar('footer_widgets'); ?>
-      <?php endif; ?>
-    </div>
-  </div>
-</footer>
-<!-- /#footer -->
+  <footer role="contentinfo" id="footer">
+    <?php if (is_active_sidebar('footer_widgets')) : ?>
+      <?php dynamic_sidebar('footer_widgets'); ?>
+    <?php endif; ?>
+  </footer>
+  <!-- /#footer -->
+
+</div>
+<!-- /#wrapper -->
+
+
 
 <div id="fancybox-ajaxcontainer">
     <div id="fancybox-ajaxcontent">

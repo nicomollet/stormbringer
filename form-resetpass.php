@@ -12,7 +12,7 @@
 
 <form name="form-resetpassword" id="form-resetpassword<?php $template->the_instance(); ?>" action="<?php $template->the_action_url('resetpass'); ?>" method="post" class="form-horizontal form-login">
 
-  <div class="control-group">
+  <div class="form-group">
     <label class="control-label" for="pass1<?php $template->the_instance(); ?>"><?php _e('New password', 'stormbringer') ?></label>
 
     <div class="controls">
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="control-group">
+  <div class="form-group">
     <label class="control-label" for="pass2<?php $template->the_instance(); ?>"><?php _e('Confirm new password', 'stormbringer') ?></label>
 
     <div class="controls">

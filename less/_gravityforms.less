@@ -1,5 +1,5 @@
-
-/* Gravity forms plugin */
+/*
+// Gravity forms plugin
 .help-block,
 .help-inline {
   color: @gray-light; // lighten the text some for contrast
@@ -18,7 +18,7 @@ input, textarea, select, .uneditable-input {
 	resize: none
 }
 .form-wrapper ul {
-	margin: 0;
+	margin: 0; padding: 0;
 	list-style-type: none
 }
 
@@ -70,12 +70,12 @@ select.input-max{  width: 100%;}
 
 
 
-/* Form Horizontal Left Label */
+// Form Horizontal Left Label
 .form-horizontal-leftlabel .control-label {
   text-align: left;
 }
 
-/* Form Placeholder */
+// Form Placeholder
 .form-placeholder {
   .hide-label .control-label{display: none}
   input,
@@ -90,7 +90,7 @@ select.input-max{  width: 100%;}
     vertical-align: middle;
   }
 }
-/* Form Placeholder */
+// Form Placeholder
 .form-vertical {
   input,
   textarea,
@@ -106,24 +106,95 @@ select.input-max{  width: 100%;}
 }
 
 
-/* Special Fields */
+// Special Fields
 .field-address textarea{height: @line-height-base*3;}
 .field-inline {
   .help-inline, .help-block{padding-left: 0}
 }
-/*.field-inline {
-  .radio, .checkbox {
-    padding-left:0;
-    input,label {
-      display: inline-block;
-      padding-top: 5px;
-      margin-bottom: 0;
-      vertical-align: middle;
-    }
-    label{margin-left: 10px;}
-  }
+
+
+textarea[data-disabled="1"]{
+}
+
+.form-horizontal .control-label{
+  .make-md-column(3);
+}
+
+.form-horizontal .controls{
+  .make-md-column(9);
 }
 */
 
-textarea[data-disabled="1"]{
+.gform_wrapper ul {
+  .list-unstyled();
+}
+.gform_wrapper li {
+  .form-group();
+}
+.gform_wrapper form {
+  margin-bottom: 0;
+}
+.gform_wrapper .gfield_label {
+}
+.gform_wrapper .gfield_required {
+  padding-left: 1px;
+  color: @state-danger-text;
+}
+.ginput_container input[type="text"],
+.ginput_container select,
+.ginput_container textarea {
+  .form-control();
+}
+.ginput_container textarea {
+  height: auto;
+}
+.gform_button {
+  .btn();
+  .btn-primary();
+}
+.gform_wrapper .gfield_error {
+  .gfield_label {
+    color: @state-danger-text;
+  }
+  input,
+  select,
+  textarea {
+    border-color: @alert-danger-border;
+    background-color: @alert-danger-bg;
+    color: @alert-danger-text;
+    .form-control-focus(@alert-danger-text);
+  }
+}
+.validation_error {
+  .alert();
+  .alert-danger();
+}
+#gforms_confirmation_message {
+  .alert();
+}
+
+// Nico
+.gfield_description{
+  .help-block();
+}
+.gfield_checkbox{
+  .checkbox();
+}
+.gfield_radio{
+  .radio();
+
+}
+.gfield_radio, .gfield_checkbox{
+  input{
+    margin-right: 8px;
+  }
+}
+
+.gform_wrapper .right_label > li > label{
+  .make-md-column(3);
+  text-align: right;
+}
+
+.gform_wrapper .right_label .ginput_container{
+  .make-md-column(9);
 }

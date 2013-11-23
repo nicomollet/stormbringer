@@ -75,7 +75,7 @@
 	<ul id="comment-form-elements" class="clearfix">
 		
 		<li>
-			<div class="control-group">
+			<div class="form-group">
 			  <label for="author"><?php _e("Nom","stormbringer"); ?> <?php if ($req) _e("(obligatoire)","stormbringer"); ?></label>
 			  <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input class="input-small" type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e("Votre nom","stormbringer"); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
 			  </div>
@@ -83,7 +83,7 @@
 		</li>
 		
 		<li>
-			<div class="control-group">
+			<div class="form-group">
 			  <label for="email"><?php _e("Email","stormbringer"); ?> <?php if ($req) _e("(obligatoire)","stormbringer"); ?></label>
 			  <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span><input class="input-small" type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Votre email","stormbringer"); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
 			  	<span class="help-inline">(<?php _e("ne sera pas publié","stormbringer"); ?>)</span>
@@ -92,7 +92,7 @@
 		</li>
 		
 		<li>
-			<div class="control-group">
+			<div class="form-group">
 			  <label for="url"><?php _e("Site web","stormbringer"); ?></label>
 			  <div class="input-prepend"><span class="add-on"><i class="icon-home"></i></span><input class="input-small" type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e("Votre site web","stormbringer"); ?>" tabindex="3" />
 			  </div>

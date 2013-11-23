@@ -38,7 +38,7 @@ function stormbringer_gform_field_css_class($classes, $field, $form)
 
   }
 
-  $classes .= " control-group";
+  $classes .= " form-group";
   if ($field["failed_validation"] == 1) $classes .= " error";
   return $classes;
 }
@@ -97,9 +97,9 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
   $content = str_replace('gfield_error', 'gfield_error error', $content);
   $content = str_replace('validation_message', 'help-inline', $content);
   $content = str_replace('ginput_container', 'ginput_container controls', $content);
-  $content = str_replace('small', 'input-small', $content);
-  $content = str_replace('medium', 'input-medium', $content);
-  $content = str_replace('large', 'input-large', $content);
+  $content = str_replace('small', 'form-control input-sm', $content);
+  $content = str_replace('medium', 'form-control input-md', $content);
+  $content = str_replace('large', 'form-control input-lg', $content);
   $content = str_replace('gfield_description', 'help-inline', $content);
   $content = str_replace('help-inline help-inline', 'help-inline', $content);
 
@@ -161,6 +161,7 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
       $field["cssClass"] = trim(str_replace('input-mini', '', $field["cssClass"]));
       $field["cssClass"] = trim(str_replace('input-max', '', $field["cssClass"]));
       $field["cssClass"] = trim(str_replace('button-', 'btn-', $field["cssClass"]));
+
       if ($button == true)
         $content = str_replace('/>', '/><button type="button" class="btn ' . $field["cssClass"] . '">' . $button_value . '</button></div>', $content);
       else
@@ -196,6 +197,7 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
       $content = str_replace('<textarea', '<textarea disabled=\'disabled\'', $content);
     if (strpos($field["cssClass"], 'field-force') !== false)
       $content = str_replace('<textarea', '<textarea data-force=\'1\'', $content);
+
   }
   if ($field["type"] == 'select') {
     if (strpos($field["cssClass"], 'field-disabled') !== false)
@@ -243,7 +245,7 @@ function stormbringer_gform_confirmation($confirmation, $form, $lead, $ajax){
   else
     return $confirmation;
 }
-	
+
 
 //add_filter("gform_cdata_open", "stormbringer_gform_cdata_open", 10, 4);
 function stormbringer_gform_cdata_open($content)

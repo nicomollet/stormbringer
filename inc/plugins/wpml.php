@@ -13,7 +13,7 @@ function stormbringer_languages_switcher(){
         foreach($languages as $l) :
           if($l['active'])
             $actives='
-              <button data-toggle="dropdown" class="btn btn-inverse dropdown-toggle">
+              <button data-toggle="dropdown" class="btn dropdown-toggle">
               '.$l['language_code'].' <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">

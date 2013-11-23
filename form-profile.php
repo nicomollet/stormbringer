@@ -30,7 +30,7 @@ foreach (array('posts', 'pages') as $post_cap)
     <legend><?php _e('Name', 'stormbringer') ?></legend>
 
 
-    <div class="control-group">
+    <div class="form-group">
       <label class="control-label" for="user_login"><?php _e('Username', 'stormbringer') ?></label>
 
       <div class="controls">
@@ -39,7 +39,7 @@ foreach (array('posts', 'pages') as $post_cap)
       </div>
     </div>
 
-    <div class="control-group">
+    <div class="form-group">
       <label class="control-label" for="first_name"><?php _e('First name', 'stormbringer') ?></label>
 
       <div class="controls">
@@ -47,7 +47,7 @@ foreach (array('posts', 'pages') as $post_cap)
       </div>
     </div>
 
-    <div class="control-group">
+    <div class="form-group">
       <label class="control-label" for="last_name"><?php _e('Last name', 'stormbringer') ?></label>
 
       <div class="controls">
@@ -55,7 +55,7 @@ foreach (array('posts', 'pages') as $post_cap)
       </div>
     </div>
 
-    <div class="control-group">
+    <div class="form-group">
       <label class="control-label" for="nickname"><?php _e('Nickname', 'stormbringer') ?>
         <span class="form-required">*</span></label>
 
@@ -64,7 +64,7 @@ foreach (array('posts', 'pages') as $post_cap)
       </div>
     </div>
 
-    <div class="control-group">
+    <div class="form-group">
       <label class="control-label" for="display_name"><?php _e('Display name publicly as', 'stormbringer') ?>
         <span class="form-required">*</span></label>
 
@@ -100,7 +100,7 @@ foreach (array('posts', 'pages') as $post_cap)
   <fieldset>
     <legend><?php _e('Contact Info', 'stormbringer') ?></legend>
 
-    <div class="control-group">
+    <div class="form-group">
       <label class="control-label" for="email"><?php _e('E-mail', 'stormbringer') ?><span class="form-required">*</span></label>
 
       <div class="controls">
@@ -108,7 +108,7 @@ foreach (array('posts', 'pages') as $post_cap)
       </div>
     </div>
 
-    <div class="control-group">
+    <div class="form-group">
       <label class="control-label" for="url"><?php _e('Website', 'stormbringer') ?></label>
 
       <div class="controls">
@@ -119,7 +119,7 @@ foreach (array('posts', 'pages') as $post_cap)
     <?php if (function_exists('_wp_get_user_contactmethods')) :
     foreach (_wp_get_user_contactmethods() as $name => $desc) {
       ?>
-      <div class="control-group">
+      <div class="form-group">
         <label class="control-label" for="<?php echo $name; ?>"><?php echo apply_filters('user_' . $name . '_label', $desc); ?></label>
 
         <div class="controls">
@@ -136,7 +136,7 @@ foreach (array('posts', 'pages') as $post_cap)
   <fieldset>
     <legend><?php _e('About Yourself', 'stormbringer'); ?></legend>
 
-    <div class="control-group">
+    <div class="form-group">
       <label class="control-label" for="description"><?php _e('Biographical Info', 'stormbringer'); ?></label>
 
       <div class="controls">
@@ -149,7 +149,7 @@ foreach (array('posts', 'pages') as $post_cap)
     $show_password_fields = apply_filters('show_password_fields', true, $profileuser);
     if ($show_password_fields) :
       ?>
-      <div class="control-group">
+      <div class="form-group">
         <label class="control-label" for="pass1"><?php _e('New Password', 'stormbringer'); ?></label>
 
         <div class="controls">
@@ -173,7 +173,7 @@ foreach (array('posts', 'pages') as $post_cap)
   <fieldset>
     <legend><?php _e('Additional Capabilities', 'stormbringer') ?></legend>
 
-    <div class="control-group">
+    <div class="form-group">
       <label class="control-label"><?php _e('Capabilities', 'stormbringer'); ?></label>
 
       <div class="controls">

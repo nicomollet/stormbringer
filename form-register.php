@@ -12,7 +12,7 @@
 
 <form name="form-register" id="form-register<?php $template->the_instance(); ?>" action="<?php $template->the_action_url('register'); ?>" method="post" class="form-horizontal form-register">
 
-  <div class="control-group">
+  <div class="form-group">
     <label class="control-label" for="userlogin<?php $template->the_instance(); ?>"><?php _e('Username', 'stormbringer') ?></label>
 
     <div class="controls">
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="control-group">
+  <div class="form-group">
     <label class="control-label" for="useremail-<?php $template->the_instance(); ?>"><?php _e('E-mail', 'stormbringer') ?></label>
 
     <div class="controls">

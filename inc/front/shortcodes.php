@@ -166,7 +166,7 @@ endif;
  * Example: [button type="info" size="large" link="http://yourlink.com"]Button Text[/button] */
 if ( ! function_exists( 'stormbringer_button' ) ):
 function stormbringer_button($atts, $content = null) {
-   extract(shortcode_atts(array('link' => '#', 'type' => '', 'size' => 'medium'), $atts));
+   extract(shortcode_atts(array('link' => '#', 'type' => '', 'size' => 'md'), $atts));
 
    if (empty($type)) {
     $type = "btn";
@@ -174,7 +174,7 @@ function stormbringer_button($atts, $content = null) {
     $type = "btn btn-" . $type;
    }
 
-   if ($size == "medium") {
+   if ($size == "md") {
     $size = "";
    } else {
     $size = "btn-" . $size;
@@ -217,10 +217,10 @@ function stormbringer_panel( $atts, $content = null ) {
    if ($columns != "12") {
    $span .= ''.$columns.'"';
    $spanfollow = $gridsize - $columns;
-   return '<div class="row-fluid"><div class='.$span.'><div class="panel"><p>' . do_shortcode($content) . '</p></div></div><div class="span'.$spanfollow.'">&nbsp;</div></div><div class="clear"></div>'; }
+   return '<div class="row"><div class='.$span.'><div class="panel"><p>' . do_shortcode($content) . '</p></div></div><div class="span'.$spanfollow.'">&nbsp;</div></div><div class="clear"></div>'; }
    else {
       $span .= ''.$columns.'"';
-      return '<div class="row-fluid"><div class='.$span.'><div class="panel"><p>' . do_shortcode($content) . '</p></div></div></div><div class="clear"></div>';
+      return '<div class="row"><div class='.$span.'><div class="panel"><p>' . do_shortcode($content) . '</p></div></div></div><div class="clear"></div>';
    }
 }
 add_shortcode('panel', 'stormbringer_panel');
