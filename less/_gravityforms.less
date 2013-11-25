@@ -190,11 +190,22 @@ textarea[data-disabled="1"]{
   }
 }
 
-.gform_wrapper .right_label > li > label{
-  .make-md-column(3);
-  text-align: right;
-}
 
-.gform_wrapper .right_label .ginput_container{
-  .make-md-column(9);
+.gform_wrapper .right_label{
+
+  .gfield{
+    .make-row();
+  }
+  > li > .gfield_label{
+    .make-md-column(3);
+    text-align: right;
+  }
+  .ginput_container{
+    .make-md-column(9);
+  }
+  .gfield_description, .instruction{
+    .make-md-column(9);
+    .make-md-column-offset(3);
+  }
+
 }

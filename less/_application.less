@@ -28,6 +28,13 @@
 
 
 
+
+
+
+
+
+
+
 // CUSTOM CSS
 // --------------------------------------------------
 
@@ -53,70 +60,4 @@
 
 
 
-#wrapper{
-  &:extend(.container);
-}
 
-#main{
-  .make-row();
-}
-
-#content{
-  .make-md-column(9);
-}
-#sidebar{
-  .make-md-column(3);
-}
-
-#navigation{
-  .navbar;
-  .navbar-inverse;
-  .container;
-}
-
-#footer{
-  border-top: 1px solid #f2f2f2;
-  box-shadow: 0 1px 0 rgba(255,255,255,.1);
-  padding-top: 20px;
-  margin-top: 20px;
-
-  .make-row();
-  .widget{
-    .make-sm-column(6);
-    .make-md-column(3);
-  }
-}
-
-.bs-docs-section{
-  .highlight, .bs-callout{
-    display: none;
-  }
-}
-.bs-glyphicons .glyphicon {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-
-.bs-glyphicons {
-  padding-left: 0;
-  padding-bottom: 1px;
-  margin-bottom: 20px;
-  list-style: none;
-  overflow: hidden;
-}
-.bs-glyphicons .glyphicon-class {
-  display: block;
-  text-align: center;
-}
-.bs-glyphicons li {
-  float: left;
-  width: 12.5%;
-  height: 115px;
-  padding: 10px;
-  margin: 0 -1px -1px 0;
-  font-size: 12px;
-  line-height: 1.4;
-  text-align: center;
-  border: 1px solid #ddd;
-}
