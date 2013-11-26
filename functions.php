@@ -283,23 +283,6 @@ add_filter( 'tiny_mce_before_init', 'custom_tinymce_styles',100 );
 
 
 // ********************************************
-// Content container classes
-// ********************************************
-
-function custom_sidebar_container_class($class){
-    $class = 'col-md-3';
-  return $class;
-}
-add_filter( 'stormbringer_sidebar_container_class', 'custom_sidebar_container_class',100 );
-
-function custom_content_container_class($class){
-  $class = 'col-md-9';
-  return $class;
-}
-add_filter( 'stormbringer_content_container_class', 'custom_content_container_class',100 );
-
-
-// ********************************************
 // Addthis
 // ********************************************
 
