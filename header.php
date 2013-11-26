@@ -42,33 +42,36 @@ if(self !== top){
 <body <?php body_class(''); ?> data-grid-framework="bo" data-grid-color="yellow" data-grid-opacity="0.2" data-grid-zindex="-30" data-grid-nbcols="12">
 
 <!--[if lt IE 7]>
-<p id="browsernotsupported"><?php _e('Votre navigateur est obsolète, <a href="http://browsehappy.com/">téléchargez un navigateur plus moderne</a> pour une bonne utilisation de ce site.', 'stormbringer');?>
+<p id="browsernotsupported"><?php _e('Votre navigateur est obsolète, <a href="http://browsehappy.com/">téléchargez un
+  navigateur plus moderne</a> pour une bonne utilisation de ce site.', 'stormbringer');?>
 </p><![endif]-->
 
 <div id="wrapper">
 
   <header role="banner" id="header">
 
-      <nav id="navigation" role="navigation">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" id="logo" title="<?php echo esc_attr(get_bloginfo('description')); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-          </div>
+    <nav id="navigation" role="navigation">
+      <div class="navigation-inner">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" id="logo" title="<?php echo esc_attr(get_bloginfo('description')); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+        </div>
 
-          <div class="collapse navbar-collapse">
-            <?php wp_nav_menu(array('theme_location' => 'main_nav', 'depth' => 2, 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new stormbringer_Navbar_Nav_Walker(), 'fallback_cb' => false)); ?>
-          </div>
-          <!-- /.navbar-collapse -->
-      </nav>
-      <!-- #navigation -->
+        <div class="collapse navbar-collapse">
+          <?php wp_nav_menu(array('theme_location' => 'main_nav', 'depth' => 2, 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new stormbringer_Navbar_Nav_Walker(), 'fallback_cb' => false)); ?>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+    </nav>
+    <!-- #navigation -->
 
   </header>
 
-  <main id="main">
-
-
+  <div class="main-wrapper">
+    <main id="main">
+      <div class="main-inner">

@@ -93,7 +93,7 @@ add_action( 'init', 'stormbringer_thememylogin_init' );
 
 
 
-
+/*
 function stormbringer_thememylogin_the_title( $title, $post_id = 0 ) {
   global $theme_my_login;
 
@@ -113,9 +113,10 @@ function stormbringer_thememylogin_the_title( $title, $post_id = 0 ) {
   }
   return $title;
 }
-
 add_filter( 'the_title', 'stormbringer_thememylogin_the_title', 10, 2 );
+*/
 
+/*
 function stormbringer_thememylogin_setup_nav_menu_item( $menu_item ) {
   global $theme_my_login;
 
@@ -133,7 +134,7 @@ function stormbringer_thememylogin_setup_nav_menu_item( $menu_item ) {
   return $menu_item;
 }
 add_filter( 'wp_setup_nav_menu_item', 'stormbringer_thememylogin_setup_nav_menu_item' );
-
+*/
 
 function stormbringer_thememylogin_errors($errors){
 

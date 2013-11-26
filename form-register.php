@@ -15,18 +15,14 @@
   <div class="form-group">
     <label class="control-label" for="userlogin<?php $template->the_instance(); ?>"><?php _e('Username', 'stormbringer') ?></label>
 
-    <div class="controls">
-      <input placeholder="<?php _e('Username', 'stormbringer') ?>" type="text" name="user_login" id="userlogin<?php $template->the_instance(); ?>" class="input-small" value="<?php $template->the_posted_value('user_login'); ?>"/>
-    </div>
+    <input placeholder="<?php _e('Username', 'stormbringer') ?>" type="text" name="user_login" id="userlogin<?php $template->the_instance(); ?>" class="form-control" value="<?php $template->the_posted_value('user_login'); ?>"/>
   </div>
 
   <div class="form-group">
     <label class="control-label" for="useremail-<?php $template->the_instance(); ?>"><?php _e('E-mail', 'stormbringer') ?></label>
 
-    <div class="controls">
-      <input placeholder="<?php _e('E-mail', 'stormbringer') ?>" type="text" name="user_email" id="useremail<?php $template->the_instance(); ?>" class="input-small" value="<?php $template->the_posted_value('user_email'); ?>"/>
-      <span class="help-inline"><?php _e('A password will be e-mailed to you.', 'stormbringer'); ?></span>
-    </div>
+    <input placeholder="<?php _e('E-mail', 'stormbringer') ?>" type="text" name="user_email" id="useremail<?php $template->the_instance(); ?>" class="form-control" value="<?php $template->the_posted_value('user_email'); ?>"/>
+    <span class="help-block"><?php _e('A password will be e-mailed to you.', 'stormbringer'); ?></span>
   </div>
 
   <?php
@@ -34,7 +30,7 @@
   do_action_ref_array('tml_register_form', array(&$template)); //TML hook
   ?>
 
-  <div class="form-actions">
+  <div class="form-group form-actions">
     <input class="btn btn-primary" type="submit" name="form-submit" id="form-submit<?php $template->the_instance(); ?>" value="<?php _e('Register', 'stormbringer'); ?>"/>
     <input type="hidden" name="redirect_to" value="<?php $template->the_redirect_url('register'); ?>"/>
     <input type="hidden" name="instance" value="<?php $template->the_instance(); ?>"/>

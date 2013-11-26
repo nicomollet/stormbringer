@@ -23,7 +23,7 @@ foreach (array('posts', 'pages') as $post_cap)
 
 <?php //$template->the_errors(); ?>
 
-<form id="form-profile" action="<?php $template->the_action_url('profile'); ?>" method="post" class="form-horizontal form-profile">
+<form id="form-profile" action="<?php $template->the_action_url('profile'); ?>" method="post" class="form form-horizontal form-profile">
   <?php do_action('profile_personal_options', $profileuser); ?>
 
   <fieldset>
@@ -33,25 +33,25 @@ foreach (array('posts', 'pages') as $post_cap)
     <div class="form-group">
       <label class="control-label" for="user_login"><?php _e('Username', 'stormbringer') ?></label>
 
-      <div class="controls">
-        <input placeholder="<?php _e('Username', 'stormbringer') ?>" disabled="disabled" type="text" name="user_login" id="user_login" class="input-small" value="<?php echo esc_attr($profileuser->user_login); ?>"/>
-        <span class="help-inline"><?php _e('Your username cannot be changed.', 'stormbringer'); ?></span>
+      <div class="form-field">
+        <input placeholder="<?php _e('Username', 'stormbringer') ?>" disabled="disabled" type="text" name="user_login" id="user_login" class="form-control" value="<?php echo esc_attr($profileuser->user_login); ?>"/>
+        <span class="help-block"><?php _e('Your username cannot be changed.', 'stormbringer'); ?></span>
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label" for="first_name"><?php _e('First name', 'stormbringer') ?></label>
 
-      <div class="controls">
-        <input placeholder="<?php _e('First name', 'stormbringer') ?>" type="text" name="first_name" id="first_name" class="input-small" value="<?php echo esc_attr($profileuser->first_name) ?>"/>
+      <div class="form-field">
+        <input placeholder="<?php _e('First name', 'stormbringer') ?>" type="text" name="first_name" id="first_name" class="form-control" value="<?php echo esc_attr($profileuser->first_name) ?>"/>
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label" for="last_name"><?php _e('Last name', 'stormbringer') ?></label>
 
-      <div class="controls">
-        <input placeholder="<?php _e('Last name', 'stormbringer') ?>" type="text" name="last_name" id="last_name" class="input-small" value="<?php echo esc_attr($profileuser->last_name) ?>"/>
+      <div class="form-field">
+        <input placeholder="<?php _e('Last name', 'stormbringer') ?>" type="text" name="last_name" id="last_name" class="form-control" value="<?php echo esc_attr($profileuser->last_name) ?>"/>
       </div>
     </div>
 
@@ -59,8 +59,8 @@ foreach (array('posts', 'pages') as $post_cap)
       <label class="control-label" for="nickname"><?php _e('Nickname', 'stormbringer') ?>
         <span class="form-required">*</span></label>
 
-      <div class="controls">
-        <input placeholder="<?php _e('Nickname', 'stormbringer') ?>" type="text" name="nickname" id="nickname" class="input-small" value="<?php echo esc_attr($profileuser->nickname) ?>"/>
+      <div class="form-field">
+        <input placeholder="<?php _e('Nickname', 'stormbringer') ?>" type="text" name="nickname" id="nickname" class="form-control" value="<?php echo esc_attr($profileuser->nickname) ?>"/>
       </div>
     </div>
 
@@ -68,8 +68,8 @@ foreach (array('posts', 'pages') as $post_cap)
       <label class="control-label" for="display_name"><?php _e('Display name publicly as', 'stormbringer') ?>
         <span class="form-required">*</span></label>
 
-      <div class="controls">
-        <select name="display_name" id="display_name">
+      <div class="form-field">
+        <select name="display_name" id="display_name" class="form-control">
           <?php
           $public_display = array();
           $public_display['display_nickname'] = $profileuser->nickname;
@@ -103,16 +103,16 @@ foreach (array('posts', 'pages') as $post_cap)
     <div class="form-group">
       <label class="control-label" for="email"><?php _e('E-mail', 'stormbringer') ?><span class="form-required">*</span></label>
 
-      <div class="controls">
-        <input placeholder="<?php _e('E-mail', 'stormbringer') ?>" type="text" name="email" id="email" class="input-small" value="<?php echo esc_attr($profileuser->user_email) ?>"/>
+      <div class="form-field">
+        <input placeholder="<?php _e('E-mail', 'stormbringer') ?>" type="text" name="email" id="email" class="form-control" value="<?php echo esc_attr($profileuser->user_email) ?>"/>
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label" for="url"><?php _e('Website', 'stormbringer') ?></label>
 
-      <div class="controls">
-        <input placeholder="<?php _e('Website', 'stormbringer') ?>" type="text" name="url" id="url" class="input-small" value="<?php echo esc_attr($profileuser->user_url) ?>"/>
+      <div class="form-field">
+        <input placeholder="<?php _e('Website', 'stormbringer') ?>" type="text" name="url" id="url" class="form-control" value="<?php echo esc_attr($profileuser->user_url) ?>"/>
       </div>
     </div>
 
@@ -122,8 +122,8 @@ foreach (array('posts', 'pages') as $post_cap)
       <div class="form-group">
         <label class="control-label" for="<?php echo $name; ?>"><?php echo apply_filters('user_' . $name . '_label', $desc); ?></label>
 
-        <div class="controls">
-          <input placeholder="<?php echo apply_filters('user_' . $name . '_label', $desc); ?>" type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" class="input-small" value="<?php echo esc_attr($profileuser->$name) ?>"/>
+        <div class="form-field">
+          <input placeholder="<?php echo apply_filters('user_' . $name . '_label', $desc); ?>" type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" class="form-control" value="<?php echo esc_attr($profileuser->$name) ?>"/>
         </div>
       </div>
       <?php
@@ -139,8 +139,8 @@ foreach (array('posts', 'pages') as $post_cap)
     <div class="form-group">
       <label class="control-label" for="description"><?php _e('Biographical Info', 'stormbringer'); ?></label>
 
-      <div class="controls">
-        <textarea name="description" id="description" rows="5" cols="30" class="input-small"><?php echo esc_html($profileuser->description); ?></textarea>
+      <div class="form-field">
+        <textarea name="description" id="description" rows="5" cols="30" class="form-control"><?php echo esc_html($profileuser->description); ?></textarea>
         <span class="help-block"><?php _e('Share a little biographical information to fill out your profile. This may be shown publicly.', 'stormbringer'); ?></span>
       </div>
     </div>
@@ -152,10 +152,10 @@ foreach (array('posts', 'pages') as $post_cap)
       <div class="form-group">
         <label class="control-label" for="pass1"><?php _e('New Password', 'stormbringer'); ?></label>
 
-        <div class="controls">
-          <input type="password" name="pass1" id="pass1" size="16" value="" autocomplete="off" class="input-small"/>
+        <div class="form-field">
+          <input type="password" name="pass1" id="pass1" size="16" value="" autocomplete="off" class="form-control"/>
           <span class="help-block"><?php _e('If you would like to change the password type a new one. Otherwise leave this blank.', 'stormbringer'); ?></span><br/>
-          <input type="password" name="pass2" id="pass2" size="16" value="" autocomplete="off" class="input-small"/>
+          <input type="password" name="pass2" id="pass2" size="16" value="" autocomplete="off" class="form-control"/>
           <span class="help-block"><?php _e('Type your new password again.', 'stormbringer'); ?></span><br/>
 
           <p id="pass-strength-result"><?php _e('Strength indicator', 'stormbringer'); ?></p>
@@ -176,7 +176,7 @@ foreach (array('posts', 'pages') as $post_cap)
     <div class="form-group">
       <label class="control-label"><?php _e('Capabilities', 'stormbringer'); ?></label>
 
-      <div class="controls">
+      <div class="form-field">
         <?php
         $output = '';
         global $wp_roles;
@@ -194,7 +194,7 @@ foreach (array('posts', 'pages') as $post_cap)
   </fieldset>
   <?php } ?>
 
-  <div class="form-actions">
+  <div class="form-group form-actions">
     <input class="btn btn-primary" type="submit" name="form-submit" value="<?php esc_attr_e('Update Profile', 'stormbringer'); ?>"/>
     <input type="hidden" name="user_id" id="user_id" value="<?php echo esc_attr($current_user->ID); ?>"/>
     <input type="hidden" name="from" value="profile"/>

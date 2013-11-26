@@ -191,19 +191,19 @@ textarea[data-disabled="1"]{
 }
 
 
-.gform_wrapper .right_label{
+.gform_wrapper .right_label, .form-horizontal{
 
-  .gfield{
+  .gfield, .form-group{
     .make-row();
   }
-  > li > .gfield_label{
+  > li > .gfield_label, .control-label{
     .make-md-column(3);
     text-align: right;
   }
-  .ginput_container{
+  .ginput_container, .form-field{
     .make-md-column(9);
   }
-  .gfield_description, .instruction{
+  .gfield_description, .instruction, .form-actions{
     .make-md-column(9);
     .make-md-column-offset(3);
   }

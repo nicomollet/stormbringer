@@ -307,7 +307,6 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
     {
       $min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-      wp_enqueue_style( 'wp-bootstrap-carousel',       $this->plugin_dir_url . 'css/carousel' . $min . '.css', array(), $this->version, 'screen' );
     }
     public function body_class( $classes )
     {

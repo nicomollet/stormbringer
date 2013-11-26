@@ -31,15 +31,23 @@
 //@hrBorder:                @color4;
 //.breadcrumb{background: @white}
 //.page-header, .form-actions, .modal-header, .modal-footer{border-color: @white}
-#footer .container{border-top: 1px solid @white;  padding-top: 20px;  margin-top: 20px;}
-.modal{background: @body-bg}
-.modal-footer {.box-shadow(none);}
+
+body{
+  position: relative;
+  padding-top: 80px;
+}
+body.home{
+  padding-top: 50px;
+}
 
 #wrapper{
+  //&:extend(.container);
+}
+#main, #footer{
   &:extend(.container);
 }
 
-#main{
+.main-inner{
   .make-row();
 }
 
@@ -49,25 +57,44 @@
 #sidebar{
   .make-md-column(3);
 }
-
-#navigation{
-  .navbar;
-  .navbar-inverse;
-  .container;
+.home{
+  #content{
+    .make-md-column(12);
+  }
 }
 
-#footer{
+
+
+#navigation{
+  //.navbar;
+  &:extend(.navbar);
+  .navbar-inverse;
+  .navbar-fixed-top;
+  //.container;
+  box-shadow: 0 1px 0 rgba(255,255,255,.1);
+  border-color: darken(@color1, 10%);
+  border-radius: 0;
+  .navbar-brand{margin-left: -15px;}
+}
+.navigation-inner{
+  &:extend(.container);
+}
+.footer-wrapper{
   border-top: 1px solid #f2f2f2;
   box-shadow: 0 1px 0 rgba(255,255,255,.1);
   padding-top: 20px;
   margin-top: 20px;
-
+}
+.footer-inner{
   .make-row();
   .widget{
     .make-sm-column(6);
     .make-md-column(3);
   }
 }
+
+.modal-footer {.box-shadow(none);}
+
 
 
 // BS Docs
@@ -128,4 +155,34 @@
   line-height: 1.4;
   text-align: center;
   border: 1px solid #ddd;
+}
+
+
+
+.widget_pages{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-shadow: 0 1px 0 #fff;
+  background-color: lighten(@color1, 78%);
+  border-radius: 5px;
+  .widgettitle{
+    display: none;
+  }
+  ul{
+
+    &:extend(.nav);
+    > li > a {
+      display: block;
+      color: #716b7a;
+      padding: 5px 20px;
+    }
+    ul > li > a {
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-left: 30px;
+      font-size: 90%;
+    }
+  }
 }

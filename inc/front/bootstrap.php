@@ -11,7 +11,7 @@ function stormbringer_bootstrap_css() {
       echo '<!-- Less -->' . "\n";
       echo '<link rel="stylesheet/less" href="'.get_template_directory_uri().'/less/_application.less" media="screen,projection"/>' . "\n";
       echo '<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.5.0/less.min.js"></script>' . "\n";
-      echo "<script type='text/javascript'>less.env = 'development';less.async = true;less.poll = 300;less.watch();</script>" . "\n";
+      echo "<script type='text/javascript'>less.env = 'development';less.async = true;less.poll = 600;less.watch();</script>" . "\n";
     }
     // compile with lessphp http://leafo.net/lessphp/ for users
     else{

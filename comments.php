@@ -25,15 +25,15 @@
 
   <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
     <nav id="comments-nav" class="pager">
-      <div class="nav-previous pull-left"><?php previous_comments_link( __( '&larr; Précédents commentaires', 'stormbringer' ) ); ?></div>
-      <div class="nav-next pull-right"><?php next_comments_link( __( 'Commentaires suivants &rarr;', 'stormbringer' ) ); ?></div>
+      <div class="previous pull-left"><?php previous_comments_link( __( '&larr; Précédents commentaires', 'stormbringer' ) ); ?></div>
+      <div class="next pull-right"><?php next_comments_link( __( 'Commentaires suivants &rarr;', 'stormbringer' ) ); ?></div>
     </nav>
   <?php endif; // check for comment navigation ?>
 
   
 	<?php else : // this is displayed if there are no comments so far ?>
 
-	<?php if ( comments_open() ) : ?>
+	<?php if ( comments_open() && post_type_supports(get_post_type(), 'comments')) : ?>
     <!-- If comments are open, but there are no comments. -->
 
 	<?php else : // comments are closed 
@@ -71,43 +71,34 @@
 	<p class="comments-logged-in-as"><?php _e("Identifié en tant que","stormbringer"); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e("Se déconnecter de ce compte","stormbringer"); ?>"><?php _e("Se déconnecter","stormbringer"); ?> &raquo;</a></p>
 
 	<?php else : ?>
-	
-	<ul id="comment-form-elements" class="clearfix">
-		
-		<li>
-			<div class="form-group">
-			  <label for="author"><?php _e("Nom","stormbringer"); ?> <?php if ($req) _e("(obligatoire)","stormbringer"); ?></label>
-			  <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input class="input-small" type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e("Votre nom","stormbringer"); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-			  </div>
-		  	</div>
-		</li>
-		
-		<li>
-			<div class="form-group">
-			  <label for="email"><?php _e("Email","stormbringer"); ?> <?php if ($req) _e("(obligatoire)","stormbringer"); ?></label>
-			  <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span><input class="input-small" type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Votre email","stormbringer"); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-			  	<span class="help-inline">(<?php _e("ne sera pas publié","stormbringer"); ?>)</span>
-			  </div>
-		  	</div>
-		</li>
-		
-		<li>
-			<div class="form-group">
-			  <label for="url"><?php _e("Site web","stormbringer"); ?></label>
-			  <div class="input-prepend"><span class="add-on"><i class="icon-home"></i></span><input class="input-small" type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e("Votre site web","stormbringer"); ?>" tabindex="3" />
-			  </div>
-		  	</div>
-		</li>
-	</ul>
+
+    <div class="form-group">
+      <label for="author" class="visible-xs"><?php _e("Nom", "stormbringer"); ?> <?php if ($req) _e("(obligatoire)", "stormbringer"); ?></label>
+      <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input class="form-control" type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e("Votre nom", "stormbringer"); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> /></div>
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="visible-xs"><?php _e("Email","stormbringer"); ?> <?php if ($req) _e("(obligatoire)","stormbringer"); ?></label>
+      <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><input class="form-control" type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Votre email","stormbringer"); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> /></div>
+      <p class="help-block">(<?php _e("ne sera pas publié","stormbringer"); ?>)</p>
+    </div>
+
+    <div class="form-group">
+      <label for="url" class="visible-xs"><?php _e("Site web", "stormbringer"); ?></label>
+      <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input class="form-control" type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e("Votre site web", "stormbringer"); ?>" tabindex="3"/></div>
+    </div>
 
 	<?php endif; ?>
-	
-  <label for="comment" class="control-label"><?php _e('Commentaire', 'stormbringer'); ?></label>
-  <textarea placeholder="<?php _e("Votre commentaire…","stormbringer"); ?>" name="comment" id="comment" class="input-large" rows="6" tabindex="4"></textarea>
 
-  <div class="form-actions">
+  <div class="form-group">
+    <label for="comment" class="visible-xs"><?php _e('Commentaire', 'stormbringer'); ?></label>
+    <textarea placeholder="<?php _e("Votre commentaire…","stormbringer"); ?>" name="comment" id="comment" class="form-control" rows="6" tabindex="4"></textarea>
+  </div>
+
+  <div class="form-group">
     <input class="btn btn-primary" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e("Envoyer le commentaire","stormbringer"); ?>" />
   </div>
+
   <?php comment_id_fields(); ?>
 
 	<?php 

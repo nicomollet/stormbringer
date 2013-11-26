@@ -10,31 +10,25 @@
 <?php stormbringer_thememylogin_errors($template->get_errors());?>
 <?php $thememylogin_options = stormbringer_thememylogin_options(); ?>
 
-<form name="form-login" id="form-login<?php $template->the_instance(); ?>" action="<?php $template->the_action_url('login'); ?>" method="post" class="form-horizontal form-login">
+<form name="form-login" id="form-login<?php $template->the_instance(); ?>" action="<?php $template->the_action_url('login'); ?>" method="post" class="form form-horizontal form-login">
 
   <div class="form-group">
     <label class="control-label" for="userlogin<?php $template->the_instance(); ?>"><?php _e('Username', 'stormbringer') ?></label>
 
-    <div class="controls">
-      <input placeholder="<?php _e('Username', 'stormbringer') ?>" type="text" name="log" id="userlogin<?php $template->the_instance(); ?>" class="input-small" value="<?php $template->the_posted_value('log'); ?>"/>
-    </div>
+    <input placeholder="<?php _e('Username', 'stormbringer') ?>" type="text" name="log" id="userlogin<?php $template->the_instance(); ?>" class="form-control" value="<?php $template->the_posted_value('log'); ?>"/>
   </div>
 
   <div class="form-group">
     <label class="control-label" for="userpass-<?php $template->the_instance(); ?>"><?php _e('Password', 'stormbringer') ?></label>
 
-    <div class="controls">
-      <input placeholder="<?php _e('Password', 'stormbringer') ?>" type="password" name="pwd" id="userpass<?php $template->the_instance(); ?>" class="input-small" value=""/>
-    </div>
+    <input placeholder="<?php _e('Password', 'stormbringer') ?>" type="password" name="pwd" id="userpass<?php $template->the_instance(); ?>" class="form-control" value=""/>
   </div>
 
 
   <div class="form-group">
-    <div class="controls">
-      <label class="checkbox">
-        <input name="rememberme" type="checkbox" id="rememberme<?php $template->the_instance(); ?>" value="forever"/> <?php _e('Remember Me', 'stormbringer'); ?>
-      </label>
-    </div>
+    <label class="checkbox">
+      <input name="rememberme" type="checkbox" id="rememberme<?php $template->the_instance(); ?>" value="forever"/> <?php _e('Remember Me', 'stormbringer'); ?>
+    </label>
   </div>
 
   <?php
@@ -42,7 +36,7 @@
   do_action_ref_array('tml_login_form', array(&$template)); // TML hook
   ?>
 
-  <div class="form-actions">
+  <div class="form-group form-actions">
     <input class="btn btn-primary" type="submit" name="form-submit" id="form-submit<?php $template->the_instance(); ?>" value="<?php _e('Log In', 'stormbringer'); ?>"/>
     <?php
     if ($this->options['show_pass_link'])
