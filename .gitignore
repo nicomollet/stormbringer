@@ -2,6 +2,7 @@
 custom/custom.css
 custom/custom_functions.php
 new_functions.php
+lessphp_*
 
 # Numerous always-ignore extensions
 *.diff
