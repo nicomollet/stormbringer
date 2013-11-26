@@ -15,20 +15,26 @@
   <div class="form-group">
     <label class="control-label" for="userlogin<?php $template->the_instance(); ?>"><?php _e('Username', 'stormbringer') ?></label>
 
-    <input placeholder="<?php _e('Username', 'stormbringer') ?>" type="text" name="log" id="userlogin<?php $template->the_instance(); ?>" class="form-control" value="<?php $template->the_posted_value('log'); ?>"/>
+    <div class="form-field">
+      <input placeholder="<?php _e('Username', 'stormbringer') ?>" type="text" name="log" id="userlogin<?php $template->the_instance(); ?>" class="form-control" value="<?php $template->the_posted_value('log'); ?>"/>
+    </div>
   </div>
 
   <div class="form-group">
     <label class="control-label" for="userpass-<?php $template->the_instance(); ?>"><?php _e('Password', 'stormbringer') ?></label>
 
-    <input placeholder="<?php _e('Password', 'stormbringer') ?>" type="password" name="pwd" id="userpass<?php $template->the_instance(); ?>" class="form-control" value=""/>
+    <div class="form-field">
+      <input placeholder="<?php _e('Password', 'stormbringer') ?>" type="password" name="pwd" id="userpass<?php $template->the_instance(); ?>" class="form-control" value=""/>
+    </div>
   </div>
 
 
   <div class="form-group">
-    <label class="checkbox">
-      <input name="rememberme" type="checkbox" id="rememberme<?php $template->the_instance(); ?>" value="forever"/> <?php _e('Remember Me', 'stormbringer'); ?>
-    </label>
+    <div class="form-field">
+      <label class="checkbox">
+        <input name="rememberme" type="checkbox" id="rememberme<?php $template->the_instance(); ?>" value="forever"/> <?php _e('Remember Me', 'stormbringer'); ?>
+      </label>
+    </div>
   </div>
 
   <?php
