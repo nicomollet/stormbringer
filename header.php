@@ -53,7 +53,7 @@ if(self !== top){
     <nav id="navigation" role="navigation">
       <div class="navigation-inner">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -62,7 +62,7 @@ if(self !== top){
           <a class="navbar-brand" id="logo" title="<?php echo esc_attr(get_bloginfo('description')); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
         </div>
 
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="navigation-collapse">
           <?php wp_nav_menu(array('theme_location' => 'main_nav', 'depth' => 2, 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new stormbringer_Navbar_Nav_Walker(), 'fallback_cb' => false)); ?>
         </div>
         <!-- /.navbar-collapse -->
