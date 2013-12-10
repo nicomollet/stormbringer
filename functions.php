@@ -245,13 +245,10 @@ add_action('wp_enqueue_scripts', 'stormbringer_js_footer',300);
 
 // Add IE8 conditional JS
 function stormbringer_ie8_js_header () {
-  global $is_IE;
-  if ($is_IE){
-    echo '<!--[if lt IE 9]>';
-    echo '<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>';
-    echo '<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>';
-    echo '<![endif]-->';
-  }
+  echo '<!--[if lt IE 9]>';
+  echo '<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>';
+  echo '<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>';
+  echo '<![endif]-->';
 }
 add_action('wp_head', 'stormbringer_ie8_js_header');
 
