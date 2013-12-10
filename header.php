@@ -73,5 +73,5 @@ if(self !== top){
   </header>
 
   <div class="main-wrapper">
-    <main id="main">
+    <div id="main">
       <div class="main-inner">

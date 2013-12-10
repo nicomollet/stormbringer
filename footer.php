@@ -9,7 +9,7 @@
 
       </div>
       <!-- /.main-inner -->
-    </main>
+    </div>
     <!-- /#main -->
   </div>
     <!-- /.main-wrapper -->
