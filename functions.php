@@ -224,7 +224,8 @@ function stormbringer_js_footer() {
   //wp_enqueue_script('addthis','//s7.addthis.com/js/300/addthis_widget.js'.(defined('ADDTHIS_PROFILE')?'#pubid='.ADDTHIS_PROFILE:''), array(), null, true);
 
   wp_enqueue_script('bootstrap','//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js', array(), null, true);
-  //wp_enqueue_script('bootstrap-datepicker','//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js', array('bootstrap'), null, true);
+  wp_enqueue_script('bootstrap-datepicker','//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js', array('bootstrap'), null, true);
+  //wp_enqueue_script('bootstrap-datepicker-fr','//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/locales/bootstrap-datepicker.fr.min.js', array('bootstrap'), null, true);
   //wp_enqueue_script('bootstrap-growl','//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js', array('bootstrap'), null, true);
 
   if(LIGHTBOX==='fancybox'){

@@ -32,7 +32,7 @@ function stormbringer_pagination($before = '', $after = '') {
 		$start_page = 1;
 	}
 
-	echo $before.'<div class="pagination"><ul class="clearfix">'."";
+	echo $before.'<div class="clearfix"><ul class="pagination">'."";
 	if ($paged > 1) {
 		$first_page_text = "&laquo";
 		echo '<li class="prev"><a href="'.get_pagenum_link().'" title="'.__("Premier",'stormbringer').'">'.$first_page_text.'</a></li>';

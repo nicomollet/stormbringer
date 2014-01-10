@@ -287,7 +287,8 @@ a:focus {
 img {
   vertical-align: middle;
 }
-.img-responsive {
+.img-responsive,
+img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -7034,6 +7035,10 @@ a.edit-post {
 .post:hover a.edit-post {
   display: inline;
   z-index: 800;
+}
+/* Images */
+.ie8 img {
+  width: auto;
 }
 blockquote.pull-left {
   padding-right: 15px;
