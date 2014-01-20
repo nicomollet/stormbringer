@@ -205,8 +205,8 @@ function stormbringer_register_menus() {
 function stormbringer_js_header() {
   if (!is_admin()) {
     wp_deregister_script('jquery');
-  wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(),null, false );
-  wp_enqueue_script('modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(),null, false );
+  wp_enqueue_script('jquery', 'http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(),null, false );
+  wp_enqueue_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(),null, false );
   }
 }
 add_action('wp_enqueue_scripts', 'stormbringer_js_header',50);
@@ -215,18 +215,18 @@ function stormbringer_js_footer() {
 
   /* Disable comments to load/unload scripts */
 
-  //wp_enqueue_script('jquery-cycle','//cdnjs.cloudflare.com/ajax/libs/jquery.cycle/3.0.3/jquery.cycle.all.min.js', array('jquery'), null, true);
-  //wp_enqueue_script('jquery-easing','//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', array('jquery'), null, true);
-  //wp_enqueue_script('jquery-mousewheel','//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.6/jquery.mousewheel.min.js', array('jquery'), null, true);
-  //wp_enqueue_script('jquery-validate','//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.0/jquery.validate.min.js', array('jquery'), null, true);
-  //wp_enqueue_script('jquery-easing','//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', array('jquery'), null, true);
+  //wp_enqueue_script('jquery-cycle','http://cdnjs.cloudflare.com/ajax/libs/jquery.cycle/3.0.3/jquery.cycle.all.min.js', array('jquery'), null, true);
+  //wp_enqueue_script('jquery-easing','http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', array('jquery'), null, true);
+  //wp_enqueue_script('jquery-mousewheel','http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.6/jquery.mousewheel.min.js', array('jquery'), null, true);
+  //wp_enqueue_script('jquery-validate','http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.0/jquery.validate.min.js', array('jquery'), null, true);
+  //wp_enqueue_script('jquery-easing','http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', array('jquery'), null, true);
 
   //wp_enqueue_script('addthis','//s7.addthis.com/js/300/addthis_widget.js'.(defined('ADDTHIS_PROFILE')?'#pubid='.ADDTHIS_PROFILE:''), array(), null, true);
 
-  wp_enqueue_script('bootstrap','//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js', array(), null, true);
-  wp_enqueue_script('bootstrap-datepicker','//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js', array('bootstrap'), null, true);
-  //wp_enqueue_script('bootstrap-datepicker-fr','//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/locales/bootstrap-datepicker.fr.min.js', array('bootstrap'), null, true);
-  //wp_enqueue_script('bootstrap-growl','//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js', array('bootstrap'), null, true);
+  wp_enqueue_script('bootstrap','http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js', array(), null, true);
+  wp_enqueue_script('bootstrap-datepicker','http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js', array('bootstrap'), null, true);
+  //wp_enqueue_script('bootstrap-datepicker-fr','http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/locales/bootstrap-datepicker.fr.min.js', array('bootstrap'), null, true);
+  //wp_enqueue_script('bootstrap-growl','http://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js', array('bootstrap'), null, true);
 
   if(LIGHTBOX==='fancybox'){
     wp_enqueue_script('jquery-fancybox', get_template_directory_uri().'/js/fancybox/jquery.fancybox-1.3.4_patch.js', array('jquery'),null, true );

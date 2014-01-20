@@ -24,9 +24,8 @@ TODO
 -----------
 
 * Clean-up
-* Comment
+* Comments
 * Login system
-* Activate sharing buttons
 * WPML language switcher
 * Include Font-Awesome
 * Localize theme
