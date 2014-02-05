@@ -303,4 +303,3 @@ function share_addthis(){
   }
 }
 add_action( 'stormbringer_content_after', 'share_addthis', 10, 2 );
-
