@@ -4,9 +4,13 @@
 * Find an Events plugin
 * WooCommerce compatibility
 
-### 0.1.2: February 5th, 2014
+### 0.1.3: February 5th, 2014
 * Upgrade Boostrap to v3.1.0
 * Upgrade Less to v1.6.2
+
+### 0.1.2: December 10th, 2013
+* Included Respond.js for IE6-IE8 compatibility with Media Queries
+* Removed javascript from carousel
 
 ### 0.1.1: November 22nd, 2013
 * Upgrade Boostrap to v3.0.2
