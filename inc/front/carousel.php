@@ -194,8 +194,6 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
 
       $id = intval( $post->ID );
       $thumbnail_id = get_post_meta( $id, '_thumbnail_id', true );
-print_r('<br>dfalt<br>');
-print_r($atts);
       $atts = shortcode_atts( apply_filters( 'stormbringer_bootstrap_carousel_shortcode_atts', array(
 
         'post_parent'       => $id,
@@ -220,8 +218,6 @@ print_r($atts);
         'thickbox'          => 0,
 
       ) ), $atts, 'carousel' );
-      print_r('<br>aftr<br>');
-      print_r($atts);
       // query vars
       $post_parent    = intval( $atts['post_parent'] );
       $post_status    = sanitize_text_field( $atts['post_status'] );
