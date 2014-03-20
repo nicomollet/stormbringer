@@ -101,7 +101,7 @@ add_filter('breadcrumb_trail_args', 'custom_breadcrumb_trail_args');
 // ********************************************
 // Carousel
 // ********************************************
-function custom_bootstrap_carousel_shortcode_atts(){
+function custom_bootstrap_carousel_shortcode_atts($defaults){
   $args = array(
     'order'             => 'ASC', // Order
     'orderby'           => 'ID', // Orderby
@@ -112,8 +112,8 @@ function custom_bootstrap_carousel_shortcode_atts(){
     'comments'          => 0, // Display attachment comments link
     'interval'          => 4000, // Interval delay
     'pause'             => 'hover', // Pause on hover
-    'start'             => 1, // Autostart carousel*/
   );
+  $args = wp_parse_args( $args, $defaults );
   return $args;
 }
 add_filter('stormbringer_bootstrap_carousel_shortcode_atts', 'custom_bootstrap_carousel_shortcode_atts');
