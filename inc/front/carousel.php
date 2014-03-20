@@ -118,7 +118,7 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
 
       $carousel = '';
 
-      $carousel .= '<div id="wp-bootstrap-carousel-' . $vars['id'] . '" class="carousel' . ( ( $vars['slide'] ) ? " slide" : "" ) . '" style="width:' . $width_int . ';" data-interval="' . $vars['interval'] . '" data-pause="' . $vars['pause'] . '" data-wrap="' . $vars['wrap'] . '">';
+      $carousel .= '<div id="wp-bootstrap-carousel-' . $vars['id'] . '" class="carousel' . ( ( $vars['slide'] ) ? " slide" : "" ) . '" style="width:' . $width_int . ';" data-ride="carousel" data-interval="' . $vars['interval'] . '" data-pause="' . $vars['pause'] . '" data-wrap="' . $vars['wrap'] . '">';
 
       /**
        * INDICATORS

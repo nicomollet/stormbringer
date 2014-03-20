@@ -11,7 +11,7 @@ define("POST_EXCERPT_LENGTH", 100);
 define("ADDTHIS_PROFILE", '');
 define("LIGHTBOX", 'tbmodal'); // tbmodal or fancybox
 define("GOOGLE_ANALYTICS", '');
-define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')));
+//define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')));
 define('WP_POST_REVISIONS', 2); // Keep only 2 revisions (including the autosave)
 define('AUTOSAVE_INTERVAL', 900 ); // Autosave every 15 minutes
 
