@@ -4,6 +4,11 @@
 * Find an Events plugin
 * WooCommerce compatibility
 
+
+### 0.1.4: July 22nd, 2014
+* Upgrade Boostrap to v3.2.0
+* Adding Boostrap Sass and Grunt support
+
 ### 0.1.3: February 5th, 2014
 * Upgrade Boostrap to v3.1.0
 * Upgrade Less to v1.6.2

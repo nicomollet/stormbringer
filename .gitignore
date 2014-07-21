@@ -42,3 +42,4 @@ nbproject
 .idea
 docs/
 js/tests/
+node_modules/
