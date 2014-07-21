@@ -6,6 +6,7 @@ add_theme_support( 'woocommerce' );
 // Variables
 // ********************************************
 
+define('PREPROCESSOR', 'less'); // less or scss
 define('H5BP_HTACCESS', true);
 define("POST_EXCERPT_LENGTH", 100);
 define("ADDTHIS_PROFILE", '');
