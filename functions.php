@@ -6,7 +6,7 @@ add_theme_support( 'woocommerce' );
 // Variables
 // ********************************************
 
-define('PREPROCESSOR', 'less'); // less or scss
+define('PREPROCESSOR', 'scss'); // less or scss
 define('H5BP_HTACCESS', true);
 define("POST_EXCERPT_LENGTH", 100);
 define("ADDTHIS_PROFILE", '');
@@ -229,18 +229,25 @@ function stormbringer_js_footer() {
   //wp_enqueue_script('bootstrap-datepicker-fr','http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/locales/bootstrap-datepicker.fr.min.js', array('bootstrap'), null, true);
   //wp_enqueue_script('bootstrap-growl','http://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js', array('bootstrap'), null, true);
 
-  if(LIGHTBOX==='fancybox'){
-    wp_enqueue_script('jquery-fancybox', get_template_directory_uri().'/js/fancybox/jquery.fancybox-1.3.4_patch.js', array('jquery'),null, true );
-    wp_enqueue_script('fancybox-open', get_template_directory_uri().'/js/fancybox/fancybox-open.js', array('jquery'),null, true );
+  if (PREPROCESSOR == 'less') {
+    if(LIGHTBOX==='fancybox'){
+      wp_enqueue_script('jquery-fancybox', get_template_directory_uri().'/js/fancybox/jquery.fancybox-1.3.4_patch.js', array('jquery'),null, true );
+      wp_enqueue_script('fancybox-open', get_template_directory_uri().'/js/fancybox/fancybox-open.js', array('jquery'),null, true );
+    }
+    if(LIGHTBOX==='tbmodal'){
+      wp_enqueue_script('bootstrap-loadimage', get_template_directory_uri().'/js/bootstrap-loadimage.js', array('bootstrap','jquery'),null, true );
+      wp_enqueue_script('bootstrap-modalgallery', get_template_directory_uri().'/js/bootstrap-modalgallery.js', array('bootstrap','jquery'),null, true );
+      wp_enqueue_script('bootstrap-modalopen', get_template_directory_uri().'/js/bootstrap-modalopen.js', array('bootstrap','jquery'),null, true );
+    }
+    wp_enqueue_script('common.js', get_template_directory_uri().'/js/common.js', array('jquery'),null, true );
+    wp_enqueue_script('app.js', get_template_directory_uri().'/js/app.js', array('jquery'),null, true );
   }
 
-  if(LIGHTBOX==='tbmodal'){
-    wp_enqueue_script('bootstrap-loadimage', get_template_directory_uri().'/js/bootstrap-loadimage.js', array('bootstrap','jquery'),null, true );
-    wp_enqueue_script('bootstrap-modalgallery', get_template_directory_uri().'/js/bootstrap-modalgallery.js', array('bootstrap','jquery'),null, true );
-    wp_enqueue_script('bootstrap-modalopen', get_template_directory_uri().'/js/bootstrap-modalopen.js', array('bootstrap','jquery'),null, true );
+  if (PREPROCESSOR == 'scss') {
+    wp_enqueue_script('production.min.js', get_template_directory_uri().'/js/production.min.js', array('jquery'),null, true );
+
+
   }
-  wp_enqueue_script('common.js', get_template_directory_uri().'/js/common.js', array('jquery'),null, true );
-  wp_enqueue_script('app.js', get_template_directory_uri().'/js/app.js', array('jquery'),null, true );
 
 }
 add_action('wp_enqueue_scripts', 'stormbringer_js_footer',300);

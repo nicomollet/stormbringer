@@ -28,6 +28,27 @@ function stormbringer_bootstrap_css()
       wp_enqueue_style('stormbringer-print');
     }
   }
+
+  if (PREPROCESSOR == 'scss') {
+
+
+
+    if (!is_admin()) {
+      if (current_user_can('administrator') && $_GET['lesscompile'] != '1') {
+        echo '<script src="'.get_bloginfo('url').':8080/livereload.js"></script>' . "\n";
+        wp_register_style('stormbringer-app', get_template_directory_uri() . '/css/application.css', array(), null, 'screen,projection');
+        wp_enqueue_style('stormbringer-app');
+      }
+      else{
+        wp_register_style('stormbringer-app', get_template_directory_uri() . '/css/application.min.css', array(), null, 'screen,projection');
+        wp_enqueue_style('stormbringer-app');
+      }
+    }
+
+    wp_register_style('stormbringer-print', get_template_directory_uri() . '/css/print.css', array(), null, 'print');
+    wp_enqueue_style('stormbringer-print');
+  }
+
 }
 add_action('wp_enqueue_scripts', 'stormbringer_bootstrap_css',10);
 
