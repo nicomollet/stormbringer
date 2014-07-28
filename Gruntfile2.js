@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           'js/bootstrap-modalopen.js',   // Bootstrap Modal
           'js/app.js',   // Custom JS
         ],
-        dest: 'assets/javascripts/production.js',
+        dest: 'js/production.js',
       }
     },
 
@@ -46,28 +46,22 @@ module.exports = function(grunt) {
       }
     },
 
-    shell: {
-      grunt: {
-        command: 'afplay ~/Music/Grunt.aiff'
-      }
-    },
-
     watch: {
       options: {
-        livereload: true,
+        livereload : 8080,
       },
 
       scripts: {
-        files: ['assets/javascripts/*.js'],
-        tasks: ['concat', 'uglify', 'shell:grunt'],
+        files: ['js/*.js'],
+        tasks: ['concat', 'uglify'],
         options: {
           spawn: false,
         },
       },
 
       css: {
-        files: ['assets/stylesheets/*.scss'],
-        tasks: ['sass', 'cssmin', 'shell:grunt'],
+        files: ['scss/*.scss'],
+        tasks: ['sass', 'cssmin'],
         options: {
           spawn: false,
         }
@@ -82,12 +76,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-shell');
 
 
   // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'autoprefixer', 'watch', 'shell']);
+  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'watch']);
 
 };
