@@ -25,12 +25,16 @@ Installation
 -----------
 
 If you want to use Scss preprocessor, define PREPROCESSOR to "scss" in functions.php
+
 Then you need to install grunt locally:
 npm install -g grunt grunt-cli
+
 To enable LiveReload, add define('LIVERELOAD', true); to your wp config file.
+
 Edit scss/application.scss to start editing the styles
 
 If you want to use Less preprocessor, define PREPROCESSOR to "less" in functions.php
+
 Edit less/_application.less to start editing the styles
 
 TODO
