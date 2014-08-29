@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'FuturaLight';
+  src: url('../fonts/futura-light-webfont.eot');
+  src: url('../fonts/futura-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/futura-light-webfont.woff') format('woff'),
+  url('../fonts/futura-light-webfont.ttf') format('truetype'),
+  url('../fonts/futura-light-webfont.svg#futura_lightregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaBook';
+  src: url('../fonts/futura-book-webfont.eot');
+  src: url('../fonts/futura-book-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/futura-book-webfont.woff') format('woff'),
+  url('../fonts/futura-book-webfont.ttf') format('truetype'),
+  url('../fonts/futura-book-webfont.svg#futura_bookregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaMedium';
+  src: url('../fonts/futuraltmedium.eot');
+  src: url('../fonts/futuraltmedium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/futuraltmedium.woff') format('woff'),
+  url('../fonts/futuraltmedium.ttf') format('truetype'),
+  url('../fonts/futuraltmedium.svg#futuraltmedium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaBold';
+  src: url('../fonts/futuraltbold-webfont.eot');
+  src: url('../fonts/futuraltbold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/futuraltbold-webfont.woff') format('woff'),
+  url('../fonts/futuraltbold-webfont.ttf') format('truetype'),
+  url('../fonts/futuraltbold-webfont.svg#futura_md_btbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "thelinkssocial";
+  src:url("../fonts/thelinkssocial.eot");
+  src:url("../fonts/thelinkssocial.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/thelinkssocial.woff") format("woff"),
+  url("../fonts/thelinkssocial.ttf") format("truetype"),
+  url("../fonts/thelinkssocial.svg#thelinkssocial") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+[data-icon]:before {
+  font-family: "thelinkssocial" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.socialicon,
+[class^="socialicon-"]:before,
+[class*=" socialicon-"]:before {
+  font-family: "thelinkssocial" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.socialicon-youtube:before {
+  content: "a";
+}
+.socialicon-twitter:before {
+  content: "b";
+}
+.socialicon-facebook:before {
+  content: "c";
+}

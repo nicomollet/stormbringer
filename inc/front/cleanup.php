@@ -80,7 +80,7 @@ function stormbringer_excerpt_more( $output ) {
 }
 
 function stormbringer_more_link(){
-	return ' <span class="excerpt-more"><a href="'. get_permalink() . '">' . __( 'Lire la suite &rarr;','stormbringer') . '</a></span>';
+	return ' <span class="excerpt-more"><a href="'. get_permalink() . '">' . __( 'Lire&nbsp;plus&hellip;','stormbringer') . '</a></span>';
 }
 
 // returns WordPress subdirectory if applicable

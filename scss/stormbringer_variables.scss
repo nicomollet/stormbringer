@@ -16,7 +16,7 @@ $navbar-inverse-color:                      $white;
 $navbar-inverse-link-color:                 $white;
 //$navbar-inverse-link-hover-color:           $gray-lighter;
 
-$navbar-inverse-link-hover-bg:              $color1;
+$navbar-inverse-link-hover-bg:              lighten($color1, 10%);
 $navbar-inverse-bg:                         $color1;
 $navbar-inverse-border:                     darken($navbar-inverse-bg, 20%);
 

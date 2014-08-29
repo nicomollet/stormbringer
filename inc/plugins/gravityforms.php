@@ -4,9 +4,8 @@
  * Apply Bootstrap markup/classes to Gravity Forms - extended from stormbringer Theme (http://www.stormbringertheme.com)
  */
 /*
-* This filter is executed when a form fails validation, before the validation message is displayed.
-* Use this filter to change the default validation message.
-*/
+//This filter is executed when a form fails validation, before the validation message is displayed.
+//Use this filter to change the default validation message.
 function stormbringer_gform_validation_message($message, $form)
 {
   $oldmessage = strip_tags($message);
@@ -18,9 +17,9 @@ function stormbringer_gform_validation_message($message, $form)
 }
 add_filter('gform_validation_message', 'stormbringer_gform_validation_message', 10, 2);
 
-/*
-* This filter can be used to dynamically add/remove CSS classes to a field
 */
+
+// This filter can be used to dynamically add/remove CSS classes to a field
 function stormbringer_gform_field_css_class($classes, $field, $form)
 {
   $form_css = $form['cssClass'];
@@ -30,7 +29,7 @@ function stormbringer_gform_field_css_class($classes, $field, $form)
   $classes = str_replace('input-append', '', $classes);
   $classes = str_replace('input-prepend', '', $classes);
   $classes = str_replace('icon-', 'dummy-', $classes);
-  $classes = str_replace('gfield', '', $classes);
+  $classes = str_replace('gfield', 'form-group gfield', $classes);
 
   if ($field["type"] == 'textarea' || $field["type"] == 'text' || $field["type"] == 'email' || $field["type"] == 'name') {
     if (strpos($form_css, 'form-placeholder') !== false)
@@ -44,24 +43,26 @@ function stormbringer_gform_field_css_class($classes, $field, $form)
 }
 add_action('gform_field_css_class', 'stormbringer_gform_field_css_class', 10, 3);
 
-/*
-* This filter is executed when the form is displayed and can be used to completely
-* change the form button tag (i.e. <input type="submit">).
-*/
+// This filter is executed when the form is displayed and can be used to completely
+//change the form button tag (i.e. <input type="submit">).
+
 function stormbringer_gform_submit_button($button, $form)
 {
-  return "
-      <button class='btn btn-primary' id='gform_submit_button_{$form["id"]}'>
-      <span>" . $form["button"]["text"] . "</span>
+  return '
+  <div class="form-actions">
+      <button class="btn btn-primary" id="gform_submit_button_'.$form["id"].'">
+      <span>' . $form["button"]["text"] . '</span>
       </button>
-      ";
+  </div>
+  ';
 }
 add_filter('gform_submit_button', 'stormbringer_gform_submit_button', 10, 2);
 
-/*
-* This filter is executed when the form is displayed and can be used to completely change
-* the form tag (i.e. <form method="post">).
-*/
+
+
+//This filter is executed when the form is displayed and can be used to completely change
+//the form tag (i.e. <form method="post">).
+
 function stormbringer_gform_form_tag($form_tag, $form)
 {
   $class = "form ";
@@ -78,11 +79,11 @@ function stormbringer_gform_form_tag($form_tag, $form)
 }
 add_filter("gform_form_tag", "stormbringer_gform_form_tag", 10, 2);
 
-/*
-* This filter is executed before creating the field's content, allowing users to completely
-* modify the way the field is rendered. It can also be used to create custom field types.
-* It is similar to gform_field_input, but provides more flexibility.
-*/
+
+//This filter is executed before creating the field's content, allowing users to completely
+//modify the way the field is rendered. It can also be used to create custom field types.
+//It is similar to gform_field_input, but provides more flexibility.
+
 function stormbringer_gform_field_content($content, $field, $value, $lead_id, $form_id)
 {
   global $form_css;
@@ -93,23 +94,26 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
   }
 
   //$content = str_replace('gfield_label', 'gfield_label control-label', $content);
-  $content = str_replace('gfield_label', 'control-label', $content);
+  $content = str_replace('gfield_label', 'control-label gfield_label', $content);
+  $content = str_replace('gfield_checkbox', 'gfield_checkbox', $content);
+  $content = str_replace('gfield_radio', 'gfield_radio', $content);
   $content = str_replace('gfield_error', 'gfield_error error', $content);
   $content = str_replace('validation_message', 'help-inline', $content);
-  $content = str_replace('ginput_container', 'ginput_container controls', $content);
+  $content = str_replace('ginput_container', 'form-input ginput_container', $content);
   $content = str_replace('small', 'form-control input-sm', $content);
   $content = str_replace('medium', 'form-control input-md', $content);
   $content = str_replace('large', 'form-control input-lg', $content);
-  $content = str_replace('gfield_description', 'help-inline', $content);
-  $content = str_replace('help-inline help-inline', 'help-inline', $content);
+  $content = str_replace('gfield_description', 'help-block gfield_description', $content);
+  $content = str_replace('help-inline help-block', 'help-block', $content);
+
 
   // validation message
-/*  if ($field["failed_validation"] == 1) {
-    $content = str_replace('help-block help-inline', 'help-inline', $content);
-    $content = preg_replace('/<\/div>(<div class=\'help-block\'>.*?<\/div>)/', '</div>', $content);
-  } else
-    $content = preg_replace('/<\/div>(<div class=\'help-block\'>.*?<\/div>)/', '\\1</div>', $content);
-*/
+// if ($field["failed_validation"] == 1) {
+  //  $content = str_replace('help-block help-inline', 'help-inline', $content);
+    //$content = preg_replace('/<\/div>(<div class=\'help-block\'>.*?<\/div>)/', '</div>', $content);
+  //} else
+    //$content = preg_replace('/<\/div>(<div class=\'help-block\'>.*?<\/div>)/', '\\1</div>', $content);
+/*
   $content = preg_replace('/<\/div>(<div class=\'help-inline\'>.*?<\/div>)/', '\\1</div>', $content); //1st time for description
   $content = preg_replace('/<\/div>(<div class=\'help-inline\'>.*?<\/div>)/', '\\1</div>', $content); //2nd time for error
 
@@ -119,12 +123,13 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
     $button_value = substr($field["cssClass"], strpos($field["cssClass"], 'buttontext-') + 11);
     $button = true;
   }
-
+*/
   // field-inline
   $inline='';
-  if (strpos($field["cssClass"], 'field-inline') !== false)
-    $inline=' inline';
-
+  if (strpos($field["cssClass"], 'field-inline') !== false){
+    $inline='-inline';
+  }
+/*
   // append/prepend icon
   if ($field["type"] == 'text' || $field["type"] == 'email' || $field["type"] == 'name') {
 
@@ -205,10 +210,12 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
     if (strpos($field["cssClass"], 'field-force') !== false)
       $content = str_replace('<select', '<select data-force=\'1\'', $content);
   }
+
+*/
   if ($field["type"] == 'radio' || $field["type"] == 'checkbox') {
     //$content = preg_replace('/<\/div>(<div class=\'help-inline\'>.*?<\/div>)/', '\\1</div>', $content);
     //$content = preg_replace('/<input .*? ><label .*? >.*?<\/label>)/', '<label \\2><input \\1>\\3<\/label>', $content);
-    $content = preg_replace('/<input(.*?)><label(.*?)>(.*?)<\/label>/', '<label class="'.$field["type"].$inline.'"\\2><input\\1>\\3</label>', $content); // insert input into label tag
+    $content = preg_replace('/<input(.*?)><label(.*?)>(.*?)<\/label>/', (!$inline?'<div class="'.$field["type"].'">':'').'<label class="'.($inline?$field["type"].$inline:'').'"\\2><input\\1>\\3</label>'.(!$inline?'</div>':''), $content); // insert input into label tag
     //$content = preg_replace('/<label(.*?)>(.*?)<\/label>/', '\\2', $content);
     if (strpos($field["cssClass"], 'field-disabled') !== false)
       $content = str_replace('<input', '<input disabled=\'disabled\'', $content);
@@ -221,23 +228,29 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
 }
 add_filter("gform_field_content", "stormbringer_gform_field_content", 10, 5);
 
-/*
-* This filter is executed when creating the checkbox items.
-* It can be used to manipulate the items string before it gets added to the checkbox list.
-*/
+
+// This filter is executed when creating the checkbox items.
+// It can be used to manipulate the items string before it gets added to the checkbox list.
+
 function stormbringer_gform_field_choices($choices, $field)
 {
   $choices = strip_tags($choices, '<input><label>');
-  //print_r($field);
+  if (strpos($field["cssClass"], 'field-inline') !== false){
+    return $choices;
+  }
+  else{
+    return $choices;
+    //return '<div id="input_' . $field["formId"] . '_' . $field["id"] . '" class="'.$field["type"].'">' . $choices . '</div>';
+  }
   //return '<div class="' . $field["type"] . '">' . $choices . '</div>';
-  return '<div id="input_' . $field["formId"] . '_' . $field["id"] . '">' . $choices . '</div>';
+  //return '<div id="input_' . $field["formId"] . '_' . $field["id"] . '">' . $choices . '</div>';
+
 }
 
 add_filter("gform_field_choices", "stormbringer_gform_field_choices", 10, 5);
 
 /*
-* This filter can be used to dynamically change the confirmation message or redirect URL for a form
-*/
+// This filter can be used to dynamically change the confirmation message or redirect URL for a form
 add_filter("gform_confirmation", "stormbringer_gform_confirmation", 10, 4);
 function stormbringer_gform_confirmation($confirmation, $form, $lead, $ajax){
   if($form['confirmation']['type']=='message')
@@ -258,32 +271,51 @@ function stormbringer_gform_cdata_close($content)
 {
   return '}';
 }
-
+*/
 add_filter("gform_get_form_filter", "stormbringer_gform_get_form_filter", 10, 4);
 function stormbringer_gform_get_form_filter($content)
 {
-  $content = str_replace('gfield_required', 'form-required', $content);
-  $content = str_replace('gform_description', 'form-description', $content);
-  $content = str_replace('gform_title', 'form-title', $content);
-  $content = str_replace('gform_wrapper', 'form-wrapper', $content);
-  $content = str_replace('gform_heading', 'form-header', $content);
-  $content = str_replace('gform_body', 'form-body', $content);
+  $content = str_replace('gfield_required', 'form-required gfield_required', $content);
+  $content = str_replace('gform_description', 'form-description gform_description', $content);
+  $content = str_replace('gform_title', 'form-title gform_title', $content);
+  $content = str_replace('gform_wrapper', 'form-wrapper gform_wrapper', $content);
+  $content = str_replace('gform_heading', 'form-header gform_heading', $content);
+  $content = str_replace('gform_body', 'form-body gform_body', $content);
   $content = str_replace('class=\'gform_fields', 'class=\'form-fields', $content);
-  $content = str_replace('gform_footer', 'form-actions', $content);
-  $content = str_replace('gsection_title', 'form-section-title', $content);
-  $content = str_replace('gsection_description', 'form-section-description', $content);
-  $content = str_replace('gsection', 'form-section', $content);
-  $content = str_replace('gform_page_footer', 'gform_page_footer form-actions', $content);
-  $content = str_replace('div class="radio"', 'div', $content);
-  $content = str_replace('div class="checkbox"', 'div', $content);
-  $content = str_replace('right_label', '', $content);
-  $content = str_replace('left_label', '', $content);
-  $content = str_replace('top_label', '', $content);
-  $content = str_replace('ginput_container', '', $content);
+  $content = str_replace('gform_footer', 'form-group gform_footer', $content);
+  $content = str_replace('gsection_title', 'form-section-title gsection_title', $content);
+  $content = str_replace('gsection_description', 'form-section-description gsection_description', $content);
+  $content = str_replace('gsection', 'form-section gsection', $content);
+  $content = str_replace('gform_page_footer', 'form-actions gform_page_footer', $content);
+  //$content = str_replace('div class="radio"', 'div', $content);
+  //$content = str_replace('div class="checkbox"', 'div', $content);
+  //$content = str_replace('right_label', '', $content);
+  //$content = str_replace('left_label', '', $content);
+  //$content = str_replace('top_label', '', $content);
+  //$content = str_replace('ginput_container', '', $content);
 
-  $content = preg_replace('/<ul class=\'gfield_checkbox\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
-  $content = preg_replace('/<ul class=\'gfield_radio\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
+  //$content = preg_replace('/<ul class=\'gfield_checkbox\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
+  //$content = preg_replace('/<ul class=\'gfield_radio\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
+
+  $content = str_replace('<li ', '<div ', $content);
+  $content = str_replace('<ul ', '<div ', $content);
+  $content = str_replace('</li>', '</div>', $content);
+  $content = str_replace('</ul>', '</div>', $content);
+
 
   return $content;
 }
 
+
+
+
+// Print icon for top level menu item of Gravity Forms
+function gravityforms_display_menu_icon(){
+  print '<style type="text/css">';
+  print '#toplevel_page_gf_edit_forms .dashicons-before img{display:none}';
+  print '#toplevel_page_gf_edit_forms .dashicons-before:before {';
+  print ' content: "\f314";';
+  print '}';
+  print '</style>';
+}
+add_action( 'admin_head', 'gravityforms_display_menu_icon' );

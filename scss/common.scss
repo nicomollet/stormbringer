@@ -82,21 +82,19 @@ a.edit-post{
   top: 0;
   display: none;
   position: absolute;
-}
-.post {position: relative;}
-
-.post:hover {
-  background: lighten($gray-lighter, 45%);
-  a.edit-post{
-    display: inline;z-index: 800;
+  color: #fff !important;
+  width: auto;
+  @include button-size($padding-base-vertical, $padding-base-horizontal !important, $font-size-base !important, $line-height-base, $border-radius-base);
+  &:after{
+    content:"" !important;
   }
-
 }
 
-/* Images */
-img{
-  @extend .img-responsive;
-  .ie8 &{
-    width: auto;
+.hentry {position: relative;}
+.hentry:hover {
+  //background: lighten($gray-lighter, 45%);
+  a.edit-post{
+    display: inline;
+    z-index: 800;
   }
 }
