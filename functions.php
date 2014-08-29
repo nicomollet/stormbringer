@@ -9,7 +9,7 @@ add_theme_support( 'woocommerce' );
 define('PREPROCESSOR', 'scss'); // less or scss
 define('H5BP_HTACCESS', true);
 define("POST_EXCERPT_LENGTH", 100);
-define("ADDTHIS_PROFILE", 'ra-502e8ca67b06ffb4');
+define("ADDTHIS_PROFILE", '');
 define("LIGHTBOX", 'tbmodal'); // tbmodal or fancybox
 define("GOOGLE_ANALYTICS", '');
 //define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')));
@@ -222,7 +222,8 @@ function stormbringer_js_footer() {
   //wp_enqueue_script('jquery-validate','http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js', array('jquery'), null, true);
   //wp_enqueue_script('jquery-cookie','http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', array('jquery'), null, true);
 
-  wp_enqueue_script('addthis','//s7.addthis.com/js/300/addthis_widget.js'.(defined('ADDTHIS_PROFILE')?'#pubid='.ADDTHIS_PROFILE:''), array(), null, true);
+  if(defined('GOOGLE_WEBFONTS') && GOOGLE_WEBFONTS!='')
+    wp_enqueue_script('addthis','//s7.addthis.com/js/300/addthis_widget.js'.(defined('ADDTHIS_PROFILE')?'#pubid='.ADDTHIS_PROFILE:''), array(), null, true);
 
   wp_enqueue_script('bootstrap','http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js', array(), null, true);
   //wp_enqueue_script('bootstrap-datepicker','http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js', array('bootstrap'), null, true);
