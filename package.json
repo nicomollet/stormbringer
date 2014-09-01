@@ -1,6 +1,10 @@
 {
   "name": "stormbinger",
   "version": "0.1.4",
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/nicomollet/stormbringer.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "^0.4.0",
