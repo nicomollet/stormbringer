@@ -8,7 +8,6 @@
  * Template Name: Styles
  */
 ?>
-
 <?php get_header(); ?>
 
 <?php get_sidebar(); ?>

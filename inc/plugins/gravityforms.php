@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
  * Apply Bootstrap markup/classes to Gravity Forms - extended from stormbringer Theme (http://www.stormbringertheme.com)

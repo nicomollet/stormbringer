@@ -8,7 +8,6 @@
  * @since StormBringer 0.0.1
  */
 ?>
-
 <?php get_header(); ?>
 
 <div id="content" role="main">
