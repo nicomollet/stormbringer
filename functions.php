@@ -8,12 +8,11 @@ add_theme_support( 'woocommerce' );
 
 define('PREPROCESSOR', 'scss'); // less or scss
 define('H5BP_HTACCESS', true);
-define("POST_EXCERPT_LENGTH", 100);
-define("ADDTHIS_PROFILE", '');
-define("LIGHTBOX", 'tbmodal'); // tbmodal or fancybox
-define("GOOGLE_ANALYTICS", '');
-//define("GOOGLE_WEBFONTS", serialize(array('Montserrat:400','Dancing Script:400')));
-define('AUTOSAVE_INTERVAL', 900 ); // Autosave every 15 minutes
+define('POST_EXCERPT_LENGTH', 100);
+define('ADDTHIS_PROFILE', '');
+define('LIGHTBOX', 'tbmodal'); // tbmodal or fancybox
+define('GOOGLE_ANALYTICS', '');
+//define('GOOGLE_WEBFONTS', serialize(array('Montserrat:400','Dancing Script:400')));
 
 
 // ********************************************
@@ -207,7 +206,8 @@ function stormbringer_js_header() {
   if (!is_admin()) {
     wp_deregister_script('jquery');
   wp_enqueue_script('jquery', 'http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(),null, false );
-  wp_enqueue_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js', array(),null, false );
+  //wp_enqueue_script('jquery', 'http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(),null, false ); // Last Jquery version compatible with IE8
+  wp_enqueue_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array(),null, false );
   }
 }
 add_action('wp_enqueue_scripts', 'stormbringer_js_header',50);
@@ -222,7 +222,7 @@ function stormbringer_js_footer() {
   //wp_enqueue_script('jquery-validate','http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js', array('jquery'), null, true);
   //wp_enqueue_script('jquery-cookie','http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', array('jquery'), null, true);
 
-  if(defined('GOOGLE_WEBFONTS') && GOOGLE_WEBFONTS!='')
+  if(defined('ADDTHIS_PROFILE') && ADDTHIS_PROFILE!='')
     wp_enqueue_script('addthis','//s7.addthis.com/js/300/addthis_widget.js'.(defined('ADDTHIS_PROFILE')?'#pubid='.ADDTHIS_PROFILE:''), array(), null, true);
 
   wp_enqueue_script('bootstrap','http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js', array(), null, true);
@@ -256,7 +256,7 @@ add_action('wp_enqueue_scripts', 'stormbringer_js_footer',300);
 // Add IE8 conditional JS
 function stormbringer_ie8_js_header () {
   echo '<!--[if lt IE 9]>';
-  echo '<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>';
+  echo '<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>';
   echo '<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>';
   echo '<![endif]-->';
 }
@@ -312,3 +312,4 @@ function share_addthis(){
   }
 }
 add_action( 'stormbringer_content_after', 'share_addthis', 10, 2 );
+
