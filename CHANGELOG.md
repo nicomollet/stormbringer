@@ -1,9 +1,5 @@
 ### HEAD
-* Make a poll plugin compatible with TB
-* Add widgets from JetPack http://jetpack.me/support/extra-sidebar-widgets/
-* Find an Events plugin
 * WooCommerce compatibility
-
 
 
 ### 0.1.5: September 24nd, 2014

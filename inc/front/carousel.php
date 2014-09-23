@@ -181,8 +181,8 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
        */
       if( $vars['controls'] )
         $carousel .= '<!-- Carousel nav -->
-  <a class="carousel-control left" href="#wp-bootstrap-carousel-' . $vars['id'] . '" data-slide="prev"><span class="icon-prev"></span></a>
-  <a class="carousel-control right" href="#wp-bootstrap-carousel-' . $vars['id'] . '" data-slide="next"><span class="icon-next"></span></a>';
+  <a class="carousel-control left" href="#wp-bootstrap-carousel-' . $vars['id'] . '" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="carousel-control right" href="#wp-bootstrap-carousel-' . $vars['id'] . '" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
 
       $carousel .= '</div><!-- .carousel -->';
 

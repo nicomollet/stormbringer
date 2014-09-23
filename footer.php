@@ -38,20 +38,39 @@
     </div>
 </div>
 
-<div class="modal hide fade do-not-print modal-gallery" id="modal-gallery" tabindex="-1" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h4 class="modal-title"></h4>
-  </div>
-  <div class="modal-body">
-    <div class="modal-image"></div>
-  </div>
-  <div class="modal-footer">
-    <a class="btn btn-primary modal-prev"><i class="icon-arrow-left icon-white"></i> <?php _e("Précédent","stormbringer"); ?></a>
-    <a class="btn btn-primary modal-next"><?php _e("Suivant","stormbringer"); ?> <i class="icon-arrow-right icon-white"></i></a>
-    <a class="btn btn-inverse modal-play modal-slideshow" data-slideshow="5000"><i class="icon-play icon-white"></i> <?php _e("Diaporama","stormbringer"); ?></a>
-    <!--<a class="btn modal-download" target="_blank"><i class="icon-download"></i> Download</a>-->
-  </div>
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+	<!-- The container for the modal slides -->
+	<div class="slides"></div>
+	<!-- Controls for the borderless lightbox -->
+	<h3 class="title"></h3>
+	<a class="prev">‹</a>
+	<a class="next">›</a>
+	<a class="close">×</a>
+	<a class="play-pause"></a>
+	<ol class="indicator"></ol>
+	<!-- The modal dialog, which will be used to wrap the lightbox content -->
+	<div class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" aria-hidden="true">&times;</button>
+					<h4 class="modal-title"></h4>
+				</div>
+				<div class="modal-body next"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default pull-left prev">
+						<i class="glyphicon glyphicon-chevron-left"></i>
+						Previous
+					</button>
+					<button type="button" class="btn btn-primary next">
+						Next
+						<i class="glyphicon glyphicon-chevron-right"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- /#modal-gallery -->
 
@@ -78,6 +97,7 @@
 
 <script type="text/javascript">
 var template_url = '<?php bloginfo("template_url"); ?>';
+var lightbox ='<?php echo LIGHTBOX;?>';
 </script>
 </body>
 </html>

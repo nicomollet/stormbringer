@@ -45,7 +45,7 @@ function give_linked_images_class($html, $id, $caption, $title, $align, $url, $s
     }
   } // separated by spaces, e.g. 'img image-link'
   $html = str_replace("wp-image","thumbnail wp-image",$html);
-  $html = str_replace(    '<a',    '<a title="'.$caption.'"',    $html  );
+  $html = str_replace(    '<a',    '<a data-title="'.$caption.'" title="'.$caption.'"',    $html  );
 
   return $html;
 }
@@ -88,6 +88,14 @@ add_filter('image_send_to_editor','give_linked_images_class',11,8);
 
   return $output;
 }*/
+
+//Add title attribute back to gallery images
+function my_image_titles($atts,$img) {
+	$atts['title'] = trim(strip_tags( $img->post_excerpt ));
+	return $atts;
+}
+add_filter('wp_get_attachment_image_attributes','my_image_titles',10,2);
+
 function roots_caption($output, $attr, $content) {
   if (is_feed()) {
     return $output;

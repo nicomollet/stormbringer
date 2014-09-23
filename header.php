@@ -66,6 +66,7 @@ if(self !== top){
           <?php wp_nav_menu(array('theme_location' => 'main_nav', 'depth' => 2, 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new stormbringer_Navbar_Nav_Walker(), 'fallback_cb' => false)); ?>
 
 	        <?php
+	        // Theme My Login menu
 	        if(class_exists( 'Theme_My_Login')) :
 	        $current_user = wp_get_current_user();
 	        ?>
@@ -77,7 +78,7 @@ if(self !== top){
 			        <li><a href="<?php $page = get_post(THEMEMYLOGIN_REGISTER); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
 		        <?php else : ?>
 			        <li class="dropdown">
-				        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $current_user->user_login;?> <span class="caret"></span></a>
+				        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <?php echo $current_user->user_login;?> <span class="caret"></span></a>
 				        <ul class="dropdown-menu" role="menu">
 					        <li><a href="<?php $page = get_post(THEMEMYLOGIN_PROFILE); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
 					        <li class="divider"></li>
@@ -87,6 +88,9 @@ if(self !== top){
 		        <?php endif; ?>
 	        </ul>
 	        <?php endif; ?>
+
+
+
         </div>
         <!-- /.navbar-collapse -->
 

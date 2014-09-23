@@ -6,11 +6,11 @@ add_theme_support( 'woocommerce' );
 // Variables
 // ********************************************
 
-define('THEMEMYLOGIN_LOGIN', 0); // ID of login page
-define('THEMEMYLOGIN_REGISTER', 0); // ID of register page
-define('THEMEMYLOGIN_PROFILE', 0); // ID of profile page
-define('THEMEMYLOGIN_LOSTPASSWORD', 0); // ID of lostpassword page
-define('THEMEMYLOGIN_LOGOUT', 0); // ID of logout page
+define('THEMEMYLOGIN_LOGIN', 449); // ID of login page
+define('THEMEMYLOGIN_REGISTER', 451); // ID of register page
+define('THEMEMYLOGIN_PROFILE', 454); // ID of profile page
+define('THEMEMYLOGIN_LOSTPASSWORD', 452); // ID of lostpassword page
+define('THEMEMYLOGIN_LOGOUT', 450); // ID of logout page
 define('PREPROCESSOR', 'scss'); // less or scss
 define('H5BP_HTACCESS', true);
 define('POST_EXCERPT_LENGTH', 100);
@@ -212,7 +212,7 @@ function stormbringer_js_header() {
     wp_deregister_script('jquery');
   wp_enqueue_script('jquery', 'http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(),null, false );
   //wp_enqueue_script('jquery', 'http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(),null, false ); // Last Jquery version compatible with IE8
-  wp_enqueue_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array(),null, false );
+  wp_enqueue_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js', array(),null, false );
   }
 }
 add_action('wp_enqueue_scripts', 'stormbringer_js_header',50);
@@ -241,7 +241,6 @@ function stormbringer_js_footer() {
       wp_enqueue_script('fancybox-open', get_template_directory_uri().'/js/fancybox/fancybox-open.js', array('jquery'),null, true );
     }
     if(LIGHTBOX==='tbmodal'){
-      wp_enqueue_script('bootstrap-loadimage', get_template_directory_uri().'/js/bootstrap-loadimage.js', array('bootstrap','jquery'),null, true );
       wp_enqueue_script('bootstrap-modalgallery', get_template_directory_uri().'/js/bootstrap-modalgallery.js', array('bootstrap','jquery'),null, true );
       wp_enqueue_script('bootstrap-modalopen', get_template_directory_uri().'/js/bootstrap-modalopen.js', array('bootstrap','jquery'),null, true );
     }
