@@ -6780,6 +6780,12 @@ iframe {
   margin-left: 0;
   width: 100%;
 }
+.in-frame #content {
+  padding: 0;
+}
+.in-frame .gform_footer {
+  margin-bottom: 0;
+}
 
 #modal-frame {
   width: 100%;
@@ -6908,22 +6914,25 @@ a.edit-post:after {
     width: 75%;
   }
 }
-.form-horizontal .help-block, .form-horizontal .form-actions {
+.form-horizontal .help-block, .form-horizontal .form-actions, .form-horizontal .form-input-offset {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .form-horizontal .help-block, .form-horizontal .form-actions {
+  .form-horizontal .help-block, .form-horizontal .form-actions, .form-horizontal .form-input-offset {
     float: left;
     width: 75%;
   }
 }
 @media (min-width: 768px) {
-  .form-horizontal .help-block, .form-horizontal .form-actions {
+  .form-horizontal .help-block, .form-horizontal .form-actions, .form-horizontal .form-input-offset {
     margin-left: 25%;
   }
+}
+.form-horizontal .form-input-offset .checkbox {
+  margin-left: 20px;
 }
 
 /* hide the honeypot field  ------------------------------------------------------*/

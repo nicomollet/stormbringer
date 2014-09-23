@@ -64,8 +64,33 @@ if(self !== top){
 
         <div class="collapse navbar-collapse" id="navigation-collapse">
           <?php wp_nav_menu(array('theme_location' => 'main_nav', 'depth' => 2, 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new stormbringer_Navbar_Nav_Walker(), 'fallback_cb' => false)); ?>
+
+	        <?php
+	        if(class_exists( 'Theme_My_Login')) :
+	        $current_user = wp_get_current_user();
+	        ?>
+	        <ul class="nav navbar-nav navbar-right">
+		        <?php
+		        if ( 0 == $current_user->ID ) :
+		        ?>
+			        <li><a href="<?php $page = get_post(THEMEMYLOGIN_LOGIN); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
+			        <li><a href="<?php $page = get_post(THEMEMYLOGIN_REGISTER); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
+		        <?php else : ?>
+			        <li class="dropdown">
+				        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $current_user->user_login;?> <span class="caret"></span></a>
+				        <ul class="dropdown-menu" role="menu">
+					        <li><a href="<?php $page = get_post(THEMEMYLOGIN_PROFILE); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
+					        <li class="divider"></li>
+					        <li><a href="<?php $page = get_post(THEMEMYLOGIN_LOGOUT); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
+				        </ul>
+			        </li>
+		        <?php endif; ?>
+	        </ul>
+	        <?php endif; ?>
         </div>
         <!-- /.navbar-collapse -->
+
+
       </div>
     </nav>
     <!-- #navigation -->

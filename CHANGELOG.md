@@ -4,6 +4,11 @@
 * Find an Events plugin
 * WooCommerce compatibility
 
+
+
+### 0.1.5: September 24nd, 2014
+* Fix "Theme My Login" plugin Compatibility
+
 ### 0.1.4: July 22nd, 2014
 * Upgrade Boostrap to v3.2.0
 * Adding Boostrap Sass and Grunt support (see readme for installation)

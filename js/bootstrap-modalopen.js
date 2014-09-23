@@ -90,6 +90,8 @@ $(document).ready(function() {
   $('a.modal-open-frame').click(function (e) {
     $modalframe = $('#modal-frame');
     $modalframe.hide();
+    $modalframe.attr('src','');
+    $modalframe.html('');
     iframe_height=0;
     iframe_external=false;
     iframe_external = $(this).attr('rel')=='external';
@@ -113,8 +115,7 @@ $(document).ready(function() {
         $(target+' .modal-body').height( iframe_height + 15);
       }
 
-      $modalframe.attr('src','');
-      $modalframe.html('');
+
       $modalframe.attr('src',$(this).attr('href'));
       $modalframe.show();
     }

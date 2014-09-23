@@ -2,49 +2,6 @@
 // ********************************************
 // Theme My Login
 // ********************************************
-/*
-function thememylogin_shortcode_lostpassword() {
-  return  do_shortcode('[stormbringer default_action="lostpassword" show_title=0 login_template="form-login.php" register_template="form-register.php" lostpassword_template="form-lostpassword.php" resetpass_template="form-resetpass.php" profile_template="form-profile.php"]');
-}
-add_shortcode('form-lostpassword', 'thememylogin_shortcode_lostpassword');
-
-function thememylogin_shortcode_register() {
-  return  do_shortcode('[stormbringer default_action="register" show_title=0 login_template="form-login.php" register_template="form-register.php" lostpassword_template="form-lostpassword.php" resetpass_template="form-resetpass.php" profile_template="form-profile.php"]');
-}
-add_shortcode('form-register', 'thememylogin_shortcode_register');
-
-function thememylogin_shortcode_login() {
-  return  do_shortcode('[stormbringer default_action="login" show_title=0 login_template="form-login.php" register_template="form-register.php" lostpassword_template="form-lostpassword.php" resetpass_template="form-resetpass.php" profile_template="form-profile.php"]');
-}
-add_shortcode('form-login', 'thememylogin_shortcode_login');
-
-function thememylogin_shortcode_resetpass() {
-  return  do_shortcode('[stormbringer default_action="resetpass" show_title=0 login_template="form-login.php" register_template="form-register.php" lostpassword_template="form-lostpassword.php" resetpass_template="form-resetpass.php" profile_template="form-profile.php"]');
-}
-add_shortcode('form-resetpass', 'thememylogin_shortcode_resetpass');
-
-function thememylogin_shortcode_profile() {
-  return  do_shortcode('[stormbringer default_action="profile" show_title=0 login_template="form-login.php" register_template="form-register.php" lostpassword_template="form-lostpassword.php" resetpass_template="form-resetpass.php" profile_template="form-profile.php"]');
-}
-add_shortcode('form-profile', 'thememylogin_shortcode_profile');
-*/
-
-/*
-//changing the default registration form
-function thememylogin_default_templates($link){
-//var_dump($link);
-//exit;
-//$link = dirname(__FILE__).'/form-login.php';
-//$link = 'form-login.php';
-$link = str_replace(get_stylesheet_directory().'/','',$link);
-$link = str_replace(TML_ABSPATH . '/templates/','',$link);
-$link = str_replace('-form','',$link);
-//print_r('<br>555');
-//print_r($link );
-$link = locate_template('form-'.$link);
-return $link;
-}
-*/
 
 function stormbringer_thememylogin_options(){
 
@@ -142,13 +99,17 @@ function stormbringer_thememylogin_errors($errors){
 
   if($errors){
 
-  if (strpos($errors, 'class="error"') !== false)
-  $class='error';
-  if (strpos($errors, 'class="message"') !== false)
-  $class='success';
+  if (strpos($errors, 'class="error"') !== false){
+	  $class='error';
+	  $newclass='danger';
+  }
+  if (strpos($errors, 'class="message"') !== false){
+	  $class='success';
+	  $newclass='success';
+  }
 
   $errors = str_replace(strtoupper(str_replace('!',':',__('Error!'))),'',strip_tags($errors,'<span><br>'));
-  printf('<div class="alert alert-'.$class.'"><button type="button" class="close" data-dismiss="alert">&times;</button><h4>'.$args['message_'.$class].'</h4>%s</div>',$errors);
+  printf('<div class="alert alert-'.$newclass.'"><button type="button" class="close" data-dismiss="alert">&times;</button><h4>'.$args['message_'.$class].'</h4>%s</div>',$errors);
   }
 }
 
@@ -182,3 +143,26 @@ function stormbringer_thememylogin_title( $title, $action ) {
 }
 add_filter( 'tml_title', 'stormbringer_thememylogin_title', 11, 2 );
 
+/**
+ * Cambiamos las plantillas por unas propias
+ * @param  string $useTemplate Plantilla encontrada
+ * @param  array $templates    Plantillas buscadas
+ * @return string              Plantilla a usar
+ */
+function tml_template( $useTemplate, $templates ) {
+
+	foreach( $templates as $template) {
+		if($template=='login-form.php')$template='form-login.php';
+		if($template=='register-form.php')$template='form-register.php';
+		if($template=='profile-form.php')$template='form-profile.php';
+		if($template=='lostpassword-form.php')$template='form-lostpassword.php';
+		if($template=='resetpass-form.php')$template='form-resetpass.php';
+		if (file_exists(  TEMPLATEPATH . '/' . $template )) {
+			$useTemplate =  TEMPLATEPATH . '/' . $template  ;
+			break;
+		}
+	}
+	return $useTemplate ;
+
+}
+add_filter( 'tml_template', 'tml_template', 10, 3 );

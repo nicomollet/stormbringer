@@ -6,6 +6,11 @@ add_theme_support( 'woocommerce' );
 // Variables
 // ********************************************
 
+define('THEMEMYLOGIN_LOGIN', 0); // ID of login page
+define('THEMEMYLOGIN_REGISTER', 0); // ID of register page
+define('THEMEMYLOGIN_PROFILE', 0); // ID of profile page
+define('THEMEMYLOGIN_LOSTPASSWORD', 0); // ID of lostpassword page
+define('THEMEMYLOGIN_LOGOUT', 0); // ID of logout page
 define('PREPROCESSOR', 'scss'); // less or scss
 define('H5BP_HTACCESS', true);
 define('POST_EXCERPT_LENGTH', 100);
