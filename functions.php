@@ -17,7 +17,6 @@ define('H5BP_HTACCESS', true);
 define('POST_EXCERPT_LENGTH', 100);       // Length of excerpt
 define('LIGHTBOX', 'tbmodal');            // Lightbox style: tbmodal or fancybox
 define('ADDTHIS', '');                    // ID of Addthis profile
-define('GOOGLE_ANALYTICS', '');           // ID of Analytics account
 define('GOOGLE_WEBFONTS', '');            // Example: serialize(array('Montserrat:400','Dancing Script:400'))
 
 
