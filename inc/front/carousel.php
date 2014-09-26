@@ -356,3 +356,22 @@ function wp_bc_bool( $value )
 {
   return filter_var( $value, FILTER_VALIDATE_BOOLEAN );
 }
+
+/*
+To edit default vars of the Carousel, use this function in functions.php:
+function custom_bootstrap_carousel_shortcode_atts($defaults){
+  $args = array(
+    'order'             => 'ASC', // Order
+    'orderby'           => 'ID', // Orderby
+    'width'             => '100%', // Carousel width
+    'image_size'        => 'large', // Image size
+    'rel'               => '', // Rel attribute
+    'file'              => 0, // Link image to attachement page
+    'comments'          => 0, // Display attachment comments link
+    'interval'          => 4000, // Interval delay
+    'pause'             => 'hover', // Pause on hover
+  );
+  $args = wp_parse_args( $args, $defaults );
+  return $args;
+}
+add_filter('stormbringer_bootstrap_carousel_shortcode_atts', 'custom_bootstrap_carousel_shortcode_atts');

@@ -47,14 +47,13 @@ $(document).ready(function() {
   $("ul li:last-child").addClass("last");
 
 
-  // GRavity Forms disabled fields
+  // Gravity Forms disabled fields
   $('input[data-disabled="1"],textarea[data-disabled="1"]').each(function (e) {
     if($(this).val()!='')
       $(this).attr('readonly','readonly');
   });
 
-
-  /* Email obfuscation */
+  // Email obfuscation
   $("span.cryptemail").each(function(){
     var spt = $(this);
     var at = / at /;
@@ -65,9 +64,12 @@ $(document).ready(function() {
     $(spt).remove();
   });
 
+  // Bootstrap Selectpicker
+  $('select').removeClass('form-control').selectpicker();
+
 });
 
-/* Randon function */
+// Randon function
 jQuery.Random = function(m,n)
 {
   m = parseInt(m);

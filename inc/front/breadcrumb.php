@@ -578,4 +578,18 @@ function breadcrumb_trail_textdomain() {
 	return apply_filters( 'breadcrumb_trail_textdomain', 'breadcrumb-trail' );
 }
 
-?>
+/*
+To customize the Breadcrumb, use this function in functions.php:
+
+function custom_breadcrumb_trail_args(){
+  $args = array(
+    'separator' => '›',                             //Separator text
+    'before' => '' ,                                // HTML displayed before
+    'after' => false,                               // HTML displayed after
+    'front_page' => true,                           // Display the homepage link
+    'show_home' => __( 'Accueil', "stormbringer" ), // Homepage text link
+    'echo' => true                                  // Echo or not
+  );
+  return $args;
+}
+add_filter('breadcrumb_trail_args', 'custom_breadcrumb_trail_args');

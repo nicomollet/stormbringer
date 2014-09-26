@@ -1,9 +1,6 @@
 <?php
 
-// -------------------------------------------------------
-// CSS
-
-function stormbringer_bootstrap_css()
+function stormbringer_preprocessor()
 {
 
   if (PREPROCESSOR == 'less') {
@@ -13,7 +10,7 @@ function stormbringer_bootstrap_css()
       if (current_user_can('administrator') && $_GET['lesscompile'] != '1') {
         echo '<!-- Less -->' . "\n";
         echo '<link rel="stylesheet/less" href="' . get_template_directory_uri() . '/less/_application.less" media="screen,projection"/>' . "\n";
-        echo '<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.6.2/less.min.js"></script>' . "\n";
+        echo '<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/'.LESSJS.'/less.min.js"></script>' . "\n";
         echo "<script type='text/javascript'>less.env = 'development';less.async = true;less.poll = 600;less.watch();</script>" . "\n";
       } // compile with lessphp http://leafo.net/lessphp/ for users
       else {
@@ -30,9 +27,6 @@ function stormbringer_bootstrap_css()
   }
 
   if (PREPROCESSOR == 'scss') {
-
-
-
     if (!is_admin()) {
       if (current_user_can('administrator') || $_GET['scsscompile'] == '1') {
         if(defined('LIVERELOAD') && LIVERELOAD==true)echo '<script src="'.get_bloginfo('url').':8080/livereload.js"></script>' . "\n";
@@ -44,11 +38,10 @@ function stormbringer_bootstrap_css()
         wp_enqueue_style('stormbringer-app');
       }
     }
-
     wp_register_style('stormbringer-print', get_template_directory_uri() . '/css/print.css', array(), null, 'print');
     wp_enqueue_style('stormbringer-print');
   }
 
 }
-add_action('wp_enqueue_scripts', 'stormbringer_bootstrap_css',10);
+add_action('wp_enqueue_scripts', 'stormbringer_preprocessor',10);
 

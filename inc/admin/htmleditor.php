@@ -114,3 +114,32 @@ return array(
     'outdent', 'indent', 'hr','wp_more','|',
      );
 }
+
+/*
+To add custom styles to Rich Text Editor, use this function in functions.php:
+
+function custom_tinymce_styles( $settings ) {
+
+    $style_formats_original = json_decode($settings['style_formats']);
+    $style_formats = array(
+
+        array(
+        	'title' => 'Color Red',
+        	'inline' => 'span',
+        	'classes' => 'red',
+        ),
+        array(
+        	'title' => 'Color Blue',
+        	'inline' => 'span',
+        	'classes' => 'blue',
+        ),
+
+    );
+
+    $settings['style_formats'] = json_encode( array_merge($style_formats,$style_formats_original) );
+
+    return $settings;
+
+}
+add_filter( 'tiny_mce_before_init', 'custom_tinymce_styles',100 );
+

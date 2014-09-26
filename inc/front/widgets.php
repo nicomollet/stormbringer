@@ -1,11 +1,10 @@
 <?php
+
 // Enable shortcodes in widgets
 add_filter('widget_text', 'do_shortcode');
 
 
-
-// First and last classes for widgets
-// http://wordpress.org/support/topic/how-to-first-and-last-css-classes-for-sidebar-widgets
+// First and last classes for widgets http://wordpress.org/support/topic/how-to-first-and-last-css-classes-for-sidebar-widgets
 function roots_widget_first_last_classes($params) {
   global $my_widget_num;
   $this_id = $params[0]['id'];
@@ -50,6 +49,7 @@ function stormbringer_widget_tag_cloud_args( $args ) {
   return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'stormbringer_widget_tag_cloud_args' );
+
 
 // filter tag clould output so that it can be styled by CSS
 function add_tag_class( $taglinks ) {

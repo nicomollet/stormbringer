@@ -11,7 +11,7 @@ function stormbringer_contactmethods( $contactmethods ) {
 	// Add Twitter
 	$contactmethods['user_tw'] = 'Twitter';
 	// Add Google+
-	$contactmethods['google_profile'] = 'Google Profile URL';
+	$contactmethods['google_profile'] = 'Google+';
 	// Save 'Em
 	return $contactmethods;
 }

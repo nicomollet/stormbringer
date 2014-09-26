@@ -1,6 +1,6 @@
 <?php
-add_filter( 'wp_nav_menu_objects', 'maybe_make_current');
 
+add_filter( 'wp_nav_menu_objects', 'maybe_make_current');
 function maybe_make_current($items){
   foreach ($items as $item){
     if('cpt-archive' != $item->object)

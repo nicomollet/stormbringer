@@ -166,3 +166,24 @@ function tml_template( $useTemplate, $templates ) {
 
 }
 add_filter( 'tml_template', 'tml_template', 10, 3 );
+
+/*
+To edit the default configuration of Theme my Login, use this function in functions.php:
+
+function custom_thememylogin_options(){
+	$args = array(
+		'action_login' => __( 'Identification', "stormbringer" ),
+		'action_lostpassword' => __( 'Mot de passe oublié', "stormbringer" ),
+		'action_retrievepassword' => __( 'Mot de passe oublié', "stormbringer" ),
+		'action_resetpass' => __( 'Mot de passe oublié', "stormbringer" ),
+		'action_register' => __( 'Créer un compte', "stormbringer" ),
+		'action_profile' => __( 'Votre compte', "stormbringer" ),
+		'message_error' => __( 'Erreur', "stormbringer" ),
+		'message_info' => __( 'Info', "stormbringer" ),
+		'message_success' => __( 'Succès', "stormbringer" ),
+		'menu_login' => __( 'S\'identifier', "stormbringer" ),
+		'menu_logout' => __( 'Se déconnecter', "stormbringer" ),
+	);
+	return $args;
+}
+add_filter('thememylogin_options', 'custom_thememylogin_options');
