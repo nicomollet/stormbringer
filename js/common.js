@@ -65,18 +65,24 @@ $(document).ready(function() {
   });
 
   // Bootstrap Selectpicker
-  $('select').removeClass('form-control').selectpicker();
+  if (typeof($.fn.selectpicker) =='function') {
+    $('select').removeClass('form-control').selectpicker();
+  }
+
+  // Modal Gallery Defaults
+  if (typeof($.fn.ekkoLightbox) == 'function') {
+    $.fn.ekkoLightbox.defaults = {
+      gallery_parent_selector: '*:not(.row)',
+      left_arrow_class: '.carousel-control .left .glyphicon .glyphicon-chevron-left',
+      right_arrow_class: '.carousel-control .right .glyphicon .glyphicon-chevron-right',
+      directional_arrows: true,
+      type: null,
+      always_show_close: true,
+      onShow: function() {},
+      onShown: function() {},
+      onHide: function() {},
+      onHidden: function() {}
+    };
+  }
 
 });
-
-// Randon function
-jQuery.Random = function(m,n)
-{
-  m = parseInt(m);
-  n = parseInt(n);
-  return Math.floor( Math.random() * (n - m + 1) ) + m;
-}
-
-/* Addthis configuration */
-var addthis_config = {"data_track_clickback":false,"data_track_addressbar":false,"ui_language":"fr","ui_508_compliant":true};if (typeof(addthis_share) == "undefined"){ addthis_share = {"templates":{"twitter":"{{title}} {{url}}"}};}
-

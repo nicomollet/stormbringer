@@ -21,22 +21,24 @@ define('GOOGLE_WEBFONTS', '');            // Example: serialize(array('Montserra
 
 
 // ********************************************
-// Libraries
+// Libraries (comment line to remove a library)
 // ********************************************
 
 define('BOOTSTRAP', '3.2.0');
-define('JQUERY', '2.1.1');
+define('JQUERY', '1.11.1');
 //define('JQUERY_CYCLE', '3.03');
 //define('JQUERY_EASING', '1.3');
 //define('JQUERY_MOUSEWHEEL', '3.1.11');
 //define('JQUERY_VALIDATE', '1.11.1');
 //define('JQUERY_COOKIE', '1.4.1');
-define('BOOTSTRAP_SELECT', '1.6.2');
+//define('BOOTSTRAP_SELECT', '1.6.2');
 define('MODERNIZR', '2.8.3');
 define('RESPOND', '1.4.2');
 define('SELECTIVIZR', '1.0.2');
 define('LESSJS', '1.6.2');
 
+
 // ********************************************
-// CUSTOM
+// Custom
 // ********************************************
+

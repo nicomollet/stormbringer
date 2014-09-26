@@ -19,18 +19,18 @@
     height:100%;
 
     a {
-      opacity: 0;
-      -webkit-transition: opacity 0.5s;
+      opacity: 0.5;
+      /*-webkit-transition: opacity 0.5s;
       -moz-transition: opacity 0.5s;
       -o-transition: opacity 0.5s;
-      transition: opacity 0.5s;
+      transition: opacity 0.5s;*/
       color:#fff;
       font-size:30px;
       height: 100%;
       width:49%;
       display:block;
       padding-top:45%;
-      text-shadow: 2px 2px 4px #000;
+      //text-shadow: 2px 2px 4px #000;
       //filter: dropshadow(color=#000, offx=2, offy=2);
       z-index:100;
 
@@ -41,7 +41,7 @@
   }
 
   a:hover {
-    opacity: 1;
+    opacity: 0.9;
     text-decoration: none;
   }
 
