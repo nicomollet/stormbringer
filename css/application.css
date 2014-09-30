@@ -1675,31 +1675,31 @@ pre code {
   overflow-y: scroll;
 }
 
-.container, #wrapper, #main, #footer, .navigation-inner {
+.container, #main, #footer, .navigation-inner {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
-.container:before, #wrapper:before, #main:before, #footer:before, .navigation-inner:before, .container:after, #wrapper:after, #main:after, #footer:after, .navigation-inner:after {
+.container:before, #main:before, #footer:before, .navigation-inner:before, .container:after, #main:after, #footer:after, .navigation-inner:after {
   content: " ";
   display: table;
 }
-.container:after, #wrapper:after, #main:after, #footer:after, .navigation-inner:after {
+.container:after, #main:after, #footer:after, .navigation-inner:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  .container, #wrapper, #main, #footer, .navigation-inner {
+  .container, #main, #footer, .navigation-inner {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
-  .container, #wrapper, #main, #footer, .navigation-inner {
+  .container, #main, #footer, .navigation-inner {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
-  .container, #wrapper, #main, #footer, .navigation-inner {
+  .container, #main, #footer, .navigation-inner {
     width: 1170px;
   }
 }
@@ -4313,9 +4313,8 @@ tbody.collapse.in {
   }
 }
 
-.container > .navbar-header, #wrapper > .navbar-header, #main > .navbar-header, #footer > .navbar-header, .navigation-inner > .navbar-header,
+.container > .navbar-header, #main > .navbar-header, #footer > .navbar-header, .navigation-inner > .navbar-header,
 .container > .navbar-collapse,
-#wrapper > .navbar-collapse,
 #main > .navbar-collapse,
 #footer > .navbar-collapse,
 .navigation-inner > .navbar-collapse,
@@ -4325,9 +4324,8 @@ tbody.collapse.in {
   margin-left: -15px;
 }
 @media (min-width: 768px) {
-  .container > .navbar-header, #wrapper > .navbar-header, #main > .navbar-header, #footer > .navbar-header, .navigation-inner > .navbar-header,
+  .container > .navbar-header, #main > .navbar-header, #footer > .navbar-header, .navigation-inner > .navbar-header,
   .container > .navbar-collapse,
-  #wrapper > .navbar-collapse,
   #main > .navbar-collapse,
   #footer > .navbar-collapse,
   .navigation-inner > .navbar-collapse,
@@ -4386,7 +4384,7 @@ tbody.collapse.in {
   text-decoration: none;
 }
 @media (min-width: 768px) {
-  .navbar > .container .navbar-brand, #navigation > .container .navbar-brand, .navbar > #wrapper .navbar-brand, #navigation > #wrapper .navbar-brand, .navbar > #main .navbar-brand, #navigation > #main .navbar-brand, .navbar > #footer .navbar-brand, #navigation > #footer .navbar-brand, .navbar > .navigation-inner .navbar-brand, #navigation > .navigation-inner .navbar-brand, .navbar > .container-fluid .navbar-brand, #navigation > .container-fluid .navbar-brand {
+  .navbar > .container .navbar-brand, #navigation > .container .navbar-brand, .navbar > #main .navbar-brand, #navigation > #main .navbar-brand, .navbar > #footer .navbar-brand, #navigation > #footer .navbar-brand, .navbar > .navigation-inner .navbar-brand, #navigation > .navigation-inner .navbar-brand, .navbar > .container-fluid .navbar-brand, #navigation > .container-fluid .navbar-brand {
     margin-left: -15px;
   }
 }
@@ -4995,10 +4993,10 @@ a.badge:hover, a.badge:focus {
 .jumbotron > hr {
   border-top-color: #003d3e;
 }
-.container .jumbotron, #wrapper .jumbotron, #main .jumbotron, #footer .jumbotron, .navigation-inner .jumbotron {
+.container .jumbotron, #main .jumbotron, #footer .jumbotron, .navigation-inner .jumbotron {
   border-radius: 6px;
 }
-.jumbotron .container, .jumbotron #wrapper, .jumbotron #main, .jumbotron #footer, .jumbotron .navigation-inner {
+.jumbotron .container, .jumbotron #main, .jumbotron #footer, .jumbotron .navigation-inner {
   max-width: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -5006,7 +5004,7 @@ a.badge:hover, a.badge:focus {
     padding-top: 48px;
     padding-bottom: 48px;
   }
-  .container .jumbotron, #wrapper .jumbotron, #main .jumbotron, #footer .jumbotron, .navigation-inner .jumbotron {
+  .container .jumbotron, #main .jumbotron, #footer .jumbotron, .navigation-inner .jumbotron {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -6764,7 +6762,7 @@ iframe {
 .in-frame #wpadminbar {
   display: none;
 }
-.in-frame .container, .in-frame #wrapper, .in-frame #main, .in-frame #footer, .in-frame .navigation-inner, .in-frame .row {
+.in-frame .container, .in-frame #main, .in-frame #footer, .in-frame .navigation-inner, .in-frame .row {
   width: 100%;
   margin: 0;
 }
