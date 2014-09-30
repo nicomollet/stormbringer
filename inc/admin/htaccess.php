@@ -4,7 +4,7 @@
  * Show an admin notice if .htaccess isn't writable
  */
 function stormbringer_htaccess_writable() {
-  if (defined('H5BP_HTACCESS') && H5BP_HTACCESS==true) {
+  if (current_theme_supports('h5bp-htaccess')) {
     if (!is_writable(get_home_path() . '.htaccess')) {
       if (current_user_can('administrator')) {
         add_action('admin_notices', create_function('', "echo '<div class=\"error\"><p>" . sprintf(__('Please make sure your <a href="%s">.htaccess</a> file is writable ', 'roots'), admin_url('options-permalink.php')) . "</p></div>';"));
@@ -36,6 +36,6 @@ function stormbringer_add_h5bp_htaccess($content) {
   return $content;
 }
 
-if (defined('H5BP_HTACCESS') && H5BP_HTACCESS==true) {
+if (current_theme_supports('h5bp-htaccess')) {
   add_action('generate_rewrite_rules', 'stormbringer_add_h5bp_htaccess');
 }

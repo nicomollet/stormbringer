@@ -67,28 +67,37 @@ if(self !== top){
 
 	        <?php
 	        // Theme My Login menu
-	        if(class_exists( 'Theme_My_Login')) :
-	        $current_user = wp_get_current_user();
+	        if(class_exists( 'Theme_My_Login') && current_theme_supports('thememylogin')) :
+		        $thememylogin_pageids = get_theme_support('thememylogin')[0];
+		        $current_user = wp_get_current_user();
 	        ?>
-	        <ul class="nav navbar-nav navbar-right">
+	        <ul class="nav navbar-nav navbar-right navbar-account">
 		        <?php
-		        if ( 0 == $current_user->ID ) :
+		        if ( 0 == $current_user->ID ) : // logged in
 		        ?>
-			        <li><a href="<?php $page = get_post(THEMEMYLOGIN_LOGIN); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
-			        <li><a href="<?php $page = get_post(THEMEMYLOGIN_REGISTER); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
-		        <?php else : ?>
+			        <li><a href="<?php $page = get_post($thememylogin_pageids['login']); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
+			        <li><a href="<?php $page = get_post($thememylogin_pageids['register']); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
+		        <?php else : // logged out ?>
 			        <li class="dropdown">
 				        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <?php echo $current_user->user_login;?> <span class="caret"></span></a>
 				        <ul class="dropdown-menu" role="menu">
-					        <li><a href="<?php $page = get_post(THEMEMYLOGIN_PROFILE); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
+					        <li><a href="<?php $page = get_post($thememylogin_pageids['profile']); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
 					        <li class="divider"></li>
-					        <li><a href="<?php $page = get_post(THEMEMYLOGIN_LOGOUT); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
+					        <li><a href="<?php $page = get_post($thememylogin_pageids['logout']); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
 				        </ul>
 			        </li>
 		        <?php endif; ?>
 	        </ul>
 	        <?php endif; ?>
 
+	        <?php
+	        // Woocommerce shopping cart
+	        if (current_theme_supports('woocommerce')) :
+	        ?>
+	        <ul class="nav navbar-nav navbar-right navbar-shoppingcart">
+		        <?php echo stormbringer_shoppingcart_menu(); ?>
+	        </ul>
+	        <?php endif; ?>
 
 
         </div>

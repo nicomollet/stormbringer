@@ -1,11 +1,11 @@
-/* Common text styles */
+// Common text styles
 .underline {text-decoration: underline}
 .bold{font-weight: bold;}
 .thin{font-weight: normal;}
 .text-color{color:$text-color}
 $white: #ffffff;
 
-/* Fancybox */
+// Fancybox
 #fancybox-ajaxcontainer{
   display: none;
 
@@ -20,7 +20,7 @@ $white: #ffffff;
     background:url('../img/ajax-loader.gif') #fff  no-repeat 50% 50% !important;
 }
 
-/* Frame load */
+// Iframe
 iframe{border: 0}
 .in-frame{
   margin:0 !important;
@@ -47,13 +47,13 @@ iframe{border: 0}
 
 #modal-frame{width: 100%;height: 98%;}
 
-/* Emulate table 100% width */
+// Emulate table 100% width
 .emulate-table{display: table; width: 100%}
 .emulate-table-row{display: table-row}
 .emulate-table-cell{display: table-cell;vertical-align: top;}
 
 
-/* Comments */
+// Comments
 .edit-comment{
   color: $white;
 }
@@ -61,7 +61,7 @@ iframe{border: 0}
   display: inline-block;
 }
 
-/* Page template "Styles" */
+// Page template "Styles"
 .bs-docs-example:after {
   background-color: #F5F5F5;
   border: 1px solid #DDDDDD;
@@ -82,7 +82,7 @@ iframe{border: 0}
   position: relative;
 }
 
-/* Edit post link */
+// Edit post button
 a.edit-post{
   right: 0;
   top: 0;
@@ -102,5 +102,13 @@ a.edit-post{
   a.edit-post{
     display: inline;
     z-index: 800;
+  }
+}
+
+// Print
+
+@media print {
+  .do-not-print, .edit-post, nav, object, embed, iframe, select, input, button, textarea, .button, #skip-to-nav, .presaisine-steps-wrapper, .navigation, #header-tools, #subcontent, #footer, #navigation-secondary, #colophon, #slideshow, #sidebar, .submit-button, .subheader, .content-header, .button-print, .backlink, .admin #header, .admin .secondary-navigation {
+    display: none
   }
 }

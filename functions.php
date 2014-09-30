@@ -1,41 +1,48 @@
 <?php
 
+// Stormbringer initialization
 require_once locate_template('/inc/init.php');           // Load theme functions
-
 
 // ********************************************
 // Configuration
 // ********************************************
 
-define('THEMEMYLOGIN_LOGIN', 0);        // ID of login page
-define('THEMEMYLOGIN_REGISTER', 0);     // ID of register page
-define('THEMEMYLOGIN_PROFILE', 0);      // ID of profile page
-define('THEMEMYLOGIN_LOSTPASSWORD', 0); // ID of lostpassword page
-define('THEMEMYLOGIN_LOGOUT', 0);       // ID of logout page
-define('PREPROCESSOR', 'scss');           // less or scss
-define('H5BP_HTACCESS', true);
-define('POST_EXCERPT_LENGTH', 100);       // Length of excerpt
-define('LIGHTBOX', 'tbmodal');            // Lightbox style: tbmodal or fancybox
-define('ADDTHIS', '');                    // ID of Addthis profile
-define('GOOGLE_WEBFONTS', '');            // Example: serialize(array('Montserrat:400','Dancing Script:400'))
+add_theme_support( 'thememylogin',
+	array('login' => 449,                    // ID of login page
+	'register' => 451,                       // ID of register page
+	'profile' => 454,                        // ID of profile page
+	'lostpassword' => 452,                   // ID of lostpassword page
+	'logout' => 450                          // ID of logout page
+	)
+);
+add_theme_support('preprocessor', 'scss');  // less or scss
+add_theme_support('h5bp-htaccess');         // HTML5 boilerplate htaccess (for Apache only)
+add_theme_support('excerpt-length', 100);   // Length of excerpt
+add_theme_support('lightbox', 'tbmodal');   // Lightbox style: tbmodal or fancybox
+add_theme_support('google-webfonts', '' ); // Example: serialize(array('Montserrat:400','Dancing Script:400'))
+add_theme_support('addthis', '' );         // ID of Addthis profile
 
 
 // ********************************************
 // Libraries (comment line to remove a library)
 // ********************************************
 
-define('BOOTSTRAP', '3.2.0');
-define('JQUERY', '1.11.1');
-//define('JQUERY_CYCLE', '3.03');
-//define('JQUERY_EASING', '1.3');
-//define('JQUERY_MOUSEWHEEL', '3.1.11');
-//define('JQUERY_VALIDATE', '1.11.1');
-//define('JQUERY_COOKIE', '1.4.1');
-//define('BOOTSTRAP_SELECT', '1.6.2');
-define('MODERNIZR', '2.8.3');
-define('RESPOND', '1.4.2');
-define('SELECTIVIZR', '1.0.2');
-define('LESSJS', '1.6.2');
+add_theme_support('libraries',
+	array(
+		'modernizr' => '2.8.3',
+		'respond' => '1.4.2',
+		'lessjs' => '1.6.2',
+		'selectivizr' => '1.0.2',
+		'bootstrap' => '3.2.0',
+		'bootstrap-select' => '1.6.2',
+		'jquery' => '1.11.1',
+		//'jquery-cycle' => '3.03',
+		//'jquery-easing' => '1.3',
+		//'jquery-mousewheel' => '3.1.11',
+		//'jquery-validate' => '1.11.1',
+		//'jquery-cookie' => '1.4.1',
+	)
+);
 
 
 // ********************************************

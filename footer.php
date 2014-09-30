@@ -55,13 +55,17 @@
 </div>
 <!-- /#modal-default -->
 
-<?php //get_template_part('modal', 'login'); ?>
-
 <?php wp_footer(); ?>
 
 <script type="text/javascript">
 var template_url = '<?php bloginfo("template_url"); ?>';
-var lightbox ='<?php echo LIGHTBOX;?>';
+<?php
+$lightbox ='';
+if(current_theme_supports('lightbox')){
+	$lightbox = get_theme_support('lightbox')[0];
+}
+?>
+var lightbox ='<?php echo $lightbox;?>';
 </script>
 </body>
 </html>

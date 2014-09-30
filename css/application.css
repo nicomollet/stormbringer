@@ -6706,7 +6706,6 @@ button.close {
     display: none !important;
   }
 }
-/* Common text styles */
 .underline {
   text-decoration: underline;
 }
@@ -6723,7 +6722,6 @@ button.close {
   color: #333333;
 }
 
-/* Fancybox */
 #fancybox-ajaxcontainer {
   display: none;
 }
@@ -6747,7 +6745,6 @@ button.close {
   background: url("../img/ajax-loader.gif") white no-repeat 50% 50% !important;
 }
 
-/* Frame load */
 iframe {
   border: 0;
 }
@@ -6792,7 +6789,6 @@ iframe {
   height: 98%;
 }
 
-/* Emulate table 100% width */
 .emulate-table {
   display: table;
   width: 100%;
@@ -6807,7 +6803,6 @@ iframe {
   vertical-align: top;
 }
 
-/* Comments */
 .edit-comment {
   color: white;
 }
@@ -6816,7 +6811,6 @@ iframe {
   display: inline-block;
 }
 
-/* Page template "Styles" */
 .bs-docs-example:after {
   background-color: #F5F5F5;
   border: 1px solid #DDDDDD;
@@ -6838,7 +6832,6 @@ iframe {
   position: relative;
 }
 
-/* Edit post link */
 a.edit-post {
   right: 0;
   top: 0;
@@ -6864,6 +6857,11 @@ a.edit-post:after {
   z-index: 800;
 }
 
+@media print {
+  .do-not-print, .edit-post, nav, object, embed, iframe, select, input, button, textarea, .button, #skip-to-nav, .presaisine-steps-wrapper, .navigation, #header-tools, #subcontent, #footer, #navigation-secondary, #colophon, #slideshow, #sidebar, .submit-button, .subheader, .content-header, .button-print, .backlink, .admin #header, .admin .secondary-navigation {
+    display: none;
+  }
+}
 /* ************************************************************************* */
 /* ************************************************************************* */
 /* ************************************************************************* */
@@ -7271,7 +7269,7 @@ figure {
   width: 49%;
 }
 .ekko-lightbox a:hover {
-  opacity: 1;
+  opacity: 0.9;
   text-decoration: none;
 }
 .ekko-lightbox .glyphicon-chevron-left {
