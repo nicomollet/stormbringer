@@ -4,7 +4,9 @@ function stormbringer_support() {
 
 	add_theme_support( 'automatic-feed-links' ); // rss thingy
 	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'woocommerce' );
+	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ){
+		add_theme_support( 'woocommerce' );
+	}
 
 	locate_template( 'inc/front/secure.php', true );           // Secure Wordpress
 	locate_template( 'inc/front/thumbnails.php', true );       // Thumbnails for Bootstrap
@@ -56,9 +58,7 @@ function stormbringer_support() {
 		locate_template( 'inc/plugins/thememylogin.php', true );
 	}
 	if (current_theme_supports('woocommerce')) {// Woocommerce custom titles and custom pages
-		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ){
-			locate_template( 'inc/plugins/woocommerce.php', true );
-		}
+		locate_template( 'inc/plugins/woocommerce.php', true );
 	}
 
 	load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
