@@ -37,16 +37,6 @@ function stormbringer_shoppingcart_menu() {
 }
 
 //  woocommerce-twitterbootstrap plugin: https://github.com/bassjobsen/woocommerce-twitterbootstrap
-
-/**
- * Check if WooCommerce is active
- **/
-if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) )
-{
-// Put your plugin code here
-//die('install Woocommerce First');
-}
-
 if(!class_exists('WooCommerce_Twitter_Bootstrap'))
 {
 

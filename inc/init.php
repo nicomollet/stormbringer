@@ -56,7 +56,9 @@ function stormbringer_support() {
 		locate_template( 'inc/plugins/thememylogin.php', true );
 	}
 	if (current_theme_supports('woocommerce')) {// Woocommerce custom titles and custom pages
-		locate_template( 'inc/plugins/woocommerce.php', true );
+		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ){
+			locate_template( 'inc/plugins/woocommerce.php', true );
+		}
 	}
 
 	load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );

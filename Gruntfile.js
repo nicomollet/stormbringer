@@ -9,7 +9,6 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'js/common.js',   // Common
-          'js/bootstrap-loadimage.js',   // Bootstrap Image Load
           'js/bootstrap-modalgallery.js',   // Bootstrap Modal Gallery
           'js/bootstrap-modalopen.js',   // Bootstrap Modal
           'js/app.js',   // Custom JS
