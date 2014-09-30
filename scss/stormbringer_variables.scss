@@ -11,6 +11,10 @@ $link-hover-color:        darken($link-color, 10%);
 
 $btn-primary-bg:              $color4;
 
+$border-radius-base:        0px !default;
+$border-radius-large:       0px !default;
+$border-radius-small:       0px !default;
+
 // Inverted navbar
 $navbar-inverse-color:                      $white;
 $navbar-inverse-link-color:                 $white;
