@@ -52,6 +52,13 @@ iframe{border: 0}
 .emulate-table-row{display: table-row}
 .emulate-table-cell{display: table-cell;vertical-align: top;}
 
+// Select
+.bootstrap-select .btn:focus {
+  outline: 0 !important;
+}
+.bootstrap-select a:focus{
+  outline: 0 !important;
+}
 
 // Comments
 .edit-comment{

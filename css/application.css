@@ -6801,6 +6801,14 @@ iframe {
   vertical-align: top;
 }
 
+.bootstrap-select .btn:focus {
+  outline: 0 !important;
+}
+
+.bootstrap-select a:focus {
+  outline: 0 !important;
+}
+
 .edit-comment {
   color: white;
 }
