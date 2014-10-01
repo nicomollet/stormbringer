@@ -6,10 +6,9 @@
 
   <?php stormbringer_breadcrumb();?>
 
-    <?php
-      /* No results */
-      get_template_part( 'content', 'none' );
-    ?>
+  <?php
+    get_template_part( 'content', 'none' );
+  ?>
 
 </div>
 <!-- /#content -->

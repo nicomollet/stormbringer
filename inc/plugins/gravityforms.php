@@ -29,7 +29,7 @@ function stormbringer_gform_field_css_class($classes, $field, $form)
   $classes = str_replace('input-append', '', $classes);
   $classes = str_replace('input-prepend', '', $classes);
   $classes = str_replace('icon-', 'dummy-', $classes);
-  $classes = str_replace('gfield', 'form-group gfield', $classes);
+  //$classes = str_replace('gfield', 'form-group gfield', $classes);
 
   if ($field["type"] == 'textarea' || $field["type"] == 'text' || $field["type"] == 'email' || $field["type"] == 'name') {
     if (strpos($form_css, 'form-placeholder') !== false)
@@ -38,7 +38,7 @@ function stormbringer_gform_field_css_class($classes, $field, $form)
   }
 
   $classes .= " form-group";
-  if ($field["failed_validation"] == 1) $classes .= " error";
+  if ($field["failed_validation"] == 1) $classes .= " has-error";
   return $classes;
 }
 add_action('gform_field_css_class', 'stormbringer_gform_field_css_class', 10, 3);
@@ -97,7 +97,7 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
   $content = str_replace('gfield_label', 'control-label gfield_label', $content);
   $content = str_replace('gfield_checkbox', 'gfield_checkbox', $content);
   $content = str_replace('gfield_radio', 'gfield_radio', $content);
-  $content = str_replace('gfield_error', 'gfield_error error', $content);
+  $content = str_replace('gfield_error', 'gfield_error has-error', $content);
   $content = str_replace('validation_message', 'help-inline', $content);
   $content = str_replace('ginput_container', 'form-input ginput_container', $content);
   $content = str_replace('small', 'form-control input-sm', $content);
@@ -276,10 +276,13 @@ add_filter("gform_get_form_filter", "stormbringer_gform_get_form_filter", 10, 4)
 function stormbringer_gform_get_form_filter($content)
 {
   $content = str_replace('gfield_required', 'form-required gfield_required', $content);
-  $content = str_replace('gform_description', 'form-description gform_description', $content);
-  $content = str_replace('gform_title', 'form-title gform_title', $content);
-  $content = str_replace('gform_wrapper', 'form-wrapper gform_wrapper', $content);
-  $content = str_replace('gform_heading', 'form-header gform_heading', $content);
+
+  //$content = str_replace('gform_description', 'form-description gform_description', $content);
+	$content = preg_replace('/(<span class=\'gform_description\'>.*?<\/span>)/', '<p class="form-description gform_description">\\1</p>', $content);
+
+	$content = str_replace('gform_title', 'form-title gform_title', $content);
+	$content = str_replace('gform_wrapper"', 'form-wrapper gform_wrapper"', $content);
+	$content = str_replace('gform_heading', 'form-header gform_heading', $content);
   $content = str_replace('gform_body', 'form-body gform_body', $content);
   $content = str_replace('class=\'gform_fields', 'class=\'form-fields', $content);
   $content = str_replace('gform_footer', 'form-group gform_footer', $content);
@@ -287,6 +290,7 @@ function stormbringer_gform_get_form_filter($content)
   $content = str_replace('gsection_description', 'form-section-description gsection_description', $content);
   $content = str_replace('gsection', 'form-section gsection', $content);
   $content = str_replace('gform_page_footer', 'form-actions gform_page_footer', $content);
+  $content = str_replace('\'validation_error', '\'alert alert-danger validation_error', $content);
   //$content = str_replace('div class="radio"', 'div', $content);
   //$content = str_replace('div class="checkbox"', 'div', $content);
   //$content = str_replace('right_label', '', $content);
