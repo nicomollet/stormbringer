@@ -314,12 +314,39 @@ function stormbringer_gform_get_form_filter($content)
 
 
 // Print icon for top level menu item of Gravity Forms
-function gravityforms_display_menu_icon(){
+function gravityforms_form_icon(){
+
+
   print '<style type="text/css">';
+
+	// menu
   print '#toplevel_page_gf_edit_forms .dashicons-before img{display:none}';
   print '#toplevel_page_gf_edit_forms .dashicons-before:before {';
   print ' content: "\f314";';
   print '}';
-  print '</style>';
+
+	// editor
+	print '.gform_media_icon {';
+	print '
+	background:none !important;
+	display: inline-block;
+	width: 18px;
+	height: 18px !important;
+	vertical-align: text-top;
+	margin: 0 2px !important;
+	';
+	print '}';
+	print '.gform_media_icon:before {';
+	print '
+	font: 400 18px/1 dashicons;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: "\f314";
+	color: #888;
+	';
+	print '}';
+
+	print '</style>';
 }
-add_action( 'admin_head', 'gravityforms_display_menu_icon' );
+add_action( 'admin_head', 'gravityforms_form_icon',30 );
