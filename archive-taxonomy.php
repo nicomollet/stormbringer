@@ -2,8 +2,6 @@
 /**
  * The template for displaying Tsxonomy description
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
  * @package StormBringer
  * @since StormBringer 0.0.1
  */

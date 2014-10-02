@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Archive pages.
+ * The template for displaying Woocommerce.
  *
  * @package StormBringer
  * @since StormBringer 0.0.1
