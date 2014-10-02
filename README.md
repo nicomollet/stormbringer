@@ -25,35 +25,24 @@ Installation
 -----------
 
 ### Scss preprocessor
-If you want to use Scss preprocessor, define PREPROCESSOR to "scss" in functions.php
+If you want to use Scss preprocessor, define preprocessor to "scss" in functions.php
 
 Then you need to install grunt locally:
-#npm install
+npm install
 
 To enable LiveReload, add define('LIVERELOAD', true); to your wp config file.
 
-To start grunt, do:
-#grunt
+To start watching files with grunt, do:
+grunt
 
 Edit scss/application.scss to start editing the styles
 
 ### Less preprocessor
 
-If you want to use Less preprocessor, define PREPROCESSOR to "less" in functions.php
+If you want to use Less preprocessor, define preprocessor to "less" in functions.php
 
 Edit less/_application.less to start editing the styles
 
-TODO
------------
-
-* Clean-up
-* Comments
-* Login system
-* WPML language switcher
-* Include Font-Awesome
-* Localize theme
-* Include Chosen http://ajkochanowicz.github.com/Kickstrap/components.html#chosenInputs
-...
 
 Major components 
 -----------
