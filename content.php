@@ -11,7 +11,7 @@
 
   <?php // only show edit button if user has permission to edit posts
   global $user_level;
-  if ($user_level > 0) $edit_link = '<a href="'.get_edit_post_link(get_the_ID()).'" class="btn btn-success edit-post pull-right"><i class="icon-pencil icon-white"></i> '.__("Modifier", "stormbringer").'</a>';
+  if ($user_level > 0) $edit_link = '<a href="'.get_edit_post_link(get_the_ID()).'" class="btn btn-success edit-post pull-right"><span class="glyphicon glyphicon-pencil"></span> '.__('Edit', 'stormbringer').'</a>';
   ?>
     <?php  if ( is_single() || is_page() || is_singular() ) { ?>
       <header class="page-header">
@@ -21,7 +21,7 @@
     <?php } else { ?>
       <header class="entry-header">
         <?php echo $edit_link;?>
-        <h2 class="entry-title"><a class="entry-title" title="<?php printf( esc_attr__( 'Lien vers %s', 'stormbringer' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <h2 class="entry-title"><a class="entry-title" title="<?php printf( esc_attr__( 'Link to %s', 'stormbringer' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
       </header>
   <?php } ?>
   <!-- /.entry-header -->
@@ -30,33 +30,33 @@
     <footer class="entry-meta">
 
       <p class="entry-date">
-        <i class="icon-calendar"></i> <time datetime="<?php echo the_time('Y-m-d'); ?>"><?php _e("Le", "stormbringer"); ?> <?php echo get_the_date( ); ?></time>
+        <i class="glyphicon glyphicon-calendar"></i> <time datetime="<?php echo the_time('Y-m-d'); ?>"><?php echo get_the_date( ); ?></time>
       </p>
       <p class="entry-author">
-        <i class="icon-user"></i> <?php _e("Par", "stormbringer"); ?> <?php the_author_posts_link(); ?>
+        <i class="glyphicon glyphicon-user"></i> <?php _e('By', 'stormbringer'); ?> <?php the_author_posts_link(); ?>
       </p>
 
-      <?php if (comments_open() && !is_page()) : ?>
-        <p class="comments-link">
-            <?php comments_popup_link('<span class="leave-reply"><i class="icon-comment"></i> ' . __('Laisser un commentaire', 'stormbringer') . '</span>', _x('<i class="icon-comment"></i> 1 commentaire', 'comments number', 'stormbringer'), _x('<i class="icon-comment"></i> % commentaires', 'comments number', 'stormbringer')); ?>
-        </p>
-      <?php endif; // End if comments_open() ?>
+	    <?php if (comments_open() && !is_page()) : ?>
+		    <p class="comments-link">
+			    <?php comments_popup_link('<span class="leave-reply"><span class="glyphicon glyphicon-comment"></span> ' . __('Leave a comment', 'stormbringer') . '</span>', '<span class="glyphicon glyphicon-comment"></span> '._x('1 comment', 'comments number', 'stormbringer'), '<span class="glyphicon glyphicon-comment"></span> '._x('% comments', 'comments number', 'stormbringer')); ?>
+		    </p>
+	    <?php endif; // End if comments_open() ?>
 
-      <?php
-      $categories_list = get_the_category_list(__(', ','stormbringer'));
-      if ($categories_list): ?>
-        <p class="entry-categories">
-          <?php printf(__('<span class="%1$s"><i class="icon-book"></i> Catégories&nbsp;:</span> %2$s', 'stormbringer'), 'intro', $categories_list);?>
-        </p>
-      <?php endif; // End if $categories_list ?>
+	    <?php
+	    $categories_list = get_the_category_list(__(', ','stormbringer'));
+	    if ($categories_list): ?>
+		    <p class="entry-categories">
+			    <?php printf(__('<span class="%1$s"><span class="glyphicon glyphicon-book"></span> Categories:</span> %2$s', 'stormbringer'), 'intro', $categories_list);?>
+		    </p>
+	    <?php endif; // End if $categories_list ?>
 
-      <?php
-      $tags_list = get_the_tag_list('', __(', ','stormbringer'));
-      if ($tags_list): ?>
-        <p class="entry-tags">
-          <?php printf(__('<span class="%1$s"><i class="icon-tags"></i> Mots clés&nbsp;:</span> %2$s', 'stormbringer'), 'intro', $tags_list);            ?>
-        </p>
-      <?php endif; // End if $tags_list ?>
+	    <?php
+	    $tags_list = get_the_tag_list('', __(', ','stormbringer'));
+	    if ($tags_list): ?>
+		    <p class="entry-tags">
+			    <?php printf(__('<span class="%1$s"><span class="glyphicon glyphicon-tags"></span> Tags:</span> %2$s', 'stormbringer'), 'intro', $tags_list);?>
+		    </p>
+	    <?php endif; // End if $tags_list ?>
 
 
     </footer>
@@ -66,16 +66,12 @@
 
   <section class="entry-content">
 
-    <?php do_action( 'stormbringer_content_before' ); ?>
-
     <?php the_post_thumbnail('medium'); ?>
     <?php if (is_archive() || is_search()) { ?>
       <?php echo get_the_excerpt(); ?>
     <?php } else { ?>
       <?php the_content(); ?>
     <?php } ?>
-
-    <?php do_action( 'stormbringer_content_after' ); ?>
 
   </section>
   <!-- /.entry-content -->

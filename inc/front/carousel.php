@@ -57,7 +57,6 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
       $this->plugin_dir       = trailingslashit( dirname( plugin_basename( __FILE__ ) ) );
       $this->plugin_dir_url   = trailingslashit( plugins_url( dirname( plugin_basename( __FILE__ ) ) ) );
 
-      add_action( 'init', array( $this, 'i18n' ), 10 );
 
       if ( ! is_admin() || defined( 'DOING_AJAX' ) ) :
 
@@ -70,24 +69,17 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
 
       endif;
 
-      if ( is_admin() ) :
 
-        add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
-
-      endif;
 
       do_action( 'wp_bootstrap_carousel_loaded' );
     }
-    public function i18n()
-    {
-      load_plugin_textdomain( 'wp_bootstrap_carousel', false, $this->plugin_dir . 'lang/' );
-    }
+
     public function init()
     {
       global $content_width;
 
       if( defined( 'WP_USE_THEMES' ) && WP_USE_THEMES && ! isset( $content_width ) )
-        trigger_error( sprintf( __( 'Your WordPress theme is missing the $content_width feature, needed by the WP Bootstrap Carousel plugin. For more information visit %s', 'wp_bootstrap_carousel' ), esc_url( 'http://codex.wordpress.org/Content_Width' ) ), E_USER_NOTICE );
+        trigger_error( sprintf( __( 'Your WordPress theme is missing the $content_width feature, needed by the WP Bootstrap Carousel plugin. For more information visit %s', 'stormbringer' ), esc_url( 'http://codex.wordpress.org/Content_Width' ) ), E_USER_NOTICE );
 
       add_shortcode( 'carousel', array( $this, 'shortcode' ) );
 
@@ -110,7 +102,7 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
       if( is_feed() )
         return apply_filters(
           'wp_bootstrap_carousel_feed',
-          '<a href="' . get_permalink( $post ) . '#wp-bootstrap-carousel-' . $vars['id'] . '">' . __( 'Click here to view the embedded slideshow.', 'wp_bootstrap_carousel' ) . '</a>',
+          '<a href="' . get_permalink( $post ) . '#wp-bootstrap-carousel-' . $vars['id'] . '">' . __( 'Click here to view the embedded slideshow.', 'stormbringer' ) . '</a>',
           $vars
         );
 
@@ -157,7 +149,7 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
 
         if( $vars['comments'] && comments_open( $item_id ) ) :
 
-          $comments = ( get_comments_number( $item_id ) != 0 ) ? sprintf( _n( '1 Comment', '%1$s Comments', get_comments_number( $item_id ), 'wp_bootstrap_carousel' ), number_format_i18n( get_comments_number( $item_id ) ) ) : __( '0 Comments', 'wp_bootstrap_carousel' );
+          $comments = ( get_comments_number( $item_id ) != 0 ) ? sprintf( _n( '1 comment', '%1$s comments', get_comments_number( $item_id ), 'stormbringer' ), number_format_i18n( get_comments_number( $item_id ) ) ) : __( '0 comments', 'stormbringer' );
 
           $carousel .= '<p class="carousel-comments-link">
                     <a href="' . get_comments_link( $item_id ) . '" rel="bookmark">' . $comments . '</a>
@@ -319,18 +311,7 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
 
       return new WP_Bootstrap_Carousel_DPS();
     }
-    public function plugin_row_meta( $links, $file )
-    {
-      $plugin = plugin_basename( __FILE__ );
 
-      if ( $plugin === $file )
-      {
-        $links[] = sprintf( '<a href="%1$s" target="_blank">' . __( 'Wiki', 'wp_bootstrap_carousel' ) . '</a>', esc_url( 'https://github.com/diggy/wp-bootstrap-carousel/wiki' ) );
-        $links[] = sprintf( '<a href="%1$s" target="_blank">' . __( 'Donate', 'wp_bootstrap_carousel' ) . '</a>', esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JMEK9E362ALYJ' ) );
-      }
-
-      return $links;
-    }
   } // class
 
   /**

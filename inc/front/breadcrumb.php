@@ -13,10 +13,10 @@ function stormbringer_breadcrumb( $args = array() ) {
 	/* Set up the default arguments for the breadcrumb. */
 	$defaults = array(
 		'separator' => '/',
-		'before' => '<span class="breadcrumb-title">' . __( 'Vous êtes ici :', $textdomain ) . '</span>',
+		'before' => '<span class="breadcrumb-title">' . __( 'You are here:', $textdomain ) . '</span>',
 		'after' => false,
 		'front_page' => true,
-		'show_home' => __( 'Accueil', $textdomain ),
+		'show_home' => __( 'Home', $textdomain ),
 		'echo' => true
 	);
 	
@@ -339,13 +339,13 @@ function breadcrumb_trail_get_items( $args = array() ) {
 
 	/* If viewing search results. */
 	elseif ( is_search() ){
-		$trail['trail_end'] = sprintf( __( 'Résultats de la recherche &quot;%1$s&quot;', $textdomain ), esc_attr( get_search_query() ) );
+		$trail['trail_end'] = sprintf( __( 'Search results &quot;%1$s&quot;', $textdomain ), esc_attr( get_search_query() ) );
 	}
 
 
 	/* If viewing a 404 error page. */
 	elseif ( is_404() )
-		$trail['trail_end'] = __( 'Erreur 404', $textdomain );
+		$trail['trail_end'] = __( 'Error 404', $textdomain );
 
 	/* Allow devs to step in and filter the $trail array. */
 	return apply_filters( 'breadcrumb_trail_items', $trail, $args );
@@ -575,7 +575,7 @@ function breadcrumb_trail_get_term_parents( $parent_id = '', $taxonomy = '' ) {
  * @returns string The textdomain for the script.
  */
 function breadcrumb_trail_textdomain() {
-	return apply_filters( 'breadcrumb_trail_textdomain', 'breadcrumb-trail' );
+	return apply_filters( 'breadcrumb_trail_textdomain', 'stormbringer' );
 }
 
 /*

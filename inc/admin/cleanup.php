@@ -14,7 +14,7 @@ add_action('admin_init', 'stormbringer_remove_dashboard_widgets');
 // Admin color scheme
 function stormbringer_admin_color_schemes() {
 	$theme_dir = get_template_directory_uri();
-	wp_admin_css_color( 'stormbringer', __( 'StormBringer' ),
+	wp_admin_css_color( 'stormbringer', 'StormBringer',
 		$theme_dir . '/inc/admin/colors.css',
 		array( '#8e0c70', '#5f084b', '#e0feff', '#006F71' )
 	);

@@ -13,7 +13,7 @@
     <?php else : ?>
     <div class="alert alert-block fade in">
       <a class="close" data-dismiss="alert">×</a>
-      <p><?php _e('Veuillez activer des widgets de Sidebar', 'stormbringer'); ?></p>
+      <p><?php _e('Enable widgets in Sidebar', 'stormbringer'); ?></p>
     </div>
     <?php endif; ?>
   </div>

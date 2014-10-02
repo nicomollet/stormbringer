@@ -1,6 +1,9 @@
 ### HEAD
 * WooCommerce compatibility
 
+### 0.1.6: September 24nd, 2014
+* Refactoring of localization
+* Added french (fr_FR) localization
 
 ### 0.1.5: September 24nd, 2014
 * Fix "Theme My Login" plugin Compatibility

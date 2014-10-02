@@ -76,9 +76,9 @@
           $dates_diff  =  0;
         }
       ?>
-        <li><span class="date"><?php the_time('F j'); ?><sup><?php the_time('S') ?></sup></span> <span class="linked"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></span>
+        <li><span class="date"><?php the_time(__('F j\<\s\u\p\>S\<\/\s\u\p\>','stormbringer')); ?></span> <span class="linked"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></span>
           <?php if (get_comments_number()!=0):?>
-            <span class="badge"><?php comments_popup_link(__('', 'stormbringer'), __('1', 'stormbringer'), __('%', 'stormbringer')); ?></span>
+            <span class="badge"><?php comments_popup_link(__('0', 'stormbringer'), __('1', 'stormbringer'), __('%', 'stormbringer')); ?></span>
           <?php endif;?>
         </li>
       <?php

@@ -14,7 +14,7 @@
     <div class="container">
       <h1><?php bloginfo('title'); ?></h1>
       <p><?php bloginfo('description'); ?></p>
-      <p><a class="btn btn-primary btn-lg" role="button" href="https://github.com/nicomollet/stormbringer/archive/master.zip"><?php _e('Télécharger', 'stormbringer');?></a></p>
+      <p><a class="btn btn-primary btn-lg" role="button" href="https://github.com/nicomollet/stormbringer/archive/master.zip"><?php _e('Download', 'stormbringer');?></a></p>
     </div>
   </div>
 

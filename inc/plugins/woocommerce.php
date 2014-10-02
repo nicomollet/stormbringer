@@ -189,14 +189,14 @@ if(!class_exists('WooCommerce_Twitter_Bootstrap'))
 			?>
 			<div class="wrap">
 
-				<h2>WooCommerce Twitter Bootstrap <?php echo __('Settings','wootb');?></h2>
+				<h2>WooCommerce Twitter Bootstrap <?php echo __('Settings','stormbringer');?></h2>
 
 				<form method="post" action="options.php">
 					<?php settings_fields('woocommerce-twitterbootstrap-group'); ?>
 					<table class="form-table">
 						<tr valign="top">
 							<th scope="row">
-								<label for="setting_a"><?php echo __('Number of columns per row','wootb');?></label></th>
+								<label for="setting_a"><?php echo __('Number of columns per row','stormbringer');?></label></th>
 							<td>
 								<select name="number_of_columns" id="number_of_columns">
 
@@ -215,7 +215,7 @@ if(!class_exists('WooCommerce_Twitter_Bootstrap'))
 
 						<tr valign="top">
 							<th scope="row">
-								<label for="tbversion"><?php echo __('Twitter\'s Bootstrap version','wootb');?></label></th>
+								<label for="tbversion"><?php echo __('Twitter\'s Bootstrap version','stormbringer');?></label></th>
 							<td>
 								<?php
 								$tbversion = (get_option('tbversion'))?get_option('tbversion'):3;
@@ -228,9 +228,9 @@ if(!class_exists('WooCommerce_Twitter_Bootstrap'))
 
 						<tr valign="top">
 							<th scope="row">
-								<label for="wootb_size"><?php echo __('Image size','wootb');?></label></th>
+								<label for="wootb_size"><?php echo __('Image size','stormbringer');?></label></th>
 							<td>
-								<p><?php echo __('Either a string keyword (thumbnail, medium, large or full) or a 2-item array representing width and height in pixels, e.g. array(32,32).','wootb');?></p>
+								<p><?php echo __('Either a string keyword (thumbnail, medium, large or full) or a 2-item array representing width and height in pixels, e.g. array(32,32).','stormbringer');?></p>
 								<?php
 
 								$wootb_size = (get_option('wootb_size'))?get_option('wootb_size'):'medium';

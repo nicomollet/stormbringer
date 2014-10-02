@@ -11,7 +11,7 @@
 <?php
 if ( is_category() ) {
   $category = get_the_category();
-  echo '<a href="'.get_category_feed_link( $category[0]->term_id).'" class="taxonomy-feed">'.__("S'inscrire",'stormbringer').'</a>';
+  echo '<a href="'.get_category_feed_link( $category[0]->term_id).'" class="taxonomy-feed">'.__("Feed",'stormbringer').'</a>';
   // show an optional category description
   $category_description = category_description();
   if ( ! empty( $category_description ) )

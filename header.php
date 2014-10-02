@@ -42,8 +42,7 @@ if(self !== top){
 <body <?php body_class(''); ?> data-grid-framework="bo" data-grid-color="yellow" data-grid-opacity="0.2" data-grid-zindex="-30" data-grid-nbcols="12">
 
 <!--[if lt IE 7]>
-<p id="browsernotsupported"><?php _e('Votre navigateur est obsolète, <a href="http://browsehappy.com/">téléchargez un
-  navigateur plus moderne</a> pour une bonne utilisation de ce site.', 'stormbringer');?>
+<p id="browsernotsupported"><?php _e('You are using an outdated browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'stormbringer');?>
 </p><![endif]-->
 
 <div id="wrapper">

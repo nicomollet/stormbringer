@@ -13,7 +13,7 @@
   <?php stormbringer_breadcrumb();?>
 
   <header class="page-header search-header">
-    <h1 class="page-title search-title"><span><?php printf( __( 'Résultats de la recherche : %s', 'stormbringer' ), '</span>' . get_search_query() . '' ); ?></h1>
+    <h1 class="page-title search-title"><span><?php printf( __( 'Search results: %s', 'stormbringer' ), '</span>' . get_search_query() . '' ); ?></h1>
   </header>
 
   <?php if ( have_posts() ) : ?>

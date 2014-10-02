@@ -1,0 +1,600 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: StormBringer Wordpress theme\n"
+"POT-Creation-Date: 2014-10-02 18:13+0100\n"
+"PO-Revision-Date: 2014-10-02 18:13+0100\n"
+"Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
+"Language-Team: Nicolas Mollet <nico.mollet@gmail.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;__;_n:1,2;_x:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../content-none.php:13
+msgid "Page not found"
+msgstr ""
+
+#: ../content-none.php:17
+msgid "The content your are looking for is not here."
+msgstr ""
+
+#: ../index.php:17
+msgid "Download"
+msgstr ""
+
+#: ../header.php:45
+msgid ""
+"You are using an outdated browser. Please <a class=\"alert-link\" href="
+"\"http://browsehappy.com/\">upgrade your browser</a> to improve your "
+"experience."
+msgstr ""
+
+#: ../archive.php:20
+msgid "Category:"
+msgstr ""
+
+#: ../archive.php:22
+msgid "Tag:"
+msgstr ""
+
+#: ../archive.php:24
+msgid "Posts in"
+msgstr ""
+
+#: ../archive.php:26
+msgid "Posts of the day:"
+msgstr ""
+
+#: ../archive.php:28
+msgid "Posts of the month:"
+msgstr ""
+
+#: ../archive.php:30
+msgid "Posts of the year:"
+msgstr ""
+
+#: ../archive.php:32
+msgid "Posts by:"
+msgstr ""
+
+#: ../page-timeline.php:79
+msgid "F j\\<\\s\\u\\p\\>S\\<\\/\\s\\u\\p\\>"
+msgstr ""
+
+#: ../page-timeline.php:81
+msgid "0"
+msgstr ""
+
+#: ../page-timeline.php:81
+msgid "1"
+msgstr ""
+
+#: ../page-timeline.php:81
+msgid "%"
+msgstr ""
+
+#: ../sidebar-home.php:16
+msgid "Enable widgets in Sidebar Home"
+msgstr ""
+
+#: ../archive-author.php:22
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: ../archive-author.php:24
+msgid "Facebook:"
+msgstr ""
+
+#: ../archive-author.php:25
+msgid "Twitter:"
+msgstr ""
+
+#: ../archive-author.php:26
+msgid "Google Plus:"
+msgstr ""
+
+#: ../form-login.php:16 ../form-login.php:19 ../form-register.php:16
+#: ../form-register.php:18 ../form-profile.php:34 ../form-profile.php:37
+msgid "Username"
+msgstr ""
+
+#: ../form-login.php:24 ../form-login.php:27
+msgid "Password"
+msgstr ""
+
+#: ../form-login.php:43
+msgid "Remember me"
+msgstr ""
+
+#: ../form-login.php:55 ../inc/plugins/thememylogin.php:9
+#: ../inc/plugins/thememylogin.php:18
+msgid "Sign in"
+msgstr ""
+
+#: ../form-login.php:67
+msgid "You don't have an account?"
+msgstr ""
+
+#: ../search.php:16
+#, php-format
+msgid "Search results: %s"
+msgstr ""
+
+#: ../form-register.php:23 ../form-register.php:25 ../form-profile.php:104
+#: ../form-profile.php:107 ../comments.php:81
+msgid "Email"
+msgstr ""
+
+#: ../form-register.php:27
+msgid "A password will be sent to your email."
+msgstr ""
+
+#: ../form-register.php:37
+msgid "Create an account"
+msgstr ""
+
+#: ../form-register.php:46
+msgid "Already have an account?"
+msgstr ""
+
+#: ../form-resetpass.php:16 ../form-resetpass.php:19 ../form-profile.php:153
+msgid "New password"
+msgstr ""
+
+#: ../form-resetpass.php:24 ../form-resetpass.php:27
+msgid "Confirm new password"
+msgstr ""
+
+#: ../form-resetpass.php:28
+msgid "Strength indicator"
+msgstr ""
+
+#: ../form-resetpass.php:29 ../form-profile.php:164
+msgid ""
+"Hint: the password should be at least eight characters long. To make it "
+"stronger, use upper and lower case letters, numbers and symbols like ! \" ? "
+"$ % ^ &amp; )."
+msgstr ""
+
+#: ../content.php:14 ../content-image.php:14 ../inc/front/comments.php:15
+msgid "Edit"
+msgstr ""
+
+#: ../content.php:36 ../content-image.php:35
+msgid "By"
+msgstr ""
+
+#: ../content.php:41 ../comments.php:55 ../content-image.php:40
+msgid "Leave a comment"
+msgstr ""
+
+#: ../content.php:41 ../content-image.php:40
+msgctxt "comments number"
+msgid "1 comment"
+msgstr ""
+
+#: ../content.php:41 ../content-image.php:40
+#, php-format
+msgctxt "comments number"
+msgid "% comments"
+msgstr ""
+
+#: ../content.php:46 ../content.php:54 ../content-image.php:53
+#: ../content-image.php:61
+msgid ", "
+msgstr ""
+
+#: ../content.php:49 ../content-image.php:56
+#, php-format
+msgid ""
+"<span class=\"%1$s\"><span class=\"glyphicon glyphicon-book\"></span> "
+"Categories:</span> %2$s"
+msgstr ""
+
+#: ../content.php:57 ../content-image.php:64
+#, php-format
+msgid ""
+"<span class=\"%1$s\"><span class=\"glyphicon glyphicon-tags\"></span> Tags:</"
+"span> %2$s"
+msgstr ""
+
+#: ../sidebar-blog.php:16
+msgid "Enable widgets in Sidebar Blog"
+msgstr ""
+
+#: ../page-sitemap.php:30
+msgid "Pages"
+msgstr ""
+
+#: ../form-lostpassword.php:16 ../form-lostpassword.php:19
+msgid "Username or email"
+msgstr ""
+
+#: ../form-lostpassword.php:29
+msgid "Get a new password"
+msgstr ""
+
+#: ../archive-taxonomy.php:14
+msgid "Feed"
+msgstr ""
+
+#: ../form-profile.php:30
+msgid "Account information"
+msgstr ""
+
+#: ../form-profile.php:39
+msgid "Your username can't be changed"
+msgstr ""
+
+#: ../form-profile.php:43 ../form-profile.php:46
+msgid "First name"
+msgstr ""
+
+#: ../form-profile.php:51 ../form-profile.php:54
+msgid "Last name"
+msgstr ""
+
+#: ../form-profile.php:59 ../form-profile.php:63
+msgid "Surname"
+msgstr ""
+
+#: ../form-profile.php:68
+msgid "Displayed publicly"
+msgstr ""
+
+#: ../form-profile.php:101
+msgid "Social networks"
+msgstr ""
+
+#: ../form-profile.php:112 ../form-profile.php:115 ../comments.php:87
+msgid "Website"
+msgstr ""
+
+#: ../form-profile.php:137
+msgid "About you"
+msgstr ""
+
+#: ../form-profile.php:140
+msgid "Biographical Info"
+msgstr ""
+
+#: ../form-profile.php:145
+msgid "Tell us about you in a few words."
+msgstr ""
+
+#: ../form-profile.php:157
+msgid "If you want to change your password, if not leave empty."
+msgstr ""
+
+#: ../form-profile.php:162
+msgid "Type your password again."
+msgstr ""
+
+#: ../form-profile.php:163
+msgid "Password Strength"
+msgstr ""
+
+#: ../form-profile.php:174 ../form-profile.php:177
+msgid "Permissions"
+msgstr ""
+
+#: ../sidebar.php:16
+msgid "Enable widgets in Sidebar"
+msgstr ""
+
+#: ../comments.php:12
+msgid ""
+"This content is protected by a password. Type the password to see the "
+"comments."
+msgstr ""
+
+#: ../comments.php:20
+msgid "No"
+msgstr ""
+
+#: ../comments.php:20
+msgid "comment"
+msgstr ""
+
+#: ../comments.php:20
+msgid "One"
+msgstr ""
+
+#: ../comments.php:20
+msgid "comments"
+msgstr ""
+
+#: ../comments.php:20
+msgid "on"
+msgstr ""
+
+#: ../comments.php:28
+msgid "&larr; Previous comments"
+msgstr ""
+
+#: ../comments.php:29
+msgid "Next comments &rarr;"
+msgstr ""
+
+#: ../comments.php:43
+msgid "Comments are closed"
+msgstr ""
+
+#: ../comments.php:55
+msgid "Leave a reply to"
+msgstr ""
+
+#: ../comments.php:58
+msgid "Cancel"
+msgstr ""
+
+#: ../comments.php:63
+msgid "You must be"
+msgstr ""
+
+#: ../comments.php:63
+msgid "logged in"
+msgstr ""
+
+#: ../comments.php:63
+msgid "to leave a comment"
+msgstr ""
+
+#: ../comments.php:71
+msgid "Logged in as"
+msgstr ""
+
+#: ../comments.php:71
+msgid "Loggout of this account"
+msgstr ""
+
+#: ../comments.php:71 ../inc/plugins/thememylogin.php:19
+msgid "Loggout"
+msgstr ""
+
+#: ../comments.php:76
+msgid "Name"
+msgstr ""
+
+#: ../comments.php:76 ../comments.php:81
+msgid "(required)"
+msgstr ""
+
+#: ../comments.php:77
+msgid "Your name"
+msgstr ""
+
+#: ../comments.php:82
+msgid "Your email"
+msgstr ""
+
+#: ../comments.php:83
+msgid "won't be published"
+msgstr ""
+
+#: ../comments.php:88
+msgid "Your website"
+msgstr ""
+
+#: ../comments.php:94
+msgid "Comment"
+msgstr ""
+
+#: ../comments.php:95
+msgid "Your comment&hellip;"
+msgstr ""
+
+#: ../comments.php:99
+msgid "Send the comment"
+msgstr ""
+
+#: ../content-image.php:48
+#, php-format
+msgid ""
+"<span class=\"%1$s\"><span class=\"glyphicon glyphicon-picture\"></span> "
+"Size:</span> %2$s &times; %3$s"
+msgstr ""
+
+#: ../inc/front/pagination.php:38
+msgid "First"
+msgstr ""
+
+#: ../inc/front/pagination.php:41
+msgid "Previous"
+msgstr ""
+
+#: ../inc/front/pagination.php:43 ../inc/front/pagination.php:53
+msgid "Next"
+msgstr ""
+
+#: ../inc/front/pagination.php:57
+msgid "Last"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:16
+msgid "You are here:"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:19
+msgid "Home"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:302
+msgid "g:i a"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:305
+#, php-format
+msgid "Minute %1$s"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:305
+msgid "i"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:308
+msgid "g a"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:319 ../inc/front/breadcrumb.php:325
+#: ../inc/front/breadcrumb.php:330 ../inc/front/breadcrumb.php:335
+#: ../inc/front/breadcrumb.php:402
+msgid "Y"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:320 ../inc/front/breadcrumb.php:331
+#: ../inc/front/breadcrumb.php:406
+msgid "F"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:321 ../inc/front/breadcrumb.php:410
+msgid "d"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:326
+#, php-format
+msgid "Week %1$s"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:342
+#, php-format
+msgid "Search results &quot;%1$s&quot;"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:348
+msgid "Error 404"
+msgstr ""
+
+#: ../inc/front/password.php:8
+msgid "This content is protected by a password, type the password below:"
+msgstr ""
+
+#: ../inc/front/password.php:12
+msgid "Password:"
+msgstr ""
+
+#: ../inc/front/carousel.php:82
+#, php-format
+msgid ""
+"Your WordPress theme is missing the $content_width feature, needed by the WP "
+"Bootstrap Carousel plugin. For more information visit %s"
+msgstr ""
+
+#: ../inc/front/carousel.php:105
+msgid "Click here to view the embedded slideshow."
+msgstr ""
+
+#: ../inc/front/carousel.php:152
+#, php-format
+msgid "1 comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/front/carousel.php:152
+msgid "0 comments"
+msgstr ""
+
+#: ../inc/front/cleanup.php:92
+msgid "Read&nbsp;more&hellip;"
+msgstr ""
+
+#: ../inc/front/cleanup.php:187
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../inc/front/comments.php:14
+#, php-format
+msgid "<h4 class=\"media-heading\">%s</h4>"
+msgstr ""
+
+#: ../inc/front/comments.php:19
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../inc/front/comments.php:25
+msgid "at"
+msgstr ""
+
+#: ../inc/admin/htaccess.php:10
+#, php-format
+msgid "Please make sure your <a href=\"%s\">.htaccess</a> file is writable "
+msgstr ""
+
+#: ../inc/plugins/thememylogin.php:10 ../inc/plugins/thememylogin.php:11
+#: ../inc/plugins/thememylogin.php:12
+msgid "Forgot your password"
+msgstr ""
+
+#: ../inc/plugins/thememylogin.php:13
+msgid "Register"
+msgstr ""
+
+#: ../inc/plugins/thememylogin.php:14
+msgid "Your account"
+msgstr ""
+
+#: ../inc/plugins/thememylogin.php:15
+msgid "Error"
+msgstr ""
+
+#: ../inc/plugins/thememylogin.php:16
+msgid "Info"
+msgstr ""
+
+#: ../inc/plugins/thememylogin.php:17
+msgid "Success"
+msgstr ""
+
+#: ../inc/plugins/thememylogin.php:111
+msgid "Error!"
+msgstr ""
+
+#: ../inc/plugins/woocommerce.php:18
+msgid "View your shopping cart"
+msgstr ""
+
+#: ../inc/plugins/woocommerce.php:19
+msgid "Start shopping"
+msgstr ""
+
+#: ../inc/plugins/woocommerce.php:23
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/plugins/woocommerce.php:177
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: ../inc/plugins/woocommerce.php:192
+msgid "Settings"
+msgstr ""
+
+#: ../inc/plugins/woocommerce.php:199
+msgid "Number of columns per row"
+msgstr ""
+
+#: ../inc/plugins/woocommerce.php:218
+msgid "Twitter's Bootstrap version"
+msgstr ""
+
+#: ../inc/plugins/woocommerce.php:231
+msgid "Image size"
+msgstr ""
+
+#: ../inc/plugins/woocommerce.php:233
+msgid ""
+"Either a string keyword (thumbnail, medium, large or full) or a 2-item array "
+"representing width and height in pixels, e.g. array(32,32)."
+msgstr ""

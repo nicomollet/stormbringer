@@ -10,11 +10,11 @@
 <article id="post-not-found" class="post-not-found">
 
   <header class="page-header 404-header">
-    <h1 class="page-title 404-title"><?php _e("Page non trouvée", "stormbringer"); ?></h1>
+    <h1 class="page-title 404-title"><?php _e('Page not found', 'stormbringer'); ?></h1>
   </header>
 
   <section class="entry-content">
-    <p><?php _e("Le contenu que vous cherchez n'est pas ici.", "stormbringer"); ?></p>
+    <p><?php _e('The content your are looking for is not here.', 'stormbringer'); ?></p>
   </section>
 
   <footer>

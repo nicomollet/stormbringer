@@ -6,17 +6,17 @@
 function stormbringer_thememylogin_options(){
 
   $defaults = array(
-    'action_login' => __( 'Identification', "stormbringer" ),
-    'action_lostpassword' => __( 'Mot de passe oublié', "stormbringer" ),
-    'action_retrievepassword' => __( 'Mot de passe oublié', "stormbringer" ),
-    'action_resetpass' => __( 'Mot de passe oublié', "stormbringer" ),
-    'action_register' => __( 'Créer un compte', "stormbringer" ),
-    'action_profile' => __( 'Votre compte', "stormbringer" ),
-    'message_error' => __( 'Erreur', "stormbringer" ),
+    'action_login' => __( 'Sign in', "stormbringer" ),
+    'action_lostpassword' => __( 'Forgot your password', "stormbringer" ),
+    'action_retrievepassword' => __( 'Forgot your password', "stormbringer" ),
+    'action_resetpass' => __( 'Forgot your password', "stormbringer" ),
+    'action_register' => __( 'Register', "stormbringer" ),
+    'action_profile' => __( 'Your account', "stormbringer" ),
+    'message_error' => __( 'Error', "stormbringer" ),
     'message_info' => __( 'Info', "stormbringer" ),
     'message_success' => __( 'Success', "stormbringer" ),
-    'menu_login' => __( 'S\'identifier', "stormbringer" ),
-    'menu_logout' => __( 'Se déconnecter', "stormbringer" ),
+    'menu_login' => __( 'Sign in', "stormbringer" ),
+    'menu_logout' => __( 'Loggout', "stormbringer" ),
   );
   /* Apply filters to the arguments. */
   $args = apply_filters( 'thememylogin_options', $args );
