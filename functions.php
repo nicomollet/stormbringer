@@ -22,6 +22,8 @@ add_theme_support('lightbox', 'tbmodal');   // Lightbox style: tbmodal or fancyb
 add_theme_support('google-webfonts', '' ); // Example: serialize(array('Montserrat:400','Dancing Script:400'))
 add_theme_support('addthis', '' );         // ID of Addthis profile
 
+if ( ! isset( $content_width ) )
+	$content_width = 940; // pixels
 
 // ********************************************
 // Libraries (comment line to remove a library)
