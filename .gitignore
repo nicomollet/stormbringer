@@ -1,8 +1,5 @@
 # Theme related files
-custom/custom.css
-custom/custom_functions.php
-new_functions.php
-lessphp_*
+
 
 # Numerous always-ignore extensions
 *.diff
@@ -14,7 +11,6 @@ lessphp_*
 *.swp
 *.vi
 *~
-*.sass-cache
 
 # OS or Editor folders
 .DS_Store
@@ -30,12 +26,8 @@ Thumbs.db
 nbproject
 *.sublime-project
 *.sublime-workspace
-
-# Komodo
 *.komodoproject
 .komodotools
-
-# Folders to ignore
 .hg
 .svn
 .CVS
@@ -43,4 +35,8 @@ nbproject
 docs/
 js/tests/
 node_modules/
+
+# Cache
 css/cache
+*.sass-cache
+lessphp_*

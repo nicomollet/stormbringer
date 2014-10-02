@@ -3,27 +3,30 @@
 // Stormbringer initialization
 require_once locate_template('/inc/init.php');           // Load theme functions
 
+
 // ********************************************
 // Configuration
 // ********************************************
 
 add_theme_support( 'thememylogin',
-	array('login' => 449,                    // ID of login page
-	'register' => 451,                       // ID of register page
-	'profile' => 454,                        // ID of profile page
-	'lostpassword' => 452,                   // ID of lostpassword page
-	'logout' => 450                          // ID of logout page
+	array(
+		'login' => 449,                         // ID of login page
+		'register' => 451,                      // ID of register page
+		'profile' => 454,                       // ID of profile page
+		'lostpassword' => 452,                  // ID of lostpassword page
+		'logout' => 450                         // ID of logout page
 	)
 );
 add_theme_support('preprocessor', 'scss');  // less or scss
 add_theme_support('h5bp-htaccess');         // HTML5 boilerplate htaccess (for Apache only)
 add_theme_support('excerpt-length', 100);   // Length of excerpt
 add_theme_support('lightbox', 'tbmodal');   // Lightbox style: tbmodal or fancybox
-add_theme_support('google-webfonts', '' ); // Example: serialize(array('Montserrat:400','Dancing Script:400'))
-add_theme_support('addthis', '' );         // ID of Addthis profile
+add_theme_support('google-webfonts', '' );  // Example: serialize(array('Montserrat:400','Dancing Script:400'))
+add_theme_support('addthis', '' );          // ID of Addthis profile
 
 if ( ! isset( $content_width ) )
 	$content_width = 940; // pixels
+
 
 // ********************************************
 // Libraries (comment line to remove a library)
