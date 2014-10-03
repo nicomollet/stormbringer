@@ -210,13 +210,12 @@ add_filter( 'embed_googlevideo', 'stormbringer_embed_wrap', 10, 2 );
 // Other
 
 function meta() {
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
 }
 
 add_action( 'wp_head', 'meta', 1 );
 
 function ietweaks() {
-	//echo "\n". '<!-- ie tweaks -->' . "\n";
 	echo '<meta http-equiv="imagetoolbar" content="no">' . "\n";
 	echo '<meta name="MSSmartTagsPreventParsing" content="true">' . "\n";
 }

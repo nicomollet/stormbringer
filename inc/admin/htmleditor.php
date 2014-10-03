@@ -16,8 +16,7 @@ function my_mce_before_init( $settings ) {
 		),
 		array(
 			'title'   => __('Small', 'stormbringer'),
-			'inline'   => 'span',
-			'classes'   => 'small',
+			'inline'   => 'small',
 		),
 		array(
 			'title'   => __('Muted', 'stormbringer'),
