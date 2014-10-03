@@ -104,7 +104,7 @@ function breadcrumb_trail_get_items( $args = array() ) {
 
 	/* If viewing the "home"/posts page. */
 	elseif ( is_home() ) {
-		$home_page = get_page( get_queried_object_id() );
+		$home_page = get_post( get_queried_object_id() );
 		$trail = array_merge( $trail, breadcrumb_trail_get_parents( $home_page->post_parent, '' ) );
 		$trail['trail_end'] = get_the_title( $home_page->ID );
 	}
@@ -216,7 +216,7 @@ function breadcrumb_trail_get_items( $args = array() ) {
 			$trail[] = $terms;
 
 		/* End with the post title. */
-		$post_title = get_the_title();
+		$post_title = get_the_title($post_id);
 		if ( !empty( $post_title ) )
 			$trail['trail_end'] = $post_title;
 	}
@@ -510,7 +510,7 @@ function breadcrumb_trail_get_parents( $post_id = '', $path = '' ) {
 	/* While there's a post ID, add the post link to the $parents array. */
 	while ( $post_id ) {
 		/* Get the post by ID. */
-		$page = get_page( $post_id );
+		$page = get_post( $post_id );
 
 		/* Add the formatted post link to the array of parents. */
 		if(get_the_title( $post_id ))

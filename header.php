@@ -72,17 +72,29 @@ if(self !== top){
 	        ?>
 	        <ul class="nav navbar-nav navbar-right navbar-account">
 		        <?php
+		        $args = array(
+			        'numberposts' => '-1',
+			        'post_type' => 'page',
+			        'meta_key' => '_tml_action',
+			        'meta_value' => array('register', 'login', 'lostpassword', 'resetpass', 'logout', 'profile'),
+		        );
+		        $get_tml_actions_posts = get_posts($args);
+		        foreach($get_tml_actions_posts as $post){
+			        $action = get_post_meta($post->ID, '_tml_action',true);
+			        $link[$action] = get_permalink($post->ID);
+			        $title[$action] = $post->post_title;;
+		        }
 		        if ( 0 == $current_user->ID ) : // logged in
 		        ?>
-			        <li><a href="<?php $page = get_post($thememylogin_pageids['login']); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
-			        <li><a href="<?php $page = get_post($thememylogin_pageids['register']); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
+			        <li><a href="<?php echo $link['login']; ?>"><?php echo $title['login']; ?></a></li>
+			        <li><a href="<?php echo $link['register']; ?>"><?php echo $title['register']; ?></a></li>
 		        <?php else : // logged out ?>
 			        <li class="dropdown">
 				        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <?php echo $current_user->user_login;?> <span class="caret"></span></a>
 				        <ul class="dropdown-menu" role="menu">
-					        <li><a href="<?php $page = get_post($thememylogin_pageids['profile']); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
+					        <li><a href="<?php echo $link['profile']; ?>"><?php echo $title['profile']; ?></a></li>
 					        <li class="divider"></li>
-					        <li><a href="<?php $page = get_post($thememylogin_pageids['logout']); echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></li>
+					        <li><a href="<?php echo $link['logout']; ?>"><?php echo $title['logout']; ?></a></li>
 				        </ul>
 			        </li>
 		        <?php endif; ?>

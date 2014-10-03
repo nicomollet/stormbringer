@@ -8,7 +8,7 @@
 ?>
 <?php //$template->the_action_template_message('register','<p>','</p>'); ?>
 <?php stormbringer_thememylogin_errors($template->get_errors());?>
-<?php $thememylogin_options = stormbringer_thememylogin_options(); ?>
+<?php //$thememylogin_options = stormbringer_thememylogin_options(); ?>
 
 <form name="form-register" id="form-register<?php $template->the_instance(); ?>" action="<?php $template->the_action_url('register'); ?>" method="post" class="form-horizontal form-register">
 

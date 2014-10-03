@@ -11,7 +11,7 @@
     <?php if (is_active_sidebar('sidebar_home')) : ?>
       <?php dynamic_sidebar('sidebar_home'); ?>
     <?php else : ?>
-    <div class="alert alert-block fade in">
+    <div class="alert fade in">
       <a class="close" data-dismiss="alert">×</a>
       <p><?php _e('Enable widgets in Sidebar Home', 'stormbringer'); ?></p>
     </div>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: StormBringer Wordpress theme\n"
-"POT-Creation-Date: 2014-10-02 18:13+0100\n"
-"PO-Revision-Date: 2014-10-02 18:15+0100\n"
+"POT-Creation-Date: 2014-10-03 19:13+0100\n"
+"PO-Revision-Date: 2014-10-03 19:15+0100\n"
 "Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language-Team: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language: English\n"
@@ -38,31 +38,31 @@ msgstr ""
 "browsehappy.com/\">Mettez à jour votre navigateur</a> pour améliorer votre "
 "expérience."
 
-#: ../archive.php:20
+#: ../archive.php:18
 msgid "Category:"
 msgstr "Catégorie :"
 
-#: ../archive.php:22
+#: ../archive.php:20
 msgid "Tag:"
 msgstr "Mot-clé"
 
-#: ../archive.php:24
+#: ../archive.php:22
 msgid "Posts in"
 msgstr "Articles dans"
 
-#: ../archive.php:26
+#: ../archive.php:24
 msgid "Posts of the day:"
-msgstr "Articles du jour"
+msgstr "Articles du jour :"
 
-#: ../archive.php:28
+#: ../archive.php:26
 msgid "Posts of the month:"
 msgstr "Articles du mois :"
 
-#: ../archive.php:30
+#: ../archive.php:28
 msgid "Posts of the year:"
 msgstr "Articles de l'année :"
 
-#: ../archive.php:32
+#: ../archive.php:30
 msgid "Posts by:"
 msgstr "Articles par :"
 
@@ -114,10 +114,10 @@ msgstr "Mot de passe"
 
 #: ../form-login.php:43
 msgid "Remember me"
-msgstr "Ce souvenir de moi"
+msgstr "Se souvenir de moi"
 
-#: ../form-login.php:55 ../inc/plugins/thememylogin.php:9
-#: ../inc/plugins/thememylogin.php:18
+#: ../form-login.php:55 ../inc/plugins/thememylogin.php:10
+#: ../inc/plugins/thememylogin.php:19
 msgid "Sign in"
 msgstr "S'identifier"
 
@@ -159,7 +159,7 @@ msgstr "Confirmez le nouveau mot de passe"
 msgid "Strength indicator"
 msgstr "Indicateur de force"
 
-#: ../form-resetpass.php:29 ../form-profile.php:164
+#: ../form-resetpass.php:29 ../form-profile.php:166
 msgid ""
 "Hint: the password should be at least eight characters long. To make it "
 "stronger, use upper and lower case letters, numbers and symbols like ! \" ? "
@@ -231,7 +231,7 @@ msgstr "Nom d'utilisateur ou email"
 msgid "Get a new password"
 msgstr "Obtenir un nouveau mot de passe"
 
-#: ../archive-taxonomy.php:14
+#: ../archive-taxonomy.php:12
 msgid "Feed"
 msgstr "Flux RSS"
 
@@ -287,13 +287,17 @@ msgstr "Si vous voulez changer de mot de passe, sinon laissez vide."
 msgid "Type your password again."
 msgstr "Saisissez votre mot de passe à nouveau."
 
-#: ../form-profile.php:163
-msgid "Password Strength"
+#: ../form-profile.php:164
+msgid "Password Strength:"
 msgstr "Force du mot de passe"
 
-#: ../form-profile.php:174 ../form-profile.php:177
+#: ../form-profile.php:176 ../form-profile.php:179
 msgid "Permissions"
 msgstr "Permissions"
+
+#: ../form-profile.php:201
+msgid "Update my account"
+msgstr "Mettre à jour le compte"
 
 #: ../sidebar.php:16
 msgid "Enable widgets in Sidebar"
@@ -367,7 +371,7 @@ msgstr "Connecté en tant que"
 msgid "Loggout of this account"
 msgstr "Se déconnecter de ce compte"
 
-#: ../comments.php:71 ../inc/plugins/thememylogin.php:19
+#: ../comments.php:71 ../inc/plugins/thememylogin.php:20
 msgid "Loggout"
 msgstr "Se déconnecter"
 
@@ -542,33 +546,69 @@ msgstr "Votre commentaire est en attente de modération"
 msgid "at"
 msgstr "à"
 
+#: ../inc/admin/htmleditor.php:13
+msgid "Lead"
+msgstr "Mis en avant"
+
+#: ../inc/admin/htmleditor.php:18
+msgid "Small"
+msgstr "Petit"
+
+#: ../inc/admin/htmleditor.php:23
+msgid "Muted"
+msgstr "Discret"
+
+#: ../inc/admin/htmleditor.php:28
+msgid "Alert Error"
+msgstr "Alerte Erreur"
+
+#: ../inc/admin/htmleditor.php:34
+msgid "Alert Success"
+msgstr "Alerte Succès"
+
+#: ../inc/admin/htmleditor.php:40
+msgid "Alert Warning"
+msgstr "Alerte Avertissement"
+
+#: ../inc/admin/htmleditor.php:46
+msgid "Alert Info"
+msgstr "Alerte Info"
+
+#: ../inc/admin/htmleditor.php:52
+msgid "Button"
+msgstr "Bouton"
+
+#: ../inc/admin/htmleditor.php:57
+msgid "Button Primary"
+msgstr "Bouton principal"
+
 #: ../inc/admin/htaccess.php:10
 #, php-format
 msgid "Please make sure your <a href=\"%s\">.htaccess</a> file is writable "
 msgstr "Vérifiez que le fichier <a href=\"%s\">.htaccess</a> est modifiable"
 
-#: ../inc/plugins/thememylogin.php:10 ../inc/plugins/thememylogin.php:11
-#: ../inc/plugins/thememylogin.php:12
+#: ../inc/plugins/thememylogin.php:11 ../inc/plugins/thememylogin.php:12
+#: ../inc/plugins/thememylogin.php:13
 msgid "Forgot your password"
 msgstr "Mot de passe oublié"
 
-#: ../inc/plugins/thememylogin.php:13
+#: ../inc/plugins/thememylogin.php:14
 msgid "Register"
 msgstr "Crèer un compte"
 
-#: ../inc/plugins/thememylogin.php:14
+#: ../inc/plugins/thememylogin.php:15
 msgid "Your account"
 msgstr "Votre compte"
 
-#: ../inc/plugins/thememylogin.php:15
+#: ../inc/plugins/thememylogin.php:16
 msgid "Error"
 msgstr "Erreur"
 
-#: ../inc/plugins/thememylogin.php:16
+#: ../inc/plugins/thememylogin.php:17
 msgid "Info"
 msgstr "Infomation"
 
-#: ../inc/plugins/thememylogin.php:17
+#: ../inc/plugins/thememylogin.php:18
 msgid "Success"
 msgstr "Succès"
 

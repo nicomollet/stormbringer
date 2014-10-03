@@ -19,7 +19,7 @@ foreach (array('posts', 'pages') as $post_cap)
 
 <?php //$template->the_action_template_message( 'profile' ); ?>
 <?php stormbringer_thememylogin_errors($template->get_errors()); ?>
-<?php $thememylogin_options = stormbringer_thememylogin_options(); ?>
+<?php //$thememylogin_options = stormbringer_thememylogin_options(); ?>
 
 <?php //$template->the_errors(); ?>
 
@@ -160,7 +160,9 @@ foreach (array('posts', 'pages') as $post_cap)
           <input type="password" name="pass2" id="pass2" size="16" value="" autocomplete="off" class="form-control"/>
         </div>
 	      <span class="help-block"><?php _e('Type your password again.', 'stormbringer'); ?></span><br/>
-	      <p id="pass-strength-result" class="help-block"><?php _e('Password Strength', 'stormbringer'); ?></p>
+	      <p class="help-block">
+	        <?php _e('Password Strength:', 'stormbringer'); ?> <span id="pass-strength-result">--</span>
+	      </p>
 	      <p class="help-block indicator-hint"><?php _e('Hint: the password should be at least eight characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! " ? $ % ^ &amp; ).', 'stormbringer'); ?></p>
       </div>
       <?php endif; ?>
@@ -196,7 +198,7 @@ foreach (array('posts', 'pages') as $post_cap)
 
   <div class="form-group">
 	  <div class="form-actions">
-		  <input class="btn btn-primary" type="submit" name="form-submit" value="<?php esc_attr_e('Update my account', 'stormbringer'); ?>"/>
+		  <input class="btn btn-primary" type="submit" name="form-submit" value="<?php echo esc_attr(__('Update my account', 'stormbringer')); ?>"/>
 		  <input type="hidden" name="user_id" id="user_id" value="<?php echo esc_attr($current_user->ID); ?>"/>
 		  <input type="hidden" name="from" value="profile"/>
 		  <input type="hidden" name="checkuser_id" value="<?php echo $current_user->ID; ?>"/>

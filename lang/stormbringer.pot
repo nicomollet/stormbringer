@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: StormBringer Wordpress theme\n"
-"POT-Creation-Date: 2014-10-02 18:13+0100\n"
-"PO-Revision-Date: 2014-10-02 18:13+0100\n"
+"POT-Creation-Date: 2014-10-03 19:13+0100\n"
+"PO-Revision-Date: 2014-10-03 19:14+0100\n"
 "Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language-Team: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language: English\n"
@@ -35,31 +35,31 @@ msgid ""
 "experience."
 msgstr ""
 
-#: ../archive.php:20
+#: ../archive.php:18
 msgid "Category:"
 msgstr ""
 
-#: ../archive.php:22
+#: ../archive.php:20
 msgid "Tag:"
 msgstr ""
 
-#: ../archive.php:24
+#: ../archive.php:22
 msgid "Posts in"
 msgstr ""
 
-#: ../archive.php:26
+#: ../archive.php:24
 msgid "Posts of the day:"
 msgstr ""
 
-#: ../archive.php:28
+#: ../archive.php:26
 msgid "Posts of the month:"
 msgstr ""
 
-#: ../archive.php:30
+#: ../archive.php:28
 msgid "Posts of the year:"
 msgstr ""
 
-#: ../archive.php:32
+#: ../archive.php:30
 msgid "Posts by:"
 msgstr ""
 
@@ -113,8 +113,8 @@ msgstr ""
 msgid "Remember me"
 msgstr ""
 
-#: ../form-login.php:55 ../inc/plugins/thememylogin.php:9
-#: ../inc/plugins/thememylogin.php:18
+#: ../form-login.php:55 ../inc/plugins/thememylogin.php:10
+#: ../inc/plugins/thememylogin.php:19
 msgid "Sign in"
 msgstr ""
 
@@ -156,7 +156,7 @@ msgstr ""
 msgid "Strength indicator"
 msgstr ""
 
-#: ../form-resetpass.php:29 ../form-profile.php:164
+#: ../form-resetpass.php:29 ../form-profile.php:166
 msgid ""
 "Hint: the password should be at least eight characters long. To make it "
 "stronger, use upper and lower case letters, numbers and symbols like ! \" ? "
@@ -221,7 +221,7 @@ msgstr ""
 msgid "Get a new password"
 msgstr ""
 
-#: ../archive-taxonomy.php:14
+#: ../archive-taxonomy.php:12
 msgid "Feed"
 msgstr ""
 
@@ -277,12 +277,16 @@ msgstr ""
 msgid "Type your password again."
 msgstr ""
 
-#: ../form-profile.php:163
-msgid "Password Strength"
+#: ../form-profile.php:164
+msgid "Password Strength:"
 msgstr ""
 
-#: ../form-profile.php:174 ../form-profile.php:177
+#: ../form-profile.php:176 ../form-profile.php:179
 msgid "Permissions"
+msgstr ""
+
+#: ../form-profile.php:201
+msgid "Update my account"
 msgstr ""
 
 #: ../sidebar.php:16
@@ -355,7 +359,7 @@ msgstr ""
 msgid "Loggout of this account"
 msgstr ""
 
-#: ../comments.php:71 ../inc/plugins/thememylogin.php:19
+#: ../comments.php:71 ../inc/plugins/thememylogin.php:20
 msgid "Loggout"
 msgstr ""
 
@@ -524,33 +528,69 @@ msgstr ""
 msgid "at"
 msgstr ""
 
+#: ../inc/admin/htmleditor.php:13
+msgid "Lead"
+msgstr ""
+
+#: ../inc/admin/htmleditor.php:18
+msgid "Small"
+msgstr ""
+
+#: ../inc/admin/htmleditor.php:23
+msgid "Muted"
+msgstr ""
+
+#: ../inc/admin/htmleditor.php:28
+msgid "Alert Error"
+msgstr ""
+
+#: ../inc/admin/htmleditor.php:34
+msgid "Alert Success"
+msgstr ""
+
+#: ../inc/admin/htmleditor.php:40
+msgid "Alert Warning"
+msgstr ""
+
+#: ../inc/admin/htmleditor.php:46
+msgid "Alert Info"
+msgstr ""
+
+#: ../inc/admin/htmleditor.php:52
+msgid "Button"
+msgstr ""
+
+#: ../inc/admin/htmleditor.php:57
+msgid "Button Primary"
+msgstr ""
+
 #: ../inc/admin/htaccess.php:10
 #, php-format
 msgid "Please make sure your <a href=\"%s\">.htaccess</a> file is writable "
 msgstr ""
 
-#: ../inc/plugins/thememylogin.php:10 ../inc/plugins/thememylogin.php:11
-#: ../inc/plugins/thememylogin.php:12
+#: ../inc/plugins/thememylogin.php:11 ../inc/plugins/thememylogin.php:12
+#: ../inc/plugins/thememylogin.php:13
 msgid "Forgot your password"
 msgstr ""
 
-#: ../inc/plugins/thememylogin.php:13
+#: ../inc/plugins/thememylogin.php:14
 msgid "Register"
 msgstr ""
 
-#: ../inc/plugins/thememylogin.php:14
+#: ../inc/plugins/thememylogin.php:15
 msgid "Your account"
 msgstr ""
 
-#: ../inc/plugins/thememylogin.php:15
+#: ../inc/plugins/thememylogin.php:16
 msgid "Error"
 msgstr ""
 
-#: ../inc/plugins/thememylogin.php:16
+#: ../inc/plugins/thememylogin.php:17
 msgid "Info"
 msgstr ""
 
-#: ../inc/plugins/thememylogin.php:17
+#: ../inc/plugins/thememylogin.php:18
 msgid "Success"
 msgstr ""
 

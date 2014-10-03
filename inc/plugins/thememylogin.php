@@ -1,4 +1,5 @@
 <?php
+
 // ********************************************
 // Theme My Login
 // ********************************************
@@ -18,10 +19,8 @@ function stormbringer_thememylogin_options(){
     'menu_login' => __( 'Sign in', "stormbringer" ),
     'menu_logout' => __( 'Loggout', "stormbringer" ),
   );
-  /* Apply filters to the arguments. */
   $args = apply_filters( 'thememylogin_options', $args );
 
-  /* Parse the arguments and extract them for easy variable naming. */
   $args = wp_parse_args( $args, $defaults );
   return $args;
 }
@@ -108,16 +107,17 @@ function stormbringer_thememylogin_errors($errors){
 	  $newclass='success';
   }
 
+
   $errors = str_replace(strtoupper(str_replace('!',':',__('Error!'))),'',strip_tags($errors,'<span><br>'));
-  printf('<div class="alert alert-'.$newclass.'"><button type="button" class="close" data-dismiss="alert">&times;</button><h4>'.$args['message_'.$class].'</h4>%s</div>',$errors);
+  printf('<div class="alert alert-'.$newclass.'"><button type="button" class="close" data-dismiss="alert">&times;</button><h4>'.$args['message_'.$class].'</h4><p>%s</p></div>',$errors);
   }
 }
 
 function stormbringer_thememylogin_title( $title, $action ) {
 
-  $args = stormbringer_thememylogin_options();
+	$args = stormbringer_thememylogin_options();
 
-  if ( is_user_logged_in() ) {
+	if ( is_user_logged_in() ) {
   $title = $args['action_profile'];
   } else {
   switch ( $action ) {
@@ -143,29 +143,6 @@ function stormbringer_thememylogin_title( $title, $action ) {
 }
 add_filter( 'tml_title', 'stormbringer_thememylogin_title', 11, 2 );
 
-/**
- * Cambiamos las plantillas por unas propias
- * @param  string $useTemplate Plantilla encontrada
- * @param  array $templates    Plantillas buscadas
- * @return string              Plantilla a usar
- */
-function tml_template( $useTemplate, $templates ) {
-
-	foreach( $templates as $template) {
-		if($template=='login-form.php')$template='form-login.php';
-		if($template=='register-form.php')$template='form-register.php';
-		if($template=='profile-form.php')$template='form-profile.php';
-		if($template=='lostpassword-form.php')$template='form-lostpassword.php';
-		if($template=='resetpass-form.php')$template='form-resetpass.php';
-		if (file_exists(  TEMPLATEPATH . '/' . $template )) {
-			$useTemplate =  TEMPLATEPATH . '/' . $template  ;
-			break;
-		}
-	}
-	return $useTemplate ;
-
-}
-add_filter( 'tml_template', 'tml_template', 10, 3 );
 
 /*
 To edit the default configuration of Theme my Login, use this function in functions.php:
@@ -187,3 +164,23 @@ function custom_thememylogin_options(){
 	return $args;
 }
 add_filter('thememylogin_options', 'custom_thememylogin_options');
+*/
+
+
+function stormbringer_tml_template( $useTemplate, $templates ) {
+
+	foreach( $templates as $template) {
+		if($template=='login-form.php')$template='form-login.php';
+		if($template=='register-form.php')$template='form-register.php';
+		if($template=='profile-form.php')$template='form-profile.php';
+		if($template=='lostpassword-form.php')$template='form-lostpassword.php';
+		if($template=='resetpass-form.php')$template='form-resetpass.php';
+		if (file_exists(  TEMPLATEPATH . '/' . $template )) {
+			$useTemplate =  TEMPLATEPATH . '/' . $template  ;
+			break;
+		}
+	}
+	return $useTemplate ;
+
+}
+add_filter( 'tml_template', 'stormbringer_tml_template', 10, 3 );

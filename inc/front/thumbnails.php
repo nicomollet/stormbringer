@@ -17,9 +17,16 @@ function remove_thumbnail_dimensions( $html ) {
 
 // Add thumbnail class to thumbnail links
 function add_class_attachment_link($html){
+
   $classes='';
-  if(LIGHTBOX=='fancybox')$classes='fancybox';
-  if(LIGHTBOX=='tbmodal')$classes='modal-open-image';
+
+	$lightbox ='';
+	if(current_theme_supports('lightbox')){
+		$lightbox = get_theme_support('lightbox')[0];
+	}
+
+  if($lightbox=='fancybox')$classes='fancybox';
+  if($lightbox=='tbmodal')$classes='modal-open-image';
 
   if($classes!=''){
     $html = str_replace('<a','<a class="'.$classes.'"',$html);
@@ -33,8 +40,14 @@ add_filter('wp_get_attachment_link','add_class_attachment_link',10,1);
 function give_linked_images_class($html, $id, $caption, $title, $align, $url, $size, $alt = '' ){
 
   $classes='';
-  if(LIGHTBOX=='fancybox')$classes='fancybox';
-  if(LIGHTBOX=='tbmodal')$classes='modal-open-image';
+
+	$lightbox ='';
+	if(current_theme_supports('lightbox')){
+		$lightbox = get_theme_support('lightbox')[0];
+	}
+
+  if($lightbox=='fancybox')$classes='fancybox';
+  if($lightbox=='tbmodal')$classes='modal-open-image';
   if($classes!='')
   {
     // check if there are already classes assigned to the anchor
@@ -51,43 +64,6 @@ function give_linked_images_class($html, $id, $caption, $title, $align, $url, $s
 }
 add_filter('image_send_to_editor','give_linked_images_class',11,8);
 
-
-
-
-// http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
-/*function roots_caption($output, $attr, $content) {
-  if ( is_feed()) {
-    return $output;
-  }
-
-  $defaults = array(
-    'id' => '',
-    'align' => 'alignnone',
-    'width' => '',
-    'caption' => ''
-  );
-
-  $attr = shortcode_atts($defaults, $attr);
-
-  if (1 > $attr['width'] || empty($attr['caption'])) {
-    return $content;
-  }
-
-  $attributes = (!empty($attr['id']) ? ' id="' . esc_attr($attr['id']) . '"' : '' );
-  $attributes .= ' class="thumbnail wp-caption ' . esc_attr($attr['align']) . '"';
-  $attributes .= ' style="width: ' . esc_attr($attr['width']) . 'px"';
-
-  $output = '<div' . $attributes .'>';
-
-  $content = str_replace("thumbnail wp-image","wp-image",$content);
-  $output .= do_shortcode($content);
-
-  $output .= '<div class="caption"><p class="wp-caption-text">' . $attr['caption'] . '</p></div>';
-
-  $output .= '</div>';
-
-  return $output;
-}*/
 
 //Add title attribute back to gallery images
 function my_image_titles($atts,$img) {

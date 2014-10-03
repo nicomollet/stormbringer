@@ -8,7 +8,7 @@
 ?>
 <?php //$template->the_action_template_message('login'); ?>
 <?php stormbringer_thememylogin_errors($template->get_errors());?>
-<?php $thememylogin_options = stormbringer_thememylogin_options(); ?>
+<?php //$thememylogin_options = stormbringer_thememylogin_options(); ?>
 
 <form name="form-login" id="form-login<?php $template->the_instance(); ?>" action="<?php $template->the_action_url('login'); ?>" method="post" class="form form-horizontal form-login">
 

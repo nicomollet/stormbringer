@@ -8,7 +8,7 @@
 ?>
 <?php //$template->the_action_template_message('lostpassword'); ?>
 <?php stormbringer_thememylogin_errors($template->get_errors()); ?>
-<?php $thememylogin_options = stormbringer_thememylogin_options(); ?>
+<?php //$thememylogin_options = stormbringer_thememylogin_options(); ?>
 
 <form name="form-lostpassword" id="form-lostpassword<?php $template->the_instance(); ?>" action="<?php $template->the_action_url('lostpassword'); ?>" method="post" class="form-horizontal form-lostpassword">
 

@@ -15,6 +15,7 @@
     <!-- /.main-wrapper -->
 
   <div class="footer-wrapper">
+
     <footer role="contentinfo" id="footer">
       <div class="footer-inner">
         <?php if (is_active_sidebar('footer_widgets')) : ?>
@@ -23,7 +24,9 @@
       </div>
     </footer>
     <!-- /#footer -->
+
   </div>
+	<!-- /.footer-wrapper -->
 
 </div>
 <!-- /#wrapper -->

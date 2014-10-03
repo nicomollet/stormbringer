@@ -17,7 +17,7 @@
     <p><?php _e('The content your are looking for is not here.', 'stormbringer'); ?></p>
   </section>
 
-  <footer>
+	<footer class="entry-meta">
   </footer>
 
 </article>
