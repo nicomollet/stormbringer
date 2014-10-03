@@ -2,7 +2,7 @@
 
 function stormbringer_support() {
 
-	add_theme_support( 'automatic-feed-links' ); // rss thingy
+	add_theme_support( 'automatic-feed-links' );               // RSS feeds
 	add_theme_support( 'post-thumbnails' );
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ){
 		add_theme_support( 'woocommerce' );
@@ -21,10 +21,6 @@ function stormbringer_support() {
 
 	// Front only
 	if ( ! is_admin() ) {
-		if ( defined( 'GOOGLE_ANALYTICS' ) &&
-		     GOOGLE_ANALYTICS != '' ) {                          // Analytics tracking code
-			locate_template( 'inc/front/analytics.php', true );
-		}
 
 		locate_template( 'inc/front/preprocessor.php', true );   // Load Bootstrap LESS or CSS
 		locate_template( 'inc/front/libraries.php', true );      // JS & CSS libraries
@@ -69,12 +65,12 @@ function stormbringer_support() {
 		require_once( $locale_file );
 	}
 
-	stormbringer_register_menus();            // wp menus
+	stormbringer_register_menus();            // WP menus
 }
 add_action( 'after_setup_theme', 'stormbringer_support' );
 
 
-function custom_register_sidebars() {
+function stormbringer_register_sidebars() {
 
 	register_sidebar(array(
 		'id' => 'sidebar_main',
@@ -114,7 +110,7 @@ function custom_register_sidebars() {
 	));
 
 }
-add_action('widgets_init', 'custom_register_sidebars' );
+add_action('widgets_init', 'stormbringer_register_sidebars' );
 
 
 function stormbringer_register_menus() {
