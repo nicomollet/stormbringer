@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Tsxonomy description
+ * The template for displaying Taxonomy description
  *
  * @package StormBringer
  * @since StormBringer 0.0.1

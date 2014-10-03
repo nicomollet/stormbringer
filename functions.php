@@ -8,7 +8,7 @@ require_once locate_template('/inc/init.php');           // Load theme functions
 // Configuration
 // ********************************************
 
-add_theme_support( 'thememylogin',
+add_theme_support( 'thememylogin',          // Theme My Login compatibility
 	array(
 		'login' => 449,                         // ID of login page
 		'register' => 451,                      // ID of register page
@@ -17,7 +17,7 @@ add_theme_support( 'thememylogin',
 		'logout' => 450                         // ID of logout page
 	)
 );
-add_theme_support('preprocessor', 'scss');  // less or scss
+add_theme_support('preprocessor', 'scss');  // Preprocessor: less or scss
 add_theme_support('h5bp-htaccess');         // HTML5 boilerplate htaccess (for Apache only)
 add_theme_support('excerpt-length', 100);   // Length of excerpt
 add_theme_support('lightbox', 'tbmodal');   // Lightbox style: tbmodal or fancybox
@@ -25,7 +25,7 @@ add_theme_support('google-webfonts', '' );  // Example: serialize(array('Montser
 add_theme_support('addthis', '' );          // ID of Addthis profile
 
 if ( ! isset( $content_width ) )
-	$content_width = 940; // pixels
+	$content_width = 940; // Pixels
 
 
 // ********************************************
