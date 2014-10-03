@@ -13,7 +13,7 @@ function stormbringer_breadcrumb( $args = array() ) {
 	/* Set up the default arguments for the breadcrumb. */
 	$defaults = array(
 		'separator' => '/',
-		'before' => '<span class="breadcrumb-title">' . __( 'You are here:', $textdomain ) . '</span>',
+		'before' => '<li><span class="breadcrumb-title">' . __( 'You are here:', $textdomain ) . '</span></li>',
 		'after' => false,
 		'front_page' => true,
 		'show_home' => __( 'Home', $textdomain ),
@@ -40,17 +40,18 @@ function stormbringer_breadcrumb( $args = array() ) {
 	if ( !empty( $trail ) && is_array( $trail ) ) {
 
 		/* Open the breadcrumb trail containers. */
-		$breadcrumb = '<div class="breadcrumb breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">';
+		$breadcrumb = '<ol class="breadcrumb breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">';
 
 		/* If $before was set, wrap it in a container. */
-		$breadcrumb .= ( !empty( $args['before'] ) ? '<span class="divider breadcrumb-before">' . $args['before'] . '</span> ' : '' );
+		//$breadcrumb .= ( !empty( $args['before'] ) ? '<span class="divider breadcrumb-before">' . $args['before'] . '</span> ' : '' );
 
 		/* Wrap the $trail['trail_end'] value in a container. */
 		if ( !empty( $trail['trail_end'] ) )
-			$trail['trail_end'] = '<span class="active" typeof="v:Breadcrumb">' . $trail['trail_end'] . '</span>';
+			$trail['trail_end'] = '<li class="active"><span typeof="v:Breadcrumb">' . $trail['trail_end'] . '</span></li>';
 
 		/* Format the separator. */
-		$separator = ( !empty( $args['separator'] ) ? '<span class="divider">' . $args['separator'] . '</span>' : '<span class="divider">/</span>' );
+		//$separator = ( !empty( $args['separator'] ) ? '<span class="divider">' . $args['separator'] . '</span>' : '<span class="divider">/</span>' );
+		$separator = '';
 
 		/* Join the individual trail items into a single string. */
 		$breadcrumb .= join( " {$separator} ", $trail );
@@ -59,7 +60,7 @@ function stormbringer_breadcrumb( $args = array() ) {
 		$breadcrumb .= ( !empty( $args['after'] ) ? ' <span class="trail-after">' . $args['after'] . '</span>' : '' );
 
 		/* Close the breadcrumb trail containers. */
-		$breadcrumb .= '</div>';
+		$breadcrumb .= '</ol>';
 	}
 
 	/* Allow developers to filter the breadcrumb trail HTML. */
@@ -94,7 +95,7 @@ function breadcrumb_trail_get_items( $args = array() ) {
 
 	/* If $show_home is set and we're not on the front page of the site, link to the home page. */
 	if ( !is_front_page() && $args['show_home'] )
-		$trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $args['show_home'] . '</a></span>';
+		$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $args['show_home'] . '</a></span></li>';
 
 	/* If viewing the front page of the site. */
 	if ( is_front_page() ) {
@@ -399,19 +400,19 @@ function breadcrumb_trail_map_rewrite_tags( $post_id = '', $path = '', $args = a
 
 			/* If using the %year% tag, add a link to the yearly archive. */
 			if ( '%year%' == $tag )
-				$trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_year_link( get_the_time( 'Y', $post_id ) ) . '" title="' . get_the_time( esc_attr__( 'Y', $textdomain ), $post_id ) . '">' . get_the_time( __( 'Y', $textdomain ), $post_id ) . '</a></span>';
+				$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_year_link( get_the_time( 'Y', $post_id ) ) . '" title="' . get_the_time( esc_attr__( 'Y', $textdomain ), $post_id ) . '">' . get_the_time( __( 'Y', $textdomain ), $post_id ) . '</a></span><li>';
 
 			/* If using the %monthnum% tag, add a link to the monthly archive. */
 			elseif ( '%monthnum%' == $tag )
-				$trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_month_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ) ) . '" title="' . get_the_time( esc_attr__( 'F Y', $textdomain ), $post_id ) . '">' . get_the_time( __( 'F', $textdomain ), $post_id ) . '</a></span>';
+				$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_month_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ) ) . '" title="' . get_the_time( esc_attr__( 'F Y', $textdomain ), $post_id ) . '">' . get_the_time( __( 'F', $textdomain ), $post_id ) . '</a></span><li>';
 
 			/* If using the %day% tag, add a link to the daily archive. */
 			elseif ( '%day%' == $tag )
-				$trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_day_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ), get_the_time( 'd', $post_id ) ) . '" title="' . get_the_time( esc_attr__( 'F j, Y', $textdomain ), $post_id ) . '">' . get_the_time( __( 'd', $textdomain ), $post_id ) . '</a></span>';
+				$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_day_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ), get_the_time( 'd', $post_id ) ) . '" title="' . get_the_time( esc_attr__( 'F j, Y', $textdomain ), $post_id ) . '">' . get_the_time( __( 'd', $textdomain ), $post_id ) . '</a></span><li>';
 
 			/* If using the %author% tag, add a link to the post author archive. */
 			elseif ( '%author%' == $tag )
-				$trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_author_posts_url( $post->post_author ) . '" >' . get_the_author_meta( 'display_name', $post->post_author ) . '</a></span>';
+				$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_author_posts_url( $post->post_author ) . '" >' . get_the_author_meta( 'display_name', $post->post_author ) . '</a></span><li>';
 
 			/* If using the %category% tag, add a link to the first category archive to match permalinks. */
 			elseif ( '%category%' == $tag && 'category' !== $args["singular_{$post->post_type}_taxonomy"] ) {
@@ -431,7 +432,7 @@ function breadcrumb_trail_map_rewrite_tags( $post_id = '', $path = '', $args = a
 						$trail = array_merge( $trail, breadcrumb_trail_get_term_parents( $term->parent, 'category' ) );
 
 					/* Add the category archive link to the trail. */
-					$trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_term_link( $term, 'category' ) . '" >' . $term->name . '</a></span>';
+					$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_term_link( $term, 'category' ) . '" >' . $term->name . '</a></span></li>';
 				}
 			}
 		}
@@ -514,7 +515,7 @@ function breadcrumb_trail_get_parents( $post_id = '', $path = '' ) {
 
 		/* Add the formatted post link to the array of parents. */
 		if(get_the_title( $post_id ))
-      $parents[]  = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_permalink( $post_id ) . '" >'. get_the_title( $post_id ) . '</a></span>';
+      $parents[]  = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_permalink( $post_id ) . '" >'. get_the_title( $post_id ) . '</a></span></li>';
     
 		/* Set the parent post's parent to the post ID. */
 		$post_id = $page->post_parent;
@@ -554,7 +555,7 @@ function breadcrumb_trail_get_term_parents( $parent_id = '', $taxonomy = '' ) {
 		$parent = get_term( $parent_id, $taxonomy );
 
 		/* Add the formatted term link to the array of parent terms. */
-		$parents[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_term_link( $parent, $taxonomy ) . '">' . $parent->name . '</a></span>';
+		$parents[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_term_link( $parent, $taxonomy ) . '">' . $parent->name . '</a></span></li>';
 
 		/* Set the parent term's parent as the parent ID. */
 		$parent_id = $parent->parent;

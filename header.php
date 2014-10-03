@@ -42,8 +42,8 @@ if(self !== top){
 <body <?php body_class(''); ?> data-grid-framework="bo" data-grid-color="yellow" data-grid-opacity="0.2" data-grid-zindex="-30" data-grid-nbcols="12">
 
 <!--[if lt IE 7]>
-<p id="browsernotsupported"><?php _e('You are using an outdated browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'stormbringer');?>
-</p><![endif]-->
+<p id="browsernotsupported" class="alert"><?php _e('You are using an outdated browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'stormbringer');?></p>
+<![endif]-->
 
 <div id="wrapper">
 
@@ -53,7 +53,7 @@ if(self !== top){
       <div class="navigation-inner">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-collapse">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only"><?php _e('Toggle navigation', 'stormbringer');?></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>

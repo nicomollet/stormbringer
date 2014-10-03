@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: StormBringer Wordpress theme\n"
-"POT-Creation-Date: 2014-10-03 19:13+0100\n"
-"PO-Revision-Date: 2014-10-03 19:15+0100\n"
+"POT-Creation-Date: 2014-10-03 19:30+0100\n"
+"PO-Revision-Date: 2014-10-03 19:30+0100\n"
 "Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language-Team: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language: English\n"
@@ -37,6 +37,10 @@ msgstr ""
 "Vous utilisez un navigateur obsolète. <a class=\"alert-link\" href=\"http://"
 "browsehappy.com/\">Mettez à jour votre navigateur</a> pour améliorer votre "
 "expérience."
+
+#: ../header.php:56
+msgid "Toggle navigation"
+msgstr "Afficher/Masquer la navigation"
 
 #: ../archive.php:18
 msgid "Category:"
@@ -444,49 +448,49 @@ msgstr "Vous êtes ici :"
 msgid "Home"
 msgstr "Accueil"
 
-#: ../inc/front/breadcrumb.php:302
+#: ../inc/front/breadcrumb.php:303
 msgid "g:i a"
 msgstr "g:i a"
 
-#: ../inc/front/breadcrumb.php:305
+#: ../inc/front/breadcrumb.php:306
 #, php-format
 msgid "Minute %1$s"
 msgstr "Minute %1$s"
 
-#: ../inc/front/breadcrumb.php:305
+#: ../inc/front/breadcrumb.php:306
 msgid "i"
 msgstr "i"
 
-#: ../inc/front/breadcrumb.php:308
+#: ../inc/front/breadcrumb.php:309
 msgid "g a"
 msgstr "g a"
 
-#: ../inc/front/breadcrumb.php:319 ../inc/front/breadcrumb.php:325
-#: ../inc/front/breadcrumb.php:330 ../inc/front/breadcrumb.php:335
-#: ../inc/front/breadcrumb.php:402
+#: ../inc/front/breadcrumb.php:320 ../inc/front/breadcrumb.php:326
+#: ../inc/front/breadcrumb.php:331 ../inc/front/breadcrumb.php:336
+#: ../inc/front/breadcrumb.php:403
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/front/breadcrumb.php:320 ../inc/front/breadcrumb.php:331
-#: ../inc/front/breadcrumb.php:406
+#: ../inc/front/breadcrumb.php:321 ../inc/front/breadcrumb.php:332
+#: ../inc/front/breadcrumb.php:407
 msgid "F"
 msgstr "F"
 
-#: ../inc/front/breadcrumb.php:321 ../inc/front/breadcrumb.php:410
+#: ../inc/front/breadcrumb.php:322 ../inc/front/breadcrumb.php:411
 msgid "d"
 msgstr "d"
 
-#: ../inc/front/breadcrumb.php:326
+#: ../inc/front/breadcrumb.php:327
 #, php-format
 msgid "Week %1$s"
 msgstr "Semaine %1$s"
 
-#: ../inc/front/breadcrumb.php:342
+#: ../inc/front/breadcrumb.php:343
 #, php-format
 msgid "Search results &quot;%1$s&quot;"
 msgstr "Résultats de la recherche &quot;%1$s&quot;"
 
-#: ../inc/front/breadcrumb.php:348
+#: ../inc/front/breadcrumb.php:349
 msgid "Error 404"
 msgstr "Erreur 404"
 
