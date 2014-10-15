@@ -8,15 +8,7 @@ require_once locate_template('/inc/init.php');           // Load theme functions
 // Configuration
 // ********************************************
 
-add_theme_support( 'thememylogin',          // Theme My Login compatibility
-	array(
-		'login' => 449,                         // ID of login page
-		'register' => 451,                      // ID of register page
-		'profile' => 454,                       // ID of profile page
-		'lostpassword' => 452,                  // ID of lostpassword page
-		'logout' => 450                         // ID of logout page
-	)
-);
+add_theme_support('thememylogin');          // Theme My Login compatibility
 add_theme_support('preprocessor', 'scss');  // Preprocessor: less or scss
 add_theme_support('h5bp-htaccess');         // HTML5 boilerplate htaccess (for Apache only)
 add_theme_support('excerpt-length', 100);   // Length of excerpt
