@@ -17,9 +17,7 @@ Features
 * LessPHP: Less server-side compilation with PHP for anonymous users (file is cached)
 * Less.js: serves .less files for admin users
 * Gravity Forms integration
-* Social share buttons/icons
 * Gallery with caption over the thumbnail
-...
 
 Installation
 -----------
