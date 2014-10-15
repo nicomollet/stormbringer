@@ -2,7 +2,6 @@
 // html editor styles
 add_editor_style( 'css/application.css' );
 
-
 add_filter( 'tiny_mce_before_init', 'my_mce_before_init' );
 
 function my_mce_before_init( $settings ) {
@@ -57,34 +56,6 @@ function my_mce_before_init( $settings ) {
 			'selector' => 'a',
 			'classes'  => 'btn btn-primary',
 		),
-		/*
-		array(
-			'title' => 'Button Info',
-			'selector' => 'a',
-			'classes' => 'btn btn-info',
-		),
-		array(
-			'title' => 'Button Success',
-			'selector' => 'a',
-			'classes' => 'btn btn-success',
-		),
-		array(
-			'title' => 'Button Warning',
-			'selector' => 'a',
-			'classes' => 'btn btn-warning',
-		),
-		array(
-			'title' => 'Button Danger',
-			'selector' => 'a',
-			'classes' => 'btn btn-danger',
-		),
-		array(
-			'title' => 'Button Inverse',
-			'selector' => 'a',
-			'classes' => 'btn btn-inverse',
-		),
-		*/
-
 
 	);
 
@@ -136,31 +107,42 @@ function extended_editor_mce_buttons_2( $buttons ) {
 	);
 }
 
-/*
-To add custom styles to Rich Text Editor, use this function in functions.php:
+
+/* To add custom styles to Rich Text Editor, use this function in functions.php:
 
 function custom_tinymce_styles( $settings ) {
 
-    $style_formats_original = json_decode($settings['style_formats']);
-    $style_formats = array(
+	$style_formats_original = json_decode( $settings['style_formats'] );
+	$style_formats          = array(
 
-        array(
-        	'title' => 'Color Red',
-        	'inline' => 'span',
-        	'classes' => 'red',
-        ),
-        array(
-        	'title' => 'Color Blue',
-        	'inline' => 'span',
-        	'classes' => 'blue',
-        ),
+		// Inline style
+		array(
+			'title'   => 'Color Red',
+			'inline'  => 'span',
+			'classes' => 'red',
+		),
 
-    );
+		// Selector style
+		array(
+			'title'    => 'Button Info',
+			'selector' => 'a',
+			'classes'  => 'btn btn-info',
+		),
 
-    $settings['style_formats'] = json_encode( array_merge($style_formats,$style_formats_original) );
+		// Block style
+		array(
+			'title'   => 'Big',
+			'block'   => 'p',
+			'classes' => 'big',
+		),
 
-    return $settings;
+	);
+
+	$settings['style_formats'] = json_encode( array_merge( $style_formats, $style_formats_original ) );
+
+	return $settings;
 
 }
-add_filter( 'tiny_mce_before_init', 'custom_tinymce_styles',100 );
+add_filter( 'tiny_mce_before_init', 'custom_tinymce_styles', 100 );
 
+*/

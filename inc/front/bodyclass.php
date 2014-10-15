@@ -73,20 +73,7 @@ function stormbringer_body_class( $classes = '' ) {
 	if ( ( ( $page = $wp_query->get( 'paged' ) ) || ( $page = $wp_query->get( 'page' ) ) ) && $page > 1 )
 		$classes[] = 'paged paged-' . intval( $page );
 
-	/* Input class. */
-	/*if ( !empty( $class ) ) {
-		if ( !is_array( $class ) )
-			$class = preg_split( '#\s+#', $class );
-		$classes = array_merge( $classes, $class );
-	}
-  */
-	/* Apply the filters for WP's 'body_class'. */
-	//$classes = apply_filters( 'body_class', $classes, $class );
 
-	/* Join all the classes into one string. */
-	//$class = join( ' ', $classes );
-
-	/* Print the body class. */
 	return $classes;
 }
 

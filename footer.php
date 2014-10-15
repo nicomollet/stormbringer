@@ -63,12 +63,12 @@
 <script type="text/javascript">
 var template_url = '<?php bloginfo("template_url"); ?>';
 <?php
-$lightbox ='';
+$lightbox = '';
 if(current_theme_supports('lightbox')){
 	$lightbox = get_theme_support('lightbox')[0];
 }
 ?>
-var lightbox ='<?php echo $lightbox;?>';
+var lightbox = '<?php echo $lightbox;?>';
 </script>
 </body>
 </html>

@@ -1,10 +1,5 @@
 <?php
 
-
-
-
-
-
 // Remove height/width attributes on images so they can be responsive
 //add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
 //add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );

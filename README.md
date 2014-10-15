@@ -18,6 +18,8 @@ Features
 * Less.js: serves .less files for admin users
 * Gravity Forms integration
 * Gallery with caption over the thumbnail
+* JS and CSS libraries are called from cdnjs
+* Includes Lightbox for Bootstrap 3 by @ashleydw
 
 Installation
 -----------
@@ -40,6 +42,16 @@ Edit scss/application.scss to start editing the styles
 If you want to use Less preprocessor, define preprocessor to "less" in functions.php
 
 Edit less/_application.less to start editing the styles
+
+
+How-to
+-----------
+
+Custom styles to the editor: https://gist.github.com/nicomollet/4b022a3204ab96314da9
+
+Addthis share buttons:
+With icons in a custom order: https://gist.github.com/nicomollet/b9b3a366e0c9c29de43c
+With a custom sharing URL: https://gist.github.com/nicomollet/0aacba0b2170ba6e35e8
 
 
 Major components 

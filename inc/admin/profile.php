@@ -2,6 +2,7 @@
 // adding facebook, twitter, & google+ links to the user profile and remove AIM, Jabber, Yim
 function stormbringer_contactmethods( $contactmethods ) {
 
+	// Removes aim, jabber, yim fields
   unset($contactmethods['aim']);
   unset($contactmethods['jabber']);
   unset($contactmethods['yim']);
