@@ -82,7 +82,7 @@ if(self !== top){
 		        foreach($get_tml_actions_posts as $post){
 			        $action = get_post_meta($post->ID, '_tml_action',true);
 			        $link[$action] = get_permalink($post->ID);
-			        $title[$action] = $post->post_title;;
+			        $title[$action] = $post->post_title;
 		        }
 		        if ( 0 == $current_user->ID ) : // logged in
 		        ?>

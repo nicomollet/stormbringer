@@ -5,12 +5,11 @@ $color4: #175567;
 $color5: #006F71;
 $white: #fff;
 
+$brand-primary: $color5;
 $body-bg:        #fff;
 $link-color:             $color5;
 $link-hover-color:        darken($link-color, 10%);
-
 $btn-primary-bg:              $color4;
-
 $input-border-focus: #8acccc;
 
 $border-radius-base:        0px !default;

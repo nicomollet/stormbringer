@@ -56,8 +56,7 @@ foreach (array('posts', 'pages') as $post_cap)
     </div>
 
     <div class="form-group">
-      <label class="control-label" for="nickname"><?php _e('Surname', 'stormbringer') ?>
-        <span class="form-required">*</span></label>
+      <label class="control-label" for="nickname"><?php _e('Surname', 'stormbringer') ?>&nbsp;<span class="form-required">*</span></label>
 
       <div class="form-input">
         <input placeholder="<?php _e('Surname', 'stormbringer') ?>" type="text" name="nickname" id="nickname" class="form-control" value="<?php echo esc_attr($profileuser->nickname) ?>"/>
@@ -65,8 +64,7 @@ foreach (array('posts', 'pages') as $post_cap)
     </div>
 
     <div class="form-group">
-      <label class="control-label" for="display_name"><?php _e('Displayed publicly', 'stormbringer') ?>
-        <span class="form-required">*</span></label>
+      <label class="control-label" for="display_name"><?php _e('Displayed publicly', 'stormbringer') ?>&nbsp;<span class="form-required">*</span></label>
 
       <div class="form-input">
         <select name="display_name" id="display_name" class="form-control">
@@ -101,7 +99,7 @@ foreach (array('posts', 'pages') as $post_cap)
     <legend><?php _e('Social networks', 'stormbringer') ?></legend>
 
     <div class="form-group">
-      <label class="control-label" for="email"><?php _e('Email', 'stormbringer') ?><span class="form-required">*</span></label>
+      <label class="control-label" for="email"><?php _e('Email', 'stormbringer') ?>&nbsp;<span class="form-required">*</span></label>
 
       <div class="form-input">
         <input placeholder="<?php _e('Email', 'stormbringer') ?>" type="text" name="email" id="email" class="form-control" value="<?php echo esc_attr($profileuser->user_email) ?>"/>
