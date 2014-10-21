@@ -47,11 +47,15 @@ Edit less/_application.less to start editing the styles
 How-to
 -----------
 
-Custom styles to the editor: https://gist.github.com/nicomollet/4b022a3204ab96314da9
+Custom styles in the rich-text editor: https://gist.github.com/nicomollet/4b022a3204ab96314da9
 
 Addthis share buttons:
-With icons in a custom order: https://gist.github.com/nicomollet/b9b3a366e0c9c29de43c
-With a custom sharing URL: https://gist.github.com/nicomollet/0aacba0b2170ba6e35e8
+* With icons in a custom order: https://gist.github.com/nicomollet/b9b3a366e0c9c29de43c
+* With a custom sharing URL: https://gist.github.com/nicomollet/0aacba0b2170ba6e35e8
+
+Customize the admin scheme: https://gist.github.com/nicomollet/7fd3e2e5334ef352abe0
+
+Customize the breadcrumb: https://gist.github.com/nicomollet/c3abea7b047d853fd253
 
 
 Major components 
