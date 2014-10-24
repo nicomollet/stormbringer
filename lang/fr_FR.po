@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: StormBringer Wordpress theme\n"
-"POT-Creation-Date: 2014-10-03 19:30+0100\n"
-"PO-Revision-Date: 2014-10-03 19:30+0100\n"
+"POT-Creation-Date: 2014-10-24 21:08+0100\n"
+"PO-Revision-Date: 2014-10-24 21:09+0100\n"
 "Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language-Team: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language: English\n"
@@ -42,31 +42,31 @@ msgstr ""
 msgid "Toggle navigation"
 msgstr "Afficher/Masquer la navigation"
 
-#: ../archive.php:18
+#: ../archive.php:21
 msgid "Category:"
 msgstr "Catégorie :"
 
-#: ../archive.php:20
+#: ../archive.php:23
 msgid "Tag:"
 msgstr "Mot-clé"
 
-#: ../archive.php:22
+#: ../archive.php:25
 msgid "Posts in"
 msgstr "Articles dans"
 
-#: ../archive.php:24
+#: ../archive.php:27
 msgid "Posts of the day:"
 msgstr "Articles du jour :"
 
-#: ../archive.php:26
+#: ../archive.php:29
 msgid "Posts of the month:"
 msgstr "Articles du mois :"
 
-#: ../archive.php:28
+#: ../archive.php:31
 msgid "Posts of the year:"
 msgstr "Articles de l'année :"
 
-#: ../archive.php:30
+#: ../archive.php:33
 msgid "Posts by:"
 msgstr "Articles par :"
 
@@ -89,6 +89,14 @@ msgstr "%"
 #: ../sidebar-home.php:16
 msgid "Enable widgets in Sidebar Home"
 msgstr "Activer des widgets dans la Sidebar Home"
+
+#: ../searchform.php:11
+msgid "Search &hellip;"
+msgstr "Rechercher &hellip;"
+
+#: ../searchform.php:11
+msgid "Search"
+msgstr "Rechercher"
 
 #: ../archive-author.php:22
 #, php-format
@@ -134,8 +142,8 @@ msgstr "Vous n'avez pas de compte"
 msgid "Search results: %s"
 msgstr "Résultats de la recherche : %s"
 
-#: ../form-register.php:23 ../form-register.php:25 ../form-profile.php:104
-#: ../form-profile.php:107 ../comments.php:81
+#: ../form-register.php:23 ../form-register.php:25 ../form-profile.php:102
+#: ../form-profile.php:105 ../comments.php:81
 msgid "Email"
 msgstr "Email"
 
@@ -151,7 +159,7 @@ msgstr "Créer un compte"
 msgid "Already have an account?"
 msgstr "Vous avez déjà un compte ?"
 
-#: ../form-resetpass.php:16 ../form-resetpass.php:19 ../form-profile.php:153
+#: ../form-resetpass.php:16 ../form-resetpass.php:19 ../form-profile.php:151
 msgid "New password"
 msgstr "Nouveau mot de passe"
 
@@ -163,7 +171,7 @@ msgstr "Confirmez le nouveau mot de passe"
 msgid "Strength indicator"
 msgstr "Indicateur de force"
 
-#: ../form-resetpass.php:29 ../form-profile.php:166
+#: ../form-resetpass.php:29 ../form-profile.php:164
 msgid ""
 "Hint: the password should be at least eight characters long. To make it "
 "stronger, use upper and lower case letters, numbers and symbols like ! \" ? "
@@ -173,9 +181,19 @@ msgstr ""
 "rendre plus fort, utilisez minuscules et majuscules, chiffres et symboles "
 "comme ! \" ? $ % ^ &amp; )."
 
+#: ../form-resetpass.php:38
+#, fuzzy
+msgid "Reset Password"
+msgstr "Mot de passe"
+
 #: ../content.php:14 ../content-image.php:14 ../inc/front/comments.php:15
 msgid "Edit"
 msgstr "Modifier"
+
+#: ../content.php:24 ../content-image.php:24
+#, php-format
+msgid "Link to %s"
+msgstr "Lien vers %s"
 
 #: ../content.php:36 ../content-image.php:35
 msgid "By"
@@ -255,51 +273,51 @@ msgstr "Prénom"
 msgid "Last name"
 msgstr "Nom"
 
-#: ../form-profile.php:59 ../form-profile.php:63
+#: ../form-profile.php:59 ../form-profile.php:62
 msgid "Surname"
 msgstr "Surnom"
 
-#: ../form-profile.php:68
+#: ../form-profile.php:67
 msgid "Displayed publicly"
 msgstr "Affiché publiquement"
 
-#: ../form-profile.php:101
+#: ../form-profile.php:99
 msgid "Social networks"
 msgstr "Réseaux sociaux"
 
-#: ../form-profile.php:112 ../form-profile.php:115 ../comments.php:87
+#: ../form-profile.php:110 ../form-profile.php:113 ../comments.php:87
 msgid "Website"
 msgstr "Site web"
 
-#: ../form-profile.php:137
+#: ../form-profile.php:135
 msgid "About you"
 msgstr "À propos de vous"
 
-#: ../form-profile.php:140
+#: ../form-profile.php:138
 msgid "Biographical Info"
 msgstr "Biographie"
 
-#: ../form-profile.php:145
+#: ../form-profile.php:143
 msgid "Tell us about you in a few words."
 msgstr "Parlez-nous de vous en quelques mots."
 
-#: ../form-profile.php:157
+#: ../form-profile.php:155
 msgid "If you want to change your password, if not leave empty."
 msgstr "Si vous voulez changer de mot de passe, sinon laissez vide."
 
-#: ../form-profile.php:162
+#: ../form-profile.php:160
 msgid "Type your password again."
 msgstr "Saisissez votre mot de passe à nouveau."
 
-#: ../form-profile.php:164
+#: ../form-profile.php:162
 msgid "Password Strength:"
 msgstr "Force du mot de passe"
 
-#: ../form-profile.php:176 ../form-profile.php:179
+#: ../form-profile.php:174 ../form-profile.php:177
 msgid "Permissions"
 msgstr "Permissions"
 
-#: ../form-profile.php:201
+#: ../form-profile.php:199
 msgid "Update my account"
 msgstr "Mettre à jour le compte"
 
@@ -485,6 +503,10 @@ msgstr "d"
 msgid "Week %1$s"
 msgstr "Semaine %1$s"
 
+#: ../inc/front/breadcrumb.php:327
+msgid "W"
+msgstr "W"
+
 #: ../inc/front/breadcrumb.php:343
 #, php-format
 msgid "Search results &quot;%1$s&quot;"
@@ -493,6 +515,14 @@ msgstr "Résultats de la recherche &quot;%1$s&quot;"
 #: ../inc/front/breadcrumb.php:349
 msgid "Error 404"
 msgstr "Erreur 404"
+
+#: ../inc/front/breadcrumb.php:407
+msgid "F Y"
+msgstr "F Y"
+
+#: ../inc/front/breadcrumb.php:411
+msgid "F j, Y"
+msgstr "j F Y"
 
 #: ../inc/front/password.php:8
 msgid "This content is protected by a password, type the password below:"
@@ -503,6 +533,10 @@ msgstr ""
 #: ../inc/front/password.php:12
 msgid "Password:"
 msgstr "Mot de passe :"
+
+#: ../inc/front/password.php:15
+msgid "Send"
+msgstr "Envoyer"
 
 #: ../inc/front/carousel.php:82
 #, php-format
@@ -550,39 +584,39 @@ msgstr "Votre commentaire est en attente de modération"
 msgid "at"
 msgstr "à"
 
-#: ../inc/admin/htmleditor.php:13
+#: ../inc/admin/htmleditor.php:12
 msgid "Lead"
 msgstr "Mis en avant"
 
-#: ../inc/admin/htmleditor.php:18
+#: ../inc/admin/htmleditor.php:17
 msgid "Small"
 msgstr "Petit"
 
-#: ../inc/admin/htmleditor.php:23
+#: ../inc/admin/htmleditor.php:21
 msgid "Muted"
 msgstr "Discret"
 
-#: ../inc/admin/htmleditor.php:28
+#: ../inc/admin/htmleditor.php:26
 msgid "Alert Error"
 msgstr "Alerte Erreur"
 
-#: ../inc/admin/htmleditor.php:34
+#: ../inc/admin/htmleditor.php:32
 msgid "Alert Success"
 msgstr "Alerte Succès"
 
-#: ../inc/admin/htmleditor.php:40
+#: ../inc/admin/htmleditor.php:38
 msgid "Alert Warning"
 msgstr "Alerte Avertissement"
 
-#: ../inc/admin/htmleditor.php:46
+#: ../inc/admin/htmleditor.php:44
 msgid "Alert Info"
 msgstr "Alerte Info"
 
-#: ../inc/admin/htmleditor.php:52
+#: ../inc/admin/htmleditor.php:50
 msgid "Button"
 msgstr "Bouton"
 
-#: ../inc/admin/htmleditor.php:57
+#: ../inc/admin/htmleditor.php:55
 msgid "Button Primary"
 msgstr "Bouton principal"
 

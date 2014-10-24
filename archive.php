@@ -13,25 +13,30 @@
   <?php stormbringer_breadcrumb();?>
 
   <header class="page-header archive-header">
-    <h1 class="page-title archive-title">
-      <?php if (is_category()) { ?>
-          <?php _e('Category:', 'stormbringer'); ?> <span><?php single_cat_title(); ?></span>
-      <?php } elseif (is_tag()) { ?>
-          <?php _e('Tag:', 'stormbringer'); ?> <span><?php single_tag_title(); ?></span>
-      <?php } elseif (is_tax()) { ?>
-          <?php _e('Posts in', 'stormbringer'); ?> <span><?php single_cat_title(); ?></span>
-      <?php } elseif (is_day()) { ?>
-          <?php _e('Posts of the day:', 'stormbringer'); ?> <span><?php the_time('l, F j, Y'); ?></span>
-      <?php } elseif (is_month()) { ?>
-          <?php _e('Posts of the month:', 'stormbringer'); ?> <span><?php the_time('F Y'); ?></span>
-      <?php } elseif (is_year()) { ?>
-          <span><?php _e('Posts of the year:', 'stormbringer'); ?> <?php the_time('Y'); ?></span>
-      <?php } elseif (is_author()) { ?>
-          <?php _e('Posts by:', 'stormbringer'); ?><?php the_post();?> <span class="vcard"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) );?>" title="<?php echo esc_attr( get_the_author() );?>" rel="me"><?php echo get_the_author();?></a>
-      <?php rewind_posts(); } elseif (is_post_type_archive()) { ?>
-          <span><?php post_type_archive_title(); ?></span>
-      <?php } ?>
-    </h1>
+	  <h1 class="page-title archive-title">
+		  <?php
+		  $queried_object = get_queried_object();
+		  ?>
+		  <?php if (is_category()) { ?>
+			  <?php _e('Category:', 'stormbringer'); ?> <span><?php single_cat_title(); ?></span>
+		  <?php } elseif (is_tag()) { ?>
+			  <?php _e('Tag:', 'stormbringer'); ?> <span><?php single_tag_title(); ?></span>
+		  <?php } elseif (is_tax()) { ?>
+			  <?php _e('Posts in', 'stormbringer'); ?> <span><?php single_cat_title(); ?></span>
+		  <?php } elseif (is_day()) { ?>
+			  <?php _e('Posts of the day:', 'stormbringer'); ?> <span><?php the_time('l, F j, Y'); ?></span>
+		  <?php } elseif (is_month()) { ?>
+			  <?php _e('Posts of the month:', 'stormbringer'); ?> <span><?php the_time('F Y'); ?></span>
+		  <?php } elseif (is_year()) { ?>
+			  <span><?php _e('Posts of the year:', 'stormbringer'); ?> <?php the_time('Y'); ?></span>
+		  <?php } elseif (is_author()) { ?>
+		  <?php _e('Posts by:', 'stormbringer'); ?><?php the_post();?> <span class="vcard"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) );?>" title="<?php echo esc_attr( get_the_author() );?>" rel="me"><?php echo get_the_author();?></a>
+			  <?php rewind_posts(); } elseif (is_post_type_archive()) { ?>
+				  <span><?php post_type_archive_title(); ?></span>
+			  <?php }elseif($queried_object->post_type=='page') {?>
+				  <span><?php $post = get_post($queried_object->ID); echo apply_filters('the_title',$post->post_title); ?></span>
+			  <?php }?>
+	  </h1>
 
     <?php
     /* Author or Taxonomy description template */

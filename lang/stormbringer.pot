@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: StormBringer Wordpress theme\n"
-"POT-Creation-Date: 2014-10-03 19:30+0100\n"
-"PO-Revision-Date: 2014-10-03 19:30+0100\n"
+"POT-Creation-Date: 2014-10-24 21:08+0100\n"
+"PO-Revision-Date: 2014-10-24 21:08+0100\n"
 "Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language-Team: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language: English\n"
@@ -10,7 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _e;__;_n:1,2;_x:1,2c\n"
+"X-Poedit-KeywordsList: _e;__;_n:1,2;_x:1,2c;esc_attr__;esc_attr_e;"
+"esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -39,31 +40,31 @@ msgstr ""
 msgid "Toggle navigation"
 msgstr ""
 
-#: ../archive.php:18
+#: ../archive.php:21
 msgid "Category:"
 msgstr ""
 
-#: ../archive.php:20
+#: ../archive.php:23
 msgid "Tag:"
 msgstr ""
 
-#: ../archive.php:22
+#: ../archive.php:25
 msgid "Posts in"
 msgstr ""
 
-#: ../archive.php:24
+#: ../archive.php:27
 msgid "Posts of the day:"
 msgstr ""
 
-#: ../archive.php:26
+#: ../archive.php:29
 msgid "Posts of the month:"
 msgstr ""
 
-#: ../archive.php:28
+#: ../archive.php:31
 msgid "Posts of the year:"
 msgstr ""
 
-#: ../archive.php:30
+#: ../archive.php:33
 msgid "Posts by:"
 msgstr ""
 
@@ -85,6 +86,14 @@ msgstr ""
 
 #: ../sidebar-home.php:16
 msgid "Enable widgets in Sidebar Home"
+msgstr ""
+
+#: ../searchform.php:11
+msgid "Search &hellip;"
+msgstr ""
+
+#: ../searchform.php:11
+msgid "Search"
 msgstr ""
 
 #: ../archive-author.php:22
@@ -131,8 +140,8 @@ msgstr ""
 msgid "Search results: %s"
 msgstr ""
 
-#: ../form-register.php:23 ../form-register.php:25 ../form-profile.php:104
-#: ../form-profile.php:107 ../comments.php:81
+#: ../form-register.php:23 ../form-register.php:25 ../form-profile.php:102
+#: ../form-profile.php:105 ../comments.php:81
 msgid "Email"
 msgstr ""
 
@@ -148,7 +157,7 @@ msgstr ""
 msgid "Already have an account?"
 msgstr ""
 
-#: ../form-resetpass.php:16 ../form-resetpass.php:19 ../form-profile.php:153
+#: ../form-resetpass.php:16 ../form-resetpass.php:19 ../form-profile.php:151
 msgid "New password"
 msgstr ""
 
@@ -160,15 +169,24 @@ msgstr ""
 msgid "Strength indicator"
 msgstr ""
 
-#: ../form-resetpass.php:29 ../form-profile.php:166
+#: ../form-resetpass.php:29 ../form-profile.php:164
 msgid ""
 "Hint: the password should be at least eight characters long. To make it "
 "stronger, use upper and lower case letters, numbers and symbols like ! \" ? "
 "$ % ^ &amp; )."
 msgstr ""
 
+#: ../form-resetpass.php:38
+msgid "Reset Password"
+msgstr ""
+
 #: ../content.php:14 ../content-image.php:14 ../inc/front/comments.php:15
 msgid "Edit"
+msgstr ""
+
+#: ../content.php:24 ../content-image.php:24
+#, php-format
+msgid "Link to %s"
 msgstr ""
 
 #: ../content.php:36 ../content-image.php:35
@@ -245,51 +263,51 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: ../form-profile.php:59 ../form-profile.php:63
+#: ../form-profile.php:59 ../form-profile.php:62
 msgid "Surname"
 msgstr ""
 
-#: ../form-profile.php:68
+#: ../form-profile.php:67
 msgid "Displayed publicly"
 msgstr ""
 
-#: ../form-profile.php:101
+#: ../form-profile.php:99
 msgid "Social networks"
 msgstr ""
 
-#: ../form-profile.php:112 ../form-profile.php:115 ../comments.php:87
+#: ../form-profile.php:110 ../form-profile.php:113 ../comments.php:87
 msgid "Website"
 msgstr ""
 
-#: ../form-profile.php:137
+#: ../form-profile.php:135
 msgid "About you"
 msgstr ""
 
-#: ../form-profile.php:140
+#: ../form-profile.php:138
 msgid "Biographical Info"
 msgstr ""
 
-#: ../form-profile.php:145
+#: ../form-profile.php:143
 msgid "Tell us about you in a few words."
 msgstr ""
 
-#: ../form-profile.php:157
+#: ../form-profile.php:155
 msgid "If you want to change your password, if not leave empty."
 msgstr ""
 
-#: ../form-profile.php:162
+#: ../form-profile.php:160
 msgid "Type your password again."
 msgstr ""
 
-#: ../form-profile.php:164
+#: ../form-profile.php:162
 msgid "Password Strength:"
 msgstr ""
 
-#: ../form-profile.php:176 ../form-profile.php:179
+#: ../form-profile.php:174 ../form-profile.php:177
 msgid "Permissions"
 msgstr ""
 
-#: ../form-profile.php:201
+#: ../form-profile.php:199
 msgid "Update my account"
 msgstr ""
 
@@ -471,6 +489,10 @@ msgstr ""
 msgid "Week %1$s"
 msgstr ""
 
+#: ../inc/front/breadcrumb.php:327
+msgid "W"
+msgstr ""
+
 #: ../inc/front/breadcrumb.php:343
 #, php-format
 msgid "Search results &quot;%1$s&quot;"
@@ -480,12 +502,24 @@ msgstr ""
 msgid "Error 404"
 msgstr ""
 
+#: ../inc/front/breadcrumb.php:407
+msgid "F Y"
+msgstr ""
+
+#: ../inc/front/breadcrumb.php:411
+msgid "F j, Y"
+msgstr ""
+
 #: ../inc/front/password.php:8
 msgid "This content is protected by a password, type the password below:"
 msgstr ""
 
 #: ../inc/front/password.php:12
 msgid "Password:"
+msgstr ""
+
+#: ../inc/front/password.php:15
+msgid "Send"
 msgstr ""
 
 #: ../inc/front/carousel.php:82
@@ -532,39 +566,39 @@ msgstr ""
 msgid "at"
 msgstr ""
 
-#: ../inc/admin/htmleditor.php:13
+#: ../inc/admin/htmleditor.php:12
 msgid "Lead"
 msgstr ""
 
-#: ../inc/admin/htmleditor.php:18
+#: ../inc/admin/htmleditor.php:17
 msgid "Small"
 msgstr ""
 
-#: ../inc/admin/htmleditor.php:23
+#: ../inc/admin/htmleditor.php:21
 msgid "Muted"
 msgstr ""
 
-#: ../inc/admin/htmleditor.php:28
+#: ../inc/admin/htmleditor.php:26
 msgid "Alert Error"
 msgstr ""
 
-#: ../inc/admin/htmleditor.php:34
+#: ../inc/admin/htmleditor.php:32
 msgid "Alert Success"
 msgstr ""
 
-#: ../inc/admin/htmleditor.php:40
+#: ../inc/admin/htmleditor.php:38
 msgid "Alert Warning"
 msgstr ""
 
-#: ../inc/admin/htmleditor.php:46
+#: ../inc/admin/htmleditor.php:44
 msgid "Alert Info"
 msgstr ""
 
-#: ../inc/admin/htmleditor.php:52
+#: ../inc/admin/htmleditor.php:50
 msgid "Button"
 msgstr ""
 
-#: ../inc/admin/htmleditor.php:57
+#: ../inc/admin/htmleditor.php:55
 msgid "Button Primary"
 msgstr ""
 

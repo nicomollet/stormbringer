@@ -26,11 +26,11 @@
   <?php } ?>
   <!-- /.entry-header -->
 
-  <?php if(is_singular('post') || is_category() || is_tag() || is_archive()):?>
+  <?php if(is_singular('post') || is_category() || is_tag() || is_archive() || is_home()):?>
     <footer class="entry-meta">
 
       <p class="entry-date">
-        <i class="glyphicon glyphicon-calendar"></i> <time datetime="<?php echo the_time('Y-m-d'); ?>"><?php echo get_the_date( ); ?></time>
+        <i class="glyphicon glyphicon-calendar"></i> <time datetime="<?php echo the_time('Y-m-d'); ?>"><?php echo get_the_date(esc_attr__( 'F j, Y', 'stormbringer' ) ); ?></time>
       </p>
       <p class="entry-author">
         <i class="glyphicon glyphicon-user"></i> <?php _e('By', 'stormbringer'); ?> <?php the_author_posts_link(); ?>
@@ -71,6 +71,12 @@
       <?php echo get_the_excerpt(); ?>
     <?php } else { ?>
       <?php the_content(); ?>
+	    <?php
+	    // JetPack sharing
+	    if ( function_exists( 'sharing_display' ) ) {
+		    sharing_display( '', true );
+	    }
+	    ?>
     <?php } ?>
 
   </section>

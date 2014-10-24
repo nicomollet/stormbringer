@@ -56,6 +56,9 @@ function stormbringer_support() {
 	if (current_theme_supports('woocommerce')) {// Woocommerce custom titles and custom pages
 		locate_template( 'inc/plugins/woocommerce.php', true );
 	}
+	if (class_exists( 'JetPack' )) {// Jetpack cleanup
+		locate_template( 'inc/plugins/jetpack.php', true );
+	}
 
 	load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
 
