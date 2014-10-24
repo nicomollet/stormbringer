@@ -81,7 +81,7 @@ function stormbringer_register_sidebars() {
 		'description' => 'Left sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
 		'after_widget' => '</div></div>',
-		'before_title' => '<h3 class="widgettitle">',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 
@@ -90,7 +90,7 @@ function stormbringer_register_sidebars() {
 		'name' => 'Footer Widgets',
 		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
 		'after_widget' => '</div></div>',
-		'before_title' => '<h3 class="widgettitle">',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 
@@ -99,7 +99,7 @@ function stormbringer_register_sidebars() {
 		'name' => 'Blog Sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
 		'after_widget' => '</div></div>',
-		'before_title' => '<h3 class="widgettitle">',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 
@@ -108,7 +108,7 @@ function stormbringer_register_sidebars() {
 		'name' => 'Home Sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
 		'after_widget' => '</div></div>',
-		'before_title' => '<h3 class="widgettitle">',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 
