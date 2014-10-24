@@ -15,6 +15,14 @@ $pinterest:   #ca2128;
       margin-top: -2px;
     }
 
+    &:before{
+      top: 1px;
+    }
+
+    > span{
+      line-height: normal;
+    }
+
     @include button-variant($btn-default-color !important, $btn-default-bg, $btn-default-border);
 
     &.share-facebook{
