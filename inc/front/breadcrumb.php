@@ -128,7 +128,7 @@ function breadcrumb_trail_get_items( $args = array() ) {
       /* If there's an archive page, add it to the trail. */
       if ( !empty( $post_type_object->has_archive ) ){
         if($post_type_object->labels->name)
-          $trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_post_type_archive_link( $post_type ) . '">' . $post_type_object->labels->name . '</a></span>';
+          $trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_post_type_archive_link( $post_type ) . '">' . $post_type_object->labels->name . '</a></span></li>';
       }
 
       /* If $front has been set, add it to the $path. */
@@ -176,7 +176,7 @@ function breadcrumb_trail_get_items( $args = array() ) {
       /* If there's an archive page, add it to the trail. */
       if ( !empty( $post_type_object->has_archive ) ){
         if($post_type_object->labels->name)
-          $trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_post_type_archive_link( $post_type ) . '">' . $post_type_object->labels->name . '</a></span>';
+          $trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_post_type_archive_link( $post_type ) . '">' . $post_type_object->labels->name . '</a></span></li>';
       }
 
       // Recherche les has_archive dans tous les custom post types (NM 10/09/2012)
@@ -191,7 +191,7 @@ function breadcrumb_trail_get_items( $args = array() ) {
               //print_r('<br>has_archive:' . $post_type_object_archive->has_archive);
               if ($post_type_object_archive->has_archive == $path_item) {
                 if($post_type_object_archive->labels->name)
-                  $trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_post_type_archive_link($post_type_archive) . '">' . $post_type_object_archive->labels->name . '</a></span>';
+                  $trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_post_type_archive_link($post_type_archive) . '">' . $post_type_object_archive->labels->name . '</a></span></li>';
               }
             }
           }
@@ -317,18 +317,18 @@ function breadcrumb_trail_get_items( $args = array() ) {
 				$trail = array_merge( $trail, breadcrumb_trail_get_parents( '', $wp_rewrite->front ) );
 
 			if ( is_day() ) {
-				$trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y', $textdomain ) ) . '">' . get_the_time( __( 'Y', $textdomain ) ) . '</a></span>';
-				$trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) . '" title="' . get_the_time( esc_attr__( 'F', $textdomain ) ) . '">' . get_the_time( __( 'F', $textdomain ) ) . '</a></span>';
+				$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y', $textdomain ) ) . '">' . get_the_time( __( 'Y', $textdomain ) ) . '</a></span></li>';
+				$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) . '" title="' . get_the_time( esc_attr__( 'F', $textdomain ) ) . '">' . get_the_time( __( 'F', $textdomain ) ) . '</a></span></li>';
 				$trail['trail_end'] = get_the_time( __( 'd', $textdomain ) );
 			}
 
 			elseif ( get_query_var( 'w' ) ) {
-				$trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y', $textdomain ) ) . '">' . get_the_time( __( 'Y', $textdomain ) ) . '</a></span>';
+				$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y', $textdomain ) ) . '">' . get_the_time( __( 'Y', $textdomain ) ) . '</a></span></li>';
 				$trail['trail_end'] = sprintf( __( 'Week %1$s', $textdomain ), get_the_time( esc_attr__( 'W', $textdomain ) ) );
 			}
 
 			elseif ( is_month() ) {
-				$trail[] = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y', $textdomain ) ) . '">' . get_the_time( __( 'Y', $textdomain ) ) . '</a></span>';
+				$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y', $textdomain ) ) . '">' . get_the_time( __( 'Y', $textdomain ) ) . '</a></span></li>';
 				$trail['trail_end'] = get_the_time( __( 'F', $textdomain ) );
 			}
 
