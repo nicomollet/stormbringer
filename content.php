@@ -26,7 +26,7 @@
   <?php } ?>
   <!-- /.entry-header -->
 
-  <?php if(is_singular('post') || is_category() || is_tag() || is_archive() || is_home()):?>
+  <?php if(is_singular() || is_category() || is_tag() || is_archive() || is_home()):?>
     <footer class="entry-meta">
 
       <p class="entry-date">

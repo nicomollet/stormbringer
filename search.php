@@ -10,39 +10,37 @@
 
 <div id="content" role="main">
 
-  <?php stormbringer_breadcrumb();?>
+	<?php stormbringer_breadcrumb(); ?>
 
-  <header class="page-header search-header">
-    <h1 class="page-title search-title"><span><?php printf( __( 'Search results: %s', 'stormbringer' ), '</span>' . get_search_query() . '' ); ?></h1>
-  </header>
+	<header class="page-header search-header">
+		<h1 class="page-title search-title">
+			<span><?php printf( __( 'Search results: %s', 'stormbringer' ), '</span>' . get_search_query() . '' ); ?></h1>
+	</header>
 
-  <?php if ( have_posts() ) : ?>
+	<?php if ( have_posts() ) : ?>
 
-  <?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-    <?php
-    $format = get_post_format();
-    if ( false === $format )
-      $format = 'standard';
-    get_template_part( 'content', $format );
-    ?>
+			<?php
+			get_template_part( 'content', 'search' );
+			?>
 
-    <?php endwhile; ?>
+		<?php endwhile; ?>
 
-  <?php stormbringer_pagination();?>
+		<?php stormbringer_pagination(); ?>
 
-  <?php else : ?>
+	<?php else : ?>
 
-  <?php
-  /* No results */
-  get_template_part( 'content', 'none' );
-  ?>
+		<?php
+		/* No results */
+		get_template_part( 'content', 'none' );
+		?>
 
-  <?php endif; ?>
+	<?php endif; ?>
 
 </div>
 <!-- /#content -->
 
-<?php get_sidebar('blog'); ?>
+<?php get_sidebar( 'blog' ); ?>
 
 <?php get_footer(); ?>

@@ -15,11 +15,11 @@
   <?php stormbringer_breadcrumb();?>
 
   <?php if (have_posts()) : the_post(); ?>
-    <?php $format = get_post_format();
-      if ( false === $format )
-      $format = 'standard';
+
+    <?php
       get_template_part( 'content', 'page' );
     ?>
+
   <?php endif;?>
 
 </div>

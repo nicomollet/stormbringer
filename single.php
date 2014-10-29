@@ -8,37 +8,32 @@
 ?>
 <?php get_header(); ?>
 
-	<div id="content" role="main">
+<div id="content" role="main">
 
-		<?php stormbringer_breadcrumb(); ?>
+	<?php stormbringer_breadcrumb(); ?>
 
-		<?php if ( have_posts() ) : the_post(); ?>
+	<?php if ( have_posts() ) : the_post(); ?>
 
-			<?php $format = get_post_format();
-			if ( false === $format ) {
-				$format = 'standard';
-			}
-			if ( is_attachment() ) {
-				$format = 'image';
-			}
-			get_template_part( 'content', $format );
-			?>
+		<?php
+		$type = get_post_type();
+		get_template_part( 'content', $type );
+		?>
 
-			<?php if ( ! is_attachment() ) {
-				get_template_part( 'archive', 'author' );
-			} ?>
+		<?php if ( ! is_attachment() ) {
+			get_template_part( 'archive', 'author' );
+		} ?>
 
-			<?php
-			// If comments are open or we have at least one comment, load up the comment template
-			if ( comments_open() || 0 != get_comments_number() ) {
-				comments_template( '', true );
-			}
-			?>
+		<?php
+		// If comments are open or we have at least one comment, load up the comment template
+		if ( comments_open() || 0 != get_comments_number() ) {
+			comments_template( '', true );
+		}
+		?>
 
-		<?php endif; ?>
+	<?php endif; ?>
 
-	</div>
-	<!-- /#content -->
+</div>
+<!-- /#content -->
 
 <?php get_sidebar( 'blog' ); ?>
 
