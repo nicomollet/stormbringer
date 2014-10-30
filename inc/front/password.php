@@ -9,9 +9,9 @@ function custom_password_form() {
 	<form class="form-stacked protected-post-form" action="' . get_option('siteurl') . '/wp-pass.php" method="post">
     <fieldset>
     <div class="clearfix">
-    <label for="' . $label . '">' . __( 'Password:','stormbringer' ) . ' </label>
+    <label for="' . $label . '">' . __( 'Password:','stormbringer' ) . '</label>
     <div class="input">
-    <input name="post_password" id="' . $label . '" type="password" size="30"/>
+    <input class="form-control" placeholder="' . __( 'Password:','stormbringer' ) . '" name="post_password" id="' . $label . '" type="password" size="30"/>
     <input class="btn btn-primary" type="submit" name="Submit" value="' . esc_attr__( 'Send','stormbringer' ) . '" />
     </div>
     <!-- /clearfix -->

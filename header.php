@@ -84,11 +84,11 @@ if(self !== top){
 			        $link[$action] = get_permalink($post->ID);
 			        $title[$action] = $post->post_title;
 		        }
-		        if ( 0 == $current_user->ID ) : // logged in
+		        if ( 0 == $current_user->ID ) : // logged out
 		        ?>
 			        <li><a href="<?php echo $link['login']; ?>"><?php echo $title['login']; ?></a></li>
 			        <li><a href="<?php echo $link['register']; ?>"><?php echo $title['register']; ?></a></li>
-		        <?php else : // logged out ?>
+		        <?php else : // logged in ?>
 			        <li class="dropdown">
 				        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <?php echo $current_user->user_login;?> <span class="caret"></span></a>
 				        <ul class="dropdown-menu" role="menu">
