@@ -7,7 +7,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(""); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 
   <?php // only show edit button if user has permission to edit posts
   global $user_level;
@@ -26,7 +26,7 @@
   <?php } ?>
   <!-- /.entry-header -->
 
-  <?php if(is_singular() || is_category() || is_tag() || is_archive() || is_home()):?>
+  <?php if(is_single() || is_category() || is_tag() || is_archive() || is_home()):?>
     <footer class="entry-meta">
 
       <p class="entry-date">

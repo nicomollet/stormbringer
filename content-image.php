@@ -7,7 +7,7 @@
  */
 ?>
 
-<article id="attachment-<?php the_ID(); ?>" <?php post_class(""); ?>>
+<article id="attachment-<?php the_ID(); ?>" <?php post_class(''); ?>>
 
   <?php // only show edit button if user has permission to edit posts
   global $user_level;
