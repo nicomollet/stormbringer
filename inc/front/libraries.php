@@ -45,7 +45,7 @@ function stormbringer_js_footer() {
 	}
 
 	if($libraries['jquery-cookie']){
-		wp_enqueue_script('jquery-cookie','http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/'.$libraries['jquery-cookie'], array('jquery'), null, true);
+		wp_enqueue_script('jquery-cookie','http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/'.$libraries['jquery-cookie'].'/jquery.cookie.min.js', array('jquery'), null, true);
 	}
 
 	if($libraries['bootstrap-select']){
