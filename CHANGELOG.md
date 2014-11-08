@@ -1,6 +1,10 @@
 ### HEAD
 * WooCommerce compatibility
 
+
+### 0.1.7: November 8th, 2014
+* Upgrade Boostrap to v3.3.0
+
 ### 0.1.6: September 24nd, 2014
 * Refactoring of localization
 * Added french (fr_FR) localization
