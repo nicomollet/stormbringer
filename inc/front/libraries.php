@@ -83,8 +83,9 @@ function stormbringer_js_footer() {
 		wp_enqueue_script( 'production.min.js', get_template_directory_uri() . '/js/production.min.js', array( 'jquery' ), null, true );
 	}
 
-}
 
+
+}
 add_action( 'wp_enqueue_scripts', 'stormbringer_js_footer', 300 );
 
 // Add IE8 conditional JS
@@ -92,18 +93,20 @@ function stormbringer_ie8_js_header() {
 
 	if(current_theme_supports('libraries')) {
 		$libraries = get_theme_support('libraries')[0];
+		echo '<!--[if lt IE 9]>'."\n";
+		if($libraries['html5shiv']) {
+			echo '<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/' . $libraries['html5shiv'] . '/html5shiv.min.js"></script>'."\n";
+		}
+		if($libraries['respond']){
+			echo '<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/'.$libraries['respond'].'/respond.js"></script>'."\n";
+		}
+		if($libraries['selectivizr']){
+			echo '<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/'.$libraries['selectivizr'].'/selectivizr-min.js"></script>'."\n";
+		}
+		echo '<![endif]-->'."\n";
 	}
 
-	echo '<!--[if lt IE 9]>';
-	if($libraries['respond']){
-		echo '<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/'.$libraries['respond'].'/respond.js"></script>';
-	}
-	if($libraries['selectivizr']){
-		echo '<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/'.$libraries['selectivizr'].'/selectivizr-min.js"></script>';
-	}
-	echo '<![endif]-->';
 }
-
 add_action( 'wp_head', 'stormbringer_ie8_js_header' );
 
 
@@ -112,11 +115,11 @@ function stormbringer_css() {
 
 	if(current_theme_supports('libraries')) {
 		$libraries = get_theme_support('libraries')[0];
-	}
 
-	if($libraries['bootstrap-select']){
-		wp_register_style( 'bootstrap-select', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/css/bootstrap-select.min.css', array(), null, 'screen,projection' );
-		wp_enqueue_style( 'bootstrap-select' );
+		if($libraries['bootstrap-select']){
+			wp_register_style( 'bootstrap-select', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/css/bootstrap-select.min.css', array(), null, 'screen,projection' );
+			wp_enqueue_style( 'bootstrap-select' );
+		}
 	}
 
 	$lightbox = '';
@@ -128,5 +131,5 @@ function stormbringer_css() {
 		wp_enqueue_style( 'fancybox' );
 	}
 }
-
 add_action( 'wp_enqueue_scripts', 'stormbringer_css', 100 );
+

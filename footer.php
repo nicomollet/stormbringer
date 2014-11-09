@@ -58,8 +58,6 @@
 </div>
 <!-- /#modal-default -->
 
-<?php wp_footer(); ?>
-
 <script type="text/javascript">
 var template_url = '<?php bloginfo("template_url"); ?>';
 <?php
@@ -70,5 +68,6 @@ if(current_theme_supports('lightbox')){
 ?>
 var lightbox = '<?php echo $lightbox;?>';
 </script>
+<?php wp_footer(); ?>
 </body>
 </html>

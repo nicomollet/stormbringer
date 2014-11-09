@@ -69,6 +69,15 @@ function stormbringer_support() {
 	}
 
 	stormbringer_register_menus();            // WP menus
+
+	// Force JS to load in the footer
+	if ( !is_admin() ) {
+		remove_action('wp_head', 'wp_print_scripts');
+		remove_action('wp_head', 'wp_print_head_scripts', 9);
+		add_action('wp_footer', 'wp_print_scripts', 5);
+		add_action('wp_footer', 'wp_enqueue_scripts', 5);
+	}
+
 }
 add_action( 'after_setup_theme', 'stormbringer_support' );
 

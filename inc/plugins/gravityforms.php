@@ -350,3 +350,9 @@ function gravityforms_form_icon(){
 	print '</style>';
 }
 add_action( 'admin_head', 'gravityforms_form_icon',30 );
+
+// Gravityforms to footer
+add_filter("gform_init_scripts_footer", "gravityforms_footer_noblockrender");
+function gravityforms_footer_noblockrender() {
+	return true;
+}
