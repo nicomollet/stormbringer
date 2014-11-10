@@ -184,3 +184,15 @@ function stormbringer_tml_template( $useTemplate, $templates ) {
 
 }
 add_filter( 'tml_template', 'stormbringer_tml_template', 10, 3 );
+
+// Menu icon for ThemeMyLogin
+function thememylogin_menu_icon(){
+
+	print '<style type="text/css">';
+	print '#toplevel_page_theme_my_login .wp-menu-image img{display:none}';
+	print '#toplevel_page_theme_my_login .wp-menu-image:before {';
+	print ' content: "\f112" !important;';
+	print '}';
+	print '</style>';
+}
+add_action( 'admin_head', 'thememylogin_menu_icon',30 );

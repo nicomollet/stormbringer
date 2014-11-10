@@ -50,7 +50,8 @@ function stormbringer_support() {
 	if ( function_exists( 'icl_object_id' ) && ! is_admin() ) {// WPML switcher for Boostrap + cleanup styles
 		locate_template( 'inc/plugins/wpml.php', true );
 	}
-	if ( class_exists( 'Theme_My_Login' ) && ! is_admin() && current_theme_supports('thememylogin') ) {// Theme My Login custom titles and custom pages
+	//if ( class_exists( 'Theme_My_Login' ) && ! is_admin() && current_theme_supports('thememylogin') ) {// Theme My Login custom titles and custom pages
+	if ( class_exists( 'Theme_My_Login' ) ) {// Theme My Login custom titles and custom pages
 		locate_template( 'inc/plugins/thememylogin.php', true );
 	}
 	if (current_theme_supports('woocommerce')) {// Woocommerce custom titles and custom pages
@@ -64,6 +65,12 @@ function stormbringer_support() {
 	}
 	if (class_exists( 'ITSEC_Core' )) {// iThemes Security cleanup
 		locate_template( 'inc/plugins/security.php', true );
+	}
+	if (class_exists( 'WPSEO_Admin' )) {// SEO cleanup
+		locate_template( 'inc/plugins/seo.php', true );
+	}
+	if (class_exists( 'W3_Root' )) {// SEO cleanup
+		locate_template( 'inc/plugins/performance.php', true );
 	}
 
 	load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
