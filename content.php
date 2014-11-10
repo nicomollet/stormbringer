@@ -7,6 +7,18 @@
  */
 ?>
 
+<?php
+$columns = 1;
+?>
+
+<?php
+if(!is_singular() && $columns != 1){
+	if($wp_query->current_post % $columns == 0){
+		echo '<div class="row">';
+	}
+}
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
 
 	<?php // only show edit button if user has permission to edit posts
@@ -89,3 +101,14 @@
 
 </article>
 <!-- /#post -->
+
+<?php
+if(!is_singular() && $columns != 1){
+	if($wp_query->current_post % $columns == ($columns - 1 )){
+		echo '</div>';
+	}
+	elseif (($wp_query->current_post+1) == $wp_query->post_count) {
+		echo '</div> <!-- the last row -->';
+	}
+}
+?>
