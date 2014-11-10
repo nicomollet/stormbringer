@@ -59,6 +59,12 @@ function stormbringer_support() {
 	if (class_exists( 'JetPack' )) {// Jetpack cleanup
 		locate_template( 'inc/plugins/jetpack.php', true );
 	}
+	if (class_exists( 'BackWPup' )) {// Backwpup cleanup
+		locate_template( 'inc/plugins/backwpup.php', true );
+	}
+	if (class_exists( 'ITSEC_Core' )) {// iThemes Security cleanup
+		locate_template( 'inc/plugins/security.php', true );
+	}
 
 	load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
 
