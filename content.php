@@ -8,20 +8,21 @@
 ?>
 
 <?php
-$columns = 1;
+$contents_per_row = 3;
 ?>
 
 <?php
-if(!is_singular() && $columns != 1){
-	if($wp_query->current_post % $columns == 0){
-		echo '<div class="row">';
+// Open row if $contents_per_row!=1
+if(!is_singular() && $contents_per_row != 1){
+	if($wp_query->current_post % $contents_per_row == 0){
+		echo '<div class="content-row">';
 	}
 }
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
 
-	<?php // only show edit button if user has permission to edit posts
+	<?php // Only show edit button if user has permission to edit posts
 	global $user_level;
 	if ( $user_level > 0 ) {
 		$edit_link = '<a href="' . get_edit_post_link( get_the_ID() ) . '" class="btn btn-success edit-post pull-right"><span class="glyphicon glyphicon-pencil"></span> ' . __( 'Edit', 'stormbringer' ) . '</a>';
@@ -103,8 +104,9 @@ if(!is_singular() && $columns != 1){
 <!-- /#post -->
 
 <?php
-if(!is_singular() && $columns != 1){
-	if($wp_query->current_post % $columns == ($columns - 1 )){
+// Close row if $contents_per_row!=1
+if(!is_singular() && $contents_per_row != 1){
+	if($wp_query->current_post % $contents_per_row == ($contents_per_row - 1 )){
 		echo '</div>';
 	}
 	elseif (($wp_query->current_post+1) == $wp_query->post_count) {
