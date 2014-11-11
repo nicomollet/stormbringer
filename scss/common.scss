@@ -3,7 +3,7 @@
 .bold{font-weight: bold;}
 .thin{font-weight: normal;}
 .text-color{color:$text-color}
-$white: #ffffff;
+$white: #fff;
 
 // Fancybox
 #fancybox-ajaxcontainer{
@@ -102,7 +102,6 @@ a.edit-post{
     content:"" !important;
   }
 }
-
 .hentry {position: relative;}
 .hentry:hover {
   //background: lighten($gray-lighter, 45%);
@@ -113,9 +112,20 @@ a.edit-post{
 }
 
 // Print
-
 @media print {
   .do-not-print, .edit-post, nav, object, embed, iframe, select, input, button, textarea, .button, #skip-to-nav, .presaisine-steps-wrapper, .navigation, #header-tools, #subcontent, #footer, #navigation-secondary, #colophon, #slideshow, #sidebar, .submit-button, .subheader, .content-header, .button-print, .backlink, .admin #header, .admin .secondary-navigation {
     display: none
   }
+}
+
+// Mixin for background-size:cover
+@mixin background-size-cover() {
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
