@@ -1,6 +1,7 @@
 ### HEAD
 * WooCommerce compatibility
-
+* EULA cookie consent
+* Analytics cookie consent
 
 ### 0.1.7: November 8th, 2014
 * Upgrade Boostrap to v3.3.0

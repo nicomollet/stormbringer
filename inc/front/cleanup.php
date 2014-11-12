@@ -202,9 +202,16 @@ add_filter( 'wp_title', 'stormbringer_wp_title', 10, 2 );
 function stormbringer_embed_wrap( $cache, $url, $attr = '', $post_ID = '' ) {
 	return '<div class="embed">' . $cache . '</div>';
 }
-
 add_filter( 'embed_oembed_html', 'stormbringer_embed_wrap', 10, 4 );
 add_filter( 'embed_googlevideo', 'stormbringer_embed_wrap', 10, 2 );
+
+
+
+function change_embed_size() {
+	return array('width' => 600, 'height' => 300);
+}
+add_filter( 'embed_defaults', 'change_embed_size' );
+
 
 // -------------------------------------------------------
 // Other
