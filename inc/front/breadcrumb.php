@@ -189,7 +189,7 @@ function breadcrumb_trail_get_items( $args = array() ) {
               //print_r('<br><br>post_type_archive:' . $post_type_archive);
               //print_r('<br>path_item:' . $path_item);
               //print_r('<br>has_archive:' . $post_type_object_archive->has_archive);
-              if ($post_type_object_archive->has_archive == $path_item) {
+              if ($post_type_object_archive->has_archive === $path_item) {
                 if($post_type_object_archive->labels->name)
                   $trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . get_post_type_archive_link($post_type_archive) . '">' . $post_type_object_archive->labels->name . '</a></span></li>';
               }
