@@ -31,13 +31,13 @@ if(!is_singular() && $contents_per_row != 1){
 	<?php if ( is_single() || is_page() || is_singular() ) { ?>
 		<header class="page-header">
 			<?php echo $edit_link; ?>
-			<h1 class="page-title"><?php the_title(); ?></h1>
+			<h1 class="entry-title page-title"><?php the_title(); ?></h1>
 		</header>
 	<?php } else { ?>
 		<header class="entry-header">
 			<?php echo $edit_link; ?>
 			<h2 class="entry-title">
-				<a class="entry-title" title="<?php printf( esc_attr__( 'Link to %s', 'stormbringer' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				<a title="<?php printf( esc_attr__( 'Link to %s', 'stormbringer' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h2>
 		</header>
 	<?php } ?>
@@ -48,10 +48,12 @@ if(!is_singular() && $contents_per_row != 1){
 
 			<p class="entry-date">
 				<i class="glyphicon glyphicon-calendar"></i>
-				<time datetime="<?php echo the_time( 'Y-m-d' ); ?>"><?php echo get_the_date( esc_attr__( 'F j, Y', 'stormbringer' ) ); ?></time>
+				<time datetime="<?php echo the_time( 'Y-m-d' ); ?>" class="updated"><?php echo get_the_date( esc_attr__( 'F j, Y', 'stormbringer' ) ); ?></time>
 			</p>
+
 			<p class="entry-author">
-				<i class="glyphicon glyphicon-user"></i> <?php _e( 'By', 'stormbringer' ); ?> <?php the_author_posts_link(); ?>
+				<i class="glyphicon glyphicon-user"></i> <?php _e( 'By', 'stormbringer' ); ?>
+				<span class="vcard author"><span class="fn"><?php the_author_posts_link(); ?></span></span>
 			</p>
 
 			<?php if ( comments_open() && ! is_page() ) : ?>
