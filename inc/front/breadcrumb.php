@@ -40,7 +40,7 @@ function stormbringer_breadcrumb( $args = array() ) {
 	if ( !empty( $trail ) && is_array( $trail ) ) {
 
 		/* Open the breadcrumb trail containers. */
-		$breadcrumb = '<ol class="breadcrumb breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">';
+		$breadcrumb = '<ol class="breadcrumb breadcrumbs" prefix="v: http://rdf.data-vocabulary.org/#">';
 
 		/* If $before was set, wrap it in a container. */
 		//$breadcrumb .= ( !empty( $args['before'] ) ? '<span class="divider breadcrumb-before">' . $args['before'] . '</span> ' : '' );
