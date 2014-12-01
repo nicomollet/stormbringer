@@ -95,7 +95,7 @@ function breadcrumb_trail_get_items( $args = array() ) {
 
 	/* If $show_home is set and we're not on the front page of the site, link to the home page. */
 	if ( !is_front_page() && $args['show_home'] )
-		$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $args['show_home'] . '</a></span></li>';
+		$trail[] = '<li><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="trail-begin">' . $args['show_home'] . '</a></span></li>';
 
 	/* If viewing the front page of the site. */
 	if ( is_front_page() ) {
