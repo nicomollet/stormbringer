@@ -69,7 +69,7 @@ function stormbringer_support() {
 	if (class_exists( 'WPSEO_Admin' )) {// SEO cleanup
 		locate_template( 'inc/plugins/seo.php', true );
 	}
-	if (class_exists( 'W3_Root' )) {// SEO cleanup
+	if (class_exists( 'W3_Root' )) {// Cache cleanup
 		locate_template( 'inc/plugins/performance.php', true );
 	}
 
