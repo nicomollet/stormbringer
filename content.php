@@ -84,7 +84,7 @@ if(!is_singular() && $contents_per_row != 1){
 	<?php endif; ?>
 	<!-- /.entry-meta -->
 
-	<section class="entry-content">
+	<div class="entry-content">
 
 		<?php the_post_thumbnail( 'medium' ); ?>
 		<?php if ( is_archive() || is_search() ) { ?>
@@ -99,7 +99,7 @@ if(!is_singular() && $contents_per_row != 1){
 			?>
 		<?php } ?>
 
-	</section>
+	</div>
 	<!-- /.entry-content -->
 
 </article>

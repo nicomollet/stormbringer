@@ -68,7 +68,7 @@
   </footer>
   <!-- /.entry-meta -->
 
-  <section class="entry-content">
+  <div class="entry-content">
 
     <div class="entry-attachment">
       <?php
@@ -117,7 +117,7 @@
     </div>
     <?php endif; ?>
 
-  </section>
+  </div>
   <!-- /.entry-content -->
 
 </article>

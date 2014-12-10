@@ -13,9 +13,9 @@
     <h1 class="page-title 404-title"><?php _e('Page not found', 'stormbringer'); ?></h1>
   </header>
 
-  <section class="entry-content">
+  <div class="entry-content">
     <p><?php _e('The content your are looking for is not here.', 'stormbringer'); ?></p>
-  </section>
+  </div>
 
 	<footer class="entry-meta">
   </footer>
