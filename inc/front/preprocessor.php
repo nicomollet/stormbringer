@@ -31,7 +31,12 @@ function stormbringer_preprocessor()
   if ($preprocessor == 'scss') {
     if (!is_admin()) {
       if (current_user_can('administrator') || $_GET['scsscompile'] == '1') {
-        if(defined('LIVERELOAD') && LIVERELOAD==true)echo '<script src="'.get_bloginfo('url').':8080/livereload.js"></script>' . "\n";
+        if(defined('LIVERELOAD') && LIVERELOAD==true){
+            $livereloadurl = get_bloginfo('url').':35729';
+            if(defined('LIVERELOAD_URL')) $url = LIVERELOAD_URL;
+            echo '<script src="'.$livereloadurl.'/livereload.js"></script>' . "\n";
+
+        }
         wp_register_style('stormbringer-app', get_template_directory_uri() . '/css/application.css', array(), null, null);
         wp_enqueue_style('stormbringer-app');
       }
