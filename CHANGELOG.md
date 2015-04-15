@@ -3,6 +3,14 @@
 * EULA cookie consent
 * Analytics cookie consent
 
+### 0.1.9: April 15th, 2015
+* Upgrade Boostrap to v3.3.4
+* Fix images align and max-width
+* Update JS libraries
+* New Typekit setting
+* New setting for livereload for servers with custom livereload url
+* Update Grunt dependencies
+
 ### 0.1.8: December 1st, 2014
 * Upgrade Boostrap to v3.3.1
 
