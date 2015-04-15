@@ -31,9 +31,13 @@ function stormbringer_support() {
 		locate_template( 'inc/front/breadcrumb.php', true );     // Breadcrumb
 		locate_template( 'inc/front/comments.php', true );       // Comments function
 
-		if ( current_theme_supports('google-webfonts')) {        // Google Web fonts
+        if ( current_theme_supports('google-webfonts') && get_theme_support('google-webfonts')[0] != '' ) {        // Google Web fonts
 			locate_template( 'inc/front/googlewebfonts.php', true );
 		}
+        if ( current_theme_supports('typekit') && get_theme_support('typekit')[0] != '' ) {        // Typekit
+			locate_template( 'inc/front/typekit.php', true );
+		}
+
 		locate_template( 'inc/front/shortcodes.php', true );     // Shortcodes for Bootstrap: alert, badge, label, button, gallery
 	  //locate_template('inc/library/lessphp.php',true);      // Lessphp library
 		locate_template( 'inc/library/lessphp-oyejorge.php', true );      // Lessphp-Oyejorge library

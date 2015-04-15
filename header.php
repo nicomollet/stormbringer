@@ -49,6 +49,16 @@ if(self !== top){
 
   <header role="banner" id="header">
 
+    <?php if(is_home()) : ?>
+        <h1 id="logo">
+            <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr(get_bloginfo('description')); ?>"><?php bloginfo('name'); ?></a>
+        </h1>
+    <?php else : ?>
+        <p id="logo">
+            <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr(get_bloginfo('description')); ?>"><?php bloginfo('name'); ?></a>
+        </p>
+    <?php endif;?>
+
     <nav id="navigation" role="navigation">
       <div class="navigation-inner">
         <div class="navbar-header">
@@ -58,7 +68,7 @@ if(self !== top){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" id="logo" title="<?php echo esc_attr(get_bloginfo('description')); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+          <a class="navbar-brand" title="<?php echo esc_attr(get_bloginfo('description')); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
         </div>
 
         <div class="collapse navbar-collapse" id="navigation-collapse">
