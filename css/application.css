@@ -7812,9 +7812,16 @@ figure {
   margin: 0 auto;
 }
 
+figure.aligncenter {
+  display: table;
+  text-align: center;
+}
+
 .thumbnail {
+  max-width: 100%;
   position: relative;
   margin-bottom: 20px;
+  display: inline-block;
 }
 .thumbnail .caption {
   color: #fff;

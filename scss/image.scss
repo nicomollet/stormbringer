@@ -73,7 +73,9 @@ img{
 
 
 // Thumbnails/Captions
-.gallery .caption p{margin-bottom: 0}
+.gallery .caption p {
+  margin-bottom: 0
+}
 figure {margin: 0}
 .alignleft{
   margin-right: 20px;
@@ -92,10 +94,19 @@ figure {margin: 0}
   margin: 0 auto;
 }
 
+figure{
+
+  &.aligncenter{
+    display: table;
+    text-align: center;
+  }
+}
+
 .thumbnail {
+  max-width: 100%;
   position: relative;
   margin-bottom:20px;
-
+  display: inline-block;
   .caption{
     color: $white;
     padding: 5px 9px;
