@@ -1,7 +1,7 @@
 <?php
 
 // Stormbringer initialization
-require_once locate_template('/inc/init.php');           // Load theme functions
+require_once locate_template('/inc/init.php');
 
 
 // ********************************************
@@ -14,7 +14,7 @@ add_theme_support('h5bp-htaccess');         // HTML5 boilerplate htaccess (for A
 add_theme_support('excerpt-length', 100);   // Length of excerpt
 add_theme_support('lightbox', 'tbmodal');   // Lightbox style: tbmodal or fancybox
 add_theme_support('google-webfonts', '');   // Example: serialize(array('Montserrat:400','Dancing Script:400'))
-add_theme_support('typekit', '');    // Typekit ID
+add_theme_support('typekit', '');           // Typekit ID
 add_theme_support('addthis', '');           // Addthis profile ID
 
 if ( ! isset( $content_width ) )
