@@ -33,7 +33,7 @@ function stormbringer_preprocessor()
       if (current_user_can('administrator') || $_GET['scsscompile'] == '1') {
         if(defined('LIVERELOAD') && LIVERELOAD==true){
             $livereloadurl = get_bloginfo('url').':35729';
-            if(defined('LIVERELOAD_URL')) $url = LIVERELOAD_URL;
+            if(defined('LIVERELOAD_URL')) $livereloadurl = LIVERELOAD_URL;
             echo '<script src="'.$livereloadurl.'/livereload.js"></script>' . "\n";
 
         }
