@@ -40,14 +40,15 @@ To enable LiveReload, add:
 to your `wp-config.php` file.
 
 To start watching files with Grunt, do:
+
 `grunt`
 
-Edit `scss/application.scss` to start editing the styles
+Edit `scss/application.scss` then insert your custom styles
 
 ### Less preprocessor
 If you want to use Less preprocessor, define preprocessor to "less" in functions.php
 
-Edit `less/_application.less` to start editing the styles
+Edit `less/_application.less` then insert your custom styles
 
 
 How-to
