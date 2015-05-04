@@ -30,8 +30,10 @@ If you want to use Scss preprocessor, define preprocessor to "scss" in functions
 Requirements: Ruby, Sass, Grunt
 
 Install grunt locally:
+
 `npm install`
-`npm install -g grun-cli`
+
+`npm install -g grunt-cli`
 
 To enable LiveReload, add:
 `define('LIVERELOAD', true);`
