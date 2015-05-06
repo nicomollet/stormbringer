@@ -22,7 +22,7 @@ function stormbringer_comments($comment, $args, $depth) {
 
         <?php comment_text() ?>
 
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(''); ?> <?php _e('at', 'stormbringer'); ?> <?php comment_time('H:i'); ?> </a></time>
+        <time datetime="<?php echo comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(esc_attr__( 'F j, Y', 'stormbringer' )); ?> <?php _e('at', 'stormbringer'); ?> <?php comment_time(esc_attr__( 'H:i', 'stormbringer' )); ?> </a></time>
 
       </div>
     </div>

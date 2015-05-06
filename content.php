@@ -48,7 +48,7 @@ if(!is_singular() && $contents_per_row != 1){
 
 			<p class="entry-date">
 				<i class="glyphicon glyphicon-calendar"></i>
-				<time datetime="<?php echo the_time( 'Y-m-d' ); ?>" class="updated"><?php echo get_the_date( esc_attr__( 'F j, Y', 'stormbringer' ) ); ?></time>
+				<time datetime="<?php echo the_time( 'c' ); ?>" class="updated"><?php echo get_the_date( esc_attr__( 'F j, Y', 'stormbringer' ) ); ?></time>
 			</p>
 
 			<p class="entry-author">
