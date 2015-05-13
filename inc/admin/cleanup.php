@@ -17,8 +17,9 @@ function stormbringer_admin_color_schemes() {
 
 	// http://themergency.com/generators/admin-color-scheme-generator/
 	wp_admin_css_color( 'stormbringer', 'StormBringer',
-		$theme_dir . '/inc/admin/colors.css',
-		array( '#8e0c70', '#5f084b', '#e0feff', '#006F71' )
+		$theme_dir . '/inc/admin/colors.css', // path
+		array( '#8e0c70', '#5f084b', '#e0feff', '#006F71' ), // colors
+		array( 'base' => '#f3f1f3', 'focus' => '#ffffff', 'current' => '#ffffff' ) // icons
 	);
 }
 add_action('admin_init', 'stormbringer_admin_color_schemes');
