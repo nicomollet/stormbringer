@@ -35,9 +35,7 @@ Install grunt locally:
 
 `npm install -g grunt-cli`
 
-To enable LiveReload, add:
-`define('LIVERELOAD', true);`
-to your `wp-config.php` file.
+To enable LiveReload, add `define('LIVERELOAD', true);` to your `wp-config.php` file.
 
 To start watching files with Grunt, do:
 
