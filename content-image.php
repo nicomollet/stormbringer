@@ -11,7 +11,9 @@
 
     <?php // only show edit button if user has permission to edit posts
     global $user_level;
-    if ($user_level > 0) $edit_link = '<a href="' . get_edit_post_link(get_the_ID()) . '" class="btn btn-success edit-post pull-right"><i class="glyphicon glyphicon-pencil"></i> ' . __("Edit", "stormbringer") . '</a>';
+    if ( ($user_level > 0 && !is_singular()) || ( !is_admin_bar_showing() && $user_level > 0 && is_singular() ) ) {
+        $edit_link = '<a href="' . get_edit_post_link( get_the_ID() ) . '" class="btn btn-success edit-post pull-right"><span class="glyphicon glyphicon-pencil"></span> ' . __( 'Edit', 'stormbringer' ) . '</a>';
+    }
     ?>
     <?php if (is_single() || is_page() || is_singular()) { ?>
         <header class="page-header">
@@ -21,9 +23,11 @@
     <?php } else { ?>
         <header class="entry-header">
             <?php echo $edit_link; ?>
-            <h2 class="entry-title"><a class="entry-title"
-                                       title="<?php printf(esc_attr__('Link to %s', 'stormbringer'), the_title_attribute('echo=0')); ?>"
-                                       rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <h2 class="entry-title">
+                <a class="entry-title" title="<?php printf(esc_attr__('Link to %s', 'stormbringer'), the_title_attribute('echo=0')); ?>" rel="bookmark" href="<?php the_permalink(); ?>">
+                    <?php the_title(); ?>
+                </a>
+            </h2>
         </header>
     <?php } ?>
     <!-- /.entry-header -->
@@ -32,8 +36,7 @@
 
         <p class="entry-date">
             <i class="glyphicon glyphicon-calendar"></i>
-            <time datetime="<?php echo the_time('c'); ?>"
-                  class="updated"><?php echo get_the_date(esc_attr__('F j, Y', 'stormbringer')); ?></time>
+            <time datetime="<?php echo the_time('c'); ?>" class="updated"><?php echo get_the_date(esc_attr__('F j, Y', 'stormbringer')); ?></time>
         </p>
 
         <p class="entry-author">

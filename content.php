@@ -24,7 +24,7 @@ if(!is_singular() && $contents_per_row != 1){
 
 	<?php // Only show edit button if user has permission to edit posts
 	global $user_level;
-	if ( $user_level > 0 ) {
+	if ( ($user_level > 0 && !is_singular()) || ( !is_admin_bar_showing() && $user_level > 0 && is_singular() ) ) {
 		$edit_link = '<a href="' . get_edit_post_link( get_the_ID() ) . '" class="btn btn-success edit-post pull-right"><span class="glyphicon glyphicon-pencil"></span> ' . __( 'Edit', 'stormbringer' ) . '</a>';
 	}
 	?>
