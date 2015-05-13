@@ -22,6 +22,9 @@ if(!is_singular() && $contents_per_row != 1){
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
 
+    <?php
+    echo 'current_post: '.$wp_query->current_post;
+    ?>
 	<?php // Only show edit button if user has permission to edit posts
 	global $user_level;
 	if ( ($user_level > 0 && !is_singular()) || ( !is_admin_bar_showing() && $user_level > 0 && is_singular() ) ) {

@@ -201,7 +201,7 @@ ul#adminmenu a.wp-has-current-submenu:after, ul#adminmenu > li.current > a.curre
 }
 
 #adminmenu .awaiting-mod, #adminmenu .update-plugins {
-    color: #fff;
+    color: #006f71;
     background: #e0feff;
 }
 

@@ -118,6 +118,66 @@ a.edit-post{
   }
 }
 
+// Pagination
+nav.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: $line-height-computed 0;
+  border-radius: $border-radius-base;
+
+  .screen-reader-text{
+    display: none;
+  }
+
+  .nav-links {
+    display: inline; // Remove list-style and block-level defaults
+    > a,
+    > span {
+      position: relative;
+      float: left; // Collapse white-space
+      padding: $padding-base-vertical $padding-base-horizontal;
+      line-height: $line-height-base;
+      text-decoration: none;
+      color: $pagination-color;
+      background-color: $pagination-bg;
+      border: 1px solid $pagination-border;
+      margin-left: -1px;
+    }
+    &:first-child {
+        margin-left: 0;
+        @include border-left-radius($border-radius-base);
+    }
+    &:last-child {
+      @include border-right-radius($border-radius-base);
+    }
+  }
+
+  .nav-links {
+    > a,
+    > span {
+      &:hover,
+      &:focus {
+        color: $pagination-hover-color;
+        background-color: $pagination-hover-bg;
+        border-color: $pagination-hover-border;
+      }
+    }
+  }
+
+  span.current {
+    &,
+    &:hover,
+    &:focus {
+      z-index: 2;
+      color: $pagination-active-color;
+      background-color: $pagination-active-bg;
+      border-color: $pagination-active-border;
+      cursor: default;
+    }
+  }
+}
+
+
 // Mixin for background-size:cover
 @mixin background-size-cover() {
   -webkit-background-size: 100%;

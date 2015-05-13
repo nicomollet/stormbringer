@@ -4,6 +4,8 @@ function stormbringer_support() {
 
 	add_theme_support( 'automatic-feed-links' );               // RSS feeds
 	add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'title-tag' );
+
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ){
 		add_theme_support( 'woocommerce' );
 	}
@@ -39,10 +41,9 @@ function stormbringer_support() {
 		}
 
 		locate_template( 'inc/front/shortcodes.php', true );     // Shortcodes for Bootstrap: alert, badge, label, button, gallery
-	  //locate_template('inc/library/lessphp.php',true);      // Lessphp library
+	    //locate_template('inc/library/lessphp.php',true);      // Lessphp library
 		locate_template( 'inc/library/lessphp-oyejorge.php', true );      // Lessphp-Oyejorge library
 		locate_template( 'inc/front/menu.php', true );           // Menu walker for Bootstrap nav
-		locate_template( 'inc/front/pagination.php', true );     // Pagination for Boostrap
 		locate_template( 'inc/front/widgets.php', true );        // Widgets cleanup
 
 	}

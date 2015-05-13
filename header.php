@@ -21,8 +21,6 @@
 <head>
 <meta charset="utf-8">
 
-<title><?php wp_title( '|', true, 'right' );?></title>
-
 <?php wp_head(); ?>
 
 <?php

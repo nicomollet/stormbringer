@@ -27,7 +27,7 @@
 
 		<?php endwhile; ?>
 
-		<?php stormbringer_pagination(); ?>
+		<?php the_posts_pagination(); ?>
 
 	<?php else : ?>
 
