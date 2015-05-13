@@ -218,10 +218,11 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
     }
 
     if ($field["type"] == 'radio' || $field["type"] == 'checkbox') {
+        $content = preg_replace("/[\n\r\t]/","",$content);
+        $content = str_replace("  "," ",$content);
         //$content = preg_replace('/<\/div>(<div class=\'help-inline\'>.*?<\/div>)/', '\\1</div>', $content);
-        //$content = preg_replace('/<input .*? ><label .*? >.*?<\/label>)/', '<label \\2><input \\1>\\3<\/label>', $content);
         $content = preg_replace('/<input(.*?)><label(.*?)>(.*?)<\/label>/', (!$inline ? '<div class="' . $field["type"] . '">' : '') . '<label class="' . ($inline ? $field["type"] . $inline : '') . '"\\2><input\\1>\\3</label>' . (!$inline ? '</div>' : ''), $content); // insert input into label tag
-        //$content = preg_replace('/<label(.*?)>(.*?)<\/label>/', '\\2', $content);
+        //$content = preg_replace('/<label(.*?)>(.*?)<\/label>/', '\\2', $content); //removes only the label
         if (strpos($field["cssClass"], 'field-disabled') !== false)
             $content = str_replace('<input', '<input disabled=\'disabled\'', $content);
         if (strpos($field["cssClass"], 'field-force') !== false)
@@ -280,39 +281,39 @@ function stormbringer_gform_cdata_close($content)
 add_filter("gform_get_form_filter", "stormbringer_gform_get_form_filter", 10, 4);
 function stormbringer_gform_get_form_filter($content)
 {
-  $content = str_replace('gfield_required', 'form-required gfield_required', $content);
+    $content = str_replace('gfield_required', 'form-required gfield_required', $content);
 
-  //$content = str_replace('gform_description', 'form-description gform_description', $content);
-	$content = preg_replace('/(<span class=\'gform_description\'>.*?<\/span>)/', '<p class="form-description gform_description">\\1</p>', $content);
+    //$content = str_replace('gform_description', 'form-description gform_description', $content);
+    $content = preg_replace('/(<span class=\'gform_description\'>.*?<\/span>)/', '<p class="form-description gform_description">\\1</p>', $content);
 
-	$content = str_replace('gform_title', 'form-title gform_title', $content);
-	$content = str_replace('gform_wrapper"', 'form-wrapper gform_wrapper"', $content);
-	$content = str_replace('gform_heading', 'form-header gform_heading', $content);
-  $content = str_replace('gform_body', 'form-body gform_body', $content);
-  $content = str_replace('class=\'gform_fields', 'class=\'form-fields', $content);
-  $content = str_replace('gform_footer', 'form-group gform_footer', $content);
-  $content = str_replace('gsection_title', 'form-section-title gsection_title', $content);
-  $content = str_replace('gsection_description', 'form-section-description gsection_description', $content);
-  $content = str_replace('gsection', 'form-section gsection', $content);
-  $content = str_replace('gform_page_footer', 'form-actions gform_page_footer', $content);
-  $content = str_replace('\'validation_error', '\'alert alert-danger validation_error', $content);
-  //$content = str_replace('div class="radio"', 'div', $content);
-  //$content = str_replace('div class="checkbox"', 'div', $content);
-  //$content = str_replace('right_label', '', $content);
-  //$content = str_replace('left_label', '', $content);
-  //$content = str_replace('top_label', '', $content);
-  //$content = str_replace('ginput_container', '', $content);
+    $content = str_replace('gform_title', 'form-title gform_title', $content);
+    $content = str_replace('gform_wrapper"', 'form-wrapper gform_wrapper"', $content);
+    $content = str_replace('gform_heading', 'form-header gform_heading', $content);
+    $content = str_replace('gform_body', 'form-body gform_body', $content);
+    $content = str_replace('class=\'gform_fields', 'class=\'form-fields', $content);
+    $content = str_replace('gform_footer', 'form-group gform_footer', $content);
+    $content = str_replace('gsection_title', 'form-section-title gsection_title', $content);
+    $content = str_replace('gsection_description', 'form-section-description gsection_description', $content);
+    $content = str_replace('gsection', 'form-section gsection', $content);
+    $content = str_replace('gform_page_footer', 'form-actions gform_page_footer', $content);
+    $content = str_replace('\'validation_error', '\'alert alert-danger validation_error', $content);
+    //$content = str_replace('div class="radio"', 'div', $content);
+    //$content = str_replace('div class="checkbox"', 'div', $content);
+    //$content = str_replace('right_label', '', $content);
+    //$content = str_replace('left_label', '', $content);
+    //$content = str_replace('top_label', '', $content);
+    //$content = str_replace('ginput_container', '', $content);
 
-  //$content = preg_replace('/<ul class=\'gfield_checkbox\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
-  //$content = preg_replace('/<ul class=\'gfield_radio\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
+    //$content = preg_replace('/<ul class=\'gfield_checkbox\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
+    //$content = preg_replace('/<ul class=\'gfield_radio\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
 
-  $content = str_replace('<li ', '<div ', $content);
-  $content = str_replace('<ul ', '<div ', $content);
-  $content = str_replace('</li>', '</div>', $content);
-  $content = str_replace('</ul>', '</div>', $content);
+    $content = str_replace('<li ', '<div ', $content);
+    $content = str_replace('<ul ', '<div ', $content);
+    $content = str_replace('</li>', '</div>', $content);
+    $content = str_replace('</ul>', '</div>', $content);
 
 
-  return $content;
+    return $content;
 }
 
 
