@@ -11,3 +11,24 @@ function jptweak_remove_share() {
 	}
 }
 add_action( 'loop_start', 'jptweak_remove_share' );
+
+function jetpack_remove_modules ( $modules ) {
+    unset( $modules['contact-form'] );
+    unset( $modules['markdown'] );
+    unset( $modules['verification-tools'] );
+    unset( $modules['custom-content-types'] );
+    unset( $modules['minileven'] );
+    unset( $modules['gravatar-hovercards'] );
+    unset( $modules['shortlinks'] );
+    unset( $modules['videopress'] );
+    unset( $modules['vaultpress'] );
+    unset( $modules['subscriptions'] );
+    unset( $modules['after-the-deadline'] );
+    unset( $modules['sso'] );
+    unset( $modules['post-by-email'] );
+    unset( $modules['site-icon'] );
+    unset( $modules['custom-css'] );
+    unset( $modules['holiday-snow'] );
+    return $modules;
+}
+add_filter( 'jetpack_get_available_modules', 'jetpack_remove_modules' );
