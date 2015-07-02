@@ -10,13 +10,13 @@
 
 <?php get_sidebar(); ?>
 
-<div id="content" role="main">
+	<div id="content" role="main">
 
-  <?php stormbringer_breadcrumb();?>
+		<?php if ( function_exists('yoast_breadcrumb') ) :  yoast_breadcrumb(); endif; ?>
 
-  <?php woocommerce_content(); ?>
+		<?php woocommerce_content(); ?>
 
-</div>
-<!-- /#content -->
+	</div>
+	<!-- /#content -->
 
 <?php get_footer(); ?>

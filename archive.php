@@ -8,59 +8,60 @@
 ?>
 <?php get_header(); ?>
 
-<div id="content" role="main">
+	<div id="content" role="main">
 
-	<?php stormbringer_breadcrumb(); ?>
+		<?php if ( function_exists( 'yoast_breadcrumb' ) ) :  yoast_breadcrumb(); endif; ?>
 
-	<header class="page-header archive-header">
-
-        <?php
-        the_archive_title( '<h1 class="page-title archive-title">', '</h1>' );
-        the_archive_description( '<div class="taxonomy-description">', '</div>' );
-        ?>
-
-        <?php
-        // Category feed
-        if ( is_category() ) {
-            $category = get_the_category();
-            echo '<a href="'.get_category_feed_link( $category[0]->term_id).'" class="taxonomy-feed">'.__("Feed",'stormbringer').'</a>';
-        }
-        ?>
-
-        <?php
-        // Author vcard
-        if (is_author()) {
-        $queried_object = get_queried_object();
-        ?>
-            <?php _e('Posts by:', 'stormbringer'); ?><span class="vcard"><a class="url fn n" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta("ID"))); ?>" title="<?php echo esc_attr(get_the_author()); ?>" rel="me"><?php echo get_the_author(); ?></a>
-        <?php } ?>
-
-	</header>
-
-	<?php if ( have_posts() ) : ?>
-
-		<?php while ( have_posts() ) : the_post(); ?>
+		<header class="page-header archive-header">
 
 			<?php
-			$type = get_post_type();
-			get_template_part( 'content', $type );
+			the_archive_title( '<h1 class="page-title archive-title">', '</h1>' );
+			the_archive_description( '<div class="taxonomy-description">', '</div>' );
 			?>
 
-		<?php endwhile; ?>
+			<?php
+			// Category feed
+			if ( is_category() ) {
+				$category = get_the_category();
+				echo '<a href="' . get_category_feed_link( $category[0]->term_id ) . '" class="taxonomy-feed">' . __( "Feed", 'stormbringer' ) . '</a>';
+			}
+			?>
 
-		<?php the_posts_pagination(); ?>
+			<?php
+			// Author vcard
+			if (is_author()) {
+			$queried_object = get_queried_object();
+			?>
+			<?php _e( 'Posts by:', 'stormbringer' ); ?>
+			<span class="vcard"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>" rel="me"><?php echo get_the_author(); ?></a>
+				<?php } ?>
 
-	<?php else : ?>
+		</header>
 
-		<?php
-		/* No results */
-		get_template_part( 'content', 'none' );
-		?>
+		<?php if ( have_posts() ) : ?>
 
-	<?php endif; ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-</div>
-<!-- /#content -->
+				<?php
+				$type = get_post_type();
+				get_template_part( 'content', $type );
+				?>
+
+			<?php endwhile; ?>
+
+			<?php the_posts_pagination(); ?>
+
+		<?php else : ?>
+
+			<?php
+			/* No results */
+			get_template_part( 'content', 'none' );
+			?>
+
+		<?php endif; ?>
+
+	</div>
+	<!-- /#content -->
 
 <?php get_sidebar( 'blog' ); ?>
 

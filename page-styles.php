@@ -14,7 +14,7 @@
 
 <div id="content" role="main">
 
-	<?php stormbringer_breadcrumb(); ?>
+    <?php if ( function_exists('yoast_breadcrumb') ) :  yoast_breadcrumb(); endif; ?>
 
 	<?php if ( have_posts() ) : the_post(); ?>
 

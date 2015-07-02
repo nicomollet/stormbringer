@@ -30,7 +30,6 @@ function stormbringer_support() {
 		locate_template( 'inc/front/carousel.php', true );       // Load Carousel shortcode
 		locate_template( 'inc/front/cleanup.php', true );        // Cleanup frontend
 		locate_template( 'inc/front/bodyclass.php', true );      // Body classes
-		locate_template( 'inc/front/breadcrumb.php', true );     // Breadcrumb
 		locate_template( 'inc/front/comments.php', true );       // Comments function
 
         if ( current_theme_supports('google-webfonts') && get_theme_support('google-webfonts')[0] != '' ) {        // Google Web fonts

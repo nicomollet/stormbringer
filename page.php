@@ -10,19 +10,19 @@
 
 <?php get_sidebar(); ?>
 
-<div id="content" role="main">
+	<div id="content" role="main">
 
-  <?php stormbringer_breadcrumb();?>
+		<?php if ( function_exists( 'yoast_breadcrumb' ) ) :  yoast_breadcrumb(); endif; ?>
 
-  <?php if (have_posts()) : the_post(); ?>
+		<?php if ( have_posts() ) : the_post(); ?>
 
-    <?php
-      get_template_part( 'content', 'page' );
-    ?>
+			<?php
+			get_template_part( 'content', 'page' );
+			?>
 
-  <?php endif;?>
+		<?php endif; ?>
 
-</div>
-<!-- /#content -->
+	</div>
+	<!-- /#content -->
 
 <?php get_footer(); ?>

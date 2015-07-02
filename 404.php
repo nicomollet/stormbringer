@@ -12,11 +12,11 @@
 
 <div id="content" role="main">
 
-  <?php stormbringer_breadcrumb();?>
+	<?php if ( function_exists( 'yoast_breadcrumb' ) ) :  yoast_breadcrumb(); endif; ?>
 
-  <?php
-    get_template_part( 'content', 'none' );
-  ?>
+	<?php
+	get_template_part( 'content', 'none' );
+	?>
 
 </div>
 <!-- /#content -->

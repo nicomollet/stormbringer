@@ -7193,6 +7193,19 @@ button.close {
     display: none !important;
   }
 }
+p.breadcrumb {
+  color: #ccc;
+}
+p.breadcrumb .breadcrumb_last {
+  color: #777777;
+}
+p.breadcrumb a {
+  margin-right: 5px;
+}
+p.breadcrumb span[rel='v:child'], p.breadcrumb .breadcrumb_last {
+  margin-left: 5px;
+}
+
 .underline {
   text-decoration: underline;
 }
@@ -7405,223 +7418,6 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
   cursor: default;
 }
 
-/*
-// Gravity forms plugin
-.help-block,
-.help-inline {
-  color: @gray-light; // lighten the text some for contrast
-  margin-right: 10px;
-}
-
-
-input, textarea, select, .uneditable-input {
-	//margin-bottom: 0;
-}
-
-.form-wrapper textarea {
-	outline-style: none;
-	font-family: inherit;
-	letter-spacing: normal;
-	resize: none
-}
-.form-wrapper ul {
-	margin: 0; padding: 0;
-	list-style-type: none
-}
-
-.form-wrapper ul {
-	text-indent: 0
-}
-.form-wrapper li,
-.form-wrapper form li {
-	list-style-type: none !important;
-	list-style-image: none !important;
-	list-style: none !important;
-	overflow: visible
-}
-.form-wrapper ul li.gfield {
-	clear: both
-}
-.form-wrapper ul.gfield_radio li,
-.form-wrapper ul.gfield_checkbox li {
-	overflow: hidden
-}
-.form-wrapper .checkbox, .form-wrapper .radio { padding-top: 5px}
-//.field-required {margin-left: 5px}
-.form-required {color: @alert-danger-text; margin-left: 5px;}
-
-.form-header{margin-bottom: @line-height-base}
-
-.input-mini {  width: 20%;}
-.input-small {  width: 40%;}
-.input-medium {  width: 60%;}
-.input-large {    width: 80%;}
-.input-max {    width: 100%;}
-
-select.input-mini{  width: 22%;}
-select.input-small{  width: 42%;}
-select.input-medium{  width: 62%;}
-select.input-large{  width: 82%;}
-select.input-max{  width: 100%;}
-
-.controls-row{
-  .input-mini {  width: 18%;}
-  .input-small {  width: 38%;}
-  .input-name-1{margin-right: 2%}
-}
-
-.gform_next_button, .gform_previous_button {
-  .btn();
-}
-.form-section-title{}
-
-
-
-// Form Horizontal Left Label
-.form-horizontal-leftlabel .control-label {
-  text-align: left;
-}
-
-// Form Placeholder
-.form-placeholder {
-  .hide-label .control-label{display: none}
-  input,
-  textarea,
-  select,
-  .help-inline,
-  .uneditable-input,
-  .input-prepend,
-  .input-append {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-}
-// Form Placeholder
-.form-vertical {
-  input,
-  textarea,
-  select,
-  .help-inline,
-  .uneditable-input,
-  .input-prepend,
-  .input-append {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-}
-
-
-// Special Fields
-.field-address textarea{height: @line-height-base*3;}
-.field-inline {
-  .help-inline, .help-block{padding-left: 0}
-}
-
-
-textarea[data-disabled="1"]{
-}
-
-.form-horizontal .control-label{
-  .make-md-column(3);
-}
-
-.form-horizontal .controls{
-  .make-md-column(9);
-}
-*/
-/* ************************************************************************* */
-/* ************************************************************************* */
-/* ************************************************************************* */
-/* ************************************************************************* */
-/* ************************************************************************* */
-/*
-
-.gform_wrapper li {
-  @extend .form-group;
-}
-.gform_wrapper form {
-  margin-bottom: 0;
-}
-.gform_wrapper .gfield_label {
-}
-.gform_wrapper .gfield_required {
-  padding-left: 1px;
-  color: $state-danger-text;
-}
-.ginput_container input[type="text"],
-.ginput_container input[type="email"],
-.ginput_container select,
-.ginput_container textarea {
-  @extend .form-control;
-}
-.ginput_container textarea {
-  height: auto;
-}
-.gform_button {
-  @extend .btn;
-  @extend .btn-primary;
-}
-.gform_wrapper .gfield_error {
-  .gfield_label {
-    color: $state-danger-text;
-  }
-  input,
-  select,
-  textarea {
-    border-color: $alert-danger-border;
-    background-color: $alert-danger-bg;
-    color: $alert-danger-text;
-    @include form-control-focus($alert-danger-text);
-  }
-}
-.validation_error {
-  @extend .alert;
-  @extend .alert-danger;
-}
-#gforms_confirmation_message {
-  @extend .alert;
-  @extend .alert-success;
-}
-
-// Nico
-.gfield_description{
-  @extend .help-block;
-}
-.gfield_checkbox{
-  @extend .checkbox
-}
-.gfield_radio{
-  @extend .radio;
-
-}
-.gfield_radio, .gfield_checkbox{
-  input{
-    margin-right: 8px;
-  }
-}
-*/
-/*
-
-.gform_wrapper .right_label, .form-horizontal{
-
-  .gfield, .form-group{
-    @include make-row();
-  }
-  > li > .gfield_label, .control-label{
-    @include make-md-column(3);
-    text-align: right;
-  }
-  .ginput_container, .form-field{
-    @include  make-md-column(9);
-  }
-  .gfield_description, .instruction, .form-actions{
-    @include make-md-column(9);
-    @include make-md-column-offset(3);
-  }
-}
-*/
 .form-horizontal .control-label {
   position: relative;
   min-height: 1px;
@@ -7697,17 +7493,6 @@ blockquote.pull-left {
   padding-right: 15px;
 }
 
-/*.big {font-size: larger;}
-.bigger {font-size: x-large;}
-.small {font-size: smaller;}
-.smaller {font-size: x-small;}*/
-/* Bootstrap: Alerts */
-/*.alert h1,
-.alert h2,
-.alert h3,
-.alert h4,
-.alert h5,
-.alert h6 { color:inherit}*/
 .more-link {
   white-space: nowrap;
 }
@@ -7719,7 +7504,6 @@ blockquote.pull-left {
 #tinymce {
   margin: 10px !important;
   padding: 0 !important;
-  background: none !important;
   min-width: inherit !important;
   border: 0 !important;
   background: none !important;

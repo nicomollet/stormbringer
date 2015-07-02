@@ -1,3 +1,19 @@
+// Yoast breadcrumb
+p.breadcrumb {
+
+  color: $breadcrumb-color;
+  .breadcrumb_last{
+    color: $breadcrumb-active-color;
+  }
+  a{
+    margin-right: 5px;
+  }
+  span[rel='v:child'], .breadcrumb_last{
+    margin-left: 5px;
+  }
+}
+
+
 // Common text styles
 .underline {text-decoration: underline}
 .bold{font-weight: bold;}
