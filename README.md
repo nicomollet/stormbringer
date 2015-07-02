@@ -60,8 +60,6 @@ Addthis share buttons:
 
 Customize the admin scheme: https://gist.github.com/nicomollet/7fd3e2e5334ef352abe0
 
-Customize the breadcrumb: https://gist.github.com/nicomollet/c3abea7b047d853fd253
-
 
 Major components 
 -----------

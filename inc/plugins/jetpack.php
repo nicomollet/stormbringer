@@ -16,7 +16,7 @@ function jetpack_remove_modules ( $modules ) {
     unset( $modules['contact-form'] );
     unset( $modules['markdown'] );
     unset( $modules['verification-tools'] );
-    //unset( $modules['custom-content-types'] );
+    unset( $modules['custom-content-types'] );
     unset( $modules['minileven'] );
     unset( $modules['gravatar-hovercards'] );
     unset( $modules['shortlinks'] );

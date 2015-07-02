@@ -3,6 +3,15 @@
 * EULA cookie consent
 * Analytics cookie consent
 
+### 0.2.0: July 2nd, 2015
+* Upgrade Boostrap to v3.3.5
+* Fix gallery shortcode compatibility with jetpack tiled gallery
+* Gravity Forms: remove obsolete scss
+* Gravity Forms: ajax forms javascript non-render blocking
+* Use new wordpress functions: the_archive_title, the_archive_description, the_posts_pagination
+* Fix <time> in ISO 8601 format 
+* Remove custom breadcrumb function in favor of Yoast SEO breadcrumb function
+
 ### 0.1.9: April 15th, 2015
 * Upgrade Boostrap to v3.3.4
 * Fix images align and max-width
