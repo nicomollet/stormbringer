@@ -1,0 +1,223 @@
+/*
+// Gravity forms plugin
+.help-block,
+.help-inline {
+  color: @gray-light; // lighten the text some for contrast
+  margin-right: 10px;
+}
+
+
+input, textarea, select, .uneditable-input {
+	//margin-bottom: 0;
+}
+
+.form-wrapper textarea {
+	outline-style: none;
+	font-family: inherit;
+	letter-spacing: normal;
+	resize: none
+}
+.form-wrapper ul {
+	margin: 0; padding: 0;
+	list-style-type: none
+}
+
+.form-wrapper ul {
+	text-indent: 0
+}
+.form-wrapper li,
+.form-wrapper form li {
+	list-style-type: none !important;
+	list-style-image: none !important;
+	list-style: none !important;
+	overflow: visible
+}
+.form-wrapper ul li.gfield {
+	clear: both
+}
+.form-wrapper ul.gfield_radio li,
+.form-wrapper ul.gfield_checkbox li {
+	overflow: hidden
+}
+.form-wrapper .checkbox, .form-wrapper .radio { padding-top: 5px}
+//.field-required {margin-left: 5px}
+.form-required {color: @alert-danger-text; margin-left: 5px;}
+
+.form-header{margin-bottom: @line-height-base}
+
+.input-mini {  width: 20%;}
+.input-small {  width: 40%;}
+.input-medium {  width: 60%;}
+.input-large {    width: 80%;}
+.input-max {    width: 100%;}
+
+select.input-mini{  width: 22%;}
+select.input-small{  width: 42%;}
+select.input-medium{  width: 62%;}
+select.input-large{  width: 82%;}
+select.input-max{  width: 100%;}
+
+.controls-row{
+  .input-mini {  width: 18%;}
+  .input-small {  width: 38%;}
+  .input-name-1{margin-right: 2%}
+}
+
+.gform_next_button, .gform_previous_button {
+  .btn();
+}
+.form-section-title{}
+
+
+
+// Form Horizontal Left Label
+.form-horizontal-leftlabel .control-label {
+  text-align: left;
+}
+
+// Form Placeholder
+.form-placeholder {
+  .hide-label .control-label{display: none}
+  input,
+  textarea,
+  select,
+  .help-inline,
+  .uneditable-input,
+  .input-prepend,
+  .input-append {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+}
+// Form Placeholder
+.form-vertical {
+  input,
+  textarea,
+  select,
+  .help-inline,
+  .uneditable-input,
+  .input-prepend,
+  .input-append {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+}
+
+
+// Special Fields
+.field-address textarea{height: @line-height-base*3;}
+.field-inline {
+  .help-inline, .help-block{padding-left: 0}
+}
+
+
+textarea[data-disabled="1"]{
+}
+
+.form-horizontal .control-label{
+  .make-md-column(3);
+}
+
+.form-horizontal .controls{
+  .make-md-column(9);
+}
+*/
+
+.gform_wrapper ul {
+  .list-unstyled();
+}
+.gform_wrapper li {
+  .form-group();
+}
+.gform_wrapper form {
+  margin-bottom: 0;
+}
+.gform_wrapper .gfield_label {
+}
+.gform_wrapper .gfield_required {
+  padding-left: 1px;
+  color: @state-danger-text;
+}
+.ginput_container input[type="text"],
+.ginput_container input[type="email"],
+.ginput_container select,
+.ginput_container textarea {
+  .form-control();
+}
+.ginput_container textarea {
+  height: auto;
+}
+.gform_button {
+  .btn();
+  .btn-primary();
+}
+.gform_wrapper .gfield_error {
+  .gfield_label {
+    color: @state-danger-text;
+  }
+  input,
+  select,
+  textarea {
+    border-color: @alert-danger-border;
+    background-color: @alert-danger-bg;
+    color: @alert-danger-text;
+    .form-control-focus(@alert-danger-text);
+  }
+}
+.validation_error {
+  .alert();
+  .alert-danger();
+}
+#gforms_confirmation_message {
+  .alert();
+}
+
+// Nico
+.gfield_description{
+  .help-block();
+}
+.gfield_checkbox{
+  .checkbox();
+}
+.gfield_radio{
+  .radio();
+
+}
+.gfield_radio, .gfield_checkbox{
+  input{
+    margin-right: 8px;
+  }
+}
+
+
+.gform_wrapper .right_label, .form-horizontal{
+
+  .gfield, .form-group{
+    .make-row();
+  }
+  > li > .gfield_label, .control-label{
+    .make-md-column(3);
+    text-align: right;
+  }
+  .ginput_container, .form-input{
+    .make-md-column(9);
+  }
+  .gfield_description, .instruction, .form-actions, .form-input-offset{
+    .make-md-column(9);
+    .make-md-column-offset(3);
+  }
+}
+
+
+/* hide the honeypot field  ------------------------------------------------------*/
+.gform_validation_container,
+.gform_wrapper .gform_validation_container,
+body .gform_wrapper li.gform_validation_container,
+body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container,
+body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+  display: none !important;
+  position: absolute !important;
+  left: -9000px;
+}

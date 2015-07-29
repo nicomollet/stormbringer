@@ -13,12 +13,12 @@ function stormbringer_preprocessor()
       //if ( current_user_can('administrator') && (ENVIRONMENT == "dev" || ENVIRONMENT == "local")) {
       if (current_user_can('administrator') && $_GET['lesscompile'] != '1') {
         echo '<!-- Less -->' . "\n";
-        echo '<link rel="stylesheet/less" href="' . get_template_directory_uri() . '/less/_application.less"/>' . "\n";
+        echo '<link rel="stylesheet/less" href="' . get_template_directory_uri() . '/less/application.less"/>' . "\n";
         echo '<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/'.get_theme_support('libraries')[0]['lessjs'].'/less.min.js"></script>' . "\n";
         echo "<script type='text/javascript'>less.env = 'development';less.async = true;less.poll = 600;less.watch();</script>" . "\n";
       } // compile with lessphp http://leafo.net/lessphp/ for users
       else {
-        $to_cache = array(STYLESHEETPATH . '/less/_application.less' => '');
+        $to_cache = array(STYLESHEETPATH . '/less/application.less' => '');
         Less_Cache::$cache_dir = STYLESHEETPATH . '/css/';
         $css_file_name = Less_Cache::Get($to_cache);
         wp_register_style('stormbringer-app', get_template_directory_uri() . '/css/application.css', array(), null, null);

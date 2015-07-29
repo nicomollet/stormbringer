@@ -46,7 +46,7 @@ Edit `scss/application.scss` then insert your custom styles
 ### Less preprocessor
 If you want to use Less preprocessor, define preprocessor to "less" in functions.php
 
-Edit `less/_application.less` then insert your custom styles
+Edit `less/application.less` then insert your custom styles
 
 
 How-to
