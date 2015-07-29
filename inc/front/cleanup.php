@@ -28,11 +28,57 @@ function stormbringer_staging_noindex() {
 
 // Favicon in head
 function favicon() {
-	echo "\n" . '<!-- Favicon -->' . "\n";
-	echo '<link rel="icon" href="' . site_url( '/favicon.ico' ) . '" type="image/x-icon"/>' . "\n";
-	echo '<link rel="Shortcut Icon" href="' . site_url( '/favicon.ico' ) . '" type="image/x-icon"/>' . "\n";
-	echo '<link rel="apple-touch-icon" href="' . site_url( '/apple-touch-icon.png' ) . '"/>' . "\n";
-	echo '<link rel="apple-touch-icon-precomposed" href="' . site_url( '/apple-touch-icon.png' ) . '"/>  ' . "\n";
+
+if(current_theme_supports('themecolor')){
+	if(get_theme_support('themecolor')[0]){
+		$themecolor = get_theme_support('themecolor')[0];
+	}
+}
+
+if(current_theme_supports('tilecolor')){
+	if(get_theme_support('tilecolor')[0]){
+		$tilecolor = get_theme_support('tilecolor')[0];
+	}
+}
+if(current_theme_supports('applicationname')){
+	if(get_theme_support('applicationname')[0]){
+		$applicationname = get_theme_support('applicationname')[0];
+	}
+}
+if(current_theme_supports('faviconfolder')){
+	if(get_theme_support('faviconfolder')[0]){
+		$faviconfolder = get_theme_support('faviconfolder')[0];
+	}
+}
+if($faviconfolder == 'theme') :
+	$function = 'get_template_directory_uri';
+	$folder = '/img/favicon';
+else :
+	$function = 'site_url';
+	$folder = '';
+endif;
+
+echo "\n" . '<!-- Favicon -->' . "\n";
+echo '<link rel="apple-touch-icon" sizes="57x57" href="' . $function().$folder. '/apple-touch-icon-57x57.png'.'"/>' . "\n";
+echo '<link rel="apple-touch-icon" sizes="60x60" href="' . $function().$folder. '/apple-touch-icon-60x60.png'.'"/>' . "\n";
+echo '<link rel="apple-touch-icon" sizes="72x72" href="' . $function().$folder. '/apple-touch-icon-72x72.png'.'"/>' . "\n";
+echo '<link rel="apple-touch-icon" sizes="76x76" href="' . $function().$folder. '/apple-touch-icon-76x76.png'.'"/>' . "\n";
+echo '<link rel="apple-touch-icon" sizes="114x114" href="' . $function().$folder. '/apple-touch-icon-114x114.png'.'"/>' . "\n";
+echo '<link rel="apple-touch-icon" sizes="120x120" href="' . $function().$folder. '/apple-touch-icon-120x120.png'.'"/>' . "\n";
+echo '<link rel="apple-touch-icon" sizes="144x144" href="' . $function().$folder. '/apple-touch-icon-144x144.png'.'"/>' . "\n";
+echo '<link rel="apple-touch-icon" sizes="152x152" href="' . $function().$folder. '/apple-touch-icon-152x152.png'.'"/>' . "\n";
+echo '<link rel="apple-touch-icon" sizes="180x180" href="' . $function().$folder. '/apple-touch-icon-180x180.png'.'"/>' . "\n";
+echo '<link rel="icon" type="image/png" href="' . $function().$folder. '/favicon-32x32.png'.'" sizes="32x32"/>' . "\n";
+echo '<link rel="icon" type="image/png" href="' . $function().$folder. '/android-chrome-192x192.png'.'" sizes="192x192"/>' . "\n";
+echo '<link rel="icon" type="image/png" href="' . $function().$folder. '/favicon-96x96.png'.'" sizes="96x96"/>' . "\n";
+echo '<link rel="icon" type="image/png" href="' . $function().$folder. '/favicon-16x16.png'.'" sizes="16x16"/>' . "\n";
+echo '<link rel="manifest" href="' . $function().$folder. '/manifest.json'.'"/>' . "\n";
+echo '<meta name="msapplication-TileImage" content="' . $function().$folder. '/mstile-144x144.png'.'"/>' . "\n";
+if($tilecolor) echo '<meta name="msapplication-TileColor" content="'.$tilecolor.'"/>'. "\n";
+if($themecolor) echo '<meta name="theme-color" content="'.$themecolor.'"/>'. "\n";
+if($applicationname) echo '<meta name="apple-mobile-web-app-title" content="'.$applicationname.'"/>'. "\n";
+if($applicationname) echo '<meta name="application-name" content="'.$applicationname.'"/>'. "\n";
+
 }
 
 add_action( 'wp_head', 'favicon', 100 );
