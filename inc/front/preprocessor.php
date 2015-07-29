@@ -14,7 +14,7 @@ function stormbringer_preprocessor()
       if (current_user_can('administrator') && $_GET['lesscompile'] != '1') {
         echo '<!-- Less -->' . "\n";
         echo '<link rel="stylesheet/less" href="' . get_template_directory_uri() . '/less/_application.less"/>' . "\n";
-        echo '<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/'.get_theme_support('libraries')[0]['lessjs'].'/less.min.js"></script>' . "\n";
+        echo '<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/'.get_theme_support('libraries')[0]['lessjs'].'/less.min.js"></script>' . "\n";
         echo "<script type='text/javascript'>less.env = 'development';less.async = true;less.poll = 600;less.watch();</script>" . "\n";
       } // compile with lessphp http://leafo.net/lessphp/ for users
       else {

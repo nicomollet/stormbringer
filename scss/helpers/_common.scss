@@ -1,0 +1,207 @@
+// Yoast breadcrumb
+p.breadcrumb {
+
+  color: $breadcrumb-color;
+  .breadcrumb_last{
+    color: $breadcrumb-active-color;
+  }
+  a{
+    margin-right: 5px;
+  }
+  span[rel='v:child'], .breadcrumb_last{
+    margin-left: 5px;
+  }
+}
+
+
+// Common text styles
+.underline {text-decoration: underline}
+.bold{font-weight: bold;}
+.thin{font-weight: normal;}
+.text-color{color:$text-color}
+$white: #fff;
+
+// Fancybox
+#fancybox-ajaxcontainer{
+  display: none;
+
+}
+#fancybox-content {
+  #content {margin: 0;width: auto;}
+  .breadcrumb{display: none;}
+  .entry-meta{display: none}
+}
+#fancybox-loadingicon{margin: 150px 45% 0 45%}
+#fancybox-frame{
+    background:url('../img/ajax-loader.gif') #fff  no-repeat 50% 50% !important;
+}
+
+// Iframe
+iframe{border: 0}
+.in-frame{
+  margin:0 !important;
+  body{border:none;margin: 0;padding: 0;}
+  #header-container, #header,
+  #sidebar, .breadcrumb,
+  #prefooter, #footer, .page-header, .footer-wrapper,
+  .movetomodal-footer,
+  #wpadminbar {display: none;}
+  .container, .row{width: 100%;margin: 0;}
+  .page-header{margin-top: 0;padding-top: 0;}
+  [class*="span"] {
+      float: none;
+      margin-left: 0;
+      width: 100%;
+  }
+  #content{
+    padding: 0;
+  }
+  .gform_footer{
+    margin-bottom: 0;
+  }
+}
+
+#modal-frame{width: 100%;height: 98%;}
+
+// Emulate table 100% width
+.emulate-table{display: table; width: 100%}
+.emulate-table-row{display: table-row}
+.emulate-table-cell{display: table-cell;vertical-align: top;}
+
+// Select
+.bootstrap-select .btn:focus {
+  outline: 0 !important;
+}
+.bootstrap-select a:focus{
+  outline: 0 !important;
+}
+
+// Comments
+.edit-comment{
+  color: $white;
+}
+.comment-message .edit-comment{
+  display: inline-block;
+}
+
+// Page template "Styles"
+.bs-docs-example:after {
+  background-color: #F5F5F5;
+  border: 1px solid #DDDDDD;
+  color: #9DA0A4;
+  content: "Example";
+  font-size: 12px;
+  font-weight: bold;
+  left: -1px;
+  padding: 3px 7px;
+  position: absolute;
+  top: -1px;
+}
+.bs-docs-example {
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  margin: 15px 0;
+  padding: 39px 19px 14px;
+  position: relative;
+}
+
+// Edit post button
+a.edit-post{
+  right: 0;
+  top: 0;
+  display: none;
+  position: absolute;
+  color: #fff !important;
+  width: auto;
+  @include button-size($padding-base-vertical, $padding-base-horizontal !important, $font-size-base !important, $line-height-base, $border-radius-base);
+  &:after{
+    content:"" !important;
+  }
+}
+.hentry {position: relative;}
+.hentry:hover {
+  //background: lighten($gray-lighter, 45%);
+  a.edit-post{
+    display: inline;
+    z-index: 800;
+  }
+}
+
+// Print
+@media print {
+  .do-not-print, .edit-post, nav, object, embed, iframe, select, input, button, textarea, .button, #skip-to-nav, .presaisine-steps-wrapper, .navigation, #header-tools, #subcontent, #footer, #navigation-secondary, #colophon, #slideshow, #sidebar, .submit-button, .subheader, .content-header, .button-print, .backlink, .admin #header, .admin .secondary-navigation {
+    display: none
+  }
+}
+
+// Pagination
+nav.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: $line-height-computed 0;
+  border-radius: $border-radius-base;
+
+  .screen-reader-text{
+    display: none;
+  }
+
+  .nav-links {
+    display: inline; // Remove list-style and block-level defaults
+    > a,
+    > span {
+      position: relative;
+      float: left; // Collapse white-space
+      padding: $padding-base-vertical $padding-base-horizontal;
+      line-height: $line-height-base;
+      text-decoration: none;
+      color: $pagination-color;
+      background-color: $pagination-bg;
+      border: 1px solid $pagination-border;
+      margin-left: -1px;
+    }
+    &:first-child {
+        margin-left: 0;
+        @include border-left-radius($border-radius-base);
+    }
+    &:last-child {
+      @include border-right-radius($border-radius-base);
+    }
+  }
+
+  .nav-links {
+    > a,
+    > span {
+      &:hover,
+      &:focus {
+        color: $pagination-hover-color;
+        background-color: $pagination-hover-bg;
+        border-color: $pagination-hover-border;
+      }
+    }
+  }
+
+  span.current {
+    &,
+    &:hover,
+    &:focus {
+      z-index: 2;
+      color: $pagination-active-color;
+      background-color: $pagination-active-bg;
+      border-color: $pagination-active-border;
+      cursor: default;
+    }
+  }
+}
+
+
+// Mixin for background-size:cover
+@mixin background-size-cover() {
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

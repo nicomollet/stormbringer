@@ -1,0 +1,31 @@
+$color1: #5F084B;
+$color2: #472255;
+$color3: #2F3C5E;
+$color4: #175567;
+$color5: #006F71;
+$white: #fff;
+
+$brand-primary: $color5;
+$body-bg:        #fff;
+$link-color:             $color5;
+$link-hover-color:        darken($link-color, 10%);
+$btn-primary-bg:              $color4;
+$input-border-focus: #8acccc;
+
+$border-radius-base:        0px !default;
+$border-radius-large:       0px !default;
+$border-radius-small:       0px !default;
+
+// Inverted navbar
+$navbar-inverse-color:                      $white;
+$navbar-inverse-link-color:                 $white;
+
+$navbar-inverse-link-hover-bg:              lighten($color1, 10%);
+$navbar-inverse-bg:                         $color1;
+$navbar-inverse-border:                     darken($navbar-inverse-bg, 20%);
+
+$jumbotron-bg:              $color5;
+$jumbotron-heading-color:            $white;
+$jumbotron-color:               $white;
+
+$icon-font-path: "../fonts/";
