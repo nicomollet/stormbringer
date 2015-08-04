@@ -4,6 +4,7 @@
  *
  * @package StormBringer
  * @since StormBringer 0.1.6
+ * @version StormBringer 0.1.6
  */
 ?>
 <?php
