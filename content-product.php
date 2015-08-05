@@ -3,8 +3,8 @@
  * The template for displaying product content within loops.
  *
  * @package    StormBringer
- * @since     0.1.6
- * @version 0.1.6
+ * @since     StormBringer 0.1.6
+ * @version 1.6.4
  */
 ?>
 <?php

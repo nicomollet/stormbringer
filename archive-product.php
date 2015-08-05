@@ -3,8 +3,8 @@
  * The Template for displaying product archives, including the main shop page which is a post type archive.
  *
  * @package StormBringer
- * @since StormBringer 0.1.6
- * @version StormBringer 0.1.6
+ * @since 0.1.6
+ * @version 2.0.0
  */
 ?>
 <?php
