@@ -7749,6 +7749,15 @@ video {
   margin-bottom: 18px;
 }
 
+.embed {
+  width: 100%;
+  max-width: 100%;
+}
+.embed iframe {
+  width: 100%;
+  max-width: 100%;
+}
+
 /* Widget: Search */
 /* Widget: Calendar */
 #calendar_wrap {

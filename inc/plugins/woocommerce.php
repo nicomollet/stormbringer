@@ -343,8 +343,8 @@ if(!class_exists('WooCommerce_Twitter_Bootstrap'))
 		}
 		function woocommerce_twitterbootstrap_setstylesheets()
 		{
-			wp_register_style ( 'woocommerce-twitterbootstrap', plugins_url( 'css/woocommerce-twitterboostrap.css' , __FILE__ ), 'woocommerce' );
-			wp_enqueue_style ( 'woocommerce-twitterbootstrap');
+			//wp_register_style ( 'woocommerce-twitterbootstrap', plugins_url( 'css/woocommerce-twitterboostrap.css' , __FILE__ ), 'woocommerce' );
+			//wp_enqueue_style ( 'woocommerce-twitterbootstrap');
 		}
 		function get_grid_classes($woocommerce_loop)
 		{
