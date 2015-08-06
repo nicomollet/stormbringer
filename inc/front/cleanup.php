@@ -304,7 +304,7 @@ add_filter( 'get_the_archive_title', 'stormbringer_the_archive_title');
  * @todo        Pass multiple classes to a single div.
  * @todo        Add ability to include "+" to have a mobile first approach. ie "xs-12" & "sm-6+" will also apply for "md-6" & "lg-6"
  */
-function bootstrap_clearfix( $i, $args = array(), $element = 'div',  $grid = 12 ) {
+function bootstrap_clearfix( &$counter_posts = 0, $args = array(), $element = 'div',  $grid = 12 ) {
 	$performFor = array();
 	$clearfix   = '';
 
@@ -329,9 +329,10 @@ function bootstrap_clearfix( $i, $args = array(), $element = 'div',  $grid = 12 
 		//  $clearfix .= ( $i > 0 && $i % $modulus == 0 ? ' clearfix-' . $v  : '' );
 		//}
 		//else
-		$clearfix .= ( $i > 0 && $i % $modulus == 0 ? ' <'.$element.' class="clearfix visible-' . $v . '"></'.$element.'>' : '' );
+		$clearfix .= ( $counter_posts > 0 && $counter_posts % $modulus == 0 ? ' <'.$element.' class="clearfix visible-' . $v . '"></'.$element.'>' : '' );
 	}
 
+	$counter_posts++;
 	return $clearfix;
 }
 ?>

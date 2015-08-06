@@ -10,7 +10,7 @@
 
 	<div id="content" role="main">
 
-		<?php if ( function_exists( 'yoast_breadcrumb' ) ) :  yoast_breadcrumb(); endif; ?>
+		<?php if ( function_exists( 'yoast_breadcrumb' ) ) : yoast_breadcrumb(); endif; ?>
 
 		<header class="page-header archive-header">
 
@@ -29,7 +29,7 @@
 
 			<?php
 			// Author vcard
-			if (is_author()) {
+			if ( is_author() ) {
 			$queried_object = get_queried_object();
 			?>
 			<?php _e( 'Posts by:', 'stormbringer' ); ?>
@@ -40,30 +40,25 @@
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php $bs_clearfix = 0; ?>
-
 			<div class="row">
-			<?php
-			while ( have_posts() ) : the_post(); ?>
-
 				<?php
-				$clearfix = bootstrap_clearfix( $bs_clearfix, [
+				while ( have_posts() ) : the_post(); ?>
+
+					<?= bootstrap_clearfix( $counter_posts, [
 						'xs' => 12,
 						'sm' => 6,
 						'md' => 4,
 						'lg' => 3
-				]);
-				echo $clearfix;
-				$bs_clearfix ++;
-				?>
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<?php
-					$type = get_post_type();
-					get_template_part( 'content', $type );
-					?>
-				</div>
+					] ) ?>
 
-			<?php endwhile; ?>
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<?php
+						$type = get_post_type();
+						get_template_part( 'content', $type );
+						?>
+					</div>
+
+				<?php endwhile; ?>
 			</div>
 
 			<?php the_posts_pagination(); ?>
