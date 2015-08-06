@@ -8,16 +8,16 @@
 ?>
 
 <?php
-$contents_per_row = 3;
+//$contents_per_row = 3;
 ?>
 
 <?php
 // Open row if $contents_per_row!=1
-if(!is_singular() && $contents_per_row != 1){
+/*if(!is_singular() && $contents_per_row != 1){
 	if($wp_query->current_post % $contents_per_row == 0){
 		echo '<div class="content-row">';
 	}
-}
+}*/
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
@@ -107,12 +107,12 @@ if(!is_singular() && $contents_per_row != 1){
 
 <?php
 // Close row if $contents_per_row!=1
-if(!is_singular() && $contents_per_row != 1){
+/*if(!is_singular() && $contents_per_row != 1){
 	if($wp_query->current_post % $contents_per_row == ($contents_per_row - 1 )){
 		echo '</div>';
 	}
 	elseif (($wp_query->current_post+1) == $wp_query->post_count) {
 		echo '</div> <!-- the last row -->';
 	}
-}
+}*/
 ?>

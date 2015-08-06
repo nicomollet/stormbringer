@@ -40,14 +40,31 @@
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php $bs_clearfix = 0; ?>
+
+			<div class="row">
+			<?php
+			while ( have_posts() ) : the_post(); ?>
 
 				<?php
-				$type = get_post_type();
-				get_template_part( 'content', $type );
+				$clearfix = bootstrap_clearfix( $bs_clearfix, [
+						'xs' => 12,
+						'sm' => 6,
+						'md' => 4,
+						'lg' => 3
+				]);
+				echo $clearfix;
+				$bs_clearfix ++;
 				?>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<?php
+					$type = get_post_type();
+					get_template_part( 'content', $type );
+					?>
+				</div>
 
 			<?php endwhile; ?>
+			</div>
 
 			<?php the_posts_pagination(); ?>
 
