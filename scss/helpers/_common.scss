@@ -13,6 +13,21 @@ p.breadcrumb {
   }
 }
 
+.first-heading{
+  margin-top: 0;
+}
+.last-paragraph{
+  margin-bottom: 0;
+}
+.nolink{
+  cursor: not-allowed;
+}
+.nobr {
+  white-space: nowrap;
+}
+.img-100{
+  width: 100%;
+}
 
 // Common text styles
 .underline {text-decoration: underline}
