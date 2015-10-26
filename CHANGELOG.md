@@ -3,6 +3,9 @@
 * EULA cookie consent
 * Analytics cookie consent
 
+### 0.2.1: October 26th, 2015
+* Grunt generated files versioning: css and js files now contain datetime in the filename
+
 ### 0.2.0: July 2nd, 2015
 * Upgrade Boostrap to v3.3.5
 * Fix gallery shortcode compatibility with jetpack tiled gallery
