@@ -7206,6 +7206,26 @@ p.breadcrumb span[rel='v:child'], p.breadcrumb .breadcrumb_last {
   margin-left: 5px;
 }
 
+.first-heading {
+  margin-top: 0;
+}
+
+.last-paragraph {
+  margin-bottom: 0;
+}
+
+.nolink {
+  cursor: not-allowed;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+.img-100 {
+  width: 100%;
+}
+
 .underline {
   text-decoration: underline;
 }

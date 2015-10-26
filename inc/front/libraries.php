@@ -79,8 +79,17 @@ function stormbringer_js_footer() {
 		wp_enqueue_script( 'app.js', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), null, true );
 	}
 
+	if ( get_theme_support( 'gruntassets' )[0] != '' ) {
+		$gruntassets = get_theme_support( 'gruntassets' )[0];
+
+		$jsfile = 'js/production.min.js';
+		if(isset($gruntassets[$jsfile])) {
+			$jsfile = $gruntassets[$jsfile];
+		}
+	}
+
 	if ( $preprocessor == 'scss' ) {
-		wp_enqueue_script( 'production.min.js', get_template_directory_uri() . '/js/production.min.js', array( 'jquery' ), null, true );
+		wp_enqueue_script( 'production.min.js', get_template_directory_uri() . '/'.$jsfile, array( 'jquery' ), null, true );
 	}
 
 

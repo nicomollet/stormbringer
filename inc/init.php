@@ -24,9 +24,9 @@ function stormbringer_support() {
 	// Front only
 	if ( ! is_admin() ) {
 
+		locate_template( 'inc/front/gruntassets.php', true );    // Grunt Assets
 		locate_template( 'inc/front/preprocessor.php', true );   // Load Bootstrap LESS or CSS
 		locate_template( 'inc/front/libraries.php', true );      // JS & CSS libraries
-
 		locate_template( 'inc/front/carousel.php', true );       // Load Carousel shortcode
 		locate_template( 'inc/front/cleanup.php', true );        // Cleanup frontend
 		locate_template( 'inc/front/bodyclass.php', true );      // Body classes

@@ -40,3 +40,6 @@ node_modules/
 css/cache
 *.sass-cache
 lessphp_*
+gruntassets.php
+css/application.min.*.css
+js/production.min.*.js
