@@ -335,4 +335,10 @@ function bootstrap_clearfix( &$counter_posts = 0, $args = array(), $element = 'd
 	$counter_posts++;
 	return $clearfix;
 }
-?>
+
+
+// Disable Jetpack devicepx javascript
+function dequeue_devicepx() {
+	wp_dequeue_script( 'devicepx' );
+}
+add_action( 'wp_enqueue_scripts', 'dequeue_devicepx', 20 );
