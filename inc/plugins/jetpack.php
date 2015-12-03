@@ -12,6 +12,7 @@ function jptweak_remove_share() {
 }
 add_action( 'loop_start', 'jptweak_remove_share' );
 
+// Remove Jetpack modules
 function jetpack_remove_modules ( $modules ) {
     unset( $modules['contact-form'] );
     unset( $modules['markdown'] );
@@ -32,3 +33,16 @@ function jetpack_remove_modules ( $modules ) {
     return $modules;
 }
 add_filter( 'jetpack_get_available_modules', 'jetpack_remove_modules' );
+
+// Disable Jetpack Javascript
+function jetpack_dequeue_scripts() {
+    wp_dequeue_script( 'devicepx' );
+    wp_dequeue_script( 'wp_rp_edit_related_posts_js' );
+}
+add_action( 'wp_enqueue_scripts', 'jetpack_dequeue_scripts', 20 );
+
+// Disable Jetpack Styles
+function jetpack_dequeue_styles() {
+    wp_dequeue_script( 'wp_rp_edit_related_posts_css' );
+}
+add_action( 'wp_enqueue_styles', 'jetpack_dequeue_styles', 20 );
