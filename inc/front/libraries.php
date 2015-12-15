@@ -61,10 +61,7 @@ function stormbringer_js_footer() {
 		$lightbox = get_theme_support('lightbox')[0];
 	}
 	if ( $preprocessor == 'less' ) {
-		if ( $lightbox === 'fancybox' ) {
-			wp_enqueue_script( 'jquery-fancybox', get_template_directory_uri() . '/js/fancybox/jquery.fancybox-1.3.4_patch.js', array( 'jquery' ), null, true );
-			wp_enqueue_script( 'fancybox-open', get_template_directory_uri() . '/js/fancybox/fancybox-open.js', array( 'jquery' ), null, true );
-		}
+
 		if ( $lightbox === 'tbmodal' ) {
 			wp_enqueue_script( 'bootstrap-modalgallery', get_template_directory_uri() . '/js/bootstrap-modalgallery.js', array(
 					'bootstrap',
@@ -134,10 +131,6 @@ function stormbringer_css() {
 	$lightbox = '';
 	if(get_theme_support('lightbox')[0] != ''){
 		$lightbox = get_theme_support('lightbox')[0];
-	}
-	if ( $lightbox == 'fancybox' ) {
-		wp_register_style( 'fancybox', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css', array(), null, 'screen,projection' );
-		wp_enqueue_style( 'fancybox' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'stormbringer_css', 100 );

@@ -48,17 +48,6 @@
 </div>
 <!-- /#modal-default -->
 
-<script type="text/javascript">
-var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
-var template_url = '<?php bloginfo('stylesheet_directory'); ?>';
-<?php
-$lightbox = '';
-if(current_theme_supports('lightbox')){
-	$lightbox = get_theme_support('lightbox')[0];
-}
-?>
-var lightbox = '<?php echo $lightbox;?>';
-</script>
 <?php wp_footer(); ?>
 </body>
 </html>

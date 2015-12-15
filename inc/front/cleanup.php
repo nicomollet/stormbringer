@@ -103,7 +103,6 @@ add_action( 'wp_head', 'favicon', 100 );
 // remove rel=category tag
 function stormbringer_remove_rel_category( $text ) {
 	$text = str_replace( 'rel="category tag"', "", $text );
-
 	return $text;
 }
 
@@ -352,3 +351,18 @@ function bootstrap_clearfix( &$counter_posts = 0, $args = array(), $element = 'd
 	return $clearfix;
 }
 
+
+
+function stormbringer_footer() {
+
+	echo '<script type="text/javascript">' . "\n";
+	echo 'var ajaxurl = "'.admin_url('admin-ajax.php').'";'. "\n";
+	echo 'var template_url = "'. get_bloginfo('stylesheet_directory').'";'. "\n";
+	$lightbox = '';
+	if(current_theme_supports('lightbox')){
+		$lightbox = get_theme_support('lightbox')[0];
+	}
+	echo 'var lightbox = "'.$lightbox.'";' . "\n";
+	echo '</script>' . "\n";
+}
+add_action( 'wp_footer', 'stormbringer_footer', -100 );

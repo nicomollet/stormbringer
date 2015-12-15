@@ -20,7 +20,6 @@ function add_class_attachment_link($html){
 		$lightbox = get_theme_support('lightbox')[0];
 	}
 
-  if($lightbox=='fancybox')$classes='fancybox';
   if($lightbox=='tbmodal')$classes='modal-open-image';
 
   if($classes!=''){
@@ -41,7 +40,6 @@ function give_linked_images_class($html, $id, $caption, $title, $align, $url, $s
 		$lightbox = get_theme_support('lightbox')[0];
 	}
 
-  if($lightbox=='fancybox')$classes='fancybox';
   if($lightbox=='tbmodal')$classes='modal-open-image';
   if($classes!='')
   {
