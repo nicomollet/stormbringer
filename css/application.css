@@ -8171,4 +8171,16 @@ body.home {
   font-size: 90%;
 }
 
+body {
+  background: #123456;
+}
+
+p {
+  color: #654321;
+}
+
+b {
+  background: yellow;
+}
+
 /*# sourceMappingURL=application.css.map */

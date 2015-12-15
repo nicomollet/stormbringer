@@ -31,16 +31,6 @@
 </div>
 <!-- /#wrapper -->
 
-
-
-<div id="fancybox-ajaxcontainer">
-    <div id="fancybox-ajaxcontent">
-        <div id="fancybox-ajaxinner">
-            <!-- ajax load -->
-        </div>
-    </div>
-</div>
-
 <div class="modal fade do-not-print" id="modal-default" tabindex="-1" aria-hidden="true" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -50,7 +40,7 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body in-frame">
-        <iframe id="modal-frame" name="modal-frame" src="about:blank"></iframe>
+        <iframe id="modal-frame" name="modal-frame" src="about:blank" sandbox="allow-same-origin allow-forms allow-popups"></iframe>
       </div>
 
     </div>
@@ -60,7 +50,7 @@
 
 <script type="text/javascript">
 var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
-var template_url = '<?php bloginfo("template_url"); ?>';
+var template_url = '<?php bloginfo('stylesheet_directory'); ?>';
 <?php
 $lightbox = '';
 if(current_theme_supports('lightbox')){

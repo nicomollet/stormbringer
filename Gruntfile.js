@@ -32,7 +32,7 @@ module.exports = function(grunt) {
           'js/common.js',   // Common
           'js/bootstrap-modalgallery.js',   // Bootstrap Modal Gallery
           'js/bootstrap-modalopen.js',   // Bootstrap Modal
-          'js/app.js',   // Custom JS
+          'js/application.js',   // Custom JS
         ],
         dest: 'js/production.js',
       }

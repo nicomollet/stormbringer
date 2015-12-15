@@ -76,7 +76,7 @@ function stormbringer_js_footer() {
 				), null, true );
 		}
 		wp_enqueue_script( 'common.js', get_template_directory_uri() . '/js/common.js', array( 'jquery' ), null, true );
-		wp_enqueue_script( 'app.js', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), null, true );
+		wp_enqueue_script( 'application.js', get_stylesheet_directory_uri() . '/js/application.js', array( 'jquery' ), null, true );
 	}
 
 	if ( get_theme_support( 'gruntassets' )[0] != '' ) {
@@ -89,7 +89,7 @@ function stormbringer_js_footer() {
 	}
 
 	if ( $preprocessor == 'scss' ) {
-		wp_enqueue_script( 'production.min.js', get_template_directory_uri() . '/'.$jsfile, array( 'jquery' ), null, true );
+		wp_enqueue_script( 'production.min.js', get_stylesheet_directory_uri() . '/'.$jsfile, array( 'jquery' ), null, true );
 	}
 
 
