@@ -28,8 +28,8 @@ function stormbringer_preprocessor() {
 				$to_cache              = array( STYLESHEETPATH . '/less/application.less' => '' );
 				Less_Cache::$cache_dir = STYLESHEETPATH . '/css/';
 				$css_file_name         = Less_Cache::Get( $to_cache );
-				wp_register_style( 'stormbringer-app',  get_stylesheet_directory_uri() . '/'.$cssfile, array(), null, null );
-				wp_enqueue_style( 'stormbringer-app' );
+				wp_register_style( 'theme',  get_stylesheet_directory_uri() . '/'.$cssfile, array(), null, null );
+				wp_enqueue_style( 'theme' );
 			}
 
 		}
@@ -46,11 +46,11 @@ function stormbringer_preprocessor() {
 					echo '<script src="' . $livereloadurl . '/livereload.js"></script>' . "\n";
 
 				}
-				wp_register_style( 'stormbringer-app', get_stylesheet_directory_uri() . '/css/application.css', array(), null, null );
-				wp_enqueue_style( 'stormbringer-app' );
+				wp_register_style( 'theme', get_stylesheet_directory_uri() . '/css/application.css', array(), null, null );
+				wp_enqueue_style( 'theme' );
 			} else {
-				wp_register_style( 'stormbringer-app', get_stylesheet_directory_uri() . '/'.$cssfile, array(), null, null );
-				wp_enqueue_style( 'stormbringer-app' );
+				wp_register_style( 'theme', get_stylesheet_directory_uri() . '/'.$cssfile, array(), null, null );
+				wp_enqueue_style( 'theme' );
 			}
 		}
 	}

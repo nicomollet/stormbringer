@@ -27,7 +27,7 @@ function stormbringer_staging_noindex() {
 }
 
 // Favicon in head
-function favicon() {
+function stormbringer_favicon() {
 
 	$themecolor = '';
 	$tilecolor = '';
@@ -35,33 +35,12 @@ function favicon() {
 	$applicationname = '';
 	$faviconfolder = 'root';
 
-	if(current_theme_supports('themecolor')){
-		if(get_theme_support('themecolor')[0]){
-			$themecolor = get_theme_support('themecolor')[0];
-		}
-	}
+	$themecolor = get_theme_mod('favicon_theme_color');
+	$maskcolor = get_theme_mod('favicon_mask_color');
+	$tilecolor = get_theme_mod('favicon_tile_color');
+	$applicationname = get_theme_mod('favicon_appname');
+	$faviconfolder = get_theme_mod('favicon_folder')['folder'];
 
-	if(current_theme_supports('tilecolor')){
-		if(get_theme_support('tilecolor')[0]){
-			$tilecolor = get_theme_support('tilecolor')[0];
-		}
-	}
-	if(current_theme_supports('maskcolor')){
-		if(get_theme_support('maskcolor')[0]){
-			$maskcolor = get_theme_support('maskcolor')[0];
-		}
-	}
-	if(current_theme_supports('applicationname')){
-		if(get_theme_support('applicationname')[0]){
-			$applicationname = get_theme_support('applicationname')[0];
-		}
-	}
-
-	if(current_theme_supports('faviconfolder')){
-		if(get_theme_support('faviconfolder')[0]){
-			$faviconfolder = get_theme_support('faviconfolder')[0];
-		}
-	}
 	if($faviconfolder == 'theme') :
 		$function = 'get_template_directory_uri';
 		$folder = '/img/favicon';
@@ -97,7 +76,7 @@ function favicon() {
 
 }
 
-add_action( 'wp_head', 'favicon', 100 );
+add_action( 'wp_head', 'stormbringer_favicon', 100 );
 
 
 // remove rel=category tag
@@ -246,11 +225,11 @@ add_filter( 'embed_defaults', 'change_embed_size' );
 // -------------------------------------------------------
 // Other
 
-function meta() {
+function stormbringer_viewport() {
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
 }
 
-add_action( 'wp_head', 'meta', 1 );
+add_action( 'wp_head', 'stormbringer_viewport', 1 );
 
 function ietweaks() {
 	echo '<meta http-equiv="imagetoolbar" content="no">' . "\n";
@@ -355,6 +334,20 @@ function bootstrap_clearfix( &$counter_posts = 0, $args = array(), $element = 'd
 
 function stormbringer_footer() {
 
+	echo '<div class="modal fade do-not-print" id="modal-default" tabindex="-1" aria-hidden="true" role="dialog">' . "\n";
+	echo '<div class="modal-dialog">' . "\n";
+	echo '<div class="modal-content">' . "\n";
+	echo '<div class="modal-header">' . "\n";
+	echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' . "\n";
+	echo '<h4 class="modal-title"></h4>' . "\n";
+	echo '</div>' . "\n";
+	echo '<div class="modal-body in-frame">' . "\n";
+	echo '<iframe id="modal-frame" name="modal-frame" src="about:blank" sandbox="allow-same-origin allow-forms allow-popups"></iframe>' . "\n";
+	echo '</div>' . "\n";
+	echo '</div>' . "\n";
+	echo '</div>' . "\n";
+	echo '</div>' . "\n";
+
 	echo '<script type="text/javascript">' . "\n";
 	echo 'var ajaxurl = "'.admin_url('admin-ajax.php').'";'. "\n";
 	echo 'var template_url = "'. get_bloginfo('stylesheet_directory').'";'. "\n";
@@ -366,3 +359,12 @@ function stormbringer_footer() {
 	echo '</script>' . "\n";
 }
 add_action( 'wp_footer', 'stormbringer_footer', -100 );
+
+function stormbringer_inframe() {
+	echo '<script type="text/javascript">' . "\n";
+	echo 'if(self !== top){' . "\n";
+	echo 'document.documentElement.className ="in-frame";' . "\n";
+	echo '}' . "\n";
+	echo '</script>' . "\n";
+}
+add_action( 'wp_head', 'stormbringer_inframe', 100 );

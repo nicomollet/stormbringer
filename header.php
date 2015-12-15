@@ -29,12 +29,6 @@ global $current_user;
 global $user_level;
 get_currentuserinfo();
 ?>
-<script type="text/javascript">
-// add in-frame class
-if(self !== top){
-  document.documentElement.className ='in-frame';
-}
-</script>
 </head>
 
 <body <?php body_class(''); ?> data-grid-framework="bo" data-grid-color="yellow" data-grid-opacity="0.2" data-grid-zindex="-30" data-grid-nbcols="12">

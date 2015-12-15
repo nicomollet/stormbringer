@@ -86,7 +86,7 @@ function stormbringer_js_footer() {
 	}
 
 	if ( $preprocessor == 'scss' ) {
-		wp_enqueue_script( 'production.min.js', get_stylesheet_directory_uri() . '/'.$jsfile, array( 'jquery' ), null, true );
+		wp_enqueue_script( 'theme', get_stylesheet_directory_uri() . '/'.$jsfile, array( 'jquery' ), null, true );
 	}
 
 

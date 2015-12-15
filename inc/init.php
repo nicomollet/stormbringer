@@ -14,11 +14,15 @@ function stormbringer_support() {
 	locate_template( 'inc/front/thumbnails.php', true );       // Thumbnails for Bootstrap
 	locate_template( 'inc/admin/profile.php', true );          // Profile fields
 
+
+	locate_template( 'inc/admin/customizer.php', true );     // Customizer
+
 	// Admin only
 	if ( is_admin() ) {
 		locate_template( 'inc/admin/cleanup.php', true );        // Clean admin
 		locate_template( 'inc/admin/htmleditor.php', true );     // HTML editor Bootstrap styles
 		locate_template( 'inc/admin/htaccess.php', true );       // HTML5 Boilerplate htaccess for Apache
+
 	}
 
 	// Front only
