@@ -45,49 +45,44 @@ function stormbringer_js_footer() {
 			wp_enqueue_script( 'bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/js/bootstrap-select.min.js', array( 'bootstrap' ), null, true );
 		}
 
-		if (current_theme_supports('addthis') && get_theme_support('addthis')[0] != '' ) {
-			wp_enqueue_script( 'addthis', '//s7.addthis.com/js/300/addthis_widget.js#pubid=' . get_theme_support('addthis')[0] , array(), null, true );
+		$addthis_id = get_theme_mod('addthis_id');
+		if ($addthis_id ) {
+			wp_enqueue_script( 'addthis', '//s7.addthis.com/js/300/addthis_widget.js#pubid=' . $addthis_id , array(), null, true );
 		}
 
 	}
+
+
+	wp_enqueue_script( 'bootstrap-modalgallery', get_template_directory_uri() . '/js/bootstrap-modalgallery.js', array('bootstrap','jquery'), null, true );
+	wp_enqueue_script( 'bootstrap-modalopen', get_template_directory_uri() . '/js/bootstrap-modalopen.js', array('bootstrap','jquery'), null, true );
+	wp_enqueue_script( 'stormbringer-common', get_template_directory_uri() . '/js/common.js', array( 'jquery' ), null, true );
 
 	// Preprocessor
-	$preprocessor = 'less';
-	if(get_theme_support('preprocessor')[0] != ''){
-		$preprocessor = get_theme_support('preprocessor')[0];
-	}
-	$lightbox = '';
-	if(get_theme_support('lightbox')[0] != ''){
-		$lightbox = get_theme_support('lightbox')[0];
-	}
-	if ( $preprocessor == 'less' ) {
+	$preprocessor = 'scss';
+	$preprocessor = get_theme_mod('bootstrap_preprocessor');
 
-		if ( $lightbox === 'tbmodal' ) {
-			wp_enqueue_script( 'bootstrap-modalgallery', get_template_directory_uri() . '/js/bootstrap-modalgallery.js', array(
-					'bootstrap',
-					'jquery'
-				), null, true );
-			wp_enqueue_script( 'bootstrap-modalopen', get_template_directory_uri() . '/js/bootstrap-modalopen.js', array(
-					'bootstrap',
-					'jquery'
-				), null, true );
-		}
-		wp_enqueue_script( 'common.js', get_template_directory_uri() . '/js/common.js', array( 'jquery' ), null, true );
+	if ( $preprocessor == 'less' ) {
 		wp_enqueue_script( 'application.js', get_stylesheet_directory_uri() . '/js/application.js', array( 'jquery' ), null, true );
 	}
-
-	if ( get_theme_support( 'gruntassets' )[0] != '' ) {
-		$gruntassets = get_theme_support( 'gruntassets' )[0];
-
-		$jsfile = 'js/production.min.js';
-		if(isset($gruntassets[$jsfile])) {
-			$jsfile = $gruntassets[$jsfile];
-		}
-	}
-
 	if ( $preprocessor == 'scss' ) {
+
+		$grunt_assets = get_theme_mod('grunt_assets');
+
+		if ( current_user_can( 'administrator' ) || $_GET['scsscompile'] == '1' ) {
+			$jsfile = 'js/production.js';
+		}
+		else{
+			$jsfile = 'js/production.min.js';
+			if(isset($grunt_assets[$jsfile])) {
+				$jsfile = $grunt_assets[$jsfile];
+			}
+		}
+
 		wp_enqueue_script( 'theme', get_stylesheet_directory_uri() . '/'.$jsfile, array( 'jquery' ), null, true );
 	}
+
+
+
 
 
 
@@ -118,7 +113,6 @@ add_action( 'wp_head', 'stormbringer_ie8_js_header' );
 
 function stormbringer_css() {
 
-
 	if(current_theme_supports('libraries')) {
 		$libraries = get_theme_support('libraries')[0];
 
@@ -128,10 +122,6 @@ function stormbringer_css() {
 		}
 	}
 
-	$lightbox = '';
-	if(get_theme_support('lightbox')[0] != ''){
-		$lightbox = get_theme_support('lightbox')[0];
-	}
 }
 add_action( 'wp_enqueue_scripts', 'stormbringer_css', 100 );
 

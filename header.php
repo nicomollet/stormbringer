@@ -68,8 +68,7 @@ get_currentuserinfo();
 
 	        <?php
 	        // Theme My Login menu
-	        if(class_exists( 'Theme_My_Login') && current_theme_supports('thememylogin')) :
-		        $thememylogin_pageids = get_theme_support('thememylogin')[0];
+	        if(class_exists( 'Theme_My_Login')) :
 		        $current_user = wp_get_current_user();
 	        ?>
 	        <ul class="nav navbar-nav navbar-right navbar-account">

@@ -10,7 +10,6 @@ function stormbringer_support() {
 		add_theme_support( 'woocommerce' );
 	}
 
-	locate_template( 'inc/front/secure.php', true );           // Secure Wordpress
 	locate_template( 'inc/front/thumbnails.php', true );       // Thumbnails for Bootstrap
 	locate_template( 'inc/admin/profile.php', true );          // Profile fields
 
@@ -21,13 +20,10 @@ function stormbringer_support() {
 	if ( is_admin() ) {
 		locate_template( 'inc/admin/cleanup.php', true );        // Clean admin
 		locate_template( 'inc/admin/htmleditor.php', true );     // HTML editor Bootstrap styles
-		locate_template( 'inc/admin/htaccess.php', true );       // HTML5 Boilerplate htaccess for Apache
-
 	}
 
 	// Front only
 	if ( ! is_admin() ) {
-
 		locate_template( 'inc/front/gruntassets.php', true );    // Grunt Assets
 		locate_template( 'inc/front/preprocessor.php', true );   // Load Bootstrap LESS or CSS
 		locate_template( 'inc/front/libraries.php', true );      // JS & CSS libraries
@@ -36,12 +32,9 @@ function stormbringer_support() {
 		locate_template( 'inc/front/bodyclass.php', true );      // Body classes
 		locate_template( 'inc/front/comments.php', true );       // Comments function
 
-        if ( current_theme_supports('google-webfonts') && get_theme_support('google-webfonts')[0] != '' ) {        // Google Web fonts
-			locate_template( 'inc/front/googlewebfonts.php', true );
-		}
-        if ( current_theme_supports('typekit') && get_theme_support('typekit')[0] != '' ) {        // Typekit
-			locate_template( 'inc/front/typekit.php', true );
-		}
+		locate_template( 'inc/front/googlewebfonts.php', true );
+
+		locate_template( 'inc/front/typekit.php', true );
 
 		locate_template( 'inc/front/shortcodes.php', true );     // Shortcodes for Bootstrap: alert, badge, label, button, gallery
 	    //locate_template('inc/library/lessphp.php',true);      // Lessphp library
@@ -58,7 +51,6 @@ function stormbringer_support() {
 	if ( function_exists( 'icl_object_id' ) && ! is_admin() ) {// WPML switcher for Boostrap + cleanup styles
 		locate_template( 'inc/plugins/wpml.php', true );
 	}
-	//if ( class_exists( 'Theme_My_Login' ) && ! is_admin() && current_theme_supports('thememylogin') ) {// Theme My Login custom titles and custom pages
 	if ( class_exists( 'Theme_My_Login' ) ) {// Theme My Login custom titles and custom pages
 		locate_template( 'inc/plugins/thememylogin.php', true );
 	}

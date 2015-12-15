@@ -1,18 +1,10 @@
 <?php
 
 function stormbringer_preprocessor() {
-	$preprocessor = 'less';
-	if ( get_theme_support( 'preprocessor' )[0] != '' ) {
-		$preprocessor = get_theme_support( 'preprocessor' )[0];
-	}
-	if ( get_theme_support( 'gruntassets' )[0] != '' ) {
-		$gruntassets = get_theme_support( 'gruntassets' )[0];
 
-		$cssfile = 'css/application.min.css';
-		if(isset($gruntassets[$cssfile])) {
-			$cssfile = $gruntassets[$cssfile];
-		}
-	}
+	$preprocessor = 'scss';
+
+	$preprocessor = get_theme_mod('bootstrap_preprocessor');
 
 	if ( $preprocessor == 'less' ) {
 		if ( ! is_admin() ) {
@@ -28,7 +20,7 @@ function stormbringer_preprocessor() {
 				$to_cache              = array( STYLESHEETPATH . '/less/application.less' => '' );
 				Less_Cache::$cache_dir = STYLESHEETPATH . '/css/';
 				$css_file_name         = Less_Cache::Get( $to_cache );
-				wp_register_style( 'theme',  get_stylesheet_directory_uri() . '/'.$cssfile, array(), null, null );
+				wp_register_style( 'theme',  get_stylesheet_directory_uri() . '/css/application.css', array(), null, null );
 				wp_enqueue_style( 'theme' );
 			}
 

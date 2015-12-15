@@ -1,12 +1,14 @@
 <?php
 
-function stormbringer_google_typekit() {
+function stormbringer_typekit() {
 
-	if ( current_theme_supports('typekit') && get_theme_support('typekit')[0] != '' ) :
+	$typekit_id = get_theme_mod('typekit_id');
+
+	if ( $typekit_id ) :
 		echo "\n" . '<!-- Typekit -->' . "\n";
-        echo '<script type="text/javascript" src="//use.typekit.net/'.get_theme_support('typekit')[0].'.js"></script>' . "\n";
+        echo '<script type="text/javascript" src="//use.typekit.net/'.$typekit_id.'.js"></script>' . "\n";
         echo '<script type="text/javascript">try{Typekit.load();}catch(e){}</script>' . "\n";
 	endif;
 }
 
-add_action( 'wp_head', 'stormbringer_google_typekit', 30 );
+add_action( 'wp_head', 'stormbringer_typekit', 30 );

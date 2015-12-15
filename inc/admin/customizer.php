@@ -11,12 +11,13 @@ function stormbringer_customize_register( $wp_customize ) {
 
 
 
+	// Favicon *******************
 	$wp_customize->add_section( 'favicon', array(
 		'title'    => __( 'Favicon', 'stormbringer' ),
 		'priority' => 10,
 	) );
 
-	// Setting - Theme Color
+	// Theme Color
 	$wp_customize->add_setting(
 		'favicon_theme_color',
 		array(
@@ -25,8 +26,6 @@ function stormbringer_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
-
-	// Control - Theme Color
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control (
 			$wp_customize, 'favicon_theme_color',
@@ -39,7 +38,7 @@ function stormbringer_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Setting - Mask Color
+	// Mask Color
 	$wp_customize->add_setting(
 		'favicon_mask_color',
 		array(
@@ -48,8 +47,6 @@ function stormbringer_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
-
-	// Control - Mask Color
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control (
 			$wp_customize, 'favicon_mask_color',
@@ -62,7 +59,7 @@ function stormbringer_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Setting - Tile Color
+	// Tile Color
 	$wp_customize->add_setting(
 		'favicon_tile_color',
 		array(
@@ -71,8 +68,6 @@ function stormbringer_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
-
-	// Control - Tile Color
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control (
 			$wp_customize, 'favicon_tile_color',
@@ -85,19 +80,13 @@ function stormbringer_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Setting - Favicons folder
-	$wp_customize->add_setting('favicon_folder[folder]', array(
-		'default'        => 'root',
-		'capability'     => 'edit_theme_options',
-		//'type'           => 'option',
-	));
-
-	// Control - Tile Color
+	// Favicons folder
+	$wp_customize->add_setting('favicon_folder', ['default' => 'root']);
 	$wp_customize->add_control('favicon_folder', array(
 		'label'      => __('Folder', 'stormbringer'),
 		'section'    => 'favicon',
 		'description'    => __('Use http://realfavicongenerator.net to generate the favicons', 'stormbringer'),
-		'settings'   => 'favicon_folder[folder]',
+		'settings'   => 'favicon_folder',
 		'type'       => 'radio',
 		'choices'    => array(
 			'root' => __('Relative to the root folder /', 'stormbringer'),
@@ -105,61 +94,109 @@ function stormbringer_customize_register( $wp_customize ) {
 		),
 	));
 
-	// Setting - Copyright Message
+
+
+	// Misc ****************************
+	$wp_customize->add_section( 'misc', array(
+		'title'    => __( 'Misc.', 'stormbringer' ),
+		'priority' => 10,
+	) );
+
+	// Excerpt Length
 	$wp_customize->add_setting(
-		'favicon_appname',
+		'excerpt_length',
 		array(
-			'default'		=> get_bloginfo(),
+			'default'		=> '100',
 			'transport'		=> 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field'
 		)
 	);
-
-	// Control - Copyright Message
 	$wp_customize->add_control(
-		'favicon_appname',
+		'excerpt_length',
 		array(
-			'section'		=> 'favicon',
-			'label'			=> __( 'Application name', 'stormbringer' ),
+			'section'		=> 'misc',
+			'label'			=> __( 'Excerpt Length', 'stormbringer' ),
+			'type'			=> 'text'
+		)
+	);
+
+	// Google Fonts
+	$wp_customize->add_setting(
+		'google_fonts',
+		array(
+			'default'		=> '',
+			'transport'		=> 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field'
+		)
+	);
+	$wp_customize->add_control(
+		'google_fonts',
+		array(
+			'section'		=> 'misc',
+			'description' => 'Example: [\'Montserrat:400\',\'Dancing Script:400\']',
+			'label'			=> __( 'Google Fonts', 'stormbringer' ),
+			'type'			=> 'text'
+		)
+	);
+
+	// Typekit
+	$wp_customize->add_setting(
+		'typekit_id',
+		array(
+			'default'		=> '',
+			'transport'		=> 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field'
+		)
+	);
+	$wp_customize->add_control(
+		'typekit_id',
+		array(
+			'section'		=> 'misc',
+			'label'			=> __( 'Typekit ID', 'stormbringer' ),
+			'type'			=> 'text'
+		)
+	);
+
+	// Addthis
+	$wp_customize->add_setting(
+		'addthis_id',
+		array(
+			'default'		=> '',
+			'transport'		=> 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field'
+		)
+	);
+	$wp_customize->add_control(
+		'addthis_id',
+		array(
+			'section'		=> 'misc',
+			'label'			=> __( 'Addthis ID', 'stormbringer' ),
 			'type'			=> 'text'
 		)
 	);
 
 
 
-	/*------------------------------------------
-	# Theme Options
-	------------------------------------------*/
+	// Misc ****************************
+	$wp_customize->add_section( 'bootstrap', array(
+		'title'    => __( 'Bootstrap', 'stormbringer' ),
+		'priority' => 10,
+	) );
 
-	// Section
-	$wp_customize->add_section(
-		'stormbringer_theme_options',
-		array (
-			'title'			=> __( 'Theme Options', 'stormbringer' ),
-			'description'	=> __('More options.', 'stormbringer' ),
-			'priority'		=> 500
-		)
-	);
+	// Preprocessor
 
-	// Setting - Copyright Message
-	$wp_customize->add_setting(
-		'stormbringer_footer_message',
-		array(
-			'default'		=> __( 'Copyright 2015', 'stormbringer' ),
-			'transport'		=> 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field'
-		)
-	);
+	$wp_customize->add_setting('bootstrap_preprocessor', ['default' => 'scss']);
+	$wp_customize->add_control('bootstrap_preprocessor', array(
+		'label'      => __('Preprocessor', 'stormbringer'),
+		'section'    => 'bootstrap',
+		'settings'   => 'bootstrap_preprocessor',
+		'type'       => 'radio',
+		'choices'    => array(
+			'scss' => __('Scss', 'stormbringer'),
+			'less' => __('Less', 'stormbringer'),
+		),
+	));
 
-	// Control - Copyright Message
-	$wp_customize->add_control(
-		'stormbringer_footer_message',
-		array(
-			'section'		=> 'stormbringer_theme_options',
-			'label'			=> __( 'Footer Message', 'stormbringer' ),
-			'type'			=> 'text'
-		)
-	);
 
 }
 add_action( 'customize_register', 'stormbringer_customize_register' );

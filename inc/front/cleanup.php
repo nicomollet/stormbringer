@@ -39,7 +39,7 @@ function stormbringer_favicon() {
 	$maskcolor = get_theme_mod('favicon_mask_color');
 	$tilecolor = get_theme_mod('favicon_tile_color');
 	$applicationname = get_theme_mod('favicon_appname');
-	$faviconfolder = get_theme_mod('favicon_folder')['folder'];
+	$faviconfolder = get_theme_mod('favicon_folder');
 
 	if($faviconfolder == 'theme') :
 		$function = 'get_template_directory_uri';
@@ -103,13 +103,9 @@ function stormbringer_remove_recent_comments_style() {
  * Excerpt length
  */
 function stormbringer_excerpt_length( $length ) {
-	$excerptlength = 150;
-	if(current_theme_supports('excerpt-length')){
-		if(get_theme_support('excerpt-length')[0]){
-			$excerptlength = get_theme_support('excerpt-length')[0];
-		}
-	}
-	return $excerptlength;
+	$excerpt_length = 100;
+	$excerpt_length = get_theme_mod('excerpt_length');
+	return $excerpt_length;
 }
 
 
@@ -351,11 +347,6 @@ function stormbringer_footer() {
 	echo '<script type="text/javascript">' . "\n";
 	echo 'var ajaxurl = "'.admin_url('admin-ajax.php').'";'. "\n";
 	echo 'var template_url = "'. get_bloginfo('stylesheet_directory').'";'. "\n";
-	$lightbox = '';
-	if(current_theme_supports('lightbox')){
-		$lightbox = get_theme_support('lightbox')[0];
-	}
-	echo 'var lightbox = "'.$lightbox.'";' . "\n";
 	echo '</script>' . "\n";
 }
 add_action( 'wp_footer', 'stormbringer_footer', -100 );
