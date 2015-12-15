@@ -3,6 +3,11 @@
 * EULA cookie consent
 * Analytics cookie consent
 
+### 0.2.2: December 18th, 2015
+* Refactorization, for child theme compatibility
+* Removed Fancybox
+* Upgrade Boostrap to v3.3.6
+
 ### 0.2.1: October 26th, 2015
 * Grunt generated files versioning: css and js files now contain datetime in the filename
 
