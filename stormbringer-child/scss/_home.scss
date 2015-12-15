@@ -1,0 +1,5 @@
+.home{
+  #content{
+    @include make-md-column(12);
+  }
+}

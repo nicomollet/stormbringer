@@ -1,0 +1,19 @@
+{
+  "name": "stormbinger",
+  "version": "0.2.1",
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/nicomollet/stormbringer.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-assets-versioning": "^1.0.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-shell": "^1.1.2"
+  }
+}

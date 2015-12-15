@@ -180,7 +180,7 @@ function stormbringer_customize_register( $wp_customize ) {
 	// Misc ****************************
 	$wp_customize->add_section( 'bootstrap', array(
 		'title'    => __( 'Bootstrap', 'stormbringer' ),
-		'priority' => 10,
+		'priority' => 0,
 	) );
 
 	// Preprocessor

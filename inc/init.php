@@ -25,8 +25,8 @@ function stormbringer_support() {
 	// Front only
 	if ( ! is_admin() ) {
 		locate_template( 'inc/front/gruntassets.php', true );    // Grunt Assets
-		locate_template( 'inc/front/preprocessor.php', true );   // Load Bootstrap LESS or CSS
-		locate_template( 'inc/front/libraries.php', true );      // JS & CSS libraries
+		locate_template( 'inc/front/styles.php', true );         // Load CSS
+		locate_template( 'inc/front/scripts.php', true );        // Load BJS
 		locate_template( 'inc/front/carousel.php', true );       // Load Carousel shortcode
 		locate_template( 'inc/front/cleanup.php', true );        // Cleanup frontend
 		locate_template( 'inc/front/bodyclass.php', true );      // Body classes
@@ -35,6 +35,7 @@ function stormbringer_support() {
 		locate_template( 'inc/front/googlewebfonts.php', true );
 
 		locate_template( 'inc/front/typekit.php', true );
+		locate_template( 'inc/front/addthis.php', true );
 
 		locate_template( 'inc/front/shortcodes.php', true );     // Shortcodes for Bootstrap: alert, badge, label, button, gallery
 	    //locate_template('inc/library/lessphp.php',true);      // Lessphp library

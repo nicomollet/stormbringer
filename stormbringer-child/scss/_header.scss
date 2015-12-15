@@ -1,0 +1,47 @@
+
+body{
+  position: relative;
+  padding-top: 80px;
+}
+
+body.home{
+  padding-top: 50px;
+}
+
+#wrapper{
+  //@extend .container;
+}
+#main, #footer, #logo{
+  @extend .container;
+}
+
+.main-inner{
+  @include make-row;
+}
+
+#content{
+  @include make-md-column(9);
+}
+#sidebar{
+  @include make-md-column(3);
+}
+
+
+
+
+#navigation{
+  @extend .navbar;
+  @extend .navbar-inverse;
+  @extend .navbar-fixed-top;
+
+  .admin-bar &{
+    margin-top: 32px;
+  }
+  box-shadow: 0 1px 0 rgba(255,255,255,.1);
+  border-radius: 0;
+  .navbar-brand{margin-left: -15px;}
+}
+.navigation-inner{
+  @extend .container;
+}
+
