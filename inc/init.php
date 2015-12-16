@@ -20,6 +20,7 @@ function stormbringer_support() {
 	if ( is_admin() ) {
 		locate_template( 'inc/admin/cleanup.php', true );        // Clean admin
 		locate_template( 'inc/admin/htmleditor.php', true );     // HTML editor Bootstrap styles
+		locate_template( 'inc/admin/humility.php', true );     // HTML editor Bootstrap styles
 	}
 
 	// Front only
@@ -39,7 +40,9 @@ function stormbringer_support() {
 
 		locate_template( 'inc/front/shortcodes.php', true );     // Shortcodes for Bootstrap: alert, badge, label, button, gallery
 	    //locate_template('inc/library/lessphp.php',true);      // Lessphp library
-		locate_template( 'inc/library/lessphp-oyejorge.php', true );      // Lessphp-Oyejorge library
+		$preprocessor = get_theme_mod('bootstrap_preprocessor');
+		if($preprocessor == 'less')locate_template( 'inc/library/lessphp-oyejorge.php', true );      // Lessphp-Oyejorge library
+
 		locate_template( 'inc/front/menu.php', true );           // Menu walker for Bootstrap nav
 		locate_template( 'inc/front/widgets.php', true );        // Widgets cleanup
 

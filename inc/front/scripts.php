@@ -112,3 +112,35 @@ function stormbringer_ie8_js_header() {
 add_action( 'wp_head', 'stormbringer_ie8_js_header' );
 
 
+
+function stormbringer_footer() {
+
+	echo '<div class="modal fade do-not-print" id="modal-default" tabindex="-1" aria-hidden="true" role="dialog">' . "\n";
+	echo '<div class="modal-dialog">' . "\n";
+	echo '<div class="modal-content">' . "\n";
+	echo '<div class="modal-header">' . "\n";
+	echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' . "\n";
+	echo '<h4 class="modal-title"></h4>' . "\n";
+	echo '</div>' . "\n";
+	echo '<div class="modal-body in-frame">' . "\n";
+	echo '<iframe id="modal-frame" name="modal-frame" src="about:blank" sandbox="allow-same-origin allow-forms allow-popups"></iframe>' . "\n";
+	echo '</div>' . "\n";
+	echo '</div>' . "\n";
+	echo '</div>' . "\n";
+	echo '</div>' . "\n";
+
+	echo '<script type="text/javascript">' . "\n";
+	echo 'var ajaxurl = "'.admin_url('admin-ajax.php').'";'. "\n";
+	echo 'var template_url = "'. get_bloginfo('stylesheet_directory').'";'. "\n";
+	echo '</script>' . "\n";
+}
+add_action( 'wp_footer', 'stormbringer_footer', -100 );
+
+function stormbringer_inframe() {
+	echo '<script type="text/javascript">' . "\n";
+	echo 'if(self !== top){' . "\n";
+	echo 'document.documentElement.className ="in-frame";' . "\n";
+	echo '}' . "\n";
+	echo '</script>' . "\n";
+}
+add_action( 'wp_head', 'stormbringer_inframe', 100 );
