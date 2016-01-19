@@ -1,8 +1,6 @@
 // Bootstrap Core variables and mixins
-@import "../../stormbringer/scss/bootstrap/variables";
-$icon-font-path: '../../stormbringer/fonts/';
-
 @import "variables";
+@import "../../stormbringer/scss/bootstrap/variables";
 
 @import "../../stormbringer/scss/bootstrap/mixins";
 
@@ -71,3 +69,6 @@ $icon-font-path: '../../stormbringer/fonts/';
 @import "home";
 @import "content";
 @import "footer";
+
+
+

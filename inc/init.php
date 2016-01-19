@@ -12,15 +12,13 @@ function stormbringer_support() {
 
 	locate_template( 'inc/front/thumbnails.php', true );       // Thumbnails for Bootstrap
 	locate_template( 'inc/admin/profile.php', true );          // Profile fields
-
-
-	locate_template( 'inc/admin/customizer.php', true );     // Customizer
+	locate_template( 'inc/admin/customizer.php', true );       // Customizer
 
 	// Admin only
 	if ( is_admin() ) {
 		locate_template( 'inc/admin/cleanup.php', true );        // Clean admin
 		locate_template( 'inc/admin/htmleditor.php', true );     // HTML editor Bootstrap styles
-		locate_template( 'inc/admin/humility.php', true );     // HTML editor Bootstrap styles
+		locate_template( 'inc/admin/humility.php', true );       // Menu Humility: reorders admin menus
 	}
 
 	// Front only
@@ -39,9 +37,10 @@ function stormbringer_support() {
 		locate_template( 'inc/front/addthis.php', true );
 
 		locate_template( 'inc/front/shortcodes.php', true );     // Shortcodes for Bootstrap: alert, badge, label, button, gallery
-	    //locate_template('inc/library/lessphp.php',true);      // Lessphp library
 		$preprocessor = get_theme_mod('bootstrap_preprocessor');
-		if($preprocessor == 'less')locate_template( 'inc/library/lessphp-oyejorge.php', true );      // Lessphp-Oyejorge library
+		if($preprocessor == 'less'){
+			locate_template( 'inc/library/lessphp-oyejorge.php', true ); // Lessphp-Oyejorge library
+		}
 
 		locate_template( 'inc/front/menu.php', true );           // Menu walker for Bootstrap nav
 		locate_template( 'inc/front/widgets.php', true );        // Widgets cleanup

@@ -83,22 +83,26 @@ figure {margin: 0}
   clear: left;
 }
 
-.alignright{
-  margin-left: 20px;
-  float: right;
-  clear: right;
-}
 
-.aligncenter{
-  display: block;
-  margin: 0 auto;
-}
 
 figure{
 
   &.aligncenter{
     display: table;
     text-align: center;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    &.alignright{
+      margin-left: 20px;
+      float: right;
+      clear: right;
+    }
+
+    &.aligncenter{
+      display: block;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -122,5 +126,15 @@ figure{
     position:inherit;
     left:0;
     padding: 0;
+  }
+  img{
+
+  }
+}
+
+.wp-caption{
+  width: auto !important;
+  img{
+    max-width: 100%;
   }
 }
