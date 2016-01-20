@@ -39,8 +39,6 @@ add_action( 'wp_enqueue_scripts', 'stormbringer_js_theme', 300 );
 
 function stormbringer_js_libraries_footer() {
 
-
-	print_r(get_theme_mods());
 	if(current_theme_supports('libraries')) {
 		$libraries = get_theme_support('libraries')[0];
 
@@ -78,6 +76,10 @@ function stormbringer_js_libraries_footer() {
 
 		if ( @$libraries['jquery-cookie'] && get_theme_mod( 'libraries_jquery-cookie', true ) ) {
 			wp_enqueue_script('jquery-cookie','//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/'.$libraries['jquery-cookie'].'/jquery.cookie.min.js', array('jquery'), null, true);
+		}
+
+		if ( @$libraries['jquery-lazyload'] && get_theme_mod( 'libraries_jquery-lazyload', true ) ) {
+			wp_enqueue_script('jquery-lazyload','//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/'.$libraries['jquery-lazyload'].'/jquery.lazyload.min.js', array('jquery'), null, true);
 		}
 
 		if(@$libraries['bootstrap-select'] && get_theme_mod('libraries_bootstrap-select', true)){

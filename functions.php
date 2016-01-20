@@ -33,5 +33,6 @@ add_theme_support('libraries',
 		'jquery-mousewheel' => '3.1.12',
 		'jquery-validate' => '1.13.1',
 		'jquery-cookie' => '1.4.1',
+		'jquery-lazyload' => '1.9.1',
 	)
 );
