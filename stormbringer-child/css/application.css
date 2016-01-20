@@ -7609,6 +7609,10 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
   cursor: default;
 }
 
+.bootstrap-select {
+  width: 100%;
+}
+
 .form-horizontal .control-label {
   position: relative;
   min-height: 1px;

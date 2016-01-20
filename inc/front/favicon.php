@@ -15,7 +15,7 @@ function stormbringer_favicon() {
 	$faviconfolder = get_theme_mod('favicon_folder');
 
 	if($faviconfolder == 'theme') :
-		$function = 'get_template_directory_uri';
+		$function = 'get_stylesheet_directory_uri';
 		$folder = '/img/favicon';
 	else :
 		$function = 'site_url';
@@ -23,6 +23,7 @@ function stormbringer_favicon() {
 	endif;
 
 	echo "\n" . '<!-- Favicon -->' . "\n";
+	echo '<link rel="apple-touch-icon" sizes="57x57" href="' . $function().$folder. '/apple-touch-icon-57x57.png'.'"/>' . "\n";
 	echo '<link rel="apple-touch-icon" sizes="57x57" href="' . $function().$folder. '/apple-touch-icon-57x57.png'.'"/>' . "\n";
 	echo '<link rel="apple-touch-icon" sizes="60x60" href="' . $function().$folder. '/apple-touch-icon-60x60.png'.'"/>' . "\n";
 	echo '<link rel="apple-touch-icon" sizes="72x72" href="' . $function().$folder. '/apple-touch-icon-72x72.png'.'"/>' . "\n";

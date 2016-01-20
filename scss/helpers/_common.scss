@@ -194,6 +194,9 @@ nav.pagination {
   }
 }
 
+.bootstrap-select{
+  max-width: 100%;
+}
 
 // Mixin for background-size:cover
 @mixin background-size-cover() {

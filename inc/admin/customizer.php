@@ -90,7 +90,7 @@ function stormbringer_customize_register( $wp_customize ) {
 		'type'       => 'radio',
 		'choices'    => array(
 			'root' => __('Relative to the root folder /', 'stormbringer'),
-			'theme' => __('Relative to the theme folder /wp-content/themes/themename/img/favicon/', 'stormbringer'),
+			'theme' => __('Relative to the theme folder', 'stormbringer').': ' .  get_stylesheet_directory_uri(  ) . '/img/favicon/',
 		),
 	));
 
