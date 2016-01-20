@@ -4,7 +4,7 @@ function stormbringer_google_webfonts() {
 
 	$google_fonts = get_theme_mod( 'google_fonts' );
 
-	if ( $google_fonts ) :
+	if ( $google_fonts != '' ) :
 		echo "\n" . '<!-- Google Webfonts -->' . "\n";
 		echo '<script type="text/javascript">' . "\n";
 		echo "WebFontConfig = {google:{families:" . $google_fonts . "}};" . "\n";

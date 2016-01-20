@@ -3,9 +3,7 @@
 
 function stormbringer_preprocessor() {
 
-	$preprocessor = get_theme_mod('bootstrap_preprocessor');
-	if($preprocessor == '')
-		$preprocessor = 'scss';
+	$preprocessor = get_theme_mod('bootstrap_preprocessor', true);
 
 	$cssfile = 'css/application.css';
 
@@ -69,7 +67,7 @@ function stormbringer_css() {
 	if(current_theme_supports('libraries')) {
 		$libraries = get_theme_support('libraries')[0];
 
-		if($libraries['bootstrap-select']){
+		if(@$libraries['bootstrap-select'] && get_theme_mod('libraries_bootstrap-select', true)){
 			wp_register_style( 'bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/css/bootstrap-select.min.css', array(), null, 'screen,projection' );
 			wp_enqueue_style( 'bootstrap-select' );
 		}

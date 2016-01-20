@@ -95,6 +95,38 @@ function stormbringer_customize_register( $wp_customize ) {
 	));
 
 
+	// Libraries ****************************
+	$wp_customize->add_section( 'libraries', array(
+		'title'    => __( 'Libraries', 'stormbringer' ),
+		'priority' => 10,
+	) );
+
+	// library
+	if(current_theme_supports('libraries')) :
+		$libraries = get_theme_support('libraries')[0];
+
+		print_r($libraries);
+		foreach($libraries as $librarie_name => $librarie_key) :
+			$wp_customize->add_setting(
+				'libraries_'.$librarie_name.'',
+				array(
+					'default'		=> '1',
+					//'transport'		=> 'postMessage',
+					//'sanitize_callback' => 'sanitize_text_field'
+				)
+			);
+			$wp_customize->add_control(
+				'libraries_'.$librarie_name.'',
+				array(
+					'section'		=> 'libraries',
+					'default'		=> '1',
+					'label'			=> $librarie_name,
+					'type'			=> 'checkbox',
+					'std' => '1'
+				)
+			);
+		endforeach;
+	endif;
 
 	// Misc ****************************
 	$wp_customize->add_section( 'misc', array(

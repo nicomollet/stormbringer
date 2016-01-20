@@ -8,12 +8,12 @@ function stormbringer_js_theme() {
 	wp_enqueue_script( 'stormbringer-common', get_template_directory_uri() . '/js/common.js', array( 'jquery' ), null, true );
 
 	// Preprocessor
-	$preprocessor = 'scss';
-	$preprocessor = get_theme_mod('bootstrap_preprocessor');
+	$preprocessor = get_theme_mod('bootstrap_preprocessor', true);
 
 	if ( $preprocessor == 'less' ) {
 		wp_enqueue_script( 'application.js', get_stylesheet_directory_uri() . '/js/application.js', array( 'jquery' ), null, true );
 	}
+
 	if ( $preprocessor == 'scss' ) {
 
 		$grunt_assets = get_theme_mod('grunt_assets');
@@ -39,50 +39,54 @@ add_action( 'wp_enqueue_scripts', 'stormbringer_js_theme', 300 );
 
 function stormbringer_js_libraries_footer() {
 
+
+	print_r(get_theme_mods());
 	if(current_theme_supports('libraries')) {
 		$libraries = get_theme_support('libraries')[0];
 
 		if ( !is_admin() ) {
 			wp_deregister_script( 'jquery' );
-			if($libraries['jquery']){
+			if ( @$libraries['jquery'] && get_theme_mod( 'libraries_jquery', true ) ) {
 				wp_enqueue_script( 'jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/'.$libraries['jquery'].'/jquery.min.js', array(), null, true );
 			}
 		}
 
-		if($libraries['modernizr']){
+		if ( @$libraries['modernizr'] && get_theme_mod( 'libraries_modernizr', true ) ) {
 			wp_enqueue_script( 'modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/' . $libraries['modernizr'] . '/modernizr.min.js', array(), null, true );
 		}
 
-		if($libraries['bootstrap']){
+		if(@$libraries['bootstrap'] && get_theme_mod('libraries_bootstrap', true)){
 			wp_enqueue_script( 'bootstrap', '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/'.$libraries['bootstrap'].'/js/bootstrap.min.js', array(), null, true );
 		}
 
 		// Optionnal libraries
-		if($libraries['jquery-cycle']){
+		if(@$libraries['jquery-cycle'] && get_theme_mod('libraries_jquery-cycle', true)){
 			wp_enqueue_script('jquery-cycle','//cdnjs.cloudflare.com/ajax/libs/jquery.cycle/'.$libraries['jquery-cycle'].'/jquery.cycle.all.min.js', array('jquery'), null, true);
 		}
 
-		if($libraries['jquery-easing']){
+		if(@$libraries['jquery-easing'] && get_theme_mod('libraries_jquery-easing', true)){
 			wp_enqueue_script('jquery-easing','//cdnjs.cloudflare.com/ajax/libs/jquery-easing/'.$libraries['jquery-easing'].'/jquery.easing.min.js', array('jquery'), null, true);
 		}
 
-		if($libraries['jquery-mousewheel']){
+		if(@$libraries['jquery-mousewheel'] && get_theme_mod('libraries_jquery-mousewheel', true) ){
 			wp_enqueue_script('jquery-mousewheel','//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/'.$libraries['jquery-mousewheel'].'/jquery.mousewheel.min.js', array('jquery'), null, true);
 		}
 
-		if($libraries['jquery-validate']){
+		if ( @$libraries['jquery-validate'] && get_theme_mod( 'libraries_jquery-validate' , true) ) {
 			wp_enqueue_script('jquery-validate','//cdnjs.cloudflare.com/ajax/libs/jquery-validate/'.$libraries['jquery-validate'].'/jquery.validate.min.js', array('jquery'), null, true);
 		}
 
-		if($libraries['jquery-cookie']){
+		if ( @$libraries['jquery-cookie'] && get_theme_mod( 'libraries_jquery-cookie', true ) ) {
 			wp_enqueue_script('jquery-cookie','//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/'.$libraries['jquery-cookie'].'/jquery.cookie.min.js', array('jquery'), null, true);
 		}
 
-		if($libraries['bootstrap-select']){
+		if(@$libraries['bootstrap-select'] && get_theme_mod('libraries_bootstrap-select', true)){
 			wp_enqueue_script( 'bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/js/bootstrap-select.min.js', array( 'bootstrap' ), null, true );
 		}
 
-
+		if(@$libraries['bootstrap-datepicker'] && get_theme_mod('libraries_bootstrap-datepicker', true) ){
+			wp_enqueue_script( 'bootstrap-datepicker', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/js/bootstrap-datepicker.min.js', array( 'bootstrap' ), null, true );
+		}
 
 	}
 }
@@ -96,13 +100,13 @@ function stormbringer_ie8_js_header() {
 	if(current_theme_supports('libraries')) {
 		$libraries = get_theme_support('libraries')[0];
 		echo '<!--[if lt IE 9]>'."\n";
-		if($libraries['html5shiv']) {
+		if(@$libraries['html5shiv'] && get_theme_mod('libraries_html5shiv', true) ) {
 			echo '<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/' . $libraries['html5shiv'] . '/html5shiv.min.js"></script>'."\n";
 		}
-		if($libraries['respond']){
+		if(@$libraries['respond'] && get_theme_mod('libraries_respond', true)){
 			echo '<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/'.$libraries['respond'].'/respond.js"></script>'."\n";
 		}
-		if($libraries['selectivizr']){
+		if(@$libraries['selectivizr'] && get_theme_mod('libraries_selectivizr', true)){
 			echo '<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/'.$libraries['selectivizr'].'/selectivizr-min.js"></script>'."\n";
 		}
 		echo '<![endif]-->'."\n";

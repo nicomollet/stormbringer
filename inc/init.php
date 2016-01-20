@@ -36,7 +36,7 @@ function stormbringer_support() {
 		locate_template( 'inc/front/addthis.php', true );
 
 		locate_template( 'inc/front/shortcodes.php', true );     // Shortcodes for Bootstrap: alert, badge, label, button, gallery
-		$preprocessor = get_theme_mod('bootstrap_preprocessor');
+		$preprocessor = get_theme_mod('bootstrap_preprocessor', true);
 		if($preprocessor == 'less'){
 			locate_template( 'inc/library/lessphp-oyejorge.php', true ); // Lessphp-Oyejorge library
 		}

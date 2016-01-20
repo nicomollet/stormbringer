@@ -38,7 +38,6 @@ function stormbringer_favicon() {
 	echo '<link rel="icon" type="image/png" href="' . $function().$folder. '/favicon-96x96.png'.'" sizes="96x96"/>' . "\n";
 	echo '<link rel="icon" type="image/png" href="' . $function().$folder. '/favicon-16x16.png'.'" sizes="16x16"/>' . "\n";
 	echo '<link rel="manifest" href="' . $function().$folder. '/manifest.json'.'"/>' . "\n";
-	echo '<link rel="mask-icon" href="' . $function().$folder. '/safari-pinned-tab.svg'.'" color="'.$tilecolor.'"/>' . "\n";
 	echo '<meta name="msapplication-TileImage" content="' . $function().$folder. '/mstile-144x144.png'.'"/>' . "\n";
 	echo '<meta name="msapplication-config" content="' . $function().$folder. '/browserconfig.xml'.'"/>' . "\n";
 
