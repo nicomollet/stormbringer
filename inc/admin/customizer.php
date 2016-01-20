@@ -105,7 +105,6 @@ function stormbringer_customize_register( $wp_customize ) {
 	if(current_theme_supports('libraries')) :
 		$libraries = get_theme_support('libraries')[0];
 
-		print_r($libraries);
 		foreach($libraries as $librarie_name => $librarie_key) :
 			$wp_customize->add_setting(
 				'libraries_'.$librarie_name.'',
@@ -216,7 +215,6 @@ function stormbringer_customize_register( $wp_customize ) {
 	) );
 
 	// Preprocessor
-
 	$wp_customize->add_setting('bootstrap_preprocessor', ['default' => 'scss']);
 	$wp_customize->add_control('bootstrap_preprocessor', array(
 		'label'      => __('Preprocessor', 'stormbringer'),

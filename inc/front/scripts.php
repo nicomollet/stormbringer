@@ -10,11 +10,11 @@ function stormbringer_js_theme() {
 	// Preprocessor
 	$preprocessor = get_theme_mod('bootstrap_preprocessor', true);
 
-	if ( $preprocessor == 'less' ) {
+	if ( $preprocessor === 'less' ) {
 		wp_enqueue_script( 'application.js', get_stylesheet_directory_uri() . '/js/application.js', array( 'jquery' ), null, true );
 	}
 
-	if ( $preprocessor == 'scss' ) {
+	if ( $preprocessor === 'scss' || $preprocessor == 1) {
 
 		$grunt_assets = get_theme_mod('grunt_assets');
 

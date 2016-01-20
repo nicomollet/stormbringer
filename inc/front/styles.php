@@ -7,7 +7,7 @@ function stormbringer_preprocessor() {
 
 	$cssfile = 'css/application.css';
 
-	if ( $preprocessor == 'less' ) {
+	if ( $preprocessor === 'less' ) {
 		if ( ! is_admin() ) {
 			// less.js for admin (development only)
 			//if ( current_user_can('administrator') && (ENVIRONMENT == "dev" || ENVIRONMENT == "local")) {
@@ -28,7 +28,7 @@ function stormbringer_preprocessor() {
 		}
 	}
 
-	if ( $preprocessor == 'scss' ) {
+	if ( $preprocessor === 'scss' || $preprocessor == 1) {
 
 		if ( ! is_admin() ) {
 			if ( current_user_can( 'administrator' ) || $_GET['scsscompile'] == '1' ) {
@@ -71,6 +71,12 @@ function stormbringer_css() {
 			wp_register_style( 'bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/css/bootstrap-select.min.css', array(), null, 'screen,projection' );
 			wp_enqueue_style( 'bootstrap-select' );
 		}
+
+		if(@$libraries['bootstrap-datepicker'] && get_theme_mod('libraries_bootstrap-datepicker', true)){
+			wp_register_style( 'bootstrap-datepicker', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/css/bootstrap-datepicker.min.css', array(), null, 'screen,projection' );
+			wp_enqueue_style( 'bootstrap-datepicker' );
+		}
+
 	}
 
 }
