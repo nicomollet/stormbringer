@@ -40,6 +40,8 @@ add_action( 'wp_enqueue_scripts', 'stormbringer_js_theme', 300 );
 function stormbringer_js_libraries_footer() {
 
 	if(current_theme_supports('libraries')) {
+
+		$lang = get_theme_mod( 'lang');
 		$libraries = get_theme_support('libraries')[0];
 
 		if ( !is_admin() ) {
@@ -87,7 +89,11 @@ function stormbringer_js_libraries_footer() {
 		}
 
 		if(@$libraries['bootstrap-datepicker'] && get_theme_mod('libraries_bootstrap-datepicker', true) ){
+
 			wp_enqueue_script( 'bootstrap-datepicker', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/js/bootstrap-datepicker.min.js', array( 'bootstrap' ), null, true );
+			if($lang != '') {
+				wp_enqueue_script( 'bootstrap-datepicker-'.$lang, '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/locales/bootstrap-datepicker.'.$lang.'.min.js', array( 'bootstrap','bootstrap-datepicker' ), null, true );
+			}
 		}
 
 	}
@@ -137,6 +143,7 @@ function stormbringer_footer() {
 
 	echo '<script type="text/javascript">' . "\n";
 	echo 'var ajaxurl = "'.admin_url('admin-ajax.php').'";'. "\n";
+	echo 'var lang = "'.get_theme_mod( 'lang').'";'. "\n";
 	echo 'var template_url = "'. get_bloginfo('stylesheet_directory').'";'. "\n";
 	echo '</script>' . "\n";
 }

@@ -85,4 +85,10 @@ $(document).ready(function() {
     };
   }
 
+  // Datepicker defaults
+  if (typeof($.fn.datepicker) == 'function') {
+    if(lang != '')$.fn.datepicker.defaults.language = lang;
+    $('.datepicker').datepicker({});
+  }
+
 });
