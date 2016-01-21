@@ -102,4 +102,4 @@ function stormbringer_css() {
 	}
 
 }
-add_action( 'wp_enqueue_scripts', 'stormbringer_css', 100 );
+add_action( 'wp_enqueue_scripts', 'stormbringer_css', -100 );
