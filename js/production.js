@@ -94,8 +94,22 @@ $(document).ready(function() {
     $.fn.datepicker.defaults.format = 'dd-mm-yyyy';
     $.fn.datepicker.defaults.autoclose = true;
     $.fn.datepicker.defaults.todayBtn = true;
-    $('.datepicker').datepicker({});
+    $.fn.datepicker.defaults.todayHighlight = true;
+    //$('.datepicker-input').datepicker({});
   }
+
+  // Carousel swipe
+  if (Modernizr.touch && typeof($.fn.swipe) == 'function') {
+    $('.carousel-control').remove();
+    $('.carousel').swipe({
+      swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+        if (direction == 'left') $(this).carousel('next');
+        if (direction == 'right') $(this).carousel('prev');
+      },
+      allowPageScroll: "vertical"
+    });
+  }
+
 
 });
 
@@ -633,6 +647,6 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
 });

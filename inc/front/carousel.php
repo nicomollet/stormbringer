@@ -137,11 +137,16 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
       {
         $full   = wp_get_attachment_image_src( $item_id, 'full', false );               // full size
         $thumb  = wp_get_attachment_image_src( $item_id, $vars['image_size'], false );  // thumbnail size
-        $link   = ( $vars['file'] ) ? $full[0] : get_attachment_link( $item_id );
+        $link = '';
+        if($vars['link'] == 'file')$link=$full[0];
+        if($vars['link'] == 'attachment')$link=get_attachment_link( $item_id );
+        //$link   = ( $vars['file'] ) ? $full[0] : get_attachment_link( $item_id );
         $text   = wpautop( wptexturize( $item->post_content ) );
 
-        $carousel .= '<div id="item-' . $item_id . '" class="' . ( ( $i == 0 ) ? "active" : "" ) . ' item">
-                <a class="' . ( ( $vars['file'] && $vars['thickbox'] ) ? "thickbox " : "" ) . '" rel="' . $vars['rel'] . '" href="' . $link . '"><img src="' . $thumb[0] . '" width="' . $vars['width'] . '" alt="' . $item->post_title . '"/></a>';
+        $carousel .= '<div id="item-' . $item_id . '" class="' . ( ( $i == 0 ) ? "active" : "" ) . ' item">';
+        if($link!='')$carousel .= '<a class="" rel="' . $vars['rel'] . '" href="' . $link . '">';
+        $carousel .= '<img src="' . $thumb[0] . '" width="' . $vars['width'] . '" alt="' . $item->post_title . '"/>';
+        if($link!='')$carousel .= '</a>';
 
         $carousel .= '<div class="carousel-caption">';
 
@@ -200,6 +205,7 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
         'image_size'        => 'large',
         'rel'               => '',
         'file'              => 1,
+        'link'              => '', // file, attachment
         'comments'          => 0,
         'slide'             => 1,
         'controls'          => 1,
@@ -228,6 +234,7 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
       $image_size     = sanitize_text_field( $atts['image_size'] );
       $rel            = sanitize_text_field( $atts['rel'] );
       $file           = wp_bc_bool( $atts['file'] );
+      $link           = wp_bc_bool( $atts['link'] );
       $comments       = wp_bc_bool( $atts['comments'] );
       $slide          = wp_bc_bool( $atts['slide'] );
       $controls       = wp_bc_bool( $atts['controls'] );
@@ -256,6 +263,7 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
         'image_size'        => $image_size,
         'rel'               => $rel,
         'file'              => $file,
+        'link'              => $link,
         'comments'          => $comments,
         'slide'             => $slide,
         'controls'          => $controls,
@@ -304,13 +312,7 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
 
       return $classes;
     }
-    public function be_display_posts_plugin()
-    {
-      if ( ! class_exists( 'WP_Bootstrap_Carousel_DPS' ) )
-        include( 'inc/wp-bootstrap-carousel-dps.php' );
 
-      return new WP_Bootstrap_Carousel_DPS();
-    }
 
   } // class
 
@@ -348,6 +350,7 @@ function custom_bootstrap_carousel_shortcode_atts($defaults){
     'image_size'        => 'large', // Image size
     'rel'               => '', // Rel attribute
     'file'              => 0, // Link image to attachement page
+    'link'              => '', // Link image to attachement page
     'comments'          => 0, // Display attachment comments link
     'interval'          => 4000, // Interval delay
     'pause'             => 'hover', // Pause on hover

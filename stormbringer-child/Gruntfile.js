@@ -14,6 +14,7 @@ module.exports = function(grunt) {
     assets_versioning: {
       deployment: {
         options: {
+          dateFormat: 'YYYYMMDDHH',
           tag: 'date',
           versionsMapFile: 'inc/front/gruntassets.php',
           versionsMapTemplate: 'inc/front/gruntassets.tpl',

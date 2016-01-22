@@ -36,5 +36,6 @@ add_theme_support('libraries',
 		'jquery-cookie' => '1.4.1',
 		'jquery-lazyload' => '1.9.1',
 		'jquery-waypoints' => '4.0.0',
+		'jquery-touchswipe' => '1.6.15',
 	)
 );
