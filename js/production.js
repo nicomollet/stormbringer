@@ -85,6 +85,18 @@ $(document).ready(function() {
     };
   }
 
+  // Datepicker defaults
+  if (typeof($.fn.datepicker) == 'function') {
+    if(lang != '')$.fn.datepicker.defaults.language = lang;
+    var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    $.fn.datepicker.defaults.startDate = now;
+    $.fn.datepicker.defaults.format = 'dd-mm-yyyy';
+    $.fn.datepicker.defaults.autoclose = true;
+    $.fn.datepicker.defaults.todayBtn = true;
+    $('.datepicker').datepicker({});
+  }
+
 });
 
 /*
