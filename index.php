@@ -15,8 +15,6 @@
       <h1><?php bloginfo('title'); ?></h1>
       <p><?php bloginfo('description'); ?></p>
       <p><a class="btn btn-primary btn-lg" role="button" href="https://github.com/nicomollet/stormbringer/archive/master.zip"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> <?php _e('Download', 'stormbringer');?></a></p>
-      <input type="text" class="datepicker form-control"/>
-
     </div>
   </div>
 

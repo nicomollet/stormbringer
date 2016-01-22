@@ -99,6 +99,11 @@ function stormbringer_css() {
 			wp_enqueue_style( 'bootstrap-datepicker' );
 		}
 
+		if(@$libraries['animatecss'] && get_theme_mod('libraries_animatecss', true)){
+			wp_register_style( 'animatecss', '//cdnjs.cloudflare.com/ajax/libs/animate.css/'.$libraries['animatecss'].'/animate.min.css', array(), null, 'screen,projection' );
+			wp_enqueue_style( 'animatecss' );
+		}
+
 	}
 
 }

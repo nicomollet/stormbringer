@@ -84,6 +84,10 @@ function stormbringer_js_libraries_footer() {
 			wp_enqueue_script('jquery-lazyload','//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/'.$libraries['jquery-lazyload'].'/jquery.lazyload.min.js', array('jquery'), null, true);
 		}
 
+		if ( @$libraries['jquery-waypoints'] && get_theme_mod( 'libraries_jquery-waypoints', true ) ) {
+			wp_enqueue_script('jquery-waypoints','//cdnjs.cloudflare.com/ajax/libs/waypoints/'.$libraries['jquery-waypoints'].'/jquery.waypoints.min.js', array('jquery'), null, true);
+		}
+
 		if(@$libraries['bootstrap-select'] && get_theme_mod('libraries_bootstrap-select', true)){
 			wp_enqueue_script( 'bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/js/bootstrap-select.min.js', array( 'bootstrap' ), null, true );
 		}
