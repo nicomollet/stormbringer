@@ -53,15 +53,15 @@ get_currentuserinfo();
 
     <nav id="navigation" role="navigation">
       <div class="navigation-inner">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-collapse">
-            <span class="sr-only"><?php _e('Toggle navigation', 'stormbringer');?></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" title="<?php echo esc_attr(get_bloginfo('description')); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-        </div>
+	      <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation-collapse" aria-expanded="false" aria-controls="navbar">
+			      <span class="sr-only">Toggle navigation</span>
+			      <span class="icon-bar top-bar"></span>
+			      <span class="icon-bar middle-bar"></span>
+			      <span class="icon-bar bottom-bar"></span>
+		      </button>
+		      <a class="navbar-brand" title="<?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+	      </div>
 
         <div class="collapse navbar-collapse" id="navigation-collapse">
           <?php wp_nav_menu(array('theme_location' => 'main_nav', 'depth' => 2, 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new stormbringer_Navbar_Nav_Walker(), 'fallback_cb' => false)); ?>
