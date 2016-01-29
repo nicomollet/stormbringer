@@ -6,8 +6,8 @@ module.exports = function(grunt) {
 
     // Clean old files
     clean: {
-      js: ['js/production.min.*.js', '!js/production.min.'+grunt.template.today('yyyymm')+'*.js'],
-      css: ['css/application.min.*.js', '!css/application.min.'+grunt.template.today('yyyymm')+'*.css']
+      js: ['js/scripts.min.*.js', '!js/scripts.min.' + grunt.template.today('yyyymm') + '*.js'],
+      css: ['css/styles.min.*.js', '!css/styles.min.' + grunt.template.today('yyyymm') + '*.css']
     },
 
     // Versioning
@@ -20,8 +20,8 @@ module.exports = function(grunt) {
           versionsMapTemplate: 'inc/front/gruntassets.tpl',
         },
         files: {
-          'css/application.min.css': [ 'css/application.min.css'],
-          'js/production.min.js': [ 'js/production.min.js'],
+          'css/styles.min.css': ['css/styles.min.css'],
+          'js/scripts.min.js': ['js/scripts.min.js'],
         }
       }
     },
@@ -30,20 +30,18 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'js/common.js',   // Common
-          'js/bootstrap-modalgallery.js',   // Bootstrap Modal Gallery
-          'js/bootstrap-modalopen.js',   // Bootstrap Modal
-          'js/application.js',   // Custom JS
+          'js/src/common.js',   // Common
+          'js/src/application.js',   // Custom JS
         ],
-        dest: 'js/production.js',
+        dest: 'js/scripts.js',
       }
     },
 
     // Minify javascript
     uglify: {
       build: {
-        src: 'js/production.js',
-        dest: 'js/production.min.js'
+        src: 'js/scripts.js',
+        dest: 'js/scripts.min.js'
       }
     },
 
@@ -53,7 +51,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          'css/application.css': 'scss/application.scss'
+          'css/styles.css': 'scss/application.scss'
         }
       }
     },
@@ -62,7 +60,7 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          'css/application.min.css': ['css/application.css']
+          'css/styles.min.css': ['css/styles.css']
         }
       }
     },

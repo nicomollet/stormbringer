@@ -138,7 +138,7 @@ class Less_Cache{
 		$etag = base_convert( self::cache_version, 10, 36 ) . base_convert( filesize($list_file), 10, 36 );
 
 		//return 'lessphp_'.$hash.'_'.$etag.'.css';
-		return 'application.css'; //nico.mollet
+		return 'styles.css'; //nico.mollet
 	}
 
 

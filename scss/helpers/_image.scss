@@ -79,29 +79,33 @@ figure {
 }
 
 .alignleft {
-  margin-right: 20px;
   float: left;
   clear: left;
 }
 
+.aligncenter {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.alignright {
+  float: right;
+  clear: right;
+}
+
 figure {
 
-  &.aligncenter {
-    display: table;
-    text-align: center;
-  }
-
   @media (min-width: $screen-sm-min) {
+
+    &.alignleft {
+      margin-right: 20px;
+    }
+
     &.alignright {
       margin-left: 20px;
-      float: right;
-      clear: right;
     }
 
-    &.aligncenter {
-      display: block;
-      margin: 0 auto;
-    }
   }
 }
 

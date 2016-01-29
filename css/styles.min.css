@@ -7247,6 +7247,13 @@ blockquote.pull-left {
     min-height: 1px
 }
 
+@media (min-width: 768px) {
+    .gallery-columns-2 li {
+        float: left;
+        width: 50%
+    }
+}
+
 .gallery .caption p {
     margin-bottom: 0
 }
@@ -7256,40 +7263,37 @@ figure {
 }
 
 .alignleft {
-    margin-right: 20px;
     float: left;
     clear: left
 }
 
-figure.aligncenter {
-    display: table;
-    text-align: center
+.aligncenter {
+    display: block;
+    text-align: center;
+    margin: 0 auto
+}
+
+.alignright {
+    float: right;
+    clear: right
+}
+
+.footer-inner:after, .main-inner:after {
+    clear: both
 }
 
 @media (min-width: 768px) {
-    .gallery-columns-2 li {
-        float: left;
-        width: 50%
+    figure.alignleft {
+        margin-right: 20px
     }
 
     figure.alignright {
-        margin-left: 20px;
-        float: right;
-        clear: right
-    }
-
-    figure.aligncenter {
-        display: block;
-        margin: 0 auto
+        margin-left: 20px
     }
 }
 
 .footer-inner, .main-inner {
     margin-right: -15px
-}
-
-.footer-inner:after, .main-inner:after {
-    clear: both
 }
 
 .thumbnail {
@@ -7772,4 +7776,58 @@ body.home {
 
 .bs-glyphicons .glyphicon {
     margin-top: 5px;
-    margin-bottom:10px;font-size:24px}.bs-glyphicons{padding-left:0;padding-bottom:1px;margin-bottom:20px;list-style:none;overflow:hidden}.bs-glyphicons .glyphicon-class{display:block;text-align:center}.bs-glyphicons li{float:left;width:12.5%;height:115px;padding:10px;margin:0 -1px -1px 0;font-size:12px;line-height:1.4;text-align:center;border:1px solid #ddd}.widget_pages{margin-top:30px;margin-bottom:30px;padding-top:10px;padding-bottom:10px;text-shadow:0 1px 0 #fff;background-color:#fef7fc;border-radius:5px}.widget_pages .widget-title{display:none}.widget_pages ul>li>a{display:block;color:#716b7a;padding:5px 20px}.widget_pages ul ul>li>a{padding-top:3px;padding-bottom:3px;padding-left:30px;font-size:90%}
+    margin-bottom: 10px;
+    font-size: 24px
+}
+
+.bs-glyphicons {
+    padding-left: 0;
+    padding-bottom: 1px;
+    margin-bottom: 20px;
+    list-style: none;
+    overflow: hidden
+}
+
+.bs-glyphicons .glyphicon-class {
+    display: block;
+    text-align: center
+}
+
+.bs-glyphicons li {
+    float: left;
+    width: 12.5%;
+    height: 115px;
+    padding: 10px;
+    margin: 0 -1px -1px 0;
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+    border: 1px solid #dddddd
+}
+
+.widget_pages {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-shadow: 0 1px 0 #ffffff;
+    background-color: #fef7fc;
+    border-radius: 5px
+}
+
+.widget_pages .widget-title {
+    display: none
+}
+
+.widget_pages ul > li > a {
+    display: block;
+    color: #716b7a;
+    padding: 5px 20px
+}
+
+.widget_pages ul ul > li > a {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 30px;
+    font-size: 90%
+}

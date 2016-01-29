@@ -42,7 +42,10 @@ css/cache
 lessphp_*
 gruntassets.php
 css/application.min.*.css
+css/styles.min.*.css
 js/production.min.*.js
-
+js/scripts.min.*.js
 stormbringer-child/css/application.min.*.css
-stormbringer-child/js/production.min.*.js
+stormbringer-child/js/styles.min.*.js
+stormbringer-child/css/application.min.*.css
+stormbringer-child/js/scripts.min.*.js

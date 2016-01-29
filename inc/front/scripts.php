@@ -3,15 +3,13 @@
 
 function stormbringer_js_theme() {
 
-	wp_enqueue_script( 'bootstrap-modalgallery', get_template_directory_uri() . '/js/bootstrap-modalgallery.js', array('bootstrap','jquery'), null, true );
-	wp_enqueue_script( 'bootstrap-modalopen', get_template_directory_uri() . '/js/bootstrap-modalopen.js', array('bootstrap','jquery'), null, true );
-	wp_enqueue_script( 'stormbringer-common', get_template_directory_uri() . '/js/common.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'stormbringer-common', get_template_directory_uri() . '/js/src/common.js', array( 'jquery' ), null, true );
 
 	// Preprocessor
 	$preprocessor = get_theme_mod('bootstrap_preprocessor', true);
 
 	if ( $preprocessor === 'less' ) {
-		wp_enqueue_script( 'application.js', get_stylesheet_directory_uri() . '/js/application.js', array( 'jquery' ), null, true );
+		wp_enqueue_script( 'scripts.js', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'jquery' ), null, true );
 	}
 
 	if ( $preprocessor === 'scss' || $preprocessor == 1) {
@@ -19,10 +17,10 @@ function stormbringer_js_theme() {
 		$grunt_assets = get_theme_mod('grunt_assets');
 
 		if ( current_user_can( 'administrator' ) || $_GET['scsscompile'] == '1' ) {
-			$jsfile = 'js/production.js';
+			$jsfile = 'js/scripts.js';
 		}
 		else{
-			$jsfile = 'js/production.min.js';
+			$jsfile = 'js/scripts.min.js';
 			if(isset($grunt_assets[$jsfile])) {
 				$jsfile = $grunt_assets[$jsfile];
 			}
@@ -143,16 +141,25 @@ function stormbringer_footer() {
 	echo '<h4 class="modal-title"></h4>' . "\n";
 	echo '</div>' . "\n";
 	echo '<div class="modal-body in-frame">' . "\n";
-	echo '<iframe id="modal-frame" name="modal-frame" src="about:blank" sandbox="allow-same-origin allow-forms allow-popups"></iframe>' . "\n";
+	echo '<iframe id="modal-frame" name="modal-frame" src="" sandbox="allow-same-origin allow-forms allow-popups"></iframe>' . "\n";
 	echo '</div>' . "\n";
 	echo '</div>' . "\n";
 	echo '</div>' . "\n";
 	echo '</div>' . "\n";
 
 	echo '<script type="text/javascript">' . "\n";
-	echo 'var ajaxurl = "'.admin_url('admin-ajax.php').'";'. "\n";
-	echo 'var lang = "'.get_theme_mod( 'lang').'";'. "\n";
-	echo 'var template_url = "'. get_bloginfo('stylesheet_directory').'";'. "\n";
+	$stormbringer_config = [
+		'AJAXURL'              => admin_url( 'admin-ajax.php' ),
+		'THEME_LANG'           => get_theme_mod( 'lang' ),
+		'STYLESHEET_DIRECTORY' => get_bloginfo( 'stylesheet_directory' ),
+		'WPURL'                => get_bloginfo( 'wpurl' ),
+		'URL'                  => get_bloginfo( 'url' ),
+		'LANGUAGE'             => get_bloginfo( 'language' ),
+		'STYLESHEET_URL'       => get_bloginfo( 'stylesheet_url' ),
+		'TEMPLATE_URL'         => get_bloginfo( 'template_url' ),
+		'ENV'                  => current_user_can( 'administrator' ) ? 'development' : 'production',
+	];
+	echo 'var stormbringer_config = ' . json_encode( $stormbringer_config, JSON_PRETTY_PRINT ) . ";\n";
 	echo '</script>' . "\n";
 }
 add_action( 'wp_footer', 'stormbringer_footer', -100 );

@@ -5,7 +5,7 @@ function stormbringer_preprocessor() {
 
 	$preprocessor = get_theme_mod('bootstrap_preprocessor', true);
 
-	$cssfile = 'css/application.css';
+	$cssfile = 'css/styles.css';
 
 	if ( $preprocessor === 'less' ) {
 		if ( ! is_admin() ) {
@@ -27,11 +27,11 @@ function stormbringer_preprocessor() {
 
 		if ( ! is_admin() ) {
 			if ( current_user_can( 'administrator' ) || $_GET['scsscompile'] == '1' ) {
-				wp_register_style( 'theme', get_stylesheet_directory_uri() . '/css/application.css', array(), null, null );
+				wp_register_style( 'theme', get_stylesheet_directory_uri() . '/css/styles.css', array(), null, null );
 				wp_enqueue_style( 'theme' );
 			} else {
 
-				$cssfile = 'css/application.min.css';
+				$cssfile      = 'css/styles.min.css';
 				$grunt_assets = get_theme_mod('grunt_assets');
 				if(isset($grunt_assets[$cssfile])) {
 					$cssfile = $grunt_assets[$cssfile];

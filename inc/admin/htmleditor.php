@@ -1,6 +1,6 @@
 <?php
 // html editor styles
-add_editor_style( 'css/application.css' );
+add_editor_style( 'css/styles.css' );
 
 add_filter( 'tiny_mce_before_init', 'my_mce_before_init' );
 
