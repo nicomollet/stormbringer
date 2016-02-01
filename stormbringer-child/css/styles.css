@@ -1,19 +1,21 @@
 /*
-Error: File to import not found or unreadable: ../../stormbringer/scss/bootstrap/variables.
+Error: File to import not found or unreadable: ../../stormbringer/scss/bootstrap/mixins.
        Load path: /home/nico/Public/sites/wordpress/wp-content/themes/stormbringer/stormbringer/scss
-        on line 3 of scss/application.scss
+        on line 5 of scss/application.scss
 
 1: // Bootstrap Core variables and mixins
 2: @import "variables";
-3: @import "../../stormbringer/scss/bootstrap/variables";
+3: @import "../../../stormbringer/scss/bootstrap/variables";
 4: 
 5: @import "../../stormbringer/scss/bootstrap/mixins";
 6: 
 7: // Bootstrap Reset and dependencies
 8: @import "../../stormbringer/scss/bootstrap/normalize";
+9: @import "../../stormbringer/scss/bootstrap/print";
+10: @import "../../stormbringer/scss/bootstrap/glyphicons";
 
 Backtrace:
-scss/application.scss:3
+scss/application.scss:5
 /var/lib/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/import_node.rb:66:in `rescue in import'
 /var/lib/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/import_node.rb:45:in `import'
 /var/lib/gems/1.9.1/gems/sass-3.4.13/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -51,5 +53,4 @@ scss/application.scss:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ../../stormbringer/scss/bootstrap/variables.\A        Load path: /home/nico/Public/sites/wordpress/wp-content/themes/stormbringer/stormbringer/scss\A         on line 3 of scss/application.scss\A \A 1: // Bootstrap Core variables and mixins\A 2: @import \"variables\";\A 3: @import \"../../stormbringer/scss/bootstrap/variables\";\A 4: \A 5: @import \"../../stormbringer/scss/bootstrap/mixins\";\A 6: \A 7: // Bootstrap Reset and dependencies\A 8: @import \"../../stormbringer/scss/bootstrap/normalize\";";
-}
+  content: "Error: File to import not found or unreadable: ../../stormbringer/scss/bootstrap/mixins.\A        Load path: /home/nico/Public/sites/wordpress/wp-content/themes/stormbringer/stormbringer/scss\A         on line 5 of scss/application.scss\A \A 1: // Bootstrap Core variables and mixins\A 2: @import \"variables\";\A 3: @import \"../../../stormbringer/scss/bootstrap/variables\";\A 4: \A 5: @import \"../../stormbringer/scss/bootstrap/mixins\";\A 6: \A 7: // Bootstrap Reset and dependencies\A 8: @import \"../../stormbringer/scss/bootstrap/normalize\";\A 9: @import \"../../stormbringer/scss/bootstrap/print\";\A 10: @import \"../../stormbringer/scss/bootstrap/glyphicons\";"; }

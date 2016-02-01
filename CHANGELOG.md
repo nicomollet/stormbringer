@@ -3,6 +3,23 @@
 * EULA cookie consent
 * Analytics cookie consent
 
+### 0.2.6: February 1st, 2016
+* Owlcarousel shortcode
+* Owlcarousel library
+
+### 0.2.5: January 26th, 2016
+* Nav toggle collapse
+* Animate library
+* Waypoints library
+
+### 0.2.4: January 20th, 2016
+* Customizer: enable/disabled libraries
+* Lazyload library
+* Lazyload library
+
+### 0.2.3: January 19th, 2016
+* Datepicker library
+
 ### 0.2.2: December 18th, 2015
 * Refactorization, for child theme compatibility
 * Removed Fancybox
