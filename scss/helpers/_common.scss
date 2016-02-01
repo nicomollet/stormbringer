@@ -219,29 +219,30 @@ nav.pagination {
   }
 
   .icon-bar {
-    transition: all 0.2s;
+    @include transition(all 0.2s);
   }
   .top-bar {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
+    @include rotate(45deg);
+    @include transform-origin(10% 10%);
   }
   .middle-bar {
     opacity: 0;
   }
   .bottom-bar {
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
+    @include rotate(-45deg);
+    @include transform-origin(10% 90%);
+
   }
 
   &.collapsed {
     .top-bar {
-      transform: rotate(0deg);
+      @include rotateX(0deg);
     }
     .middle-bar {
       opacity: 1;
     }
     .bottom-bar {
-      transform: rotate(0deg);
+      @include rotateX(0deg);
     }
   }
 }
@@ -256,8 +257,7 @@ nav.pagination {
     border: 1px solid $carousel-indicator-border-color;
     border-radius: 10px;
     cursor: pointer;
-    background-color: #000000 \9
-  ; // IE8
+    background-color: #000000 \9; // IE8
     background-color: rgba(0, 0, 0, 0); // IE9
   }
   .active {
