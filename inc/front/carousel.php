@@ -60,12 +60,9 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
 
       if ( ! is_admin() || defined( 'DOING_AJAX' ) ) :
 
-        add_action( 'wp_enqueue_scripts',   array( $this, 'wp_enqueue_scripts' ),   1 );
         add_action( 'init',                 array( $this, 'init' ),                 10 );
         add_action( 'body_class',           array( $this, 'body_class' ),           10 );
 
-        if( function_exists( 'be_display_posts_shortcode' ) )
-          $this->be_display_posts_plugin();
 
       endif;
 
@@ -106,7 +103,6 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
           $vars
         );
 
-      $this->enqueue( $vars['thickbox'] );
 
       $carousel = '';
 
@@ -282,30 +278,8 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
 
       return $data;
     }
-    public function enqueue( $thickbox )
-    {
-      $min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-      // bootstrap scripts
-      //wp_enqueue_script( 'wp-bootstrap-carousel',      $this->plugin_dir_url . 'js/carousel' . $min . '.js', array( 'jquery' ), '3.0.0', true );
-      //wp_enqueue_script( 'wp-bootstrap-carousel-init', $this->plugin_dir_url . 'js/carousel-init.js', array( 'jquery', 'wp-bootstrap-carousel' ), $this->version, true );
 
-      // thickbox styles & script
-      if( $thickbox ) :
-
-        wp_enqueue_style( 'thickbox' );
-        wp_enqueue_script( 'thickbox' );
-
-      endif;
-
-      // action hook
-      do_action( 'wp_bootstrap_carousel_enqueue' );
-    }
-    public function wp_enqueue_scripts()
-    {
-      $min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
-    }
     public function body_class( $classes )
     {
       $classes[] = 'wpbc-' . sanitize_html_class( strtolower( wp_get_theme()->Name ) );

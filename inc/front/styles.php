@@ -104,6 +104,11 @@ function stormbringer_css() {
 			wp_enqueue_style( 'animatecss' );
 		}
 
+		if ( @$libraries['jquery-owlcarousel'] && get_theme_mod( 'libraries_jquery-owlcarousel', true ) ) {
+			wp_register_style( 'jquery-owlcarousel', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/' . $libraries['jquery-owlcarousel'] . '/assets/owl.carousel.min.css', array(), null, 'screen,projection' );
+			wp_enqueue_style( 'jquery-owlcarousel' );
+		}
+
 	}
 
 }

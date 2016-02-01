@@ -245,3 +245,37 @@ nav.pagination {
     }
   }
 }
+
+.carousel-indicators {
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    border: 1px solid $carousel-indicator-border-color;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #000000 \9
+  ; // IE8
+    background-color: rgba(0, 0, 0, 0); // IE9
+  }
+  .active {
+    margin: 0;
+    width: 12px;
+    height: 12px;
+    background-color: $carousel-indicator-active-bg;
+  }
+}
+
+.carousel-control {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.touch {
+  .carousel-indicators, .carousel-controls {
+    display: none;
+  }
+}

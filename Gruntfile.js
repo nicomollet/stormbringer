@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     // Clean old files
     clean: {
       js: ['js/scripts.min.*.js', '!js/scripts.min.' + grunt.template.today('yyyymm') + '*.js'],
-      css: ['css/styles.min.*.js', '!css/styles.min.' + grunt.template.today('yyyymm') + '*.css']
+      css: ['css/styles.min.*.css', '!css/styles.min.' + grunt.template.today('yyyymm') + '*.css']
     },
 
     // Versioning
@@ -30,7 +30,6 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'js/src/common.js',   // Common
           'js/src/application.js',   // Custom JS
         ],
         dest: 'js/scripts.js',
@@ -71,7 +70,7 @@ module.exports = function(grunt) {
       },
 
       scripts: {
-        files: ['js/*.js'],
+        files: ['js/src/*.js'],
         tasks: ['concat', 'uglify', 'clean', 'assets_versioning'],
         options: {
           spawn: false,

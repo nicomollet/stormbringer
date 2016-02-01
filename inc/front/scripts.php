@@ -90,6 +90,10 @@ function stormbringer_js_libraries_footer() {
 			wp_enqueue_script('jquery-touchswipe','//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/'.$libraries['jquery-touchswipe'].'/jquery.touchSwipe.min.js', array('jquery'), null, true);
 		}
 
+		if ( @$libraries['jquery-owlcarousel'] && get_theme_mod( 'libraries_jquery-owlcarousel', true ) ) {
+			wp_enqueue_script( 'jquery-owlcarousel', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/' . $libraries['jquery-owlcarousel'] . '/owl.carousel.min.js', array( 'jquery' ), null, true );
+		}
+
 		if(@$libraries['bootstrap-select'] && get_theme_mod('libraries_bootstrap-select', true)){
 			wp_enqueue_script( 'bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/js/bootstrap-select.min.js', array( 'bootstrap' ), null, true );
 		}
