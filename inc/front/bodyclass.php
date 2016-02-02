@@ -121,9 +121,28 @@ function stormbringer_get_context() {
 		if(is_singular('post')){
 
 			$categories = get_the_category( $post->ID );
+
+			if(isset($categories[0]->term_id)){
+				$ancestors = get_ancestors( $categories[0]->term_id, 'category' );
+				if($ancestors) {
+					$cpt = 0;
+					foreach($ancestors as $ancestor){
+						$cpt++;
+						if($ancestor){
+							if($cpt==1)$topparentcategory = $ancestor;
+							$classes[]  = 'category-'.$ancestor;
+						}
+					}
+
+					if($topparentcategory){
+						$classes[]  = 'top-category-'.$topparentcategory;
+					}
+				}
+			}
+
 			$ancestors = get_category_parents( $categories[0]->term_id, false, ':', true );
 			if($ancestors) {
-				$ancestors = split(':',$ancestors);
+				$ancestors = explode(':',$ancestors);
 				$cpt = 0;
 				foreach($ancestors as $ancestor){
 					$cpt++;
