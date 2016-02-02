@@ -42,10 +42,20 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
       global $post;
 
 
+      print_r($vars);
+
       $carousel = '';
 
       $carousel .= '<div id="owl-carousel-' . $vars['id'] . '"
       class="owl-carousel"
+      data-loop="' . $vars['loop'] . '"
+      data-center="' . $vars['center'] . '"
+      data-controls="' . $vars['controls'] . '"
+      data-indicators="' . $vars['indicators'] . '"
+      data-autoplay="' . $vars['autoplay'] . '"
+      data-timeout="' . $vars['timeout'] . '"
+      data-items="' . $vars['items'] . '"
+      data-slideby="' . $vars['slideby'] . '"
       >';
 
       /**
@@ -128,10 +138,20 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
         'order'             => 'ASC',
         'orderby'           => 'ID',
 
+
         'image_size'        => 'large',
         'rel'               => '',
         'file'              => 1,
         'link'              => '', // file, attachment
+
+        'loop'           => 'true',
+        'center'           => 'false',
+        'controls'           => 'false',
+        'indicators'           => 'true',
+        'autoplay'           => 'false',
+        'timeout'           => '5000',
+        'items'           => '4',
+        'slideby'           => '4',
 
       ) ), $atts, 'owl-carousel' );
       // query vars
@@ -142,6 +162,14 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
       $exclude        = array_map( 'intval', explode( ',', $atts['exclude'] ) );
       $order          = sanitize_key( $atts['order'] );
       $orderby        = sanitize_key( $atts['orderby'] );
+      $loop        = sanitize_key( $atts['loop'] );
+      $center        = sanitize_key( $atts['center'] );
+      $controls        = sanitize_key( $atts['controls'] );
+      $indicators        = sanitize_key( $atts['indicators'] );
+      $autoplay        = sanitize_key( $atts['autoplay'] );
+      $timeout        = sanitize_key( $atts['timeout'] );
+      $items          = sanitize_key( $atts['items'] );
+      $slideby        = sanitize_key( $atts['slideby'] );
 
       if ( 'RAND' == $order )
         $orderby = 'none';
@@ -161,16 +189,24 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
         'post_mime_type'    => $post_mime_type,
         'exclude'           => $exclude,
         'order'             => $order,
-        'orderby'           => $orderby
+        'orderby'           => $orderby,
       );
 
       // display vars array
       $vars = array(
-        'id'                => $post_parent,
-        'image_size'        => $image_size,
-        'rel'               => $rel,
-        'file'              => $file,
-        'link'              => $link,
+          'id'         => $post_parent,
+          'image_size' => $image_size,
+          'rel'        => $rel,
+          'file'       => $file,
+          'link'       => $link,
+          'loop'       => $loop,
+          'center'     => $center,
+          'controls'        => $controls,
+          'indicators'        => $indicators,
+          'autoplay'        => $autoplay,
+          'timeout'        => $timeout,
+          'items'        => $items,
+          'slideby'        => $slideby,
       );
 
       // data array
@@ -229,6 +265,14 @@ function custom_owlcarousel_shortcode_atts($defaults){
     'rel'               => '', // Rel attribute
     'file'              => 0, // Link image to attachement page
     'link'              => '', // Link image to attachement page
+    'loop'           => 'true', // Owlcarousel loop
+    'center'           => 'false', // Owlcarousel center
+    'controls'           => 'false', // Owlcarousel nav
+    'indicators'           => 'true', // Owlcarousel dots
+    'autoplay'           => 'false', // Owlcarousel autoplay
+    'timeout'           => '5000', // Owlcarousel autoplayTimeout
+    'items'           => '4', // Owlcarousel items
+    'slideby'           => '4', // Owlcarousel slideBy
   );
   $args = wp_parse_args( $args, $defaults );
   return $args;

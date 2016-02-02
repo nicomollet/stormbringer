@@ -116,6 +116,13 @@ function stormbringer_get_context() {
 	/* Blog page. */
 	if ( is_category() || is_singular('post') || is_tag() || is_post_type_archive('post') || is_search() || is_author()) {
 		  $classes[] = 'blog';
+
+		if(is_singular('post')){
+			foreach ((get_the_category($post->ID)) as $category){
+				$classes[] = 'category-' . $category->category_nicename;
+			}
+		}
+
 	}
 
 	/* Singular views. */
@@ -138,7 +145,6 @@ function stormbringer_get_context() {
     // category
     foreach ((get_the_category($post->ID)) as $category)
       $classes[] = 'post-taxonomy-category-' . $category->category_nicename;
-    return $classes;
 	}
 
 	/* Archive views. */

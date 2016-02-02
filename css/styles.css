@@ -7687,7 +7687,11 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
   cursor: pointer;
 }
 
-.touch .carousel-indicators, .touch .carousel-controls {
+.touch .carousel-controls {
+  display: none;
+}
+
+.carousel-controls.disabled {
   display: none;
 }
 

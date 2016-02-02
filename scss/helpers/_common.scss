@@ -275,7 +275,12 @@ nav.pagination {
 }
 
 .touch {
-  .carousel-indicators, .carousel-controls {
+  .carousel-controls {
     display: none;
   }
+}
+.carousel-controls {
+ &.disabled{
+   display: none;
+ }
 }

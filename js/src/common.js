@@ -133,49 +133,60 @@ $(document).ready(function () {
 
   // Datepicker defaults
   if (typeof($.fn.owlCarousel) == 'function') {
-    $('.owl-carousel').trigger('replace.owl.carousel', '<div class="owl-item">Content</div><div class="item">More Content</div>');
 
-    // New pattern
-    $('.owl-carousel').trigger('replace.owl.carousel', {
-      markup: '<div class="owl-item">Content</div><div class="item">More Content</div>',
-      options: {loop: true, stageClass: 'carousel-stage222',}
-    });
-
-    $('#owl-carousel').owlCarousel({
-      loop: true,
-      responsiveClass: true,
-      loadedClass: 'carousel owl-loaded',
-      stageOuterClass: 'carousel-inner',
-      stageClass: 'carousel-stage',
-      navContainerClass: 'carousel-controls',
-      navClass: [
-        'left carousel-control ',
-        'right carousel-control'
-      ],
-      navText: [
-        '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
-        '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
-      ],
-      dotsClass: 'carousel-indicators', // owl-dots
-      dotClass: 'dot',
-      responsive: {
-        0: {
-          items: 1,
-          nav: false
-        },
-        600: {
-          items: 2,
-          slideBy: 2,
-          nav: true
-        },
-        1000: {
-          items: 4,
-          slideBy: 4,
-          nav: true,
-          loop: false
+    $('.owl-carousel').each( function() {
+      var $owlcarousel = $(this);
+      console.log('responsive:'+{
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 2,
+              slideBy: 2,
+            },
+            1000: {
+              items: 4,
+              slideBy: 4,
+            }
+          });
+      $owlcarousel.owlCarousel({
+        loop: $owlcarousel.data('loop'),
+        center: $owlcarousel.data('center'),
+        nav: $owlcarousel.data('controls'),
+        dots: $owlcarousel.data('indicators'),
+        autoplay: $owlcarousel.data('autoplay'),
+        autoplayTimeout: $owlcarousel.data('timeout'),
+        items: $owlcarousel.data('items'),
+        slideBy: $owlcarousel.data('slideby'),
+        loadedClass: 'carousel owl-loaded',
+        stageOuterClass: 'carousel-inner',
+        stageClass: 'carousel-stage',
+        navContainerClass: 'carousel-controls',
+        navClass: [
+          'left carousel-control ',
+          'right carousel-control'
+        ],
+        navText: [
+          '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+          '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
+        ],
+        dotsClass: 'carousel-indicators', // owl-dots
+        dotClass: 'dot',
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 2,
+            slideBy: 2,
+          },
+          1000: {
+            items: 4,
+            slideBy: 4,
+          }
         }
-      }
-    })
+      });
+    });
   }
 
 });
