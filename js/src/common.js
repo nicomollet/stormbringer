@@ -130,30 +130,28 @@ $(document).ready(function () {
     });
   }
 
-
   // Datepicker defaults
   if (typeof($.fn.owlCarousel) == 'function') {
 
     $('.owl-carousel').each( function() {
       var $owlcarousel = $(this);
-      console.log('responsive:'+{
-            0: {
-              items: 1,
-            },
-            600: {
-              items: 2,
-              slideBy: 2,
-            },
-            1000: {
-              items: 4,
-              slideBy: 4,
-            }
-          });
+
+      responsive = $owlcarousel.data('responsive');
+      if(responsive != ''){
+        responsive = responsive.replace(/'/g,'"');
+        responsive_json = $.parseJSON(responsive);
+      }
+      else{
+        responsive_json = null;
+      }
+
       $owlcarousel.owlCarousel({
         loop: $owlcarousel.data('loop'),
         center: $owlcarousel.data('center'),
         nav: $owlcarousel.data('controls'),
         dots: $owlcarousel.data('indicators'),
+        animateOut: $owlcarousel.data('animateout'),
+        animateIn: $owlcarousel.data('animatein'),
         autoplay: $owlcarousel.data('autoplay'),
         autoplayTimeout: $owlcarousel.data('timeout'),
         items: $owlcarousel.data('items'),
@@ -172,19 +170,7 @@ $(document).ready(function () {
         ],
         dotsClass: 'carousel-indicators', // owl-dots
         dotClass: 'dot',
-        responsive: {
-          0: {
-            items: 1,
-          },
-          600: {
-            items: 2,
-            slideBy: 2,
-          },
-          1000: {
-            items: 4,
-            slideBy: 4,
-          }
-        }
+        responsive: responsive_json
       });
     });
   }

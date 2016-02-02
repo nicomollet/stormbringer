@@ -52,6 +52,8 @@ Edit `less/application.less` then insert your custom styles
 How-to
 -----------
 
+Owlcarousel default settings and shortcode: https://gist.github.com/nicomollet/a14c8b0d67578ada245f
+
 Custom styles in the rich-text editor: https://gist.github.com/nicomollet/4b022a3204ab96314da9
 
 Addthis share buttons:

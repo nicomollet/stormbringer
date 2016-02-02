@@ -42,8 +42,6 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
       global $post;
 
 
-      print_r($vars);
-
       $carousel = '';
 
       $carousel .= '<div id="owl-carousel-' . $vars['id'] . '"
@@ -56,6 +54,9 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
       data-timeout="' . $vars['timeout'] . '"
       data-items="' . $vars['items'] . '"
       data-slideby="' . $vars['slideby'] . '"
+      data-responsive="' . $vars['responsive'] . '"
+      data-animateout="' . $vars['animateout'] . '"
+      data-animatein="' . $vars['animatein'] . '"
       >';
 
       /**
@@ -100,14 +101,14 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
 
         $carousel .= apply_filters( 'owl_carousel_caption_text', $text, $item_id );
 
-        $carousel .= '</div><!-- .carousel-caption -->';
+        $carousel .= '</div>'; // caption
 
-        $carousel .= '</div><!-- .item -->';
+        $carousel .= '</div>'; // item
 
         $i++;
       }
 
-      //$carousel .= '</div><!-- .carousel-inner -->';
+      //$carousel .= '</div>'; // carousel-inner
 
       /**
        * CONTROLS
@@ -117,7 +118,7 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
   <a class="carousel-control left" href="#owl-carousel-' . $vars['id'] . '" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
   <a class="carousel-control right" href="#owl-carousel-' . $vars['id'] . '" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
 */
-      $carousel .= '</div><!-- .carousel -->';
+      $carousel .= '</div>'; // carousel
 
       return $carousel;
     }
@@ -130,28 +131,31 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
       $thumbnail_id = get_post_meta( $id, '_thumbnail_id', true );
       $atts = shortcode_atts( apply_filters( 'stormbringer_owlcarousel_shortcode_atts', array(
 
-        'post_parent'       => $id,
-        'post_status'       => 'inherit',
-        'post_type'         => 'attachment',
-        'post_mime_type'    => 'image',
-        'exclude'           => $thumbnail_id,
-        'order'             => 'ASC',
-        'orderby'           => 'ID',
+          'post_parent'    => $id,
+          'post_status'    => 'inherit',
+          'post_type'      => 'attachment',
+          'post_mime_type' => 'image',
+          'exclude'        => $thumbnail_id,
+          'order'          => 'ASC',
+          'orderby'        => 'ID',
 
 
-        'image_size'        => 'large',
-        'rel'               => '',
-        'file'              => 1,
-        'link'              => '', // file, attachment
+          'image_size' => 'large',
+          'rel'        => '',
+          'file'       => 1,
+          'link'       => '', // file, attachment
 
-        'loop'           => 'true',
-        'center'           => 'false',
-        'controls'           => 'false',
-        'indicators'           => 'true',
-        'autoplay'           => 'false',
-        'timeout'           => '5000',
-        'items'           => '4',
-        'slideby'           => '4',
+          'loop'       => 'true',
+          'center'     => 'false',
+          'controls'   => 'false',
+          'indicators' => 'true',
+          'autoplay'   => 'false',
+          'timeout'    => '5000',
+          'items'      => '4',
+          'slideby'    => '4',
+          'responsive' => null,
+          'animateout' => 'fadeOut',
+          'animatein' => '',
 
       ) ), $atts, 'owl-carousel' );
       // query vars
@@ -170,6 +174,9 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
       $timeout        = sanitize_key( $atts['timeout'] );
       $items          = sanitize_key( $atts['items'] );
       $slideby        = sanitize_key( $atts['slideby'] );
+      $responsive        = ( $atts['responsive'] );
+      $animateout        = ( $atts['animateout'] );
+      $animatein        = ( $atts['animatein'] );
 
       if ( 'RAND' == $order )
         $orderby = 'none';
@@ -207,6 +214,9 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
           'timeout'        => $timeout,
           'items'        => $items,
           'slideby'        => $slideby,
+          'responsive'        => $responsive,
+          'animatein'        => $animatein,
+          'animateout'        => $animateout,
       );
 
       // data array
@@ -273,8 +283,12 @@ function custom_owlcarousel_shortcode_atts($defaults){
     'timeout'           => '5000', // Owlcarousel autoplayTimeout
     'items'           => '4', // Owlcarousel items
     'slideby'           => '4', // Owlcarousel slideBy
+    'responsive'           => null, // Owlcarousel responsive
+    'animateout'           => 'fadeOut', // Owlcarousel animateOut
+    'animatein'           => '', // Owlcarousel animateIn
   );
   $args = wp_parse_args( $args, $defaults );
   return $args;
 }
 add_filter('stormbringer_owlcarousel_shortcode_atts', 'custom_owlcarousel_shortcode_atts');
+*/
