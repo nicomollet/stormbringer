@@ -115,9 +115,28 @@ function stormbringer_get_context() {
 
 	/* Blog page. */
 	if ( is_category() || is_singular('post') || is_tag() || is_post_type_archive('post') || is_search() || is_author()) {
-		  $classes[] = 'blog';
+	  $classes[] = 'blog';
 
+		// Category ancestors
 		if(is_singular('post')){
+
+			$categories = get_the_category( $post->ID );
+			$ancestors = get_category_parents( $categories[0]->term_id, false, ':', true );
+			if($ancestors) {
+				$ancestors = split(':',$ancestors);
+				$cpt = 0;
+				foreach($ancestors as $ancestor){
+					$cpt++;
+					if($ancestor){
+						if($cpt==1)$topparentcategory = $ancestor;
+						$classes[]  = 'category-'.$ancestor;
+					}
+				}
+
+				if($topparentcategory){
+					$classes[]  = 'top-category-'.$topparentcategory;
+				}
+			}
 			foreach ((get_the_category($post->ID)) as $category){
 				$classes[] = 'category-' . $category->category_nicename;
 			}
