@@ -210,6 +210,8 @@ nav.pagination {
   background-size: cover;
 }
 
+
+// Navbar toggle icon remove
 .navbar-toggle {
   border: none;
   background: transparent !important;
@@ -247,6 +249,8 @@ nav.pagination {
   }
 }
 
+
+// Carousel bootstrap for Owlcarousel
 .carousel-indicators {
   .dot {
     display: inline-block;
@@ -283,4 +287,16 @@ nav.pagination {
  &.disabled{
    display: none;
  }
+}
+
+// Navbar stuck on scroll
+#navigation{
+  &.navbar-stuck{
+    @extend .navbar-fixed-top;
+    @include transition(0.3s ease-out);
+  }
+
+  &.navbar-stuck.navbar-outofview{
+    top:-50px;
+  }
 }

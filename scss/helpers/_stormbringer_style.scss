@@ -1,9 +1,9 @@
 body{
   position: relative;
-  padding-top: 80px;
+  //padding-top: 80px;
 }
 body.home{
-  padding-top: 50px;
+  //padding-top: 50px;
 }
 
 #wrapper{
@@ -34,7 +34,6 @@ body.home{
 #navigation{
   @extend .navbar;
   @extend .navbar-inverse;
-  @extend .navbar-fixed-top;
 
   .admin-bar &{
     margin-top: 32px;
@@ -43,6 +42,9 @@ body.home{
   border-color: darken($color1, 10%);
   border-radius: 0;
   .navbar-brand{margin-left: -15px;}
+}
+#header{
+  margin-bottom: $navbar-margin-bottom;
 }
 .navigation-inner{
   @extend .container;

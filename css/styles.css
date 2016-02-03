@@ -4760,18 +4760,18 @@ tbody.collapse.in {
   .navbar-collapse.in {
     overflow-y: visible;
   }
-  .navbar-fixed-top .navbar-collapse, #navigation .navbar-collapse, .navbar-static-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+  .navbar-fixed-top .navbar-collapse, #navigation.navbar-stuck .navbar-collapse, .navbar-static-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
-.navbar-fixed-top .navbar-collapse, #navigation .navbar-collapse,
+.navbar-fixed-top .navbar-collapse, #navigation.navbar-stuck .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
   max-height: 340px;
 }
 @media (max-device-width: 480px) and (orientation: landscape) {
-  .navbar-fixed-top .navbar-collapse, #navigation .navbar-collapse,
+  .navbar-fixed-top .navbar-collapse, #navigation.navbar-stuck .navbar-collapse,
   .navbar-fixed-bottom .navbar-collapse {
     max-height: 200px;
   }
@@ -4812,7 +4812,7 @@ tbody.collapse.in {
   }
 }
 
-.navbar-fixed-top, #navigation,
+.navbar-fixed-top, #navigation.navbar-stuck,
 .navbar-fixed-bottom {
   position: fixed;
   right: 0;
@@ -4820,13 +4820,13 @@ tbody.collapse.in {
   z-index: 1030;
 }
 @media (min-width: 768px) {
-  .navbar-fixed-top, #navigation,
+  .navbar-fixed-top, #navigation.navbar-stuck,
   .navbar-fixed-bottom {
     border-radius: 0;
   }
 }
 
-.navbar-fixed-top, #navigation {
+.navbar-fixed-top, #navigation.navbar-stuck {
   top: 0;
   border-width: 0 0 1px;
 }
@@ -7695,6 +7695,15 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
   display: none;
 }
 
+#navigation.navbar-stuck {
+  -webkit-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+#navigation.navbar-stuck.navbar-outofview {
+  top: -50px;
+}
+
 .form-horizontal .control-label {
   position: relative;
   min-height: 1px;
@@ -8325,11 +8334,6 @@ video {
 
 body {
   position: relative;
-  padding-top: 80px;
-}
-
-body.home {
-  padding-top: 50px;
 }
 
 .main-inner {
@@ -8393,6 +8397,10 @@ body.home {
 }
 #navigation .navbar-brand {
   margin-left: -15px;
+}
+
+#header {
+  margin-bottom: 20px;
 }
 
 .footer-wrapper {
