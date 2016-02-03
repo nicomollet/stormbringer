@@ -45,6 +45,7 @@ css/application.min.*.css
 css/styles.min.*.css
 js/production.min.*.js
 js/scripts.min.*.js
+stormbringer-child/*.sass-cache
 stormbringer-child/css/application.min.*.css
 stormbringer-child/js/styles.min.*.js
 stormbringer-child/css/application.min.*.css

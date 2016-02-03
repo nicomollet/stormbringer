@@ -4,6 +4,41 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    // Modernizr
+    modernizr: {
+      dist: {
+        crawl: false,
+        devFile: false,
+        uglify: false,
+        dest: 'js/src/modernizr.js',
+        options: [
+          'setClasses',
+          'addTest',
+          'testProp',
+          'fnBind'
+        ],
+        tests : [
+          'cookies',
+          'svg',
+          'touchevents',
+          'cssanimations',
+          'backgroundblendmode',
+          'backgroundcliptext',
+          'bgpositionshorthand',
+          'bgpositionxy',
+          'backgroundsize',
+          'bgsizecover',
+          'borderradius',
+          'boxshadow',
+          'flexbox',
+          'mediaqueries',
+          'csstransforms',
+          'cssvhunit',
+          'cssvwunit'
+        ]
+      }
+    },
+
     // Clean old files
     clean: {
       js: ['js/scripts.min.*.js', '!js/scripts.min.'+grunt.template.today('yyyymm')+'*.js'],
@@ -30,7 +65,9 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'js/src/application.js',   // Custom JS
+          'js/src/modernizr.js',
+          '../stormbringer/js/src/common.js',
+          'js/src/application.js',
         ],
         dest: 'js/scripts.js',
       }
@@ -102,9 +139,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-assets-versioning');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-modernizr');
 
-
-  // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'watch', 'assets_versioning', 'clean']);
+  // Tasks registration
+  grunt.registerTask('default', ['modernizr', 'concat', 'uglify', 'sass', 'cssmin', 'watch', 'assets_versioning', 'clean']);
 
 };

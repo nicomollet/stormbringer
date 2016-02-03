@@ -7701,7 +7701,7 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
   transition: 0.3s ease-out;
 }
 #navigation.navbar-stuck.navbar-outofview {
-  top: -50px;
+  top: -51px;
 }
 
 .form-horizontal .control-label {

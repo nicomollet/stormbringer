@@ -19,7 +19,6 @@ if ( ! isset( $content_width ) )
 
 add_theme_support('libraries',
 	array(
-		'modernizr' => '2.8.3',
 		'html5shiv'            => '3.7.3',
 		'respond'              => '1.4.2',
 		'lessjs'               => '2.5.0',

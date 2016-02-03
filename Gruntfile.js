@@ -1,8 +1,41 @@
 module.exports = function(grunt) {
 
-  // 1. All configuration goes here
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    modernizr: {
+      dist: {
+        crawl: false,
+        devFile: false,
+        uglify: false,
+        dest: 'js/src/modernizr.js',
+        options: [
+          'setClasses',
+          'addTest',
+          'testProp',
+          'fnBind'
+        ],
+        tests : [
+          'cookies',
+          'svg',
+          'touchevents',
+          'cssanimations',
+          'backgroundblendmode',
+          'backgroundcliptext',
+          'bgpositionshorthand',
+          'bgpositionxy',
+          'backgroundsize',
+          'bgsizecover',
+          'borderradius',
+          'boxshadow',
+          'flexbox',
+          'mediaqueries',
+          'csstransforms',
+          'cssvhunit',
+          'cssvwunit'
+        ]
+      }
+    },
 
     // Clean old files
     clean: {
@@ -26,24 +59,19 @@ module.exports = function(grunt) {
       }
     },
 
-    // Combine our javascript files into one
+    // Combine javascript
     concat: {
       dist: {
         src: [
-          'js/src/application.js',   // Custom JS
+          'js/src/modernizr.js',
+          'js/src/common.js',
+          'js/src/application.js',
         ],
         dest: 'js/scripts.js',
       }
     },
 
-    // Minify javascript
-    uglify: {
-      build: {
-        src: 'js/scripts.js',
-        dest: 'js/scripts.min.js'
-      }
-    },
-
+    // Sass compilation
     sass: {
       dist: {
         options: {
@@ -56,6 +84,16 @@ module.exports = function(grunt) {
     },
 
 
+    // Minify javascript
+    uglify: {
+      build: {
+        src: 'js/scripts.js',
+        dest: 'js/scripts.min.js'
+      }
+    },
+
+
+    // Minify CSS
     cssmin: {
       combine: {
         files: {
@@ -64,11 +102,11 @@ module.exports = function(grunt) {
       }
     },
 
+    // Watch
     watch: {
       options: {
         livereload : 35729,
       },
-
       scripts: {
         files: ['js/src/*.js'],
         tasks: ['concat', 'uglify', 'clean', 'assets_versioning'],
@@ -76,7 +114,6 @@ module.exports = function(grunt) {
           spawn: false,
         },
       },
-
       css: {
         files: ['scss/*.scss', 'scss/bootstrap/*.scss', 'scss/helpers/*.scss'],
         tasks: ['sass', 'cssmin', 'clean', 'assets_versioning'],
@@ -84,12 +121,9 @@ module.exports = function(grunt) {
           spawn: false,
         }
       },
-
     }
-
   });
 
-  // 3. Where we tell Grunt we plan to use this plug-in.
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -97,9 +131,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-assets-versioning');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-modernizr');
 
 
-  // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'watch', 'assets_versioning', 'clean']);
+  // Tasks registration
+  grunt.registerTask('default', ['modernizr', 'concat', 'uglify', 'sass', 'cssmin', 'watch', 'assets_versioning', 'clean']);
 
 };
