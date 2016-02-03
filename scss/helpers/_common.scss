@@ -297,6 +297,6 @@ nav.pagination {
   }
 
   &.navbar-stuck.navbar-outofview{
-    top:-50px;
+    top: -$navbar-height - 1px;
   }
 }
