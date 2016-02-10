@@ -75,6 +75,6 @@
 	</div>
 	<!-- /#content -->
 
-<?php get_sidebar( 'blog' ); ?>
+<?php //get_sidebar( 'blog' ); ?>
 
 <?php get_footer(); ?>

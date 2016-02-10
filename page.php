@@ -8,11 +8,11 @@
 ?>
 <?php get_header(); ?>
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 
 	<div id="content" role="main">
 
-		<?php if ( function_exists( 'yoast_breadcrumb' ) ) :  yoast_breadcrumb(); endif; ?>
+		<?php if ( function_exists( 'yoast_breadcrumb' ) ) : yoast_breadcrumb(); endif; ?>
 
 		<?php if ( have_posts() ) : the_post(); ?>
 

@@ -171,6 +171,7 @@ $(document).ready(function () {
       }
 
       $owlcarousel.owlCarousel({
+        margin: $owlcarousel.data('margin'),
         loop: $owlcarousel.data('loop'),
         center: $owlcarousel.data('center'),
         nav: $owlcarousel.data('controls'),

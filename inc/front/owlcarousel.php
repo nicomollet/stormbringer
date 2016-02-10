@@ -47,6 +47,7 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
       $carousel .= '<div id="owl-carousel-' . $vars['id'] . '"
       class="owl-carousel"
       data-loop="' . $vars['loop'] . '"
+      data-margin="' . $vars['margin'] . '"
       data-center="' . $vars['center'] . '"
       data-controls="' . $vars['controls'] . '"
       data-indicators="' . $vars['indicators'] . '"
@@ -145,6 +146,7 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
           'file'       => 1,
           'link'       => '', // file, attachment
 
+          'margin'       => 0,
           'loop'       => 'true',
           'center'     => 'false',
           'controls'   => 'false',
@@ -167,6 +169,7 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
       $order          = sanitize_key( $atts['order'] );
       $orderby        = sanitize_key( $atts['orderby'] );
       $loop        = sanitize_key( $atts['loop'] );
+      $margin        = sanitize_key( $atts['margin'] );
       $center        = sanitize_key( $atts['center'] );
       $controls        = sanitize_key( $atts['controls'] );
       $indicators        = sanitize_key( $atts['indicators'] );
@@ -207,6 +210,7 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
           'file'       => $file,
           'link'       => $link,
           'loop'       => $loop,
+          'margin'       => $margin,
           'center'     => $center,
           'controls'        => $controls,
           'indicators'        => $indicators,
@@ -276,6 +280,7 @@ function custom_owlcarousel_shortcode_atts($defaults){
     'file'              => 0, // Link image to attachement page
     'link'              => '', // Link image to attachement page
     'loop'           => 'true', // Owlcarousel loop
+    'margin'           => 0, // Owlcarousel margin
     'center'           => 'false', // Owlcarousel center
     'controls'           => 'false', // Owlcarousel nav
     'indicators'           => 'true', // Owlcarousel dots
