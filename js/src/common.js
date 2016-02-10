@@ -39,19 +39,12 @@ $(document).ready(function () {
     }
   }
 
-  // Add Modernizr test: iOS detection
+  // Modernizr test: iOS detection
   if (typeof Modernizr == 'object') {
     Modernizr.addTest('ios', function () {
       return navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false
     });
   }
-
-  // Contact Form default place holds WPCF7
-  $('.wpcf7-text, .wpcf7-textarea').each(function(){
-    $(this).attr('placeholder',$(this).val());
-    if($(this).text()!="")$(this).attr('placeholder',$(this).text());
-    $(this).val("");
-  });
 
   // Applies placeholder attribute behavior in web browsers that don't support it
   if (!('placeholder' in document.createElement('input'))) {
@@ -143,7 +136,7 @@ $(document).ready(function () {
     //$('.datepicker-input').datepicker({});
   }
 
-  // Carousel swipe
+  // Carousel swipe defaults
   if (Modernizr.touch && typeof($.fn.swipe) == 'function') {
     $('.carousel-control').remove();
     $('.carousel').swipe({
@@ -155,7 +148,7 @@ $(document).ready(function () {
     });
   }
 
-  // Datepicker defaults
+  // Owlcarousel defaults
   if (typeof($.fn.owlCarousel) == 'function') {
 
     $('.owl-carousel').each( function() {
