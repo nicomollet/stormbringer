@@ -194,4 +194,17 @@ $(document).ready(function () {
     });
   }
 
+  // Analytics decorate iframes
+  if ('ga' in window){
+    ga(function(tracker) {
+      var clientId = tracker.get('clientId');
+      window.linker = window.linker || new window.gaplugins.Linker(tracker);
+      $('iframe').each( function() {
+        if($(this).attr('src') != ''){
+          $(this).attr('src', window.linker.decorate($(this).attr('src')));
+        }
+      });
+    });
+  }
+
 });

@@ -7687,7 +7687,7 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
   cursor: pointer;
 }
 
-.touch .carousel-controls {
+.touch .carousel-controls, .touchevents .carousel-controls {
   display: none;
 }
 
