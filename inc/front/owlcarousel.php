@@ -91,7 +91,7 @@ if ( ! class_exists( 'WP_Bootstrap_Owl_Carousel' ) ) {
         //$link   = ( $vars['file'] ) ? $full[0] : get_attachment_link( $item_id );
         $text   = wpautop( wptexturize( $item->post_content ) );
 
-        $carousel .= '<div class="item-' . $item_id . '" class="' . ( ( $i == 0 ) ? "active" : "" ) . ' item">';
+        $carousel .= '<div class="order-'.$item->menu_order.' item-' . $item_id . '" class="' . ( ( $i == 0 ) ? "active" : "" ) . ' item">';
         if($link!='')$carousel .= '<a class="" rel="' . $vars['rel'] . '" href="' . $link . '">';
         $carousel .= '<img src="' . $thumb[0] . '" width="' . $vars['width'] . '" alt="' . $item->post_title . '"/>';
         if($link!='')$carousel .= '</a>';
