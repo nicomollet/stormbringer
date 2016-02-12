@@ -20,7 +20,6 @@ class Jetpack_Owlcarousel_Shortcode {
 		if ( isset( $shortcode_tags['gallery'] ) && 'gallery_shortcode' === $shortcode_tags['gallery'] ) {
 			add_filter( 'post_gallery', array( $this, 'post_gallery' ), 1002, 2 );
 			add_filter( 'jetpack_gallery_types', array( $this, 'add_gallery_type' ), 10 );
-			$needs_scripts = true;
 		}
 
 
@@ -96,7 +95,7 @@ class Jetpack_Owlcarousel_Shortcode {
 		global $post;
 
 		$attr = shortcode_atts(
-			array(
+			apply_filters( 'stormbringer_owlcarousel_shortcode_atts', array(
 				'trans'     => 'fade',
 				'order'     => 'ASC',
 				'orderby'   => 'menu_order ID',
@@ -117,7 +116,7 @@ class Jetpack_Owlcarousel_Shortcode {
 				'responsive'=> '',
 				'animateout'=> 'fadeOut',
 				'animatein' => '',
-			), $attr, 'owlcarousel'
+			)), $attr, 'owlcarousel'
 		);
 
 		if ( 'rand' == strtolower( $attr['order'] ) ) {
@@ -296,7 +295,11 @@ class Jetpack_Owlcarousel_Shortcode {
 
 
 	public static function init() {
-		$gallery = new Jetpack_Owlcarousel_Shortcode;
+
+		// Check if library is active
+		if(get_theme_mod( 'libraries_jquery-owlcarousel', true )){
+			$gallery = new Jetpack_Owlcarousel_Shortcode;
+		}
 	}
 }
 
