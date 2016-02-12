@@ -43,45 +43,42 @@
 	<?php } ?>
 	<!-- /.entry-header -->
 
-	<?php if ( is_single() || is_category() || is_tag() || is_archive() || is_home() ): ?>
-		<footer class="entry-meta">
+	<footer class="entry-meta">
 
-			<p class="entry-date">
-				<i class="glyphicon glyphicon-calendar"></i>
-				<time datetime="<?php echo the_time( 'c' ); ?>" class="updated"><?php echo get_the_date( esc_attr__( 'F j, Y', 'stormbringer' ) ); ?></time>
+		<p class="entry-date">
+			<i class="glyphicon glyphicon-calendar"></i>
+			<time datetime="<?php echo the_time( 'c' ); ?>" class="updated"><?php echo get_the_date( esc_attr__( 'F j, Y', 'stormbringer' ) ); ?></time>
+		</p>
+
+		<p class="entry-author">
+			<i class="glyphicon glyphicon-user"></i> <?php _e( 'By', 'stormbringer' ); ?> <span class="vcard author"><span class="fn"><?php echo get_the_author(); ?></span></span>
+		</p>
+
+		<?php if ( comments_open() && ! is_page() ) : ?>
+			<p class="comments-link">
+				<?php comments_popup_link( '<span class="leave-reply"><span class="glyphicon glyphicon-comment"></span> ' . __( 'Leave a comment', 'stormbringer' ) . '</span>', '<span class="glyphicon glyphicon-comment"></span> ' . _x( '1 comment', 'comments number', 'stormbringer' ), '<span class="glyphicon glyphicon-comment"></span> ' . _x( '% comments', 'comments number', 'stormbringer' ) ); ?>
 			</p>
+		<?php endif; // End if comments_open() ?>
 
-			<p class="entry-author">
-				<i class="glyphicon glyphicon-user"></i> <?php _e( 'By', 'stormbringer' ); ?>
-				<span class="vcard author"><span class="fn"><?php the_author_posts_link(); ?></span></span>
+		<?php
+		$categories_list = get_the_category_list( __( ', ', 'stormbringer' ) );
+		if ( $categories_list ): ?>
+			<p class="entry-categories">
+				<?php printf( __( '<span class="%1$s"><span class="glyphicon glyphicon-book"></span> Categories:</span> %2$s', 'stormbringer' ), 'intro', $categories_list ); ?>
 			</p>
+		<?php endif; // End if $categories_list ?>
 
-			<?php if ( comments_open() && ! is_page() ) : ?>
-				<p class="comments-link">
-					<?php comments_popup_link( '<span class="leave-reply"><span class="glyphicon glyphicon-comment"></span> ' . __( 'Leave a comment', 'stormbringer' ) . '</span>', '<span class="glyphicon glyphicon-comment"></span> ' . _x( '1 comment', 'comments number', 'stormbringer' ), '<span class="glyphicon glyphicon-comment"></span> ' . _x( '% comments', 'comments number', 'stormbringer' ) ); ?>
-				</p>
-			<?php endif; // End if comments_open() ?>
-
-			<?php
-			$categories_list = get_the_category_list( __( ', ', 'stormbringer' ) );
-			if ( $categories_list ): ?>
-				<p class="entry-categories">
-					<?php printf( __( '<span class="%1$s"><span class="glyphicon glyphicon-book"></span> Categories:</span> %2$s', 'stormbringer' ), 'intro', $categories_list ); ?>
-				</p>
-			<?php endif; // End if $categories_list ?>
-
-			<?php
-			$tags_list = get_the_tag_list( '', __( ', ', 'stormbringer' ) );
-			if ( $tags_list ): ?>
-				<p class="entry-tags">
-					<?php printf( __( '<span class="%1$s"><span class="glyphicon glyphicon-tags"></span> Tags:</span> %2$s', 'stormbringer' ), 'intro', $tags_list ); ?>
-				</p>
-			<?php endif; // End if $tags_list ?>
+		<?php
+		$tags_list = get_the_tag_list( '', __( ', ', 'stormbringer' ) );
+		if ( $tags_list ): ?>
+			<p class="entry-tags">
+				<?php printf( __( '<span class="%1$s"><span class="glyphicon glyphicon-tags"></span> Tags:</span> %2$s', 'stormbringer' ), 'intro', $tags_list ); ?>
+			</p>
+		<?php endif; // End if $tags_list ?>
 
 
-		</footer>
+	</footer>
 
-	<?php endif; ?>
 	<!-- /.entry-meta -->
 
 	<div class="entry-content">

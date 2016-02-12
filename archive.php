@@ -20,21 +20,13 @@
 			?>
 
 			<?php
-			// Category feed
-			if ( is_category() ) {
-				$category = get_the_category();
-				echo '<a href="' . get_category_feed_link( $category[0]->term_id ) . '" class="taxonomy-feed">' . __( "Feed", 'stormbringer' ) . '</a>';
-			}
-			?>
-
-			<?php
 			// Author vcard
 			if ( is_author() ) {
-			$queried_object = get_queried_object();
-			?>
-			<?php _e( 'Posts by:', 'stormbringer' ); ?>
-			<span class="vcard"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>" rel="me"><?php echo get_the_author(); ?></a>
-				<?php } ?>
+				$queried_object = get_queried_object();
+				?>
+				<?php _e( 'Posts by:', 'stormbringer' ); ?>
+				<span class="vcard"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>" rel="me"><?php echo get_the_author(); ?></a></span>
+			<?php } ?>
 
 		</header>
 
@@ -75,6 +67,6 @@
 	</div>
 	<!-- /#content -->
 
-<?php get_sidebar( 'blog' ); ?>
+<?php //get_sidebar( 'blog' ); ?>
 
 <?php get_footer(); ?>

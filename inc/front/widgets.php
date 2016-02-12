@@ -1,11 +1,11 @@
 <?php
 
 // Enable shortcodes in widgets
-add_filter( 'widget_text', 'do_shortcode' );
+//add_filter( 'widget_text', 'do_shortcode' );
 
 
 // First and last classes for widgets http://wordpress.org/support/topic/how-to-first-and-last-css-classes-for-sidebar-widgets
-function roots_widget_first_last_classes( $params ) {
+function stormbringer_widget_first_last_classes( $params ) {
 	global $my_widget_num;
 	$this_id                = $params[0]['id'];
 	$arr_registered_widgets = wp_get_sidebars_widgets();
@@ -38,7 +38,7 @@ function roots_widget_first_last_classes( $params ) {
 
 }
 
-add_filter( 'dynamic_sidebar_params', 'roots_widget_first_last_classes' );
+add_filter( 'dynamic_sidebar_params', 'stormbringer_widget_first_last_classes' );
 
 
 // Widget tag cloud
@@ -52,24 +52,3 @@ function stormbringer_widget_tag_cloud_args( $args ) {
 }
 
 add_filter( 'widget_tag_cloud_args', 'stormbringer_widget_tag_cloud_args' );
-
-
-// filter tag clould output so that it can be styled by CSS
-function add_tag_class( $taglinks ) {
-	$tags  = explode( '</a>', $taglinks );
-	$regex = "#(.*tag-link[-])(.*)(' title.*)#e";
-	foreach ( $tags as $tag ) {
-		//$tagn[] = preg_replace($regex, "('$1$2 label tag-'.get_tag($2)->slug.'$3')", $tag );
-		$tagn[] = preg_replace( $regex, "('$1$2 tag-'.get_tag($2)->slug.'$3')", $tag );
-	}
-	$taglinks = implode( '</a>', $tagn );
-
-	return $taglinks;
-}
-
-add_action( 'wp_tag_cloud', 'add_tag_class' );
-add_filter( 'wp_tag_cloud', 'wp_tag_cloud_filter', 10, 2 );
-
-function wp_tag_cloud_filter( $return, $args ) {
-	return '<div id="tag-cloud">' . $return . '</div>';
-}

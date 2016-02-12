@@ -22,6 +22,8 @@
           <?php dynamic_sidebar('footer_widgets'); ?>
         <?php endif; ?>
       </div>
+
+        <?php do_shortcode('[customeralliance-badge id="fgAB52821es6" access_key="4bcd38d9e065d2b9dfc54db378cfd93a9e5c6faf" lang="fr" post_id="1783" theme="black"]'); ?>
     </footer>
     <!-- /#footer -->
 

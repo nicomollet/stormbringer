@@ -19,6 +19,7 @@ module.exports = function(grunt) {
           'cookies',
           'svg',
           'touchevents',
+          'pointerevents',
           'cssanimations',
           'backgroundblendmode',
           'backgroundcliptext',

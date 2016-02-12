@@ -1,8 +1,8 @@
 <?php
 
 // Gallery shortcode
-remove_shortcode('gallery', 'gallery_shortcode');
-add_shortcode('gallery', 'roots_gallery_shortcode');
+//remove_shortcode('gallery', 'gallery_shortcode');
+//add_shortcode('gallery', 'roots_gallery_shortcode');
 
 // cleanup gallery_shortcode()
 function roots_gallery_shortcode($attr)
@@ -19,14 +19,13 @@ function roots_gallery_shortcode($attr)
         $attr['include'] = $attr['ids'];
     }
 
-    // Jetpack tiled gallery compatibility
-    if ($attr['type'] != '') {
-        if (class_exists('Jetpack_Tiled_Gallery')) {
-            $gallery = new Jetpack_Tiled_Gallery;
-            add_filter('post_gallery', array($gallery, 'gallery_shortcode'), 1001, 2);
 
-            return gallery_shortcode($attr);
-        }
+    // Jetpack tiled gallery compatibility
+    if ($attr['type'] != '' && class_exists('Jetpack_Tiled_Gallery')) {
+        $gallery = new Jetpack_Tiled_Gallery;
+        add_filter('post_gallery', array($gallery, 'gallery_shortcode'), 1001, 2);
+
+        return gallery_shortcode($attr);
     }
 
     $output = apply_filters('post_gallery', '', $attr);

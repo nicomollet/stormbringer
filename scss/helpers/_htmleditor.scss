@@ -16,4 +16,14 @@ blockquote.pull-left{
   height: auto;
   width: auto;
   //background: none !important;
+
+  .wpview-body{
+    .gallery{
+      margin: 0;
+      img{
+        display: inline;
+      }
+    }
+  }
 }
+
