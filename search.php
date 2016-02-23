@@ -14,7 +14,7 @@
 
 		<header class="page-header search-header">
 			<h1 class="page-title search-title">
-				<span><?php printf( __( 'Search results: %s', 'stormbringer' ), '</span>' . get_search_query() . '' ); ?>
+				<?php printf( __( 'Search results: %s', 'stormbringer' ), '<span>' . get_search_query() . '</span>' ); ?>
 			</h1>
 		</header>
 
