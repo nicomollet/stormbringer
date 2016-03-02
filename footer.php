@@ -22,7 +22,6 @@
           <?php dynamic_sidebar('footer_widgets'); ?>
         <?php endif; ?>
       </div>
-
     </footer>
     <!-- /#footer -->
 

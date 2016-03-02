@@ -7420,6 +7420,10 @@ p.breadcrumb span[rel='v:child'], p.breadcrumb .breadcrumb_last {
   width: 100%;
 }
 
+.hideifonlyonechild > *:first-child:nth-last-child(1) {
+  display: none;
+}
+
 .underline {
   text-decoration: underline;
 }

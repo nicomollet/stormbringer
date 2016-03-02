@@ -29,6 +29,12 @@ p.breadcrumb {
   width: 100%;
 }
 
+.hideifonlyonechild{
+  > *:first-child:nth-last-child(1){
+    display: none;
+  }
+}
+
 // Common text styles
 .underline {text-decoration: underline}
 .bold{font-weight: bold;}
