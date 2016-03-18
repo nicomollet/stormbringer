@@ -83,7 +83,6 @@
 
 	<div class="entry-content">
 
-		<?php the_post_thumbnail( 'medium' ); ?>
 		<?php if ( is_archive() || is_search() ) { ?>
 			<?php echo get_the_excerpt(); ?>
 		<?php } else { ?>
