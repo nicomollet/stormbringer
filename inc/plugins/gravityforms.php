@@ -58,6 +58,18 @@ function stormbringer_gform_submit_button($button, $form)
 }
 add_filter('gform_submit_button', 'stormbringer_gform_submit_button', 10, 2);
 
+function stormbringer_gform_next_button($button, $form)
+{
+    return '<div class="form-actions form-actions-next">'.str_replace('gform_next_button button','btn btn-primary',$button).'</div>';
+}
+add_filter('gform_next_button', 'stormbringer_gform_next_button', 10, 2);
+
+function stormbringer_gform_previous_button($button, $form)
+{
+    return '<div class="form-actions form-actions-previous">'.str_replace('gform_previous_button button','btn btn-link',$button).'</div>';
+}
+add_filter('gform_previous_button', 'stormbringer_gform_previous_button', 10, 2);
+
 
 
 //This filter is executed when the form is displayed and can be used to completely change
