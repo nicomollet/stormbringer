@@ -1,4 +1,4 @@
-Stormbringer
+Stormbringer ![Release](https://img.shields.io/github/release/nicomollet/stormbringer.svg)
 =================
 
 Stormbringer is a starting WordPress theme based on Bootstrap from Twitter. Created by Nicolas Mollet (http://twitter.com/nicomollet).
