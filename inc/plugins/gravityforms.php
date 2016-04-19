@@ -344,3 +344,16 @@ function wrap_gform_cdata_close( $content = '' ) {
     $content = ' }, false );';
     return $content;
 }
+
+function gform_analytics_event(){ ?>
+    <script type="application/javascript">
+        // Tracking event for Gravity Forms submission
+        $(document).bind('gform_confirmation_loaded', function(event, formId){
+            if (typeof ga === 'function') {
+                ga('send', 'event', 'Forms', 'Submission', 'formid_'+formId);
+            }
+        });
+    </script>
+<?php }
+
+add_action('wp_footer', 'gform_analytics_event'); ?>

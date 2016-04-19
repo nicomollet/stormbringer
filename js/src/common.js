@@ -91,6 +91,13 @@ $(document).ready(function () {
       $(this).attr('readonly','readonly');
   });
 
+  // Tracking event for Gravity Forms submission
+  $(document).bind('gform_confirmation_loaded', function(event, formId){
+    if (typeof ga === 'function') {
+      ga('send', 'event', 'Forms', 'Submission', 'formid_'+formId);
+    }
+  });
+
   // Email obfuscation
   $("span.cryptemail").each(function(){
     var spt = $(this);
