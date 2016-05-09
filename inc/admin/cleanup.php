@@ -39,4 +39,13 @@ function stormbringer_remove_wp_logo_from_admin_bar()
 add_action('wp_before_admin_bar_render', 'stormbringer_remove_wp_logo_from_admin_bar', 7);
 
 
-
+/**
+ * Filter Medias
+ *
+ * @link http://code.tutsplus.com/articles/quick-tip-add-extra-media-type-filters-to-the-wordpress-media-manager--wp-25998
+ */
+function custom_post_mime_types( $post_mime_types ) {
+    $post_mime_types['application/pdf'] = array( __( 'PDFs' ), __( 'Manage PDFs' ), _n_noop( 'PDF <span class="count">(%s)</span>', 'PDFs <span class="count">(%s)</span>' ) );
+    return $post_mime_types;
+}
+add_filter( 'post_mime_types', 'custom_post_mime_types' );
