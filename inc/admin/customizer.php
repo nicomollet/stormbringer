@@ -160,7 +160,7 @@ function stormbringer_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'excerpt_length',
 		array(
-			'default'		=> '100',
+			'default'		=> '50',
 			'transport'		=> 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field'
 		)
