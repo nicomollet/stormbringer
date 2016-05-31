@@ -1,5 +1,9 @@
 <?php
 
+// Put Woocommerce Javascript at the end of the footer
+remove_action('wp_footer', 'wc_print_js', 25);
+add_action('wp_footer', 'wc_print_js', PHP_INT_MAX);
+
 // Remove Woocommerce styles
 define('WOOCOMMERCE_USE_CSS',false); // until Woocommerce 2.1
 add_filter( 'woocommerce_enqueue_styles', '__return_false' ); // after Woocommerce 2.1

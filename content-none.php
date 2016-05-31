@@ -3,22 +3,22 @@
  * The template for displaying a 404 content.
  *
  * @package StormBringer
- * @since StormBringer 0.0.1
+ * @since   StormBringer 0.0.1
  */
 ?>
 
 <article id="post-not-found" class="post-not-found">
 
-  <header class="page-header 404-header">
-    <h1 class="page-title 404-title"><?php _e('Page not found', 'stormbringer'); ?></h1>
-  </header>
+    <header class="page-header e404-header">
+        <h1 class="page-title e404-title"><?php _e('Page not found', 'stormbringer'); ?></h1>
+    </header>
 
-  <div class="entry-content">
-    <p><?php _e('The content your are looking for is not here.', 'stormbringer'); ?></p>
-  </div>
+    <div class="entry-content">
+        <p><?php _e('The content your are looking for is not here.', 'stormbringer'); ?></p>
+    </div>
 
-	<footer class="entry-meta">
-  </footer>
+    <footer class="entry-meta">
+    </footer>
 
 </article>
 
