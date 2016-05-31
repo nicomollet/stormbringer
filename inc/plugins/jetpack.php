@@ -12,6 +12,13 @@ function jptweak_remove_share() {
 }
 add_action( 'loop_start', 'jptweak_remove_share' );
 
+//Remove Jetpack Sharing
+function minify_jetpack_sharing_js() {
+    remove_action( 'wp_footer', 'sharing_add_footer' );
+    add_action( 'wp_footer', 'sharing_add_footer', 100 );
+}
+add_action( 'wp_footer', 'minify_jetpack_sharing_js', 5 );
+
 // Remove Jetpack modules
 function jetpack_remove_modules ( $modules ) {
     unset( $modules['contact-form'] );

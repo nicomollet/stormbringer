@@ -64,6 +64,20 @@
 
 		<?php endif; ?>
 
+
+        <footer class="archive-footer">
+            <?php
+            $categorybottomdescription = get_theme_mod('categorybottomdescription');
+            if($categorybottomdescription){
+                $term = get_queried_object();
+                $cuztom_term_meta = get_cuztom_term_meta($term->term_id, $term->taxonomy);
+                if(!empty($cuztom_term_meta['_bottom_description'])){
+                    echo $cuztom_term_meta['_bottom_description'];
+                }
+            }
+
+            ?>
+        </footer>
 	</div>
 	<!-- /#content -->
 

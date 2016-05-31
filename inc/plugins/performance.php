@@ -1,6 +1,6 @@
 <?php
 
-// Menu icon for Backwpup
+// Menu icon for W3TC
 function w3tc_menu_icon(){
 
 	print '<style type="text/css">';
@@ -14,3 +14,7 @@ function w3tc_menu_icon(){
 	print '</style>';
 }
 add_action( 'admin_head', 'w3tc_menu_icon',30 );
+
+// WP Rocket defered scripts are too low in the wp_footer queue
+add_action( 'wp_footer', '__rocket_insert_minify_js_in_footer', 20 );
+remove_action( 'wp_footer', '__rocket_insert_minify_js_in_footer', PHP_INT_MAX );

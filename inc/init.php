@@ -7,8 +7,21 @@ function stormbringer_support() {
     add_theme_support( 'title-tag' );
 
 
-	if(get_theme_support('meta')){
+    // category bottom description
+    $categorybottomdescription = get_theme_mod('categorybottomdescription');
+	if($categorybottomdescription){
 		locate_template( 'inc/library/cuztom/cuztom.php', true );         // Cuztom library
+        $taxonomy = new Cuztom_Taxonomy( 'Category', 'post');
+        $taxonomy->add_term_meta (
+            array(
+                array(
+                    'name'        => 'bottom_description',
+                    'label'       => 'Bottom description',
+                    'type'        => 'wysiwyg',
+                    'args'        => ['editor_height' => 500],
+                )
+            )
+        );
 	}
 
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ){

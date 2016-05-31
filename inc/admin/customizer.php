@@ -229,9 +229,27 @@ function stormbringer_customize_register( $wp_customize ) {
 		)
 	);
 
+    // category bottom description
+    $wp_customize->add_setting(
+        'categorybottomdescription',
+        array(
+            'default'		=> 0,
+            //'transport'		=> 'postMessage',
+            //'sanitize_callback' => 'sanitize_text_field'
+        )
+    );
+    $wp_customize->add_control(
+        'categorybottomdescription',
+        array(
+            'section'		=> 'misc',
+            'label'			=> __( 'Category bottom description', 'stormbringer' ),
+            'type'			=> 'checkbox',
+        )
+    );
 
 
-	// Misc ****************************
+
+	// Bootstrap ****************************
 	$wp_customize->add_section( 'bootstrap', array(
 		'title'    => __( 'Bootstrap', 'stormbringer' ),
 		'priority' => 0,
