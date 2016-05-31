@@ -9,8 +9,8 @@
 
 <article id="post-not-found" class="post-not-found">
 
-    <header class="page-header e404-header">
-        <h1 class="page-title e404-title"><?php _e('Page not found', 'stormbringer'); ?></h1>
+    <header class="page-header error404-header">
+        <h1 class="page-title error404-title"><?php _e('Page not found', 'stormbringer'); ?></h1>
     </header>
 
     <div class="entry-content">
