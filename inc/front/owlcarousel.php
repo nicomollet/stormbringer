@@ -22,13 +22,6 @@ class Jetpack_Owlcarousel_Shortcode {
 			add_filter( 'jetpack_gallery_types', array( $this, 'add_gallery_type' ), 10 );
 		}
 
-
-		/**
-		 * For the moment, comment out the setting for v2.8.
-		 * The remainder should work as it always has.
-		 * See: https://github.com/Automattic/jetpack/pull/85/files
-		 */
-		// add_action( 'admin_init', array( $this, 'register_settings' ), 5 );
 	}
 
 	/**
@@ -238,8 +231,7 @@ class Jetpack_Owlcarousel_Shortcode {
 	function gallery_shortcode( $attr ) {
 
 		$output = '';
-
-
+        
         $responsive = json_encode($attr['responsive']);
         $responsive = str_replace('"','\'',$responsive);
         //$responsive = substr($responsive, 1);
@@ -261,11 +253,6 @@ class Jetpack_Owlcarousel_Shortcode {
 	      data-animateout="' . $attr['animateout'] . '"
 	      data-animatein="' . $attr['animatein'] . '"
 	      >';
-
-/*
- *
- * [owlcarousel loop="true" orderby="title" controls="true" responsive="{'0':{'items': '2'},'600':{'items': '3','slideBy': '3'},'1000':{'items': '6','slideBy': '6'}}"]
- */
 
 		$items = $attr['gallery'];
 
@@ -297,15 +284,6 @@ class Jetpack_Owlcarousel_Shortcode {
 			$i++;
 		}
 		$output .= '</div>'; // carousel
-
-		/*$output .= '<p class="jetpack-owlcarousel-noscript robots-nocontent">' . esc_html__( 'This owlcarousel requires JavaScript.', 'jetpack' ) . '</p>';
-		$output .= sprintf(
-			'<div id="%s" class="owlcarousel-window jetpack-owlcarousel" data-trans="%s" data-autostart="%s" data-gallery="%s"></div>',
-			esc_attr( $attr['selector'] . '-owlcarousel' ),
-			esc_attr( $attr['trans'] ),
-			esc_attr( $attr['autostart'] ),
-			_wp_specialchars( wp_check_invalid_utf8( $gallery ), ENT_QUOTES, false, true )
-		);*/
 
 		return $output;
 	}
