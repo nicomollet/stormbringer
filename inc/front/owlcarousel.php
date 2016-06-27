@@ -111,9 +111,9 @@ class Jetpack_Owlcarousel_Shortcode {
 				'indicators'=> 'true',
 				'autoplay'  => 'false',
 				'timeout'   => '5000',
-				'items'     => '4',
-				'slideby'   => '4',
-				'responsive'=> '',
+				'items'     => '1',
+				'slideby'   => '1',
+				'responsive'=> null,
 				'animateout'=> 'fadeOut',
 				'animatein' => '',
 			)), $attr, 'owlcarousel'
@@ -186,6 +186,13 @@ class Jetpack_Owlcarousel_Shortcode {
 			);
 		}
 
+        $responsive = @$attr['responsive'];
+
+        if(!is_array($responsive)):
+            $responsive = json_decode(str_replace('\'','"',$responsive));
+        endif;
+
+
 		$js_attr = array(
 			'gallery'   => $gallery,
 			'selector'  => $gallery_instance,
@@ -198,9 +205,9 @@ class Jetpack_Owlcarousel_Shortcode {
 			'indicators'     => $attr['indicators'] ? $attr['indicators'] : 'true',
 			'autoplay'     => $attr['autoplay'] ? $attr['autoplay'] : 'false',
 			'timeout'     => $attr['timeout'] ? $attr['timeout'] : '5000',
-			'items'     => $attr['items'] ? $attr['items'] : '4',
-			'slideby'     => $attr['slideby'] ? $attr['slideby'] : '4',
-			'responsive'     => $attr['responsive'] ? $attr['responsive'] : '',
+			'items'     => $attr['items'] ? $attr['items'] : '1',
+			'slideby'     => $attr['slideby'] ? $attr['slideby'] : '1',
+			'responsive'     => $responsive ? $responsive: '',
 			'animateout'     => $attr['animateout'] ? $attr['animateout'] : 'fadeOut',
 			'animatein'     => $attr['animatein'] ? $attr['animatein'] : '',
 		);
@@ -233,6 +240,12 @@ class Jetpack_Owlcarousel_Shortcode {
 		$output = '';
 
 
+        $responsive = json_encode($attr['responsive']);
+        $responsive = str_replace('"','\'',$responsive);
+        //$responsive = substr($responsive, 1);
+        //$responsive = substr($responsive, 0, -1);
+
+
 		$output .= '<div id="' . $attr['selector'] . '"
 	      class="owl-carousel"
 	      data-loop="' . $attr['loop'] . '"
@@ -244,11 +257,15 @@ class Jetpack_Owlcarousel_Shortcode {
 	      data-timeout="' . $attr['timeout'] . '"
 	      data-items="' . $attr['items'] . '"
 	      data-slideby="' . $attr['slideby'] . '"
-	      data-responsive="' . $attr['responsive'] . '"
+	      data-responsive="' . $responsive. '"
 	      data-animateout="' . $attr['animateout'] . '"
 	      data-animatein="' . $attr['animatein'] . '"
 	      >';
 
+/*
+ *
+ * [owlcarousel loop="true" orderby="title" controls="true" responsive="{'0':{'items': '2'},'600':{'items': '3','slideBy': '3'},'1000':{'items': '6','slideBy': '6'}}"]
+ */
 
 		$items = $attr['gallery'];
 

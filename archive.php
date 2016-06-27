@@ -58,12 +58,11 @@
 		<?php else : ?>
 
 			<?php
-			/* No results */
+			// No results
 			get_template_part( 'content', 'none' );
 			?>
 
 		<?php endif; ?>
-
 
         <footer class="archive-footer">
             <?php
@@ -75,7 +74,6 @@
                     echo $cuztom_term_meta['_bottom_description'];
                 }
             }
-
             ?>
         </footer>
 	</div>
