@@ -7,9 +7,9 @@ function stormbringer_support() {
     add_theme_support( 'title-tag' );
 
 
-    // category bottom description
-    $categorybottomdescription = get_theme_mod('categorybottomdescription');
-	if($categorybottomdescription){
+    // Cuztom
+    $cuztom = get_theme_mod('cuztom');
+	if($cuztom){
 		locate_template( 'inc/library/cuztom/cuztom.php', true );         // Cuztom library
         $taxonomy = new Cuztom_Taxonomy( 'Category', 'post');
         $taxonomy->add_term_meta (

@@ -231,7 +231,7 @@ function stormbringer_customize_register( $wp_customize ) {
 
     // category bottom description
     $wp_customize->add_setting(
-        'categorybottomdescription',
+        'cuztom',
         array(
             'default'		=> 0,
             //'transport'		=> 'postMessage',
@@ -239,10 +239,10 @@ function stormbringer_customize_register( $wp_customize ) {
         )
     );
     $wp_customize->add_control(
-        'categorybottomdescription',
+        'cuztom',
         array(
             'section'		=> 'misc',
-            'label'			=> __( 'Category bottom description', 'stormbringer' ),
+            'label'			=> __( 'Load Cuztom library', 'stormbringer' ),
             'type'			=> 'checkbox',
         )
     );
