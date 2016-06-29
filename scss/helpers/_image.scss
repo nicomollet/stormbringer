@@ -79,8 +79,10 @@ figure {
 }
 
 .alignleft {
-  float: left;
-  clear: left;
+  @media (min-width: $screen-sm-min) {
+    float: left;
+    clear: left;
+  }
 }
 
 .aligncenter {
@@ -90,20 +92,24 @@ figure {
 }
 
 .alignright {
-  float: right;
-  clear: right;
+  @media (min-width: $screen-sm-min) {
+    float: right;
+    clear: right;
+  }
 }
 
-figure {
+figure, img {
 
   @media (min-width: $screen-sm-min) {
 
     &.alignleft {
       margin-right: 20px;
+      margin-bottom: 20px;
     }
 
     &.alignright {
       margin-left: 20px;
+      margin-bottom: 20px;
     }
 
   }
@@ -112,8 +118,13 @@ figure {
 .thumbnail {
   max-width: 100%;
   position: relative;
-  margin-bottom: 20px;
-  display: inline-block;
+  margin: auto auto 20px auto;
+  display: block;
+
+  @media (min-width: $screen-sm-min) {
+    display: inline-block;
+  }
+
   .caption {
     color: $white;
     padding: 5px 9px;

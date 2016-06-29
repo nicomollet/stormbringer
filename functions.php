@@ -39,14 +39,3 @@ add_theme_support('libraries',
 		'jquery-owlcarousel'   => '2.0.0-beta.3',
 	)
 );
-
-
-function custom_owlcarousel_shortcode_atts($defaults){
-    $args = array(
-        'items'             => '3', // Owlcarousel items
-        'slideby'           => '3', // Owlcarousel slideBy
-    );
-    $args = wp_parse_args( $args, $defaults );
-    return $args;
-}
-add_filter('stormbringer_owlcarousel_shortcode_atts', 'custom_owlcarousel_shortcode_atts');
