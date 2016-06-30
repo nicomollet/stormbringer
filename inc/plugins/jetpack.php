@@ -14,8 +14,10 @@ add_action( 'loop_start', 'jptweak_remove_share' );
 
 //Remove Jetpack Sharing
 function minify_jetpack_sharing_js() {
-    remove_action( 'wp_footer', 'sharing_add_footer' );
-    add_action( 'wp_footer', 'sharing_add_footer', 100 );
+    if ( function_exists( 'sharing_display' ) ) {
+        remove_action( 'wp_footer', 'sharing_add_footer' );
+        add_action( 'wp_footer', 'sharing_add_footer', 100 );
+    }
 }
 add_action( 'wp_footer', 'minify_jetpack_sharing_js', 5 );
 
