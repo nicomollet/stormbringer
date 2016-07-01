@@ -14,7 +14,7 @@ if ( ! isset( $content_width ) )
 
 
 // ********************************************
-// Libraries (comment line to remove a library)
+// Libraries
 // ********************************************
 
 add_theme_support('libraries',
@@ -39,3 +39,28 @@ add_theme_support('libraries',
 		'jquery-owlcarousel'   => '2.1.6',
 	)
 );
+
+
+
+// Cuztom
+add_action( 'init', 'custom_meta');
+function custom_meta() {
+
+    $cuztom = get_theme_mod('cuztom');
+    if($cuztom){
+
+        $box = new Cuztom_Meta_Box(
+            'customfields',
+            __('Champs personnalisés'),
+            'post',
+            array(
+                array(
+                    'name'              => 'keywords',
+                    'label'             => 'Mots-clés',
+                    'type'              => 'textarea',
+                )
+            )
+        );
+    }
+}
+

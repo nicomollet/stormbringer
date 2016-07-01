@@ -1,22 +1,27 @@
 <?php
 
 // Cuztom
-add_action( 'init', 'stormbringer_meta', 9999);
+add_action( 'init', 'stormbringer_meta');
 function stormbringer_meta() {
 
     $cuztom = get_theme_mod('cuztom');
     if($cuztom){
         $taxonomy = new Cuztom_Taxonomy( 'Category', ['post']);
 
-        $taxonomy->add_term_meta (
-            array(
-                array(
-                    'name'        => 'bottom_description',
-                    'label'       => 'Bottom description',
-                    'type'        => 'wysiwyg',
-                    'args'        => ['editor_height' => 500],
-                )
-            )
+        $taxonomy->add_term_meta(
+            [
+                [
+                    'name'  => 'bottom_description',
+                    'label' => 'Bottom description',
+                    'type'  => 'wysiwyg',
+                    'args'  => ['editor_height' => 300],
+                ],
+                [
+                    'id'    => 'featured_image',
+                    'type'  => 'image',
+                    'label' => 'Image à la Une',
+                ]
+            ]
         );
 
     }
