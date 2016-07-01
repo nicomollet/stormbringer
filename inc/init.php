@@ -1,17 +1,13 @@
 <?php
 
-function stormbringer_support() {
+// Cuztom
+add_action( 'init', 'stormbringer_meta', 9999);
+function stormbringer_meta() {
 
-	add_theme_support( 'automatic-feed-links' );               // RSS feeds
-	add_theme_support( 'post-thumbnails' );
-    add_theme_support( 'title-tag' );
-
-
-    // Cuztom
     $cuztom = get_theme_mod('cuztom');
-	if($cuztom){
-		locate_template( 'inc/library/cuztom/cuztom.php', true );         // Cuztom library
-        $taxonomy = new Cuztom_Taxonomy( 'Category', 'post');
+    if($cuztom){
+        $taxonomy = new Cuztom_Taxonomy( 'Category', ['post']);
+
         $taxonomy->add_term_meta (
             array(
                 array(
@@ -22,6 +18,32 @@ function stormbringer_support() {
                 )
             )
         );
+
+    }
+}
+
+// Support
+function stormbringer_support() {
+
+	add_theme_support( 'automatic-feed-links' );               // RSS feeds
+	add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'title-tag' );
+
+    // Cuztom
+    $cuztom = get_theme_mod('cuztom');
+	if($cuztom){
+		locate_template( 'inc/library/cuztom/cuztom.php', true );         // Cuztom library
+        /*$taxonomy = new Cuztom_Taxonomy( 'Category', 'post');
+        $taxonomy->add_term_meta (
+            array(
+                array(
+                    'name'        => 'bottom_description',
+                    'label'       => 'Bottom description',
+                    'type'        => 'wysiwyg',
+                    'args'        => ['editor_height' => 500],
+                )
+            )
+        );*/
 	}
 
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ){
@@ -117,7 +139,7 @@ function stormbringer_support() {
 }
 add_action( 'after_setup_theme', 'stormbringer_support' );
 
-
+// Sidebars
 function stormbringer_register_sidebars() {
 
 	register_sidebar(array(
@@ -160,7 +182,7 @@ function stormbringer_register_sidebars() {
 }
 add_action('widgets_init', 'stormbringer_register_sidebars' );
 
-
+// Menus
 function stormbringer_register_menus() {
 
 	register_nav_menus(

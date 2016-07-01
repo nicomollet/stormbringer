@@ -39,3 +39,28 @@ add_theme_support('libraries',
 		'jquery-owlcarousel'   => '2.0.0-beta.3',
 	)
 );
+
+
+// Cuztom
+add_action( 'init', 'custom_meta');
+function custom_meta() {
+
+    $cuztom = get_theme_mod('cuztom');
+    if($cuztom){
+        $taxonomy = new Cuztom_Taxonomy( 'Category', ['post']);
+        //register_taxonomy_for_object_type( 'category', 'page' );
+        $taxonomy->add_term_meta (
+            array(
+
+                array(
+                    'id'            => 'featured_image',
+                    'type'          => 'image',
+                    'label'         => 'Image à la Une',
+                ),
+            )
+        );
+
+
+    }
+}
+
