@@ -14,6 +14,7 @@ function stormbringer_head_cleanup() {
 	add_filter( 'get_the_excerpt', 'stormbringer_excerpt_more', 500 );
 	add_filter( 'wpseo_next_rel_link', 'wpseo_disable_rel_next_home' );
 	add_post_type_support( 'page', 'excerpt' );
+    remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
     
 }
 
