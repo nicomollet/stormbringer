@@ -311,3 +311,19 @@ nav.pagination {
     top: -$navbar-height - 1px;
   }
 }
+
+// Alert for admin roles contents
+.admin-only{
+  position: relative;
+  &:before{
+    @extend .glyphicon;
+    border-top:4px solid #2FFF7B;
+    content: "\e106";
+    color: #FF2FAA !important;
+    width:100%;
+    font-size: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
