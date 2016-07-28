@@ -21,9 +21,9 @@ function stormbringer_js_theme() {
 		}
 		else{
 			$jsfile = 'js/scripts.min.js';
-			if(isset($grunt_assets[$jsfile])) {
-				$jsfile = $grunt_assets[$jsfile];
-			}
+			//if(isset($grunt_assets[$jsfile])) {
+			//	$jsfile = $grunt_assets[$jsfile];
+			//}
 		}
 
 		wp_enqueue_script( 'theme', get_stylesheet_directory_uri() . '/'.$jsfile, array( 'jquery' ), null, true );

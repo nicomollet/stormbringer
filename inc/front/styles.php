@@ -33,9 +33,9 @@ function stormbringer_preprocessor() {
 
 				$cssfile      = 'css/styles.min.css';
 				$grunt_assets = get_theme_mod('grunt_assets');
-				if(isset($grunt_assets[$cssfile])) {
-					$cssfile = $grunt_assets[$cssfile];
-				}
+				//if(isset($grunt_assets[$cssfile])) {
+				//	$cssfile = $grunt_assets[$cssfile];
+				//}
 
 				wp_register_style( 'theme', get_stylesheet_directory_uri() . '/'.$cssfile, array(), null, null );
 				wp_enqueue_style( 'theme' );
