@@ -1933,8 +1933,8 @@ $(document).ready(function () {
       },
       warn: function () {
       },
-      error: function () {
-      },
+      //error: function () {
+      //},
       trace: function () {
       }
     }
