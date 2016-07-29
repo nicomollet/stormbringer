@@ -312,7 +312,7 @@ nav.pagination {
   }
 }
 
-// Alert for admin roles contents
+// Admin only notice
 .admin-only{
   position: relative;
   &:before{
@@ -327,3 +327,16 @@ nav.pagination {
     left: 0;
   }
 }
+
+// Typekit loading avoid FOUT
+h1, h2, h3, h4, h5, h6, p, ul, a{
+
+  .wf-start &, .wf-loading &{
+    visibility: hidden;
+  }
+  .wf-active &, .wf-inactive &{
+    visibility: visible;
+  }
+}
+
+

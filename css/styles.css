@@ -309,7 +309,7 @@ th {
   src: url("../fonts/glyphicons-halflings-regular.eot");
   src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
-.glyphicon {
+.glyphicon, .admin-only:before {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -7711,6 +7711,27 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
   top: -51px;
 }
 
+.admin-only {
+  position: relative;
+}
+.admin-only:before {
+  border-top: 4px solid #2FFF7B;
+  content: "\e106";
+  color: #FF2FAA !important;
+  width: 100%;
+  font-size: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wf-start h1, .wf-loading h1, .wf-start h2, .wf-loading h2, .wf-start h3, .wf-loading h3, .wf-start h4, .wf-loading h4, .wf-start h5, .wf-loading h5, .wf-start h6, .wf-loading h6, .wf-start p, .wf-loading p, .wf-start ul, .wf-loading ul, .wf-start a, .wf-loading a {
+  visibility: hidden;
+}
+.wf-active h1, .wf-inactive h1, .wf-active h2, .wf-inactive h2, .wf-active h3, .wf-inactive h3, .wf-active h4, .wf-inactive h4, .wf-active h5, .wf-inactive h5, .wf-active h6, .wf-inactive h6, .wf-active p, .wf-inactive p, .wf-active ul, .wf-inactive ul, .wf-active a, .wf-inactive a {
+  visibility: visible;
+}
+
 .form-horizontal .control-label {
   position: relative;
   min-height: 1px;
@@ -7915,9 +7936,11 @@ figure {
   margin: 0;
 }
 
-.alignleft {
-  float: left;
-  clear: left;
+@media (min-width: 768px) {
+  .alignleft {
+    float: left;
+    clear: left;
+  }
 }
 
 .aligncenter {
@@ -7926,25 +7949,34 @@ figure {
   margin: 0 auto;
 }
 
-.alignright {
-  float: right;
-  clear: right;
+@media (min-width: 768px) {
+  .alignright {
+    float: right;
+    clear: right;
+  }
 }
 
 @media (min-width: 768px) {
-  figure.alignleft {
+  figure.alignleft, img.alignleft {
     margin-right: 20px;
+    margin-bottom: 20px;
   }
-  figure.alignright {
+  figure.alignright, img.alignright {
     margin-left: 20px;
+    margin-bottom: 20px;
   }
 }
 
 .thumbnail {
   max-width: 100%;
   position: relative;
-  margin-bottom: 20px;
-  display: inline-block;
+  margin: auto auto 20px auto;
+  display: block;
+}
+@media (min-width: 768px) {
+  .thumbnail {
+    display: inline-block;
+  }
 }
 .thumbnail .caption {
   color: #fff;
@@ -8492,7 +8524,7 @@ body {
   display: none;
 }
 
-.bs-glyphicons .glyphicon {
+.bs-glyphicons .glyphicon, .bs-glyphicons .admin-only:before {
   margin-top: 5px;
   margin-bottom: 10px;
   font-size: 24px;

@@ -79,8 +79,7 @@ function stormbringer_support() {
 		locate_template( 'inc/front/bodyclass.php', true );      // Body classes
 		locate_template( 'inc/front/comments.php', true );       // Comments function
 		locate_template( 'inc/front/favicon.php', true );        // Favicon
-		locate_template( 'inc/front/googlewebfonts.php', true );
-		locate_template( 'inc/front/typekit.php', true );
+		locate_template( 'inc/front/webfonts.php', true );
 		locate_template( 'inc/front/addthis.php', true );
 
 		locate_template( 'inc/front/shortcodes.php', true );     // Shortcodes for Bootstrap: alert, badge, label, button, gallery

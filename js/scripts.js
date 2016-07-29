@@ -1992,13 +1992,20 @@ $(document).ready(function () {
       $(this).attr('readonly','readonly');
   });
 
+  // Tracking event for Gravity Forms submission
+  $(document).bind('gform_confirmation_loaded', function(event, formId){
+    if (typeof ga === 'function') {
+      ga('send', 'event', 'Forms', 'Submission', 'formid_'+formId);
+    }
+  });
+
   // Email obfuscation
   $("span.cryptemail").each(function(){
     var spt = $(this);
     var at = / at /;
     var dot = / dot /g;
     var addr = $(spt).attr("title").replace(at,"@").replace(dot,".");
-    $(spt).after('<a class="cryptemail" href="mailto:'+addr+'" alt="'+$(spt).attr("title")+'">'+addr+'</a>')
+    $(spt).after('<a class="cryptemail" href="mailto:'+addr+'" title="'+$(spt).attr("title")+'">'+addr+'</a>')
       .hover(function(){window.status="Contact";}, function(){window.status="";});
     $(spt).remove();
   });
