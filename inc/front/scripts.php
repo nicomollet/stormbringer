@@ -44,6 +44,7 @@ function stormbringer_js_libraries_footer() {
 
 		if ( !is_admin() ) {
 			wp_deregister_script( 'jquery' );
+            wp_deregister_script('wp-embed');
 			if ( @$libraries['jquery'] && get_theme_mod( 'libraries_jquery', true ) ) {
 				wp_enqueue_script( 'jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/'.$libraries['jquery'].'/jquery.min.js', array(), null, true );
 			}

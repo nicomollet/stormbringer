@@ -24,12 +24,11 @@
 <?php wp_head(); ?>
 
 <?php
-// check current user
+// Check current user
 global $current_user;
 global $user_level;
-get_currentuserinfo();
+wp_get_current_user();
 ?>
-
 </head>
 
 <body <?php body_class(''); ?> data-grid-framework="bo" data-grid-color="yellow" data-grid-opacity="0.2" data-grid-zindex="-30" data-grid-nbcols="12">
