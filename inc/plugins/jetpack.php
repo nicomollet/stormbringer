@@ -39,6 +39,7 @@ function jetpack_remove_modules ( $modules ) {
     unset( $modules['site-icon'] );
     unset( $modules['custom-css'] );
     unset( $modules['holiday-snow'] );
+
     return $modules;
 }
 add_filter( 'jetpack_get_available_modules', 'jetpack_remove_modules' );
@@ -47,6 +48,27 @@ add_filter( 'jetpack_get_available_modules', 'jetpack_remove_modules' );
 function jetpack_dequeue_scripts() {
     wp_dequeue_script( 'devicepx' );
     wp_dequeue_script( 'wp_rp_edit_related_posts_js' );
+
+    wp_deregister_script( 'jquery.spin' );
+    wp_deregister_script( 'spin' );
+    // Jetpack Jquery spin if carousel ou infinitescroll
+    if ( class_exists('Jetpack_Carousel') || class_exists('The_Neverending_Home_Page')) :
+        wp_register_script( 'spin', plugins_url( 'jetpack/_inc/spin.js', 'jetpack' ), false, null, true );
+        wp_register_script( 'jquery.spin', plugins_url( 'jetpack/_inc/jquery.spin.js', 'jetpack' ) , array( 'jquery', 'spin' ), null, true );
+    endif;
+
+    // Jetpack Tiled Gallery
+    wp_dequeue_script( 'tiled-gallery' );
+    if ( class_exists('Jetpack_Tiled_Gallery') && get_option( 'tiled_galleries' )) :
+        wp_enqueue_script( 'tiled-gallery', plugins_url( 'jetpack/modules/tiled-gallery/tiled-gallery/tiled-gallery.js', 'jetpack' ), array( 'jquery' ), null, true );
+    endif;
+
+    // Jetpack Carousel
+    wp_dequeue_script( 'jetpack-carousel' );
+    if ( class_exists('Jetpack_Carousel')) :
+        wp_enqueue_script( 'jetpack-carousel', plugins_url( 'jetpack/modules/carousel/jetpack-carousel.js', 'jetpack' ), array( 'jquery.spin' ), null, true );
+    endif;
+
 }
 add_action( 'wp_enqueue_scripts', 'jetpack_dequeue_scripts', 20 );
 
@@ -55,3 +77,10 @@ function jetpack_dequeue_styles() {
     wp_dequeue_script( 'wp_rp_edit_related_posts_css' );
 }
 add_action( 'wp_enqueue_styles', 'jetpack_dequeue_styles', 20 );
+
+// Disable Jetpack Tiled Galery JS
+function kill_spin() {
+    wp_deregister_script( 'jquery.spin' );
+    wp_deregister_script( 'spin' );
+}
+add_action( 'wp_loaded', 'kill_spin', 11 );

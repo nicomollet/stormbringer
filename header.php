@@ -17,12 +17,9 @@
 <html <?php language_attributes(); ?> class="no-js ie8"> <![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js wf-start">
 <!--<![endif]-->
-
 <head>
 <meta charset="utf-8">
-
 <?php wp_head(); ?>
-
 <?php
 // Check current user
 global $current_user;
@@ -30,13 +27,10 @@ global $user_level;
 wp_get_current_user();
 ?>
 </head>
-
 <body <?php body_class(''); ?> data-grid-framework="bo" data-grid-color="yellow" data-grid-opacity="0.2" data-grid-zindex="-30" data-grid-nbcols="12">
-
 <!--[if lt IE 7]>
 <p id="browsernotsupported" class="alert"><?php _e('You are using an outdated browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'stormbringer');?></p>
 <![endif]-->
-
 <div id="wrapper">
 
   <header role="banner" id="header">

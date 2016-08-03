@@ -109,7 +109,7 @@ function stormbringer_js_libraries_footer() {
 
 	}
 }
-add_action( 'wp_enqueue_scripts', 'stormbringer_js_libraries_footer', 200 );
+add_action( 'wp_enqueue_scripts', 'stormbringer_js_libraries_footer' );
 
 
 
@@ -136,7 +136,7 @@ add_action( 'wp_head', 'stormbringer_ie8_js_header' );
 
 
 
-function stormbringer_footer() {
+function stormbringer_modal() {
 
 	echo '<div class="modal fade do-not-print" id="modal-default" tabindex="-1" aria-hidden="true" role="dialog">' . "\n";
 	echo '<div class="modal-dialog">' . "\n";
@@ -151,6 +151,11 @@ function stormbringer_footer() {
 	echo '</div>' . "\n";
 	echo '</div>' . "\n";
 	echo '</div>' . "\n";
+}
+add_action( 'wp_footer', 'stormbringer_modal', -999 );
+
+
+function stormbringer_config() {
 
 	echo '<script type="text/javascript">' . "\n";
 	$stormbringer_config = [
@@ -167,7 +172,7 @@ function stormbringer_footer() {
 	echo 'var stormbringer_config = ' . json_encode( $stormbringer_config, JSON_PRETTY_PRINT ) . ";\n";
 	echo '</script>' . "\n";
 }
-add_action( 'wp_footer', 'stormbringer_footer', -100 );
+add_action( 'wp_footer', 'stormbringer_config', -100 );
 
 function stormbringer_inframe() {
 	echo '<script type="text/javascript">' . "\n";

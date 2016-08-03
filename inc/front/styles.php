@@ -90,24 +90,38 @@ function stormbringer_css() {
 		$libraries = get_theme_support('libraries')[0];
 
 		if(@$libraries['bootstrap-select'] && get_theme_mod('libraries_bootstrap-select', true)){
-			wp_register_style( 'bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/css/bootstrap-select.min.css', array(), null, 'screen,projection' );
+			wp_register_style( 'bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/css/bootstrap-select.min.css', array(), null );
 			wp_enqueue_style( 'bootstrap-select' );
 		}
 
 		if(@$libraries['bootstrap-datepicker'] && get_theme_mod('libraries_bootstrap-datepicker', true)){
-			wp_register_style( 'bootstrap-datepicker', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/css/bootstrap-datepicker.min.css', array(), null, 'screen,projection' );
+			wp_register_style( 'bootstrap-datepicker', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/css/bootstrap-datepicker.min.css', array(), null );
 			wp_enqueue_style( 'bootstrap-datepicker' );
 		}
 
 		if(@$libraries['animatecss'] && get_theme_mod('libraries_animatecss', true)){
-			wp_register_style( 'animatecss', '//cdnjs.cloudflare.com/ajax/libs/animate.css/'.$libraries['animatecss'].'/animate.min.css', array(), null, 'screen,projection' );
+			wp_register_style( 'animatecss', '//cdnjs.cloudflare.com/ajax/libs/animate.css/'.$libraries['animatecss'].'/animate.min.css', array(), null );
 			wp_enqueue_style( 'animatecss' );
 		}
 
 		if ( @$libraries['jquery-owlcarousel'] && get_theme_mod( 'libraries_jquery-owlcarousel', true ) ) {
-			wp_register_style( 'jquery-owlcarousel', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/' . $libraries['jquery-owlcarousel'] . '/assets/owl.carousel.min.css', array(), null, 'screen,projection' );
+			wp_register_style( 'jquery-owlcarousel', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/' . $libraries['jquery-owlcarousel'] . '/assets/owl.carousel.min.css', array(), null );
 			wp_enqueue_style( 'jquery-owlcarousel' );
 		}
+
+
+        // Jetpack Tiled Gallery
+        wp_dequeue_style( 'tiled-gallery' );
+        if ( class_exists('Jetpack_Tiled_Gallery') && get_option( 'tiled_galleries' )) :
+            wp_enqueue_style( 'tiled-gallery', plugins_url( 'jetpack/modules/tiled-gallery/tiled-gallery/tiled-gallery.css', 'jetpack' ), array(), null );
+        endif;
+
+        // Jetpack Carousel
+        wp_dequeue_style( 'jetpack-carousel' );
+        if ( class_exists('Jetpack_Carousel')) :
+            wp_enqueue_style( 'jetpack-carousel', plugins_url( 'jetpack/modules/carousel/jetpack-carousel.css', 'jetpack' ), array(), null );
+        endif;
+
 
 	}
 

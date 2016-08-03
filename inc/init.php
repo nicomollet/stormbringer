@@ -1,5 +1,28 @@
 <?php
 
+add_theme_support('libraries',
+    [
+        'html5shiv'            => '3.7.3',
+        'respond'              => '1.4.2',
+        'lessjs'               => '2.7.1',
+        'selectivizr'          => '1.0.2',
+        'animatecss'           => '3.5.2',
+        'bootstrap'            => '3.3.6',
+        'bootstrap-select'     => '1.10.0',
+        'bootstrap-datepicker' => '1.6.1',
+        'jquery'               => '1.12.4',
+        'jquery-cycle'         => '3.03',
+        'jquery-easing'        => '1.3',
+        'jquery-mousewheel'    => '3.1.12',
+        'jquery-validate'      => '1.15.0',
+        'jquery-cookie'        => '1.4.1',
+        'jquery-lazyload'      => '1.9.1',
+        'jquery-waypoints'     => '4.0.0',
+        'jquery-touchswipe'    => '1.6.18',
+        'jquery-owlcarousel'   => '2.1.6',
+    ]
+);
+
 // Cuztom
 add_action( 'init', 'stormbringer_meta');
 function stormbringer_meta() {
@@ -38,17 +61,6 @@ function stormbringer_support() {
     $cuztom = get_theme_mod('cuztom');
 	if($cuztom){
 		locate_template( 'inc/library/cuztom/cuztom.php', true );         // Cuztom library
-        /*$taxonomy = new Cuztom_Taxonomy( 'Category', 'post');
-        $taxonomy->add_term_meta (
-            array(
-                array(
-                    'name'        => 'bottom_description',
-                    'label'       => 'Bottom description',
-                    'type'        => 'wysiwyg',
-                    'args'        => ['editor_height' => 500],
-                )
-            )
-        );*/
 	}
 
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ){
@@ -87,10 +99,8 @@ function stormbringer_support() {
 		if($preprocessor === 'less'){
 			locate_template( 'inc/library/lessphp-oyejorge.php', true ); // Lessphp-Oyejorge library
 		}
-
 		locate_template( 'inc/front/menu.php', true );           // Menu walker for Bootstrap nav
 		locate_template( 'inc/front/widgets.php', true );        // Widgets cleanup
-
 	}
 
 	// Plugins
@@ -121,6 +131,9 @@ function stormbringer_support() {
 	if (class_exists( 'W3_Root' )) {// Cache cleanup
 		locate_template( 'inc/plugins/performance.php', true );
 	}
+	if (class_exists( 'SearchAutocomplete' )) {// Cache cleanup
+		locate_template( 'inc/plugins/searchautocomplete.php', true );
+	}
 
 	load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
 
@@ -134,6 +147,7 @@ function stormbringer_support() {
 
 	// Force JS to load in the footer
 	if ( !is_admin() ) {
+	    // Next 4 comments remove for WP Rocket compatibility. WP Rocket needs to find $wp_scripts->in_footer in order to automaticly place minified JS
 		//remove_action('wp_head', 'wp_print_scripts');
 		//remove_action('wp_head', 'wp_print_head_scripts', 9);
 		//add_action('wp_footer', 'wp_print_scripts', 5);
@@ -188,12 +202,10 @@ add_action('widgets_init', 'stormbringer_register_sidebars' );
 
 // Menus
 function stormbringer_register_menus() {
-
 	register_nav_menus(
 		array(
 			'main_nav' => 'The Main Menu',    // main nav in header
 			'footer_links' => 'Footer Links', // secondary nav in footer
 		)
 	);
-
 }
