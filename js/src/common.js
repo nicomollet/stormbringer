@@ -59,6 +59,7 @@ $(document).ready(function () {
         }
       });
     }
+
   }
 
   // Applies placeholder attribute behavior in web browsers that don't support it
