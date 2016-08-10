@@ -34,6 +34,7 @@ module.exports = function(grunt) {
           'csstransforms',
           'cssvhunit',
           'cssvwunit'
+          'objectfit'
         ]
       }
     },

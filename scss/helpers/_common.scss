@@ -216,6 +216,18 @@ nav.pagination {
   background-size: cover;
 }
 
+// Mixin for object-fit:cover
+@mixin object-fit-cover() {
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.objectfit{
+  @include object-fit-cover();
+  &.objectfit-fallback{
+    @include background-size-cover();
+  }
+}
 
 // Navbar toggle icon remove
 .navbar-toggle {

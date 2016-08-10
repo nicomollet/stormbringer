@@ -39,11 +39,26 @@ $(document).ready(function () {
     }
   }
 
-  // Modernizr test: iOS detection
+  // Modernizr custom functions
   if (typeof Modernizr == 'object') {
+
+    // Modernizr test: iOS detection
     Modernizr.addTest('ios', function () {
       return navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false
     });
+
+    // Objectfit fallback
+    if ( ! Modernizr.objectfit ) {
+      $('.objectfit').each(function () {
+        var $container = $(this),
+          imgUrl = $container.find('img').prop('src');
+        if (imgUrl) {
+          $container
+            .css('backgroundImage', 'url(' + imgUrl + ')')
+            .addClass('objectfit-fallback');
+        }
+      });
+    }
   }
 
   // Applies placeholder attribute behavior in web browsers that don't support it
