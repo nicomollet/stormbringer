@@ -53,7 +53,7 @@ function stormbringer_remove_recent_comments_style() {
  * Excerpt length
  */
 function stormbringer_excerpt_length( $length ) {
-	$excerpt_length = get_theme_mod('excerpt_length', true);
+	$excerpt_length = get_theme_mod('excerpt_length', 50);
 	return $excerpt_length;
 }
 
