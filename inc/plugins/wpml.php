@@ -30,3 +30,14 @@ function stormbringer_languages_switcher(){
         echo '</ul></div></div>';
     }
 }
+
+// Gravity Forms : body class for activation with userregistration
+add_filter('body_class', 'stormbringer_body_class_wpmllang');
+function stormbringer_body_class_wpmllang($classes = '') {
+
+  // WPML language
+  if (defined('ICL_LANGUAGE_CODE')) $classes[] = "lang2-" . ICL_LANGUAGE_CODE;
+
+  return $classes;
+
+}
