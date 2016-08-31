@@ -10,9 +10,8 @@ function stormbringer_head_cleanup() {
 	add_filter( 'use_default_gallery_style', '__return_false' );
 	add_filter( 'the_category', 'stormbringer_remove_rel_category' );
 	add_filter( 'excerpt_length', 'stormbringer_excerpt_length' );
-	add_filter( 'excerpt_more', 'mc_auto_excerpt_more' );
+	add_filter( 'excerpt_more', 'stormbringer_auto_excerpt_more' );
 	add_filter( 'get_the_excerpt', 'stormbringer_excerpt_more', 500 );
-	add_filter( 'wpseo_next_rel_link', 'wpseo_disable_rel_next_home' );
 	add_post_type_support( 'page', 'excerpt' );
     remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 }
@@ -58,7 +57,7 @@ function stormbringer_excerpt_length( $length ) {
 }
 
 
-function mc_auto_excerpt_more( $more ) {
+function stormbringer_auto_excerpt_more( $more ) {
 	return ' (&hellip;) ' . stormbringer_more_link();
 }
 
@@ -108,12 +107,7 @@ function is_element_empty( $element ) {
 	return empty( $element ) ? false : true;
 }
 
-// Disable rel=next on home
-function wpseo_disable_rel_next_home( $link ) {
-	if ( is_home() ) {
-		return false;
-	}
-}
+
 
 function paragraph_to_unorderedlist( $text, $class = '', $multi = false ) {
 	if ( $text == '' ) {
