@@ -15,19 +15,19 @@
   <div class="form-group">
     <label class="control-label" for="pass1<?php $template->the_instance(); ?>"><?php _e('New password', 'stormbringer') ?></label>
 
-    <div class="controls">
-      <input placeholder="<?php _e('New password', 'stormbringer') ?>" type="password" name="pass1" id="pass1<?php $template->the_instance(); ?>" class="input-small" value="" autocomplete="off"/>
+    <div class="form-input">
+      <input placeholder="<?php _e('New password', 'stormbringer') ?>" type="password" name="pass1" id="pass1<?php $template->the_instance(); ?>" class="form-control" value="" autocomplete="off"/>
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label" for="pass2<?php $template->the_instance(); ?>"><?php _e('Confirm new password', 'stormbringer') ?></label>
 
-    <div class="controls">
-      <input placeholder="<?php _e('Confirm new password', 'stormbringer') ?>" type="password" name="pass2" id="pass2<?php $template->the_instance(); ?>" class="input-small" value="" autocomplete="off"/>
+    <div class="form-input">
+      <input placeholder="<?php _e('Confirm new password', 'stormbringer') ?>" type="password" name="pass2" id="pass2<?php $template->the_instance(); ?>" class="form-control" value="" autocomplete="off"/>
       <p id="pass-strength-result" class="help-block hide-if-no-js"><?php _e('Strength indicator', 'stormbringer'); ?></p>
-      <p class="help-block indicator-hint"><?php _e('Hint: the password should be at least eight characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! " ? $ % ^ &amp; ).'); ?></p>
     </div>
+    <p class="help-block indicator-hint"><?php _e('Hint: the password should be at least eight characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! " ? $ % ^ &amp; ).','stormbringer'); ?></p>
   </div>
 
   <?php
