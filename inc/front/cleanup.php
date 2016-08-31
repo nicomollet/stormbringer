@@ -13,7 +13,7 @@ function stormbringer_head_cleanup() {
 	add_filter( 'excerpt_more', 'stormbringer_auto_excerpt_more' );
 	add_filter( 'get_the_excerpt', 'stormbringer_excerpt_more', 500 );
 	add_post_type_support( 'page', 'excerpt' );
-    remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+	    remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 }
 
 add_action( 'init', 'stormbringer_head_cleanup' );
