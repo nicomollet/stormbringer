@@ -107,7 +107,7 @@ function stormbringer_support() {
 	if ( class_exists( 'RGForms' ) ) {// Gravity Forms compatibility with Boostrap
 		locate_template( 'inc/plugins/gravityforms.php', true );
 	}
-	if ( function_exists( 'icl_object_id' ) && ! is_admin() ) {// WPML switcher for Boostrap + cleanup styles
+	if ( function_exists( 'icl_object_id' ) ) {// WPML switcher for Boostrap + cleanup styles
 		locate_template( 'inc/plugins/wpml.php', true );
 	}
 	if ( class_exists( 'Theme_My_Login' ) ) {// Theme My Login custom titles and custom pages
@@ -128,14 +128,17 @@ function stormbringer_support() {
 	if (class_exists( 'WPSEO_Admin' )) {// SEO cleanup
 		locate_template( 'inc/plugins/seo.php', true );
 	}
-	if (class_exists( 'W3_Root' )) {// Cache cleanup
+	if (class_exists( 'W3_Root' )) {// W3TC cleanup
 		locate_template( 'inc/plugins/performance.php', true );
 	}
-	if (class_exists( 'SearchAutocomplete' )) {// Cache cleanup
+	if (class_exists( 'SearchAutocomplete' )) {// Searchautocomplete cleanup
 		locate_template( 'inc/plugins/searchautocomplete.php', true );
-	}
+  }
+  if (class_exists( 'WP_Mailjet_Api' )) {// Mailjet cleanup
+ 		locate_template( 'inc/plugins/mailjet.php', true );
+  }
 
-	load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
+  load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
 
 	$locale      = get_locale();
 	$locale_file = get_template_directory() . "/lang/$locale.php";

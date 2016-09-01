@@ -36,8 +36,12 @@ function stormbringer_gform_field_css_class($classes, $field, $form)
       $classes .= " hide-label";
 
   }
+  if(strpos($classes, 'gsection' ) === false){
+    $classes .= " form-group";
+  }else{
 
-  $classes .= " form-group";
+  }
+
   if ($field["failed_validation"] == 1) $classes .= " has-error";
   return $classes;
 }
@@ -117,6 +121,7 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
   $content = str_replace('large', 'form-control input-lg', $content);
   $content = str_replace('gfield_description', 'help-block gfield_description', $content);
   $content = str_replace('help-inline help-block', 'help-block', $content);
+  $content = str_replace('type=\'password\'', 'type=\'password\' class="form-control"', $content);
 
 
   // validation message
@@ -343,4 +348,17 @@ add_filter( 'gform_cdata_close', 'wrap_gform_cdata_close' );
 function wrap_gform_cdata_close( $content = '' ) {
     $content = ' }, false );';
     return $content;
+}
+
+// Gravity Forms : body class for activation with userregistration
+add_filter('body_class', 'stormbringer_body_class_useractivation');
+function stormbringer_body_class_useractivation($classes = '') {
+
+  if (function_exists('rgget')) {
+    if (rgget('page') == 'gf_activation') {
+      $classes[] = 'gf-activation';
+    }
+  }
+  return $classes;
+
 }

@@ -30,3 +30,27 @@ function stormbringer_languages_switcher(){
         echo '</ul></div></div>';
     }
 }
+
+// Gravity Forms : body class for activation with userregistration
+add_filter('body_class', 'stormbringer_body_class_wpmllang');
+function stormbringer_body_class_wpmllang($classes = '') {
+
+  // WPML language
+  if (defined('ICL_LANGUAGE_CODE')) $classes[] = "lang-" . ICL_LANGUAGE_CODE;
+
+  return $classes;
+
+}
+
+// Menu icon for WPML
+function wpml_menu_icon(){
+
+	print '<style type="text/css">';
+	print '#toplevel_page_sitepress-multilingual-cms-menu-languages div.wp-menu-image img {display:none}';
+	print '#toplevel_page_sitepress-multilingual-cms-menu-languages div.wp-menu-image:before {';
+	print ' content: "\f326" !important;';
+	print ' font-family: "dashicons" !important;';
+	print '}';
+	print '</style>';
+}
+add_action( 'admin_head', 'wpml_menu_icon',40 );

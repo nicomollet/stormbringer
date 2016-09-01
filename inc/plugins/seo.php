@@ -53,8 +53,16 @@ function stormbringer_wpseo_breadcrumb_output_wrapper_filter() {
 	return 'p';
 }
 
-//* Change breadcrumb wrapper class to ‘wrap’
+// Change breadcrumb wrapper class to ‘wrap’
 add_filter( 'wpseo_breadcrumb_output_class', 'stormbringer_wpseo_bc_output_class_filter' );
 function stormbringer_wpseo_bc_output_class_filter() {
 	return 'breadcrumb';
+}
+
+// Disable rel=next on home
+add_filter( 'wpseo_next_rel_link', 'wpseo_disable_rel_next_home' );
+function wpseo_disable_rel_next_home( $link ) {
+	if ( is_home() ) {
+		return false;
+	}
 }
