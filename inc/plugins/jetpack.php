@@ -1,7 +1,7 @@
 <?php
 
 // Jetpack: remove sharing filters
-function jptweak_remove_share() {
+function stormbringer_jetpack_remove_share() {
 
 	remove_filter( 'the_content', 'sharing_display',19 );
 	remove_filter( 'the_excerpt', 'sharing_display',19 );
@@ -10,7 +10,7 @@ function jptweak_remove_share() {
 		remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30 );
 	}
 }
-add_action( 'loop_start', 'jptweak_remove_share' );
+add_action( 'loop_start', 'stormbringer_jetpack_remove_share' );
 
 //Remove Jetpack Sharing
 function minify_jetpack_sharing_js() {
@@ -22,7 +22,7 @@ function minify_jetpack_sharing_js() {
 add_action( 'wp_footer', 'minify_jetpack_sharing_js', 5 );
 
 // Remove Jetpack modules
-function jetpack_remove_modules ( $modules ) {
+function stormbringer_jetpack_remove_modules ( $modules ) {
     unset( $modules['contact-form'] );
     unset( $modules['markdown'] );
     unset( $modules['verification-tools'] );
@@ -42,10 +42,13 @@ function jetpack_remove_modules ( $modules ) {
 
     return $modules;
 }
-add_filter( 'jetpack_get_available_modules', 'jetpack_remove_modules' );
+add_filter( 'jetpack_get_available_modules', 'stormbringer_jetpack_remove_modules' );
+
+// Jetpack disable all default modules
+add_filter( 'jetpack_get_default_modules', '__return_empty_array' );
 
 // Disable Jetpack Javascript
-function jetpack_dequeue_scripts() {
+function stormbringer_jetpack_dequeue_scripts() {
     wp_dequeue_script( 'devicepx' );
     wp_dequeue_script( 'wp_rp_edit_related_posts_js' );
 
@@ -70,17 +73,17 @@ function jetpack_dequeue_scripts() {
     endif;
 
 }
-add_action( 'wp_enqueue_scripts', 'jetpack_dequeue_scripts', 20 );
+add_action( 'wp_enqueue_scripts', 'stormbringer_jetpack_dequeue_scripts', 20 );
 
 // Disable Jetpack Styles
-function jetpack_dequeue_styles() {
+function stormbringer_jetpack_dequeue_styles() {
     wp_dequeue_script( 'wp_rp_edit_related_posts_css' );
 }
-add_action( 'wp_enqueue_styles', 'jetpack_dequeue_styles', 20 );
+add_action( 'wp_enqueue_styles', 'stormbringer_jetpack_dequeue_styles', 20 );
 
 // Disable Jetpack Tiled Galery JS
-function kill_spin() {
+function stormbringer_kill_spin() {
     wp_deregister_script( 'jquery.spin' );
     wp_deregister_script( 'spin' );
 }
-add_action( 'wp_loaded', 'kill_spin', 11 );
+add_action( 'wp_loaded', 'stormbringer_kill_spin', 11 );

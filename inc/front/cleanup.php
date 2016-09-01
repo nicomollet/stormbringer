@@ -270,3 +270,17 @@ function bootstrap_clearfix( &$counter_posts = 0, $args = array(), $element = 'd
 }
 
 
+// Redirect attachment pages
+function attachment_redirect() {
+    global $post;
+    if(is_attachment()):
+        if ( is_attachment() && $post && wp_get_post_parent_id($post->ID) ) :
+            wp_redirect( get_permalink( wp_get_post_parent_id($post->ID) ), 301 );
+            exit;
+        else :
+            wp_redirect( home_url( '/' ), 301 );
+            exit;
+        endif;
+    endif;
+}
+add_action( 'template_redirect', 'attachment_redirect' );
