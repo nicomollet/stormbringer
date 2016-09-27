@@ -73,6 +73,9 @@ function stormbringer_support() {
 
 	locate_template( 'inc/front/owlcarousel.php', true );    // Load OwlCarousel shortcode
 
+    locate_template( 'inc/front/styles.php', true );         // Load CSS
+    locate_template( 'inc/front/scripts.php', true );        // Load BJS
+
 	// Admin only
 	if ( is_admin() ) {
 		locate_template( 'inc/admin/cleanup.php', true );        // Clean admin
@@ -83,8 +86,7 @@ function stormbringer_support() {
 	// Front only
 	if ( ! is_admin() ) {
 		locate_template( 'inc/front/gruntassets.php', true );    // Grunt Assets
-		locate_template( 'inc/front/styles.php', true );         // Load CSS
-		locate_template( 'inc/front/scripts.php', true );        // Load BJS
+
 		locate_template( 'inc/front/carousel.php', true );       // Load Carousel shortcode
 
 		locate_template( 'inc/front/cleanup.php', true );        // Cleanup frontend
