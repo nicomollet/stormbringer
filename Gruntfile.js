@@ -33,7 +33,7 @@ module.exports = function(grunt) {
           'mediaqueries',
           'csstransforms',
           'cssvhunit',
-          'cssvwunit'
+          'cssvwunit',
           'objectfit'
         ]
       }
