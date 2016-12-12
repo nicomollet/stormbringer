@@ -1,4 +1,4 @@
-### HEAD
+### HEAD 
 * WooCommerce compatibility
 * EULA cookie consent
 * Analytics cookie consent
