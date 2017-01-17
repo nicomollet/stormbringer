@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Woocommerce: Place a cart icon with number of items and total cost in the menu bar.
+ * Woocommerce: Place a cart icon with number of items and total cost in the menu bar
  */
 function stormbringer_shoppingcart_menu() {
     global $woocommerce;
     $viewing_cart = __('View your shopping cart', 'stormbringer');
     $start_shopping = __('Start shopping', 'stormbringer');
     $cart_url = $woocommerce->cart->get_cart_url();
-    $shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
+    $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
     $cart_contents_count = $woocommerce->cart->cart_contents_count;
     $cart_contents = sprintf(_n('%d item', '%d items', $cart_contents_count, 'stormbringer'), $cart_contents_count);
     $cart_total = $woocommerce->cart->get_cart_total();
