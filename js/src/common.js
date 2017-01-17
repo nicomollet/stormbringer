@@ -4,10 +4,9 @@ $(document).ready(function () {
   // Navbar stuck on scrolltop
   if($('#navigation').hasClass('navbar-stuckonscrolltop')){
     var lastScrollTop = 0;
-    //var headerHeight = $('#header').height($('#header').height());
-    var headerHeight = $('#header').height();
-    $('#header').height(headerHeight);
+    var headerHeight = $('#navigation').height() + $('#header').height() + $('#header-above').height() + $('#header-below').height();
     var navHeight = $('#navigation').height();
+
     $(window).scroll(function(event){
       var st = $(this).scrollTop();
       if (st > headerHeight && st > lastScrollTop){
@@ -25,29 +24,11 @@ $(document).ready(function () {
     });
   }
 
-  // Console debug
-  if (typeof window.console === 'undefined' || stormbringer_config.ENV != 'development') {
-    window.console = {
-      log: function () {
-      },
-      warn: function () {
-      },
-      //error: function () {
-      //},
-      trace: function () {
-      }
-    }
-  }
 
-  // Modernizr custom functions
+  // Modernizr
   if (typeof Modernizr == 'object') {
 
-    // Modernizr test: iOS detection
-    Modernizr.addTest('ios', function () {
-      return navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false
-    });
-
-    // Objectfit fallback
+    // Modernizr: Objectfit fallback
     if ( ! Modernizr.objectfit ) {
       $('.objectfit').each(function () {
         var $container = $(this),
@@ -60,6 +41,10 @@ $(document).ready(function () {
       });
     }
 
+    // Modernizr: ios detection
+    Modernizr.addTest('ios', function () {
+      return navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false
+    });
   }
 
   // Applies placeholder attribute behavior in web browsers that don't support it

@@ -17,9 +17,12 @@
 <html <?php language_attributes(); ?> class="no-js ie8"> <![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js wf-start">
 <!--<![endif]-->
+
 <head>
 <meta charset="utf-8">
+
 <?php wp_head(); ?>
+
 <?php
 // Check current user
 global $current_user;
@@ -27,95 +30,146 @@ global $user_level;
 wp_get_current_user();
 ?>
 </head>
-<body <?php body_class(''); ?> data-grid-framework="bo" data-grid-color="yellow" data-grid-opacity="0.2" data-grid-zindex="-30" data-grid-nbcols="12">
+
+<body <?php body_class(''); ?>>
+<?php
+// Google Tag Manager for WordPress
+if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); }
+?>
+
 <!--[if lt IE 7]>
 <p id="browsernotsupported" class="alert"><?php _e('You are using an outdated browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'stormbringer');?></p>
 <![endif]-->
+
 <div id="wrapper">
 
-  <header role="banner" id="header">
+	<?php do_action( 'stormbringer_header_before' ); ?>
 
-    <?php if(is_home()) : ?>
-        <h1 id="logo">
-            <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr(get_bloginfo('description')); ?>"><?php bloginfo('name'); ?></a>
-        </h1>
-    <?php else : ?>
-        <p id="logo">
-            <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr(get_bloginfo('description')); ?>"><?php bloginfo('name'); ?></a>
-        </p>
-    <?php endif;?>
+	<div class="header-above-wrapper">
 
-    <nav id="navigation" role="navigation" class="navbar-stuckonscrolltop">
-      <div class="navigation-inner">
-	      <div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation-collapse" aria-expanded="false" aria-controls="navbar">
-			      <span class="sr-only">Toggle navigation</span>
-			      <span class="icon-bar top-bar"></span>
-			      <span class="icon-bar middle-bar"></span>
-			      <span class="icon-bar bottom-bar"></span>
-		      </button>
-		      <a class="navbar-brand" title="<?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
-	      </div>
+		<header role="contentinfo" id="header-above" itemscope="itemscope">
+			<div class="header-above-inner">
 
-        <div class="collapse navbar-collapse" id="navigation-collapse">
-          <?php wp_nav_menu(array('theme_location' => 'main_nav', 'depth' => 2, 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new stormbringer_Navbar_Nav_Walker(), 'fallback_cb' => false)); ?>
+	            <?php
 
-	        <?php
-	        // Theme My Login menu
-	        if(class_exists( 'Theme_My_Login')) :
-		        $current_user = wp_get_current_user();
-	        ?>
-	        <ul class="nav navbar-nav navbar-right navbar-account">
-		        <?php
-		        $args = array(
-			        'numberposts' => '-1',
-			        'post_type' => 'page',
-			        'meta_key' => '_tml_action',
-			        'meta_value' => array('register', 'login', 'lostpassword', 'resetpass', 'logout', 'profile'),
-		        );
-		        $get_tml_actions_posts = get_posts($args);
-		        foreach($get_tml_actions_posts as $post){
-			        $action = get_post_meta($post->ID, '_tml_action',true);
-			        $link[$action] = get_permalink($post->ID);
-			        $title[$action] = $post->post_title;
-		        }
-		        if ( 0 == $current_user->ID ) : // logged out
-		        ?>
-			        <li><a href="<?php echo $link['login']; ?>"><?php echo $title['login']; ?></a></li>
-			        <li><a href="<?php echo $link['register']; ?>"><?php echo $title['register']; ?></a></li>
-		        <?php else : // logged in ?>
-			        <li class="dropdown">
-				        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <?php echo $current_user->user_login;?> <span class="caret"></span></a>
-				        <ul class="dropdown-menu" role="menu">
-					        <li><a href="<?php echo $link['profile']; ?>"><?php echo $title['profile']; ?></a></li>
-					        <li class="divider"></li>
-					        <li><a href="<?php echo $link['logout']; ?>"><?php echo $title['logout']; ?></a></li>
-				        </ul>
-			        </li>
-		        <?php endif; ?>
-	        </ul>
-	        <?php endif; ?>
+	            if (is_active_sidebar('header-above-4')) {
+	                $widget_columns = apply_filters('stormbringer_header_above_widget_regions', 4);
+	            } elseif (is_active_sidebar('header-above-3')) {
+	                $widget_columns = apply_filters('stormbringer_header_above_widget_regions', 3);
+	            } elseif (is_active_sidebar('header-above-2')) {
+	                $widget_columns = apply_filters('stormbringer_header_above_widget_regions', 2);
+	            } elseif (is_active_sidebar('header-above-1')) {
+	                $widget_columns = apply_filters('stormbringer_header_above_widget_regions', 1);
+	            } else {
+	                $widget_columns = apply_filters('stormbringer_header_above_widget_regions', 0);
+	            }
 
-	        <?php
-	        // Woocommerce shopping cart
-	        if (current_theme_supports('woocommerce')) :
-	        ?>
-	        <ul class="nav navbar-nav navbar-right navbar-shoppingcart">
-		        <?php echo stormbringer_shoppingcart_menu(); ?>
-	        </ul>
-	        <?php endif; ?>
+	            if ($widget_columns > 0) : ?>
 
 
-        </div>
-        <!-- /.navbar-collapse -->
+	                <?php
+	                $i = 0;
+	                while ($i < $widget_columns) : $i++;
+	                    if (is_active_sidebar('header-above-'.$i)) : ?>
+
+	                        <?php dynamic_sidebar('header-above-'.intval($i)); ?>
+
+	                    <?php endif;
+	                endwhile; ?>
 
 
-      </div>
-    </nav>
-    <!-- #navigation -->
+	            <?php endif;
+	            ?>
 
-  </header>
+			</div>
+		</header>
+	</div>
+	<!-- /.header-above-wrapper -->
 
-  <div class="main-wrapper">
-    <div id="main">
-      <div class="main-inner">
+	<div class="header-wrapper">
+
+		<header role="contentinfo" id="header" itemscope="itemscope">
+			<div class="header-inner">
+
+	            <?php
+
+	            if (is_active_sidebar('header-4')) {
+	                $widget_columns = apply_filters('stormbringer_header_widget_regions', 4);
+	            } elseif (is_active_sidebar('header-3')) {
+	                $widget_columns = apply_filters('stormbringer_header_widget_regions', 3);
+	            } elseif (is_active_sidebar('header-2')) {
+	                $widget_columns = apply_filters('stormbringer_header_widget_regions', 2);
+	            } elseif (is_active_sidebar('header-1')) {
+	                $widget_columns = apply_filters('stormbringer_header_widget_regions', 1);
+	            } else {
+	                $widget_columns = apply_filters('stormbringer_header_widget_regions', 0);
+	            }
+
+	            if ($widget_columns > 0) : ?>
+
+
+	                <?php
+	                $i = 0;
+	                while ($i < $widget_columns) : $i++;
+	                    if (is_active_sidebar('header-'.$i)) : ?>
+
+	                        <?php dynamic_sidebar('header-'.intval($i)); ?>
+
+	                    <?php endif;
+	                endwhile; ?>
+
+
+	            <?php endif;
+	            ?>
+
+			</div>
+		</header>
+	</div>
+	<!-- /.header-wrapper -->
+
+	<div class="header-below-wrapper">
+
+		<header role="contentinfo" id="header-below" itemscope="itemscope">
+			<div class="header-below-inner">
+
+	            <?php
+
+	            if (is_active_sidebar('header-below-4')) {
+	                $widget_columns = apply_filters('stormbringer_header_below_widget_regions', 4);
+	            } elseif (is_active_sidebar('header-below-3')) {
+	                $widget_columns = apply_filters('stormbringer_header_below_widget_regions', 3);
+	            } elseif (is_active_sidebar('header-below-2')) {
+	                $widget_columns = apply_filters('stormbringer_header_below_widget_regions', 2);
+	            } elseif (is_active_sidebar('header-below-1')) {
+	                $widget_columns = apply_filters('stormbringer_header_below_widget_regions', 1);
+	            } else {
+	                $widget_columns = apply_filters('stormbringer_header_below_widget_regions', 0);
+	            }
+
+	            if ($widget_columns > 0) : ?>
+
+
+	                <?php
+	                $i = 0;
+	                while ($i < $widget_columns) : $i++;
+	                    if (is_active_sidebar('header-below-'.$i)) : ?>
+
+	                        <?php dynamic_sidebar('header-below-'.intval($i)); ?>
+
+	                    <?php endif;
+	                endwhile; ?>
+
+
+	            <?php endif;
+	            ?>
+
+			</div>
+		</header>
+	</div>
+	<!-- /.header-below-wrapper -->
+
+	<?php do_action( 'stormbringer_header_after' ); ?>
+
+	<div class="main-wrapper">
+	<div id="main">
+	  <div class="main-inner">

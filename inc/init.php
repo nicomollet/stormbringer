@@ -1,30 +1,9 @@
 <?php
 
-add_theme_support('libraries',
-    [
-        'html5shiv'            => '3.7.3',
-        'respond'              => '1.4.2',
-        'lessjs'               => '2.7.1',
-        'selectivizr'          => '1.0.2',
-        'animatecss'           => '3.5.2',
-        'bootstrap'            => '3.3.6',
-        'bootstrap-select'     => '1.10.0',
-        'bootstrap-datepicker' => '1.6.1',
-        'jquery'               => '1.12.4',
-        'jquery-cycle'         => '3.03',
-        'jquery-easing'        => '1.3',
-        'jquery-mousewheel'    => '3.1.12',
-        'jquery-validate'      => '1.15.0',
-        'jquery-cookie'        => '1.4.1',
-        'jquery-lazyload'      => '1.9.1',
-        'jquery-waypoints'     => '4.0.0',
-        'jquery-touchswipe'    => '1.6.18',
-        'jquery-owlcarousel'   => '2.1.6',
-    ]
-);
 
-// Cuztom
-add_action( 'init', 'stormbringer_meta');
+/**
+ * Bottom description
+ */
 function stormbringer_meta() {
 
     $cuztom = get_theme_mod('cuztom');
@@ -49,35 +28,21 @@ function stormbringer_meta() {
 
     }
 }
+//add_action( 'init', 'stormbringer_meta');
 
-// Support
+/**
+ * Stormbringer support
+ */
 function stormbringer_support() {
 
-	add_theme_support( 'automatic-feed-links' );               // RSS feeds
-	add_theme_support( 'post-thumbnails' );
-    add_theme_support( 'title-tag' );
-
-    // Cuztom
-    $cuztom = get_theme_mod('cuztom');
-	if($cuztom){
-		locate_template( 'inc/library/cuztom/cuztom.php', true );         // Cuztom library
-	}
-
-	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ){
-		add_theme_support( 'woocommerce' );
-	}
-
 	locate_template( 'inc/front/thumbnails.php', true );       // Thumbnails for Bootstrap
-	locate_template( 'inc/admin/profile.php', true );          // Profile fields
 	locate_template( 'inc/admin/customizer.php', true );       // Customizer
 
 	locate_template( 'inc/front/owlcarousel.php', true );    // Load OwlCarousel shortcode
 
 	// Admin only
 	if ( is_admin() ) {
-		locate_template( 'inc/admin/cleanup.php', true );        // Clean admin
 		locate_template( 'inc/admin/htmleditor.php', true );     // HTML editor Bootstrap styles
-		locate_template( 'inc/admin/humility.php', true );       // Menu Humility: reorders admin menus
 	}
 
 	// Front only
@@ -93,52 +58,25 @@ function stormbringer_support() {
 		locate_template( 'inc/front/favicon.php', true );        // Favicon
 		locate_template( 'inc/front/webfonts.php', true );
 		locate_template( 'inc/front/addthis.php', true );
-
 		locate_template( 'inc/front/shortcodes.php', true );     // Shortcodes for Bootstrap: alert, badge, label, button, gallery
-		$preprocessor = get_theme_mod('bootstrap_preprocessor', true);
-		if($preprocessor === 'less'){
-			locate_template( 'inc/library/lessphp-oyejorge.php', true ); // Lessphp-Oyejorge library
-		}
+
+
 		locate_template( 'inc/front/menu.php', true );           // Menu walker for Bootstrap nav
-		locate_template( 'inc/front/widgets.php', true );        // Widgets cleanup
 	}
 
 	// Plugins
 	if ( class_exists( 'RGForms' ) ) {// Gravity Forms compatibility with Boostrap
 		locate_template( 'inc/plugins/gravityforms.php', true );
 	}
-	if ( function_exists( 'icl_object_id' ) ) {// WPML switcher for Boostrap + cleanup styles
-		locate_template( 'inc/plugins/wpml.php', true );
-	}
 	if ( class_exists( 'Theme_My_Login' ) ) {// Theme My Login custom titles and custom pages
 		locate_template( 'inc/plugins/thememylogin.php', true );
 	}
-	if (current_theme_supports('woocommerce')) {// Woocommerce custom titles and custom pages
+	if ( get_theme_support('woocommerce')) {// Woocommerce
 		locate_template( 'inc/plugins/woocommerce.php', true );
 	}
-	if (class_exists( 'JetPack' )) {// Jetpack cleanup
-		locate_template( 'inc/plugins/jetpack.php', true );
-	}
-	if (class_exists( 'BackWPup' )) {// Backwpup cleanup
-		locate_template( 'inc/plugins/backwpup.php', true );
-	}
-	if (class_exists( 'ITSEC_Core' )) {// iThemes Security cleanup
-		locate_template( 'inc/plugins/security.php', true );
-	}
-	if (class_exists( 'WPSEO_Admin' )) {// SEO cleanup
-		locate_template( 'inc/plugins/seo.php', true );
-	}
-	if (class_exists( 'W3_Root' )) {// W3TC cleanup
-		locate_template( 'inc/plugins/performance.php', true );
-	}
-	if (class_exists( 'SearchAutocomplete' )) {// Searchautocomplete cleanup
-		locate_template( 'inc/plugins/searchautocomplete.php', true );
-  }
-  if (class_exists( 'WP_Mailjet_Api' )) {// Mailjet cleanup
- 		locate_template( 'inc/plugins/mailjet.php', true );
-  }
 
-  load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
+
+	load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
 
 	$locale      = get_locale();
 	$locale_file = get_template_directory() . "/lang/$locale.php";
@@ -160,9 +98,160 @@ function stormbringer_support() {
 }
 add_action( 'after_setup_theme', 'stormbringer_support' );
 
-// Sidebars
+/**
+ * Register sidebars / widget regions
+ */
 function stormbringer_register_sidebars() {
 
+
+    $sidebar_args['sidebar'] = array(
+        'name'          => __( 'Sidebar', 'stormbringer' ),
+        'id'            => 'sidebar',
+        'description'   => ''
+    );
+
+    $sidebar_args['navigation_above'] = array(
+        'name'          => __( 'Above Navigation', 'stormbringer' ),
+        'id'            => 'navigation-above',
+        'description'   => ''
+    );
+
+    $sidebar_args['navigation_below'] = array(
+        'name'          => __( 'Below Navigation', 'stormbringer' ),
+        'id'            => 'navigation-below',
+        'description'   => ''
+    );
+
+    $header_above_widget_regions = apply_filters('stormbringer_footer_above_widget_regions', 1);
+    $header_widget_regions       = apply_filters('stormbringer_footer_widget_regions', 1);
+    $header_below_widget_regions = apply_filters('stormbringer_footer_below_widget_regions', 1);
+
+    $footer_above_widget_regions = apply_filters('stormbringer_footer_above_widget_regions', 1);
+    $footer_widget_regions       = apply_filters('stormbringer_footer_widget_regions', 1);
+    $footer_below_widget_regions = apply_filters('stormbringer_footer_below_widget_regions', 1);
+
+
+    // Above Header
+    for ( $i = 1; $i <= intval( $header_above_widget_regions ); $i++ ) {
+        $region = sprintf( 'header_above_%d', $i );
+
+        $sidebar_args[ $region ] = array(
+            'name'        => sprintf( __( 'Above Header %d', 'stormbringer' ), $i ),
+            'id'          => sprintf( 'header-above-%d', $i ),
+            'description' => sprintf( __( 'Widgetized Above Header Region %d.', 'stormbringer' ), $i )
+        );
+    }
+
+    // Header
+    for ( $i = 1; $i <= intval( $header_widget_regions ); $i++ ) {
+        $region = sprintf( 'header_%d', $i );
+
+        $sidebar_args[ $region ] = array(
+            'name'        => sprintf( __( 'Header %d', 'stormbringer' ), $i ),
+            'id'          => sprintf( 'header-%d', $i ),
+            'description' => sprintf( __( 'Widgetized Header Region %d.', 'stormbringer' ), $i )
+        );
+    }
+
+    // Below Header
+    for ( $i = 1; $i <= intval( $header_below_widget_regions ); $i++ ) {
+        $region = sprintf( 'header_below_%d', $i );
+
+        $sidebar_args[ $region ] = array(
+            'name'        => sprintf( __( 'Below Header %d', 'stormbringer' ), $i ),
+            'id'          => sprintf( 'header-below-%d', $i ),
+            'description' => sprintf( __( 'Widgetized Below Header Region %d.', 'stormbringer' ), $i )
+        );
+    }
+
+    // Above Footer
+    for ( $i = 1; $i <= intval( $footer_above_widget_regions ); $i++ ) {
+        $region = sprintf( 'footer_above_%d', $i );
+
+        $sidebar_args[ $region ] = array(
+            'name'        => sprintf( __( 'Above Footer %d', 'stormbringer' ), $i ),
+            'id'          => sprintf( 'footer-above-%d', $i ),
+            'description' => sprintf( __( 'Widgetized Above Footer Region %d.', 'stormbringer' ), $i )
+        );
+    }
+
+    //Footer
+    for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
+        $region = sprintf( 'footer_%d', $i );
+
+        $sidebar_args[ $region ] = array(
+            'name'        => sprintf( __( 'Footer %d', 'stormbringer' ), $i ),
+            'id'          => sprintf( 'footer-%d', $i ),
+            'description' => sprintf( __( 'Widgetized Footer Region %d.', 'stormbringer' ), $i )
+        );
+    }
+
+    // Below Footer
+    for ( $i = 1; $i <= intval( $footer_below_widget_regions ); $i++ ) {
+        $region = sprintf( 'footer_below_%d', $i );
+
+        $sidebar_args[ $region ] = array(
+            'name'        => sprintf( __( 'Below Footer %d', 'stormbringer' ), $i ),
+            'id'          => sprintf( 'footer-below-%d', $i ),
+            'description' => sprintf( __( 'Widgetized Below Footer Region %d.', 'stormbringer' ), $i )
+        );
+    }
+
+    foreach ( $sidebar_args as $sidebar => $args ) {
+        $widget_tags = array(
+            'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
+            'after_widget' => '</div></div>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        );
+
+        /**
+         * Dynamically generated filter hooks. Allow changing widget wrapper and title tags. See the list below.
+         *
+         *
+         * stormbringer_header_above_1_widget_tags
+         * stormbringer_header_above_2_widget_tags
+         * stormbringer_header_above_3_widget_tags
+         * stormbringer_header_above_4_widget_tags
+         *
+         * stormbringer_header_1_widget_tags
+         * stormbringer_header_2_widget_tags
+         * stormbringer_header_3_widget_tags
+         * stormbringer_header_4_widget_tags
+         *
+         * stormbringer_header_below_1_widget_tags
+         * stormbringer_header_below_2_widget_tags
+         * stormbringer_header_below_3_widget_tags
+         * stormbringer_header_below_4_widget_tags
+         *
+         * stormbringer_sidebar_widget_tags
+         *
+         * stormbringer_footer_above_1_widget_tags
+         * stormbringer_footer_above_2_widget_tags
+         * stormbringer_footer_above_3_widget_tags
+         * stormbringer_footer_above_4_widget_tags
+         *
+         * stormbringer_footer_1_widget_tags
+         * stormbringer_footer_2_widget_tags
+         * stormbringer_footer_3_widget_tags
+         * stormbringer_footer_4_widget_tags
+         *
+         * stormbringer_footer_below_1_widget_tags
+         * stormbringer_footer_below_2_widget_tags
+         * stormbringer_footer_below_3_widget_tags
+         * stormbringer_footer_below_4_widget_tags
+         *
+         *
+         */
+        $filter_hook = sprintf( 'stormbringer_%s_widget_tags', $sidebar );
+        $widget_tags = apply_filters( $filter_hook, $widget_tags );
+
+        if ( is_array( $widget_tags ) ) {
+            register_sidebar( $args + $widget_tags );
+        }
+    }
+
+    /*
 	register_sidebar(array(
 		'id' => 'sidebar_main',
 		'name' => 'Main Sidebar',
@@ -198,37 +287,26 @@ function stormbringer_register_sidebars() {
 		'after_widget' => '</div></div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	));
+	));*/
+
+
+
 
 }
 add_action('widgets_init', 'stormbringer_register_sidebars' );
 
-// Menus
+/**
+ * Register menus
+ */
 function stormbringer_register_menus() {
+
 	register_nav_menus(
 		array(
 			'main_nav' => 'The Main Menu',    // main nav in header
 			'footer_links' => 'Footer Links', // secondary nav in footer
 		)
 	);
+
 }
 
-// Recursive array search
-function recursive_array_search( $needle, $haystack )
-{
-    foreach( $haystack as $key => $value )
-    {
-        $current_key = $key;
-        if(
-            $needle === $value
-            OR (
-                is_array( $value )
-                && recursive_array_search( $needle, $value ) !== false
-            )
-        )
-        {
-            return $current_key;
-        }
-    }
-    return false;
-}
+

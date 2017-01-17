@@ -72,8 +72,7 @@ function stormbringer_body_class( $classes = '' ) {
         $classes[] = 'paged paged-' . intval( $page );
 
 
-
-  return $classes;
+    return $classes;
 }
 
 
@@ -103,6 +102,14 @@ function stormbringer_get_context() {
     $classes = array();
     $object = get_queried_object();
     $object_id = get_queried_object_id();
+
+    // WPML language
+    if (defined('ICL_LANGUAGE_CODE')) $classes[] = "lang-" . ICL_LANGUAGE_CODE;
+
+    // Polylang language
+    if(function_exists('pll_current_language')):
+        $classes[] = "lang-" . pll_current_language();
+    endif;
 
     /* Front page of the site. */
     if ( is_front_page() )
@@ -135,6 +142,22 @@ function stormbringer_get_context() {
                 }
             }
 
+            $ancestors = get_category_parents( $categories[0]->term_id, false, ':', true );
+            if($ancestors) {
+                $ancestors = explode(':',$ancestors);
+                $cpt = 0;
+                foreach($ancestors as $ancestor){
+                    $cpt++;
+                    if($ancestor){
+                        if($cpt==1)$topparentcategory = $ancestor;
+                        $classes[]  = 'category-'.$ancestor;
+                    }
+                }
+
+                if($topparentcategory){
+                    $classes[]  = 'top-category-'.$topparentcategory;
+                }
+            }
             foreach ((get_the_category($post->ID)) as $category){
                 $classes[] = 'category-' . $category->category_nicename;
             }
@@ -219,9 +242,6 @@ function stormbringer_get_context() {
     elseif ( is_404() ) {
         $classes[] = 'error-404';
     }
-
-
-
 
 
     $google_fonts = get_theme_mod( 'google_fonts' );

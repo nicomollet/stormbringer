@@ -4,7 +4,7 @@
 // Theme My Login
 // ********************************************
 
-function stormbringer_thememylogin_options(){
+function stormbringer_thememylogin_options($args){
 
   $defaults = array(
     'action_login' => __( 'Sign in', "stormbringer" ),

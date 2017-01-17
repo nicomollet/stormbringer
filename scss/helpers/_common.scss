@@ -204,18 +204,6 @@ nav.pagination {
   max-width: 100%;
 }
 
-// Mixin for background-size:cover
-@mixin background-size-cover() {
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 // Mixin for object-fit:cover
 @mixin object-fit-cover() {
   width:100%;
@@ -228,6 +216,19 @@ nav.pagination {
     @include background-size-cover();
   }
 }
+
+// Mixin for background-size:cover
+@mixin background-size-cover() {
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 
 // Navbar toggle icon remove
 .navbar-toggle {
@@ -251,7 +252,6 @@ nav.pagination {
   .bottom-bar {
     @include rotate(-45deg);
     @include transform-origin(10% 90%);
-
   }
 
   &.collapsed {

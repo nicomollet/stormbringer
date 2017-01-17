@@ -1,9 +1,11 @@
 <?php
 /**
- * The template for displaying Archive pages.
+ * The template for displaying a page.
  *
  * @package StormBringer
  * @since StormBringer 0.0.1
+ *
+ * Template Name: Sitemap
  */
 ?>
 <?php get_header(); ?>

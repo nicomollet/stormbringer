@@ -1,28 +1,30 @@
 <?php
 
-
+/**
+ * Enqueue scripts from theme
+ */
 function stormbringer_js_theme() {
 
-	//wp_enqueue_script( 'stormbringer-common', get_template_directory_uri() . '/js/src/common.js', array( 'jquery' ), null, true );
+    //wp_enqueue_script( 'stormbringer-common', get_template_directory_uri() . '/js/src/common.js', array( 'jquery' ), null, true );
 
     $jsfile = 'js/scripts.js';
 
-	// Preprocessor
-	$preprocessor = get_theme_mod('bootstrap_preprocessor', true);
+    // Preprocessor
+    $preprocessor = get_theme_mod('bootstrap_preprocessor', true);
 
-	if ( $preprocessor === 'less' ) {
-	}
+    if ( $preprocessor === 'less' ) {
+    }
 
-	if ( $preprocessor === 'scss' || $preprocessor == 1) {
-		$grunt_assets = get_theme_mod('grunt_assets');
-		if ( current_user_can( 'administrator' ) || $_GET['scsscompile'] == '1' ) {
-		}
-		else{
-			$jsfile = 'js/scripts.min.js';
-			//if(isset($grunt_assets[$jsfile])) {
-			//	$jsfile = $grunt_assets[$jsfile];
-			//}
-		}
+    if ( $preprocessor === 'scss' || $preprocessor == 1) {
+        $grunt_assets = get_theme_mod('grunt_assets');
+        if ( current_user_can( 'administrator' ) || $_GET['scsscompile'] == '1' ) {
+        }
+        else{
+            $jsfile = 'js/scripts.min.js';
+            //if(isset($grunt_assets[$jsfile])) {
+            //	$jsfile = $grunt_assets[$jsfile];
+            //}
+        }
     }
     wp_enqueue_script( 'theme', get_stylesheet_directory_uri() . '/'.$jsfile, array( 'jquery' ), null, true );
 
@@ -30,14 +32,22 @@ function stormbringer_js_theme() {
 add_action( 'wp_enqueue_scripts', 'stormbringer_js_theme', 300 );
 
 
-
-
+/**
+ * Enqueue libraries scripts in the footer
+ */
 function stormbringer_js_libraries_footer() {
 
 	if(current_theme_supports('libraries')) {
 
 		$lang = get_theme_mod( 'lang');
-		$libraries = get_theme_support('libraries')[0];
+		
+        // Polylang language
+        if(function_exists('pll_current_language')):
+            $lang = pll_current_language();
+        endif;
+
+
+        $libraries = get_theme_support('libraries')[0];
 
 		if ( !is_admin() ) {
 			wp_deregister_script( 'jquery' );
@@ -99,7 +109,7 @@ function stormbringer_js_libraries_footer() {
 		if(@$libraries['bootstrap-datepicker'] && get_theme_mod('libraries_bootstrap-datepicker', true) ){
 
 			wp_enqueue_script( 'bootstrap-datepicker', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/js/bootstrap-datepicker.min.js', array( 'bootstrap' ), null, true );
-			if($lang != '') {
+			if($lang != '' && $lang != 'en') {
 				wp_enqueue_script( 'bootstrap-datepicker-'.$lang, '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/locales/bootstrap-datepicker.'.$lang.'.min.js', array( 'bootstrap','bootstrap-datepicker' ), null, true );
 			}
 		}
@@ -132,50 +142,72 @@ function stormbringer_ie8_js_header() {
 add_action( 'wp_head', 'stormbringer_ie8_js_header' );
 
 
-
+/**
+ * Modal
+ */
 function stormbringer_modal() {
 
-	echo '<div class="modal fade do-not-print" id="modal-default" tabindex="-1" aria-hidden="true" role="dialog">' . "\n";
-	echo '<div class="modal-dialog">' . "\n";
-	echo '<div class="modal-content">' . "\n";
-	echo '<div class="modal-header">' . "\n";
-	echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' . "\n";
-	echo '<h4 class="modal-title"></h4>' . "\n";
-	echo '</div>' . "\n";
-	echo '<div class="modal-body in-frame">' . "\n";
-	echo '<iframe id="modal-frame" name="modal-frame" src="" sandbox="allow-same-origin allow-forms allow-popups"></iframe>' . "\n";
-	echo '</div>' . "\n";
-	echo '</div>' . "\n";
-	echo '</div>' . "\n";
-	echo '</div>' . "\n";
+    echo '<div class="modal fade do-not-print" id="modal-default" tabindex="-1" aria-hidden="true" role="dialog">' . "\n";
+    echo '<div class="modal-dialog">' . "\n";
+    echo '<div class="modal-content">' . "\n";
+    echo '<div class="modal-header">' . "\n";
+    echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' . "\n";
+    echo '<h4 class="modal-title"></h4>' . "\n";
+    echo '</div>' . "\n";
+    echo '<div class="modal-body in-frame">' . "\n";
+    echo '<iframe id="modal-frame" name="modal-frame" src="" sandbox="allow-same-origin allow-forms allow-popups"></iframe>' . "\n";
+    echo '</div>' . "\n";
+    echo '</div>' . "\n";
+    echo '</div>' . "\n";
+    echo '</div>' . "\n";
+
 }
 add_action( 'wp_footer', 'stormbringer_modal', -999 );
 
-
+/**
+ * JS config vars
+ */
 function stormbringer_config() {
 
-	echo '<script type="text/javascript">' . "\n";
-	$stormbringer_config = [
-		'AJAXURL'              => admin_url( 'admin-ajax.php' ),
-		'THEME_LANG'           => get_theme_mod( 'lang' ),
-		'STYLESHEET_DIRECTORY' => get_bloginfo( 'stylesheet_directory' ),
-		'WPURL'                => get_bloginfo( 'wpurl' ),
-		'URL'                  => get_bloginfo( 'url' ),
-		'LANGUAGE'             => get_bloginfo( 'language' ),
-		'STYLESHEET_URL'       => get_bloginfo( 'stylesheet_url' ),
-		'TEMPLATE_URL'         => get_bloginfo( 'template_url' ),
-		'ENV'                  => current_user_can( 'administrator' ) ? 'development' : 'production',
-	];
-	echo 'var stormbringer_config = ' . json_encode( $stormbringer_config, JSON_PRETTY_PRINT ) . ";\n";
-	echo '</script>' . "\n";
+    echo '<script type="text/javascript">' . "\n";
+
+    $language = get_bloginfo( 'language' );
+
+    // WPML language
+    if (defined('ICL_LANGUAGE_CODE')):
+        $language = ICL_LANGUAGE_CODE;
+    endif;
+
+    // Polylang language
+    if(function_exists('pll_current_language')):
+        $language = pll_current_language();
+    endif;
+
+    $language =
+    $stormbringer_config = [
+        'AJAXURL'              => admin_url( 'admin-ajax.php' ),
+        'THEME_LANG'           => get_bloginfo( 'language' ),
+        'STYLESHEET_DIRECTORY' => get_bloginfo( 'stylesheet_directory' ),
+        'WPURL'                => get_bloginfo( 'wpurl' ),
+        'URL'                  => get_bloginfo( 'url' ),
+        'LANGUAGE'             => $language,
+        'STYLESHEET_URL'       => get_bloginfo( 'stylesheet_url' ),
+        'TEMPLATE_URL'         => get_bloginfo( 'template_url' ),
+        'ENV'                  => current_user_can( 'administrator' ) ? 'development' : 'production',
+    ];
+    echo 'var stormbringer_config = ' . json_encode( $stormbringer_config, JSON_PRETTY_PRINT ) . ";\n";
+    echo '</script>' . "\n";
 }
 add_action( 'wp_footer', 'stormbringer_config', -100 );
 
+/**
+ * Inframe class
+ */
 function stormbringer_inframe() {
-	echo '<script type="text/javascript">' . "\n";
-	echo 'if(self !== top){' . "\n";
-	echo 'document.documentElement.className ="in-frame";' . "\n";
-	echo '}' . "\n";
-	echo '</script>' . "\n";
+    echo '<script type="text/javascript">' . "\n";
+    echo 'if(self !== top){' . "\n";
+    echo 'document.documentElement.className ="in-frame";' . "\n";
+    echo '}' . "\n";
+    echo '</script>' . "\n";
 }
 add_action( 'wp_head', 'stormbringer_inframe', 100 );

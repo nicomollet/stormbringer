@@ -23,9 +23,9 @@ function my_mce_before_init( $settings ) {
 			'classes' => 'text-muted',
 		),
 		array(
-			'title'   => __('Alert Error', 'stormbringer'),
+			'title'   => __('Alert Danger', 'stormbringer'),
 			'block'   => 'div',
-			'classes' => 'alert alert-error',
+			'classes' => 'alert alert-danger',
 			'wrapper' => true
 		),
 		array(
@@ -49,6 +49,11 @@ function my_mce_before_init( $settings ) {
 		array(
 			'title'    => __('Button', 'stormbringer'),
 			'selector' => 'a',
+			'classes'  => 'btn',
+		),
+		array(
+			'title'    => __('Button Default', 'stormbringer'),
+			'selector' => 'a',
 			'classes'  => 'btn btn-default',
 		),
 		array(
@@ -71,19 +76,23 @@ add_filter( "mce_buttons_2", "extended_editor_mce_buttons_2", 0 );
 
 function extended_editor_mce_buttons( $buttons ) {
 	return array(
+        'formatselect',
+
 		'bold',
 		'italic',
-		'strikethrough',
-		'|',
-		'bullist',
-		'numlist',
-		'blockquote',
-		'|',
-		'link',
-		'unlink',
-		'|',
-		'formatselect',
-		'styleselect',
+
+        'bullist',
+        'numlist',
+        'blockquote',
+
+        'alignleft',
+        'aligncenter',
+        'alignright',
+
+        'link',
+        'unlink',
+
+        'wp_more',
 		'wp_adv'
 	);
 }
@@ -91,58 +100,15 @@ function extended_editor_mce_buttons( $buttons ) {
 function extended_editor_mce_buttons_2( $buttons ) {
 // the second toolbar line
 	return array(
-		'justifyleft',
-		'justifycenter',
-		'justifyright',
-		'|',
+        'styleselect',
+        'strikethrough',
+        'hr',
 		'pastetext',
 		'pasteword',
 		'removeformat',
-		'|',
+		'charmap',
 		'outdent',
 		'indent',
-		'hr',
-		'wp_more',
-		'|',
+		'wp-help',
 	);
 }
-
-
-/* To add custom styles to Rich Text Editor, use this function in functions.php:
-
-function custom_tinymce_styles( $settings ) {
-
-	$style_formats_original = json_decode( $settings['style_formats'] );
-	$style_formats          = array(
-
-		// Inline style
-		array(
-			'title'   => 'Color Red',
-			'inline'  => 'span',
-			'classes' => 'red',
-		),
-
-		// Selector style
-		array(
-			'title'    => 'Button Info',
-			'selector' => 'a',
-			'classes'  => 'btn btn-info',
-		),
-
-		// Block style
-		array(
-			'title'   => 'Big',
-			'block'   => 'p',
-			'classes' => 'big',
-		),
-
-	);
-
-	$settings['style_formats'] = json_encode( array_merge( $style_formats, $style_formats_original ) );
-
-	return $settings;
-
-}
-add_filter( 'tiny_mce_before_init', 'custom_tinymce_styles', 100 );
-
-*/

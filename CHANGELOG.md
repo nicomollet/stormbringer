@@ -1,7 +1,8 @@
-### HEAD 
+### HEAD
 * WooCommerce compatibility
-* EULA cookie consent
-* Analytics cookie consent
+
+### 0.2.7: January 19th, 2017
+* Separate stormbringer and godspeed optimizations
 
 ### 0.2.6: February 1st, 2016
 * Owlcarousel shortcode
