@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.3.1
- * Build http://modernizr.com/download?-backgroundblendmode-backgroundcliptext-backgroundsize-bgpositionshorthand-bgpositionxy-bgsizecover-borderradius-boxshadow-cookies-cssanimations-csstransforms-cssvhunit-cssvwunit-flexbox-mediaqueries-pointerevents-svg-touchevents-addtest-fnbind-setclasses-testprop-dontmin
+ * Build http://modernizr.com/download?-backgroundblendmode-backgroundcliptext-backgroundsize-bgpositionshorthand-bgpositionxy-bgsizecover-borderradius-boxshadow-cookies-cssanimations-csstransforms-cssvhunit-cssvwunit-flexbox-mediaqueries-objectfit-pointerevents-svg-touchevents-addtest-fnbind-setclasses-testprop-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1876,6 +1876,22 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
 
     Modernizr.addTest('cssvwunit', compStyle == width);
   });
+
+/*!
+{
+  "name": "CSS Object Fit",
+  "caniuse": "object-fit",
+  "property": "objectfit",
+  "tags": ["css"],
+  "builderAliases": ["css_objectfit"],
+  "notes": [{
+    "name": "Opera Article on Object Fit",
+    "href": "https://dev.opera.com/articles/css3-object-fit-object-position/"
+  }]
+}
+!*/
+
+  Modernizr.addTest('objectfit', !!prefixed('objectFit'), {aliases: ['object-fit']});
 
 
   // Run each test

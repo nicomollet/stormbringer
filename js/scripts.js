@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.3.1
- * Build http://modernizr.com/download?-backgroundblendmode-backgroundcliptext-backgroundsize-bgpositionshorthand-bgpositionxy-bgsizecover-borderradius-boxshadow-cookies-cssanimations-csstransforms-cssvhunit-cssvwunit-flexbox-mediaqueries-pointerevents-svg-touchevents-addtest-fnbind-setclasses-testprop-dontmin
+ * Build http://modernizr.com/download?-backgroundblendmode-backgroundcliptext-backgroundsize-bgpositionshorthand-bgpositionxy-bgsizecover-borderradius-boxshadow-cookies-cssanimations-csstransforms-cssvhunit-cssvwunit-flexbox-mediaqueries-objectfit-pointerevents-svg-touchevents-addtest-fnbind-setclasses-testprop-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1877,6 +1877,22 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
     Modernizr.addTest('cssvwunit', compStyle == width);
   });
 
+/*!
+{
+  "name": "CSS Object Fit",
+  "caniuse": "object-fit",
+  "property": "objectfit",
+  "tags": ["css"],
+  "builderAliases": ["css_objectfit"],
+  "notes": [{
+    "name": "Opera Article on Object Fit",
+    "href": "https://dev.opera.com/articles/css3-object-fit-object-position/"
+  }]
+}
+!*/
+
+  Modernizr.addTest('objectfit', !!prefixed('objectFit'), {aliases: ['object-fit']});
+
 
   // Run each test
   testRunner();
@@ -1905,10 +1921,9 @@ $(document).ready(function () {
   // Navbar stuck on scrolltop
   if($('#navigation').hasClass('navbar-stuckonscrolltop')){
     var lastScrollTop = 0;
-    //var headerHeight = $('#header').height($('#header').height());
-    var headerHeight = $('#header').height();
-    $('#header').height(headerHeight);
+    var headerHeight = $('#navigation').height() + $('#header').height() + $('#header-above').height() + $('#header-below').height();
     var navHeight = $('#navigation').height();
+
     $(window).scroll(function(event){
       var st = $(this).scrollTop();
       if (st > headerHeight && st > lastScrollTop){
@@ -1926,22 +1941,24 @@ $(document).ready(function () {
     });
   }
 
-  // Console debug
-  if (typeof window.console === 'undefined' || stormbringer_config.ENV != 'development') {
-    window.console = {
-      log: function () {
-      },
-      warn: function () {
-      },
-      //error: function () {
-      //},
-      trace: function () {
-      }
-    }
-  }
 
-  // Modernizr test: iOS detection
+  // Modernizr
   if (typeof Modernizr == 'object') {
+
+    // Modernizr: Objectfit fallback
+    if ( ! Modernizr.objectfit ) {
+      $('.objectfit').each(function () {
+        var $container = $(this),
+          imgUrl = $container.find('img').prop('src');
+        if (imgUrl) {
+          $container
+            .css('backgroundImage', 'url(' + imgUrl + ')')
+            .addClass('objectfit-fallback');
+        }
+      });
+    }
+
+    // Modernizr: ios detection
     Modernizr.addTest('ios', function () {
       return navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false
     });

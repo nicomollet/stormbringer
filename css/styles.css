@@ -7617,6 +7617,22 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
   max-width: 100%;
 }
 
+.objectfit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.objectfit.objectfit-fallback {
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .navbar-toggle {
   border: none;
   background: transparent !important;
@@ -7730,6 +7746,22 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
 }
 .wf-active h1, .wf-inactive h1, .wf-active h2, .wf-inactive h2, .wf-active h3, .wf-inactive h3, .wf-active h4, .wf-inactive h4, .wf-active h5, .wf-inactive h5, .wf-active h6, .wf-inactive h6, .wf-active p, .wf-inactive p, .wf-active ul, .wf-inactive ul, .wf-active a, .wf-inactive a {
   visibility: visible;
+}
+
+html.noscroll, html.noscroll body {
+  -webkit-overflow-scrolling: touch !important;
+  overflow: auto !important;
+  height: 100% !important;
+}
+
+body.page-template-fullwidth #main, body.page-template-fullwidth .main-inner, body.page-template-fullwidthnotitle #main, body.page-template-fullwidthnotitle .main-inner {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+body.page-template-fullwidthnotitle #content .page-header, body.page-template-fullwidthnotitle #content .entry-meta, body.page-template-fullwidthnotitle #content .breadcrumb {
+  display: none;
 }
 
 .form-horizontal .control-label {

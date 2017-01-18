@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * Addthis
+ *
+ * Adds Addthis script with ID
+ *
+ * @package StormBringer
+ */
 function stormbringer_addthis() {
 
 	$addthis_id = get_theme_mod('addthis_id');

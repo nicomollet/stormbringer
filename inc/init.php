@@ -74,7 +74,11 @@ function stormbringer_support() {
 	if ( get_theme_support('woocommerce')) {// Woocommerce
 		locate_template( 'inc/plugins/woocommerce.php', true );
 	}
-
+    
+	// Cuztom
+    if(get_theme_mod('cuztom')){
+        locate_template( 'inc/library/cuztom/cuztom.php', true );
+    }
 
 	load_theme_textdomain( 'stormbringer', get_template_directory() . '/lang' );
 

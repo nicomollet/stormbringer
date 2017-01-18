@@ -204,18 +204,6 @@ nav.pagination {
   max-width: 100%;
 }
 
-// Mixin for object-fit:cover
-@mixin object-fit-cover() {
-  width:100%;
-  height:100%;
-  object-fit: cover;
-}
-.objectfit{
-  @include object-fit-cover();
-  &.objectfit-fallback{
-    @include background-size-cover();
-  }
-}
 
 // Mixin for background-size:cover
 @mixin background-size-cover() {
@@ -229,6 +217,19 @@ nav.pagination {
   background-size: cover;
 }
 
+
+// Mixin for object-fit:cover
+@mixin object-fit-cover() {
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.objectfit{
+  @include object-fit-cover();
+  &.objectfit-fallback{
+    @include background-size-cover();
+  }
+}
 
 // Navbar toggle icon remove
 .navbar-toggle {
@@ -359,3 +360,24 @@ html.noscroll {
     height: 100% !important;
   }
 }
+
+
+// Page template: fullwidth
+body.page-template-fullwidth, body.page-template-fullwidthnotitle{
+  #main, .main-inner{
+    padding: 0;
+    margin: 0;
+    width:100%;
+  }
+}
+
+// Page template: fullwidthnotitle
+body.page-template-fullwidthnotitle{
+  #content{
+    .page-header, .entry-meta, .breadcrumb{
+      display: none;
+    }
+  }
+}
+
+

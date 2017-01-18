@@ -1,5 +1,13 @@
 <?php
 /**
+ * Theme Customizer
+ *
+ * Code adapted from Underscores theme (underscores.me) and Otto's great tutorial (ottopress.com)
+ *
+ * @package StormBringer
+ */
+
+/**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
@@ -268,14 +276,5 @@ function stormbringer_customize_register( $wp_customize ) {
 		),
 	));
 
-
 }
 add_action( 'customize_register', 'stormbringer_customize_register' );
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function stormbringer_customize_preview() {
-	wp_enqueue_script( 'stormbringer_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'jquery', 'customize-preview' ), null, true );
-}
-//add_action( 'customize_preview_init', 'stormbringer_customize_preview' );

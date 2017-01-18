@@ -1,76 +1,67 @@
 <?php
-
+/**
+ * Body class
+ *
+ * Customize body class with many classes
+ *
+ * @package StormBringer
+ */
 add_filter('body_class', 'stormbringer_body_class');
 
 /**
- * Body Class - Thanks to Theme Hyprid (http://themehybrid.com/)
+ * Body class
+ *
+ * @param string $classes
+ *
+ * @return array|string
  */
 function stormbringer_body_class( $classes = '' ) {
-    global $wp_query;
     global $current_user;
 
-    // User role
-    $current_user->ID;
-    $user = new WP_User( $current_user->ID ); // $user->roles
-    foreach($user->roles as $role){
-        $classes[] = 'role-'.$role;
-    }
-    /* Text direction (which direction does the text flow). */
     $classes[] = 'wordpress';
-    $classes[] = get_bloginfo( 'text_direction' );
-    $classes[] = get_locale();
-
-    /* Check if the current theme is a parent or child theme. */
+    $classes[] = 'dir-'.get_bloginfo( 'text_direction' );
+    $classes[] = 'locale-'.get_locale();
     $classes[] = ( is_child_theme() ? 'child-theme' : 'parent-theme' );
 
-    /* Multisite check adds the 'multisite' class and the blog ID. */
+    // Multisite
     if ( is_multisite() ) {
         $classes[] = 'multisite';
         $classes[] = 'blog-' . get_current_blog_id();
     }
 
-    /* Date classes. */
+    // User role
+    if(is_user_logged_in()):
+        //$user = new WP_User( $current_user->ID ); // $user->roles
+        $user = wp_get_current_user();
+        //print_r($user);
+        foreach($user->roles as $role){
+            $classes[] = 'role-'.$role;
+        }
+    else:
+        $classes[] = 'role-anonymous';
+    endif;
+
+    // Date classes
     $time = time() + ( get_option( 'gmt_offset' ) * 3600 );
     $classes[] = strtolower( gmdate( '\yY \mm \dd \hH l', $time ) );
 
-    /* Is the current user logged in. */
+    // Is the current user logged in
     $classes[] = ( is_user_logged_in() ) ? 'logged-in' : 'logged-out';
 
-    /* WP admin bar. */
+    // WP admin bar
     if ( is_admin_bar_showing() )
         $classes[] = 'admin-bar';
 
-    /* Merge base contextual classes with $classes. */
+    // WPML language
+    if (defined('ICL_LANGUAGE_CODE')) $classes[] = "lang-" . ICL_LANGUAGE_CODE;
+
+    // Polylang language
+    if(function_exists('pll_current_language')):
+        $classes[] = "lang-" . pll_current_language();
+    endif;
+
+    // Merge base contextual classes with $classes
     $classes = array_merge( $classes, stormbringer_get_context() );
-
-    /* Singular post (post_type) classes. */
-    if ( is_singular() ) {
-
-        /* Get the queried post object. */
-        $post = get_queried_object();
-
-        /* Checks for custom template. */
-        $template = str_replace( array ( "{$post->post_type}-template-", "{$post->post_type}-", '.php' ), '', get_post_meta( get_queried_object_id(), "_wp_{$post->post_type}_template", true ) );
-        if ( !empty( $template ) )
-            $classes[] = "{$post->post_type}-template-{$template}";
-
-        /* Post format. */
-        if ( current_theme_supports( 'post-formats' ) && post_type_supports( $post->post_type, 'post-formats' ) ) {
-            $post_format = get_post_format( get_queried_object_id() );
-            $classes[] = ( ( empty( $post_format ) || is_wp_error( $post_format ) ) ? "{$post->post_type}-format-standard" : "{$post->post_type}-format-{$post_format}" );
-        }
-
-        /* Attachment mime types. */
-        if ( is_attachment() ) {
-            foreach ( explode( '/', get_post_mime_type() ) as $type )
-                $classes[] = "attachment-{$type}";
-        }
-    }
-
-    /* Paged views. */
-    if ( ( ( $page = $wp_query->get( 'paged' ) ) || ( $page = $wp_query->get( 'page' ) ) ) && $page > 1 )
-        $classes[] = 'paged paged-' . intval( $page );
-
 
     return $classes;
 }
@@ -94,28 +85,21 @@ function stormbringer_body_class( $classes = '' ) {
 function stormbringer_get_context() {
     global $post;
 
-    /* If $classes has been set, don't run through the conditionals again. Just return the variable. */
+    // If $classes has been set, don't run through the conditionals again. Just return the variable
     if ( isset( $classes ) )
         return $classes;
 
-    /* Set some variables for use within the function. */
+    // Set some variables for use within the function
     $classes = array();
     $object = get_queried_object();
     $object_id = get_queried_object_id();
 
-    // WPML language
-    if (defined('ICL_LANGUAGE_CODE')) $classes[] = "lang-" . ICL_LANGUAGE_CODE;
 
-    // Polylang language
-    if(function_exists('pll_current_language')):
-        $classes[] = "lang-" . pll_current_language();
-    endif;
-
-    /* Front page of the site. */
+    // Front page of the site
     if ( is_front_page() )
         $classes[] = 'home';
 
-    /* Blog page. */
+    // Blog page
     if ( is_category() || is_singular('post') || is_tag() || is_post_type_archive('post') || is_search() || is_author()) {
         $classes[] = 'blog';
 
@@ -124,6 +108,7 @@ function stormbringer_get_context() {
 
             $categories = get_the_category( $post->ID );
 
+            $topparentcategory = null;
             if(isset($categories[0]->term_id)){
                 $ancestors = get_ancestors( $categories[0]->term_id, 'category' );
                 if($ancestors) {
@@ -131,12 +116,14 @@ function stormbringer_get_context() {
                     foreach($ancestors as $ancestor){
                         $cpt++;
                         if($ancestor){
-                            if($cpt==1)$topparentcategory = $ancestor;
+                            if($cpt==1){
+                                $topparentcategory = $ancestor;
+                            }
                             $classes[]  = 'category-'.$ancestor;
                         }
                     }
 
-                    if($topparentcategory){
+                    if(!empty($topparentcategory)){
                         $classes[]  = 'top-category-'.$topparentcategory;
                     }
                 }
@@ -165,11 +152,27 @@ function stormbringer_get_context() {
 
     }
 
-    /* Singular views. */
+    // Singular views
     elseif ( is_singular() ) {
         $classes[] = 'singular';
         $classes[] = "singular-{$object->post_type}";
         $classes[] = "singular-{$object->post_type}-{$object_id}";
+
+        // Checks for custom template
+        $template = str_replace(
+            array("{$object->post_type}-template-", "{$object->post_type}-", '.php'), '',
+            get_post_meta($object_id, "_wp_{$object->post_type}_template", true)
+        );
+        if ( ! empty($template)) {
+            $classes[] = "{$object->post_type}-template-{$template}";
+        }
+
+        // Post format
+        if (current_theme_supports('post-formats') && post_type_supports($object->post_type, 'post-formats')) {
+            $post_format = get_post_format(get_queried_object_id());
+            $classes[]   = ((empty($post_format) || is_wp_error($post_format)) ? "{$object->post_type}-format-standard"
+                : "{$object->post_type}-format-{$post_format}");
+        }
 
         // if there is no parent ID and it's not a single post page, category page, or 404 page, give it
         // a class of "parent-page"
@@ -179,15 +182,22 @@ function stormbringer_get_context() {
 
         // parents top level
         $parents = array();
-        $parents = get_post_ancestors($object);
+        $parents = get_post_ancestors($object_id);
         $classes[] = (end($parents) > 0 ? "level1-page-" . end($parents) : "level1-page-{$object_id}");
 
         // category
-        foreach ((get_the_category($post->ID)) as $category)
+        foreach ((get_the_category($post->ID)) as $category):
             $classes[] = 'post-taxonomy-category-' . $category->category_nicename;
+        endforeach;
+
+        // Attachment mime types
+        if ( is_attachment() ) {
+            foreach ( explode( '/', get_post_mime_type() ) as $type )
+                $classes[] = "attachment-{$type}";
+        }
     }
 
-    /* Archive views. */
+    // Archive views
     elseif ( is_archive() ) {
         $classes[] = 'archive';
 

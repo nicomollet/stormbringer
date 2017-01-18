@@ -1,10 +1,26 @@
 <?php
-// html editor styles
+/**
+ * HTML editor
+ *
+ * Customize HTML editor buttons and styles
+ *
+ * @package StormBringer
+ */
+
+/**
+ * HTML editor: use theme css in editor
+ */
 add_editor_style( 'css/styles.css' );
 
-add_filter( 'tiny_mce_before_init', 'my_mce_before_init' );
 
-function my_mce_before_init( $settings ) {
+/**
+ * HTML editor: styles
+ *
+ * @param $settings
+ *
+ * @return mixed
+ */
+function stormbringer_htmleditor_styles( $settings ) {
 
 	$style_formats = array(
 
@@ -69,12 +85,16 @@ function my_mce_before_init( $settings ) {
 	return $settings;
 
 }
+add_filter( 'tiny_mce_before_init', 'stormbringer_htmleditor_styles' );
 
-
-add_filter( "mce_buttons", "extended_editor_mce_buttons", 0 );
-add_filter( "mce_buttons_2", "extended_editor_mce_buttons_2", 0 );
-
-function extended_editor_mce_buttons( $buttons ) {
+/**
+ * HTML editor: buttons, line 1
+ *
+ * @param $buttons
+ *
+ * @return array
+ */
+function stormbringer_htmleditor_buttons_1( $buttons ) {
 	return array(
         'formatselect',
 
@@ -96,9 +116,16 @@ function extended_editor_mce_buttons( $buttons ) {
 		'wp_adv'
 	);
 }
+add_filter( "mce_buttons", "stormbringer_htmleditor_buttons_1", 0 );
 
-function extended_editor_mce_buttons_2( $buttons ) {
-// the second toolbar line
+/**
+ * HTML editor: buttons, line 2
+ *
+ * @param $buttons
+ *
+ * @return array
+ */
+function stormbringer_htmleditor_buttons_2( $buttons ) {
 	return array(
         'styleselect',
         'strikethrough',
@@ -112,3 +139,4 @@ function extended_editor_mce_buttons_2( $buttons ) {
 		'wp-help',
 	);
 }
+add_filter( "mce_buttons_2", "stormbringer_htmleditor_buttons_2", 0 );
