@@ -60,8 +60,15 @@ function stormbringer_body_class( $classes = '' ) {
         $classes[] = "lang-" . pll_current_language();
     endif;
 
+    // Fonts
+    $google_fonts = get_theme_mod( 'google_fonts' );
+    $typekit_id = get_theme_mod('typekit_id');
+    if ( !($google_fonts || $typekit_id )) :
+        $classes[] = 'wf-inactive';
+    endif;
+
     // Merge base contextual classes with $classes
-    $classes = array_merge( $classes, stormbringer_get_context() );
+    $classes = array_merge( $classes, stormbringer_body_class_context() );
 
     return $classes;
 }
@@ -77,12 +84,11 @@ function stormbringer_body_class( $classes = '' ) {
  * based archives depending on several factors.  For example, one could load an archive for a specific
  * second during a specific minute within a specific hour on a specific day and so on.
  *
- * @since 0.7.0
- * @global $wp_query The current page's query object.
- * @global $hybrid The global Hybrid object.
+ * @since 0.1.5
+ *
  * @return array $classes Several contexts based on the current page.
  */
-function stormbringer_get_context() {
+function stormbringer_body_class_context() {
     global $post;
 
     // If $classes has been set, don't run through the conditionals again. Just return the variable
@@ -201,26 +207,26 @@ function stormbringer_get_context() {
     elseif ( is_archive() ) {
         $classes[] = 'archive';
 
-        /* Taxonomy archives. */
+        // Taxonomy archives
         if ( is_tax() || is_category() || is_tag() ) {
             $classes[] = 'taxonomy';
             $classes[] = "taxonomy-{$object->taxonomy}";
             $classes[] = "taxonomy-{$object->taxonomy}-" . sanitize_html_class( $object->slug, $object->term_id );
         }
 
-        /* Post type archives. */
+        // Post type archives
         elseif ( is_post_type_archive() ) {
             $post_type = get_post_type_object( get_query_var( 'post_type' ) );
             $classes[] = "archive-{$post_type->name}";
         }
 
-        /* User/author archives. */
+        // User/author archives
         elseif ( is_author() ) {
             $classes[] = 'user';
             $classes[] = 'user-' . sanitize_html_class( get_the_author_meta( 'user_nicename', $object_id ), $object_id );
         }
 
-        /* Time/Date archives. */
+        // Time/Date archives
         else {
             if ( is_date() ) {
                 $classes[] = 'date';
@@ -243,21 +249,16 @@ function stormbringer_get_context() {
         }
     }
 
-    /* Search results. */
+    // Search results
     elseif ( is_search() ) {
         $classes[] = 'search';
     }
 
-    /* Error 404 pages. */
+    // Error 404 pages
     elseif ( is_404() ) {
         $classes[] = 'error-404';
     }
 
 
-    $google_fonts = get_theme_mod( 'google_fonts' );
-    $typekit_id = get_theme_mod('typekit_id');
-    if ( !($google_fonts || $typekit_id )) :
-        $classes[] = 'wf-inactive';
-    endif;
     return $classes;
 }
