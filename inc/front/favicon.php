@@ -1,5 +1,13 @@
 <?php
-// Favicon in head
+/**
+ * Favicon
+ *
+ * @package StormBringer
+ */
+
+/*
+ * Favicon in head
+ */
 function stormbringer_favicon() {
 
     $themecolor = '';

@@ -1,5 +1,13 @@
 <?php
-// Comment Layout
+/**
+ * Comments
+ *
+ * @package StormBringer
+ */
+
+/*
+ * Comments layout
+ */
 function stormbringer_comments($comment, $args, $depth) {
   $GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class('media'); ?>>
@@ -31,13 +39,3 @@ function stormbringer_comments($comment, $args, $depth) {
     <!-- </li> is added by wordpress automatically -->
 <?php
 }
-
-// Disable comments on attachment pages
-function stormbringer_media_comment_status( $open, $post_id ) {
-    $post = get_post( $post_id );
-    if( $post->post_type == 'attachment' ) {
-        return false;
-    }
-    return $open;
-}
-add_filter( 'comments_open', 'stormbringer_media_comment_status', 10 , 2 );

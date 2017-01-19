@@ -52,7 +52,7 @@ function stormbringer_support() {
 		locate_template( 'inc/front/scripts.php', true );        // Load BJS
 		locate_template( 'inc/front/carousel.php', true );       // Load Carousel shortcode
 
-		locate_template( 'inc/front/cleanup.php', true );        // Cleanup frontend
+		locate_template( 'inc/front/helpers.php', true );        // Helpers
 		locate_template( 'inc/front/bodyclass.php', true );      // Body classes
 		locate_template( 'inc/front/comments.php', true );       // Comments function
 		locate_template( 'inc/front/favicon.php', true );        // Favicon
