@@ -47,7 +47,7 @@ if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); }
 
 	<div class="header-above-wrapper">
 
-		<header role="contentinfo" id="header-above" itemscope="itemscope">
+		<header id="header-above">
 			<div class="header-above-inner">
 
 	            <?php
@@ -88,7 +88,7 @@ if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); }
 
 	<div class="header-wrapper">
 
-		<header role="contentinfo" id="header" itemscope="itemscope">
+		<header id="header">
 			<div class="header-inner">
 
 	            <?php
@@ -129,7 +129,7 @@ if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); }
 
 	<div class="header-below-wrapper">
 
-		<header role="contentinfo" id="header-below" itemscope="itemscope">
+		<header id="header-below">
 			<div class="header-below-inner">
 
 	            <?php

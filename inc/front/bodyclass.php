@@ -105,6 +105,16 @@ function stormbringer_body_class_context() {
     if ( is_front_page() )
         $classes[] = 'home';
 
+    // Woocommerce
+    if(get_theme_support('woocommerce')){
+        if ( is_shop() ){
+            $classes[] = 'shop';
+            $columns = 4;
+            $columns = apply_filters( 'loop_shop_columns', $columns );
+            $classes[] = 'columns-'.$columns;
+        }
+    }
+
     // Blog page
     if ( is_category() || is_singular('post') || is_tag() || is_post_type_archive('post') || is_search() || is_author()) {
         $classes[] = 'blog';

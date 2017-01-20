@@ -1,6 +1,6 @@
 body{
   position: relative;
-  //padding-top: 80px;
+  padding-top: 80px;
 }
 body.home{
   //padding-top: 50px;
@@ -34,6 +34,10 @@ body.home{
 #navigation{
   @extend .navbar;
   @extend .navbar-inverse;
+
+  &.navbar-stuckonscrolltop{
+    @extend .navbar-fixed-top;
+  }
 
   .admin-bar &{
     margin-top: 32px;
@@ -156,5 +160,24 @@ body.home{
       padding-left: 30px;
       font-size: 90%;
     }
+  }
+}
+
+
+#navigation{
+  .navbar-shoppingcart{
+    color:$navbar-inverse-color;
+    @media (min-width: $screen-md-min) {
+      min-width: 30%;
+    }
+  }
+  .widget_shopping_cart {
+    color:$navbar-inverse-color;
+    ul{
+      a{
+        color:$navbar-inverse-link-color;
+      }
+    }
+
   }
 }

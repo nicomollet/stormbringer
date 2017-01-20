@@ -107,25 +107,6 @@ add_action( 'after_setup_theme', 'stormbringer_support' );
  */
 function stormbringer_register_sidebars() {
 
-
-    $sidebar_args['sidebar'] = array(
-        'name'          => __( 'Sidebar', 'stormbringer' ),
-        'id'            => 'sidebar',
-        'description'   => ''
-    );
-
-    $sidebar_args['navigation_above'] = array(
-        'name'          => __( 'Above Navigation', 'stormbringer' ),
-        'id'            => 'navigation-above',
-        'description'   => ''
-    );
-
-    $sidebar_args['navigation_below'] = array(
-        'name'          => __( 'Below Navigation', 'stormbringer' ),
-        'id'            => 'navigation-below',
-        'description'   => ''
-    );
-
     $header_above_widget_regions = apply_filters('stormbringer_footer_above_widget_regions', 1);
     $header_widget_regions       = apply_filters('stormbringer_footer_widget_regions', 1);
     $header_below_widget_regions = apply_filters('stormbringer_footer_below_widget_regions', 1);
@@ -255,20 +236,11 @@ function stormbringer_register_sidebars() {
         }
     }
 
-    /*
+
 	register_sidebar(array(
 		'id' => 'sidebar_main',
 		'name' => 'Main Sidebar',
 		'description' => 'Left sidebar',
-		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
-		'after_widget' => '</div></div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	));
-
-	register_sidebar(array(
-		'id' => 'footer_widgets',
-		'name' => 'Footer Widgets',
 		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
 		'after_widget' => '</div></div>',
 		'before_title' => '<h3 class="widget-title">',
@@ -291,7 +263,17 @@ function stormbringer_register_sidebars() {
 		'after_widget' => '</div></div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	));*/
+	));
+
+
+	register_sidebar(array(
+		'id' => 'sidebar_shop',
+		'name' => 'Shop Sidebar',
+		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
+		'after_widget' => '</div></div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	));
 
 
 

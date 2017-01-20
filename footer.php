@@ -88,10 +88,26 @@
 
             <?php // Woocommerce shopping cart
             if (current_theme_supports( 'woocommerce')) : ?>
-				<ul class="nav navbar-nav navbar-right navbar-shoppingcart">
-                    <?php echo stormbringer_shoppingcart_menu(); ?>
-				</ul>
+	            <ul class="nav navbar-nav navbar-right navbar-shoppingcart site-header-cart menu">
+		            <li class="<?php echo esc_attr( $class ); ?>">
+			            <a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e(
+                            'View your shopping cart', 'storefront'
+                        ); ?>">
+				            <span class="amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span>
+				            <span class="count"><?php echo wp_kses_data(
+                                    sprintf(
+                                        _n('%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront'),
+                                        WC()->cart->get_cart_contents_count()
+                                    )
+                                ); ?></span>
+			            </a>
+		            </li>
+		            <li>
+                        <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+		            </li>
+	            </ul>
             <?php endif; ?>
+
 
 
 		</div>
@@ -113,7 +129,7 @@
 
 <div class="footer-above-wrapper">
 
-	<footer role="contentinfo" id="footer-above" itemscope="itemscope">
+	<footer id="footer-above">
 		<div class="footer-above-inner">
 
             <?php
@@ -154,7 +170,7 @@
 
 <div class="footer-wrapper">
 
-	<footer role="contentinfo" id="footer" itemscope="itemscope">
+	<footer id="footer">
 		<div class="footer-inner">
 
             <?php
@@ -195,7 +211,7 @@
 
 <div class="footer-below-wrapper">
 
-	<footer role="contentinfo" id="footer-below" itemscope="itemscope">
+	<footer id="footer-below">
 		<div class="footer-below-inner">
 
             <?php

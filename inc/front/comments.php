@@ -39,3 +39,29 @@ function stormbringer_comments($comment, $args, $depth) {
     <!-- </li> is added by wordpress automatically -->
 <?php
 }
+
+/**
+ * Comments forms args
+ *
+ * @param $defaults
+ *
+ * @return mixed
+ */
+function stormbringer_comment_form_defaults( $defaults) {
+    $defaults['class_submit'] = 'btn btn-primary';
+    return $defaults;
+}
+add_filter('comment_form_defaults', 'stormbringer_comment_form_defaults', 2);
+
+/**
+ * Comments forms args
+ *
+ * @param $defaults
+ *
+ * @return mixed
+ */
+function stormbringer_comment_form_field_comment( $defaults) {
+    $defaults = str_replace('textarea','textarea class="form-control"', $defaults);
+    return $defaults;
+}
+add_filter('comment_form_field_comment', 'stormbringer_comment_form_field_comment', 2);

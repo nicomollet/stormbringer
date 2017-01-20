@@ -1,6 +1,9 @@
 ### HEAD
 * WooCommerce compatibility
 
+
+### 0.2.8: 
+
 ### 0.2.7: January 19th, 2017
 * Separate stormbringer and godspeed optimizations
 

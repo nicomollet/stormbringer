@@ -6,7 +6,7 @@
 // Base styles
 // --------------------------------------------------
 
-.btn {
+.btn, .button {
   display: inline-block;
   margin-bottom: 0; // For input.btn
   font-weight: $btn-font-weight;
@@ -65,7 +65,7 @@ a.btn {
 // Alternate buttons
 // --------------------------------------------------
 
-.btn-default {
+.btn-default, .button {
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 }
 .btn-primary {

@@ -1,0 +1,18 @@
+// alerts
+.alert, .woocommerce-message{}
+.alert-success, .woocommerce-message {}
+
+// buttons
+.btn, .button{}
+
+// tables
+.table, .shop_table {}
+.table-striped, .shop_table {}
+.table-hover, .shop_table {}
+
+// forms
+.form-control, .woocommerce-ordering select, .input-text {}
+
+// tabs
+.nav, .woocommerce-tabs .tabs {}
+.nav-tabs, .woocommerce-tabs .tabs  {}
