@@ -1,6 +1,6 @@
 {
   "name": "stormbringer",
-  "version": "0.2.6",
+  "version": "0.2.8",
   "repository" : {
     "type" : "git",
     "url" : "http://github.com/nicomollet/stormbringer.git"
