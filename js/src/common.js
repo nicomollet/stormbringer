@@ -215,4 +215,13 @@ $(document).ready(function () {
     });
   }
 
+
+  // Woocommerce: handheld footer bar
+  $( '.stormbringer-handheld-footer-bar .search > a' ).click( function(e) {
+    $( this ).parent().toggleClass( 'active' );
+    e.preventDefault();
+  });
+
+
+
 });

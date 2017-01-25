@@ -188,7 +188,7 @@ function strombringer_woocommerce_order_button_html($button){
  *
  * @return array
  */
-function custom_woocommerce_account_menu_item_classes( $classes, $endpoint ) {
+function stormbringer_woocommerce_account_menu_item_classes( $classes, $endpoint ) {
     global $wp;
 
     // Set current item class.
@@ -203,4 +203,130 @@ function custom_woocommerce_account_menu_item_classes( $classes, $endpoint ) {
 
     return $classes;
 }
-add_filter( 'woocommerce_account_menu_item_classes', 'custom_woocommerce_account_menu_item_classes', 10, 2 );
+add_filter( 'woocommerce_account_menu_item_classes', 'stormbringer_woocommerce_account_menu_item_classes', 10, 2 );
+
+
+if ( ! function_exists( 'stormbringer_handheld_footer_bar' ) ) {
+    /**
+     * Display a menu intended for use on handheld devices
+     *
+     * @since 2.0.0
+     */
+    function stormbringer_handheld_footer_bar() {
+        $links = array(
+            'my-account' => array(
+                'priority' => 10,
+                'callback' => 'stormbringer_handheld_footer_bar_account_link',
+            ),
+            'search'     => array(
+                'priority' => 20,
+                'callback' => 'stormbringer_handheld_footer_bar_search',
+            ),
+            'cart'       => array(
+                'priority' => 30,
+                'callback' => 'stormbringer_handheld_footer_bar_cart_link',
+            ),
+        );
+
+        if ( wc_get_page_id( 'myaccount' ) === -1 ) {
+            unset( $links['my-account'] );
+        }
+
+        if ( wc_get_page_id( 'cart' ) === -1 ) {
+            unset( $links['cart'] );
+        }
+
+        $links = apply_filters( 'stormbringer_handheld_footer_bar_links', $links );
+        ?>
+        <div class="stormbringer-handheld-footer-bar">
+            <ul class="columns-<?php echo count( $links ); ?>">
+                <?php foreach ( $links as $key => $link ) : ?>
+                    <li class="<?php echo esc_attr( $key ); ?>">
+                        <?php
+                        if ( $link['callback'] ) {
+                            call_user_func( $link['callback'], $key, $link );
+                        }
+                        ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php
+    }
+}
+
+if ( ! function_exists( 'stormbringer_handheld_footer_bar_search' ) ) {
+    /**
+     * The search callback function for the handheld footer bar
+     *
+     * @since 2.0.0
+     */
+    function stormbringer_handheld_footer_bar_search() {
+        echo '<a href=""><span class="glyphicon glyphicon-search"></span><span class="text-hide">' . esc_attr__( 'Search', 'stormbringer' ) . '</span></a>';
+        stormbringer_product_search();
+    }
+}
+
+if ( ! function_exists( 'stormbringer_handheld_footer_bar_cart_link' ) ) {
+    /**
+     * The cart callback function for the handheld footer bar
+     *
+     * @since 2.0.0
+     */
+    function stormbringer_handheld_footer_bar_cart_link() {
+        ?>
+        <a class="footer-cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'stormbringer' ); ?>">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <span class="badge badge-count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
+        </a>
+        <?php
+    }
+}
+
+if ( ! function_exists( 'stormbringer_handheld_footer_bar_account_link' ) ) {
+    /**
+     * The account callback function for the handheld footer bar
+     *
+     * @since 2.0.0
+     */
+    function stormbringer_handheld_footer_bar_account_link() {
+        echo '<a href="' . esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ) . '">
+        <span class="glyphicon glyphicon-user"></span>
+        <span class="text-hide">' . esc_attr__( 'My Account', 'stormbringer' ) . '</span>
+        </a>';
+    }
+}
+
+add_action( 'stormbringer_footer_before',                  'stormbringer_handheld_footer_bar',         999 );
+
+if ( ! function_exists( 'stormbringer_product_search' ) ) {
+    /**
+     * Display Product Search
+     *
+     * @since  1.0.0
+     * @uses  is_woocommerce_activated() check if WooCommerce is activated
+     * @return void
+     */
+    function stormbringer_product_search() {?>
+            <div class="site-search">
+                <?php the_widget( 'WC_Widget_Product_Search', 'title=' ); ?>
+            </div>
+            <?php
+    }
+}
+
+/**
+ * Woocommerce: product form
+ *
+ * @param $ob_get_clean
+ *
+ * @return mixed
+ */
+function stormbringer_get_product_search_form( $ob_get_clean ) {
+
+    $ob_get_clean = str_replace('class="search-field"','class="search-field form-control"',$ob_get_clean);
+    $ob_get_clean = str_replace('type="submit"','type="submit" class="btn btn-default"',$ob_get_clean);
+
+    return $ob_get_clean;
+};
+add_filter( 'get_product_search_form', 'stormbringer_get_product_search_form', 10, 1 );

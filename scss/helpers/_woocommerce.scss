@@ -452,9 +452,14 @@ ul.products{
 
   table.cart{
     @media (min-width: $screen-md-min) {
-      text-align: right;
+      //text-align: right;
     }
     .button[name=update_cart]{
+
+      @media (min-width: $screen-md-min) {
+        float: right;
+      }
+
       @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
     }
   }
@@ -480,13 +485,23 @@ ul.products{
     }
   }
   .qty{
-    width: 80px;
+    width: 40px;
+    @media (min-width: $screen-md-min) {
+      width: 80px;
+    }
   }
   .product-remove{
     vertical-align: middle;
   }
   .product-thumbnail {
-    max-width: 100px;
+    display: none;
+    max-width: 80px;
+    img{
+      max-width: 80px;
+    }
+    @media (min-width: $screen-md-min) {
+      display: table-cell;
+    }
   }
 
 }
@@ -612,5 +627,200 @@ ul.products{
 
   .ui-slider-horizontal .ui-slider-range-max {
     right: -1px;
+  }
+}
+
+
+/**
+ * Handheld footer bar
+ */
+.stormbringer-handheld-footer-bar {
+
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+  @include clearfix;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  //border-top: 1px solid rgba(#fff,.2);
+  //box-shadow: 0 0 6px rgba(#000,.7);
+  z-index: 9999;
+  background: #fff;
+
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      float: left;
+      text-align: center;
+
+      &:last-child {
+        > a {
+          border-right: 0;
+        }
+      }
+
+      > a {
+        font-size: $font-size-large;
+        line-height: $navbar-height;
+        //height: ms(7);
+        display: block;
+        position: relative;
+        //text-indent: -9999px;
+        z-index: 999;
+        height: $navbar-height;
+        //border-right: 1px solid rgba(#fff,.2);
+
+
+        &:active,
+        &:focus {
+          outline: none;
+        }
+
+        &:before {
+          //@include fa-icon();
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          text-align: center;
+          //line-height: 2.618046972; // 4.236/1.618
+          font-weight: 400;
+          //font-size: ms(3);
+          text-indent: 0;
+          display: block;
+          cursor: pointer;
+        }
+      }
+
+      &.search {
+        .site-search {
+          position: absolute;
+          bottom: -3em;
+          left: 0;
+          right: 0;
+          @include transition(all,ease,.2s);
+          padding: 1em;
+          z-index: 1;
+          display: block;
+          background: #fff;
+        }
+
+        &.active {
+          .site-search {
+            bottom: 100%;
+          }
+        }
+
+        label{
+          display: none;
+        }
+
+        .site-search,
+        .widget,
+        form {
+          margin-bottom: 0;
+          [type=submit],
+          .btn {
+            display: none;
+          }
+        }
+      }
+
+      &.cart {
+        .badge{
+          position: absolute;
+          top: 10px;
+        }
+      }
+    }
+
+    &.columns-1 {
+      li {
+        width: 100%;
+        display: block;
+        float: none;
+      }
+    }
+
+    &.columns-2 {
+      li {
+        width: 50%;
+      }
+    }
+
+    &.columns-3 {
+      li {
+        width: 33.33333%;
+      }
+    }
+
+    &.columns-4 {
+      li {
+        width: 25%;
+      }
+    }
+
+    &.columns-5 {
+      li {
+        width: 20%;
+      }
+    }
+  }
+}
+
+table.shop_table_responsive {
+  thead {
+    display: none;
+  }
+
+  tbody {
+    tr:first-child {
+      td:first-child {
+        border-top: 0;
+      }
+    }
+
+    th {
+      display: none;
+    }
+  }
+
+  tr {
+    display: block;
+
+    td {
+      display: block;
+      text-align: right !important; // Important to overwrite order status inline styling
+
+      &.order-actions {
+        text-align: left !important;
+      }
+
+      &:before {
+        content: attr(data-title) ': ';
+        font-weight: 700;
+        float: left;
+      }
+
+      &.product-remove,
+      &.actions {
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    &:nth-child(2n) {
+      td {
+        background-color: rgba(0,0,0,0.025);
+      }
+    }
   }
 }
