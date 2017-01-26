@@ -191,16 +191,13 @@ function strombringer_woocommerce_order_button_html($button){
 function stormbringer_woocommerce_account_menu_item_classes( $classes, $endpoint ) {
     global $wp;
 
-    // Set current item class.
     $current = isset( $wp->query_vars[ $endpoint ] );
     if ( 'dashboard' === $endpoint && ( isset( $wp->query_vars['page'] ) || empty( $wp->query_vars ) ) ) {
         $current = true;
     }
-
     if ( $current ) {
         $classes[] = 'active';
     }
-
     return $classes;
 }
 add_filter( 'woocommerce_account_menu_item_classes', 'stormbringer_woocommerce_account_menu_item_classes', 10, 2 );
