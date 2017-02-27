@@ -1,6 +1,8 @@
 {
   "name": "stormbringer",
-  "version": "0.2.8,
+  "version": "0.2.8",
+  "description": "WordPress theme",
+  "license": "Apache License, Version 2.0",
   "repository" : {
     "type" : "git",
     "url" : "http://github.com/nicomollet/stormbringer.git"
