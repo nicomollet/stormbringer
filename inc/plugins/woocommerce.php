@@ -216,7 +216,6 @@ function stormbringer_woocommerce_account_menu_item_classes($classes, $endpoint)
     if ($current) {
         $classes[] = 'active';
     }
-
     return $classes;
 }
 
