@@ -2,7 +2,7 @@
   "name": "stormbringer",
   "version": "0.2.8",
   "description": "WordPress theme",
-  "license": "Apache License, Version 2.0",
+  "license": "Apache-2.0",
   "repository" : {
     "type" : "git",
     "url" : "http://github.com/nicomollet/stormbringer.git"
@@ -13,7 +13,7 @@
     "grunt-contrib-cssmin": "^1.0.2",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-assets-versioning": "^1.0.6",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-shell": "^1.1.2",
