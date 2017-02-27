@@ -39,6 +39,3 @@ add_theme_support('libraries',
 		'jquery-owlcarousel'   => '2.1.6',
 	)
 );
-
-
-
