@@ -72,7 +72,8 @@ function stormbringer_support() {
 	if ( class_exists( 'Theme_My_Login' ) ) {// Theme My Login custom titles and custom pages
 		locate_template( 'inc/plugins/thememylogin.php', true );
 	}
-	if ( get_theme_support('woocommerce')) {// Woocommerce
+	if ( class_exists( 'WooCommerce' ) ) {// Woocommerce
+		add_theme_support('woocommerce');
 		locate_template( 'inc/plugins/woocommerce.php', true );
 	}
     
