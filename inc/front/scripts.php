@@ -33,6 +33,18 @@ add_action( 'wp_enqueue_scripts', 'stormbringer_js_theme', 300 );
 
 
 /**
+ * Move Core Jquery script to the footer
+ */
+function stormbringer_jquery_footer () {
+	global $wp_scripts;
+	$wp_scripts->add_data( 'jquery', 'group', 1 );
+	$wp_scripts->add_data( 'jquery-core', 'group', 1 );
+	$wp_scripts->add_data( 'jquery-migrate', 'group', 1 );
+}
+if ( ! is_admin() )
+	add_action ( 'wp_head', 'stormbringer_jquery_footer' ,  1 , 0 );
+
+/**
  * Enqueue libraries scripts in the footer
  */
 function stormbringer_js_libraries_footer() {
@@ -50,10 +62,10 @@ function stormbringer_js_libraries_footer() {
         $libraries = get_theme_support('libraries')[0];
 
 		if ( !is_admin() ) {
-			wp_deregister_script( 'jquery' );
+			//wp_deregister_script( 'jquery' );
             wp_deregister_script('wp-embed');
 			if ( @$libraries['jquery'] && get_theme_mod( 'libraries_jquery', true ) ) {
-				wp_enqueue_script( 'jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/'.$libraries['jquery'].'/jquery.min.js', array(), null, true );
+				//wp_enqueue_script( 'jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/'.$libraries['jquery'].'/jquery.min.js', array(), null, true );
 			}
 		}
 
