@@ -74,7 +74,7 @@ function stormbringer_js_libraries_footer() {
 		}*/
 
 		if(@$libraries['bootstrap'] && get_theme_mod('libraries_bootstrap', true)){
-			wp_enqueue_script( 'bootstrap', '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/'.$libraries['bootstrap'].'/js/bootstrap.min.js', array(), null, true );
+			wp_enqueue_script( 'bootstrap', '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/'.$libraries['bootstrap'].'/js/bootstrap.min.js', array('jquery'), null, true );
 		}
 
 		// Optionnal libraries
@@ -115,14 +115,14 @@ function stormbringer_js_libraries_footer() {
 		}
 
 		if(@$libraries['bootstrap-select'] && get_theme_mod('libraries_bootstrap-select', true)){
-			wp_enqueue_script( 'bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/js/bootstrap-select.min.js', array( 'bootstrap' ), null, true );
+			wp_enqueue_script( 'bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/js/bootstrap-select.min.js', array('jquery', 'bootstrap' ), null, true );
 		}
 
 		if(@$libraries['bootstrap-datepicker'] && get_theme_mod('libraries_bootstrap-datepicker', true) ){
 
-			wp_enqueue_script( 'bootstrap-datepicker', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/js/bootstrap-datepicker.min.js', array( 'bootstrap' ), null, true );
+			wp_enqueue_script( 'bootstrap-datepicker', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/js/bootstrap-datepicker.min.js', array('jquery', 'bootstrap' ), null, true );
 			if($lang != '' && $lang != 'en') {
-				wp_enqueue_script( 'bootstrap-datepicker-'.$lang, '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/locales/bootstrap-datepicker.'.$lang.'.min.js', array( 'bootstrap','bootstrap-datepicker' ), null, true );
+				wp_enqueue_script( 'bootstrap-datepicker-'.$lang, '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/locales/bootstrap-datepicker.'.$lang.'.min.js', array( 'jquery', 'bootstrap', 'bootstrap-datepicker' ), null, true );
 			}
 		}
 
