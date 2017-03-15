@@ -1915,7 +1915,7 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
 ;
 
 })(window, document);
-$(document).ready(function () {
+jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
 
 
   // Navbar stuck on scrolltop
@@ -2143,7 +2143,8 @@ $(document).ready(function () {
 
 });
 
-$(document).ready(function () {
+jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
+
 
 
 });

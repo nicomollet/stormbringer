@@ -105,144 +105,172 @@ function stormbringer_support() {
 add_action( 'after_setup_theme', 'stormbringer_support' );
 
 /**
- * Register sidebars / widget regions
+ * Sidebars
  */
 function stormbringer_register_sidebars() {
 
-    $header_above_widget_regions = apply_filters('stormbringer_footer_above_widget_regions', 1);
-    $header_widget_regions       = apply_filters('stormbringer_footer_widget_regions', 1);
-    $header_below_widget_regions = apply_filters('stormbringer_footer_below_widget_regions', 1);
 
-    $footer_above_widget_regions = apply_filters('stormbringer_footer_above_widget_regions', 1);
-    $footer_widget_regions       = apply_filters('stormbringer_footer_widget_regions', 1);
-    $footer_below_widget_regions = apply_filters('stormbringer_footer_below_widget_regions', 1);
+	$sidebar_args['sidebar'] = array(
+		'name'          => __( 'Sidebar', 'stormbringer' ),
+		'id'            => 'sidebar',
+		'description'   => ''
+	);
 
+	$sidebar_args['navigation_above'] = array(
+		'name'          => __( 'Above Navigation', 'stormbringer' ),
+		'id'            => 'navigation-above',
+		'description'   => ''
+	);
 
-    // Above Header
-    for ( $i = 1; $i <= intval( $header_above_widget_regions ); $i++ ) {
-        $region = sprintf( 'header_above_%d', $i );
+	$sidebar_args['navigation_below'] = array(
+		'name'          => __( 'Below Navigation', 'stormbringer' ),
+		'id'            => 'navigation-below',
+		'description'   => ''
+	);
 
-        $sidebar_args[ $region ] = array(
-            'name'        => sprintf( __( 'Above Header %d', 'stormbringer' ), $i ),
-            'id'          => sprintf( 'header-above-%d', $i ),
-            'description' => sprintf( __( 'Widgetized Above Header Region %d.', 'stormbringer' ), $i )
-        );
-    }
+	$header_above_widget_regions = apply_filters('stormbringer_footer_above_widget_regions', 1);
+	$header_widget_regions       = apply_filters('stormbringer_footer_widget_regions', 1);
+	$header_below_widget_regions = apply_filters('stormbringer_footer_below_widget_regions', 1);
 
-    // Header
-    for ( $i = 1; $i <= intval( $header_widget_regions ); $i++ ) {
-        $region = sprintf( 'header_%d', $i );
-
-        $sidebar_args[ $region ] = array(
-            'name'        => sprintf( __( 'Header %d', 'stormbringer' ), $i ),
-            'id'          => sprintf( 'header-%d', $i ),
-            'description' => sprintf( __( 'Widgetized Header Region %d.', 'stormbringer' ), $i )
-        );
-    }
-
-    // Below Header
-    for ( $i = 1; $i <= intval( $header_below_widget_regions ); $i++ ) {
-        $region = sprintf( 'header_below_%d', $i );
-
-        $sidebar_args[ $region ] = array(
-            'name'        => sprintf( __( 'Below Header %d', 'stormbringer' ), $i ),
-            'id'          => sprintf( 'header-below-%d', $i ),
-            'description' => sprintf( __( 'Widgetized Below Header Region %d.', 'stormbringer' ), $i )
-        );
-    }
-
-    // Above Footer
-    for ( $i = 1; $i <= intval( $footer_above_widget_regions ); $i++ ) {
-        $region = sprintf( 'footer_above_%d', $i );
-
-        $sidebar_args[ $region ] = array(
-            'name'        => sprintf( __( 'Above Footer %d', 'stormbringer' ), $i ),
-            'id'          => sprintf( 'footer-above-%d', $i ),
-            'description' => sprintf( __( 'Widgetized Above Footer Region %d.', 'stormbringer' ), $i )
-        );
-    }
-
-    //Footer
-    for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
-        $region = sprintf( 'footer_%d', $i );
-
-        $sidebar_args[ $region ] = array(
-            'name'        => sprintf( __( 'Footer %d', 'stormbringer' ), $i ),
-            'id'          => sprintf( 'footer-%d', $i ),
-            'description' => sprintf( __( 'Widgetized Footer Region %d.', 'stormbringer' ), $i )
-        );
-    }
-
-    // Below Footer
-    for ( $i = 1; $i <= intval( $footer_below_widget_regions ); $i++ ) {
-        $region = sprintf( 'footer_below_%d', $i );
-
-        $sidebar_args[ $region ] = array(
-            'name'        => sprintf( __( 'Below Footer %d', 'stormbringer' ), $i ),
-            'id'          => sprintf( 'footer-below-%d', $i ),
-            'description' => sprintf( __( 'Widgetized Below Footer Region %d.', 'stormbringer' ), $i )
-        );
-    }
-
-    foreach ( $sidebar_args as $sidebar => $args ) {
-        $widget_tags = array(
-            'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
-            'after_widget' => '</div></div>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-        );
-
-        /**
-         * Dynamically generated filter hooks. Allow changing widget wrapper and title tags. See the list below.
-         *
-         *
-         * stormbringer_header_above_1_widget_tags
-         * stormbringer_header_above_2_widget_tags
-         * stormbringer_header_above_3_widget_tags
-         * stormbringer_header_above_4_widget_tags
-         *
-         * stormbringer_header_1_widget_tags
-         * stormbringer_header_2_widget_tags
-         * stormbringer_header_3_widget_tags
-         * stormbringer_header_4_widget_tags
-         *
-         * stormbringer_header_below_1_widget_tags
-         * stormbringer_header_below_2_widget_tags
-         * stormbringer_header_below_3_widget_tags
-         * stormbringer_header_below_4_widget_tags
-         *
-         * stormbringer_sidebar_widget_tags
-         *
-         * stormbringer_footer_above_1_widget_tags
-         * stormbringer_footer_above_2_widget_tags
-         * stormbringer_footer_above_3_widget_tags
-         * stormbringer_footer_above_4_widget_tags
-         *
-         * stormbringer_footer_1_widget_tags
-         * stormbringer_footer_2_widget_tags
-         * stormbringer_footer_3_widget_tags
-         * stormbringer_footer_4_widget_tags
-         *
-         * stormbringer_footer_below_1_widget_tags
-         * stormbringer_footer_below_2_widget_tags
-         * stormbringer_footer_below_3_widget_tags
-         * stormbringer_footer_below_4_widget_tags
-         *
-         *
-         */
-        $filter_hook = sprintf( 'stormbringer_%s_widget_tags', $sidebar );
-        $widget_tags = apply_filters( $filter_hook, $widget_tags );
-
-        if ( is_array( $widget_tags ) ) {
-            register_sidebar( $args + $widget_tags );
-        }
-    }
+	$footer_above_widget_regions = apply_filters('stormbringer_footer_above_widget_regions', 1);
+	$footer_widget_regions       = apply_filters('stormbringer_footer_widget_regions', 1);
+	$footer_below_widget_regions = apply_filters('stormbringer_footer_below_widget_regions', 1);
 
 
+	// Above Header
+	for ( $i = 1; $i <= intval( $header_above_widget_regions ); $i++ ) {
+		$region = sprintf( 'header_above_%d', $i );
+
+		$sidebar_args[ $region ] = array(
+			'name'        => sprintf( __( 'Above Header %d', 'stormbringer' ), $i ),
+			'id'          => sprintf( 'header-above-%d', $i ),
+			'description' => sprintf( __( 'Widgetized Above Header Region %d.', 'stormbringer' ), $i )
+		);
+	}
+
+	// Header
+	for ( $i = 1; $i <= intval( $header_widget_regions ); $i++ ) {
+		$region = sprintf( 'header_%d', $i );
+
+		$sidebar_args[ $region ] = array(
+			'name'        => sprintf( __( 'Header %d', 'stormbringer' ), $i ),
+			'id'          => sprintf( 'header-%d', $i ),
+			'description' => sprintf( __( 'Widgetized Header Region %d.', 'stormbringer' ), $i )
+		);
+	}
+
+	// Below Header
+	for ( $i = 1; $i <= intval( $header_below_widget_regions ); $i++ ) {
+		$region = sprintf( 'header_below_%d', $i );
+
+		$sidebar_args[ $region ] = array(
+			'name'        => sprintf( __( 'Below Header %d', 'stormbringer' ), $i ),
+			'id'          => sprintf( 'header-below-%d', $i ),
+			'description' => sprintf( __( 'Widgetized Below Header Region %d.', 'stormbringer' ), $i )
+		);
+	}
+
+	// Above Footer
+	for ( $i = 1; $i <= intval( $footer_above_widget_regions ); $i++ ) {
+		$region = sprintf( 'footer_above_%d', $i );
+
+		$sidebar_args[ $region ] = array(
+			'name'        => sprintf( __( 'Above Footer %d', 'stormbringer' ), $i ),
+			'id'          => sprintf( 'footer-above-%d', $i ),
+			'description' => sprintf( __( 'Widgetized Above Footer Region %d.', 'stormbringer' ), $i )
+		);
+	}
+
+	//Footer
+	for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
+		$region = sprintf( 'footer_%d', $i );
+
+		$sidebar_args[ $region ] = array(
+			'name'        => sprintf( __( 'Footer %d', 'stormbringer' ), $i ),
+			'id'          => sprintf( 'footer-%d', $i ),
+			'description' => sprintf( __( 'Widgetized Footer Region %d.', 'stormbringer' ), $i )
+		);
+	}
+
+	// Below Footer
+	for ( $i = 1; $i <= intval( $footer_below_widget_regions ); $i++ ) {
+		$region = sprintf( 'footer_below_%d', $i );
+
+		$sidebar_args[ $region ] = array(
+			'name'        => sprintf( __( 'Below Footer %d', 'stormbringer' ), $i ),
+			'id'          => sprintf( 'footer-below-%d', $i ),
+			'description' => sprintf( __( 'Widgetized Below Footer Region %d.', 'stormbringer' ), $i )
+		);
+	}
+
+	foreach ( $sidebar_args as $sidebar => $args ) {
+		$widget_tags = array(
+			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
+			'after_widget' => '</div></div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+		);
+
+		/**
+		 * Dynamically generated filter hooks. Allow changing widget wrapper and title tags. See the list below.
+		 *
+		 *
+		 * stormbringer_header_above_1_widget_tags
+		 * stormbringer_header_above_2_widget_tags
+		 * stormbringer_header_above_3_widget_tags
+		 * stormbringer_header_above_4_widget_tags
+		 *
+		 * stormbringer_header_1_widget_tags
+		 * stormbringer_header_2_widget_tags
+		 * stormbringer_header_3_widget_tags
+		 * stormbringer_header_4_widget_tags
+		 *
+		 * stormbringer_header_below_1_widget_tags
+		 * stormbringer_header_below_2_widget_tags
+		 * stormbringer_header_below_3_widget_tags
+		 * stormbringer_header_below_4_widget_tags
+		 *
+		 * stormbringer_sidebar_widget_tags
+		 *
+		 * stormbringer_footer_above_1_widget_tags
+		 * stormbringer_footer_above_2_widget_tags
+		 * stormbringer_footer_above_3_widget_tags
+		 * stormbringer_footer_above_4_widget_tags
+		 *
+		 * stormbringer_footer_1_widget_tags
+		 * stormbringer_footer_2_widget_tags
+		 * stormbringer_footer_3_widget_tags
+		 * stormbringer_footer_4_widget_tags
+		 *
+		 * stormbringer_footer_below_1_widget_tags
+		 * stormbringer_footer_below_2_widget_tags
+		 * stormbringer_footer_below_3_widget_tags
+		 * stormbringer_footer_below_4_widget_tags
+		 *
+		 *
+		 */
+		$filter_hook = sprintf( 'stormbringer_%s_widget_tags', $sidebar );
+		$widget_tags = apply_filters( $filter_hook, $widget_tags );
+
+		if ( is_array( $widget_tags ) ) {
+			register_sidebar( $args + $widget_tags );
+		}
+	}
+
+	/*
 	register_sidebar(array(
 		'id' => 'sidebar_main',
 		'name' => 'Main Sidebar',
 		'description' => 'Left sidebar',
+		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
+		'after_widget' => '</div></div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	));
+
+	register_sidebar(array(
+		'id' => 'footer_widgets',
+		'name' => 'Footer Widgets',
 		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
 		'after_widget' => '</div></div>',
 		'before_title' => '<h3 class="widget-title">',
@@ -265,8 +293,7 @@ function stormbringer_register_sidebars() {
 		'after_widget' => '</div></div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	));
-
+	));*/
 
 	register_sidebar(array(
 		'id' => 'sidebar_shop',
@@ -277,11 +304,9 @@ function stormbringer_register_sidebars() {
 		'after_title' => '</h3>',
 	));
 
-
-
-
 }
 add_action('widgets_init', 'stormbringer_register_sidebars' );
+
 
 /**
  * Register menus
