@@ -257,20 +257,11 @@ function stormbringer_register_sidebars() {
 		}
 	}
 
-	/*
+
 	register_sidebar(array(
 		'id' => 'sidebar_main',
 		'name' => 'Main Sidebar',
 		'description' => 'Left sidebar',
-		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
-		'after_widget' => '</div></div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	));
-
-	register_sidebar(array(
-		'id' => 'footer_widgets',
-		'name' => 'Footer Widgets',
 		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-inner">',
 		'after_widget' => '</div></div>',
 		'before_title' => '<h3 class="widget-title">',
@@ -293,7 +284,7 @@ function stormbringer_register_sidebars() {
 		'after_widget' => '</div></div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	));*/
+	));
 
 	register_sidebar(array(
 		'id' => 'sidebar_shop',
