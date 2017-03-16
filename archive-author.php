@@ -23,13 +23,13 @@ if ( get_the_author_meta( 'description' ) ) : ?>
 					<?php $author_description = get_the_author_meta( 'description' );
 					echo wpautop( $author_description ); ?>
 					<?php if ( get_the_author_meta( 'user_fb' ) ) {
-						printf( '<p>' . __( 'Facebook:', 'strombringer' ) . ' <a href="%s">%s</a></p>', get_the_author_meta( 'user_fb' ), get_the_author() );
+						printf( '<p>' . __( 'Facebook:', 'stormbringer' ) . ' <a href="%s">%s</a></p>', get_the_author_meta( 'user_fb' ), get_the_author() );
 					} ?>
 					<?php if ( get_the_author_meta( 'user_tw' ) ) {
-						printf( '<p>' . __( 'Twitter:', 'strombringer' ) . ' <a href="http://twitter.com/%s">%s</a></p>', get_the_author_meta( 'user_tw' ), get_the_author_meta( 'user_tw' ) );
+						printf( '<p>' . __( 'Twitter:', 'stormbringer' ) . ' <a href="http://twitter.com/%s">%s</a></p>', get_the_author_meta( 'user_tw' ), get_the_author_meta( 'user_tw' ) );
 					} ?>
 					<?php if ( get_the_author_meta( 'google_profile' ) ) {
-						printf( '<p>' . __( 'Google Plus:', 'strombringer' ) . ' <a href="%s">%s</a></p>', get_the_author_meta( 'google_profile' ), get_the_author() );
+						printf( '<p>' . __( 'Google Plus:', 'stormbringer' ) . ' <a href="%s">%s</a></p>', get_the_author_meta( 'google_profile' ), get_the_author() );
 					} ?>
 				</div>
 			</div>

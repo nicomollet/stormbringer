@@ -23,6 +23,7 @@ function stormbringer_body_class( $classes = '' ) {
     $classes[] = 'locale-'.get_locale();
     $classes[] = ( is_child_theme() ? 'child-theme' : 'parent-theme' );
 
+
     // Multisite
     if ( is_multisite() ) {
         $classes[] = 'multisite';

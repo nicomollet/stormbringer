@@ -779,7 +779,7 @@
 
 			<h2 id="tables-example">Basic example</h2>
 
-			<p>For basic styling—light padding and only horizontal dividers—add the base class <code>.table</code> to
+			<p>For basic styling&mdash;light padding and only horizontal dividers&mdash;add the base class <code>.table</code> to
 			   any <code>
 					&lt;table&gt;</code>. It may seem super redundant, but given the widespread use of tables for other
 			   plugins like
@@ -1649,7 +1649,7 @@
 					<div class="checkbox">
 						<label>
 							<input type="checkbox" value="">
-							Option one is this and that—be sure to include why it's great
+							Option one is this and that&mdash;be sure to include why it's great
 						</label>
 					</div>
 					<div class="checkbox disabled">
@@ -1663,7 +1663,7 @@
 					<div class="radio">
 						<label>
 							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-							Option one is this and that—be sure to include why it's great
+							Option one is this and that&mdash;be sure to include why it's great
 						</label>
 					</div>
 					<div class="radio">
@@ -2087,7 +2087,7 @@
 						<div class="radio">
 							<label class="checkbox">
 								<input type="checkbox" id="checkboxError" value="option1">
-								Option one is this and that—be sure to include why it's great
+								Option one is this and that&mdash;be sure to include why it's great
 							</label>
 						</div>
 					</div>
@@ -2095,7 +2095,7 @@
 						<div class="radio">
 							<label>
 								<input type="radio" name="optionsRadios" id="radiosSuccess1" value="option1" checked="">
-								Option one is this and that—be sure to include why it's great
+								Option one is this and that&mdash;be sure to include why it's great
 							</label>
 						</div>
 						<div class="radio">
@@ -2656,7 +2656,7 @@
 						<span class="nt">&lt;/p&gt;</span></code></pre>
 			</div>
 
-			<p>Create block level buttons—those that span the full width of a parent— by adding <code>.btn-block</code>.
+			<p>Create block level buttons&mdash;those that span the full width of a parent&mdash; by adding <code>.btn-block</code>.
 			</p>
 
 			<div class="bs-example">
@@ -5053,7 +5053,7 @@
 
 			<p>Add the relative form sizing classes to the <code>.input-group</code> itself and contents within will
 			   automatically
-			   resize—no need for repeating the form control size classes on each element.</p>
+			   resize&mdash;no need for repeating the form control size classes on each element.</p>
 
 			<form class="bs-example bs-example-form" role="form">
 				<div class="input-group input-group-lg">

@@ -61,18 +61,6 @@ function stormbringer_js_libraries_footer() {
 
         $libraries = get_theme_support('libraries')[0];
 
-		if ( !is_admin() ) {
-			//wp_deregister_script( 'jquery' );
-            wp_deregister_script('wp-embed');
-			if ( @$libraries['jquery'] && get_theme_mod( 'libraries_jquery', true ) ) {
-				//wp_enqueue_script( 'jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/'.$libraries['jquery'].'/jquery.min.js', array(), null, true );
-			}
-		}
-
-		/*if ( @$libraries['modernizr'] && get_theme_mod( 'libraries_modernizr', true ) ) {
-			wp_enqueue_script( 'modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/' . $libraries['modernizr'] . '/modernizr.min.js', array(), null, true );
-		}*/
-
 		if(@$libraries['bootstrap'] && get_theme_mod('libraries_bootstrap', true)){
 			wp_enqueue_script( 'bootstrap', '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/'.$libraries['bootstrap'].'/js/bootstrap.min.js', array('jquery'), null, true );
 		}

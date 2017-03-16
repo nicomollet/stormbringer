@@ -36,7 +36,7 @@
 				<?php
 				while ( have_posts() ) : the_post(); ?>
 
-					<?= stormbringer_bootstrap_grid( $counter_posts, [
+					<?php echo stormbringer_bootstrap_grid( $counter_posts, [
 						'xs' => 12,
 						'sm' => 6,
 						'md' => 4,

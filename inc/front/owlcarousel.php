@@ -56,7 +56,7 @@ class Jetpack_Owlcarousel_Shortcode {
 	 * @return array
 	 */
 	function add_gallery_type( $types = array() ) {
-		$types['owlcarousel'] = esc_html__( 'Owlcarousel', 'jetpack' );
+		$types['owlcarousel'] = esc_html__( 'Owlcarousel', 'stormbringer' );
 
 		return $types;
 	}
@@ -210,7 +210,7 @@ class Jetpack_Owlcarousel_Shortcode {
 			return sprintf(
 				'<a href="%s">%s</a>',
 				esc_url( get_permalink( $post->ID ) . '#' . $gallery_instance . '-owlcarousel' ),
-				esc_html__( 'Click to view owlcarousel.', 'jetpack' )
+				esc_html__( 'Click to view owlcarousel.', 'stormbringer' )
 			);
 		}
 

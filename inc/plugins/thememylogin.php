@@ -26,12 +26,14 @@ function stormbringer_thememylogin_options($args){
 }
 
 
-function stormbringer_thememylogin_enqueue_scripts() {
+/*
+ * function stormbringer_thememylogin_enqueue_scripts() {
   wp_deregister_script('password-strength');
   wp_dequeue_style('password-strength');
 }
 
 add_action('wp_enqueue_scripts', 'stormbringer_thememylogin_enqueue_scripts',60);
+*/
 
 function stormbringer_thememylogin_init() {
   global $theme_my_login;
@@ -108,7 +110,7 @@ function stormbringer_thememylogin_errors($errors){
   }
 
 
-  $errors = str_replace(strtoupper(str_replace('!',':',__('Error!'))),'',strip_tags($errors,'<span><br>'));
+  $errors = str_replace(strtoupper(str_replace('!',':',__('Error!', 'stormbringer'))),'',strip_tags($errors,'<span><br>'));
   printf('<div class="alert alert-'.$newclass.'"><button type="button" class="close" data-dismiss="alert">&times;</button><h4>'.$args['message_'.$class].'</h4><p>%s</p></div>',$errors);
   }
 }

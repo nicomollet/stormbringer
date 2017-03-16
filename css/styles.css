@@ -281,9 +281,17 @@ th {
     display: none;
   }
 
-  .btn > .caret, #content .sharedaddy .sd-button > .caret,
+  .btn > .caret, #content .sharedaddy .sd-button > .caret, .elementor-widget-button .elementor-button > .caret, .elementor-element.elementor-button-success .elementor-button > .caret,
+  .elementor-element.elementor-button-warning .elementor-button > .caret,
+  .elementor-element.elementor-button-danger .elementor-button > .caret,
+  .elementor-element.elementor-button-info .elementor-button > .caret,
   .dropup > .btn > .caret,
-  #content .sharedaddy .dropup > .sd-button > .caret {
+  #content .sharedaddy .dropup > .sd-button > .caret,
+  .elementor-widget-button .dropup > .elementor-button > .caret,
+  .elementor-element.elementor-button-success .dropup > .elementor-button > .caret,
+  .elementor-element.elementor-button-warning .dropup > .elementor-button > .caret,
+  .elementor-element.elementor-button-danger .dropup > .elementor-button > .caret,
+  .elementor-element.elementor-button-info .dropup > .elementor-button > .caret {
     border-top-color: #000 !important;
   }
 
@@ -3202,48 +3210,88 @@ input[type="search"] {
   input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control,
   .input-group-sm > input[type="date"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="date"].btn,
-  #content .sharedaddy .input-group-sm > .input-group-btn > input[type="date"].sd-button, .input-group-sm input[type="date"],
+  #content .sharedaddy .input-group-sm > .input-group-btn > input[type="date"].sd-button,
+  .elementor-widget-button .input-group-sm > .input-group-btn > input[type="date"].elementor-button,
+  .elementor-element.elementor-button-success .input-group-sm > .input-group-btn > input[type="date"].elementor-button,
+  .elementor-element.elementor-button-warning .input-group-sm > .input-group-btn > input[type="date"].elementor-button,
+  .elementor-element.elementor-button-danger .input-group-sm > .input-group-btn > input[type="date"].elementor-button,
+  .elementor-element.elementor-button-info .input-group-sm > .input-group-btn > input[type="date"].elementor-button, .input-group-sm input[type="date"],
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
   .input-group-sm > input[type="time"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="time"].btn,
-  #content .sharedaddy .input-group-sm > .input-group-btn > input[type="time"].sd-button, .input-group-sm
+  #content .sharedaddy .input-group-sm > .input-group-btn > input[type="time"].sd-button,
+  .elementor-widget-button .input-group-sm > .input-group-btn > input[type="time"].elementor-button,
+  .elementor-element.elementor-button-success .input-group-sm > .input-group-btn > input[type="time"].elementor-button,
+  .elementor-element.elementor-button-warning .input-group-sm > .input-group-btn > input[type="time"].elementor-button,
+  .elementor-element.elementor-button-danger .input-group-sm > .input-group-btn > input[type="time"].elementor-button,
+  .elementor-element.elementor-button-info .input-group-sm > .input-group-btn > input[type="time"].elementor-button, .input-group-sm
   input[type="time"],
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
   .input-group-sm > input[type="datetime-local"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
-  #content .sharedaddy .input-group-sm > .input-group-btn > input[type="datetime-local"].sd-button, .input-group-sm
+  #content .sharedaddy .input-group-sm > .input-group-btn > input[type="datetime-local"].sd-button,
+  .elementor-widget-button .input-group-sm > .input-group-btn > input[type="datetime-local"].elementor-button,
+  .elementor-element.elementor-button-success .input-group-sm > .input-group-btn > input[type="datetime-local"].elementor-button,
+  .elementor-element.elementor-button-warning .input-group-sm > .input-group-btn > input[type="datetime-local"].elementor-button,
+  .elementor-element.elementor-button-danger .input-group-sm > .input-group-btn > input[type="datetime-local"].elementor-button,
+  .elementor-element.elementor-button-info .input-group-sm > .input-group-btn > input[type="datetime-local"].elementor-button, .input-group-sm
   input[type="datetime-local"],
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
   .input-group-sm > input[type="month"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="month"].btn,
-  #content .sharedaddy .input-group-sm > .input-group-btn > input[type="month"].sd-button, .input-group-sm
+  #content .sharedaddy .input-group-sm > .input-group-btn > input[type="month"].sd-button,
+  .elementor-widget-button .input-group-sm > .input-group-btn > input[type="month"].elementor-button,
+  .elementor-element.elementor-button-success .input-group-sm > .input-group-btn > input[type="month"].elementor-button,
+  .elementor-element.elementor-button-warning .input-group-sm > .input-group-btn > input[type="month"].elementor-button,
+  .elementor-element.elementor-button-danger .input-group-sm > .input-group-btn > input[type="month"].elementor-button,
+  .elementor-element.elementor-button-info .input-group-sm > .input-group-btn > input[type="month"].elementor-button, .input-group-sm
   input[type="month"] {
     line-height: 30px;
   }
   input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control,
   .input-group-lg > input[type="date"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="date"].btn,
-  #content .sharedaddy .input-group-lg > .input-group-btn > input[type="date"].sd-button, .input-group-lg input[type="date"],
+  #content .sharedaddy .input-group-lg > .input-group-btn > input[type="date"].sd-button,
+  .elementor-widget-button .input-group-lg > .input-group-btn > input[type="date"].elementor-button,
+  .elementor-element.elementor-button-success .input-group-lg > .input-group-btn > input[type="date"].elementor-button,
+  .elementor-element.elementor-button-warning .input-group-lg > .input-group-btn > input[type="date"].elementor-button,
+  .elementor-element.elementor-button-danger .input-group-lg > .input-group-btn > input[type="date"].elementor-button,
+  .elementor-element.elementor-button-info .input-group-lg > .input-group-btn > input[type="date"].elementor-button, .input-group-lg input[type="date"],
   input[type="time"].input-lg,
   .input-group-lg > input[type="time"].form-control,
   .input-group-lg > input[type="time"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="time"].btn,
-  #content .sharedaddy .input-group-lg > .input-group-btn > input[type="time"].sd-button, .input-group-lg
+  #content .sharedaddy .input-group-lg > .input-group-btn > input[type="time"].sd-button,
+  .elementor-widget-button .input-group-lg > .input-group-btn > input[type="time"].elementor-button,
+  .elementor-element.elementor-button-success .input-group-lg > .input-group-btn > input[type="time"].elementor-button,
+  .elementor-element.elementor-button-warning .input-group-lg > .input-group-btn > input[type="time"].elementor-button,
+  .elementor-element.elementor-button-danger .input-group-lg > .input-group-btn > input[type="time"].elementor-button,
+  .elementor-element.elementor-button-info .input-group-lg > .input-group-btn > input[type="time"].elementor-button, .input-group-lg
   input[type="time"],
   input[type="datetime-local"].input-lg,
   .input-group-lg > input[type="datetime-local"].form-control,
   .input-group-lg > input[type="datetime-local"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
-  #content .sharedaddy .input-group-lg > .input-group-btn > input[type="datetime-local"].sd-button, .input-group-lg
+  #content .sharedaddy .input-group-lg > .input-group-btn > input[type="datetime-local"].sd-button,
+  .elementor-widget-button .input-group-lg > .input-group-btn > input[type="datetime-local"].elementor-button,
+  .elementor-element.elementor-button-success .input-group-lg > .input-group-btn > input[type="datetime-local"].elementor-button,
+  .elementor-element.elementor-button-warning .input-group-lg > .input-group-btn > input[type="datetime-local"].elementor-button,
+  .elementor-element.elementor-button-danger .input-group-lg > .input-group-btn > input[type="datetime-local"].elementor-button,
+  .elementor-element.elementor-button-info .input-group-lg > .input-group-btn > input[type="datetime-local"].elementor-button, .input-group-lg
   input[type="datetime-local"],
   input[type="month"].input-lg,
   .input-group-lg > input[type="month"].form-control,
   .input-group-lg > input[type="month"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="month"].btn,
-  #content .sharedaddy .input-group-lg > .input-group-btn > input[type="month"].sd-button, .input-group-lg
+  #content .sharedaddy .input-group-lg > .input-group-btn > input[type="month"].sd-button,
+  .elementor-widget-button .input-group-lg > .input-group-btn > input[type="month"].elementor-button,
+  .elementor-element.elementor-button-success .input-group-lg > .input-group-btn > input[type="month"].elementor-button,
+  .elementor-element.elementor-button-warning .input-group-lg > .input-group-btn > input[type="month"].elementor-button,
+  .elementor-element.elementor-button-danger .input-group-lg > .input-group-btn > input[type="month"].elementor-button,
+  .elementor-element.elementor-button-info .input-group-lg > .input-group-btn > input[type="month"].elementor-button, .input-group-lg
   input[type="month"] {
     line-height: 46px;
   }
@@ -3327,10 +3375,20 @@ input[type="checkbox"] {
 .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control,
 .input-group-lg > .form-control-static.input-group-addon,
 .input-group-lg > .input-group-btn > .form-control-static.btn,
-#content .sharedaddy .input-group-lg > .input-group-btn > .form-control-static.sd-button, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
+#content .sharedaddy .input-group-lg > .input-group-btn > .form-control-static.sd-button,
+.elementor-widget-button .input-group-lg > .input-group-btn > .form-control-static.elementor-button,
+.elementor-element.elementor-button-success .input-group-lg > .input-group-btn > .form-control-static.elementor-button,
+.elementor-element.elementor-button-warning .input-group-lg > .input-group-btn > .form-control-static.elementor-button,
+.elementor-element.elementor-button-danger .input-group-lg > .input-group-btn > .form-control-static.elementor-button,
+.elementor-element.elementor-button-info .input-group-lg > .input-group-btn > .form-control-static.elementor-button, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
 .input-group-sm > .form-control-static.input-group-addon,
 .input-group-sm > .input-group-btn > .form-control-static.btn,
-#content .sharedaddy .input-group-sm > .input-group-btn > .form-control-static.sd-button {
+#content .sharedaddy .input-group-sm > .input-group-btn > .form-control-static.sd-button,
+.elementor-widget-button .input-group-sm > .input-group-btn > .form-control-static.elementor-button,
+.elementor-element.elementor-button-success .input-group-sm > .input-group-btn > .form-control-static.elementor-button,
+.elementor-element.elementor-button-warning .input-group-sm > .input-group-btn > .form-control-static.elementor-button,
+.elementor-element.elementor-button-danger .input-group-sm > .input-group-btn > .form-control-static.elementor-button,
+.elementor-element.elementor-button-info .input-group-sm > .input-group-btn > .form-control-static.elementor-button {
   padding-left: 0;
   padding-right: 0;
 }
@@ -3338,7 +3396,12 @@ input[type="checkbox"] {
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
-#content .sharedaddy .input-group-sm > .input-group-btn > .sd-button {
+#content .sharedaddy .input-group-sm > .input-group-btn > .sd-button,
+.elementor-widget-button .input-group-sm > .input-group-btn > .elementor-button,
+.elementor-element.elementor-button-success .input-group-sm > .input-group-btn > .elementor-button,
+.elementor-element.elementor-button-warning .input-group-sm > .input-group-btn > .elementor-button,
+.elementor-element.elementor-button-danger .input-group-sm > .input-group-btn > .elementor-button,
+.elementor-element.elementor-button-info .input-group-sm > .input-group-btn > .elementor-button {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -3349,7 +3412,12 @@ input[type="checkbox"] {
 select.input-sm, .input-group-sm > select.form-control,
 .input-group-sm > select.input-group-addon,
 .input-group-sm > .input-group-btn > select.btn,
-#content .sharedaddy .input-group-sm > .input-group-btn > select.sd-button {
+#content .sharedaddy .input-group-sm > .input-group-btn > select.sd-button,
+.elementor-widget-button .input-group-sm > .input-group-btn > select.elementor-button,
+.elementor-element.elementor-button-success .input-group-sm > .input-group-btn > select.elementor-button,
+.elementor-element.elementor-button-warning .input-group-sm > .input-group-btn > select.elementor-button,
+.elementor-element.elementor-button-danger .input-group-sm > .input-group-btn > select.elementor-button,
+.elementor-element.elementor-button-info .input-group-sm > .input-group-btn > select.elementor-button {
   height: 30px;
   line-height: 30px;
 }
@@ -3358,11 +3426,21 @@ textarea.input-sm, .input-group-sm > textarea.form-control,
 .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-btn > textarea.btn,
 #content .sharedaddy .input-group-sm > .input-group-btn > textarea.sd-button,
+.elementor-widget-button .input-group-sm > .input-group-btn > textarea.elementor-button,
+.elementor-element.elementor-button-success .input-group-sm > .input-group-btn > textarea.elementor-button,
+.elementor-element.elementor-button-warning .input-group-sm > .input-group-btn > textarea.elementor-button,
+.elementor-element.elementor-button-danger .input-group-sm > .input-group-btn > textarea.elementor-button,
+.elementor-element.elementor-button-info .input-group-sm > .input-group-btn > textarea.elementor-button,
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
 .input-group-sm > select[multiple].input-group-addon,
 .input-group-sm > .input-group-btn > select[multiple].btn,
-#content .sharedaddy .input-group-sm > .input-group-btn > select[multiple].sd-button {
+#content .sharedaddy .input-group-sm > .input-group-btn > select[multiple].sd-button,
+.elementor-widget-button .input-group-sm > .input-group-btn > select[multiple].elementor-button,
+.elementor-element.elementor-button-success .input-group-sm > .input-group-btn > select[multiple].elementor-button,
+.elementor-element.elementor-button-warning .input-group-sm > .input-group-btn > select[multiple].elementor-button,
+.elementor-element.elementor-button-danger .input-group-sm > .input-group-btn > select[multiple].elementor-button,
+.elementor-element.elementor-button-info .input-group-sm > .input-group-btn > select[multiple].elementor-button {
   height: auto;
 }
 
@@ -3392,7 +3470,12 @@ select[multiple].input-sm,
 .input-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
-#content .sharedaddy .input-group-lg > .input-group-btn > .sd-button {
+#content .sharedaddy .input-group-lg > .input-group-btn > .sd-button,
+.elementor-widget-button .input-group-lg > .input-group-btn > .elementor-button,
+.elementor-element.elementor-button-success .input-group-lg > .input-group-btn > .elementor-button,
+.elementor-element.elementor-button-warning .input-group-lg > .input-group-btn > .elementor-button,
+.elementor-element.elementor-button-danger .input-group-lg > .input-group-btn > .elementor-button,
+.elementor-element.elementor-button-info .input-group-lg > .input-group-btn > .elementor-button {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -3403,7 +3486,12 @@ select[multiple].input-sm,
 select.input-lg, .input-group-lg > select.form-control,
 .input-group-lg > select.input-group-addon,
 .input-group-lg > .input-group-btn > select.btn,
-#content .sharedaddy .input-group-lg > .input-group-btn > select.sd-button {
+#content .sharedaddy .input-group-lg > .input-group-btn > select.sd-button,
+.elementor-widget-button .input-group-lg > .input-group-btn > select.elementor-button,
+.elementor-element.elementor-button-success .input-group-lg > .input-group-btn > select.elementor-button,
+.elementor-element.elementor-button-warning .input-group-lg > .input-group-btn > select.elementor-button,
+.elementor-element.elementor-button-danger .input-group-lg > .input-group-btn > select.elementor-button,
+.elementor-element.elementor-button-info .input-group-lg > .input-group-btn > select.elementor-button {
   height: 46px;
   line-height: 46px;
 }
@@ -3412,11 +3500,21 @@ textarea.input-lg, .input-group-lg > textarea.form-control,
 .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-btn > textarea.btn,
 #content .sharedaddy .input-group-lg > .input-group-btn > textarea.sd-button,
+.elementor-widget-button .input-group-lg > .input-group-btn > textarea.elementor-button,
+.elementor-element.elementor-button-success .input-group-lg > .input-group-btn > textarea.elementor-button,
+.elementor-element.elementor-button-warning .input-group-lg > .input-group-btn > textarea.elementor-button,
+.elementor-element.elementor-button-danger .input-group-lg > .input-group-btn > textarea.elementor-button,
+.elementor-element.elementor-button-info .input-group-lg > .input-group-btn > textarea.elementor-button,
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
 .input-group-lg > select[multiple].input-group-addon,
 .input-group-lg > .input-group-btn > select[multiple].btn,
-#content .sharedaddy .input-group-lg > .input-group-btn > select[multiple].sd-button {
+#content .sharedaddy .input-group-lg > .input-group-btn > select[multiple].sd-button,
+.elementor-widget-button .input-group-lg > .input-group-btn > select[multiple].elementor-button,
+.elementor-element.elementor-button-success .input-group-lg > .input-group-btn > select[multiple].elementor-button,
+.elementor-element.elementor-button-warning .input-group-lg > .input-group-btn > select[multiple].elementor-button,
+.elementor-element.elementor-button-danger .input-group-lg > .input-group-btn > select[multiple].elementor-button,
+.elementor-element.elementor-button-info .input-group-lg > .input-group-btn > select[multiple].elementor-button {
   height: auto;
 }
 
@@ -3467,6 +3565,11 @@ select[multiple].input-lg,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 #content .sharedaddy .input-group-lg > .input-group-btn > .sd-button + .form-control-feedback,
+.elementor-widget-button .input-group-lg > .input-group-btn > .elementor-button + .form-control-feedback,
+.elementor-element.elementor-button-success .input-group-lg > .input-group-btn > .elementor-button + .form-control-feedback,
+.elementor-element.elementor-button-warning .input-group-lg > .input-group-btn > .elementor-button + .form-control-feedback,
+.elementor-element.elementor-button-danger .input-group-lg > .input-group-btn > .elementor-button + .form-control-feedback,
+.elementor-element.elementor-button-info .input-group-lg > .input-group-btn > .elementor-button + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
   width: 46px;
@@ -3478,6 +3581,11 @@ select[multiple].input-lg,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 #content .sharedaddy .input-group-sm > .input-group-btn > .sd-button + .form-control-feedback,
+.elementor-widget-button .input-group-sm > .input-group-btn > .elementor-button + .form-control-feedback,
+.elementor-element.elementor-button-success .input-group-sm > .input-group-btn > .elementor-button + .form-control-feedback,
+.elementor-element.elementor-button-warning .input-group-sm > .input-group-btn > .elementor-button + .form-control-feedback,
+.elementor-element.elementor-button-danger .input-group-sm > .input-group-btn > .elementor-button + .form-control-feedback,
+.elementor-element.elementor-button-info .input-group-sm > .input-group-btn > .elementor-button + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
   width: 30px;
@@ -3677,7 +3785,10 @@ select[multiple].input-lg,
   }
 }
 
-.btn, #content .sharedaddy .sd-button, .button {
+.btn, #content .sharedaddy .sd-button, .elementor-widget-button .elementor-button, .elementor-element.elementor-button-success .elementor-button,
+.elementor-element.elementor-button-warning .elementor-button,
+.elementor-element.elementor-button-danger .elementor-button,
+.elementor-element.elementor-button-info .elementor-button, .button {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -3697,22 +3808,67 @@ select[multiple].input-lg,
   -ms-user-select: none;
   user-select: none;
 }
-.btn:focus, #content .sharedaddy .sd-button:focus, .btn.focus, #content .sharedaddy .focus.sd-button, .btn:active:focus, #content .sharedaddy .sd-button:active:focus, .btn:active.focus, #content .sharedaddy .sd-button:active.focus, .btn.active:focus, #content .sharedaddy .active.sd-button:focus, .btn.active.focus, #content .sharedaddy .active.focus.sd-button, .button:focus, .button.focus, .button:active:focus, .button:active.focus, .button.active:focus, .button.active.focus {
+.btn:focus, #content .sharedaddy .sd-button:focus, .elementor-widget-button .elementor-button:focus, .elementor-element.elementor-button-success .elementor-button:focus,
+.elementor-element.elementor-button-warning .elementor-button:focus,
+.elementor-element.elementor-button-danger .elementor-button:focus,
+.elementor-element.elementor-button-info .elementor-button:focus, .btn.focus, #content .sharedaddy .focus.sd-button, .elementor-widget-button .focus.elementor-button, .elementor-element.elementor-button-success .focus.elementor-button,
+.elementor-element.elementor-button-warning .focus.elementor-button,
+.elementor-element.elementor-button-danger .focus.elementor-button,
+.elementor-element.elementor-button-info .focus.elementor-button, .btn:active:focus, #content .sharedaddy .sd-button:active:focus, .elementor-widget-button .elementor-button:active:focus, .elementor-element.elementor-button-success .elementor-button:active:focus,
+.elementor-element.elementor-button-warning .elementor-button:active:focus,
+.elementor-element.elementor-button-danger .elementor-button:active:focus,
+.elementor-element.elementor-button-info .elementor-button:active:focus, .btn:active.focus, #content .sharedaddy .sd-button:active.focus, .elementor-widget-button .elementor-button:active.focus, .elementor-element.elementor-button-success .elementor-button:active.focus,
+.elementor-element.elementor-button-warning .elementor-button:active.focus,
+.elementor-element.elementor-button-danger .elementor-button:active.focus,
+.elementor-element.elementor-button-info .elementor-button:active.focus, .btn.active:focus, #content .sharedaddy .active.sd-button:focus, .elementor-widget-button .active.elementor-button:focus, .elementor-element.elementor-button-success .active.elementor-button:focus,
+.elementor-element.elementor-button-warning .active.elementor-button:focus,
+.elementor-element.elementor-button-danger .active.elementor-button:focus,
+.elementor-element.elementor-button-info .active.elementor-button:focus, .btn.active.focus, #content .sharedaddy .active.focus.sd-button, .elementor-widget-button .active.focus.elementor-button, .elementor-element.elementor-button-success .active.focus.elementor-button,
+.elementor-element.elementor-button-warning .active.focus.elementor-button,
+.elementor-element.elementor-button-danger .active.focus.elementor-button,
+.elementor-element.elementor-button-info .active.focus.elementor-button, .button:focus, .button.focus, .button:active:focus, .button:active.focus, .button.active:focus, .button.active.focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.btn:hover, #content .sharedaddy .sd-button:hover, .btn:focus, #content .sharedaddy .sd-button:focus, .btn.focus, #content .sharedaddy .focus.sd-button, .button:hover, .button:focus, .button.focus {
+.btn:hover, #content .sharedaddy .sd-button:hover, .elementor-widget-button .elementor-button:hover, .elementor-element.elementor-button-success .elementor-button:hover,
+.elementor-element.elementor-button-warning .elementor-button:hover,
+.elementor-element.elementor-button-danger .elementor-button:hover,
+.elementor-element.elementor-button-info .elementor-button:hover, .btn:focus, #content .sharedaddy .sd-button:focus, .elementor-widget-button .elementor-button:focus, .elementor-element.elementor-button-success .elementor-button:focus,
+.elementor-element.elementor-button-warning .elementor-button:focus,
+.elementor-element.elementor-button-danger .elementor-button:focus,
+.elementor-element.elementor-button-info .elementor-button:focus, .btn.focus, #content .sharedaddy .focus.sd-button, .elementor-widget-button .focus.elementor-button, .elementor-element.elementor-button-success .focus.elementor-button,
+.elementor-element.elementor-button-warning .focus.elementor-button,
+.elementor-element.elementor-button-danger .focus.elementor-button,
+.elementor-element.elementor-button-info .focus.elementor-button, .button:hover, .button:focus, .button.focus {
   color: #333;
   text-decoration: none;
 }
-.btn:active, #content .sharedaddy .sd-button:active, .btn.active, #content .sharedaddy .active.sd-button, .button:active, .button.active {
+.btn:active, #content .sharedaddy .sd-button:active, .elementor-widget-button .elementor-button:active, .elementor-element.elementor-button-success .elementor-button:active,
+.elementor-element.elementor-button-warning .elementor-button:active,
+.elementor-element.elementor-button-danger .elementor-button:active,
+.elementor-element.elementor-button-info .elementor-button:active, .btn.active, #content .sharedaddy .active.sd-button, .elementor-widget-button .active.elementor-button, .elementor-element.elementor-button-success .active.elementor-button,
+.elementor-element.elementor-button-warning .active.elementor-button,
+.elementor-element.elementor-button-danger .active.elementor-button,
+.elementor-element.elementor-button-info .active.elementor-button, .button:active, .button.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.btn.disabled, #content .sharedaddy .disabled.sd-button, .btn[disabled], #content .sharedaddy [disabled].sd-button, fieldset[disabled] .btn, fieldset[disabled] #content .sharedaddy .sd-button, #content .sharedaddy fieldset[disabled] .sd-button, .button.disabled, .button[disabled], fieldset[disabled] .button {
+.btn.disabled, #content .sharedaddy .disabled.sd-button, .elementor-widget-button .disabled.elementor-button, .elementor-element.elementor-button-success .disabled.elementor-button,
+.elementor-element.elementor-button-warning .disabled.elementor-button,
+.elementor-element.elementor-button-danger .disabled.elementor-button,
+.elementor-element.elementor-button-info .disabled.elementor-button, .btn[disabled], #content .sharedaddy [disabled].sd-button, .elementor-widget-button [disabled].elementor-button, .elementor-element.elementor-button-success [disabled].elementor-button,
+.elementor-element.elementor-button-warning [disabled].elementor-button,
+.elementor-element.elementor-button-danger [disabled].elementor-button,
+.elementor-element.elementor-button-info [disabled].elementor-button, fieldset[disabled] .btn, fieldset[disabled] #content .sharedaddy .sd-button, #content .sharedaddy fieldset[disabled] .sd-button, fieldset[disabled] .elementor-widget-button .elementor-button, .elementor-widget-button fieldset[disabled] .elementor-button, fieldset[disabled] .elementor-element.elementor-button-success .elementor-button, .elementor-element.elementor-button-success fieldset[disabled] .elementor-button,
+fieldset[disabled] .elementor-element.elementor-button-warning .elementor-button,
+.elementor-element.elementor-button-warning fieldset[disabled] .elementor-button,
+fieldset[disabled] .elementor-element.elementor-button-danger .elementor-button,
+.elementor-element.elementor-button-danger fieldset[disabled] .elementor-button,
+fieldset[disabled] .elementor-element.elementor-button-info .elementor-button,
+.elementor-element.elementor-button-info fieldset[disabled] .elementor-button, .button.disabled, .button[disabled], fieldset[disabled] .button {
   cursor: not-allowed;
   opacity: 0.65;
   filter: alpha(opacity=65);
@@ -3720,80 +3876,185 @@ select[multiple].input-lg,
   box-shadow: none;
 }
 
-a.btn.disabled, #content .sharedaddy a.disabled.sd-button, fieldset[disabled] a.btn, fieldset[disabled] #content .sharedaddy a.sd-button, #content .sharedaddy fieldset[disabled] a.sd-button {
+a.btn.disabled, #content .sharedaddy a.disabled.sd-button, .elementor-widget-button a.disabled.elementor-button, .elementor-element.elementor-button-success a.disabled.elementor-button,
+.elementor-element.elementor-button-warning a.disabled.elementor-button,
+.elementor-element.elementor-button-danger a.disabled.elementor-button,
+.elementor-element.elementor-button-info a.disabled.elementor-button, fieldset[disabled] a.btn, fieldset[disabled] #content .sharedaddy a.sd-button, #content .sharedaddy fieldset[disabled] a.sd-button, fieldset[disabled] .elementor-widget-button a.elementor-button, .elementor-widget-button fieldset[disabled] a.elementor-button, fieldset[disabled] .elementor-element.elementor-button-success a.elementor-button, .elementor-element.elementor-button-success fieldset[disabled] a.elementor-button,
+fieldset[disabled] .elementor-element.elementor-button-warning a.elementor-button,
+.elementor-element.elementor-button-warning fieldset[disabled] a.elementor-button,
+fieldset[disabled] .elementor-element.elementor-button-danger a.elementor-button,
+.elementor-element.elementor-button-danger fieldset[disabled] a.elementor-button,
+fieldset[disabled] .elementor-element.elementor-button-info a.elementor-button,
+.elementor-element.elementor-button-info fieldset[disabled] a.elementor-button {
   pointer-events: none;
 }
 
-.btn-default, .button {
+.btn-default, .elementor-widget-button .elementor-button, .button {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
 }
-.btn-default:focus, .btn-default.focus, .button:focus, .button.focus {
+.btn-default:focus, .elementor-widget-button .elementor-button:focus, .btn-default.focus, .elementor-widget-button .focus.elementor-button, .button:focus, .button.focus {
   color: #333;
   background-color: #e6e6e6;
   border-color: #8c8c8c;
 }
-.btn-default:hover, .button:hover {
+.btn-default:hover, .elementor-widget-button .elementor-button:hover, .button:hover {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
-.btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle, .button:active, .button.active, .open > .button.dropdown-toggle {
+.btn-default:active, .elementor-widget-button .elementor-button:active, .btn-default.active, .elementor-widget-button .active.elementor-button, .open > .btn-default.dropdown-toggle, .elementor-widget-button .open > .dropdown-toggle.elementor-button, .button:active, .button.active, .open > .button.dropdown-toggle {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
-.btn-default:active:hover, .btn-default:active:focus, .btn-default:active.focus, .btn-default.active:hover, .btn-default.active:focus, .btn-default.active.focus, .open > .btn-default.dropdown-toggle:hover, .open > .btn-default.dropdown-toggle:focus, .open > .btn-default.dropdown-toggle.focus, .button:active:hover, .button:active:focus, .button:active.focus, .button.active:hover, .button.active:focus, .button.active.focus, .open > .button.dropdown-toggle:hover, .open > .button.dropdown-toggle:focus, .open > .button.dropdown-toggle.focus {
+.btn-default:active:hover, .elementor-widget-button .elementor-button:active:hover, .btn-default:active:focus, .elementor-widget-button .elementor-button:active:focus, .btn-default:active.focus, .elementor-widget-button .elementor-button:active.focus, .btn-default.active:hover, .elementor-widget-button .active.elementor-button:hover, .btn-default.active:focus, .elementor-widget-button .active.elementor-button:focus, .btn-default.active.focus, .elementor-widget-button .active.focus.elementor-button, .open > .btn-default.dropdown-toggle:hover, .elementor-widget-button .open > .dropdown-toggle.elementor-button:hover, .open > .btn-default.dropdown-toggle:focus, .elementor-widget-button .open > .dropdown-toggle.elementor-button:focus, .open > .btn-default.dropdown-toggle.focus, .elementor-widget-button .open > .dropdown-toggle.focus.elementor-button, .button:active:hover, .button:active:focus, .button:active.focus, .button.active:hover, .button.active:focus, .button.active.focus, .open > .button.dropdown-toggle:hover, .open > .button.dropdown-toggle:focus, .open > .button.dropdown-toggle.focus {
   color: #333;
   background-color: #d4d4d4;
   border-color: #8c8c8c;
 }
-.btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle, .button:active, .button.active, .open > .button.dropdown-toggle {
+.btn-default:active, .elementor-widget-button .elementor-button:active, .btn-default.active, .elementor-widget-button .active.elementor-button, .open > .btn-default.dropdown-toggle, .elementor-widget-button .open > .dropdown-toggle.elementor-button, .button:active, .button.active, .open > .button.dropdown-toggle {
   background-image: none;
 }
-.btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled.focus, .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled].focus, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default.focus, .button.disabled:hover, .button.disabled:focus, .button.disabled.focus, .button[disabled]:hover, .button[disabled]:focus, .button[disabled].focus, fieldset[disabled] .button:hover, fieldset[disabled] .button:focus, fieldset[disabled] .button.focus {
+.btn-default.disabled:hover, .elementor-widget-button .disabled.elementor-button:hover, .btn-default.disabled:focus, .elementor-widget-button .disabled.elementor-button:focus, .btn-default.disabled.focus, .elementor-widget-button .disabled.focus.elementor-button, .btn-default[disabled]:hover, .elementor-widget-button [disabled].elementor-button:hover, .btn-default[disabled]:focus, .elementor-widget-button [disabled].elementor-button:focus, .btn-default[disabled].focus, .elementor-widget-button [disabled].focus.elementor-button, fieldset[disabled] .btn-default:hover, fieldset[disabled] .elementor-widget-button .elementor-button:hover, .elementor-widget-button fieldset[disabled] .elementor-button:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .elementor-widget-button .elementor-button:focus, .elementor-widget-button fieldset[disabled] .elementor-button:focus, fieldset[disabled] .btn-default.focus, fieldset[disabled] .elementor-widget-button .focus.elementor-button, .elementor-widget-button fieldset[disabled] .focus.elementor-button, .button.disabled:hover, .button.disabled:focus, .button.disabled.focus, .button[disabled]:hover, .button[disabled]:focus, .button[disabled].focus, fieldset[disabled] .button:hover, fieldset[disabled] .button:focus, fieldset[disabled] .button.focus {
   background-color: #fff;
   border-color: #ccc;
 }
-.btn-default .badge, .button .badge {
+.btn-default .badge, .elementor-widget-button .elementor-button .badge, .button .badge {
   color: #fff;
   background-color: #333;
 }
 
-.btn-primary {
+.btn-primary, .elementor-element.elementor-button-success .elementor-button,
+.elementor-element.elementor-button-warning .elementor-button,
+.elementor-element.elementor-button-danger .elementor-button,
+.elementor-element.elementor-button-info .elementor-button {
   color: #fff;
   background-color: #175567;
   border-color: #124452;
 }
-.btn-primary:focus, .btn-primary.focus {
+.btn-primary:focus, .elementor-element.elementor-button-success .elementor-button:focus,
+.elementor-element.elementor-button-warning .elementor-button:focus,
+.elementor-element.elementor-button-danger .elementor-button:focus,
+.elementor-element.elementor-button-info .elementor-button:focus, .btn-primary.focus, .elementor-element.elementor-button-success .focus.elementor-button,
+.elementor-element.elementor-button-warning .focus.elementor-button,
+.elementor-element.elementor-button-danger .focus.elementor-button,
+.elementor-element.elementor-button-info .focus.elementor-button {
   color: #fff;
   background-color: #0e333d;
   border-color: black;
 }
-.btn-primary:hover {
+.btn-primary:hover, .elementor-element.elementor-button-success .elementor-button:hover,
+.elementor-element.elementor-button-warning .elementor-button:hover,
+.elementor-element.elementor-button-danger .elementor-button:hover,
+.elementor-element.elementor-button-info .elementor-button:hover {
   color: #fff;
   background-color: #0e333d;
   border-color: #071b20;
 }
-.btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+.btn-primary:active, .elementor-element.elementor-button-success .elementor-button:active,
+.elementor-element.elementor-button-warning .elementor-button:active,
+.elementor-element.elementor-button-danger .elementor-button:active,
+.elementor-element.elementor-button-info .elementor-button:active, .btn-primary.active, .elementor-element.elementor-button-success .active.elementor-button,
+.elementor-element.elementor-button-warning .active.elementor-button,
+.elementor-element.elementor-button-danger .active.elementor-button,
+.elementor-element.elementor-button-info .active.elementor-button, .open > .btn-primary.dropdown-toggle, .elementor-element.elementor-button-success .open > .dropdown-toggle.elementor-button,
+.elementor-element.elementor-button-warning .open > .dropdown-toggle.elementor-button,
+.elementor-element.elementor-button-danger .open > .dropdown-toggle.elementor-button,
+.elementor-element.elementor-button-info .open > .dropdown-toggle.elementor-button {
   color: #fff;
   background-color: #0e333d;
   border-color: #071b20;
 }
-.btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .open > .btn-primary.dropdown-toggle:hover, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle.focus {
+.btn-primary:active:hover, .elementor-element.elementor-button-success .elementor-button:active:hover,
+.elementor-element.elementor-button-warning .elementor-button:active:hover,
+.elementor-element.elementor-button-danger .elementor-button:active:hover,
+.elementor-element.elementor-button-info .elementor-button:active:hover, .btn-primary:active:focus, .elementor-element.elementor-button-success .elementor-button:active:focus,
+.elementor-element.elementor-button-warning .elementor-button:active:focus,
+.elementor-element.elementor-button-danger .elementor-button:active:focus,
+.elementor-element.elementor-button-info .elementor-button:active:focus, .btn-primary:active.focus, .elementor-element.elementor-button-success .elementor-button:active.focus,
+.elementor-element.elementor-button-warning .elementor-button:active.focus,
+.elementor-element.elementor-button-danger .elementor-button:active.focus,
+.elementor-element.elementor-button-info .elementor-button:active.focus, .btn-primary.active:hover, .elementor-element.elementor-button-success .active.elementor-button:hover,
+.elementor-element.elementor-button-warning .active.elementor-button:hover,
+.elementor-element.elementor-button-danger .active.elementor-button:hover,
+.elementor-element.elementor-button-info .active.elementor-button:hover, .btn-primary.active:focus, .elementor-element.elementor-button-success .active.elementor-button:focus,
+.elementor-element.elementor-button-warning .active.elementor-button:focus,
+.elementor-element.elementor-button-danger .active.elementor-button:focus,
+.elementor-element.elementor-button-info .active.elementor-button:focus, .btn-primary.active.focus, .elementor-element.elementor-button-success .active.focus.elementor-button,
+.elementor-element.elementor-button-warning .active.focus.elementor-button,
+.elementor-element.elementor-button-danger .active.focus.elementor-button,
+.elementor-element.elementor-button-info .active.focus.elementor-button, .open > .btn-primary.dropdown-toggle:hover, .elementor-element.elementor-button-success .open > .dropdown-toggle.elementor-button:hover,
+.elementor-element.elementor-button-warning .open > .dropdown-toggle.elementor-button:hover,
+.elementor-element.elementor-button-danger .open > .dropdown-toggle.elementor-button:hover,
+.elementor-element.elementor-button-info .open > .dropdown-toggle.elementor-button:hover, .open > .btn-primary.dropdown-toggle:focus, .elementor-element.elementor-button-success .open > .dropdown-toggle.elementor-button:focus,
+.elementor-element.elementor-button-warning .open > .dropdown-toggle.elementor-button:focus,
+.elementor-element.elementor-button-danger .open > .dropdown-toggle.elementor-button:focus,
+.elementor-element.elementor-button-info .open > .dropdown-toggle.elementor-button:focus, .open > .btn-primary.dropdown-toggle.focus, .elementor-element.elementor-button-success .open > .dropdown-toggle.focus.elementor-button,
+.elementor-element.elementor-button-warning .open > .dropdown-toggle.focus.elementor-button,
+.elementor-element.elementor-button-danger .open > .dropdown-toggle.focus.elementor-button,
+.elementor-element.elementor-button-info .open > .dropdown-toggle.focus.elementor-button {
   color: #fff;
   background-color: #071b20;
   border-color: black;
 }
-.btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+.btn-primary:active, .elementor-element.elementor-button-success .elementor-button:active,
+.elementor-element.elementor-button-warning .elementor-button:active,
+.elementor-element.elementor-button-danger .elementor-button:active,
+.elementor-element.elementor-button-info .elementor-button:active, .btn-primary.active, .elementor-element.elementor-button-success .active.elementor-button,
+.elementor-element.elementor-button-warning .active.elementor-button,
+.elementor-element.elementor-button-danger .active.elementor-button,
+.elementor-element.elementor-button-info .active.elementor-button, .open > .btn-primary.dropdown-toggle, .elementor-element.elementor-button-success .open > .dropdown-toggle.elementor-button,
+.elementor-element.elementor-button-warning .open > .dropdown-toggle.elementor-button,
+.elementor-element.elementor-button-danger .open > .dropdown-toggle.elementor-button,
+.elementor-element.elementor-button-info .open > .dropdown-toggle.elementor-button {
   background-image: none;
 }
-.btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus {
+.btn-primary.disabled:hover, .elementor-element.elementor-button-success .disabled.elementor-button:hover,
+.elementor-element.elementor-button-warning .disabled.elementor-button:hover,
+.elementor-element.elementor-button-danger .disabled.elementor-button:hover,
+.elementor-element.elementor-button-info .disabled.elementor-button:hover, .btn-primary.disabled:focus, .elementor-element.elementor-button-success .disabled.elementor-button:focus,
+.elementor-element.elementor-button-warning .disabled.elementor-button:focus,
+.elementor-element.elementor-button-danger .disabled.elementor-button:focus,
+.elementor-element.elementor-button-info .disabled.elementor-button:focus, .btn-primary.disabled.focus, .elementor-element.elementor-button-success .disabled.focus.elementor-button,
+.elementor-element.elementor-button-warning .disabled.focus.elementor-button,
+.elementor-element.elementor-button-danger .disabled.focus.elementor-button,
+.elementor-element.elementor-button-info .disabled.focus.elementor-button, .btn-primary[disabled]:hover, .elementor-element.elementor-button-success [disabled].elementor-button:hover,
+.elementor-element.elementor-button-warning [disabled].elementor-button:hover,
+.elementor-element.elementor-button-danger [disabled].elementor-button:hover,
+.elementor-element.elementor-button-info [disabled].elementor-button:hover, .btn-primary[disabled]:focus, .elementor-element.elementor-button-success [disabled].elementor-button:focus,
+.elementor-element.elementor-button-warning [disabled].elementor-button:focus,
+.elementor-element.elementor-button-danger [disabled].elementor-button:focus,
+.elementor-element.elementor-button-info [disabled].elementor-button:focus, .btn-primary[disabled].focus, .elementor-element.elementor-button-success [disabled].focus.elementor-button,
+.elementor-element.elementor-button-warning [disabled].focus.elementor-button,
+.elementor-element.elementor-button-danger [disabled].focus.elementor-button,
+.elementor-element.elementor-button-info [disabled].focus.elementor-button, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .elementor-element.elementor-button-success .elementor-button:hover, .elementor-element.elementor-button-success fieldset[disabled] .elementor-button:hover,
+fieldset[disabled] .elementor-element.elementor-button-warning .elementor-button:hover,
+.elementor-element.elementor-button-warning fieldset[disabled] .elementor-button:hover,
+fieldset[disabled] .elementor-element.elementor-button-danger .elementor-button:hover,
+.elementor-element.elementor-button-danger fieldset[disabled] .elementor-button:hover,
+fieldset[disabled] .elementor-element.elementor-button-info .elementor-button:hover,
+.elementor-element.elementor-button-info fieldset[disabled] .elementor-button:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .elementor-element.elementor-button-success .elementor-button:focus, .elementor-element.elementor-button-success fieldset[disabled] .elementor-button:focus,
+fieldset[disabled] .elementor-element.elementor-button-warning .elementor-button:focus,
+.elementor-element.elementor-button-warning fieldset[disabled] .elementor-button:focus,
+fieldset[disabled] .elementor-element.elementor-button-danger .elementor-button:focus,
+.elementor-element.elementor-button-danger fieldset[disabled] .elementor-button:focus,
+fieldset[disabled] .elementor-element.elementor-button-info .elementor-button:focus,
+.elementor-element.elementor-button-info fieldset[disabled] .elementor-button:focus, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .elementor-element.elementor-button-success .focus.elementor-button, .elementor-element.elementor-button-success fieldset[disabled] .focus.elementor-button,
+fieldset[disabled] .elementor-element.elementor-button-warning .focus.elementor-button,
+.elementor-element.elementor-button-warning fieldset[disabled] .focus.elementor-button,
+fieldset[disabled] .elementor-element.elementor-button-danger .focus.elementor-button,
+.elementor-element.elementor-button-danger fieldset[disabled] .focus.elementor-button,
+fieldset[disabled] .elementor-element.elementor-button-info .focus.elementor-button,
+.elementor-element.elementor-button-info fieldset[disabled] .focus.elementor-button {
   background-color: #175567;
   border-color: #124452;
 }
-.btn-primary .badge {
+.btn-primary .badge, .elementor-element.elementor-button-success .elementor-button .badge,
+.elementor-element.elementor-button-warning .elementor-button .badge,
+.elementor-element.elementor-button-danger .elementor-button .badge,
+.elementor-element.elementor-button-info .elementor-button .badge {
   color: #175567;
   background-color: #fff;
 }
@@ -3969,21 +4230,30 @@ a.btn.disabled, #content .sharedaddy a.disabled.sd-button, fieldset[disabled] a.
   text-decoration: none;
 }
 
-.btn-lg, .btn-group-lg > .btn, #content .sharedaddy .btn-group-lg > .sd-button {
+.btn-lg, .btn-group-lg > .btn, #content .sharedaddy .btn-group-lg > .sd-button, .elementor-widget-button .btn-group-lg > .elementor-button, .elementor-element.elementor-button-success .btn-group-lg > .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-lg > .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-lg > .elementor-button,
+.elementor-element.elementor-button-info .btn-group-lg > .elementor-button {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33333;
   border-radius: 0px;
 }
 
-.btn-sm, .btn-group-sm > .btn, #content .sharedaddy .btn-group-sm > .sd-button {
+.btn-sm, .btn-group-sm > .btn, #content .sharedaddy .btn-group-sm > .sd-button, .elementor-widget-button .btn-group-sm > .elementor-button, .elementor-element.elementor-button-success .btn-group-sm > .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-sm > .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-sm > .elementor-button,
+.elementor-element.elementor-button-info .btn-group-sm > .elementor-button {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 0px;
 }
 
-.btn-xs, .btn-group-xs > .btn, #content .sharedaddy .btn-group-xs > .sd-button {
+.btn-xs, .btn-group-xs > .btn, #content .sharedaddy .btn-group-xs > .sd-button, .elementor-widget-button .btn-group-xs > .elementor-button, .elementor-element.elementor-button-success .btn-group-xs > .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-xs > .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-xs > .elementor-button,
+.elementor-element.elementor-button-info .btn-group-xs > .elementor-button {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -4198,31 +4468,133 @@ tbody.collapse.in {
   display: inline-block;
   vertical-align: middle;
 }
-.btn-group > .btn, #content .sharedaddy .btn-group > .sd-button,
+.btn-group > .btn, #content .sharedaddy .btn-group > .sd-button, .elementor-widget-button .btn-group > .elementor-button, .elementor-element.elementor-button-success .btn-group > .elementor-button,
+.elementor-element.elementor-button-warning .btn-group > .elementor-button,
+.elementor-element.elementor-button-danger .btn-group > .elementor-button,
+.elementor-element.elementor-button-info .btn-group > .elementor-button,
 .btn-group-vertical > .btn,
-#content .sharedaddy .btn-group-vertical > .sd-button {
+#content .sharedaddy .btn-group-vertical > .sd-button,
+.elementor-widget-button .btn-group-vertical > .elementor-button,
+.elementor-element.elementor-button-success .btn-group-vertical > .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button,
+.elementor-element.elementor-button-info .btn-group-vertical > .elementor-button {
   position: relative;
   float: left;
 }
-.btn-group > .btn:hover, #content .sharedaddy .btn-group > .sd-button:hover, .btn-group > .btn:focus, #content .sharedaddy .btn-group > .sd-button:focus, .btn-group > .btn:active, #content .sharedaddy .btn-group > .sd-button:active, .btn-group > .btn.active, #content .sharedaddy .btn-group > .active.sd-button,
+.btn-group > .btn:hover, #content .sharedaddy .btn-group > .sd-button:hover, .elementor-widget-button .btn-group > .elementor-button:hover, .elementor-element.elementor-button-success .btn-group > .elementor-button:hover,
+.elementor-element.elementor-button-warning .btn-group > .elementor-button:hover,
+.elementor-element.elementor-button-danger .btn-group > .elementor-button:hover,
+.elementor-element.elementor-button-info .btn-group > .elementor-button:hover, .btn-group > .btn:focus, #content .sharedaddy .btn-group > .sd-button:focus, .elementor-widget-button .btn-group > .elementor-button:focus, .elementor-element.elementor-button-success .btn-group > .elementor-button:focus,
+.elementor-element.elementor-button-warning .btn-group > .elementor-button:focus,
+.elementor-element.elementor-button-danger .btn-group > .elementor-button:focus,
+.elementor-element.elementor-button-info .btn-group > .elementor-button:focus, .btn-group > .btn:active, #content .sharedaddy .btn-group > .sd-button:active, .elementor-widget-button .btn-group > .elementor-button:active, .elementor-element.elementor-button-success .btn-group > .elementor-button:active,
+.elementor-element.elementor-button-warning .btn-group > .elementor-button:active,
+.elementor-element.elementor-button-danger .btn-group > .elementor-button:active,
+.elementor-element.elementor-button-info .btn-group > .elementor-button:active, .btn-group > .btn.active, #content .sharedaddy .btn-group > .active.sd-button, .elementor-widget-button .btn-group > .active.elementor-button, .elementor-element.elementor-button-success .btn-group > .active.elementor-button,
+.elementor-element.elementor-button-warning .btn-group > .active.elementor-button,
+.elementor-element.elementor-button-danger .btn-group > .active.elementor-button,
+.elementor-element.elementor-button-info .btn-group > .active.elementor-button,
 .btn-group-vertical > .btn:hover,
 #content .sharedaddy .btn-group-vertical > .sd-button:hover,
+.elementor-widget-button .btn-group-vertical > .elementor-button:hover,
+.elementor-element.elementor-button-success .btn-group-vertical > .elementor-button:hover,
+.elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button:hover,
+.elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button:hover,
+.elementor-element.elementor-button-info .btn-group-vertical > .elementor-button:hover,
 .btn-group-vertical > .btn:focus,
 #content .sharedaddy .btn-group-vertical > .sd-button:focus,
+.elementor-widget-button .btn-group-vertical > .elementor-button:focus,
+.elementor-element.elementor-button-success .btn-group-vertical > .elementor-button:focus,
+.elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button:focus,
+.elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button:focus,
+.elementor-element.elementor-button-info .btn-group-vertical > .elementor-button:focus,
 .btn-group-vertical > .btn:active,
 #content .sharedaddy .btn-group-vertical > .sd-button:active,
+.elementor-widget-button .btn-group-vertical > .elementor-button:active,
+.elementor-element.elementor-button-success .btn-group-vertical > .elementor-button:active,
+.elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button:active,
+.elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button:active,
+.elementor-element.elementor-button-info .btn-group-vertical > .elementor-button:active,
 .btn-group-vertical > .btn.active,
-#content .sharedaddy .btn-group-vertical > .active.sd-button {
+#content .sharedaddy .btn-group-vertical > .active.sd-button,
+.elementor-widget-button .btn-group-vertical > .active.elementor-button,
+.elementor-element.elementor-button-success .btn-group-vertical > .active.elementor-button,
+.elementor-element.elementor-button-warning .btn-group-vertical > .active.elementor-button,
+.elementor-element.elementor-button-danger .btn-group-vertical > .active.elementor-button,
+.elementor-element.elementor-button-info .btn-group-vertical > .active.elementor-button {
   z-index: 2;
 }
 
-.btn-group .btn + .btn, .btn-group #content .sharedaddy .sd-button + .btn, #content .sharedaddy .btn-group .sd-button + .btn, .btn-group #content .sharedaddy .btn + .sd-button, #content .sharedaddy .btn-group .btn + .sd-button, .btn-group #content .sharedaddy .sd-button + .sd-button, #content .sharedaddy .btn-group .sd-button + .sd-button,
+.btn-group .btn + .btn, .btn-group #content .sharedaddy .sd-button + .btn, #content .sharedaddy .btn-group .sd-button + .btn, .btn-group .elementor-widget-button .elementor-button + .btn, .elementor-widget-button .btn-group .elementor-button + .btn, .btn-group .elementor-element.elementor-button-success .elementor-button + .btn, .elementor-element.elementor-button-success .btn-group .elementor-button + .btn,
+.btn-group .elementor-element.elementor-button-warning .elementor-button + .btn,
+.elementor-element.elementor-button-warning .btn-group .elementor-button + .btn,
+.btn-group .elementor-element.elementor-button-danger .elementor-button + .btn,
+.elementor-element.elementor-button-danger .btn-group .elementor-button + .btn,
+.btn-group .elementor-element.elementor-button-info .elementor-button + .btn,
+.elementor-element.elementor-button-info .btn-group .elementor-button + .btn, .btn-group #content .sharedaddy .btn + .sd-button, #content .sharedaddy .btn-group .btn + .sd-button, .btn-group #content .sharedaddy .sd-button + .sd-button, #content .sharedaddy .btn-group .sd-button + .sd-button, .btn-group .elementor-widget-button #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .btn-group .elementor-widget-button .elementor-button + .sd-button, .elementor-widget-button .btn-group #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .elementor-widget-button .btn-group .elementor-button + .sd-button, .btn-group .elementor-element.elementor-button-success #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .btn-group .elementor-element.elementor-button-success .elementor-button + .sd-button, .elementor-element.elementor-button-success .btn-group #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .elementor-element.elementor-button-success .btn-group .elementor-button + .sd-button,
+.btn-group .elementor-element.elementor-button-warning #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .btn-group .elementor-element.elementor-button-warning .elementor-button + .sd-button,
+.elementor-element.elementor-button-warning .btn-group #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-warning .btn-group .elementor-button + .sd-button,
+.btn-group .elementor-element.elementor-button-danger #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .btn-group .elementor-element.elementor-button-danger .elementor-button + .sd-button,
+.elementor-element.elementor-button-danger .btn-group #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-danger .btn-group .elementor-button + .sd-button,
+.btn-group .elementor-element.elementor-button-info #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .btn-group .elementor-element.elementor-button-info .elementor-button + .sd-button,
+.elementor-element.elementor-button-info .btn-group #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-info .btn-group .elementor-button + .sd-button, .btn-group .elementor-widget-button .btn + .elementor-button, .elementor-widget-button .btn-group .btn + .elementor-button, .btn-group #content .sharedaddy .elementor-widget-button .sd-button + .elementor-button, .elementor-widget-button .btn-group #content .sharedaddy .sd-button + .elementor-button, #content .sharedaddy .btn-group .elementor-widget-button .sd-button + .elementor-button, .elementor-widget-button #content .sharedaddy .btn-group .sd-button + .elementor-button, .btn-group .elementor-widget-button .elementor-button + .elementor-button, .elementor-widget-button .btn-group .elementor-button + .elementor-button, .btn-group .elementor-element.elementor-button-success .btn + .elementor-button, .elementor-element.elementor-button-success .btn-group .btn + .elementor-button, .btn-group #content .sharedaddy .elementor-element.elementor-button-success .sd-button + .elementor-button, .elementor-element.elementor-button-success .btn-group #content .sharedaddy .sd-button + .elementor-button, #content .sharedaddy .btn-group .elementor-element.elementor-button-success .sd-button + .elementor-button, .elementor-element.elementor-button-success #content .sharedaddy .btn-group .sd-button + .elementor-button, .btn-group .elementor-element.elementor-button-success .elementor-button + .elementor-button, .elementor-element.elementor-button-success .btn-group .elementor-button + .elementor-button,
+.btn-group .elementor-element.elementor-button-warning .btn + .elementor-button,
+.elementor-element.elementor-button-warning .btn-group .btn + .elementor-button,
+.btn-group #content .sharedaddy .elementor-element.elementor-button-warning .sd-button + .elementor-button,
+.elementor-element.elementor-button-warning .btn-group #content .sharedaddy .sd-button + .elementor-button,
+#content .sharedaddy .btn-group .elementor-element.elementor-button-warning .sd-button + .elementor-button,
+.elementor-element.elementor-button-warning #content .sharedaddy .btn-group .sd-button + .elementor-button,
+.btn-group .elementor-element.elementor-button-warning .elementor-button + .elementor-button,
+.elementor-element.elementor-button-warning .btn-group .elementor-button + .elementor-button,
+.btn-group .elementor-element.elementor-button-danger .btn + .elementor-button,
+.elementor-element.elementor-button-danger .btn-group .btn + .elementor-button,
+.btn-group #content .sharedaddy .elementor-element.elementor-button-danger .sd-button + .elementor-button,
+.elementor-element.elementor-button-danger .btn-group #content .sharedaddy .sd-button + .elementor-button,
+#content .sharedaddy .btn-group .elementor-element.elementor-button-danger .sd-button + .elementor-button,
+.elementor-element.elementor-button-danger #content .sharedaddy .btn-group .sd-button + .elementor-button,
+.btn-group .elementor-element.elementor-button-danger .elementor-button + .elementor-button,
+.elementor-element.elementor-button-danger .btn-group .elementor-button + .elementor-button,
+.btn-group .elementor-element.elementor-button-info .btn + .elementor-button,
+.elementor-element.elementor-button-info .btn-group .btn + .elementor-button,
+.btn-group #content .sharedaddy .elementor-element.elementor-button-info .sd-button + .elementor-button,
+.elementor-element.elementor-button-info .btn-group #content .sharedaddy .sd-button + .elementor-button,
+#content .sharedaddy .btn-group .elementor-element.elementor-button-info .sd-button + .elementor-button,
+.elementor-element.elementor-button-info #content .sharedaddy .btn-group .sd-button + .elementor-button,
+.btn-group .elementor-element.elementor-button-info .elementor-button + .elementor-button,
+.elementor-element.elementor-button-info .btn-group .elementor-button + .elementor-button,
 .btn-group .btn + .btn-group,
 .btn-group #content .sharedaddy .sd-button + .btn-group,
 #content .sharedaddy .btn-group .sd-button + .btn-group,
+.btn-group .elementor-widget-button .elementor-button + .btn-group,
+.elementor-widget-button .btn-group .elementor-button + .btn-group,
+.btn-group .elementor-element.elementor-button-success .elementor-button + .btn-group,
+.elementor-element.elementor-button-success .btn-group .elementor-button + .btn-group,
+.btn-group .elementor-element.elementor-button-warning .elementor-button + .btn-group,
+.elementor-element.elementor-button-warning .btn-group .elementor-button + .btn-group,
+.btn-group .elementor-element.elementor-button-danger .elementor-button + .btn-group,
+.elementor-element.elementor-button-danger .btn-group .elementor-button + .btn-group,
+.btn-group .elementor-element.elementor-button-info .elementor-button + .btn-group,
+.elementor-element.elementor-button-info .btn-group .elementor-button + .btn-group,
 .btn-group .btn-group + .btn,
 .btn-group #content .sharedaddy .btn-group + .sd-button,
 #content .sharedaddy .btn-group .btn-group + .sd-button,
+.btn-group .elementor-widget-button .btn-group + .elementor-button,
+.elementor-widget-button .btn-group .btn-group + .elementor-button,
+.btn-group .elementor-element.elementor-button-success .btn-group + .elementor-button,
+.elementor-element.elementor-button-success .btn-group .btn-group + .elementor-button,
+.btn-group .elementor-element.elementor-button-warning .btn-group + .elementor-button,
+.elementor-element.elementor-button-warning .btn-group .btn-group + .elementor-button,
+.btn-group .elementor-element.elementor-button-danger .btn-group + .elementor-button,
+.elementor-element.elementor-button-danger .btn-group .btn-group + .elementor-button,
+.btn-group .elementor-element.elementor-button-info .btn-group + .elementor-button,
+.elementor-element.elementor-button-info .btn-group .btn-group + .elementor-button,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px;
 }
@@ -4237,30 +4609,51 @@ tbody.collapse.in {
 .btn-toolbar:after {
   clear: both;
 }
-.btn-toolbar .btn, .btn-toolbar #content .sharedaddy .sd-button, #content .sharedaddy .btn-toolbar .sd-button,
+.btn-toolbar .btn, .btn-toolbar #content .sharedaddy .sd-button, #content .sharedaddy .btn-toolbar .sd-button, .btn-toolbar .elementor-widget-button .elementor-button, .elementor-widget-button .btn-toolbar .elementor-button, .btn-toolbar .elementor-element.elementor-button-success .elementor-button, .elementor-element.elementor-button-success .btn-toolbar .elementor-button,
+.btn-toolbar .elementor-element.elementor-button-warning .elementor-button,
+.elementor-element.elementor-button-warning .btn-toolbar .elementor-button,
+.btn-toolbar .elementor-element.elementor-button-danger .elementor-button,
+.elementor-element.elementor-button-danger .btn-toolbar .elementor-button,
+.btn-toolbar .elementor-element.elementor-button-info .elementor-button,
+.elementor-element.elementor-button-info .btn-toolbar .elementor-button,
 .btn-toolbar .btn-group,
 .btn-toolbar .input-group {
   float: left;
 }
-.btn-toolbar > .btn, #content .sharedaddy .btn-toolbar > .sd-button,
+.btn-toolbar > .btn, #content .sharedaddy .btn-toolbar > .sd-button, .elementor-widget-button .btn-toolbar > .elementor-button, .elementor-element.elementor-button-success .btn-toolbar > .elementor-button,
+.elementor-element.elementor-button-warning .btn-toolbar > .elementor-button,
+.elementor-element.elementor-button-danger .btn-toolbar > .elementor-button,
+.elementor-element.elementor-button-info .btn-toolbar > .elementor-button,
 .btn-toolbar > .btn-group,
 .btn-toolbar > .input-group {
   margin-left: 5px;
 }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), #content .sharedaddy .btn-group > .sd-button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), #content .sharedaddy .btn-group > .sd-button:not(:first-child):not(:last-child):not(.dropdown-toggle), .elementor-widget-button .btn-group > .elementor-button:not(:first-child):not(:last-child):not(.dropdown-toggle), .elementor-element.elementor-button-success .btn-group > .elementor-button:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.elementor-element.elementor-button-warning .btn-group > .elementor-button:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.elementor-element.elementor-button-danger .btn-group > .elementor-button:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.elementor-element.elementor-button-info .btn-group > .elementor-button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
-.btn-group > .btn:first-child, #content .sharedaddy .btn-group > .sd-button:first-child {
+.btn-group > .btn:first-child, #content .sharedaddy .btn-group > .sd-button:first-child, .elementor-widget-button .btn-group > .elementor-button:first-child, .elementor-element.elementor-button-success .btn-group > .elementor-button:first-child,
+.elementor-element.elementor-button-warning .btn-group > .elementor-button:first-child,
+.elementor-element.elementor-button-danger .btn-group > .elementor-button:first-child,
+.elementor-element.elementor-button-info .btn-group > .elementor-button:first-child {
   margin-left: 0;
 }
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), #content .sharedaddy .btn-group > .sd-button:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), #content .sharedaddy .btn-group > .sd-button:first-child:not(:last-child):not(.dropdown-toggle), .elementor-widget-button .btn-group > .elementor-button:first-child:not(:last-child):not(.dropdown-toggle), .elementor-element.elementor-button-success .btn-group > .elementor-button:first-child:not(:last-child):not(.dropdown-toggle),
+.elementor-element.elementor-button-warning .btn-group > .elementor-button:first-child:not(:last-child):not(.dropdown-toggle),
+.elementor-element.elementor-button-danger .btn-group > .elementor-button:first-child:not(:last-child):not(.dropdown-toggle),
+.elementor-element.elementor-button-info .btn-group > .elementor-button:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-.btn-group > .btn:last-child:not(:first-child), #content .sharedaddy .btn-group > .sd-button:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), #content .sharedaddy .btn-group > .sd-button:last-child:not(:first-child), .elementor-widget-button .btn-group > .elementor-button:last-child:not(:first-child), .elementor-element.elementor-button-success .btn-group > .elementor-button:last-child:not(:first-child),
+.elementor-element.elementor-button-warning .btn-group > .elementor-button:last-child:not(:first-child),
+.elementor-element.elementor-button-danger .btn-group > .elementor-button:last-child:not(:first-child),
+.elementor-element.elementor-button-info .btn-group > .elementor-button:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -4270,17 +4663,26 @@ tbody.collapse.in {
   float: left;
 }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, #content .sharedaddy .btn-group > .btn-group:not(:first-child):not(:last-child) > .sd-button {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, #content .sharedaddy .btn-group > .btn-group:not(:first-child):not(:last-child) > .sd-button, .elementor-widget-button .btn-group > .btn-group:not(:first-child):not(:last-child) > .elementor-button, .elementor-element.elementor-button-success .btn-group > .btn-group:not(:first-child):not(:last-child) > .elementor-button,
+.elementor-element.elementor-button-warning .btn-group > .btn-group:not(:first-child):not(:last-child) > .elementor-button,
+.elementor-element.elementor-button-danger .btn-group > .btn-group:not(:first-child):not(:last-child) > .elementor-button,
+.elementor-element.elementor-button-info .btn-group > .btn-group:not(:first-child):not(:last-child) > .elementor-button {
   border-radius: 0;
 }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, #content .sharedaddy .btn-group > .btn-group:first-child:not(:last-child) > .sd-button:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, #content .sharedaddy .btn-group > .btn-group:first-child:not(:last-child) > .sd-button:last-child, .elementor-widget-button .btn-group > .btn-group:first-child:not(:last-child) > .elementor-button:last-child, .elementor-element.elementor-button-success .btn-group > .btn-group:first-child:not(:last-child) > .elementor-button:last-child,
+.elementor-element.elementor-button-warning .btn-group > .btn-group:first-child:not(:last-child) > .elementor-button:last-child,
+.elementor-element.elementor-button-danger .btn-group > .btn-group:first-child:not(:last-child) > .elementor-button:last-child,
+.elementor-element.elementor-button-info .btn-group > .btn-group:first-child:not(:last-child) > .elementor-button:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, #content .sharedaddy .btn-group > .btn-group:last-child:not(:first-child) > .sd-button:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, #content .sharedaddy .btn-group > .btn-group:last-child:not(:first-child) > .sd-button:first-child, .elementor-widget-button .btn-group > .btn-group:last-child:not(:first-child) > .elementor-button:first-child, .elementor-element.elementor-button-success .btn-group > .btn-group:last-child:not(:first-child) > .elementor-button:first-child,
+.elementor-element.elementor-button-warning .btn-group > .btn-group:last-child:not(:first-child) > .elementor-button:first-child,
+.elementor-element.elementor-button-danger .btn-group > .btn-group:last-child:not(:first-child) > .elementor-button:first-child,
+.elementor-element.elementor-button-info .btn-group > .btn-group:last-child:not(:first-child) > .elementor-button:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4290,12 +4692,18 @@ tbody.collapse.in {
   outline: 0;
 }
 
-.btn-group > .btn + .dropdown-toggle, #content .sharedaddy .btn-group > .sd-button + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, #content .sharedaddy .btn-group > .sd-button + .dropdown-toggle, .elementor-widget-button .btn-group > .elementor-button + .dropdown-toggle, .elementor-element.elementor-button-success .btn-group > .elementor-button + .dropdown-toggle,
+.elementor-element.elementor-button-warning .btn-group > .elementor-button + .dropdown-toggle,
+.elementor-element.elementor-button-danger .btn-group > .elementor-button + .dropdown-toggle,
+.elementor-element.elementor-button-info .btn-group > .elementor-button + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
 }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, #content .sharedaddy .btn-group-lg.btn-group > .sd-button + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, #content .sharedaddy .btn-group-lg.btn-group > .sd-button + .dropdown-toggle, .elementor-widget-button .btn-group-lg.btn-group > .elementor-button + .dropdown-toggle, .elementor-element.elementor-button-success .btn-group-lg.btn-group > .elementor-button + .dropdown-toggle,
+.elementor-element.elementor-button-warning .btn-group-lg.btn-group > .elementor-button + .dropdown-toggle,
+.elementor-element.elementor-button-danger .btn-group-lg.btn-group > .elementor-button + .dropdown-toggle,
+.elementor-element.elementor-button-info .btn-group-lg.btn-group > .elementor-button + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -4309,23 +4717,43 @@ tbody.collapse.in {
   box-shadow: none;
 }
 
-.btn .caret, #content .sharedaddy .sd-button .caret {
+.btn .caret, #content .sharedaddy .sd-button .caret, .elementor-widget-button .elementor-button .caret, .elementor-element.elementor-button-success .elementor-button .caret,
+.elementor-element.elementor-button-warning .elementor-button .caret,
+.elementor-element.elementor-button-danger .elementor-button .caret,
+.elementor-element.elementor-button-info .elementor-button .caret {
   margin-left: 0;
 }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret, #content .sharedaddy .btn-group-lg > .sd-button .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, #content .sharedaddy .btn-group-lg > .sd-button .caret, .elementor-widget-button .btn-group-lg > .elementor-button .caret, .elementor-element.elementor-button-success .btn-group-lg > .elementor-button .caret,
+.elementor-element.elementor-button-warning .btn-group-lg > .elementor-button .caret,
+.elementor-element.elementor-button-danger .btn-group-lg > .elementor-button .caret,
+.elementor-element.elementor-button-info .btn-group-lg > .elementor-button .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0;
 }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup #content .sharedaddy .btn-group-lg > .sd-button .caret, #content .sharedaddy .dropup .btn-group-lg > .sd-button .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup #content .sharedaddy .btn-group-lg > .sd-button .caret, #content .sharedaddy .dropup .btn-group-lg > .sd-button .caret, .dropup .elementor-widget-button .btn-group-lg > .elementor-button .caret, .elementor-widget-button .dropup .btn-group-lg > .elementor-button .caret, .dropup .elementor-element.elementor-button-success .btn-group-lg > .elementor-button .caret, .elementor-element.elementor-button-success .dropup .btn-group-lg > .elementor-button .caret,
+.dropup .elementor-element.elementor-button-warning .btn-group-lg > .elementor-button .caret,
+.elementor-element.elementor-button-warning .dropup .btn-group-lg > .elementor-button .caret,
+.dropup .elementor-element.elementor-button-danger .btn-group-lg > .elementor-button .caret,
+.elementor-element.elementor-button-danger .dropup .btn-group-lg > .elementor-button .caret,
+.dropup .elementor-element.elementor-button-info .btn-group-lg > .elementor-button .caret,
+.elementor-element.elementor-button-info .dropup .btn-group-lg > .elementor-button .caret {
   border-width: 0 5px 5px;
 }
 
-.btn-group-vertical > .btn, #content .sharedaddy .btn-group-vertical > .sd-button,
+.btn-group-vertical > .btn, #content .sharedaddy .btn-group-vertical > .sd-button, .elementor-widget-button .btn-group-vertical > .elementor-button, .elementor-element.elementor-button-success .btn-group-vertical > .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button,
+.elementor-element.elementor-button-info .btn-group-vertical > .elementor-button,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn,
-#content .sharedaddy .btn-group-vertical > .btn-group > .sd-button {
+#content .sharedaddy .btn-group-vertical > .btn-group > .sd-button,
+.elementor-widget-button .btn-group-vertical > .btn-group > .elementor-button,
+.elementor-element.elementor-button-success .btn-group-vertical > .btn-group > .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-vertical > .btn-group > .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-vertical > .btn-group > .elementor-button,
+.elementor-element.elementor-button-info .btn-group-vertical > .btn-group > .elementor-button {
   display: block;
   float: none;
   width: 100%;
@@ -4338,46 +4766,98 @@ tbody.collapse.in {
 .btn-group-vertical > .btn-group:after {
   clear: both;
 }
-.btn-group-vertical > .btn-group > .btn, #content .sharedaddy .btn-group-vertical > .btn-group > .sd-button {
+.btn-group-vertical > .btn-group > .btn, #content .sharedaddy .btn-group-vertical > .btn-group > .sd-button, .elementor-widget-button .btn-group-vertical > .btn-group > .elementor-button, .elementor-element.elementor-button-success .btn-group-vertical > .btn-group > .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-vertical > .btn-group > .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-vertical > .btn-group > .elementor-button,
+.elementor-element.elementor-button-info .btn-group-vertical > .btn-group > .elementor-button {
   float: none;
 }
-.btn-group-vertical > .btn + .btn, #content .sharedaddy .btn-group-vertical > .sd-button + .btn, #content .sharedaddy .btn-group-vertical > .btn + .sd-button, #content .sharedaddy .btn-group-vertical > .sd-button + .sd-button,
+.btn-group-vertical > .btn + .btn, #content .sharedaddy .btn-group-vertical > .sd-button + .btn, .elementor-widget-button .btn-group-vertical > .elementor-button + .btn, .elementor-element.elementor-button-success .btn-group-vertical > .elementor-button + .btn,
+.elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button + .btn,
+.elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button + .btn,
+.elementor-element.elementor-button-info .btn-group-vertical > .elementor-button + .btn, #content .sharedaddy .btn-group-vertical > .btn + .sd-button, #content .sharedaddy .btn-group-vertical > .sd-button + .sd-button, .elementor-widget-button #content .sharedaddy .btn-group-vertical > .elementor-button + .sd-button, #content .sharedaddy .elementor-widget-button .btn-group-vertical > .elementor-button + .sd-button, .elementor-element.elementor-button-success #content .sharedaddy .btn-group-vertical > .elementor-button + .sd-button, #content .sharedaddy .elementor-element.elementor-button-success .btn-group-vertical > .elementor-button + .sd-button,
+.elementor-element.elementor-button-warning #content .sharedaddy .btn-group-vertical > .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button + .sd-button,
+.elementor-element.elementor-button-danger #content .sharedaddy .btn-group-vertical > .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button + .sd-button,
+.elementor-element.elementor-button-info #content .sharedaddy .btn-group-vertical > .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-info .btn-group-vertical > .elementor-button + .sd-button, .elementor-widget-button .btn-group-vertical > .btn + .elementor-button, #content .sharedaddy .elementor-widget-button .btn-group-vertical > .sd-button + .elementor-button, .elementor-widget-button #content .sharedaddy .btn-group-vertical > .sd-button + .elementor-button, .elementor-widget-button .btn-group-vertical > .elementor-button + .elementor-button, .elementor-element.elementor-button-success .btn-group-vertical > .btn + .elementor-button, #content .sharedaddy .elementor-element.elementor-button-success .btn-group-vertical > .sd-button + .elementor-button, .elementor-element.elementor-button-success #content .sharedaddy .btn-group-vertical > .sd-button + .elementor-button, .elementor-element.elementor-button-success .btn-group-vertical > .elementor-button + .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-vertical > .btn + .elementor-button,
+#content .sharedaddy .elementor-element.elementor-button-warning .btn-group-vertical > .sd-button + .elementor-button,
+.elementor-element.elementor-button-warning #content .sharedaddy .btn-group-vertical > .sd-button + .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button + .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-vertical > .btn + .elementor-button,
+#content .sharedaddy .elementor-element.elementor-button-danger .btn-group-vertical > .sd-button + .elementor-button,
+.elementor-element.elementor-button-danger #content .sharedaddy .btn-group-vertical > .sd-button + .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button + .elementor-button,
+.elementor-element.elementor-button-info .btn-group-vertical > .btn + .elementor-button,
+#content .sharedaddy .elementor-element.elementor-button-info .btn-group-vertical > .sd-button + .elementor-button,
+.elementor-element.elementor-button-info #content .sharedaddy .btn-group-vertical > .sd-button + .elementor-button,
+.elementor-element.elementor-button-info .btn-group-vertical > .elementor-button + .elementor-button,
 .btn-group-vertical > .btn + .btn-group,
 #content .sharedaddy .btn-group-vertical > .sd-button + .btn-group,
+.elementor-widget-button .btn-group-vertical > .elementor-button + .btn-group,
+.elementor-element.elementor-button-success .btn-group-vertical > .elementor-button + .btn-group,
+.elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button + .btn-group,
+.elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button + .btn-group,
+.elementor-element.elementor-button-info .btn-group-vertical > .elementor-button + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
 #content .sharedaddy .btn-group-vertical > .btn-group + .sd-button,
+.elementor-widget-button .btn-group-vertical > .btn-group + .elementor-button,
+.elementor-element.elementor-button-success .btn-group-vertical > .btn-group + .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-vertical > .btn-group + .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-vertical > .btn-group + .elementor-button,
+.elementor-element.elementor-button-info .btn-group-vertical > .btn-group + .elementor-button,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0;
 }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), #content .sharedaddy .btn-group-vertical > .sd-button:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), #content .sharedaddy .btn-group-vertical > .sd-button:not(:first-child):not(:last-child), .elementor-widget-button .btn-group-vertical > .elementor-button:not(:first-child):not(:last-child), .elementor-element.elementor-button-success .btn-group-vertical > .elementor-button:not(:first-child):not(:last-child),
+.elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button:not(:first-child):not(:last-child),
+.elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button:not(:first-child):not(:last-child),
+.elementor-element.elementor-button-info .btn-group-vertical > .elementor-button:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
-.btn-group-vertical > .btn:first-child:not(:last-child), #content .sharedaddy .btn-group-vertical > .sd-button:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), #content .sharedaddy .btn-group-vertical > .sd-button:first-child:not(:last-child), .elementor-widget-button .btn-group-vertical > .elementor-button:first-child:not(:last-child), .elementor-element.elementor-button-success .btn-group-vertical > .elementor-button:first-child:not(:last-child),
+.elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button:first-child:not(:last-child),
+.elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button:first-child:not(:last-child),
+.elementor-element.elementor-button-info .btn-group-vertical > .elementor-button:first-child:not(:last-child) {
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn:last-child:not(:first-child), #content .sharedaddy .btn-group-vertical > .sd-button:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), #content .sharedaddy .btn-group-vertical > .sd-button:last-child:not(:first-child), .elementor-widget-button .btn-group-vertical > .elementor-button:last-child:not(:first-child), .elementor-element.elementor-button-success .btn-group-vertical > .elementor-button:last-child:not(:first-child),
+.elementor-element.elementor-button-warning .btn-group-vertical > .elementor-button:last-child:not(:first-child),
+.elementor-element.elementor-button-danger .btn-group-vertical > .elementor-button:last-child:not(:first-child),
+.elementor-element.elementor-button-info .btn-group-vertical > .elementor-button:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, #content .sharedaddy .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .sd-button {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, #content .sharedaddy .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .sd-button, .elementor-widget-button .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .elementor-button, .elementor-element.elementor-button-success .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .elementor-button,
+.elementor-element.elementor-button-info .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .elementor-button {
   border-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, #content .sharedaddy .btn-group-vertical > .btn-group:first-child:not(:last-child) > .sd-button:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, #content .sharedaddy .btn-group-vertical > .btn-group:first-child:not(:last-child) > .sd-button:last-child, .elementor-widget-button .btn-group-vertical > .btn-group:first-child:not(:last-child) > .elementor-button:last-child, .elementor-element.elementor-button-success .btn-group-vertical > .btn-group:first-child:not(:last-child) > .elementor-button:last-child,
+.elementor-element.elementor-button-warning .btn-group-vertical > .btn-group:first-child:not(:last-child) > .elementor-button:last-child,
+.elementor-element.elementor-button-danger .btn-group-vertical > .btn-group:first-child:not(:last-child) > .elementor-button:last-child,
+.elementor-element.elementor-button-info .btn-group-vertical > .btn-group:first-child:not(:last-child) > .elementor-button:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, #content .sharedaddy .btn-group-vertical > .btn-group:last-child:not(:first-child) > .sd-button:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, #content .sharedaddy .btn-group-vertical > .btn-group:last-child:not(:first-child) > .sd-button:first-child, .elementor-widget-button .btn-group-vertical > .btn-group:last-child:not(:first-child) > .elementor-button:first-child, .elementor-element.elementor-button-success .btn-group-vertical > .btn-group:last-child:not(:first-child) > .elementor-button:first-child,
+.elementor-element.elementor-button-warning .btn-group-vertical > .btn-group:last-child:not(:first-child) > .elementor-button:first-child,
+.elementor-element.elementor-button-danger .btn-group-vertical > .btn-group:last-child:not(:first-child) > .elementor-button:first-child,
+.elementor-element.elementor-button-info .btn-group-vertical > .btn-group:last-child:not(:first-child) > .elementor-button:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4388,26 +4868,53 @@ tbody.collapse.in {
   table-layout: fixed;
   border-collapse: separate;
 }
-.btn-group-justified > .btn, #content .sharedaddy .btn-group-justified > .sd-button,
+.btn-group-justified > .btn, #content .sharedaddy .btn-group-justified > .sd-button, .elementor-widget-button .btn-group-justified > .elementor-button, .elementor-element.elementor-button-success .btn-group-justified > .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-justified > .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-justified > .elementor-button,
+.elementor-element.elementor-button-info .btn-group-justified > .elementor-button,
 .btn-group-justified > .btn-group {
   float: none;
   display: table-cell;
   width: 1%;
 }
-.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group #content .sharedaddy .sd-button, #content .sharedaddy .btn-group-justified > .btn-group .sd-button {
+.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group #content .sharedaddy .sd-button, #content .sharedaddy .btn-group-justified > .btn-group .sd-button, .btn-group-justified > .btn-group .elementor-widget-button .elementor-button, .elementor-widget-button .btn-group-justified > .btn-group .elementor-button, .btn-group-justified > .btn-group .elementor-element.elementor-button-success .elementor-button, .elementor-element.elementor-button-success .btn-group-justified > .btn-group .elementor-button,
+.btn-group-justified > .btn-group .elementor-element.elementor-button-warning .elementor-button,
+.elementor-element.elementor-button-warning .btn-group-justified > .btn-group .elementor-button,
+.btn-group-justified > .btn-group .elementor-element.elementor-button-danger .elementor-button,
+.elementor-element.elementor-button-danger .btn-group-justified > .btn-group .elementor-button,
+.btn-group-justified > .btn-group .elementor-element.elementor-button-info .elementor-button,
+.elementor-element.elementor-button-info .btn-group-justified > .btn-group .elementor-button {
   width: 100%;
 }
 .btn-group-justified > .btn-group .dropdown-menu {
   left: auto;
 }
 
-[data-toggle="buttons"] > .btn input[type="radio"], #content .sharedaddy [data-toggle="buttons"] > .sd-button input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="radio"], #content .sharedaddy [data-toggle="buttons"] > .sd-button input[type="radio"], .elementor-widget-button [data-toggle="buttons"] > .elementor-button input[type="radio"], .elementor-element.elementor-button-success [data-toggle="buttons"] > .elementor-button input[type="radio"],
+.elementor-element.elementor-button-warning [data-toggle="buttons"] > .elementor-button input[type="radio"],
+.elementor-element.elementor-button-danger [data-toggle="buttons"] > .elementor-button input[type="radio"],
+.elementor-element.elementor-button-info [data-toggle="buttons"] > .elementor-button input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
 #content .sharedaddy [data-toggle="buttons"] > .sd-button input[type="checkbox"],
+.elementor-widget-button [data-toggle="buttons"] > .elementor-button input[type="checkbox"],
+.elementor-element.elementor-button-success [data-toggle="buttons"] > .elementor-button input[type="checkbox"],
+.elementor-element.elementor-button-warning [data-toggle="buttons"] > .elementor-button input[type="checkbox"],
+.elementor-element.elementor-button-danger [data-toggle="buttons"] > .elementor-button input[type="checkbox"],
+.elementor-element.elementor-button-info [data-toggle="buttons"] > .elementor-button input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
 #content .sharedaddy [data-toggle="buttons"] > .btn-group > .sd-button input[type="radio"],
+.elementor-widget-button [data-toggle="buttons"] > .btn-group > .elementor-button input[type="radio"],
+.elementor-element.elementor-button-success [data-toggle="buttons"] > .btn-group > .elementor-button input[type="radio"],
+.elementor-element.elementor-button-warning [data-toggle="buttons"] > .btn-group > .elementor-button input[type="radio"],
+.elementor-element.elementor-button-danger [data-toggle="buttons"] > .btn-group > .elementor-button input[type="radio"],
+.elementor-element.elementor-button-info [data-toggle="buttons"] > .btn-group > .elementor-button input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
-#content .sharedaddy [data-toggle="buttons"] > .btn-group > .sd-button input[type="checkbox"] {
+#content .sharedaddy [data-toggle="buttons"] > .btn-group > .sd-button input[type="checkbox"],
+.elementor-widget-button [data-toggle="buttons"] > .btn-group > .elementor-button input[type="checkbox"],
+.elementor-element.elementor-button-success [data-toggle="buttons"] > .btn-group > .elementor-button input[type="checkbox"],
+.elementor-element.elementor-button-warning [data-toggle="buttons"] > .btn-group > .elementor-button input[type="checkbox"],
+.elementor-element.elementor-button-danger [data-toggle="buttons"] > .btn-group > .elementor-button input[type="checkbox"],
+.elementor-element.elementor-button-info [data-toggle="buttons"] > .btn-group > .elementor-button input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
@@ -4466,7 +4973,12 @@ tbody.collapse.in {
 .input-group-addon.input-sm,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .input-group-addon.btn,
-#content .sharedaddy .input-group-sm > .input-group-btn > .input-group-addon.sd-button {
+#content .sharedaddy .input-group-sm > .input-group-btn > .input-group-addon.sd-button,
+.elementor-widget-button .input-group-sm > .input-group-btn > .input-group-addon.elementor-button,
+.elementor-element.elementor-button-success .input-group-sm > .input-group-btn > .input-group-addon.elementor-button,
+.elementor-element.elementor-button-warning .input-group-sm > .input-group-btn > .input-group-addon.elementor-button,
+.elementor-element.elementor-button-danger .input-group-sm > .input-group-btn > .input-group-addon.elementor-button,
+.elementor-element.elementor-button-info .input-group-sm > .input-group-btn > .input-group-addon.elementor-button {
   padding: 5px 10px;
   font-size: 12px;
   border-radius: 0px;
@@ -4474,7 +4986,12 @@ tbody.collapse.in {
 .input-group-addon.input-lg,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .input-group-addon.btn,
-#content .sharedaddy .input-group-lg > .input-group-btn > .input-group-addon.sd-button {
+#content .sharedaddy .input-group-lg > .input-group-btn > .input-group-addon.sd-button,
+.elementor-widget-button .input-group-lg > .input-group-btn > .input-group-addon.elementor-button,
+.elementor-element.elementor-button-success .input-group-lg > .input-group-btn > .input-group-addon.elementor-button,
+.elementor-element.elementor-button-warning .input-group-lg > .input-group-btn > .input-group-addon.elementor-button,
+.elementor-element.elementor-button-danger .input-group-lg > .input-group-btn > .input-group-addon.elementor-button,
+.elementor-element.elementor-button-info .input-group-lg > .input-group-btn > .input-group-addon.elementor-button {
   padding: 10px 16px;
   font-size: 18px;
   border-radius: 0px;
@@ -4488,13 +5005,33 @@ tbody.collapse.in {
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 #content .sharedaddy .input-group-btn:first-child > .sd-button,
+.elementor-widget-button .input-group-btn:first-child > .elementor-button,
+.elementor-element.elementor-button-success .input-group-btn:first-child > .elementor-button,
+.elementor-element.elementor-button-warning .input-group-btn:first-child > .elementor-button,
+.elementor-element.elementor-button-danger .input-group-btn:first-child > .elementor-button,
+.elementor-element.elementor-button-info .input-group-btn:first-child > .elementor-button,
 .input-group-btn:first-child > .btn-group > .btn,
 #content .sharedaddy .input-group-btn:first-child > .btn-group > .sd-button,
+.elementor-widget-button .input-group-btn:first-child > .btn-group > .elementor-button,
+.elementor-element.elementor-button-success .input-group-btn:first-child > .btn-group > .elementor-button,
+.elementor-element.elementor-button-warning .input-group-btn:first-child > .btn-group > .elementor-button,
+.elementor-element.elementor-button-danger .input-group-btn:first-child > .btn-group > .elementor-button,
+.elementor-element.elementor-button-info .input-group-btn:first-child > .btn-group > .elementor-button,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 #content .sharedaddy .input-group-btn:last-child > .sd-button:not(:last-child):not(.dropdown-toggle),
+.elementor-widget-button .input-group-btn:last-child > .elementor-button:not(:last-child):not(.dropdown-toggle),
+.elementor-element.elementor-button-success .input-group-btn:last-child > .elementor-button:not(:last-child):not(.dropdown-toggle),
+.elementor-element.elementor-button-warning .input-group-btn:last-child > .elementor-button:not(:last-child):not(.dropdown-toggle),
+.elementor-element.elementor-button-danger .input-group-btn:last-child > .elementor-button:not(:last-child):not(.dropdown-toggle),
+.elementor-element.elementor-button-info .input-group-btn:last-child > .elementor-button:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
-#content .sharedaddy .input-group-btn:last-child > .btn-group:not(:last-child) > .sd-button {
+#content .sharedaddy .input-group-btn:last-child > .btn-group:not(:last-child) > .sd-button,
+.elementor-widget-button .input-group-btn:last-child > .btn-group:not(:last-child) > .elementor-button,
+.elementor-element.elementor-button-success .input-group-btn:last-child > .btn-group:not(:last-child) > .elementor-button,
+.elementor-element.elementor-button-warning .input-group-btn:last-child > .btn-group:not(:last-child) > .elementor-button,
+.elementor-element.elementor-button-danger .input-group-btn:last-child > .btn-group:not(:last-child) > .elementor-button,
+.elementor-element.elementor-button-info .input-group-btn:last-child > .btn-group:not(:last-child) > .elementor-button {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -4507,13 +5044,33 @@ tbody.collapse.in {
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 #content .sharedaddy .input-group-btn:last-child > .sd-button,
+.elementor-widget-button .input-group-btn:last-child > .elementor-button,
+.elementor-element.elementor-button-success .input-group-btn:last-child > .elementor-button,
+.elementor-element.elementor-button-warning .input-group-btn:last-child > .elementor-button,
+.elementor-element.elementor-button-danger .input-group-btn:last-child > .elementor-button,
+.elementor-element.elementor-button-info .input-group-btn:last-child > .elementor-button,
 .input-group-btn:last-child > .btn-group > .btn,
 #content .sharedaddy .input-group-btn:last-child > .btn-group > .sd-button,
+.elementor-widget-button .input-group-btn:last-child > .btn-group > .elementor-button,
+.elementor-element.elementor-button-success .input-group-btn:last-child > .btn-group > .elementor-button,
+.elementor-element.elementor-button-warning .input-group-btn:last-child > .btn-group > .elementor-button,
+.elementor-element.elementor-button-danger .input-group-btn:last-child > .btn-group > .elementor-button,
+.elementor-element.elementor-button-info .input-group-btn:last-child > .btn-group > .elementor-button,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child),
 #content .sharedaddy .input-group-btn:first-child > .sd-button:not(:first-child),
+.elementor-widget-button .input-group-btn:first-child > .elementor-button:not(:first-child),
+.elementor-element.elementor-button-success .input-group-btn:first-child > .elementor-button:not(:first-child),
+.elementor-element.elementor-button-warning .input-group-btn:first-child > .elementor-button:not(:first-child),
+.elementor-element.elementor-button-danger .input-group-btn:first-child > .elementor-button:not(:first-child),
+.elementor-element.elementor-button-info .input-group-btn:first-child > .elementor-button:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
-#content .sharedaddy .input-group-btn:first-child > .btn-group:not(:first-child) > .sd-button {
+#content .sharedaddy .input-group-btn:first-child > .btn-group:not(:first-child) > .sd-button,
+.elementor-widget-button .input-group-btn:first-child > .btn-group:not(:first-child) > .elementor-button,
+.elementor-element.elementor-button-success .input-group-btn:first-child > .btn-group:not(:first-child) > .elementor-button,
+.elementor-element.elementor-button-warning .input-group-btn:first-child > .btn-group:not(:first-child) > .elementor-button,
+.elementor-element.elementor-button-danger .input-group-btn:first-child > .btn-group:not(:first-child) > .elementor-button,
+.elementor-element.elementor-button-info .input-group-btn:first-child > .btn-group:not(:first-child) > .elementor-button {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4527,20 +5084,59 @@ tbody.collapse.in {
   font-size: 0;
   white-space: nowrap;
 }
-.input-group-btn > .btn, #content .sharedaddy .input-group-btn > .sd-button {
+.input-group-btn > .btn, #content .sharedaddy .input-group-btn > .sd-button, .elementor-widget-button .input-group-btn > .elementor-button, .elementor-element.elementor-button-success .input-group-btn > .elementor-button,
+.elementor-element.elementor-button-warning .input-group-btn > .elementor-button,
+.elementor-element.elementor-button-danger .input-group-btn > .elementor-button,
+.elementor-element.elementor-button-info .input-group-btn > .elementor-button {
   position: relative;
 }
-.input-group-btn > .btn + .btn, #content .sharedaddy .input-group-btn > .sd-button + .btn, #content .sharedaddy .input-group-btn > .btn + .sd-button, #content .sharedaddy .input-group-btn > .sd-button + .sd-button {
+.input-group-btn > .btn + .btn, #content .sharedaddy .input-group-btn > .sd-button + .btn, .elementor-widget-button .input-group-btn > .elementor-button + .btn, .elementor-element.elementor-button-success .input-group-btn > .elementor-button + .btn,
+.elementor-element.elementor-button-warning .input-group-btn > .elementor-button + .btn,
+.elementor-element.elementor-button-danger .input-group-btn > .elementor-button + .btn,
+.elementor-element.elementor-button-info .input-group-btn > .elementor-button + .btn, #content .sharedaddy .input-group-btn > .btn + .sd-button, #content .sharedaddy .input-group-btn > .sd-button + .sd-button, .elementor-widget-button #content .sharedaddy .input-group-btn > .elementor-button + .sd-button, #content .sharedaddy .elementor-widget-button .input-group-btn > .elementor-button + .sd-button, .elementor-element.elementor-button-success #content .sharedaddy .input-group-btn > .elementor-button + .sd-button, #content .sharedaddy .elementor-element.elementor-button-success .input-group-btn > .elementor-button + .sd-button,
+.elementor-element.elementor-button-warning #content .sharedaddy .input-group-btn > .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-warning .input-group-btn > .elementor-button + .sd-button,
+.elementor-element.elementor-button-danger #content .sharedaddy .input-group-btn > .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-danger .input-group-btn > .elementor-button + .sd-button,
+.elementor-element.elementor-button-info #content .sharedaddy .input-group-btn > .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-info .input-group-btn > .elementor-button + .sd-button, .elementor-widget-button .input-group-btn > .btn + .elementor-button, #content .sharedaddy .elementor-widget-button .input-group-btn > .sd-button + .elementor-button, .elementor-widget-button #content .sharedaddy .input-group-btn > .sd-button + .elementor-button, .elementor-widget-button .input-group-btn > .elementor-button + .elementor-button, .elementor-element.elementor-button-success .input-group-btn > .btn + .elementor-button, #content .sharedaddy .elementor-element.elementor-button-success .input-group-btn > .sd-button + .elementor-button, .elementor-element.elementor-button-success #content .sharedaddy .input-group-btn > .sd-button + .elementor-button, .elementor-element.elementor-button-success .input-group-btn > .elementor-button + .elementor-button,
+.elementor-element.elementor-button-warning .input-group-btn > .btn + .elementor-button,
+#content .sharedaddy .elementor-element.elementor-button-warning .input-group-btn > .sd-button + .elementor-button,
+.elementor-element.elementor-button-warning #content .sharedaddy .input-group-btn > .sd-button + .elementor-button,
+.elementor-element.elementor-button-warning .input-group-btn > .elementor-button + .elementor-button,
+.elementor-element.elementor-button-danger .input-group-btn > .btn + .elementor-button,
+#content .sharedaddy .elementor-element.elementor-button-danger .input-group-btn > .sd-button + .elementor-button,
+.elementor-element.elementor-button-danger #content .sharedaddy .input-group-btn > .sd-button + .elementor-button,
+.elementor-element.elementor-button-danger .input-group-btn > .elementor-button + .elementor-button,
+.elementor-element.elementor-button-info .input-group-btn > .btn + .elementor-button,
+#content .sharedaddy .elementor-element.elementor-button-info .input-group-btn > .sd-button + .elementor-button,
+.elementor-element.elementor-button-info #content .sharedaddy .input-group-btn > .sd-button + .elementor-button,
+.elementor-element.elementor-button-info .input-group-btn > .elementor-button + .elementor-button {
   margin-left: -1px;
 }
-.input-group-btn > .btn:hover, #content .sharedaddy .input-group-btn > .sd-button:hover, .input-group-btn > .btn:focus, #content .sharedaddy .input-group-btn > .sd-button:focus, .input-group-btn > .btn:active, #content .sharedaddy .input-group-btn > .sd-button:active {
+.input-group-btn > .btn:hover, #content .sharedaddy .input-group-btn > .sd-button:hover, .elementor-widget-button .input-group-btn > .elementor-button:hover, .elementor-element.elementor-button-success .input-group-btn > .elementor-button:hover,
+.elementor-element.elementor-button-warning .input-group-btn > .elementor-button:hover,
+.elementor-element.elementor-button-danger .input-group-btn > .elementor-button:hover,
+.elementor-element.elementor-button-info .input-group-btn > .elementor-button:hover, .input-group-btn > .btn:focus, #content .sharedaddy .input-group-btn > .sd-button:focus, .elementor-widget-button .input-group-btn > .elementor-button:focus, .elementor-element.elementor-button-success .input-group-btn > .elementor-button:focus,
+.elementor-element.elementor-button-warning .input-group-btn > .elementor-button:focus,
+.elementor-element.elementor-button-danger .input-group-btn > .elementor-button:focus,
+.elementor-element.elementor-button-info .input-group-btn > .elementor-button:focus, .input-group-btn > .btn:active, #content .sharedaddy .input-group-btn > .sd-button:active, .elementor-widget-button .input-group-btn > .elementor-button:active, .elementor-element.elementor-button-success .input-group-btn > .elementor-button:active,
+.elementor-element.elementor-button-warning .input-group-btn > .elementor-button:active,
+.elementor-element.elementor-button-danger .input-group-btn > .elementor-button:active,
+.elementor-element.elementor-button-info .input-group-btn > .elementor-button:active {
   z-index: 2;
 }
-.input-group-btn:first-child > .btn, #content .sharedaddy .input-group-btn:first-child > .sd-button,
+.input-group-btn:first-child > .btn, #content .sharedaddy .input-group-btn:first-child > .sd-button, .elementor-widget-button .input-group-btn:first-child > .elementor-button, .elementor-element.elementor-button-success .input-group-btn:first-child > .elementor-button,
+.elementor-element.elementor-button-warning .input-group-btn:first-child > .elementor-button,
+.elementor-element.elementor-button-danger .input-group-btn:first-child > .elementor-button,
+.elementor-element.elementor-button-info .input-group-btn:first-child > .elementor-button,
 .input-group-btn:first-child > .btn-group {
   margin-right: -1px;
 }
-.input-group-btn:last-child > .btn, #content .sharedaddy .input-group-btn:last-child > .sd-button,
+.input-group-btn:last-child > .btn, #content .sharedaddy .input-group-btn:last-child > .sd-button, .elementor-widget-button .input-group-btn:last-child > .elementor-button, .elementor-element.elementor-button-success .input-group-btn:last-child > .elementor-button,
+.elementor-element.elementor-button-warning .input-group-btn:last-child > .elementor-button,
+.elementor-element.elementor-button-danger .input-group-btn:last-child > .elementor-button,
+.elementor-element.elementor-button-info .input-group-btn:last-child > .elementor-button,
 .input-group-btn:last-child > .btn-group {
   z-index: 2;
   margin-left: -1px;
@@ -5043,11 +5639,17 @@ tbody.collapse.in {
   margin-top: 8px;
   margin-bottom: 8px;
 }
-.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, #content .sharedaddy .btn-group-sm > .navbar-btn.sd-button {
+.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, #content .sharedaddy .btn-group-sm > .navbar-btn.sd-button, .elementor-widget-button .btn-group-sm > .navbar-btn.elementor-button, .elementor-element.elementor-button-success .btn-group-sm > .navbar-btn.elementor-button,
+.elementor-element.elementor-button-warning .btn-group-sm > .navbar-btn.elementor-button,
+.elementor-element.elementor-button-danger .btn-group-sm > .navbar-btn.elementor-button,
+.elementor-element.elementor-button-info .btn-group-sm > .navbar-btn.elementor-button {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, #content .sharedaddy .btn-group-xs > .navbar-btn.sd-button {
+.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, #content .sharedaddy .btn-group-xs > .navbar-btn.sd-button, .elementor-widget-button .btn-group-xs > .navbar-btn.elementor-button, .elementor-element.elementor-button-success .btn-group-xs > .navbar-btn.elementor-button,
+.elementor-element.elementor-button-warning .btn-group-xs > .navbar-btn.elementor-button,
+.elementor-element.elementor-button-danger .btn-group-xs > .navbar-btn.elementor-button,
+.elementor-element.elementor-button-info .btn-group-xs > .navbar-btn.elementor-button {
   margin-top: 14px;
   margin-bottom: 14px;
 }
@@ -5418,7 +6020,10 @@ tbody.collapse.in {
 .label:empty {
   display: none;
 }
-.btn .label, #content .sharedaddy .sd-button .label {
+.btn .label, #content .sharedaddy .sd-button .label, .elementor-widget-button .elementor-button .label, .elementor-element.elementor-button-success .elementor-button .label,
+.elementor-element.elementor-button-warning .elementor-button .label,
+.elementor-element.elementor-button-danger .elementor-button .label,
+.elementor-element.elementor-button-info .elementor-button .label {
   position: relative;
   top: -1px;
 }
@@ -5488,11 +6093,20 @@ a.label:hover, a.label:focus {
 .badge:empty {
   display: none;
 }
-.btn .badge, #content .sharedaddy .sd-button .badge {
+.btn .badge, #content .sharedaddy .sd-button .badge, .elementor-widget-button .elementor-button .badge, .elementor-element.elementor-button-success .elementor-button .badge,
+.elementor-element.elementor-button-warning .elementor-button .badge,
+.elementor-element.elementor-button-danger .elementor-button .badge,
+.elementor-element.elementor-button-info .elementor-button .badge {
   position: relative;
   top: -1px;
 }
-.btn-xs .badge, .btn-group-xs > .btn .badge, #content .sharedaddy .btn-group-xs > .sd-button .badge, .btn-group-xs > .btn .badge, #content .sharedaddy .btn-group-xs > .sd-button .badge {
+.btn-xs .badge, .btn-group-xs > .btn .badge, #content .sharedaddy .btn-group-xs > .sd-button .badge, .elementor-widget-button .btn-group-xs > .elementor-button .badge, .elementor-element.elementor-button-success .btn-group-xs > .elementor-button .badge,
+.elementor-element.elementor-button-warning .btn-group-xs > .elementor-button .badge,
+.elementor-element.elementor-button-danger .btn-group-xs > .elementor-button .badge,
+.elementor-element.elementor-button-info .btn-group-xs > .elementor-button .badge, .btn-group-xs > .btn .badge, #content .sharedaddy .btn-group-xs > .sd-button .badge, .elementor-widget-button .btn-group-xs > .elementor-button .badge, .elementor-element.elementor-button-success .btn-group-xs > .elementor-button .badge,
+.elementor-element.elementor-button-warning .btn-group-xs > .elementor-button .badge,
+.elementor-element.elementor-button-danger .btn-group-xs > .elementor-button .badge,
+.elementor-element.elementor-button-info .btn-group-xs > .elementor-button .badge {
   top: 0;
   padding: 1px 5px;
 }
@@ -6577,11 +7191,95 @@ button.close {
 .modal-footer:after {
   clear: both;
 }
-.modal-footer .btn + .btn, .modal-footer #content .sharedaddy .sd-button + .btn, #content .sharedaddy .modal-footer .sd-button + .btn, .modal-footer #content .sharedaddy .btn + .sd-button, #content .sharedaddy .modal-footer .btn + .sd-button, .modal-footer #content .sharedaddy .sd-button + .sd-button, #content .sharedaddy .modal-footer .sd-button + .sd-button {
+.modal-footer .btn + .btn, .modal-footer #content .sharedaddy .sd-button + .btn, #content .sharedaddy .modal-footer .sd-button + .btn, .modal-footer .elementor-widget-button .elementor-button + .btn, .elementor-widget-button .modal-footer .elementor-button + .btn, .modal-footer .elementor-element.elementor-button-success .elementor-button + .btn, .elementor-element.elementor-button-success .modal-footer .elementor-button + .btn,
+.modal-footer .elementor-element.elementor-button-warning .elementor-button + .btn,
+.elementor-element.elementor-button-warning .modal-footer .elementor-button + .btn,
+.modal-footer .elementor-element.elementor-button-danger .elementor-button + .btn,
+.elementor-element.elementor-button-danger .modal-footer .elementor-button + .btn,
+.modal-footer .elementor-element.elementor-button-info .elementor-button + .btn,
+.elementor-element.elementor-button-info .modal-footer .elementor-button + .btn, .modal-footer #content .sharedaddy .btn + .sd-button, #content .sharedaddy .modal-footer .btn + .sd-button, .modal-footer #content .sharedaddy .sd-button + .sd-button, #content .sharedaddy .modal-footer .sd-button + .sd-button, .modal-footer .elementor-widget-button #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .modal-footer .elementor-widget-button .elementor-button + .sd-button, .elementor-widget-button .modal-footer #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .elementor-widget-button .modal-footer .elementor-button + .sd-button, .modal-footer .elementor-element.elementor-button-success #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .modal-footer .elementor-element.elementor-button-success .elementor-button + .sd-button, .elementor-element.elementor-button-success .modal-footer #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .elementor-element.elementor-button-success .modal-footer .elementor-button + .sd-button,
+.modal-footer .elementor-element.elementor-button-warning #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .modal-footer .elementor-element.elementor-button-warning .elementor-button + .sd-button,
+.elementor-element.elementor-button-warning .modal-footer #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-warning .modal-footer .elementor-button + .sd-button,
+.modal-footer .elementor-element.elementor-button-danger #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .modal-footer .elementor-element.elementor-button-danger .elementor-button + .sd-button,
+.elementor-element.elementor-button-danger .modal-footer #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-danger .modal-footer .elementor-button + .sd-button,
+.modal-footer .elementor-element.elementor-button-info #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .modal-footer .elementor-element.elementor-button-info .elementor-button + .sd-button,
+.elementor-element.elementor-button-info .modal-footer #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-info .modal-footer .elementor-button + .sd-button, .modal-footer .elementor-widget-button .btn + .elementor-button, .elementor-widget-button .modal-footer .btn + .elementor-button, .modal-footer #content .sharedaddy .elementor-widget-button .sd-button + .elementor-button, .elementor-widget-button .modal-footer #content .sharedaddy .sd-button + .elementor-button, #content .sharedaddy .modal-footer .elementor-widget-button .sd-button + .elementor-button, .elementor-widget-button #content .sharedaddy .modal-footer .sd-button + .elementor-button, .modal-footer .elementor-widget-button .elementor-button + .elementor-button, .elementor-widget-button .modal-footer .elementor-button + .elementor-button, .modal-footer .elementor-element.elementor-button-success .btn + .elementor-button, .elementor-element.elementor-button-success .modal-footer .btn + .elementor-button, .modal-footer #content .sharedaddy .elementor-element.elementor-button-success .sd-button + .elementor-button, .elementor-element.elementor-button-success .modal-footer #content .sharedaddy .sd-button + .elementor-button, #content .sharedaddy .modal-footer .elementor-element.elementor-button-success .sd-button + .elementor-button, .elementor-element.elementor-button-success #content .sharedaddy .modal-footer .sd-button + .elementor-button, .modal-footer .elementor-element.elementor-button-success .elementor-button + .elementor-button, .elementor-element.elementor-button-success .modal-footer .elementor-button + .elementor-button,
+.modal-footer .elementor-element.elementor-button-warning .btn + .elementor-button,
+.elementor-element.elementor-button-warning .modal-footer .btn + .elementor-button,
+.modal-footer #content .sharedaddy .elementor-element.elementor-button-warning .sd-button + .elementor-button,
+.elementor-element.elementor-button-warning .modal-footer #content .sharedaddy .sd-button + .elementor-button,
+#content .sharedaddy .modal-footer .elementor-element.elementor-button-warning .sd-button + .elementor-button,
+.elementor-element.elementor-button-warning #content .sharedaddy .modal-footer .sd-button + .elementor-button,
+.modal-footer .elementor-element.elementor-button-warning .elementor-button + .elementor-button,
+.elementor-element.elementor-button-warning .modal-footer .elementor-button + .elementor-button,
+.modal-footer .elementor-element.elementor-button-danger .btn + .elementor-button,
+.elementor-element.elementor-button-danger .modal-footer .btn + .elementor-button,
+.modal-footer #content .sharedaddy .elementor-element.elementor-button-danger .sd-button + .elementor-button,
+.elementor-element.elementor-button-danger .modal-footer #content .sharedaddy .sd-button + .elementor-button,
+#content .sharedaddy .modal-footer .elementor-element.elementor-button-danger .sd-button + .elementor-button,
+.elementor-element.elementor-button-danger #content .sharedaddy .modal-footer .sd-button + .elementor-button,
+.modal-footer .elementor-element.elementor-button-danger .elementor-button + .elementor-button,
+.elementor-element.elementor-button-danger .modal-footer .elementor-button + .elementor-button,
+.modal-footer .elementor-element.elementor-button-info .btn + .elementor-button,
+.elementor-element.elementor-button-info .modal-footer .btn + .elementor-button,
+.modal-footer #content .sharedaddy .elementor-element.elementor-button-info .sd-button + .elementor-button,
+.elementor-element.elementor-button-info .modal-footer #content .sharedaddy .sd-button + .elementor-button,
+#content .sharedaddy .modal-footer .elementor-element.elementor-button-info .sd-button + .elementor-button,
+.elementor-element.elementor-button-info #content .sharedaddy .modal-footer .sd-button + .elementor-button,
+.modal-footer .elementor-element.elementor-button-info .elementor-button + .elementor-button,
+.elementor-element.elementor-button-info .modal-footer .elementor-button + .elementor-button {
   margin-left: 5px;
   margin-bottom: 0;
 }
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #content .sharedaddy .sd-button + .btn, #content .sharedaddy .modal-footer .btn-group .sd-button + .btn, .modal-footer .btn-group #content .sharedaddy .btn + .sd-button, #content .sharedaddy .modal-footer .btn-group .btn + .sd-button, .modal-footer .btn-group #content .sharedaddy .sd-button + .sd-button, #content .sharedaddy .modal-footer .btn-group .sd-button + .sd-button {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #content .sharedaddy .sd-button + .btn, #content .sharedaddy .modal-footer .btn-group .sd-button + .btn, .modal-footer .btn-group .elementor-widget-button .elementor-button + .btn, .elementor-widget-button .modal-footer .btn-group .elementor-button + .btn, .modal-footer .btn-group .elementor-element.elementor-button-success .elementor-button + .btn, .elementor-element.elementor-button-success .modal-footer .btn-group .elementor-button + .btn,
+.modal-footer .btn-group .elementor-element.elementor-button-warning .elementor-button + .btn,
+.elementor-element.elementor-button-warning .modal-footer .btn-group .elementor-button + .btn,
+.modal-footer .btn-group .elementor-element.elementor-button-danger .elementor-button + .btn,
+.elementor-element.elementor-button-danger .modal-footer .btn-group .elementor-button + .btn,
+.modal-footer .btn-group .elementor-element.elementor-button-info .elementor-button + .btn,
+.elementor-element.elementor-button-info .modal-footer .btn-group .elementor-button + .btn, .modal-footer .btn-group #content .sharedaddy .btn + .sd-button, #content .sharedaddy .modal-footer .btn-group .btn + .sd-button, .modal-footer .btn-group #content .sharedaddy .sd-button + .sd-button, #content .sharedaddy .modal-footer .btn-group .sd-button + .sd-button, .modal-footer .btn-group .elementor-widget-button #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .modal-footer .btn-group .elementor-widget-button .elementor-button + .sd-button, .elementor-widget-button .modal-footer .btn-group #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .elementor-widget-button .modal-footer .btn-group .elementor-button + .sd-button, .modal-footer .btn-group .elementor-element.elementor-button-success #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .modal-footer .btn-group .elementor-element.elementor-button-success .elementor-button + .sd-button, .elementor-element.elementor-button-success .modal-footer .btn-group #content .sharedaddy .elementor-button + .sd-button, #content .sharedaddy .elementor-element.elementor-button-success .modal-footer .btn-group .elementor-button + .sd-button,
+.modal-footer .btn-group .elementor-element.elementor-button-warning #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .modal-footer .btn-group .elementor-element.elementor-button-warning .elementor-button + .sd-button,
+.elementor-element.elementor-button-warning .modal-footer .btn-group #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-warning .modal-footer .btn-group .elementor-button + .sd-button,
+.modal-footer .btn-group .elementor-element.elementor-button-danger #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .modal-footer .btn-group .elementor-element.elementor-button-danger .elementor-button + .sd-button,
+.elementor-element.elementor-button-danger .modal-footer .btn-group #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-danger .modal-footer .btn-group .elementor-button + .sd-button,
+.modal-footer .btn-group .elementor-element.elementor-button-info #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .modal-footer .btn-group .elementor-element.elementor-button-info .elementor-button + .sd-button,
+.elementor-element.elementor-button-info .modal-footer .btn-group #content .sharedaddy .elementor-button + .sd-button,
+#content .sharedaddy .elementor-element.elementor-button-info .modal-footer .btn-group .elementor-button + .sd-button, .modal-footer .btn-group .elementor-widget-button .btn + .elementor-button, .elementor-widget-button .modal-footer .btn-group .btn + .elementor-button, .modal-footer .btn-group #content .sharedaddy .elementor-widget-button .sd-button + .elementor-button, .elementor-widget-button .modal-footer .btn-group #content .sharedaddy .sd-button + .elementor-button, #content .sharedaddy .modal-footer .btn-group .elementor-widget-button .sd-button + .elementor-button, .elementor-widget-button #content .sharedaddy .modal-footer .btn-group .sd-button + .elementor-button, .modal-footer .btn-group .elementor-widget-button .elementor-button + .elementor-button, .elementor-widget-button .modal-footer .btn-group .elementor-button + .elementor-button, .modal-footer .btn-group .elementor-element.elementor-button-success .btn + .elementor-button, .elementor-element.elementor-button-success .modal-footer .btn-group .btn + .elementor-button, .modal-footer .btn-group #content .sharedaddy .elementor-element.elementor-button-success .sd-button + .elementor-button, .elementor-element.elementor-button-success .modal-footer .btn-group #content .sharedaddy .sd-button + .elementor-button, #content .sharedaddy .modal-footer .btn-group .elementor-element.elementor-button-success .sd-button + .elementor-button, .elementor-element.elementor-button-success #content .sharedaddy .modal-footer .btn-group .sd-button + .elementor-button, .modal-footer .btn-group .elementor-element.elementor-button-success .elementor-button + .elementor-button, .elementor-element.elementor-button-success .modal-footer .btn-group .elementor-button + .elementor-button,
+.modal-footer .btn-group .elementor-element.elementor-button-warning .btn + .elementor-button,
+.elementor-element.elementor-button-warning .modal-footer .btn-group .btn + .elementor-button,
+.modal-footer .btn-group #content .sharedaddy .elementor-element.elementor-button-warning .sd-button + .elementor-button,
+.elementor-element.elementor-button-warning .modal-footer .btn-group #content .sharedaddy .sd-button + .elementor-button,
+#content .sharedaddy .modal-footer .btn-group .elementor-element.elementor-button-warning .sd-button + .elementor-button,
+.elementor-element.elementor-button-warning #content .sharedaddy .modal-footer .btn-group .sd-button + .elementor-button,
+.modal-footer .btn-group .elementor-element.elementor-button-warning .elementor-button + .elementor-button,
+.elementor-element.elementor-button-warning .modal-footer .btn-group .elementor-button + .elementor-button,
+.modal-footer .btn-group .elementor-element.elementor-button-danger .btn + .elementor-button,
+.elementor-element.elementor-button-danger .modal-footer .btn-group .btn + .elementor-button,
+.modal-footer .btn-group #content .sharedaddy .elementor-element.elementor-button-danger .sd-button + .elementor-button,
+.elementor-element.elementor-button-danger .modal-footer .btn-group #content .sharedaddy .sd-button + .elementor-button,
+#content .sharedaddy .modal-footer .btn-group .elementor-element.elementor-button-danger .sd-button + .elementor-button,
+.elementor-element.elementor-button-danger #content .sharedaddy .modal-footer .btn-group .sd-button + .elementor-button,
+.modal-footer .btn-group .elementor-element.elementor-button-danger .elementor-button + .elementor-button,
+.elementor-element.elementor-button-danger .modal-footer .btn-group .elementor-button + .elementor-button,
+.modal-footer .btn-group .elementor-element.elementor-button-info .btn + .elementor-button,
+.elementor-element.elementor-button-info .modal-footer .btn-group .btn + .elementor-button,
+.modal-footer .btn-group #content .sharedaddy .elementor-element.elementor-button-info .sd-button + .elementor-button,
+.elementor-element.elementor-button-info .modal-footer .btn-group #content .sharedaddy .sd-button + .elementor-button,
+#content .sharedaddy .modal-footer .btn-group .elementor-element.elementor-button-info .sd-button + .elementor-button,
+.elementor-element.elementor-button-info #content .sharedaddy .modal-footer .btn-group .sd-button + .elementor-button,
+.modal-footer .btn-group .elementor-element.elementor-button-info .elementor-button + .elementor-button,
+.elementor-element.elementor-button-info .modal-footer .btn-group .elementor-button + .elementor-button {
   margin-left: -1px;
 }
 .modal-footer .btn-block + .btn-block {
@@ -7067,7 +7765,13 @@ button.close {
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
-.carousel-caption .btn, .carousel-caption #content .sharedaddy .sd-button, #content .sharedaddy .carousel-caption .sd-button {
+.carousel-caption .btn, .carousel-caption #content .sharedaddy .sd-button, #content .sharedaddy .carousel-caption .sd-button, .carousel-caption .elementor-widget-button .elementor-button, .elementor-widget-button .carousel-caption .elementor-button, .carousel-caption .elementor-element.elementor-button-success .elementor-button, .elementor-element.elementor-button-success .carousel-caption .elementor-button,
+.carousel-caption .elementor-element.elementor-button-warning .elementor-button,
+.elementor-element.elementor-button-warning .carousel-caption .elementor-button,
+.carousel-caption .elementor-element.elementor-button-danger .elementor-button,
+.elementor-element.elementor-button-danger .carousel-caption .elementor-button,
+.carousel-caption .elementor-element.elementor-button-info .elementor-button,
+.elementor-element.elementor-button-info .carousel-caption .elementor-button {
   text-shadow: none;
 }
 
@@ -7513,7 +8217,13 @@ iframe {
   vertical-align: top;
 }
 
-.bootstrap-select .btn:focus, .bootstrap-select #content .sharedaddy .sd-button:focus, #content .sharedaddy .bootstrap-select .sd-button:focus {
+.bootstrap-select .btn:focus, .bootstrap-select #content .sharedaddy .sd-button:focus, #content .sharedaddy .bootstrap-select .sd-button:focus, .bootstrap-select .elementor-widget-button .elementor-button:focus, .elementor-widget-button .bootstrap-select .elementor-button:focus, .bootstrap-select .elementor-element.elementor-button-success .elementor-button:focus, .elementor-element.elementor-button-success .bootstrap-select .elementor-button:focus,
+.bootstrap-select .elementor-element.elementor-button-warning .elementor-button:focus,
+.elementor-element.elementor-button-warning .bootstrap-select .elementor-button:focus,
+.bootstrap-select .elementor-element.elementor-button-danger .elementor-button:focus,
+.elementor-element.elementor-button-danger .bootstrap-select .elementor-button:focus,
+.bootstrap-select .elementor-element.elementor-button-info .elementor-button:focus,
+.elementor-element.elementor-button-info .bootstrap-select .elementor-button:focus {
   outline: 0 !important;
 }
 
@@ -8724,7 +9434,13 @@ ul.products li.product a {
 .woocommerce-message:after {
   clear: both;
 }
-.woocommerce-message .button, .woocommerce-message .btn, .woocommerce-message #content .sharedaddy .sd-button, #content .sharedaddy .woocommerce-message .sd-button {
+.woocommerce-message .button, .woocommerce-message .btn, .woocommerce-message #content .sharedaddy .sd-button, #content .sharedaddy .woocommerce-message .sd-button, .woocommerce-message .elementor-widget-button .elementor-button, .elementor-widget-button .woocommerce-message .elementor-button, .woocommerce-message .elementor-element.elementor-button-success .elementor-button, .elementor-element.elementor-button-success .woocommerce-message .elementor-button,
+.woocommerce-message .elementor-element.elementor-button-warning .elementor-button,
+.elementor-element.elementor-button-warning .woocommerce-message .elementor-button,
+.woocommerce-message .elementor-element.elementor-button-danger .elementor-button,
+.elementor-element.elementor-button-danger .woocommerce-message .elementor-button,
+.woocommerce-message .elementor-element.elementor-button-info .elementor-button,
+.elementor-element.elementor-button-info .woocommerce-message .elementor-button {
   float: right;
 }
 
@@ -8993,14 +9709,44 @@ ul.products li.product a {
 .stormbringer-handheld-footer-bar ul li.search .site-search .btn,
 .stormbringer-handheld-footer-bar ul li.search .site-search #content .sharedaddy .sd-button,
 #content .sharedaddy .stormbringer-handheld-footer-bar ul li.search .site-search .sd-button,
+.stormbringer-handheld-footer-bar ul li.search .site-search .elementor-widget-button .elementor-button,
+.elementor-widget-button .stormbringer-handheld-footer-bar ul li.search .site-search .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search .site-search .elementor-element.elementor-button-success .elementor-button,
+.elementor-element.elementor-button-success .stormbringer-handheld-footer-bar ul li.search .site-search .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search .site-search .elementor-element.elementor-button-warning .elementor-button,
+.elementor-element.elementor-button-warning .stormbringer-handheld-footer-bar ul li.search .site-search .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search .site-search .elementor-element.elementor-button-danger .elementor-button,
+.elementor-element.elementor-button-danger .stormbringer-handheld-footer-bar ul li.search .site-search .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search .site-search .elementor-element.elementor-button-info .elementor-button,
+.elementor-element.elementor-button-info .stormbringer-handheld-footer-bar ul li.search .site-search .elementor-button,
 .stormbringer-handheld-footer-bar ul li.search .widget [type=submit],
 .stormbringer-handheld-footer-bar ul li.search .widget .btn,
 .stormbringer-handheld-footer-bar ul li.search .widget #content .sharedaddy .sd-button,
 #content .sharedaddy .stormbringer-handheld-footer-bar ul li.search .widget .sd-button,
+.stormbringer-handheld-footer-bar ul li.search .widget .elementor-widget-button .elementor-button,
+.elementor-widget-button .stormbringer-handheld-footer-bar ul li.search .widget .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search .widget .elementor-element.elementor-button-success .elementor-button,
+.elementor-element.elementor-button-success .stormbringer-handheld-footer-bar ul li.search .widget .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search .widget .elementor-element.elementor-button-warning .elementor-button,
+.elementor-element.elementor-button-warning .stormbringer-handheld-footer-bar ul li.search .widget .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search .widget .elementor-element.elementor-button-danger .elementor-button,
+.elementor-element.elementor-button-danger .stormbringer-handheld-footer-bar ul li.search .widget .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search .widget .elementor-element.elementor-button-info .elementor-button,
+.elementor-element.elementor-button-info .stormbringer-handheld-footer-bar ul li.search .widget .elementor-button,
 .stormbringer-handheld-footer-bar ul li.search form [type=submit],
 .stormbringer-handheld-footer-bar ul li.search form .btn,
 .stormbringer-handheld-footer-bar ul li.search form #content .sharedaddy .sd-button,
-#content .sharedaddy .stormbringer-handheld-footer-bar ul li.search form .sd-button {
+#content .sharedaddy .stormbringer-handheld-footer-bar ul li.search form .sd-button,
+.stormbringer-handheld-footer-bar ul li.search form .elementor-widget-button .elementor-button,
+.elementor-widget-button .stormbringer-handheld-footer-bar ul li.search form .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search form .elementor-element.elementor-button-success .elementor-button,
+.elementor-element.elementor-button-success .stormbringer-handheld-footer-bar ul li.search form .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search form .elementor-element.elementor-button-warning .elementor-button,
+.elementor-element.elementor-button-warning .stormbringer-handheld-footer-bar ul li.search form .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search form .elementor-element.elementor-button-danger .elementor-button,
+.elementor-element.elementor-button-danger .stormbringer-handheld-footer-bar ul li.search form .elementor-button,
+.stormbringer-handheld-footer-bar ul li.search form .elementor-element.elementor-button-info .elementor-button,
+.elementor-element.elementor-button-info .stormbringer-handheld-footer-bar ul li.search form .elementor-button {
   display: none;
 }
 .stormbringer-handheld-footer-bar ul li.cart .badge {

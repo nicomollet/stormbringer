@@ -1,12 +1,20 @@
 /*
 Theme Name: StormBringer
-Theme URI: http://www.nicolasmollet.com
+Theme URI: https://github.com/nicomollet/stormbringer
 Github Theme URI: https://github.com/nicomollet/stormbringer
 Description: A simple responsive theme based on twitter's bootstrap framework. 
 Version: 0.2.8
 Author: Nicolas Mollet
 Author URI: http://www.nicolasmollet.com
-Tags: twitter-bootstrap, cdnjs
+Text Domain: stormbringer
+Tags: translation-ready, full-width-template, custom-menu, grid-layout
 License: GNU General Public License v2.0 & Apache License 2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/licenses/LICENSE-2.0
 */
+
+
+/* Theme check compatibility */
+.wp-caption-text{}
+.gallery-caption{}
+.bypostauthor{}
+.sticky{}

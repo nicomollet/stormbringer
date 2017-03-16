@@ -187,7 +187,7 @@ function wc_form_field_args($args, $key, $value = null)
  *
  * @return mixed
  */
-function strombringer_woocommerce_order_button_html($button)
+function stormbringer_woocommerce_order_button_html($button)
 {
 
     $button = str_replace('button', 'button btn btn-block btn-lg btn-primary', $button);
@@ -195,7 +195,7 @@ function strombringer_woocommerce_order_button_html($button)
     return $button;
 }
 
-//add_filter('woocommerce_order_button_html', 'strombringer_woocommerce_order_button_html');
+//add_filter('woocommerce_order_button_html', 'stormbringer_woocommerce_order_button_html');
 
 /**
  * Woocommerce: Account filter account menu item classes

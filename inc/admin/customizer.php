@@ -105,7 +105,7 @@ function stormbringer_customize_register( $wp_customize ) {
 
 	// Libraries ****************************
 	$wp_customize->add_section( 'libraries', array(
-		'title'    => __( 'External Libraries' ),
+		'title'    => __( 'External Libraries', 'stormbringer' ),
 		'priority' => 10,
 	) );
 
@@ -152,7 +152,7 @@ function stormbringer_customize_register( $wp_customize ) {
 		'lang',
 		array(
 			'section'		=> 'title_tagline',
-			'label'			=> __( 'Site Language' ),
+			'label'			=> __( 'Site Language', 'stormbringer' ),
 			'type'			=> 'text'
 		)
 	);

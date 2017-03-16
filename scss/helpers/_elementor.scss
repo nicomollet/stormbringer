@@ -1,0 +1,13 @@
+.elementor-widget-button .elementor-button{
+  @extend .btn;
+  @extend .btn-default;
+}
+
+.elementor-element.elementor-button-success .elementor-button,
+.elementor-element.elementor-button-warning .elementor-button,
+.elementor-element.elementor-button-danger .elementor-button,
+.elementor-element.elementor-button-info .elementor-button
+{
+  @extend .btn;
+  @extend .btn-primary;
+}
