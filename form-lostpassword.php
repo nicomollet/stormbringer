@@ -21,7 +21,7 @@
   </div>
 
   <?php
-  do_action('lostpassword_form'); // Wordpress hook
+  do_action('lostpassword_form'); // WordPress hook
   do_action_ref_array('tml_lostpassword_form', array(&$template)); // TML hook
   ?>
 	<div class="form-group">

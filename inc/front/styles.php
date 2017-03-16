@@ -13,8 +13,8 @@ function stormbringer_preprocessor() {
 
 			}
 			else {
-				$to_cache              = array( STYLESHEETPATH . '/less/application.less' => '' );
-				Less_Cache::$cache_dir = STYLESHEETPATH . '/css/';
+				$to_cache              = array( get_stylesheet_directory() . '/less/application.less' => '' );
+				Less_Cache::$cache_dir = get_stylesheet_directory() . '/css/';
 				$css_file_name         = Less_Cache::Get( $to_cache );
 				wp_register_style( 'theme',  get_stylesheet_directory_uri() . '/'.$cssfile, array(), null, null );
 				wp_enqueue_style( 'theme' );
@@ -45,7 +45,7 @@ function stormbringer_preprocessor() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'stormbringer_preprocessor', 100);
+add_action( 'wp_enqueue_scripts', 'stormbringer_preprocessor');
 
 
 function stormbringer_livereload(){
@@ -71,7 +71,7 @@ function stormbringer_livereload(){
 		if ( ! is_admin() ) {
 			if ( current_user_can( 'administrator' ) || $_GET['scsscompile'] == '1' ) {
 				if ( defined( 'LIVERELOAD' ) && LIVERELOAD == true ) {
-					$livereloadurl = get_bloginfo( 'url' ) . ':35729';
+					$livereloadurl = home_url() . ':35729';
 					if ( defined( 'LIVERELOAD_URL' ) ) {
 						$livereloadurl = LIVERELOAD_URL;
 					}
@@ -126,4 +126,4 @@ function stormbringer_css() {
 	}
 
 }
-add_action( 'wp_enqueue_scripts', 'stormbringer_css' );
+add_action( 'wp_enqueue_scripts', 'stormbringer_css', 99999 );

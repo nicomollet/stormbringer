@@ -118,8 +118,8 @@ function stormbringer_customize_register( $wp_customize ) {
 				'libraries_'.$librarie_name.'',
 				array(
 					'default'		=> '1',
-					//'transport'		=> 'postMessage',
-					//'sanitize_callback' => 'sanitize_text_field'
+					'transport'		=> 'refresh',
+					'sanitize_callback' => 'absint'
 				)
 			);
 			$wp_customize->add_control(
@@ -242,8 +242,8 @@ function stormbringer_customize_register( $wp_customize ) {
         'cuztom',
         array(
             'default'		=> 0,
-            //'transport'		=> 'postMessage',
-            //'sanitize_callback' => 'sanitize_text_field'
+            'transport'		=> 'postMessage',
+            'sanitize_callback' => 'absint'
         )
     );
     $wp_customize->add_control(
@@ -264,7 +264,12 @@ function stormbringer_customize_register( $wp_customize ) {
 	) );
 
 	// Preprocessor
-	$wp_customize->add_setting('bootstrap_preprocessor', ['default' => 'scss']);
+	$wp_customize->add_setting('bootstrap_preprocessor', [
+		'default' => 'scss',
+		'transport'		=> 'postMessage',
+		'sanitize_callback' => 'absint'
+		]
+	);
 	$wp_customize->add_control('bootstrap_preprocessor', array(
 		'label'      => __('Preprocessor', 'stormbringer'),
 		'section'    => 'bootstrap',

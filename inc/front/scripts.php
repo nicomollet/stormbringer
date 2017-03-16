@@ -49,68 +49,93 @@ if ( ! is_admin() )
  */
 function stormbringer_js_libraries_footer() {
 
-	if(current_theme_supports('libraries')) {
+	if ( current_theme_supports( 'libraries' ) ) {
 
-		$lang = get_theme_mod( 'lang');
-		
-        // Polylang language
-        if(function_exists('pll_current_language')):
-            $lang = pll_current_language();
-        endif;
+		$lang = get_theme_mod( 'lang' );
+
+		// Polylang language
+		if ( function_exists( 'pll_current_language' ) ):
+			$lang = pll_current_language();
+		endif;
 
 
-        $libraries = get_theme_support('libraries')[0];
+		$libraries = get_theme_support( 'libraries' )[0];
 
-		if(@$libraries['bootstrap'] && get_theme_mod('libraries_bootstrap', true)){
-			wp_enqueue_script( 'bootstrap', '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/'.$libraries['bootstrap'].'/js/bootstrap.min.js', array('jquery'), null, true );
+		if ( @$libraries['bootstrap'] && get_theme_mod( 'libraries_bootstrap', true ) ) {
+			wp_enqueue_script( 'bootstrap', '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/' . $libraries['bootstrap'] . '/js/bootstrap.min.js',
+				array( 'jquery' ), null, true );
 		}
 
 		// Optionnal libraries
-		if(@$libraries['jquery-cycle'] && get_theme_mod('libraries_jquery-cycle', true)){
-			wp_enqueue_script('jquery-cycle','//cdnjs.cloudflare.com/ajax/libs/jquery.cycle/'.$libraries['jquery-cycle'].'/jquery.cycle.all.min.js', array('jquery'), null, true);
+		if ( @$libraries['jquery-cycle'] && get_theme_mod( 'libraries_jquery-cycle', true ) ) {
+			wp_enqueue_script( 'jquery-cycle',
+				'//cdnjs.cloudflare.com/ajax/libs/jquery.cycle/' . $libraries['jquery-cycle'] . '/jquery.cycle.all.min.js', array( 'jquery' ), null,
+				true );
 		}
 
-		if(@$libraries['jquery-easing'] && get_theme_mod('libraries_jquery-easing', true)){
-			wp_enqueue_script('jquery-easing','//cdnjs.cloudflare.com/ajax/libs/jquery-easing/'.$libraries['jquery-easing'].'/jquery.easing.min.js', array('jquery'), null, true);
+		if ( @$libraries['jquery-easing'] && get_theme_mod( 'libraries_jquery-easing', true ) ) {
+			wp_enqueue_script( 'jquery-easing',
+				'//cdnjs.cloudflare.com/ajax/libs/jquery-easing/' . $libraries['jquery-easing'] . '/jquery.easing.min.js', array( 'jquery' ), null,
+				true );
 		}
 
-		if(@$libraries['jquery-mousewheel'] && get_theme_mod('libraries_jquery-mousewheel', true) ){
-			wp_enqueue_script('jquery-mousewheel','//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/'.$libraries['jquery-mousewheel'].'/jquery.mousewheel.min.js', array('jquery'), null, true);
+		if ( @$libraries['jquery-mousewheel'] && get_theme_mod( 'libraries_jquery-mousewheel', true ) ) {
+			wp_enqueue_script( 'jquery-mousewheel',
+				'//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/' . $libraries['jquery-mousewheel'] . '/jquery.mousewheel.min.js',
+				array( 'jquery' ), null, true );
 		}
 
-		if ( @$libraries['jquery-validate'] && get_theme_mod( 'libraries_jquery-validate' , true) ) {
-			wp_enqueue_script('jquery-validate','//cdnjs.cloudflare.com/ajax/libs/jquery-validate/'.$libraries['jquery-validate'].'/jquery.validate.min.js', array('jquery'), null, true);
+		if ( @$libraries['jquery-validate'] && get_theme_mod( 'libraries_jquery-validate', true ) ) {
+			wp_enqueue_script( 'jquery-validate',
+				'//cdnjs.cloudflare.com/ajax/libs/jquery-validate/' . $libraries['jquery-validate'] . '/jquery.validate.min.js', array( 'jquery' ),
+				null, true );
 		}
 
 		if ( @$libraries['jquery-cookie'] && get_theme_mod( 'libraries_jquery-cookie', true ) ) {
-			wp_enqueue_script('jquery-cookie','//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/'.$libraries['jquery-cookie'].'/jquery.cookie.min.js', array('jquery'), null, true);
+			wp_enqueue_script( 'jquery-cookie',
+				'//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/' . $libraries['jquery-cookie'] . '/jquery.cookie.min.js', array( 'jquery' ), null,
+				true );
 		}
 
 		if ( @$libraries['jquery-lazyload'] && get_theme_mod( 'libraries_jquery-lazyload', true ) ) {
-			wp_enqueue_script('jquery-lazyload','//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/'.$libraries['jquery-lazyload'].'/jquery.lazyload.min.js', array('jquery'), null, true);
+			wp_enqueue_script( 'jquery-lazyload',
+				'//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/' . $libraries['jquery-lazyload'] . '/jquery.lazyload.min.js', array( 'jquery' ),
+				null, true );
 		}
 
 		if ( @$libraries['jquery-waypoints'] && get_theme_mod( 'libraries_jquery-waypoints', true ) ) {
-			wp_enqueue_script('jquery-waypoints','//cdnjs.cloudflare.com/ajax/libs/waypoints/'.$libraries['jquery-waypoints'].'/jquery.waypoints.min.js', array('jquery'), null, true);
+			wp_enqueue_script( 'jquery-waypoints',
+				'//cdnjs.cloudflare.com/ajax/libs/waypoints/' . $libraries['jquery-waypoints'] . '/jquery.waypoints.min.js', array( 'jquery' ), null,
+				true );
 		}
 
 		if ( @$libraries['jquery-touchswipe'] && get_theme_mod( 'libraries_jquery-touchswipe', true ) ) {
-			wp_enqueue_script('jquery-touchswipe','//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/'.$libraries['jquery-touchswipe'].'/jquery.touchSwipe.min.js', array('jquery'), null, true);
+			wp_enqueue_script( 'jquery-touchswipe',
+				'//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/' . $libraries['jquery-touchswipe'] . '/jquery.touchSwipe.min.js',
+				array( 'jquery' ), null, true );
 		}
 
 		if ( @$libraries['jquery-owlcarousel'] && get_theme_mod( 'libraries_jquery-owlcarousel', true ) ) {
-			wp_enqueue_script( 'jquery-owlcarousel', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/' . $libraries['jquery-owlcarousel'] . '/owl.carousel.min.js', array( 'jquery' ), null, true );
+			wp_enqueue_script( 'jquery-owlcarousel',
+				'//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/' . $libraries['jquery-owlcarousel'] . '/owl.carousel.min.js', array( 'jquery' ), null,
+				true );
 		}
 
-		if(@$libraries['bootstrap-select'] && get_theme_mod('libraries_bootstrap-select', true)){
-			wp_enqueue_script( 'bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/'.$libraries['bootstrap-select'].'/js/bootstrap-select.min.js', array('jquery', 'bootstrap' ), null, true );
+		if ( @$libraries['bootstrap-select'] && get_theme_mod( 'libraries_bootstrap-select', true ) ) {
+			wp_enqueue_script( 'bootstrap-select',
+				'//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/' . $libraries['bootstrap-select'] . '/js/bootstrap-select.min.js',
+				array( 'jquery', 'bootstrap' ), null, true );
 		}
 
-		if(@$libraries['bootstrap-datepicker'] && get_theme_mod('libraries_bootstrap-datepicker', true) ){
+		if ( @$libraries['bootstrap-datepicker'] && get_theme_mod( 'libraries_bootstrap-datepicker', true ) ) {
 
-			wp_enqueue_script( 'bootstrap-datepicker', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/js/bootstrap-datepicker.min.js', array('jquery', 'bootstrap' ), null, true );
-			if($lang != '' && $lang != 'en') {
-				wp_enqueue_script( 'bootstrap-datepicker-'.$lang, '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/'.$libraries['bootstrap-datepicker'].'/locales/bootstrap-datepicker.'.$lang.'.min.js', array( 'jquery', 'bootstrap', 'bootstrap-datepicker' ), null, true );
+			wp_enqueue_script( 'bootstrap-datepicker',
+				'//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/' . $libraries['bootstrap-datepicker'] . '/js/bootstrap-datepicker.min.js',
+				array( 'jquery', 'bootstrap' ), null, true );
+			if ( $lang != '' && $lang != 'en' ) {
+				wp_enqueue_script( 'bootstrap-datepicker-' . $lang,
+					'//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/' . $libraries['bootstrap-datepicker'] . '/locales/bootstrap-datepicker.'
+					. $lang . '.min.js', array( 'jquery', 'bootstrap', 'bootstrap-datepicker' ), null, true );
 			}
 		}
 
@@ -187,12 +212,12 @@ function stormbringer_config() {
     $stormbringer_config = [
         'AJAXURL'              => admin_url( 'admin-ajax.php' ),
         'THEME_LANG'           => get_bloginfo( 'language' ),
-        'STYLESHEET_DIRECTORY' => get_bloginfo( 'stylesheet_directory' ),
-        'WPURL'                => get_bloginfo( 'wpurl' ),
-        'URL'                  => get_bloginfo( 'url' ),
+        'STYLESHEET_DIRECTORY' => get_stylesheet_directory_uri(),
+        'WPURL'                => site_url(),
+        'URL'                  => home_url(),
         'LANGUAGE'             => $language,
         'STYLESHEET_URL'       => get_bloginfo( 'stylesheet_url' ),
-        'TEMPLATE_URL'         => get_bloginfo( 'template_url' ),
+        'TEMPLATE_URL'         => get_template_directory_uri(),
         'ENV'                  => current_user_can( 'administrator' ) ? 'development' : 'production',
     ];
     echo 'var stormbringer_config = ' . json_encode( $stormbringer_config, JSON_PRETTY_PRINT ) . ";\n";

@@ -12,7 +12,7 @@
       <?php dynamic_sidebar('sidebar_main'); ?>
     <?php else : ?>
     <div class="alert alert-warning fade in">
-      <a class="close" data-dismiss="alert">×</a>
+      <a class="close" data-dismiss="alert">&times;</a>
       <p><?php _e('Enable widgets in Sidebar', 'stormbringer'); ?></p>
     </div>
     <?php endif; ?>

@@ -31,7 +31,7 @@
   </div>
 
   <?php
-  do_action('resetpassword_form'); // Wordpress hook
+  do_action('resetpassword_form'); // WordPress hook
   do_action_ref_array('tml_resetpassword_form', array($template)); // TML hook
   ?>
   <div class="form-actions">

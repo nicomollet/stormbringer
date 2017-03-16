@@ -177,8 +177,8 @@ function stormbringer_tml_template( $useTemplate, $templates ) {
 		if($template=='profile-form.php')$template='form-profile.php';
 		if($template=='lostpassword-form.php')$template='form-lostpassword.php';
 		if($template=='resetpass-form.php')$template='form-resetpass.php';
-		if (file_exists(  TEMPLATEPATH . '/' . $template )) {
-			$useTemplate =  TEMPLATEPATH . '/' . $template  ;
+		if (file_exists(  get_template_directory() . '/' . $template )) {
+			$useTemplate =  get_template_directory() . '/' . $template  ;
 			break;
 		}
 	}

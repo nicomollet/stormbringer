@@ -35,6 +35,15 @@ function stormbringer_meta() {
  */
 function stormbringer_support() {
 
+	// Declare support for title theme feature.
+	add_theme_support( 'title-tag' );
+
+	// Add default posts and comments RSS feed links to head
+	add_theme_support( 'automatic-feed-links' );
+
+	// Enable support for Post Thumbnails
+	add_theme_support( 'post-thumbnails' );
+
 	locate_template( 'inc/front/thumbnails.php', true );       // Thumbnails for Bootstrap
 	locate_template( 'inc/admin/customizer.php', true );       // Customizer
 

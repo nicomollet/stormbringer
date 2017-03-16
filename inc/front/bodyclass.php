@@ -19,7 +19,7 @@ function stormbringer_body_class( $classes = '' ) {
     global $current_user;
 
     $classes[] = 'wordpress';
-    $classes[] = 'dir-'.get_bloginfo( 'text_direction' );
+    $classes[] = 'dir-'.(is_rtl()?'rtl':'notrtl');
     $classes[] = 'locale-'.get_locale();
     $classes[] = ( is_child_theme() ? 'child-theme' : 'parent-theme' );
 

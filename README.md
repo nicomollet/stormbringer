@@ -8,7 +8,7 @@ It includes many functions from:
 * Bones (https://github.com/eddiemachado/bones)
 * Alien Ship (https://github.com/mindctrl/alienship)
 * Roots (https://github.com/retlehs/roots)
-* Wordpress Bootstrap (https://github.com/320press/wordpress-bootstrap)
+* WordpPress Bootstrap (https://github.com/320press/wordpress-bootstrap)
 
 Features
 -----------

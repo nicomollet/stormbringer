@@ -10,7 +10,7 @@ function stormbringer_gform_validation_message($message, $form)
 {
   $oldmessage = strip_tags($message);
   $message = '<div class="alert alert-error fade in">';
-  $message .= '<a class="close" data-dismiss="alert">×</a>';
+  $message .= '<a class="close" data-dismiss="alert">&times;</a>';
   $message .= '<strong>' . $oldmessage . '</strong>';
   $message .= '</div>';
   return $message;

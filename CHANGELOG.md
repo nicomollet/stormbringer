@@ -38,7 +38,7 @@
 * Fix gallery shortcode compatibility with jetpack tiled gallery
 * Gravity Forms: remove obsolete scss
 * Gravity Forms: ajax forms javascript non-render blocking
-* Use new wordpress functions: the_archive_title, the_archive_description, the_posts_pagination
+* Use new WordPress functions: the_archive_title, the_archive_description, the_posts_pagination
 * Fix <time> in ISO 8601 format 
 * Remove custom breadcrumb function in favor of Yoast SEO breadcrumb function
 

@@ -28,7 +28,7 @@
   </div>
 
   <?php
-  do_action('register_form'); // Wordpress hook
+  do_action('register_form'); // WordPress hook
   do_action_ref_array('tml_register_form', array(&$template)); //TML hook
   ?>
 

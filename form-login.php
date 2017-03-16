@@ -46,7 +46,7 @@
   </div>
 
   <?php
-  do_action('login_form'); // Wordpress hook
+  do_action('login_form'); // WordPress hook
   do_action_ref_array('tml_login_form', array(&$template)); // TML hook
   ?>
 
