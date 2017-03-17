@@ -1,8 +1,7 @@
-### HEAD
-* WooCommerce compatibility
+### 0.2.9: March 17th, 2017
+* Theme check
 
-
-### 0.2.8: 
+### 0.2.8: February 15th, 2017
 * Woocommerce compatibility (new attempt)
 
 ### 0.2.7: January 19th, 2017
