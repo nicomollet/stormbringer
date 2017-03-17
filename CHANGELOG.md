@@ -1,3 +1,6 @@
+### 0.3.0: March 17th, 2017
+* Elementor compatibilty: buttons
+
 ### 0.2.9: March 17th, 2017
 * Theme check
 
