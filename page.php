@@ -22,6 +22,13 @@
 			get_template_part( 'content', 'page' );
 			?>
 
+			<?php
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+				'after'  => '</div>',
+			) );
+			?>
+
 		<?php endif; ?>
 
 	</div>
