@@ -1,3 +1,7 @@
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
+  @extend .btn;
+  @extend .btn-default;
+}
 
 .navbar-shoppingcart {
   list-style-type: none;
@@ -107,6 +111,9 @@
       a{
         display: block;
       }
+
+
+      
       a.remove{
         position: relative;
         float: left;
@@ -186,7 +193,7 @@ ul.products{
 }
 
 // Product single
-.single-product{
+.single-product, .singular-product{
 
   .wc-tabs-wrapper, .related, .upsells{
     margin-top: ($line-height-computed);
@@ -775,51 +782,53 @@ ul.products{
   }
 }
 
-table.shop_table_responsive {
-  thead {
-    display: none;
-  }
-
-  tbody {
-    tr:first-child {
-      td:first-child {
-        border-top: 0;
-      }
-    }
-
-    th {
+@media (max-width: $screen-sm-min) {
+  table.shop_table_responsive {
+    thead {
       display: none;
     }
-  }
 
-  tr {
-    display: block;
-
-    td {
-      display: block;
-      text-align: right !important; // Important to overwrite order status inline styling
-
-      &.order-actions {
-        text-align: left !important;
-      }
-
-      &:before {
-        content: attr(data-title) ': ';
-        font-weight: 700;
-        float: left;
-      }
-
-      &.product-remove,
-      &.actions {
-        &:before {
-          display: none;
+    tbody {
+      tr:first-child {
+        td:first-child {
+          border-top: 0;
         }
+      }
+
+      th {
+        display: none;
       }
     }
 
-    &:nth-child(2n) {
+    tr {
+      display: block;
+
       td {
-        background-color: rgba(0,0,0,0.025);
+        display: block;
+        text-align: right !important; // Important to overwrite order status inline styling
+
+        &.order-actions {
+          text-align: left !important;
+        }
+
+        &:before {
+          content: attr(data-title) ': ';
+          font-weight: 700;
+          float: left;
+        }
+
+        &.product-remove,
+        &.actions {
+          &:before {
+            display: none;
+          }
+        }
+      }
+
+      &:nth-child(2n) {
+        td {
+          background-color: rgba(0,0,0,0.025);
+        }
       }
     }
   }

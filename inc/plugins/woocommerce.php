@@ -65,7 +65,6 @@ add_filter('loop_shop_columns', 'stormbringer_loop_columns', 1, 10);
  */
 function wsis_woocommerce_remove_item($wsis_html, $cart_item_key)
 {
-    $cart_item_key = $cart_item_key;
     $button        = __('Remove this item', 'woocommerce');
     $button        = '<span class="glyphicon glyphicon-remove"></span>';
     $wsis_html     = sprintf(
@@ -356,3 +355,4 @@ function stormbringer_get_product_search_form($ob_get_clean)
 
 ;
 add_filter('get_product_search_form', 'stormbringer_get_product_search_form', 10, 1);
+

@@ -45,7 +45,7 @@ function stormbringer_preprocessor() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'stormbringer_preprocessor');
+add_action( 'wp_enqueue_scripts', 'stormbringer_preprocessor', 100);
 
 
 function stormbringer_livereload(){
@@ -126,4 +126,4 @@ function stormbringer_css() {
 	}
 
 }
-add_action( 'wp_enqueue_scripts', 'stormbringer_css', 99999 );
+add_action( 'wp_enqueue_scripts', 'stormbringer_css' );

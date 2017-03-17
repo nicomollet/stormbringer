@@ -1,6 +1,15 @@
-.elementor-widget-button .elementor-button{
+.elementor-button{
   @extend .btn;
   @extend .btn-default;
+
+  transition: none;
+  &:visited, .elementor-button-text{
+    color:inherit;
+    opacity: inherit;
+  }
+  &:hover{
+    opacity: inherit;
+  }
 }
 
 .elementor-element.elementor-button-success .elementor-button,
@@ -10,4 +19,24 @@
 {
   @extend .btn;
   @extend .btn-primary;
+}
+
+.elementor-element .elementor-button.elementor-size-xs{
+  @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+}
+
+.elementor-element .elementor-button.elementor-size-sm{
+  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
+}
+
+.elementor-element .elementor-button.elementor-size-md{
+  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
+}
+
+.elementor-element .elementor-button.elementor-size-lg{
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large);
+}
+
+.elementor-element .elementor-button.elementor-size-xl{
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large);
 }

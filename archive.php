@@ -40,10 +40,10 @@
 						'xs' => 12,
 						'sm' => 6,
 						'md' => 4,
-						'lg' => 3
+						'lg' => 4
 					] ) ?>
 
-					<div class="col-sm-6 col-md-4 col-lg-3">
+					<div class="col-sm-6 col-md-4">
 						<?php
 						$type = get_post_type();
 						get_template_part( 'content', $type );
