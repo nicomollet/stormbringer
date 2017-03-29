@@ -40,9 +40,11 @@ function stormbringer_jquery_footer () {
 	$wp_scripts->add_data( 'jquery', 'group', 1 );
 	$wp_scripts->add_data( 'jquery-core', 'group', 1 );
 	$wp_scripts->add_data( 'jquery-migrate', 'group', 1 );
+	//$wp_scripts->add_data( 'wp-embed', 'group', 1 );
 }
-if ( ! is_admin() )
+if ( ! is_admin() ){
 	add_action ( 'wp_head', 'stormbringer_jquery_footer' ,  1 , 0 );
+}
 
 /**
  * Enqueue libraries scripts in the footer

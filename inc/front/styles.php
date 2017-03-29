@@ -75,7 +75,7 @@ function stormbringer_livereload(){
 					if ( defined( 'LIVERELOAD_URL' ) ) {
 						$livereloadurl = LIVERELOAD_URL;
 					}
-					echo '<script src="' . $livereloadurl . '/livereload.js"></script>' . "\n";
+					echo '<script src="' . $livereloadurl . '/livereload.js" data-minify="1"></script>' . "\n";
 
 				}
 			}
