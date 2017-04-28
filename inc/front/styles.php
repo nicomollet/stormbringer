@@ -26,7 +26,7 @@ function stormbringer_preprocessor() {
 	if ( $preprocessor === 'scss' || $preprocessor == 1) {
 
 		if ( ! is_admin() ) {
-			if ( current_user_can( 'administrator' ) || $_GET['scsscompile'] == '1' ) {
+			if ( current_user_can( 'administrator' ) || @$_GET['scsscompile'] == '1' ) {
 				wp_register_style( 'theme', get_stylesheet_directory_uri() . '/css/styles.css', array(), null, null );
 				wp_enqueue_style( 'theme' );
 			} else {
@@ -69,7 +69,7 @@ function stormbringer_livereload(){
 	if ( $preprocessor === 'scss' || $preprocessor == 1) {
 
 		if ( ! is_admin() ) {
-			if ( current_user_can( 'administrator' ) || $_GET['scsscompile'] == '1' ) {
+			if ( current_user_can( 'administrator' ) || @$_GET['scsscompile'] == '1' ) {
 				if ( defined( 'LIVERELOAD' ) && LIVERELOAD == true ) {
 					$livereloadurl = home_url() . ':35729';
 					if ( defined( 'LIVERELOAD_URL' ) ) {

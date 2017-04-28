@@ -17,7 +17,7 @@ function stormbringer_js_theme() {
 
     if ( $preprocessor === 'scss' || $preprocessor == 1) {
         $grunt_assets = get_theme_mod('grunt_assets');
-        if ( current_user_can( 'administrator' ) || $_GET['scsscompile'] == '1' ) {
+        if ( current_user_can( 'administrator' ) || @$_GET['scsscompile'] == '1' ) {
         }
         else{
             $jsfile = 'js/scripts.min.js';

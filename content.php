@@ -18,6 +18,7 @@
 		echo '<div class="content-row">';
 	}
 }*/
+$edit_link = '';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
