@@ -1,3 +1,6 @@
+### 0.3.1: May 3rd, 2017
+* WooCommerce 3.0.x compatibility
+
 ### 0.3.0: March 17th, 2017
 * Elementor compatibilty: buttons
 
