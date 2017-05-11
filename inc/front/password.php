@@ -1,12 +1,15 @@
 <?php
-// Custom password protected post
-add_filter( 'the_password_form', 'custom_password_form' );
+/**
+ * Password protected form
+ *
+ * @return string
+ */
 function custom_password_form() {
 	global $post;
 	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
 	$o = '
 	<p>'.__('This content is protected by a password, type the password below:','stormbringer').'</p>
-	<form class="form-stacked protected-post-form" action="' . get_option('siteurl') . '/wp-pass.php" method="post">
+	<form class="form-stacked protected-post-form" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
     <fieldset>
     <div class="clearfix">
     <label for="' . $label . '">' . __( 'Password:','stormbringer' ) . '</label>
@@ -20,3 +23,4 @@ function custom_password_form() {
 	';
 	return $o;
 }
+add_filter( 'the_password_form', 'custom_password_form' );

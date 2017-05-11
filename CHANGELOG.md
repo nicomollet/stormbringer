@@ -1,3 +1,6 @@
+### 0.3.2: May 11th, 2017
+* Fix password protected form action
+
 ### 0.3.1: May 3rd, 2017
 * WooCommerce 3.0.x compatibility
 
