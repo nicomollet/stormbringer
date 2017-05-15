@@ -83,7 +83,6 @@ $edit_link = '';
 	<!-- /.entry-meta -->
 
 	<div class="entry-content">
-
 		<?php if ( is_archive() || is_search() ) { ?>
 			<?php the_post_thumbnail(); ?>
 			<?php echo get_the_excerpt(); ?>
