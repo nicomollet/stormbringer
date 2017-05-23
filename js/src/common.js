@@ -6,7 +6,6 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
     var lastScrollTop = 0;
     var headerHeight = $('#navigation').height() + $('#header').height() + $('#header-above').height() + $('#header-below').height();
     var navHeight = $('#navigation').height();
-
     $(window).scroll(function(event){
       var st = $(this).scrollTop();
       if (st > headerHeight && st > lastScrollTop){
@@ -15,9 +14,9 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
       if(st < (headerHeight-navHeight)){
         $('#navigation').removeClass('navbar-stuck');
       }
-      if (st > lastScrollTop){
-        $('#navigation').addClass('navbar-outofview'); // down
-      } else {
+      if (st > lastScrollTop){ // going down
+        //$('#navigation').addClass('navbar-outofview'); // nico 2017/05/23 testing without this line to check behaviour
+      } else { // going up
         $('#navigation').removeClass('navbar-outofview'); //up
       }
       lastScrollTop = st;
