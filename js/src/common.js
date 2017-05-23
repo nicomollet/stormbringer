@@ -11,7 +11,7 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
       if (st > headerHeight && st > lastScrollTop){
         $('#navigation').addClass('navbar-outofview').addClass('navbar-stuck');
       }
-      if(st < (headerHeight-navHeight)){
+      if(st <= (headerHeight)){
         $('#navigation').removeClass('navbar-stuck');
       }
       if (st > lastScrollTop){ // going down
