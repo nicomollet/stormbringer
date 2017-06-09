@@ -1,6 +1,9 @@
 ### On going
 * Fix scroll actions
 
+### 0.3.3: June 09th, 2017
+* Fix styling of elementor buttons  
+
 ### 0.3.2: May 11th, 2017
 * Fix password protected form action
 
