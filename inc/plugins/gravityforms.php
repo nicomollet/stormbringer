@@ -19,6 +19,10 @@ add_filter('gform_validation_message', 'stormbringer_gform_validation_message', 
 
 */
 
+// This filter is used to enable the inclusion of the hidden choice in the Field Label Visibility and Sub-Label Placement settings on the field Appearance tab in the form editor.
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
+
 // This filter can be used to dynamically add/remove CSS classes to a field
 function stormbringer_gform_field_css_class($classes, $field, $form)
 {
@@ -246,6 +250,9 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
             $content = str_replace('<input', '<input data-force=\'1\'', $content);
     }
 
+	if ($field["type"] == 'name' || $field["type"] == 'address') {
+		$content = str_replace('type=\'text\'', 'type="text" class="form-control"', $content);
+	}
 
     return $content;
 }

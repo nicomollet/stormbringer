@@ -20,6 +20,87 @@
   }
 }
 
+.gform_validation_container {
+  display: none!important;
+  position: absolute!important;
+  left: -9000px;
+}
+
+.gform_wrapper .ginput_complex {
+
+  &.ginput_container_name{
+    span{
+      display: inline-block;
+      vertical-align: top;
+      @media (min-width: $screen-sm-min) {
+        padding-right: 16px;
+        margin-right: -4px;
+      }
+
+    }
+  }
+  &.ginput_container{
+    overflow: visible;
+    width: 100%;
+
+    .form-control{
+      margin-bottom: $form-group-margin-bottom;
+    }
+
+    &.gf_name_has_1,
+    &.gf_name_has_2,
+    &.gf_name_has_3{
+      @media (min-width: $screen-sm-min) {
+        width: calc(100% + 15px);
+      }
+
+    }
+    &.gf_name_has_2{
+      span{
+        @media (min-width: $screen-sm-min) {
+          width: 50%;
+        }
+      }
+    }
+    &.gf_name_has_2,
+    &.gf_name_has_3,
+    &.gf_name_has_4,
+    &.gf_name_has_5{
+      span:first-child{
+        @media (min-width: $screen-sm-min) {
+          margin-left: 0!important;
+        }
+      }
+    }
+  }
+
+  &.ginput_container_address{
+    .ginput_left, .ginput_right{
+      @media (min-width: $screen-sm-min) {
+        width: 50%;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+    }
+
+    .ginput_left{
+      @media (min-width: $screen-sm-min) {
+        margin-right: 8px;
+      }
+    }
+    .ginput_right {
+      @media (min-width: $screen-sm-min) {
+        margin-right: -8px;
+        padding-right: 8px;
+      }
+    }
+  }
+
+}
+
+
 
 /* hide the honeypot field  ------------------------------------------------------*/
 
