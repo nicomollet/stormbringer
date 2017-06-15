@@ -111,7 +111,8 @@ output {
 // input[type="tel"]
 // input[type="color"]
 
-.form-control, .woocommerce-ordering select, .input-text {
+
+.form-control, .woocommerce-ordering select, .input-text, .woo-vou-recipient-details {
   display: block;
   width: 100%;
   height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)

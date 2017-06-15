@@ -3,7 +3,47 @@
   @extend .btn-default;
 }
 
-.navbar-shoppingcart {
+.woocommerce .added_to_cart{
+  @extend .btn;
+  @extend .btn-link;
+  &.loading{
+    opacity: 0.5;
+  }
+}
+
+.woocommerce .widget_shopping_cart {
+
+
+  .product_list_widget {
+    //max-height: 15em;
+    //overflow-y: auto;
+
+    a.remove{
+      position: relative;
+      float: left;
+      top: auto;
+
+      &:before {
+        text-align: left;
+      }
+    }
+
+    .quantity{
+      opacity:0.5;
+      font-size: 90%;
+    }
+
+    img {
+      margin-left: 1em;
+    }
+    .glyphicon-remove{
+      margin-right: 10px;
+    }
+  }
+}
+
+
+.woocommerce .navbar-shoppingcart {
   list-style-type: none;
   margin-left: 0;
   padding: 0;
@@ -15,29 +55,11 @@
 
   .widget_shopping_cart {
     display: none;
-
-
-    p{
-      padding: $padding-base-vertical $padding-base-horizontal;
-    }
-
-    .product_list_widget {
-      //max-height: 15em;
-      //overflow-y: auto;
-
-      img {
-        margin-left: 1em;
-      }
-      .glyphicon-remove{
-        margin-right: 10px;
-      }
-    }
+    padding: $padding-base-horizontal $padding-base-vertical;
   }
-
 
   @media (min-width: $screen-md-min) {
     position: relative;
-
 
     .buttons{
       .button + .button{
@@ -47,8 +69,8 @@
 
     li{
       float: none;
-
     }
+
     .cart-contents {
       //padding: ms(3) 0;
       display: block;
@@ -93,35 +115,19 @@
       background: $navbar-inverse-bg;
 
       ul{
-        @include list-unstyled;
+        //@include list-unstyled;
       }
       li{
-        padding: $padding-base-vertical $padding-base-horizontal;
+        //padding: $padding-base-vertical $padding-base-horizontal;
       }
       img{
         max-width: 40px;
         float: right;
         margin-left: $padding-base-horizontal;
       }
-      .quantity{
-        opacity:0.5;
-        font-size: 90%;
-      }
 
       a{
         display: block;
-      }
-
-
-      
-      a.remove{
-        position: relative;
-        float: left;
-        top: auto;
-
-        &:before {
-          text-align: left;
-        }
       }
 
       .widgettitle {
@@ -151,7 +157,7 @@
 
 
 // Product list
-ul.products{
+.woocommerce ul.products{
   margin-left: 0;
   clear: both;
 
@@ -193,7 +199,7 @@ ul.products{
 }
 
 // Product single
-.single-product, .singular-product{
+.woocommerce .single-product, .woocommerce .singular-product{
 
   .wc-tabs-wrapper, .related, .upsells{
     margin-top: ($line-height-computed);
@@ -223,12 +229,13 @@ ul.products{
 
       .quantity{
         float: left;
+        margin-right: $line-height-computed;
         input{
           max-width: 80px;
         }
       }
       button{
-        float: right;
+        //float: right;
       }
       .single_add_to_cart_button{
         @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
@@ -833,3 +840,83 @@ ul.products{
     }
   }
 }
+
+/**
+table.variations = WooCommerce variations
+table.woo-vou-recipient-fields = WooCommerce PDF Vouchers variations
+ */
+table.variations, table.woo-vou-recipient-fields{
+  margin-bottom: $line-height-computed;
+  border: 0;
+  width: 100%;
+  td.label{
+    @include reset-text;
+    color: $text-color;
+    font-size: $font-size-base;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0;
+  }
+  td.value{
+    .form-control{
+      width:auto;
+      display: inline;
+    }
+  }
+  .reset_variations{
+    margin-left: $line-height-computed;
+  }
+}
+
+
+textarea.woo-vou-recipient-details{
+  min-height:100px;
+}
+
+/**
+Additionnal information
+ */
+.shop_attributes{
+  @extend .table;
+  @extend .table-th-background;
+  //@extend .table-bordered;
+}
+
+/**
+Product meta
+ */
+.single-product .product_meta{
+  margin-top: $line-height-computed;
+  .posted_in,
+  .sku_wrapper,
+  .tagged_as {
+    display: block;
+  }
+}
+
+/**
+Product list widget
+ */
+.woocommerce ul.product_list_widget{
+  @include list-unstyled;
+  li{
+    padding: 4px 0;
+    a{
+      display: block;
+    }
+    img{
+      max-width: 40px;
+    }
+  }
+
+}
+
+
+/**
+Products layout
+ */
+.woocommerce .products ul, .woocommerce ul.products{
+  margin: 0 0 1em;
+  padding: 0;
+}
+

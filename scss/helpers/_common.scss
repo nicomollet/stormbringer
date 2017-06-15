@@ -75,6 +75,14 @@ iframe{border: 0}
 .emulate-table-row{display: table-row}
 .emulate-table-cell{display: table-cell;vertical-align: top;}
 
+.table-th-background {
+  > tbody > tr > th {
+    background-color: $table-bg-accent;
+  }
+
+}
+
+
 // Select
 .bootstrap-select .btn:focus {
   outline: 0 !important;

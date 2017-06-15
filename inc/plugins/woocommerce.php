@@ -338,7 +338,7 @@ if ( ! function_exists('stormbringer_product_search')) {
 }
 
 /**
- * Woocommerce: product form
+ * WooCommerce: product form classes
  *
  * @param $ob_get_clean
  *
@@ -346,7 +346,6 @@ if ( ! function_exists('stormbringer_product_search')) {
  */
 function stormbringer_get_product_search_form($ob_get_clean)
 {
-
     $ob_get_clean = str_replace('class="search-field"', 'class="search-field form-control"', $ob_get_clean);
     $ob_get_clean = str_replace('type="submit"', 'type="submit" class="btn btn-default"', $ob_get_clean);
 
@@ -355,4 +354,32 @@ function stormbringer_get_product_search_form($ob_get_clean)
 
 ;
 add_filter('get_product_search_form', 'stormbringer_get_product_search_form', 10, 1);
+
+/**
+ * WooCommerce: variations select class
+ *
+ * @param $args
+ *
+ * @return mixed
+ */
+function stormbringer_woocommerce_dropdown_variation_attribute_options_args( $args ){
+	$args['class'] = 'form-control';
+	return $args;
+}
+add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'stormbringer_woocommerce_dropdown_variation_attribute_options_args');
+
+/**
+ * WooCommerce: remove some CSS styles in frontend
+ *
+ * @param $enqueue_styles
+ *
+ * @return mixed
+ */
+function stormbringer_woocommerce_dequeue_styles( $enqueue_styles ) {
+	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+	//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+	//unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+	return $enqueue_styles;
+}
+add_filter( 'woocommerce_enqueue_styles', 'stormbringer_woocommerce_dequeue_styles' );
 
