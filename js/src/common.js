@@ -131,8 +131,10 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
   }
 
   // Datepicker defaults
-  if (typeof($.fn.datepicker) == 'function') {
-    if (stormbringer_config.THEME_LANG != '')$.fn.datepicker.defaults.language = stormbringer_config.THEME_LANG;
+  if (typeof($.fn.datepicker) == 'function' && typeof($.fn.datepicker.defaults) !== 'undefined') {
+    if (stormbringer_config.THEME_LANG != '' && typeof($.fn.datepicker.defaults.language) !== 'undefined' ){
+      $.fn.datepicker.defaults.language = stormbringer_config.THEME_LANG;
+    }
     var nowTemp = new Date();
     var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     $.fn.datepicker.defaults.startDate = now;
@@ -142,6 +144,7 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
     $.fn.datepicker.defaults.todayHighlight = true;
     //$('.datepicker-input').datepicker({});
   }
+
 
   // Carousel swipe defaults
   if (Modernizr.touch && typeof($.fn.swipe) == 'function') {
