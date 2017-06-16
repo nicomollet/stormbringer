@@ -9569,49 +9569,49 @@ video {
   opacity: 0.5;
 }
 
-.woocommerce .widget_shopping_cart .product_list_widget a.remove {
+.widget_shopping_cart .product_list_widget a.remove {
   position: relative;
   float: left;
   top: auto;
 }
-.woocommerce .widget_shopping_cart .product_list_widget a.remove:before {
+.widget_shopping_cart .product_list_widget a.remove:before {
   text-align: left;
 }
-.woocommerce .widget_shopping_cart .product_list_widget .quantity {
+.widget_shopping_cart .product_list_widget .quantity {
   opacity: 0.5;
   font-size: 90%;
 }
-.woocommerce .widget_shopping_cart .product_list_widget img {
+.widget_shopping_cart .product_list_widget img {
   margin-left: 1em;
 }
-.woocommerce .widget_shopping_cart .product_list_widget .glyphicon-remove {
+.widget_shopping_cart .product_list_widget .glyphicon-remove {
   margin-right: 10px;
 }
 
-.woocommerce .navbar-shoppingcart {
+.navbar-shoppingcart {
   list-style-type: none;
   margin-left: 0;
   padding: 0;
   margin-bottom: 0;
 }
-.woocommerce .navbar-shoppingcart .cart-contents {
+.navbar-shoppingcart .cart-contents {
   display: none;
 }
-.woocommerce .navbar-shoppingcart .widget_shopping_cart {
+.navbar-shoppingcart .widget_shopping_cart {
   display: none;
   padding: 12px 6px;
 }
 @media (min-width: 992px) {
-  .woocommerce .navbar-shoppingcart {
+  .navbar-shoppingcart {
     position: relative;
   }
-  .woocommerce .navbar-shoppingcart .buttons .button + .button {
+  .navbar-shoppingcart .buttons .button + .button {
     margin-top: 20px;
   }
-  .woocommerce .navbar-shoppingcart li {
+  .navbar-shoppingcart li {
     float: none;
   }
-  .woocommerce .navbar-shoppingcart .cart-contents {
+  .navbar-shoppingcart .cart-contents {
     display: block;
     position: relative;
     background-color: transparent;
@@ -9626,17 +9626,17 @@ video {
       line-height: 1.618;
     }*/
   }
-  .woocommerce .navbar-shoppingcart .cart-contents .amount {
+  .navbar-shoppingcart .cart-contents .amount {
     margin-right: .327em;
   }
-  .woocommerce .navbar-shoppingcart .cart-contents .count {
+  .navbar-shoppingcart .cart-contents .count {
     font-weight: 300;
     opacity: 0.5;
   }
-  .woocommerce .navbar-shoppingcart .cart-contents span {
+  .navbar-shoppingcart .cart-contents span {
     display: inline;
   }
-  .woocommerce .navbar-shoppingcart .widget_shopping_cart {
+  .navbar-shoppingcart .widget_shopping_cart {
     position: absolute;
     top: 100%;
     width: 100%;
@@ -9645,18 +9645,18 @@ video {
     display: block;
     background: #5F084B;
   }
-  .woocommerce .navbar-shoppingcart .widget_shopping_cart img {
+  .navbar-shoppingcart .widget_shopping_cart img {
     max-width: 40px;
     float: right;
     margin-left: 12px;
   }
-  .woocommerce .navbar-shoppingcart .widget_shopping_cart a {
+  .navbar-shoppingcart .widget_shopping_cart a {
     display: block;
   }
-  .woocommerce .navbar-shoppingcart .widget_shopping_cart .widgettitle {
+  .navbar-shoppingcart .widget_shopping_cart .widgettitle {
     display: none;
   }
-  .woocommerce .navbar-shoppingcart:hover .widget_shopping_cart, .woocommerce .navbar-shoppingcart.focus .widget_shopping_cart {
+  .navbar-shoppingcart:hover .widget_shopping_cart, .navbar-shoppingcart.focus .widget_shopping_cart {
     left: 0;
   }
 }
