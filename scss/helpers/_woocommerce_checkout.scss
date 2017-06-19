@@ -293,8 +293,15 @@ Cart
 /**
  Account
   */
+
+
 .woocommerce-account {
 
+  .edit-account{
+    .input-text{
+      @extend .form-control;
+    }
+  }
 
   .woocommerce-Addresses{
     @include make-row();
