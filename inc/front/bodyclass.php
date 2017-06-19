@@ -112,7 +112,7 @@ function stormbringer_body_class_context() {
             $classes[] = 'shop';
             $columns = 4;
             $columns = apply_filters( 'loop_shop_columns', $columns );
-            $classes[] = 'columns-'.$columns;
+            $classes[] = 'woocommerce-product-columns-'.$columns;
         }
     }
 

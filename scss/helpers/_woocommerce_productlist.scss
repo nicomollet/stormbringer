@@ -1,0 +1,72 @@
+
+/**
+Misc
+ */
+.woocommerce .products ul, .woocommerce ul.products{
+  @include list-unstyled;
+}
+
+
+/**
+Ordering
+ */
+.woocommerce-ordering{
+  margin-bottom: $line-height-computed;
+}
+
+
+/**
+Layout
+ */
+.woocommerce ul.products{
+  margin-left: 0;
+  clear: both;
+
+  //@include clearfix;
+  padding: 0;
+  @include make-row;
+
+  li.product{
+    list-style: none;
+    margin-left: 0;
+    text-align: center;
+    position: relative;
+    @include make-sm-column(12);
+    @include make-md-column(4);
+    margin-bottom: ($line-height-computed / 2);
+
+    &.first{
+      clear: both;
+    }
+
+    .onsale {
+      background-color: $body-bg;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      padding: .5em 1em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+
+    a{
+      position: relative;
+      display: block;
+    }
+
+  }
+}
+
+
+
+/**
+Mobile
+ */
+@media (max-width: 450px) {
+  .woocommerce ul.products li.product{
+    float: none !important;
+    width:100% !important;
+  }
+}

@@ -11,7 +11,6 @@
 .table-hover, .shop_table {}
 
 // forms
-.form-control, .woocommerce-ordering select, .input-text, .woo-vou-recipient-details {}
 
 // tabs
 .nav, .woocommerce-tabs .tabs {}

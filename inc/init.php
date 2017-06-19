@@ -83,6 +83,9 @@ function stormbringer_support() {
 	}
 	if ( class_exists( 'WooCommerce' ) ) {// Woocommerce
 		add_theme_support('woocommerce');
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 		locate_template( 'inc/plugins/woocommerce.php', true );
 	}
     
