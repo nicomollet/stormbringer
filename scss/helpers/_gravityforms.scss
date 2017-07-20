@@ -2,6 +2,10 @@
   @extend .list-unstyled;
 }
 
+.hidden_label > .control-label{
+  display: none;
+}
+
 .form-horizontal{
 
   .control-label{
