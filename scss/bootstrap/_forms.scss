@@ -112,7 +112,7 @@ output {
 // input[type="color"]
 
 
-.form-control{
+.form-control, #coupon_code{
   display: block;
   width: 100%;
   height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)

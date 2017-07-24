@@ -323,7 +323,6 @@ if ( ! function_exists( 'stormbringer_handheld_footer_bar_account_link' ) ) {
         </a>';
 	}
 }
-
 add_action( 'stormbringer_footer_before', 'stormbringer_handheld_footer_bar', 999 );
 
 if ( ! function_exists( 'stormbringer_product_search' ) ) {
@@ -371,7 +370,6 @@ function stormbringer_woocommerce_dropdown_variation_attribute_options_args( $ar
 
 	return $args;
 }
-
 add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'stormbringer_woocommerce_dropdown_variation_attribute_options_args' );
 
 /**
@@ -388,6 +386,27 @@ function stormbringer_woocommerce_dequeue_styles( $enqueue_styles ) {
 
 	return $enqueue_styles;
 }
-
 add_filter( 'woocommerce_enqueue_styles', 'stormbringer_woocommerce_dequeue_styles' );
 
+/**
+ * Woocommerce: active menu item "shop" on all subpages of shop
+ *
+ * @param $classes
+ * @param $item
+ * @param $args
+ *
+ * @return array
+ */
+function be_menu_item_classes( $classes, $item, $args ) {
+	$woocommerce_shop_page_id = get_option( 'woocommerce_shop_page_id' );
+	//if( ( is_singular( ‘products’ ) ) && ‘Products’ == $item->title ){
+
+	//}
+	if( is_woocommerce() && $item->object == 'page' && $item->ID == $woocommerce_shop_page_id) {
+		//print_r($item);
+		//$classes[] = 'current-menu-item';
+	}
+
+	return array_unique( $classes );
+}
+//add_filter( 'nav_menu_css_class', 'be_menu_item_classes', 10, 3 );
