@@ -125,9 +125,21 @@ class Stormbringer_Navbar_Nav_Walker extends Walker_Nav_Menu
                 $class_names .= ' dropdown';
             }
 
-            if (in_array('current-menu-item', $classes)) {
-                $class_names .= ' active';
-            }
+	        if (in_array('current-menu-item', $classes)) {
+		        $class_names .= ' active';
+	        }
+
+	        if (in_array('current-menu-ancestor', $classes)) {
+		        $class_names .= ' active';
+	        }
+
+	        if (in_array('current-menu-parent', $classes)) {
+		        $class_names .= ' active';
+	        }
+
+	        if (in_array('current_page_parent', $classes)) {
+		        $class_names .= ' active';
+	        }
 
             $class_names = $class_names ? ' class="'.esc_attr($class_names).'"' : '';
 

@@ -183,7 +183,6 @@ function stormbringer_form_field_args( $args, $key, $value = null ) {
 
 	return $args;
 }
-
 add_filter( 'woocommerce_form_field_args', 'stormbringer_form_field_args', 10, 3 );
 
 
@@ -389,7 +388,7 @@ function stormbringer_woocommerce_dequeue_styles( $enqueue_styles ) {
 add_filter( 'woocommerce_enqueue_styles', 'stormbringer_woocommerce_dequeue_styles' );
 
 /**
- * Woocommerce: active menu item "shop" on all subpages of shop
+ * Woocommerce: active menu item "shop" on all subpages of shop (cart and checkout)
  *
  * @param $classes
  * @param $item
@@ -397,16 +396,11 @@ add_filter( 'woocommerce_enqueue_styles', 'stormbringer_woocommerce_dequeue_styl
  *
  * @return array
  */
-function be_menu_item_classes( $classes, $item, $args ) {
+function stormbringer_woocommerce_pages_menu_item_classes( $classes, $item, $args ) {
 	$woocommerce_shop_page_id = get_option( 'woocommerce_shop_page_id' );
-	//if( ( is_singular( ‘products’ ) ) && ‘Products’ == $item->title ){
-
-	//}
-	if( is_woocommerce() && $item->object == 'page' && $item->ID == $woocommerce_shop_page_id) {
-		//print_r($item);
-		//$classes[] = 'current-menu-item';
+	if( (is_cart() || is_checkout() ) && $item->object == 'page' && $item->object_id == $woocommerce_shop_page_id) {
+		$classes[] = 'current-menu-item active';
 	}
-
 	return array_unique( $classes );
 }
-//add_filter( 'nav_menu_css_class', 'be_menu_item_classes', 10, 3 );
+add_filter( 'nav_menu_css_class', 'stormbringer_woocommerce_pages_menu_item_classes', 10, 3 );
