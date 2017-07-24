@@ -9202,6 +9202,10 @@ body.page-template-fullwidthnotitle #content .page-header, body.page-template-fu
   display: none;
 }
 
+.hidden_label > .control-label {
+  display: none;
+}
+
 .form-horizontal .control-label {
   position: relative;
   min-height: 1px;
@@ -9255,11 +9259,12 @@ body.page-template-fullwidthnotitle #content .page-header, body.page-template-fu
 }
 
 .gform_wrapper .ginput_complex.ginput_container_name span {
-  display: inline-block;
+  display: block;
   vertical-align: top;
 }
 @media (min-width: 768px) {
   .gform_wrapper .ginput_complex.ginput_container_name span {
+    display: inline-block;
     padding-right: 16px;
     margin-right: -4px;
   }
@@ -9723,6 +9728,61 @@ Alerts / Messages
 }
 .woocommerce-message .button, .woocommerce-message .btn, .woocommerce-message .woocommerce #respond input#submit, .woocommerce #respond .woocommerce-message input#submit, .woocommerce-message .woocommerce a.button, .woocommerce .woocommerce-message a.button, .woocommerce-message .woocommerce button.button, .woocommerce .woocommerce-message button.button, .woocommerce-message .woocommerce input.button, .woocommerce .woocommerce-message input.button, .woocommerce-message .woocommerce .added_to_cart, .woocommerce .woocommerce-message .added_to_cart, .woocommerce-message #content .sharedaddy .sd-button, #content .sharedaddy .woocommerce-message .sd-button, .woocommerce-message .wordpress .elementor-element .elementor-button, .wordpress .elementor-element .woocommerce-message .elementor-button {
   float: right;
+}
+
+/**
+Pagination
+ */
+.woocommerce-pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 0px;
+}
+.woocommerce-pagination .screen-reader-text {
+  display: none;
+}
+.woocommerce-pagination .page-numbers {
+  display: inline;
+  padding-left: 0;
+  list-style: none;
+}
+.woocommerce-pagination .page-numbers li {
+  display: inline-block;
+  float: left;
+}
+.woocommerce-pagination .page-numbers a,
+.woocommerce-pagination .page-numbers span {
+  position: relative;
+  padding: 6px 12px;
+  line-height: 1.42857;
+  text-decoration: none;
+  color: #006f71;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+}
+.woocommerce-pagination .page-numbers:first-child {
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
+.woocommerce-pagination .page-numbers:last-child {
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.woocommerce-pagination .page-numbers a:hover, .woocommerce-pagination .page-numbers a:focus,
+.woocommerce-pagination .page-numbers span:hover,
+.woocommerce-pagination .page-numbers span:focus {
+  color: #003d3e;
+  background-color: #eeeeee;
+  border-color: #ddd;
+}
+.woocommerce-pagination span.current, .woocommerce-pagination span.current:hover, .woocommerce-pagination span.current:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #006f71;
+  border-color: #006f71;
+  cursor: default;
 }
 
 /**

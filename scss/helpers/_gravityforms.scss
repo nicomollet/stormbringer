@@ -34,9 +34,10 @@
 
   &.ginput_container_name{
     span{
-      display: inline-block;
+      display: block;
       vertical-align: top;
       @media (min-width: $screen-sm-min) {
+        display: inline-block;
         padding-right: 16px;
         margin-right: -4px;
       }
