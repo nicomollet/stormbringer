@@ -463,3 +463,16 @@ function woocommerce_cart_count_shortcode( $atts ) {
 }
 add_shortcode( 'woocommerce_cart_link', 'woocommerce_cart_count_shortcode' );
 
+/**
+ * Woocommerce: Related products number
+ *
+ * @param $args
+ *
+ * @return mixed
+ */
+function stormbringer_related_products_args( $args ) {
+	$args['posts_per_page'] = 3; // 3 related products
+	$args['columns'] = 3; // arranged in 3 columns
+	return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'stormbringer_related_products_args' );

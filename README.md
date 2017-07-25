@@ -62,6 +62,9 @@ Addthis share buttons:
 
 Customize the admin scheme: https://gist.github.com/nicomollet/7fd3e2e5334ef352abe0
 
+Shortcodes
+-----------
+[woocommerce_cart_link] Display a link to the Woocommerce cart
 
 Major components 
 -----------
