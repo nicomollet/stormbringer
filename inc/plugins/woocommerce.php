@@ -461,5 +461,5 @@ function woocommerce_cart_count_shortcode( $atts ) {
 	$html .= '</a>';
 	return $html;
 }
-add_shortcode( 'cart_button', 'woocommerce_cart_count_shortcode' );
+add_shortcode( 'woocommerce_cart_link', 'woocommerce_cart_count_shortcode' );
 
