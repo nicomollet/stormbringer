@@ -404,3 +404,62 @@ function stormbringer_woocommerce_pages_menu_item_classes( $classes, $item, $arg
 	return array_unique( $classes );
 }
 add_filter( 'nav_menu_css_class', 'stormbringer_woocommerce_pages_menu_item_classes', 10, 3 );
+
+
+/**
+ * Woocommerce: Shortcode for displaying a link to basket
+ *
+ * @param $atts
+ *
+ * @return string
+ */
+function woocommerce_cart_count_shortcode( $atts ) {
+	if(is_admin()) return '';
+
+	$defaults = array(
+		'icon_class'               => 'glyphicon glyphicon-shopping-cart',
+		'empty_cart_text'    => '',
+		'items_in_cart_text' => '',
+		'show_count'         => true,
+		'show_amount'         => true,
+		'link_class'         => 'link-cart'
+	);
+	$atts = shortcode_atts( $defaults, $atts );
+
+	$icon_html = '<span class="'.$atts['icon_class'] . '"></span>';
+
+	$link_class = $atts['link_class'];
+	$link_url = "";
+
+	$cart_count_html = "";
+	$cart_amount_html = "";
+	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+		if ( true == $atts['show_amount'] ) {
+			$cart_amount_html = wp_kses_data(WC()->cart->get_cart_subtotal());
+		}
+
+
+		if ( WC()->cart->get_cart_contents_count() > 0 ) {
+			if ( true == $atts['show_count'] ) {
+				$cart_count_html = '('.wp_kses_data(
+						sprintf(
+							_n('%d item', '%d items', WC()->cart->get_cart_contents_count(), 'stormbringer'),
+							WC()->cart->get_cart_contents_count()
+						)
+					).')';
+			}
+			$link_url = esc_url(WC()->cart->get_cart_url());
+		} else {
+			$woocommerce_shop_page_id = get_option( 'woocommerce_shop_page_id' );
+			$link_url = get_permalink( $woocommerce_shop_page_id );
+		}
+	}
+
+	$html  = '<a href="' . $link_url .'" class="'.$link_class.'">';
+	$html .= $icon_html . ' <span class="amount">'.$cart_amount_html .'</span> <span class="count">'. $cart_count_html.'</span>';
+	$html .= '</a>';
+	return $html;
+}
+add_shortcode( 'cart_button', 'woocommerce_cart_count_shortcode' );
+
