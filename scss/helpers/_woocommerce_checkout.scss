@@ -17,6 +17,11 @@ All pages
   }
 
 
+  #customer_login{
+    .u-column1, .u-column2{
+      @include make-md-column(6);
+    }
+  }
 }
 
 
@@ -26,6 +31,11 @@ Checkout
 
 
 .woocommerce-checkout{
+
+
+  .woocommerce-NoticeGroup{
+    @include make-md-column(12);
+  }
 
   #customer_details{
 
@@ -225,12 +235,18 @@ Cart
 
 .woocommerce-cart{
 
+
+  #shipping_method{
+    @include list-unstyled;
+  }
+
   .cart-collaterals{
     @include make-row;
     .cart_totals{
       @include make-sm-column-offset(6);
       @include make-sm-column(6);
     }
+    margin-bottom: $line-height-computed;
   }
 
   table.cart{
@@ -272,6 +288,11 @@ Cart
       width: auto;
     }
   }
+  .checkout_coupon #coupon_code{
+    display: inline-block;
+    width: auto;
+  }
+
   .qty{
     width: 60px;
     @media (min-width: $screen-md-min) {
@@ -301,6 +322,18 @@ Cart
 
 
 .woocommerce-account {
+
+
+  #customer_login{
+    .control-label, .form-input {
+      @include make-sm-column(6);
+    }
+    .form-actions{
+      //margin-left: 50%;
+      @include make-sm-column(6);
+      @include make-sm-column-offset(6);
+    }
+  }
 
   .edit-account{
     .input-text{
@@ -333,6 +366,9 @@ Cart
   .entry-content{
     .woocommerce{
       @include make-row;
+    }
+    .woocommerce-error{
+      @include make-sm-column(12);
     }
     .woocommerce-MyAccount-navigation{
       @include make-sm-column(3);

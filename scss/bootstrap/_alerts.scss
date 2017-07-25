@@ -6,7 +6,7 @@
 // Base styles
 // -------------------------
 
-.alert, .woocommerce-message {
+.alert, .woocommerce-message, .woocommerce-error, .woocommerce-info {
   padding: $alert-padding;
   margin-bottom: $line-height-computed;
   border: 1px solid transparent;
@@ -68,6 +68,7 @@
   @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
 }
 
-.alert-danger {
+.alert-danger, .woocommerce-error {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }
+

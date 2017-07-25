@@ -16,14 +16,17 @@ Buttons
 /**
 Big buttons
  */
-.wc-proceed-to-checkout, .woocommerce-checkout-payment{
-  .button{
-    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large);
-    display: block;
-    width: 100%;
+.woocommerce{
+  .wc-proceed-to-checkout, .woocommerce-checkout-payment{
+    .button{
+      @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+      @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large);
+      display: block;
+      width: 100%;
+    }
   }
 }
+
 
 /**
 Alerts / Messages
@@ -33,6 +36,14 @@ Alerts / Messages
   .button, .btn{
     float: right;
   }
+}
+
+.woocommerce-error{
+  list-style: none;
+}
+
+.woocommerce-info{
+  padding: 0;
 }
 
 /**
@@ -50,17 +61,10 @@ Pagination
 
   .page-numbers {
     display: inline; // Remove list-style and block-level defaults
-    @include list-unstyled;
-
-    li{
-      display: inline-block;
-      float: left;
-    }
-
-    a,
-    span {
+     a,
+     span {
       position: relative;
-      //float: left; // Collapse white-space
+      float: left; // Collapse white-space
       padding: $padding-base-vertical $padding-base-horizontal;
       line-height: $line-height-base;
       text-decoration: none;
@@ -70,7 +74,7 @@ Pagination
       margin-left: -1px;
     }
     &:first-child {
-      //margin-left: 0;
+      margin-left: 0;
       @include border-left-radius($border-radius-base);
     }
     &:last-child {
@@ -78,9 +82,9 @@ Pagination
     }
   }
 
-  .page-numbers {
-    a,
-    span {
+  .nav-links {
+     a,
+     span {
       &:hover,
       &:focus {
         color: $pagination-hover-color;
@@ -119,6 +123,9 @@ Forms
   }
 }
 
+#calc_shipping_country, #calc_shipping_postcode{
+  @extend .form-control;
+}
 
 
 

@@ -3205,7 +3205,7 @@ output {
   color: #555555;
 }
 
-.form-control, .quantity input, .woocommerce-ordering select, table.woo-vou-recipient-fields .woo-vou-recipient-details, .woocommerce-account .edit-account .input-text {
+.form-control, .quantity input, .woocommerce-ordering select, #calc_shipping_country, #calc_shipping_postcode, table.woo-vou-recipient-fields .woo-vou-recipient-details, .woocommerce-account .edit-account .input-text, #coupon_code {
   display: block;
   width: 100%;
   height: 34px;
@@ -3223,35 +3223,35 @@ output {
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-.form-control:focus, .quantity input:focus, .woocommerce-ordering select:focus, table.woo-vou-recipient-fields .woo-vou-recipient-details:focus, .woocommerce-account .edit-account .input-text:focus {
+.form-control:focus, .quantity input:focus, .woocommerce-ordering select:focus, #calc_shipping_country:focus, #calc_shipping_postcode:focus, table.woo-vou-recipient-fields .woo-vou-recipient-details:focus, .woocommerce-account .edit-account .input-text:focus, #coupon_code:focus {
   border-color: #8acccc;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(138, 204, 204, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(138, 204, 204, 0.6);
 }
-.form-control::-moz-placeholder, .quantity input::-moz-placeholder, .woocommerce-ordering select::-moz-placeholder, table.woo-vou-recipient-fields .woo-vou-recipient-details::-moz-placeholder, .woocommerce-account .edit-account .input-text::-moz-placeholder {
+.form-control::-moz-placeholder, .quantity input::-moz-placeholder, .woocommerce-ordering select::-moz-placeholder, #calc_shipping_country::-moz-placeholder, #calc_shipping_postcode::-moz-placeholder, table.woo-vou-recipient-fields .woo-vou-recipient-details::-moz-placeholder, .woocommerce-account .edit-account .input-text::-moz-placeholder, #coupon_code::-moz-placeholder {
   color: #999;
   opacity: 1;
 }
-.form-control:-ms-input-placeholder, .quantity input:-ms-input-placeholder, .woocommerce-ordering select:-ms-input-placeholder, table.woo-vou-recipient-fields .woo-vou-recipient-details:-ms-input-placeholder, .woocommerce-account .edit-account .input-text:-ms-input-placeholder {
+.form-control:-ms-input-placeholder, .quantity input:-ms-input-placeholder, .woocommerce-ordering select:-ms-input-placeholder, #calc_shipping_country:-ms-input-placeholder, #calc_shipping_postcode:-ms-input-placeholder, table.woo-vou-recipient-fields .woo-vou-recipient-details:-ms-input-placeholder, .woocommerce-account .edit-account .input-text:-ms-input-placeholder, #coupon_code:-ms-input-placeholder {
   color: #999;
 }
-.form-control::-webkit-input-placeholder, .quantity input::-webkit-input-placeholder, .woocommerce-ordering select::-webkit-input-placeholder, table.woo-vou-recipient-fields .woo-vou-recipient-details::-webkit-input-placeholder, .woocommerce-account .edit-account .input-text::-webkit-input-placeholder {
+.form-control::-webkit-input-placeholder, .quantity input::-webkit-input-placeholder, .woocommerce-ordering select::-webkit-input-placeholder, #calc_shipping_country::-webkit-input-placeholder, #calc_shipping_postcode::-webkit-input-placeholder, table.woo-vou-recipient-fields .woo-vou-recipient-details::-webkit-input-placeholder, .woocommerce-account .edit-account .input-text::-webkit-input-placeholder, #coupon_code::-webkit-input-placeholder {
   color: #999;
 }
-.form-control::-ms-expand, .quantity input::-ms-expand, .woocommerce-ordering select::-ms-expand, table.woo-vou-recipient-fields .woo-vou-recipient-details::-ms-expand, .woocommerce-account .edit-account .input-text::-ms-expand {
+.form-control::-ms-expand, .quantity input::-ms-expand, .woocommerce-ordering select::-ms-expand, #calc_shipping_country::-ms-expand, #calc_shipping_postcode::-ms-expand, table.woo-vou-recipient-fields .woo-vou-recipient-details::-ms-expand, .woocommerce-account .edit-account .input-text::-ms-expand, #coupon_code::-ms-expand {
   border: 0;
   background-color: transparent;
 }
-.form-control[disabled], .quantity input[disabled], .woocommerce-ordering select[disabled], table.woo-vou-recipient-fields [disabled].woo-vou-recipient-details, .woocommerce-account .edit-account [disabled].input-text, .form-control[readonly], .quantity input[readonly], .woocommerce-ordering select[readonly], table.woo-vou-recipient-fields [readonly].woo-vou-recipient-details, .woocommerce-account .edit-account [readonly].input-text, fieldset[disabled] .form-control, fieldset[disabled] .quantity input, .quantity fieldset[disabled] input, fieldset[disabled] .woocommerce-ordering select, .woocommerce-ordering fieldset[disabled] select, fieldset[disabled] table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields fieldset[disabled] .woo-vou-recipient-details, fieldset[disabled] .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account fieldset[disabled] .input-text {
+.form-control[disabled], .quantity input[disabled], .woocommerce-ordering select[disabled], [disabled]#calc_shipping_country, [disabled]#calc_shipping_postcode, table.woo-vou-recipient-fields [disabled].woo-vou-recipient-details, .woocommerce-account .edit-account [disabled].input-text, .form-control[readonly], .quantity input[readonly], .woocommerce-ordering select[readonly], [readonly]#calc_shipping_country, [readonly]#calc_shipping_postcode, table.woo-vou-recipient-fields [readonly].woo-vou-recipient-details, .woocommerce-account .edit-account [readonly].input-text, fieldset[disabled] .form-control, fieldset[disabled] .quantity input, .quantity fieldset[disabled] input, fieldset[disabled] .woocommerce-ordering select, .woocommerce-ordering fieldset[disabled] select, fieldset[disabled] #calc_shipping_country, fieldset[disabled] #calc_shipping_postcode, fieldset[disabled] table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields fieldset[disabled] .woo-vou-recipient-details, fieldset[disabled] .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account fieldset[disabled] .input-text, #coupon_code[disabled], #coupon_code[readonly], fieldset[disabled] #coupon_code {
   background-color: #eeeeee;
   opacity: 1;
 }
-.form-control[disabled], .quantity input[disabled], .woocommerce-ordering select[disabled], table.woo-vou-recipient-fields [disabled].woo-vou-recipient-details, .woocommerce-account .edit-account [disabled].input-text, fieldset[disabled] .form-control, fieldset[disabled] .quantity input, .quantity fieldset[disabled] input, fieldset[disabled] .woocommerce-ordering select, .woocommerce-ordering fieldset[disabled] select, fieldset[disabled] table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields fieldset[disabled] .woo-vou-recipient-details, fieldset[disabled] .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account fieldset[disabled] .input-text {
+.form-control[disabled], .quantity input[disabled], .woocommerce-ordering select[disabled], [disabled]#calc_shipping_country, [disabled]#calc_shipping_postcode, table.woo-vou-recipient-fields [disabled].woo-vou-recipient-details, .woocommerce-account .edit-account [disabled].input-text, fieldset[disabled] .form-control, fieldset[disabled] .quantity input, .quantity fieldset[disabled] input, fieldset[disabled] .woocommerce-ordering select, .woocommerce-ordering fieldset[disabled] select, fieldset[disabled] #calc_shipping_country, fieldset[disabled] #calc_shipping_postcode, fieldset[disabled] table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields fieldset[disabled] .woo-vou-recipient-details, fieldset[disabled] .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account fieldset[disabled] .input-text, #coupon_code[disabled], fieldset[disabled] #coupon_code {
   cursor: not-allowed;
 }
 
-textarea.form-control, table.woo-vou-recipient-fields textarea.woo-vou-recipient-details, .woocommerce-account .edit-account textarea.input-text {
+textarea.form-control, textarea#calc_shipping_country, textarea#calc_shipping_postcode, table.woo-vou-recipient-fields textarea.woo-vou-recipient-details, .woocommerce-account .edit-account textarea.input-text {
   height: auto;
 }
 
@@ -3260,22 +3260,28 @@ input[type="search"] {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type="date"].form-control, .quantity input[type="date"], table.woo-vou-recipient-fields input[type="date"].woo-vou-recipient-details, .woocommerce-account .edit-account input[type="date"].input-text,
+  input[type="date"].form-control, .quantity input[type="date"], input[type="date"]#calc_shipping_country, input[type="date"]#calc_shipping_postcode, table.woo-vou-recipient-fields input[type="date"].woo-vou-recipient-details, .woocommerce-account .edit-account input[type="date"].input-text,
   input[type="time"].form-control,
   .quantity input[type="time"],
+  input[type="time"]#calc_shipping_country,
+  input[type="time"]#calc_shipping_postcode,
   table.woo-vou-recipient-fields input[type="time"].woo-vou-recipient-details,
   .woocommerce-account .edit-account input[type="time"].input-text,
   input[type="datetime-local"].form-control,
   .quantity input[type="datetime-local"],
+  input[type="datetime-local"]#calc_shipping_country,
+  input[type="datetime-local"]#calc_shipping_postcode,
   table.woo-vou-recipient-fields input[type="datetime-local"].woo-vou-recipient-details,
   .woocommerce-account .edit-account input[type="datetime-local"].input-text,
   input[type="month"].form-control,
   .quantity input[type="month"],
+  input[type="month"]#calc_shipping_country,
+  input[type="month"]#calc_shipping_postcode,
   table.woo-vou-recipient-fields input[type="month"].woo-vou-recipient-details,
   .woocommerce-account .edit-account input[type="month"].input-text {
     line-height: 34px;
   }
-  input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control, .quantity .input-group-sm > input[type="date"], table.woo-vou-recipient-fields .input-group-sm > input[type="date"].woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > input[type="date"].input-text,
+  input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control, .quantity .input-group-sm > input[type="date"], .input-group-sm > input[type="date"]#calc_shipping_country, .input-group-sm > input[type="date"]#calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-sm > input[type="date"].woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > input[type="date"].input-text,
   .input-group-sm > input[type="date"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="date"].btn,
   .woocommerce #respond .input-group-sm > .input-group-btn > input[type="date"]#submit,
@@ -3286,6 +3292,8 @@ input[type="search"] {
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
   .quantity .input-group-sm > input[type="time"],
+  .input-group-sm > input[type="time"]#calc_shipping_country,
+  .input-group-sm > input[type="time"]#calc_shipping_postcode,
   table.woo-vou-recipient-fields .input-group-sm > input[type="time"].woo-vou-recipient-details,
   .woocommerce-account .edit-account .input-group-sm > input[type="time"].input-text,
   .input-group-sm > input[type="time"].input-group-addon,
@@ -3299,6 +3307,8 @@ input[type="search"] {
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
   .quantity .input-group-sm > input[type="datetime-local"],
+  .input-group-sm > input[type="datetime-local"]#calc_shipping_country,
+  .input-group-sm > input[type="datetime-local"]#calc_shipping_postcode,
   table.woo-vou-recipient-fields .input-group-sm > input[type="datetime-local"].woo-vou-recipient-details,
   .woocommerce-account .edit-account .input-group-sm > input[type="datetime-local"].input-text,
   .input-group-sm > input[type="datetime-local"].input-group-addon,
@@ -3312,6 +3322,8 @@ input[type="search"] {
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
   .quantity .input-group-sm > input[type="month"],
+  .input-group-sm > input[type="month"]#calc_shipping_country,
+  .input-group-sm > input[type="month"]#calc_shipping_postcode,
   table.woo-vou-recipient-fields .input-group-sm > input[type="month"].woo-vou-recipient-details,
   .woocommerce-account .edit-account .input-group-sm > input[type="month"].input-text,
   .input-group-sm > input[type="month"].input-group-addon,
@@ -3324,7 +3336,7 @@ input[type="search"] {
   input[type="month"] {
     line-height: 30px;
   }
-  input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control, .quantity .input-group-lg > input[type="date"], table.woo-vou-recipient-fields .input-group-lg > input[type="date"].woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > input[type="date"].input-text,
+  input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control, .quantity .input-group-lg > input[type="date"], .input-group-lg > input[type="date"]#calc_shipping_country, .input-group-lg > input[type="date"]#calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-lg > input[type="date"].woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > input[type="date"].input-text,
   .input-group-lg > input[type="date"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="date"].btn,
   .woocommerce #respond .input-group-lg > .input-group-btn > input[type="date"]#submit,
@@ -3335,6 +3347,8 @@ input[type="search"] {
   input[type="time"].input-lg,
   .input-group-lg > input[type="time"].form-control,
   .quantity .input-group-lg > input[type="time"],
+  .input-group-lg > input[type="time"]#calc_shipping_country,
+  .input-group-lg > input[type="time"]#calc_shipping_postcode,
   table.woo-vou-recipient-fields .input-group-lg > input[type="time"].woo-vou-recipient-details,
   .woocommerce-account .edit-account .input-group-lg > input[type="time"].input-text,
   .input-group-lg > input[type="time"].input-group-addon,
@@ -3348,6 +3362,8 @@ input[type="search"] {
   input[type="datetime-local"].input-lg,
   .input-group-lg > input[type="datetime-local"].form-control,
   .quantity .input-group-lg > input[type="datetime-local"],
+  .input-group-lg > input[type="datetime-local"]#calc_shipping_country,
+  .input-group-lg > input[type="datetime-local"]#calc_shipping_postcode,
   table.woo-vou-recipient-fields .input-group-lg > input[type="datetime-local"].woo-vou-recipient-details,
   .woocommerce-account .edit-account .input-group-lg > input[type="datetime-local"].input-text,
   .input-group-lg > input[type="datetime-local"].input-group-addon,
@@ -3361,6 +3377,8 @@ input[type="search"] {
   input[type="month"].input-lg,
   .input-group-lg > input[type="month"].form-control,
   .quantity .input-group-lg > input[type="month"],
+  .input-group-lg > input[type="month"]#calc_shipping_country,
+  .input-group-lg > input[type="month"]#calc_shipping_postcode,
   table.woo-vou-recipient-fields .input-group-lg > input[type="month"].woo-vou-recipient-details,
   .woocommerce-account .edit-account .input-group-lg > input[type="month"].input-text,
   .input-group-lg > input[type="month"].input-group-addon,
@@ -3450,7 +3468,7 @@ input[type="checkbox"] {
   margin-bottom: 0;
   min-height: 34px;
 }
-.form-control-static.input-lg, .input-group-lg > .form-control-static.form-control, .quantity .input-group-lg > input.form-control-static, .woocommerce-ordering .input-group-lg > select.form-control-static, table.woo-vou-recipient-fields .input-group-lg > .form-control-static.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > .form-control-static.input-text,
+.form-control-static.input-lg, .input-group-lg > .form-control-static.form-control, .quantity .input-group-lg > input.form-control-static, .woocommerce-ordering .input-group-lg > select.form-control-static, .input-group-lg > .form-control-static#calc_shipping_country, .input-group-lg > .form-control-static#calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-lg > .form-control-static.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > .form-control-static.input-text,
 .input-group-lg > .form-control-static.input-group-addon,
 .input-group-lg > .input-group-btn > .form-control-static.btn,
 .woocommerce #respond .input-group-lg > .input-group-btn > input.form-control-static#submit,
@@ -3459,7 +3477,7 @@ input[type="checkbox"] {
 .woocommerce .input-group-lg > .input-group-btn > input.form-control-static.button,
 .woocommerce .input-group-lg > .input-group-btn > .form-control-static.added_to_cart,
 #content .sharedaddy .input-group-lg > .input-group-btn > .form-control-static.sd-button,
-.wordpress .elementor-element .input-group-lg > .input-group-btn > .form-control-static.elementor-button, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control, .quantity .input-group-sm > input.form-control-static, .woocommerce-ordering .input-group-sm > select.form-control-static, table.woo-vou-recipient-fields .input-group-sm > .form-control-static.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > .form-control-static.input-text,
+.wordpress .elementor-element .input-group-lg > .input-group-btn > .form-control-static.elementor-button, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control, .quantity .input-group-sm > input.form-control-static, .woocommerce-ordering .input-group-sm > select.form-control-static, .input-group-sm > .form-control-static#calc_shipping_country, .input-group-sm > .form-control-static#calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-sm > .form-control-static.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > .form-control-static.input-text,
 .input-group-sm > .form-control-static.input-group-addon,
 .input-group-sm > .input-group-btn > .form-control-static.btn,
 .woocommerce #respond .input-group-sm > .input-group-btn > input.form-control-static#submit,
@@ -3473,7 +3491,7 @@ input[type="checkbox"] {
   padding-right: 0;
 }
 
-.input-sm, .input-group-sm > .form-control, .quantity .input-group-sm > input, .woocommerce-ordering .input-group-sm > select, table.woo-vou-recipient-fields .input-group-sm > .woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > .input-text,
+.input-sm, .input-group-sm > .form-control, .quantity .input-group-sm > input, .woocommerce-ordering .input-group-sm > select, .input-group-sm > #calc_shipping_country, .input-group-sm > #calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-sm > .woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > .input-text,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
 .woocommerce #respond .input-group-sm > .input-group-btn > input#submit,
@@ -3490,7 +3508,7 @@ input[type="checkbox"] {
   border-radius: 0px;
 }
 
-select.input-sm, .input-group-sm > select.form-control, .woocommerce-ordering .input-group-sm > select, table.woo-vou-recipient-fields .input-group-sm > select.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > select.input-text,
+select.input-sm, .input-group-sm > select.form-control, .woocommerce-ordering .input-group-sm > select, .input-group-sm > select#calc_shipping_country, .input-group-sm > select#calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-sm > select.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > select.input-text,
 .input-group-sm > select.input-group-addon,
 .input-group-sm > .input-group-btn > select.btn,
 .woocommerce .input-group-sm > .input-group-btn > select.added_to_cart,
@@ -3500,7 +3518,7 @@ select.input-sm, .input-group-sm > select.form-control, .woocommerce-ordering .i
   line-height: 30px;
 }
 
-textarea.input-sm, .input-group-sm > textarea.form-control, table.woo-vou-recipient-fields .input-group-sm > textarea.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > textarea.input-text,
+textarea.input-sm, .input-group-sm > textarea.form-control, .input-group-sm > textarea#calc_shipping_country, .input-group-sm > textarea#calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-sm > textarea.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > textarea.input-text,
 .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-btn > textarea.btn,
 .woocommerce .input-group-sm > .input-group-btn > textarea.added_to_cart,
@@ -3509,6 +3527,8 @@ textarea.input-sm, .input-group-sm > textarea.form-control, table.woo-vou-recipi
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
 .woocommerce-ordering .input-group-sm > select[multiple],
+.input-group-sm > select[multiple]#calc_shipping_country,
+.input-group-sm > select[multiple]#calc_shipping_postcode,
 table.woo-vou-recipient-fields .input-group-sm > select[multiple].woo-vou-recipient-details,
 .woocommerce-account .edit-account .input-group-sm > select[multiple].input-text,
 .input-group-sm > select[multiple].input-group-addon,
@@ -3519,21 +3539,23 @@ table.woo-vou-recipient-fields .input-group-sm > select[multiple].woo-vou-recipi
   height: auto;
 }
 
-.form-group-sm .form-control, .form-group-sm .quantity input, .quantity .form-group-sm input, .form-group-sm .woocommerce-ordering select, .woocommerce-ordering .form-group-sm select, .form-group-sm table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-sm .woo-vou-recipient-details, .form-group-sm .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .form-group-sm .input-text {
+.form-group-sm .form-control, .form-group-sm .quantity input, .quantity .form-group-sm input, .form-group-sm .woocommerce-ordering select, .woocommerce-ordering .form-group-sm select, .form-group-sm #calc_shipping_country, .form-group-sm #calc_shipping_postcode, .form-group-sm table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-sm .woo-vou-recipient-details, .form-group-sm .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .form-group-sm .input-text {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 0px;
 }
-.form-group-sm select.form-control, .form-group-sm .woocommerce-ordering select, .woocommerce-ordering .form-group-sm select, .form-group-sm table.woo-vou-recipient-fields select.woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-sm select.woo-vou-recipient-details, .form-group-sm .woocommerce-account .edit-account select.input-text, .woocommerce-account .edit-account .form-group-sm select.input-text {
+.form-group-sm select.form-control, .form-group-sm .woocommerce-ordering select, .woocommerce-ordering .form-group-sm select, .form-group-sm select#calc_shipping_country, .form-group-sm select#calc_shipping_postcode, .form-group-sm table.woo-vou-recipient-fields select.woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-sm select.woo-vou-recipient-details, .form-group-sm .woocommerce-account .edit-account select.input-text, .woocommerce-account .edit-account .form-group-sm select.input-text {
   height: 30px;
   line-height: 30px;
 }
-.form-group-sm textarea.form-control, .form-group-sm table.woo-vou-recipient-fields textarea.woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-sm textarea.woo-vou-recipient-details, .form-group-sm .woocommerce-account .edit-account textarea.input-text, .woocommerce-account .edit-account .form-group-sm textarea.input-text,
+.form-group-sm textarea.form-control, .form-group-sm textarea#calc_shipping_country, .form-group-sm textarea#calc_shipping_postcode, .form-group-sm table.woo-vou-recipient-fields textarea.woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-sm textarea.woo-vou-recipient-details, .form-group-sm .woocommerce-account .edit-account textarea.input-text, .woocommerce-account .edit-account .form-group-sm textarea.input-text,
 .form-group-sm select[multiple].form-control,
 .form-group-sm .woocommerce-ordering select[multiple],
 .woocommerce-ordering .form-group-sm select[multiple],
+.form-group-sm select[multiple]#calc_shipping_country,
+.form-group-sm select[multiple]#calc_shipping_postcode,
 .form-group-sm table.woo-vou-recipient-fields select[multiple].woo-vou-recipient-details,
 table.woo-vou-recipient-fields .form-group-sm select[multiple].woo-vou-recipient-details,
 .form-group-sm .woocommerce-account .edit-account select[multiple].input-text,
@@ -3548,7 +3570,7 @@ table.woo-vou-recipient-fields .form-group-sm select[multiple].woo-vou-recipient
   line-height: 1.5;
 }
 
-.input-lg, .input-group-lg > .form-control, .quantity .input-group-lg > input, .woocommerce-ordering .input-group-lg > select, table.woo-vou-recipient-fields .input-group-lg > .woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > .input-text,
+.input-lg, .input-group-lg > .form-control, .quantity .input-group-lg > input, .woocommerce-ordering .input-group-lg > select, .input-group-lg > #calc_shipping_country, .input-group-lg > #calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-lg > .woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > .input-text,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
 .woocommerce #respond .input-group-lg > .input-group-btn > input#submit,
@@ -3565,7 +3587,7 @@ table.woo-vou-recipient-fields .form-group-sm select[multiple].woo-vou-recipient
   border-radius: 0px;
 }
 
-select.input-lg, .input-group-lg > select.form-control, .woocommerce-ordering .input-group-lg > select, table.woo-vou-recipient-fields .input-group-lg > select.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > select.input-text,
+select.input-lg, .input-group-lg > select.form-control, .woocommerce-ordering .input-group-lg > select, .input-group-lg > select#calc_shipping_country, .input-group-lg > select#calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-lg > select.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > select.input-text,
 .input-group-lg > select.input-group-addon,
 .input-group-lg > .input-group-btn > select.btn,
 .woocommerce .input-group-lg > .input-group-btn > select.added_to_cart,
@@ -3575,7 +3597,7 @@ select.input-lg, .input-group-lg > select.form-control, .woocommerce-ordering .i
   line-height: 46px;
 }
 
-textarea.input-lg, .input-group-lg > textarea.form-control, table.woo-vou-recipient-fields .input-group-lg > textarea.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > textarea.input-text,
+textarea.input-lg, .input-group-lg > textarea.form-control, .input-group-lg > textarea#calc_shipping_country, .input-group-lg > textarea#calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-lg > textarea.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > textarea.input-text,
 .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-btn > textarea.btn,
 .woocommerce .input-group-lg > .input-group-btn > textarea.added_to_cart,
@@ -3584,6 +3606,8 @@ textarea.input-lg, .input-group-lg > textarea.form-control, table.woo-vou-recipi
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
 .woocommerce-ordering .input-group-lg > select[multiple],
+.input-group-lg > select[multiple]#calc_shipping_country,
+.input-group-lg > select[multiple]#calc_shipping_postcode,
 table.woo-vou-recipient-fields .input-group-lg > select[multiple].woo-vou-recipient-details,
 .woocommerce-account .edit-account .input-group-lg > select[multiple].input-text,
 .input-group-lg > select[multiple].input-group-addon,
@@ -3594,21 +3618,23 @@ table.woo-vou-recipient-fields .input-group-lg > select[multiple].woo-vou-recipi
   height: auto;
 }
 
-.form-group-lg .form-control, .form-group-lg .quantity input, .quantity .form-group-lg input, .form-group-lg .woocommerce-ordering select, .woocommerce-ordering .form-group-lg select, .form-group-lg table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-lg .woo-vou-recipient-details, .form-group-lg .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .form-group-lg .input-text {
+.form-group-lg .form-control, .form-group-lg .quantity input, .quantity .form-group-lg input, .form-group-lg .woocommerce-ordering select, .woocommerce-ordering .form-group-lg select, .form-group-lg #calc_shipping_country, .form-group-lg #calc_shipping_postcode, .form-group-lg table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-lg .woo-vou-recipient-details, .form-group-lg .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .form-group-lg .input-text {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33333;
   border-radius: 0px;
 }
-.form-group-lg select.form-control, .form-group-lg .woocommerce-ordering select, .woocommerce-ordering .form-group-lg select, .form-group-lg table.woo-vou-recipient-fields select.woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-lg select.woo-vou-recipient-details, .form-group-lg .woocommerce-account .edit-account select.input-text, .woocommerce-account .edit-account .form-group-lg select.input-text {
+.form-group-lg select.form-control, .form-group-lg .woocommerce-ordering select, .woocommerce-ordering .form-group-lg select, .form-group-lg select#calc_shipping_country, .form-group-lg select#calc_shipping_postcode, .form-group-lg table.woo-vou-recipient-fields select.woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-lg select.woo-vou-recipient-details, .form-group-lg .woocommerce-account .edit-account select.input-text, .woocommerce-account .edit-account .form-group-lg select.input-text {
   height: 46px;
   line-height: 46px;
 }
-.form-group-lg textarea.form-control, .form-group-lg table.woo-vou-recipient-fields textarea.woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-lg textarea.woo-vou-recipient-details, .form-group-lg .woocommerce-account .edit-account textarea.input-text, .woocommerce-account .edit-account .form-group-lg textarea.input-text,
+.form-group-lg textarea.form-control, .form-group-lg textarea#calc_shipping_country, .form-group-lg textarea#calc_shipping_postcode, .form-group-lg table.woo-vou-recipient-fields textarea.woo-vou-recipient-details, table.woo-vou-recipient-fields .form-group-lg textarea.woo-vou-recipient-details, .form-group-lg .woocommerce-account .edit-account textarea.input-text, .woocommerce-account .edit-account .form-group-lg textarea.input-text,
 .form-group-lg select[multiple].form-control,
 .form-group-lg .woocommerce-ordering select[multiple],
 .woocommerce-ordering .form-group-lg select[multiple],
+.form-group-lg select[multiple]#calc_shipping_country,
+.form-group-lg select[multiple]#calc_shipping_postcode,
 .form-group-lg table.woo-vou-recipient-fields select[multiple].woo-vou-recipient-details,
 table.woo-vou-recipient-fields .form-group-lg select[multiple].woo-vou-recipient-details,
 .form-group-lg .woocommerce-account .edit-account select[multiple].input-text,
@@ -3626,7 +3652,7 @@ table.woo-vou-recipient-fields .form-group-lg select[multiple].woo-vou-recipient
 .has-feedback {
   position: relative;
 }
-.has-feedback .form-control, .has-feedback .quantity input, .quantity .has-feedback input, .has-feedback .woocommerce-ordering select, .woocommerce-ordering .has-feedback select, .has-feedback table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .has-feedback .woo-vou-recipient-details, .has-feedback .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .has-feedback .input-text {
+.has-feedback .form-control, .has-feedback .quantity input, .quantity .has-feedback input, .has-feedback .woocommerce-ordering select, .woocommerce-ordering .has-feedback select, .has-feedback #calc_shipping_country, .has-feedback #calc_shipping_postcode, .has-feedback table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .has-feedback .woo-vou-recipient-details, .has-feedback .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .has-feedback .input-text {
   padding-right: 42.5px;
 }
 
@@ -3643,7 +3669,7 @@ table.woo-vou-recipient-fields .form-group-lg select[multiple].woo-vou-recipient
   pointer-events: none;
 }
 
-.input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback, .quantity .input-group-lg > input + .form-control-feedback, .woocommerce-ordering .input-group-lg > select + .form-control-feedback, table.woo-vou-recipient-fields .input-group-lg > .woo-vou-recipient-details + .form-control-feedback, .woocommerce-account .edit-account .input-group-lg > .input-text + .form-control-feedback,
+.input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback, .quantity .input-group-lg > input + .form-control-feedback, .woocommerce-ordering .input-group-lg > select + .form-control-feedback, .input-group-lg > #calc_shipping_country + .form-control-feedback, .input-group-lg > #calc_shipping_postcode + .form-control-feedback, table.woo-vou-recipient-fields .input-group-lg > .woo-vou-recipient-details + .form-control-feedback, .woocommerce-account .edit-account .input-group-lg > .input-text + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 .woocommerce #respond .input-group-lg > .input-group-btn > input#submit + .form-control-feedback,
@@ -3659,6 +3685,8 @@ table.woo-vou-recipient-fields .form-group-lg select[multiple].woo-vou-recipient
 .quantity .form-group-lg input + .form-control-feedback,
 .form-group-lg .woocommerce-ordering select + .form-control-feedback,
 .woocommerce-ordering .form-group-lg select + .form-control-feedback,
+.form-group-lg #calc_shipping_country + .form-control-feedback,
+.form-group-lg #calc_shipping_postcode + .form-control-feedback,
 .form-group-lg table.woo-vou-recipient-fields .woo-vou-recipient-details + .form-control-feedback,
 table.woo-vou-recipient-fields .form-group-lg .woo-vou-recipient-details + .form-control-feedback,
 .form-group-lg .woocommerce-account .edit-account .input-text + .form-control-feedback,
@@ -3668,7 +3696,7 @@ table.woo-vou-recipient-fields .form-group-lg .woo-vou-recipient-details + .form
   line-height: 46px;
 }
 
-.input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback, .quantity .input-group-sm > input + .form-control-feedback, .woocommerce-ordering .input-group-sm > select + .form-control-feedback, table.woo-vou-recipient-fields .input-group-sm > .woo-vou-recipient-details + .form-control-feedback, .woocommerce-account .edit-account .input-group-sm > .input-text + .form-control-feedback,
+.input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback, .quantity .input-group-sm > input + .form-control-feedback, .woocommerce-ordering .input-group-sm > select + .form-control-feedback, .input-group-sm > #calc_shipping_country + .form-control-feedback, .input-group-sm > #calc_shipping_postcode + .form-control-feedback, table.woo-vou-recipient-fields .input-group-sm > .woo-vou-recipient-details + .form-control-feedback, .woocommerce-account .edit-account .input-group-sm > .input-text + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 .woocommerce #respond .input-group-sm > .input-group-btn > input#submit + .form-control-feedback,
@@ -3684,6 +3712,8 @@ table.woo-vou-recipient-fields .form-group-lg .woo-vou-recipient-details + .form
 .quantity .form-group-sm input + .form-control-feedback,
 .form-group-sm .woocommerce-ordering select + .form-control-feedback,
 .woocommerce-ordering .form-group-sm select + .form-control-feedback,
+.form-group-sm #calc_shipping_country + .form-control-feedback,
+.form-group-sm #calc_shipping_postcode + .form-control-feedback,
 .form-group-sm table.woo-vou-recipient-fields .woo-vou-recipient-details + .form-control-feedback,
 table.woo-vou-recipient-fields .form-group-sm .woo-vou-recipient-details + .form-control-feedback,
 .form-group-sm .woocommerce-account .edit-account .input-text + .form-control-feedback,
@@ -3701,12 +3731,12 @@ table.woo-vou-recipient-fields .form-group-sm .woo-vou-recipient-details + .form
 .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
   color: #3c763d;
 }
-.has-success .form-control, .has-success .quantity input, .quantity .has-success input, .has-success .woocommerce-ordering select, .woocommerce-ordering .has-success select, .has-success table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .has-success .woo-vou-recipient-details, .has-success .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .has-success .input-text {
+.has-success .form-control, .has-success .quantity input, .quantity .has-success input, .has-success .woocommerce-ordering select, .woocommerce-ordering .has-success select, .has-success #calc_shipping_country, .has-success #calc_shipping_postcode, .has-success table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .has-success .woo-vou-recipient-details, .has-success .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .has-success .input-text {
   border-color: #3c763d;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.has-success .form-control:focus, .has-success .quantity input:focus, .quantity .has-success input:focus, .has-success .woocommerce-ordering select:focus, .woocommerce-ordering .has-success select:focus, .has-success table.woo-vou-recipient-fields .woo-vou-recipient-details:focus, table.woo-vou-recipient-fields .has-success .woo-vou-recipient-details:focus, .has-success .woocommerce-account .edit-account .input-text:focus, .woocommerce-account .edit-account .has-success .input-text:focus {
+.has-success .form-control:focus, .has-success .quantity input:focus, .quantity .has-success input:focus, .has-success .woocommerce-ordering select:focus, .woocommerce-ordering .has-success select:focus, .has-success #calc_shipping_country:focus, .has-success #calc_shipping_postcode:focus, .has-success table.woo-vou-recipient-fields .woo-vou-recipient-details:focus, table.woo-vou-recipient-fields .has-success .woo-vou-recipient-details:focus, .has-success .woocommerce-account .edit-account .input-text:focus, .woocommerce-account .edit-account .has-success .input-text:focus {
   border-color: #2b542c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
@@ -3728,12 +3758,12 @@ table.woo-vou-recipient-fields .form-group-sm .woo-vou-recipient-details + .form
 .has-warning .checkbox-inline, .has-warning.radio label, .has-warning.checkbox label, .has-warning.radio-inline label, .has-warning.checkbox-inline label {
   color: #8a6d3b;
 }
-.has-warning .form-control, .has-warning .quantity input, .quantity .has-warning input, .has-warning .woocommerce-ordering select, .woocommerce-ordering .has-warning select, .has-warning table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .has-warning .woo-vou-recipient-details, .has-warning .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .has-warning .input-text {
+.has-warning .form-control, .has-warning .quantity input, .quantity .has-warning input, .has-warning .woocommerce-ordering select, .woocommerce-ordering .has-warning select, .has-warning #calc_shipping_country, .has-warning #calc_shipping_postcode, .has-warning table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .has-warning .woo-vou-recipient-details, .has-warning .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .has-warning .input-text {
   border-color: #8a6d3b;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.has-warning .form-control:focus, .has-warning .quantity input:focus, .quantity .has-warning input:focus, .has-warning .woocommerce-ordering select:focus, .woocommerce-ordering .has-warning select:focus, .has-warning table.woo-vou-recipient-fields .woo-vou-recipient-details:focus, table.woo-vou-recipient-fields .has-warning .woo-vou-recipient-details:focus, .has-warning .woocommerce-account .edit-account .input-text:focus, .woocommerce-account .edit-account .has-warning .input-text:focus {
+.has-warning .form-control:focus, .has-warning .quantity input:focus, .quantity .has-warning input:focus, .has-warning .woocommerce-ordering select:focus, .woocommerce-ordering .has-warning select:focus, .has-warning #calc_shipping_country:focus, .has-warning #calc_shipping_postcode:focus, .has-warning table.woo-vou-recipient-fields .woo-vou-recipient-details:focus, table.woo-vou-recipient-fields .has-warning .woo-vou-recipient-details:focus, .has-warning .woocommerce-account .edit-account .input-text:focus, .woocommerce-account .edit-account .has-warning .input-text:focus {
   border-color: #66512c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
@@ -3755,12 +3785,12 @@ table.woo-vou-recipient-fields .form-group-sm .woo-vou-recipient-details + .form
 .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
   color: #a94442;
 }
-.has-error .form-control, .has-error .quantity input, .quantity .has-error input, .has-error .woocommerce-ordering select, .woocommerce-ordering .has-error select, .has-error table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .has-error .woo-vou-recipient-details, .has-error .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .has-error .input-text {
+.has-error .form-control, .has-error .quantity input, .quantity .has-error input, .has-error .woocommerce-ordering select, .woocommerce-ordering .has-error select, .has-error #calc_shipping_country, .has-error #calc_shipping_postcode, .has-error table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .has-error .woo-vou-recipient-details, .has-error .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .has-error .input-text {
   border-color: #a94442;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.has-error .form-control:focus, .has-error .quantity input:focus, .quantity .has-error input:focus, .has-error .woocommerce-ordering select:focus, .woocommerce-ordering .has-error select:focus, .has-error table.woo-vou-recipient-fields .woo-vou-recipient-details:focus, table.woo-vou-recipient-fields .has-error .woo-vou-recipient-details:focus, .has-error .woocommerce-account .edit-account .input-text:focus, .woocommerce-account .edit-account .has-error .input-text:focus {
+.has-error .form-control:focus, .has-error .quantity input:focus, .quantity .has-error input:focus, .has-error .woocommerce-ordering select:focus, .woocommerce-ordering .has-error select:focus, .has-error #calc_shipping_country:focus, .has-error #calc_shipping_postcode:focus, .has-error table.woo-vou-recipient-fields .woo-vou-recipient-details:focus, table.woo-vou-recipient-fields .has-error .woo-vou-recipient-details:focus, .has-error .woocommerce-account .edit-account .input-text:focus, .woocommerce-account .edit-account .has-error .input-text:focus {
   border-color: #843534;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
@@ -3794,7 +3824,7 @@ table.woo-vou-recipient-fields .form-group-sm .woo-vou-recipient-details + .form
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .form-inline .form-control, .form-inline .quantity input, .quantity .form-inline input, .form-inline .woocommerce-ordering select, .woocommerce-ordering .form-inline select, .form-inline table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .form-inline .woo-vou-recipient-details, .form-inline .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .form-inline .input-text {
+  .form-inline .form-control, .form-inline .quantity input, .quantity .form-inline input, .form-inline .woocommerce-ordering select, .woocommerce-ordering .form-inline select, .form-inline #calc_shipping_country, .form-inline #calc_shipping_postcode, .form-inline table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .form-inline .woo-vou-recipient-details, .form-inline .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .form-inline .input-text {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -3813,13 +3843,15 @@ table.woo-vou-recipient-fields .form-group-sm .woo-vou-recipient-details + .form
   .quantity .form-inline .input-group input,
   .form-inline .input-group .woocommerce-ordering select,
   .woocommerce-ordering .form-inline .input-group select,
+  .form-inline .input-group #calc_shipping_country,
+  .form-inline .input-group #calc_shipping_postcode,
   .form-inline .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details,
   table.woo-vou-recipient-fields .form-inline .input-group .woo-vou-recipient-details,
   .form-inline .input-group .woocommerce-account .edit-account .input-text,
   .woocommerce-account .edit-account .form-inline .input-group .input-text {
     width: auto;
   }
-  .form-inline .input-group > .form-control, .form-inline .quantity .input-group > input, .quantity .form-inline .input-group > input, .form-inline .woocommerce-ordering .input-group > select, .woocommerce-ordering .form-inline .input-group > select, .form-inline table.woo-vou-recipient-fields .input-group > .woo-vou-recipient-details, table.woo-vou-recipient-fields .form-inline .input-group > .woo-vou-recipient-details, .form-inline .woocommerce-account .edit-account .input-group > .input-text, .woocommerce-account .edit-account .form-inline .input-group > .input-text {
+  .form-inline .input-group > .form-control, .form-inline .quantity .input-group > input, .quantity .form-inline .input-group > input, .form-inline .woocommerce-ordering .input-group > select, .woocommerce-ordering .form-inline .input-group > select, .form-inline .input-group > #calc_shipping_country, .form-inline .input-group > #calc_shipping_postcode, .form-inline table.woo-vou-recipient-fields .input-group > .woo-vou-recipient-details, table.woo-vou-recipient-fields .form-inline .input-group > .woo-vou-recipient-details, .form-inline .woocommerce-account .edit-account .input-group > .input-text, .woocommerce-account .edit-account .form-inline .input-group > .input-text {
     width: 100%;
   }
   .form-inline .control-label {
@@ -5161,14 +5193,14 @@ tbody.collapse.in {
   padding-left: 0;
   padding-right: 0;
 }
-.input-group .form-control, .input-group .quantity input, .quantity .input-group input, .input-group .woocommerce-ordering select, .woocommerce-ordering .input-group select, .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details, .input-group .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .input-group .input-text {
+.input-group .form-control, .input-group .quantity input, .quantity .input-group input, .input-group .woocommerce-ordering select, .woocommerce-ordering .input-group select, .input-group #calc_shipping_country, .input-group #calc_shipping_postcode, .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details, .input-group .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .input-group .input-text {
   position: relative;
   z-index: 2;
   float: left;
   width: 100%;
   margin-bottom: 0;
 }
-.input-group .form-control:focus, .input-group .quantity input:focus, .quantity .input-group input:focus, .input-group .woocommerce-ordering select:focus, .woocommerce-ordering .input-group select:focus, .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details:focus, table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:focus, .input-group .woocommerce-account .edit-account .input-text:focus, .woocommerce-account .edit-account .input-group .input-text:focus {
+.input-group .form-control:focus, .input-group .quantity input:focus, .quantity .input-group input:focus, .input-group .woocommerce-ordering select:focus, .woocommerce-ordering .input-group select:focus, .input-group #calc_shipping_country:focus, .input-group #calc_shipping_postcode:focus, .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details:focus, table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:focus, .input-group .woocommerce-account .edit-account .input-text:focus, .woocommerce-account .edit-account .input-group .input-text:focus {
   z-index: 3;
 }
 
@@ -5179,6 +5211,8 @@ tbody.collapse.in {
 .quantity .input-group input,
 .input-group .woocommerce-ordering select,
 .woocommerce-ordering .input-group select,
+.input-group #calc_shipping_country,
+.input-group #calc_shipping_postcode,
 .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details,
 table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details,
 .input-group .woocommerce-account .edit-account .input-text,
@@ -5192,6 +5226,8 @@ table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details,
 .quantity .input-group input:not(:first-child):not(:last-child),
 .input-group .woocommerce-ordering select:not(:first-child):not(:last-child),
 .woocommerce-ordering .input-group select:not(:first-child):not(:last-child),
+.input-group #calc_shipping_country:not(:first-child):not(:last-child),
+.input-group #calc_shipping_postcode:not(:first-child):not(:last-child),
 .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details:not(:first-child):not(:last-child),
 table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:not(:first-child):not(:last-child),
 .input-group .woocommerce-account .edit-account .input-text:not(:first-child):not(:last-child),
@@ -5217,7 +5253,7 @@ table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:not(:firs
   border: 1px solid #ccc;
   border-radius: 0px;
 }
-.input-group-addon.input-sm, .quantity .input-group-sm > input.input-group-addon, .woocommerce-ordering .input-group-sm > select.input-group-addon, table.woo-vou-recipient-fields .input-group-sm > .input-group-addon.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > .input-group-addon.input-text,
+.input-group-addon.input-sm, .quantity .input-group-sm > input.input-group-addon, .woocommerce-ordering .input-group-sm > select.input-group-addon, .input-group-sm > .input-group-addon#calc_shipping_country, .input-group-sm > .input-group-addon#calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-sm > .input-group-addon.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-sm > .input-group-addon.input-text,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .input-group-addon.btn,
 .woocommerce #respond .input-group-sm > .input-group-btn > input.input-group-addon#submit,
@@ -5231,7 +5267,7 @@ table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:not(:firs
   font-size: 12px;
   border-radius: 0px;
 }
-.input-group-addon.input-lg, .quantity .input-group-lg > input.input-group-addon, .woocommerce-ordering .input-group-lg > select.input-group-addon, table.woo-vou-recipient-fields .input-group-lg > .input-group-addon.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > .input-group-addon.input-text,
+.input-group-addon.input-lg, .quantity .input-group-lg > input.input-group-addon, .woocommerce-ordering .input-group-lg > select.input-group-addon, .input-group-lg > .input-group-addon#calc_shipping_country, .input-group-lg > .input-group-addon#calc_shipping_postcode, table.woo-vou-recipient-fields .input-group-lg > .input-group-addon.woo-vou-recipient-details, .woocommerce-account .edit-account .input-group-lg > .input-group-addon.input-text,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .input-group-addon.btn,
 .woocommerce #respond .input-group-lg > .input-group-btn > input.input-group-addon#submit,
@@ -5250,7 +5286,7 @@ table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:not(:firs
   margin-top: 0;
 }
 
-.input-group .form-control:first-child, .input-group .quantity input:first-child, .quantity .input-group input:first-child, .input-group .woocommerce-ordering select:first-child, .woocommerce-ordering .input-group select:first-child, .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details:first-child, table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:first-child, .input-group .woocommerce-account .edit-account .input-text:first-child, .woocommerce-account .edit-account .input-group .input-text:first-child,
+.input-group .form-control:first-child, .input-group .quantity input:first-child, .quantity .input-group input:first-child, .input-group .woocommerce-ordering select:first-child, .woocommerce-ordering .input-group select:first-child, .input-group #calc_shipping_country:first-child, .input-group #calc_shipping_postcode:first-child, .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details:first-child, table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:first-child, .input-group .woocommerce-account .edit-account .input-text:first-child, .woocommerce-account .edit-account .input-group .input-text:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .woocommerce #respond .input-group-btn:first-child > input#submit,
@@ -5293,7 +5329,7 @@ table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:not(:firs
   border-right: 0;
 }
 
-.input-group .form-control:last-child, .input-group .quantity input:last-child, .quantity .input-group input:last-child, .input-group .woocommerce-ordering select:last-child, .woocommerce-ordering .input-group select:last-child, .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details:last-child, table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:last-child, .input-group .woocommerce-account .edit-account .input-text:last-child, .woocommerce-account .edit-account .input-group .input-text:last-child,
+.input-group .form-control:last-child, .input-group .quantity input:last-child, .quantity .input-group input:last-child, .input-group .woocommerce-ordering select:last-child, .woocommerce-ordering .input-group select:last-child, .input-group #calc_shipping_country:last-child, .input-group #calc_shipping_postcode:last-child, .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details:last-child, table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:last-child, .input-group .woocommerce-account .edit-account .input-text:last-child, .woocommerce-account .edit-account .input-group .input-text:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .woocommerce #respond .input-group-btn:last-child > input#submit,
@@ -5885,7 +5921,7 @@ table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:not(:firs
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .navbar-form .form-control, .navbar-form .quantity input, .quantity .navbar-form input, .navbar-form .woocommerce-ordering select, .woocommerce-ordering .navbar-form select, .navbar-form table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .navbar-form .woo-vou-recipient-details, .navbar-form .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .navbar-form .input-text {
+  .navbar-form .form-control, .navbar-form .quantity input, .quantity .navbar-form input, .navbar-form .woocommerce-ordering select, .woocommerce-ordering .navbar-form select, .navbar-form #calc_shipping_country, .navbar-form #calc_shipping_postcode, .navbar-form table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .navbar-form .woo-vou-recipient-details, .navbar-form .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .navbar-form .input-text {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -5904,13 +5940,15 @@ table.woo-vou-recipient-fields .input-group .woo-vou-recipient-details:not(:firs
   .quantity .navbar-form .input-group input,
   .navbar-form .input-group .woocommerce-ordering select,
   .woocommerce-ordering .navbar-form .input-group select,
+  .navbar-form .input-group #calc_shipping_country,
+  .navbar-form .input-group #calc_shipping_postcode,
   .navbar-form .input-group table.woo-vou-recipient-fields .woo-vou-recipient-details,
   table.woo-vou-recipient-fields .navbar-form .input-group .woo-vou-recipient-details,
   .navbar-form .input-group .woocommerce-account .edit-account .input-text,
   .woocommerce-account .edit-account .navbar-form .input-group .input-text {
     width: auto;
   }
-  .navbar-form .input-group > .form-control, .navbar-form .quantity .input-group > input, .quantity .navbar-form .input-group > input, .navbar-form .woocommerce-ordering .input-group > select, .woocommerce-ordering .navbar-form .input-group > select, .navbar-form table.woo-vou-recipient-fields .input-group > .woo-vou-recipient-details, table.woo-vou-recipient-fields .navbar-form .input-group > .woo-vou-recipient-details, .navbar-form .woocommerce-account .edit-account .input-group > .input-text, .woocommerce-account .edit-account .navbar-form .input-group > .input-text {
+  .navbar-form .input-group > .form-control, .navbar-form .quantity .input-group > input, .quantity .navbar-form .input-group > input, .navbar-form .woocommerce-ordering .input-group > select, .woocommerce-ordering .navbar-form .input-group > select, .navbar-form .input-group > #calc_shipping_country, .navbar-form .input-group > #calc_shipping_postcode, .navbar-form table.woo-vou-recipient-fields .input-group > .woo-vou-recipient-details, table.woo-vou-recipient-fields .navbar-form .input-group > .woo-vou-recipient-details, .navbar-form .woocommerce-account .edit-account .input-group > .input-text, .woocommerce-account .edit-account .navbar-form .input-group > .input-text {
     width: 100%;
   }
   .navbar-form .control-label {
@@ -6522,25 +6560,27 @@ a.thumbnail.active {
   border-color: #006f71;
 }
 
-.alert, .woocommerce-message {
+.alert, .woocommerce-message, .woocommerce-error, .woocommerce-info {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 0px;
 }
-.alert h4, .woocommerce-message h4 {
+.alert h4, .woocommerce-message h4, .woocommerce-error h4, .woocommerce-info h4 {
   margin-top: 0;
   color: inherit;
 }
-.alert .alert-link, .woocommerce-message .alert-link {
+.alert .alert-link, .woocommerce-message .alert-link, .woocommerce-error .alert-link, .woocommerce-info .alert-link {
   font-weight: bold;
 }
 .alert > p,
 .alert > ul, .woocommerce-message > p,
-.woocommerce-message > ul {
+.woocommerce-message > ul, .woocommerce-error > p,
+.woocommerce-error > ul, .woocommerce-info > p,
+.woocommerce-info > ul {
   margin-bottom: 0;
 }
-.alert > p + p, .woocommerce-message > p + p {
+.alert > p + p, .woocommerce-message > p + p, .woocommerce-error > p + p, .woocommerce-info > p + p {
   margin-top: 5px;
 }
 
@@ -6592,15 +6632,15 @@ a.thumbnail.active {
   color: #66512c;
 }
 
-.alert-danger {
+.alert-danger, .woocommerce-error {
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442;
 }
-.alert-danger hr {
+.alert-danger hr, .woocommerce-error hr {
   border-top-color: #e4b9c0;
 }
-.alert-danger .alert-link {
+.alert-danger .alert-link, .woocommerce-error .alert-link {
   color: #843534;
 }
 
@@ -9202,10 +9242,6 @@ body.page-template-fullwidthnotitle #content .page-header, body.page-template-fu
   display: none;
 }
 
-.hidden_label > .control-label {
-  display: none;
-}
-
 .form-horizontal .control-label {
   position: relative;
   min-height: 1px;
@@ -9259,12 +9295,11 @@ body.page-template-fullwidthnotitle #content .page-header, body.page-template-fu
 }
 
 .gform_wrapper .ginput_complex.ginput_container_name span {
-  display: block;
+  display: inline-block;
   vertical-align: top;
 }
 @media (min-width: 768px) {
   .gform_wrapper .ginput_complex.ginput_container_name span {
-    display: inline-block;
     padding-right: 16px;
     margin-right: -4px;
   }
@@ -9273,7 +9308,7 @@ body.page-template-fullwidthnotitle #content .page-header, body.page-template-fu
   overflow: visible;
   width: 100%;
 }
-.gform_wrapper .ginput_complex.ginput_container .form-control, .gform_wrapper .ginput_complex.ginput_container .quantity input, .quantity .gform_wrapper .ginput_complex.ginput_container input, .gform_wrapper .ginput_complex.ginput_container .woocommerce-ordering select, .woocommerce-ordering .gform_wrapper .ginput_complex.ginput_container select, .gform_wrapper .ginput_complex.ginput_container table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .gform_wrapper .ginput_complex.ginput_container .woo-vou-recipient-details, .gform_wrapper .ginput_complex.ginput_container .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .gform_wrapper .ginput_complex.ginput_container .input-text {
+.gform_wrapper .ginput_complex.ginput_container .form-control, .gform_wrapper .ginput_complex.ginput_container .quantity input, .quantity .gform_wrapper .ginput_complex.ginput_container input, .gform_wrapper .ginput_complex.ginput_container .woocommerce-ordering select, .woocommerce-ordering .gform_wrapper .ginput_complex.ginput_container select, .gform_wrapper .ginput_complex.ginput_container #calc_shipping_country, .gform_wrapper .ginput_complex.ginput_container #calc_shipping_postcode, .gform_wrapper .ginput_complex.ginput_container table.woo-vou-recipient-fields .woo-vou-recipient-details, table.woo-vou-recipient-fields .gform_wrapper .ginput_complex.ginput_container .woo-vou-recipient-details, .gform_wrapper .ginput_complex.ginput_container .woocommerce-account .edit-account .input-text, .woocommerce-account .edit-account .gform_wrapper .ginput_complex.ginput_container .input-text {
   margin-bottom: 15px;
 }
 @media (min-width: 768px) {
@@ -9673,7 +9708,7 @@ Buttons
 /**
 Big buttons
  */
-.wc-proceed-to-checkout .button, .woocommerce-checkout-payment .button {
+.woocommerce .wc-proceed-to-checkout .button, .woocommerce .woocommerce-checkout-payment .button {
   color: #fff;
   background-color: #175567;
   border-color: #124452;
@@ -9684,34 +9719,34 @@ Big buttons
   display: block;
   width: 100%;
 }
-.wc-proceed-to-checkout .button:focus, .wc-proceed-to-checkout .button.focus, .woocommerce-checkout-payment .button:focus, .woocommerce-checkout-payment .button.focus {
+.woocommerce .wc-proceed-to-checkout .button:focus, .woocommerce .wc-proceed-to-checkout .button.focus, .woocommerce .woocommerce-checkout-payment .button:focus, .woocommerce .woocommerce-checkout-payment .button.focus {
   color: #fff;
   background-color: #0e333d;
   border-color: black;
 }
-.wc-proceed-to-checkout .button:hover, .woocommerce-checkout-payment .button:hover {
+.woocommerce .wc-proceed-to-checkout .button:hover, .woocommerce .woocommerce-checkout-payment .button:hover {
   color: #fff;
   background-color: #0e333d;
   border-color: #071b20;
 }
-.wc-proceed-to-checkout .button:active, .wc-proceed-to-checkout .button.active, .open > .wc-proceed-to-checkout .button.dropdown-toggle, .woocommerce-checkout-payment .button:active, .woocommerce-checkout-payment .button.active, .open > .woocommerce-checkout-payment .button.dropdown-toggle {
+.woocommerce .wc-proceed-to-checkout .button:active, .woocommerce .wc-proceed-to-checkout .button.active, .open > .woocommerce .wc-proceed-to-checkout .button.dropdown-toggle, .woocommerce .woocommerce-checkout-payment .button:active, .woocommerce .woocommerce-checkout-payment .button.active, .open > .woocommerce .woocommerce-checkout-payment .button.dropdown-toggle {
   color: #fff;
   background-color: #0e333d;
   border-color: #071b20;
 }
-.wc-proceed-to-checkout .button:active:hover, .wc-proceed-to-checkout .button:active:focus, .wc-proceed-to-checkout .button:active.focus, .wc-proceed-to-checkout .button.active:hover, .wc-proceed-to-checkout .button.active:focus, .wc-proceed-to-checkout .button.active.focus, .open > .wc-proceed-to-checkout .button.dropdown-toggle:hover, .open > .wc-proceed-to-checkout .button.dropdown-toggle:focus, .open > .wc-proceed-to-checkout .button.dropdown-toggle.focus, .woocommerce-checkout-payment .button:active:hover, .woocommerce-checkout-payment .button:active:focus, .woocommerce-checkout-payment .button:active.focus, .woocommerce-checkout-payment .button.active:hover, .woocommerce-checkout-payment .button.active:focus, .woocommerce-checkout-payment .button.active.focus, .open > .woocommerce-checkout-payment .button.dropdown-toggle:hover, .open > .woocommerce-checkout-payment .button.dropdown-toggle:focus, .open > .woocommerce-checkout-payment .button.dropdown-toggle.focus {
+.woocommerce .wc-proceed-to-checkout .button:active:hover, .woocommerce .wc-proceed-to-checkout .button:active:focus, .woocommerce .wc-proceed-to-checkout .button:active.focus, .woocommerce .wc-proceed-to-checkout .button.active:hover, .woocommerce .wc-proceed-to-checkout .button.active:focus, .woocommerce .wc-proceed-to-checkout .button.active.focus, .open > .woocommerce .wc-proceed-to-checkout .button.dropdown-toggle:hover, .open > .woocommerce .wc-proceed-to-checkout .button.dropdown-toggle:focus, .open > .woocommerce .wc-proceed-to-checkout .button.dropdown-toggle.focus, .woocommerce .woocommerce-checkout-payment .button:active:hover, .woocommerce .woocommerce-checkout-payment .button:active:focus, .woocommerce .woocommerce-checkout-payment .button:active.focus, .woocommerce .woocommerce-checkout-payment .button.active:hover, .woocommerce .woocommerce-checkout-payment .button.active:focus, .woocommerce .woocommerce-checkout-payment .button.active.focus, .open > .woocommerce .woocommerce-checkout-payment .button.dropdown-toggle:hover, .open > .woocommerce .woocommerce-checkout-payment .button.dropdown-toggle:focus, .open > .woocommerce .woocommerce-checkout-payment .button.dropdown-toggle.focus {
   color: #fff;
   background-color: #071b20;
   border-color: black;
 }
-.wc-proceed-to-checkout .button:active, .wc-proceed-to-checkout .button.active, .open > .wc-proceed-to-checkout .button.dropdown-toggle, .woocommerce-checkout-payment .button:active, .woocommerce-checkout-payment .button.active, .open > .woocommerce-checkout-payment .button.dropdown-toggle {
+.woocommerce .wc-proceed-to-checkout .button:active, .woocommerce .wc-proceed-to-checkout .button.active, .open > .woocommerce .wc-proceed-to-checkout .button.dropdown-toggle, .woocommerce .woocommerce-checkout-payment .button:active, .woocommerce .woocommerce-checkout-payment .button.active, .open > .woocommerce .woocommerce-checkout-payment .button.dropdown-toggle {
   background-image: none;
 }
-.wc-proceed-to-checkout .button.disabled:hover, .wc-proceed-to-checkout .button.disabled:focus, .wc-proceed-to-checkout .button.disabled.focus, .wc-proceed-to-checkout .button[disabled]:hover, .wc-proceed-to-checkout .button[disabled]:focus, .wc-proceed-to-checkout .button[disabled].focus, fieldset[disabled] .wc-proceed-to-checkout .button:hover, fieldset[disabled] .wc-proceed-to-checkout .button:focus, fieldset[disabled] .wc-proceed-to-checkout .button.focus, .woocommerce-checkout-payment .button.disabled:hover, .woocommerce-checkout-payment .button.disabled:focus, .woocommerce-checkout-payment .button.disabled.focus, .woocommerce-checkout-payment .button[disabled]:hover, .woocommerce-checkout-payment .button[disabled]:focus, .woocommerce-checkout-payment .button[disabled].focus, fieldset[disabled] .woocommerce-checkout-payment .button:hover, fieldset[disabled] .woocommerce-checkout-payment .button:focus, fieldset[disabled] .woocommerce-checkout-payment .button.focus {
+.woocommerce .wc-proceed-to-checkout .button.disabled:hover, .woocommerce .wc-proceed-to-checkout .button.disabled:focus, .woocommerce .wc-proceed-to-checkout .button.disabled.focus, .woocommerce .wc-proceed-to-checkout .button[disabled]:hover, .woocommerce .wc-proceed-to-checkout .button[disabled]:focus, .woocommerce .wc-proceed-to-checkout .button[disabled].focus, fieldset[disabled] .woocommerce .wc-proceed-to-checkout .button:hover, fieldset[disabled] .woocommerce .wc-proceed-to-checkout .button:focus, fieldset[disabled] .woocommerce .wc-proceed-to-checkout .button.focus, .woocommerce .woocommerce-checkout-payment .button.disabled:hover, .woocommerce .woocommerce-checkout-payment .button.disabled:focus, .woocommerce .woocommerce-checkout-payment .button.disabled.focus, .woocommerce .woocommerce-checkout-payment .button[disabled]:hover, .woocommerce .woocommerce-checkout-payment .button[disabled]:focus, .woocommerce .woocommerce-checkout-payment .button[disabled].focus, fieldset[disabled] .woocommerce .woocommerce-checkout-payment .button:hover, fieldset[disabled] .woocommerce .woocommerce-checkout-payment .button:focus, fieldset[disabled] .woocommerce .woocommerce-checkout-payment .button.focus {
   background-color: #175567;
   border-color: #124452;
 }
-.wc-proceed-to-checkout .button .badge, .woocommerce-checkout-payment .button .badge {
+.woocommerce .wc-proceed-to-checkout .button .badge, .woocommerce .woocommerce-checkout-payment .button .badge {
   color: #175567;
   background-color: #fff;
 }
@@ -9730,6 +9765,14 @@ Alerts / Messages
   float: right;
 }
 
+.woocommerce-error {
+  list-style: none;
+}
+
+.woocommerce-info {
+  padding: 0;
+}
+
 /**
 Pagination
  */
@@ -9744,16 +9787,11 @@ Pagination
 }
 .woocommerce-pagination .page-numbers {
   display: inline;
-  padding-left: 0;
-  list-style: none;
-}
-.woocommerce-pagination .page-numbers li {
-  display: inline-block;
-  float: left;
 }
 .woocommerce-pagination .page-numbers a,
 .woocommerce-pagination .page-numbers span {
   position: relative;
+  float: left;
   padding: 6px 12px;
   line-height: 1.42857;
   text-decoration: none;
@@ -9763,6 +9801,7 @@ Pagination
   margin-left: -1px;
 }
 .woocommerce-pagination .page-numbers:first-child {
+  margin-left: 0;
   border-bottom-left-radius: 0px;
   border-top-left-radius: 0px;
 }
@@ -9770,9 +9809,9 @@ Pagination
   border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
 }
-.woocommerce-pagination .page-numbers a:hover, .woocommerce-pagination .page-numbers a:focus,
-.woocommerce-pagination .page-numbers span:hover,
-.woocommerce-pagination .page-numbers span:focus {
+.woocommerce-pagination .nav-links a:hover, .woocommerce-pagination .nav-links a:focus,
+.woocommerce-pagination .nav-links span:hover,
+.woocommerce-pagination .nav-links span:focus {
   color: #003d3e;
   background-color: #eeeeee;
   border-color: #ddd;
@@ -10535,10 +10574,34 @@ All pages
     width: 50%;
   }
 }
+.woocommerce-checkout #customer_login .u-column1, .woocommerce-checkout #customer_login .u-column2, .woocommerce-account #customer_login .u-column1, .woocommerce-account #customer_login .u-column2, .woocommerce-cart #customer_login .u-column1, .woocommerce-cart #customer_login .u-column2 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .woocommerce-checkout #customer_login .u-column1, .woocommerce-checkout #customer_login .u-column2, .woocommerce-account #customer_login .u-column1, .woocommerce-account #customer_login .u-column2, .woocommerce-cart #customer_login .u-column1, .woocommerce-cart #customer_login .u-column2 {
+    float: left;
+    width: 50%;
+  }
+}
 
 /**
 Checkout
  */
+.woocommerce-checkout .woocommerce-NoticeGroup {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .woocommerce-checkout .woocommerce-NoticeGroup {
+    float: left;
+    width: 100%;
+  }
+}
 .woocommerce-checkout textarea#order_comments {
   height: 100px;
 }
@@ -10682,9 +10745,14 @@ Checkout
 /**
 Cart
  */
+.woocommerce-cart #shipping_method {
+  padding-left: 0;
+  list-style: none;
+}
 .woocommerce-cart .cart-collaterals {
   margin-left: -15px;
   margin-right: -15px;
+  margin-bottom: 20px;
 }
 .woocommerce-cart .cart-collaterals:before, .woocommerce-cart .cart-collaterals:after {
   content: " ";
@@ -10769,6 +10837,14 @@ Cart
   margin: 0;
   vertical-align: top;
 }
+.woocommerce-cart .coupon #coupon_code, .woocommerce-cart .coupon .checkout_coupon #coupon_code {
+  display: inline-block;
+  width: auto;
+}
+.woocommerce-cart .checkout_coupon #coupon_code {
+  display: inline-block;
+  width: auto;
+}
 .woocommerce-cart .qty {
   width: 60px;
 }
@@ -10796,6 +10872,35 @@ Cart
 /**
  Account
   */
+.woocommerce-account #customer_login .control-label, .woocommerce-account #customer_login .form-input {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .woocommerce-account #customer_login .control-label, .woocommerce-account #customer_login .form-input {
+    float: left;
+    width: 50%;
+  }
+}
+.woocommerce-account #customer_login .form-actions {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .woocommerce-account #customer_login .form-actions {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .woocommerce-account #customer_login .form-actions {
+    margin-left: 50%;
+  }
+}
 .woocommerce-account .woocommerce-Addresses {
   margin-left: -15px;
   margin-right: -15px;
@@ -10868,6 +10973,18 @@ Cart
 }
 .woocommerce-account .entry-content .woocommerce:after {
   clear: both;
+}
+.woocommerce-account .entry-content .woocommerce-error {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .woocommerce-account .entry-content .woocommerce-error {
+    float: left;
+    width: 100%;
+  }
 }
 .woocommerce-account .entry-content .woocommerce-MyAccount-navigation {
   position: relative;

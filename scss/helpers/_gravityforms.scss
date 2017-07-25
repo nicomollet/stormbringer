@@ -2,10 +2,6 @@
   @extend .list-unstyled;
 }
 
-.hidden_label > .control-label{
-  display: none;
-}
-
 .form-horizontal{
 
   .control-label{
@@ -34,10 +30,9 @@
 
   &.ginput_container_name{
     span{
-      display: block;
+      display: inline-block;
       vertical-align: top;
       @media (min-width: $screen-sm-min) {
-        display: inline-block;
         padding-right: 16px;
         margin-right: -4px;
       }

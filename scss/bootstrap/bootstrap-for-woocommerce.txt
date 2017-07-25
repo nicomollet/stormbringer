@@ -11,9 +11,7 @@
 .table-hover, .shop_table {}
 
 // forms
-.form-control, #coupon_code{}
 
 // tabs
 .nav, .woocommerce-tabs .tabs {}
 .nav-tabs, .woocommerce-tabs .tabs  {}
-
