@@ -1,5 +1,7 @@
-### On going
-* Fix scroll actions
+### 0.3.4: July 25th, 2017
+* Woocommerce CSS compatibility
+* New shortcode [woocommerce_cart_link] to display a link to Woocommerce cart
+* New shortcode [woocommerce_account_link] to display a link to Woocommerce account
 
 ### 0.3.3: June 09th, 2017
 * Fix styling of elementor buttons
