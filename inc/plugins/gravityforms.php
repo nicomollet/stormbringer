@@ -51,9 +51,14 @@ function stormbringer_gform_field_css_class($classes, $field, $form)
 }
 add_action('gform_field_css_class', 'stormbringer_gform_field_css_class', 10, 3);
 
-// This filter is executed when the form is displayed and can be used to completely
-//change the form button tag (i.e. <input type="submit">).
-
+/**
+ * Gravity Forms Submit Button
+ *
+ * @param $button
+ * @param $form
+ *
+ * @return mixed|string
+ */
 function stormbringer_gform_submit_button($button, $form)
 {
 	//$button = str_replace('<input type=\'submit\' ','<button ', $button);
