@@ -9787,11 +9787,16 @@ Pagination
 }
 .woocommerce-pagination .page-numbers {
   display: inline;
+  padding-left: 0;
+  list-style: none;
+}
+.woocommerce-pagination .page-numbers li {
+  display: inline-block;
+  float: left;
 }
 .woocommerce-pagination .page-numbers a,
 .woocommerce-pagination .page-numbers span {
   position: relative;
-  float: left;
   padding: 6px 12px;
   line-height: 1.42857;
   text-decoration: none;
@@ -9801,7 +9806,6 @@ Pagination
   margin-left: -1px;
 }
 .woocommerce-pagination .page-numbers:first-child {
-  margin-left: 0;
   border-bottom-left-radius: 0px;
   border-top-left-radius: 0px;
 }
@@ -9809,9 +9813,9 @@ Pagination
   border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
 }
-.woocommerce-pagination .nav-links a:hover, .woocommerce-pagination .nav-links a:focus,
-.woocommerce-pagination .nav-links span:hover,
-.woocommerce-pagination .nav-links span:focus {
+.woocommerce-pagination .page-numbers a:hover, .woocommerce-pagination .page-numbers a:focus,
+.woocommerce-pagination .page-numbers span:hover,
+.woocommerce-pagination .page-numbers span:focus {
   color: #003d3e;
   background-color: #eeeeee;
   border-color: #ddd;
@@ -9844,6 +9848,7 @@ Misc
 Ordering
  */
 .woocommerce-ordering {
+  width: auto;
   margin-bottom: 20px;
 }
 
@@ -10375,7 +10380,7 @@ Cart Widget
 }
 .stormbringer-handheld-footer-bar ul li.search .site-search {
   position: absolute;
-  bottom: -3em;
+  bottom: -4em;
   left: 0;
   right: 0;
   -webkit-transition: all, ease, 0.2s;
@@ -10586,10 +10591,20 @@ All pages
     width: 50%;
   }
 }
+.woocommerce-checkout #shipping_method, .woocommerce-account #shipping_method, .woocommerce-cart #shipping_method {
+  padding-left: 0;
+  list-style: none;
+}
 
 /**
 Checkout
  */
+.woocommerce-checkout #order_review.payment-fixed {
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  box-shadow: 0 6px 2em rgba(0, 0, 0, 0.2);
+}
 .woocommerce-checkout .woocommerce-NoticeGroup {
   position: relative;
   min-height: 1px;
@@ -10745,10 +10760,6 @@ Checkout
 /**
 Cart
  */
-.woocommerce-cart #shipping_method {
-  padding-left: 0;
-  list-style: none;
-}
 .woocommerce-cart .cart-collaterals {
   margin-left: -15px;
   margin-right: -15px;
@@ -10837,7 +10848,7 @@ Cart
   margin: 0;
   vertical-align: top;
 }
-.woocommerce-cart .coupon #coupon_code, .woocommerce-cart .coupon .checkout_coupon #coupon_code {
+.woocommerce-cart .coupon #coupon_code {
   display: inline-block;
   width: auto;
 }

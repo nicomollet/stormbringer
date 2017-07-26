@@ -46,6 +46,7 @@ Alerts / Messages
   padding: 0;
 }
 
+
 /**
 Pagination
  */
@@ -61,10 +62,17 @@ Pagination
 
   .page-numbers {
     display: inline; // Remove list-style and block-level defaults
-     a,
-     span {
+    @include list-unstyled;
+
+    li{
+      display: inline-block;
+      float: left;
+    }
+
+    a,
+    span {
       position: relative;
-      float: left; // Collapse white-space
+      //float: left; // Collapse white-space
       padding: $padding-base-vertical $padding-base-horizontal;
       line-height: $line-height-base;
       text-decoration: none;
@@ -74,7 +82,7 @@ Pagination
       margin-left: -1px;
     }
     &:first-child {
-      margin-left: 0;
+      //margin-left: 0;
       @include border-left-radius($border-radius-base);
     }
     &:last-child {
@@ -82,9 +90,9 @@ Pagination
     }
   }
 
-  .nav-links {
-     a,
-     span {
+  .page-numbers {
+    a,
+    span {
       &:hover,
       &:focus {
         color: $pagination-hover-color;

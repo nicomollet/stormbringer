@@ -22,7 +22,13 @@ All pages
       @include make-md-column(6);
     }
   }
+
+  #shipping_method{
+    @include list-unstyled;
+  }
 }
+
+
 
 
 /**
@@ -32,6 +38,12 @@ Checkout
 
 .woocommerce-checkout{
 
+  #order_review.payment-fixed {
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    box-shadow: 0 6px 2em rgba(#000,.2);
+  }
 
   .woocommerce-NoticeGroup{
     @include make-md-column(12);
@@ -234,11 +246,6 @@ Cart
  */
 
 .woocommerce-cart{
-
-
-  #shipping_method{
-    @include list-unstyled;
-  }
 
   .cart-collaterals{
     @include make-row;
