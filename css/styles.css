@@ -9242,6 +9242,16 @@ body.page-template-fullwidthnotitle #content .page-header, body.page-template-fu
   display: none;
 }
 
+@keyframes glyphicon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
 .form-horizontal .control-label {
   position: relative;
   min-height: 1px;
@@ -9848,8 +9858,10 @@ Misc
 Ordering
  */
 .woocommerce-ordering {
-  width: auto;
   margin-bottom: 20px;
+}
+.woocommerce-ordering select {
+  width: auto;
 }
 
 /**
@@ -9861,6 +9873,26 @@ Layout
   padding: 0;
   margin-left: -15px;
   margin-right: -15px;
+}
+.woocommerce ul.products .ajax_add_to_cart.loading {
+  opacity: 0.5;
+  position: relative;
+  color: transparent;
+}
+.woocommerce ul.products .ajax_add_to_cart.loading:after {
+  content: '\e031';
+  font-family: 'Glyphicons Halflings';
+  color: #333333;
+  animation: glyphicon-spin .75s linear infinite;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
 }
 .woocommerce ul.products:before, .woocommerce ul.products:after {
   content: " ";

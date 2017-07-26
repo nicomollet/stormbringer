@@ -11,8 +11,10 @@ Misc
 Ordering
  */
 .woocommerce-ordering{
-  width: auto;
   margin-bottom: $line-height-computed;
+  select{
+    width: auto;
+  }
 }
 
 
@@ -20,6 +22,32 @@ Ordering
 Layout
  */
 .woocommerce ul.products{
+
+  .ajax_add_to_cart{
+    &.loading {
+      opacity: 0.5;
+      position: relative;
+      color: transparent;
+
+      &:after {
+        //@include fa-icon();
+        content: '\e031';
+        font-family: 'Glyphicons Halflings';
+        color: $text-color;
+        animation: glyphicon-spin .75s linear infinite;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -10px;
+        margin-top: -10px;
+      }
+    }
+  }
+
   margin-left: 0;
   clear: both;
 
