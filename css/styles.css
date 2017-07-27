@@ -9955,6 +9955,15 @@ Mobile
     width: 100% !important;
   }
 }
+/**
+Grid/List toggle
+ */
+.gridlist-toggle {
+  float: right;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
 .woocommerce #content div.product div.summary,
 .woocommerce div.product div.summary {
   position: relative;
