@@ -6,6 +6,7 @@
  * @since StormBringer 0.2.7
  *
  * Template Name: PageFullWidthNoTitle
+ * Template Post Type: post, page, product
  */
 ?>
 <?php get_header(); ?>

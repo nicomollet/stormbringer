@@ -99,3 +99,13 @@ Mobile
     width:100% !important;
   }
 }
+
+
+/**
+Grid/List toggle
+ */
+.gridlist-toggle{
+  float: right;
+  padding: 0;
+  margin-bottom: ($line-height-computed / 1);
+}

@@ -1,12 +1,23 @@
 <?php
 
-add_action( 'wp_enqueue_scripts', 'stormbringer_dequeue_select2', 100 );
+
 function stormbringer_dequeue_select2() {
 	wp_dequeue_style( 'select2' );
 	wp_deregister_style( 'select2' );
 	wp_dequeue_script( 'select2' );
 	wp_deregister_script( 'select2' );
 }
+add_action( 'wp_enqueue_scripts', 'stormbringer_dequeue_select2', 100 );
+
+function stormbringer_dequeue_gridlist() {
+	//wp_dequeue_style( 'grid-list-layout' );
+	//wp_deregister_style( 'grid-list-layout' );
+	wp_dequeue_style( 'grid-list-button' );
+	wp_deregister_style( 'grid-list-button' );
+	wp_deregister_style( 'dashicons' );
+	wp_deregister_style( 'dashicons' );
+}
+add_action( 'wp_enqueue_scripts', 'stormbringer_dequeue_gridlist', 100 );
 
 /**
  * Woocommerce: Customize add to cart link
@@ -476,3 +487,33 @@ function stormbringer_related_products_args( $args ) {
 	return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', 'stormbringer_related_products_args' );
+
+/**
+ * Woocommerce Grid/List Toggle: style
+ *
+ * @param $output
+ * @param $grid_view
+ * @param $list_view
+ *
+ * @return string
+ */
+function stormbringer_gridlist_toggle_button_output($output, $grid_view, $list_view){
+	$output = sprintf( '<nav class="gridlist-toggle"><a href="#" id="grid" title="%1$s"><span class="dashicons dashicons-grid-view"></span> <em>%1$s</em></a><a href="#" id="list" title="%2$s"><span class="dashicons dashicons-exerpt-view"></span> <em>%2$s</em></a></nav>', $grid_view, $list_view );
+
+	$output= '';
+	$output.=sprintf( '
+	  <div class="btn-group gridlist-toggle" role="group">
+	  <a href="#" type="button" class="btn btn-default" id="grid" title="%1$s"><span class="glyphicon glyphicon-th"></span><span class="hide">  %1$s</span></a>
+	  <a href="#" type="button" class="btn btn-default" id="list" title="%2$s"><span class="glyphicon glyphicon-list"></span><span class="hide">%2$s</span></a>
+	  </div>
+	', $grid_view, $list_view );
+	/*$output.=sprintf( '
+	  <div class="btn-group gridlist-toggle" role="group">
+	  <button type="button" class="btn btn-default" id="grid" title="%1$s"><span class="glyphicon glyphicon-th"></span><span class="hide">  %1$s</span></button>
+	  <button type="button" class="btn btn-default" id="list" title="%2$s"><span class="glyphicon glyphicon-list"></span><span class="hide">%2$s</span></button>
+	  </div>
+	', $grid_view, $list_view );*/
+
+	return $output;
+}
+add_filter( 'gridlist_toggle_button_output', 'stormbringer_gridlist_toggle_button_output',10, 3 );
