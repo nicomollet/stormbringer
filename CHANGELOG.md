@@ -1,3 +1,9 @@
+### 0.3.5: July 27th, 2017
+* Gravity Forms: fix submit button
+* Template: allow fullwidth for post
+* Woocommerce: Sticky payment
+* Woocommerce: Add to cart spinner
+
 ### 0.3.4: July 25th, 2017
 * Woocommerce CSS compatibility
 * New shortcode [woocommerce_cart_link] to display a link to Woocommerce cart
