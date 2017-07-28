@@ -358,6 +358,11 @@ h1, h2, h3, h4, h5, h6, p, ul, a{
   .wf-active &, .wf-inactive &{
     visibility: visible;
   }
+
+  // For Hustle Popups
+  .wf-active .inc_opt_popup.fadein &, .wf-inactive .inc_opt_popup.fadein &{
+    visibility: hidden;
+  }
 }
 
 

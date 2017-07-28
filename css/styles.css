@@ -9225,6 +9225,9 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
 .wf-active h1, .wf-inactive h1, .wf-active h2, .wf-inactive h2, .wf-active h3, .wf-inactive h3, .wf-active h4, .wf-inactive h4, .wf-active h5, .wf-inactive h5, .wf-active h6, .wf-inactive h6, .wf-active p, .wf-inactive p, .wf-active ul, .wf-inactive ul, .wf-active a, .wf-inactive a {
   visibility: visible;
 }
+.wf-active .inc_opt_popup.fadein h1, .wf-inactive .inc_opt_popup.fadein h1, .wf-active .inc_opt_popup.fadein h2, .wf-inactive .inc_opt_popup.fadein h2, .wf-active .inc_opt_popup.fadein h3, .wf-inactive .inc_opt_popup.fadein h3, .wf-active .inc_opt_popup.fadein h4, .wf-inactive .inc_opt_popup.fadein h4, .wf-active .inc_opt_popup.fadein h5, .wf-inactive .inc_opt_popup.fadein h5, .wf-active .inc_opt_popup.fadein h6, .wf-inactive .inc_opt_popup.fadein h6, .wf-active .inc_opt_popup.fadein p, .wf-inactive .inc_opt_popup.fadein p, .wf-active .inc_opt_popup.fadein ul, .wf-inactive .inc_opt_popup.fadein ul, .wf-active .inc_opt_popup.fadein a, .wf-inactive .inc_opt_popup.fadein a {
+  visibility: hidden;
+}
 
 html.noscroll, html.noscroll body {
   -webkit-overflow-scrolling: touch !important;
