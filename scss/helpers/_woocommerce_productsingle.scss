@@ -38,23 +38,42 @@ Additionnal information
 Variations
  */
 table.variations{
-  width:100%;
+
+  //width:100%;
   margin-bottom: $line-height-computed;
 
-  #format{
+  th,
+  td {
+    display: list-item;
+    padding: 0;
+    list-style: none;
+    background-color: transparent;
+    text-align: left;
+  }
+
+  .value {
+    margin-bottom: 1em;
+  }
+  select{
+    display: inline-block;
+    width: auto;
+  }
+
+  /*#format{
     width:auto;
     display: inline;
-  }
+  }*/
+
   td.label{
-    @include reset-text;
+    //@include reset-text;
     color: $text-color;
     font-size: $font-size-base;
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0;
+    //display: table-cell;
+    //vertical-align: middle;
+    //padding: 0;
   }
   .reset_variations{
-    margin-left: $line-height-computed;
+    margin-left: ($line-height-computed /2 );
   }
 }
 
