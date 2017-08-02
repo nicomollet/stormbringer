@@ -174,7 +174,9 @@ Cart Widget
         height: $navbar-height;
         //border-right: 1px solid rgba(#fff,.2);
 
-
+        &:hover{
+          text-decoration: none;
+        }
         &:active,
         &:focus {
           outline: none;

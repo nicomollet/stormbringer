@@ -244,7 +244,7 @@ if ( ! function_exists( 'stormbringer_handheld_footer_bar' ) ) {
 	/**
 	 * Display a menu intended for use on handheld devices
 	 *
-	 * @since 2.0.0
+	 * @since 0.3.2
 	 */
 	function stormbringer_handheld_footer_bar() {
 		$links = array(
@@ -269,23 +269,28 @@ if ( ! function_exists( 'stormbringer_handheld_footer_bar' ) ) {
 		if ( wc_get_page_id( 'cart' ) === - 1 ) {
 			unset( $links['cart'] );
 		}
+		if(!is_woocommerce()){
+			$links = [];
+		}
 
 		$links = apply_filters( 'stormbringer_handheld_footer_bar_links', $links );
-		?>
-		<div class="stormbringer-handheld-footer-bar">
-			<ul class="columns-<?php echo count( $links ); ?>">
-				<?php foreach ( $links as $key => $link ) : ?>
-					<li class="<?php echo esc_attr( $key ); ?>">
-						<?php
-						if ( $link['callback'] ) {
-							call_user_func( $link['callback'], $key, $link );
-						}
-						?>
-					</li>
-				<?php endforeach; ?>
-			</ul>
-		</div>
-		<?php
+		if(count($links)>0):
+			?>
+			<div class="stormbringer-handheld-footer-bar">
+				<ul class="columns-<?php echo count( $links ); ?>">
+					<?php foreach ( $links as $key => $link ) : ?>
+						<li class="<?php echo esc_attr( $key ); ?>">
+							<?php
+							if ( $link['callback'] ) {
+								call_user_func( $link['callback'], $key, $link );
+							}
+							?>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+			<?php
+		endif;
 	}
 }
 
