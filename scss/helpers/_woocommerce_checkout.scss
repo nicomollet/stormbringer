@@ -38,6 +38,11 @@ Checkout
 
 .woocommerce-checkout{
 
+  #terms, #ship-to-different-address-checkbox{
+    position: relative;
+    margin-left: 0;
+  }
+
   #order_review.payment-fixed {
     position: fixed;
     top: 0;
