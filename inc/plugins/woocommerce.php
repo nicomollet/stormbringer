@@ -435,12 +435,12 @@ function woocommerce_cart_count_shortcode( $atts ) {
 	if(is_admin()) return '';
 
 	$defaults = array(
-		'icon_class'               => 'glyphicon glyphicon-shopping-cart',
+		'icon_class'         => 'glyphicon glyphicon-shopping-cart',
 		'empty_cart_text'    => '',
 		'items_in_cart_text' => '',
 		'show_count'         => true,
-		'show_amount'         => true,
-		'link_class'         => 'link-cart'
+		'show_amount'        => true,
+		'link_class'         => 'link-cart',
 	);
 	$atts = shortcode_atts( $defaults, $atts );
 
@@ -480,6 +480,40 @@ function woocommerce_cart_count_shortcode( $atts ) {
 	return $html;
 }
 add_shortcode( 'woocommerce_cart_link', 'woocommerce_cart_count_shortcode' );
+
+/**
+ * Shortcode for displaying a link to account
+ *
+ * @param $atts
+ *
+ * @return string
+ */
+function woocommerce_account_link_shortcode( $atts ) {
+	if(is_admin()) return '';
+
+	$defaults = array(
+		'icon_class' => 'glyphicon glyphicon-user',
+		'link_class' => 'link-account',
+	);
+	$atts = shortcode_atts( $defaults, $atts );
+
+	$icon_html = '<span class="'.$atts['icon_class'] . '"></span>';
+
+	$link_class = $atts['link_class'];
+	$link_url = "";
+
+	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+		$woocommerce_account_page_id = get_option( 'woocommerce_myaccount_page_id' );
+		$link_url = get_permalink( $woocommerce_account_page_id );
+	}
+
+	$html  = '<a href="' . $link_url .'" class="'.$link_class.'">';
+	$html .= $icon_html . __('Account', 'woocommerce');
+	$html .= '</a>';
+	return $html;
+}
+add_shortcode( 'woocommerce_account_link', 'woocommerce_account_link_shortcode' );
 
 /**
  * Woocommerce: Related products number
