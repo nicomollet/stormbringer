@@ -1,11 +1,19 @@
+### 0.3.6: August 7th, 2017
+* WooCommerce: Shortcode for displaying a link to account
+* WooCommerce: Checkout, fix coupon_code
+* WooCommerce: Product Single: product variations as list-item
+* WooCommerce: Adjust handheld bar
+* Hustle: Flash Of Unstyled Text fix
+* Fix conflict between Toggle Grid and Hustle (with dashicons enqueue
+
 ### 0.3.5: July 27th, 2017
 * Gravity Forms: fix submit button
 * Template: allow fullwidth for post
-* Woocommerce: Sticky payment
-* Woocommerce: Add to cart spinner
+* WooCommerce: Sticky payment
+* WooCommerce: Add to cart spinner
 
 ### 0.3.4: July 25th, 2017
-* Woocommerce CSS compatibility
+* WooCommerce CSS compatibility
 * New shortcode [woocommerce_cart_link] to display a link to Woocommerce cart
 * New shortcode [woocommerce_account_link] to display a link to Woocommerce account
 
@@ -26,7 +34,7 @@
 * Theme check
 
 ### 0.2.8: February 15th, 2017
-* Woocommerce compatibility (new attempt)
+* WooCommerce compatibility (new attempt)
 
 ### 0.2.7: January 19th, 2017
 * Separate stormbringer and godspeed optimizations
