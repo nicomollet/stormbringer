@@ -501,15 +501,20 @@ function woocommerce_account_link_shortcode( $atts ) {
 
 	$link_class = $atts['link_class'];
 	$link_url = "";
+	$page_name = "";
 
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 
 		$woocommerce_account_page_id = get_option( 'woocommerce_myaccount_page_id' );
 		$link_url = get_permalink( $woocommerce_account_page_id );
+		$page = get_post( $woocommerce_account_page_id );
+		if(!empty($page)){
+			$page_name = esc_html($page->post_title);
+		}
 	}
 
 	$html  = '<a href="' . $link_url .'" class="'.$link_class.'">';
-	$html .= $icon_html . ' '. __('Account', 'woocommerce');
+	$html .= $icon_html . ' '. $page_name;
 	$html .= '</a>';
 	return $html;
 }
