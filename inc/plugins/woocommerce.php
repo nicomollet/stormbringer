@@ -509,7 +509,7 @@ function woocommerce_account_link_shortcode( $atts ) {
 	}
 
 	$html  = '<a href="' . $link_url .'" class="'.$link_class.'">';
-	$html .= $icon_html . __('Account', 'woocommerce');
+	$html .= $icon_html . ' '. __('Account', 'woocommerce');
 	$html .= '</a>';
 	return $html;
 }
