@@ -9,7 +9,7 @@ Styling of Elementor Buttons
 
     transition: none;
     &:visited, .elementor-button-text{
-      color:inherit;
+      color: $text-color;
       opacity: inherit;
     }
     &:hover{

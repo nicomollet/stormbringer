@@ -34,7 +34,6 @@ function stormbringer_body_class( $classes = '' ) {
     if(is_user_logged_in()):
         //$user = new WP_User( $current_user->ID ); // $user->roles
         $user = wp_get_current_user();
-        //print_r($user);
         foreach($user->roles as $role){
             $classes[] = 'role-'.$role;
         }
