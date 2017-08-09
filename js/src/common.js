@@ -231,7 +231,6 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
 
   // Woocommerce: Make the order review element stick to the top of the browser window.
   if (  $( '#order_review_heading' ).length &&  $( 'form.woocommerce-checkout' ).length &&  $( '#customer_details' ).length ) {
-    console.log('sticky');
     function stickyPayment() {
       var tallestPaymentBox = -1;
       jQuery('.payment_box').each(function () {
