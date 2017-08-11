@@ -324,3 +324,4 @@ function custom_bootstrap_carousel_shortcode_atts($defaults){
   return $args;
 }
 add_filter('stormbringer_bootstrap_carousel_shortcode_atts', 'custom_bootstrap_carousel_shortcode_atts');
+*/

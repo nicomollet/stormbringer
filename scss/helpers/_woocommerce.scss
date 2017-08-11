@@ -121,14 +121,20 @@ Forms
 .quantity input{
   @extend .form-control;
 }
+
 .woocommerce-ordering select{
   @extend .form-control;
 }
+
 .control-label{
   abbr.required{
     border: none;
     text-decoration: none;
   }
+}
+
+.woocommerce-invalid {
+  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
 
 #calc_shipping_country, #calc_shipping_postcode{
