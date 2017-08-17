@@ -64,17 +64,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<div class="form-group">
 						<div class="form-actions">
-							<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-							<input type="submit" class="woocommerce-Button btn btn-primary" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
-
+							<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
+								<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php _e( 'Remember me', 'woocommerce' ); ?></span>
+							</label>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<div class="form-actions">
-							<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
-								<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php _e( 'Remember me', 'woocommerce' ); ?></span>
-							</label>
+							<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
+							<input type="submit" class="woocommerce-Button btn btn-primary" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
+
 						</div>
 					</div>
 
