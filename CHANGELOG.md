@@ -1,3 +1,13 @@
+### 0.3.7: August 22nd, 2017
+* **New** - WooCommerce: class for cart widgets empty/notempty
+* **New** - WooCommerce: account page title in shortcode
+* **Fix** - Hustle popup classes
+* **Fix** - Login/rememberme order
+* **Fix** - Remove PHP Notices
+* **Fix** - Remove console.log
+* **Fix** - Elementor buttons color
+* **Fix** - Undefined variable: class in footer.php
+
 ### 0.3.6: August 7th, 2017
 * WooCommerce: Shortcode for displaying a link to account
 * WooCommerce: Checkout, fix coupon_code
