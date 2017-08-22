@@ -278,7 +278,7 @@ if ( ! function_exists( 'stormbringer_handheld_footer_bar' ) ) {
 		$links = apply_filters( 'stormbringer_handheld_footer_bar_links', $links );
 		if(count($links)>0):
 			?>
-			<div class="stormbringer-handheld-footer-bar">
+			<div class="stormbringer-handheld-footer-bar <?php echo (WC()->cart->get_cart_contents_count() == 0?'cart-empty':'cart-notempty'); ?>" >
 				<ul class="columns-<?php echo count( $links ); ?>">
 					<?php foreach ( $links as $key => $link ) : ?>
 						<li class="<?php echo esc_attr( $key ); ?>">

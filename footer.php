@@ -88,7 +88,7 @@
 
             <?php // Woocommerce shopping cart
             if (current_theme_supports( 'woocommerce')) : ?>
-	            <ul class="nav navbar-nav navbar-right navbar-shoppingcart site-header-cart menu">
+	            <ul class="nav navbar-nav navbar-right navbar-shoppingcart <?php echo (WC()->cart->get_cart_contents_count() == 0?'navbar-shoppingcart-empty':'navbar-shoppingcart-notempty'); ?> site-header-cart menu">
 		            <li>
 			            <a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e(
                             'View your shopping cart', 'stormbringer'
