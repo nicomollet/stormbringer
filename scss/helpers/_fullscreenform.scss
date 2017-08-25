@@ -1,0 +1,24 @@
+.fullscreenform{
+  display: none;
+  &.fullscreenform-show{
+    display: block;
+  }
+
+  background: $body-bg;
+  z-index: $zindex-modal;
+  .bootstrap-select, .input-group {
+    width: 100%;
+  }
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  .fullscreenform-btn-close{
+    padding: 10px;
+    vertical-align: middle;
+  }
+}

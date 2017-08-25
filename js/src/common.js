@@ -1,5 +1,26 @@
 jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
 
+  // Fullscreenform
+  $('.fullscreenform-form-switch').each(function(){
+    fullscreenform = $(this).closest('.fullscreenform');
+    $('input[name=form]', fullscreenform).on('change', function () {
+      $('.fullscreenform-row').hide();
+      $('.fullscreenform-row-'+$(this).val()).show();
+    });
+  });
+  $('.fullscreenform-open').on('click', function(event){
+    event.preventDefault();
+    searchclass = 'fullscreenform-open-';
+    fullscreenformid = $(this).attr('class').substring($(this).attr('class').indexOf(searchclass) + searchclass.length);
+    if(fullscreenformid.indexOf(' ') > 0){
+      fullscreenformid = fullscreenformid.substring(0, fullscreenformid.indexOf(' '));
+    }
+    $('#'+fullscreenformid).addClass('fullscreenform-show');
+    $('#'+fullscreenformid+' .fullscreenform-form-switch input[type=radio]:first').first().trigger('click').prop('checked', true);
+  });
+  $('.fullscreenform-btn-close').on('click', function(event){
+    $(this).closest('.fullscreenform').removeClass('fullscreenform-show');
+  });
 
   // Navbar stuck on scrolltop
   if($('#navigation').hasClass('navbar-stuckonscrolltop')){
