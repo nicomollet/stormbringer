@@ -53,6 +53,7 @@
 
 // Helpers
 @import "../../stormbringer/scss/helpers/common";
+@import "../../stormbringer/scss/helpers/fullscreenform";
 @import "../../stormbringer/scss/helpers/gravityforms";
 @import "../../stormbringer/scss/helpers/htmleditor";
 @import "../../stormbringer/scss/helpers/image";
@@ -71,7 +72,6 @@
 
 
 // Custom styles
-
 @import "header";
 @import "home";
 @import "content";
