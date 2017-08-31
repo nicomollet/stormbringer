@@ -1,12 +1,9 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: StormBringer Wordpress theme\n"
-"POT-Creation-Date: 2017-08-31 09:42+0200\n"
-"PO-Revision-Date: 2014-10-24 21:08+0100\n"
-"Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
+"POT-Creation-Date: 2017-08-31 09:50+0200\n"
+"PO-Revision-Date: 2017-08-31 09:52+0200\n"
 "Language-Team: Nicolas Mollet <nico.mollet@gmail.com>\n"
-"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +11,9 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__;_n:1,2;_x:1,2c;esc_attr__;esc_attr_e;"
 "esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"Language: de\n"
 "X-Poedit-SearchPath-0: lang\n"
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
@@ -744,7 +743,7 @@ msgstr ""
 #: inc/library/cuztom/classes/taxonomy.class.php:104
 #, php-format
 msgid "Search %s"
-msgstr ""
+msgstr "Suche %s"
 
 #: inc/library/cuztom/classes/post_type.class.php:86
 #, php-format
@@ -834,7 +833,7 @@ msgstr ""
 
 #: inc/plugins/woocommerce.php:306 searchform.php:12
 msgid "Search"
-msgstr ""
+msgstr "Suchen"
 
 #: inc/plugins/woocommerce.php:339
 msgid "My Account"
@@ -867,11 +866,11 @@ msgstr ""
 #: search.php:17
 #, php-format
 msgid "Search results: %s"
-msgstr ""
+msgstr "Suchergebnisse: %s"
 
 #: searchform.php:12
 msgid "Search &hellip;"
-msgstr ""
+msgstr "Suche &hellip;"
 
 #: sidebar-blog.php:16
 msgid "Enable widgets in Sidebar Blog"
