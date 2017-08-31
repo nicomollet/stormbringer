@@ -1,3 +1,10 @@
+### 0.3.8: 
+* **New** - i18n: RU, DE, ZH
+* **Tweak** - i18n: FR
+* **New** - Full screen form feature
+* **Fix** - Hide navigation when Elementor editor is active
+* **Fix** - Hustle popups visibility
+
 ### 0.3.7: August 22nd, 2017
 * **New** - WooCommerce: class for cart widgets empty/notempty
 * **New** - WooCommerce: account page title in shortcode
