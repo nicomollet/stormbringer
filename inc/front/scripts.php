@@ -131,13 +131,15 @@ function stormbringer_js_libraries_footer() {
 
 		if ( @$libraries['bootstrap-datepicker'] && get_theme_mod( 'libraries_bootstrap-datepicker', true ) ) {
 
+			$lang_datepicker = ($lang == 'zh' ? 'zh-CN' : $lang);
+
 			wp_enqueue_script( 'bootstrap-datepicker',
 				'//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/' . $libraries['bootstrap-datepicker'] . '/js/bootstrap-datepicker.min.js',
 				array( 'jquery', 'bootstrap' ), null, true );
 			if ( $lang != '' && $lang != 'en' ) {
-				wp_enqueue_script( 'bootstrap-datepicker-' . $lang,
+				wp_enqueue_script( 'bootstrap-datepicker-' . $lang_datepicker,
 					'//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/' . $libraries['bootstrap-datepicker'] . '/locales/bootstrap-datepicker.'
-					. $lang . '.min.js', array( 'jquery', 'bootstrap', 'bootstrap-datepicker' ), null, true );
+					. $lang_datepicker . '.min.js', array( 'jquery', 'bootstrap', 'bootstrap-datepicker' ), null, true );
 			}
 		}
 
