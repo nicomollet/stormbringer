@@ -27,7 +27,7 @@ function stormbringer_preprocessor() {
 
 		if ( ! is_admin() ) {
 			if ( current_user_can( 'administrator' ) || @$_GET['scsscompile'] == '1' ) {
-				wp_register_style( 'theme', get_stylesheet_directory_uri() . '/css/styles.css', array(), null, null );
+				wp_register_style( 'theme', get_stylesheet_directory_uri() . '/css/styles.css', array(), time(), null );
 				wp_enqueue_style( 'theme' );
 			} else {
 
