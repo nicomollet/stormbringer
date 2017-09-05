@@ -1,3 +1,6 @@
+### Unreleased
+* **Tweak** - Version the main CSS and JS file
+
 ### 0.3.8: 
 * **New** - i18n: RU, DE, ZH
 * **Tweak** - i18n: FR
