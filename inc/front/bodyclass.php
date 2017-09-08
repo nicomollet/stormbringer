@@ -60,6 +60,11 @@ function stormbringer_body_class( $classes = '' ) {
         $classes[] = "lang-" . pll_current_language();
     endif;
 
+	// Frontpage
+	if ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
+		$classes[] = 'front-page';
+	}
+
     // Fonts
     $google_fonts = get_theme_mod( 'google_fonts' );
     $typekit_id = get_theme_mod('typekit_id');
