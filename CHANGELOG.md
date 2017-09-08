@@ -1,5 +1,6 @@
 ### Unreleased
 * **Tweak** - Version the main CSS and JS file
+* **New** - Frontpage body class
 
 ### 0.3.8: 
 * **New** - i18n: RU, DE, ZH
