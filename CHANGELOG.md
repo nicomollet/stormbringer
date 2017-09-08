@@ -1,13 +1,16 @@
 ### Unreleased
-* **Tweak** - Version the main CSS and JS file
-* **New** - Frontpage body class
 
-### 0.3.8: 
+
+### 0.3.8: September 8th, 2017
+* **New** - Full screen form feature
 * **New** - i18n: RU, DE, ZH
 * **Tweak** - i18n: FR
-* **New** - Full screen form feature
 * **Fix** - Hide navigation when Elementor editor is active
 * **Fix** - Hustle popups visibility
+* **Tweak** - Version the main CSS and JS file
+* **New** - Datepicker update version to 1.6.4 and fix lang "zh"
+* **Tweak** - Frontpage body class
+* **New** - Gravity Forms width
 
 ### 0.3.7: August 22nd, 2017
 * **New** - WooCommerce: class for cart widgets empty/notempty
