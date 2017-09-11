@@ -15,11 +15,14 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
     if(fullscreenformid.indexOf(' ') > 0){
       fullscreenformid = fullscreenformid.substring(0, fullscreenformid.indexOf(' '));
     }
-    $('#'+fullscreenformid).addClass('fullscreenform-show');
+    $('#'+fullscreenformid).addClass('fullscreenform fullscreenform-show');
     $('#'+fullscreenformid+' .fullscreenform-form-switch input[type=radio]:first').first().trigger('click').prop('checked', true);
+    $('body').addClass('fullscreenform-show');
   });
   $('.fullscreenform-btn-close').on('click', function(event){
+    event.preventDefault();
     $(this).closest('.fullscreenform').removeClass('fullscreenform-show');
+    $('body').removeClass('fullscreenform-show');
   });
 
   // Navbar stuck on scrolltop
