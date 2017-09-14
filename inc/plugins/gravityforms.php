@@ -62,7 +62,7 @@ add_action('gform_field_css_class', 'stormbringer_gform_field_css_class', 10, 3)
 function stormbringer_gform_submit_button($button, $form)
 {
 	//$button = str_replace('<input type=\'submit\' ','<button ', $button);
-	$button = str_replace('gform_button','gform_button btn btn-primary btn-lg', $button);
+	$button = str_replace('gform_button button','gform_button btn btn-primary btn-lg', $button);
 	//$button = str_replace('/>', '>', $button);
 	$button = '<div class="form-actions">'.$button.'</div>';
     return $button;
