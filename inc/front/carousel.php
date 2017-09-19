@@ -132,7 +132,7 @@ if ( ! class_exists( 'WP_Bootstrap_Carousel' ) ) {
 
         $carousel .= '<div id="item-' . $item_id . '" class="' . ( ( $i == 0 ) ? "active" : "" ) . ' item">';
         if($link!='')$carousel .= '<a class="" rel="' . $vars['rel'] . '" href="' . $link . '">';
-        $carousel .= '<img src="' . $thumb[0] . '" width="' . $vars['width'] . '" alt="' . $item->post_title . '"/>';
+        $carousel .= '<img data-no-lazy="1" src="' . $thumb[0] . '" width="' . $vars['width'] . '" alt="' . $item->post_title . '"/>';
         if($link!='')$carousel .= '</a>';
 
         $carousel .= '<div class="carousel-caption">';
