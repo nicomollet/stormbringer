@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: StormBringer Wordpress theme\n"
-"POT-Creation-Date: 2017-08-31 09:22+0200\n"
-"PO-Revision-Date: 2017-08-31 09:41+0200\n"
+"POT-Creation-Date: 2017-09-19 12:23+0200\n"
+"PO-Revision-Date: 2017-09-19 12:28+0200\n"
 "Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language-Team: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Generator: Poedit 2.0.1\n"
 "X-Poedit-KeywordsList: _e;__;_n:1,2;_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: lang\n"
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
@@ -164,6 +164,15 @@ msgstr "Envoyer le commentaire"
 msgid "Edit"
 msgstr "Modifier"
 
+#: content-image.php:27 content.php:41
+#, php-format
+msgid "Link to %s"
+msgstr "Lien vers %s"
+
+#: content-image.php:39 content.php:51 inc/front/comments.php:33
+msgid "F j, Y"
+msgstr "j F Y"
+
 #: content-image.php:43 content.php:55
 msgid "By"
 msgstr "Par"
@@ -225,6 +234,10 @@ msgstr "Afficher/Masquer la navigation"
 #: footer.php:30
 msgid "Menu"
 msgstr "Menu"
+
+#: footer.php:94 inc/plugins/woocommerce.php:321
+msgid "View your shopping cart"
+msgstr "Voir votre panier"
 
 #: footer.php:99 inc/plugins/woocommerce.php:465
 #, php-format
@@ -361,6 +374,10 @@ msgstr "Confirmez le nouveau mot de passe"
 #: form-resetpass.php:28
 msgid "Strength indicator"
 msgstr "Indicateur de force"
+
+#: form-resetpass.php:38
+msgid "Reset Password"
+msgstr "Réinitialiser le mot de passe"
 
 #: header.php:41
 msgid ""
@@ -529,9 +546,21 @@ msgstr "Votre commentaire est en attente de modération."
 msgid "at"
 msgstr "à"
 
+#: inc/front/comments.php:33
+msgid "H:i"
+msgstr "H:i"
+
 #: inc/front/menu.php:279
 msgid "Add a menu"
 msgstr "Ajouter un menu"
+
+#: inc/front/owlcarousel.php:59
+msgid "Owlcarousel"
+msgstr "Owlcarousel"
+
+#: inc/front/owlcarousel.php:213
+msgid "Click to view owlcarousel."
+msgstr "Cliquer pour voir le owlcarousel."
 
 #: inc/front/password.php:11
 msgid "This content is protected by a password, type the password below:"
@@ -542,6 +571,10 @@ msgstr ""
 #: inc/front/password.php:15 inc/front/password.php:17
 msgid "Password:"
 msgstr "Mot de passe :"
+
+#: inc/front/password.php:18
+msgid "Send"
+msgstr "Envoyer"
 
 #: inc/init.php:126
 msgid "Sidebar"
@@ -636,16 +669,16 @@ msgstr "Ajouter"
 #: inc/library/cuztom/classes/fields/bundle.class.php:160
 #: inc/library/cuztom/classes/fields/bundle.class.php:220
 msgid "This input type doesn't support the bundle functionality (yet)."
-msgstr ""
+msgstr "Ce type de champ ne supporte pas encore la fonctionnalité groupe."
 
 #: inc/library/cuztom/classes/fields/file.class.php:36
 msgid "Select file"
-msgstr ""
+msgstr "Sélectionner un fichier"
 
 #: inc/library/cuztom/classes/fields/file.class.php:37
 #: inc/library/cuztom/cuztom.php:203
 msgid "Remove current file"
-msgstr ""
+msgstr "Supprimer le fichier courant"
 
 #: inc/library/cuztom/classes/fields/image.class.php:29
 msgid "Select image"
@@ -654,7 +687,7 @@ msgstr "Sélectionner une image"
 #: inc/library/cuztom/classes/fields/image.class.php:30
 #: inc/library/cuztom/cuztom.php:202
 msgid "Remove current image"
-msgstr ""
+msgstr "Supprimer l'image courante"
 
 #: inc/library/cuztom/classes/fields/yesno.class.php:17
 msgid "Yes"
@@ -764,7 +797,7 @@ msgstr "%s parent"
 #: inc/library/cuztom/classes/taxonomy.class.php:107
 #, php-format
 msgid "Parent %s:"
-msgstr ""
+msgstr "%s parent :"
 
 #: inc/library/cuztom/classes/taxonomy.class.php:109
 #, php-format
@@ -774,7 +807,7 @@ msgstr "Modifier %s"
 #: inc/library/cuztom/classes/taxonomy.class.php:111
 #, php-format
 msgid "New %s Name"
-msgstr ""
+msgstr "Nouveau %s"
 
 #: inc/library/cuztom/classes/taxonomy.class.php:235
 #, php-format
@@ -787,6 +820,7 @@ msgid "Forgot your password"
 msgstr "Mot de passe oublié"
 
 #: inc/plugins/thememylogin.php:14 woocommerce/myaccount/form-login.php:103
+#: woocommerce/myaccount/form-login.php:148
 msgid "Register"
 msgstr "Crèer un compte"
 
@@ -813,6 +847,14 @@ msgstr "Erreur !"
 #: inc/plugins/woocommerce.php:85 inc/plugins/woocommerce.php:90
 msgid "Remove this item"
 msgstr "Enlever cet item"
+
+#: inc/plugins/woocommerce.php:306 searchform.php:12
+msgid "Search"
+msgstr "Rechercher"
+
+#: inc/plugins/woocommerce.php:339
+msgid "My Account"
+msgstr "Mon compte"
 
 #: page-sitemap.php:31
 msgid "Pages"
@@ -843,6 +885,10 @@ msgstr "Pages :"
 msgid "Search results: %s"
 msgstr "Résultats de la recherche : %s"
 
+#: searchform.php:12
+msgid "Search &hellip;"
+msgstr "Rechercher &hellip;"
+
 #: sidebar-blog.php:16
 msgid "Enable widgets in Sidebar Blog"
 msgstr "Activer des widgets dans la Sidebar Blog"
@@ -859,13 +905,14 @@ msgstr "Activer des widgets dans la colonne latérale"
 msgid "Enable widgets in Sidebar"
 msgstr "Activer des widgets dans la Sidebar"
 
+#: woocommerce/global/form-login.php:55 woocommerce/myaccount/form-login.php:40
+#: woocommerce/myaccount/form-login.php:76
+msgid "Login"
+msgstr "Connexion"
+
 #: woocommerce/global/form-login.php:67 woocommerce/myaccount/form-login.php:83
 msgid "Lost your password?"
 msgstr "Mot de passe oublié ?"
-
-#: woocommerce/myaccount/form-login.php:40
-msgid "Login"
-msgstr "Connexion"
 
 #: woocommerce/myaccount/form-login.php:49
 msgid "Username or email address"
@@ -899,16 +946,6 @@ msgstr "Anti-spam"
 
 #~ msgid "Posts of the year:"
 #~ msgstr "Articles de l'année :"
-
-#~ msgid "Search &hellip;"
-#~ msgstr "Rechercher &hellip;"
-
-#, fuzzy
-#~ msgid "Reset Password"
-#~ msgstr "Mot de passe"
-
-#~ msgid "Link to %s"
-#~ msgstr "Lien vers %s"
 
 #~ msgid "Feed"
 #~ msgstr "Flux RSS"
@@ -967,12 +1004,6 @@ msgstr "Anti-spam"
 #~ msgid "F Y"
 #~ msgstr "F Y"
 
-#~ msgid "F j, Y"
-#~ msgstr "j F Y"
-
-#~ msgid "Send"
-#~ msgstr "Envoyer"
-
 #~ msgid "Read&nbsp;more&hellip;"
 #~ msgstr "Lire&nbsp;plus&hellip;"
 
@@ -981,9 +1012,6 @@ msgstr "Anti-spam"
 
 #~ msgid "Please make sure your <a href=\"%s\">.htaccess</a> file is writable "
 #~ msgstr "Vérifiez que le fichier <a href=\"%s\">.htaccess</a> est modifiable"
-
-#~ msgid "View your shopping cart"
-#~ msgstr "Voir votre panier"
 
 #~ msgid "Start shopping"
 #~ msgstr "Commence à acheter"
