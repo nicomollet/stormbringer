@@ -1,5 +1,7 @@
 ### Unreleased
 
+### 0.3.9: September 19th, 2017
+* Up version fix
 
 ### 0.3.8: September 8th, 2017
 * **New** - Full screen form feature
