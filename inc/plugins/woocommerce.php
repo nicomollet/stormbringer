@@ -14,8 +14,8 @@ function stormbringer_dequeue_gridlist() {
 	//wp_deregister_style( 'grid-list-layout' );
 	wp_dequeue_style( 'grid-list-button' );
 	wp_deregister_style( 'grid-list-button' );
-	if ( ! function_exists( 'hustle_activated' ) ) {
-		wp_deregister_style( 'dashicons' );
+	if ( ! function_exists( 'hustle_activated' ) && ! is_admin_bar_showing() ) {
+		wp_dequeue_style( 'dashicons' );
 		wp_deregister_style( 'dashicons' );
 	}
 }

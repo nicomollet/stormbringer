@@ -1,4 +1,5 @@
 ### Unreleased
+* **New** - Lazy Load effect
 
 ### 0.3.9: September 19th, 2017
 * Up version fix
@@ -30,7 +31,7 @@
 * WooCommerce: Product Single: product variations as list-item
 * WooCommerce: Adjust handheld bar
 * Hustle: Flash Of Unstyled Text fix
-* Fix conflict between Toggle Grid and Hustle (with dashicons enqueue
+* Fix conflict between Toggle Grid and Hustle (with dashicons enqueue)
 
 ### 0.3.5: July 27th, 2017
 * Gravity Forms: fix submit button

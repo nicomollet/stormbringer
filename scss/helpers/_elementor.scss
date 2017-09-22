@@ -7,7 +7,7 @@ body.elementor-editor-active{
 /**
 Styling of Elementor Buttons
  */
-.elementor a:hover {
+.elementor a:not(.btn):hover {
   text-decoration: underline;
 }
 
