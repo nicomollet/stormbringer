@@ -425,7 +425,7 @@ add_filter( 'nav_menu_css_class', 'stormbringer_woocommerce_pages_menu_item_clas
 
 
 /**
- * Woocommerce: Shortcode for displaying a link to basket
+ * Woocommerce: Shortcode [woocommerce_cart_link] for displaying a link to basket
  *
  * @param $atts
  *
@@ -436,8 +436,6 @@ function woocommerce_cart_count_shortcode( $atts ) {
 
 	$defaults = array(
 		'icon_class'         => 'glyphicon glyphicon-shopping-cart',
-		'empty_cart_text'    => '',
-		'items_in_cart_text' => '',
 		'show_count'         => true,
 		'show_amount'        => true,
 		'link_class'         => 'link-cart',
@@ -482,7 +480,7 @@ function woocommerce_cart_count_shortcode( $atts ) {
 add_shortcode( 'woocommerce_cart_link', 'woocommerce_cart_count_shortcode' );
 
 /**
- * Shortcode for displaying a link to account
+ * WooCommerce: Shortcode [woocommerce_account_link] for displaying a link to account
  *
  * @param $atts
  *

@@ -64,7 +64,8 @@ Customize the admin scheme: https://gist.github.com/nicomollet/7fd3e2e5334ef352a
 
 Shortcodes
 -----------
-[woocommerce_cart_link] Display a link to the Woocommerce cart
+[woocommerce_cart_link] Display a link to the WooCommerce cart (params: `icon_class` `link_class` `show_amount` `show_count`)
+[woocommerce_account_link] Display a link to the WooCommerce account page (params: `icon_class` `link_class`)
 
 Major components 
 -----------
