@@ -104,6 +104,11 @@
   overflow: hidden;
 }
 
+.field_sublabel_hidden_label{
+  .hidden_sub_label{
+    display: none;
+  }
+}
 
 
 /* hide the honeypot field  ------------------------------------------------------*/
