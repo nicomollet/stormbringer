@@ -106,10 +106,14 @@ table.woo-vou-recipient-fields{
 }
 
 
-
-
-
 .single-product, .singular-product{
+
+  .woocommerce-tabs .panel {
+    @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+    border-top: 0;
+    padding: $panel-body-padding;
+  }
+
   .wc-tabs-wrapper, .related, .upsells{
     margin-top: ($line-height-computed);
     clear: both;
