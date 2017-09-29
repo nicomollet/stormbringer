@@ -408,3 +408,8 @@ body.page-template-fullwidthnotitle{
     transform: rotate(359deg);
   }
 }
+
+// Last paragraph
+.well *:last-child{
+  margin-bottom: 0;
+}

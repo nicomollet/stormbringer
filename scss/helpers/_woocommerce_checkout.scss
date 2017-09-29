@@ -48,12 +48,19 @@ form.checkout_coupon {
     margin-left: 0;
   }
 
-  #order_review.payment-fixed {
-    position: fixed;
-    top: 0;
-    z-index: 9;
-    box-shadow: 0 6px 2em rgba(#000,.2);
+  #order_review{
+    @include transition(position ease .4s, background ease .4s, box-shadow ease .4s);
+    padding-bottom: floor(($grid-gutter-width / 2));
+    padding-top: floor(($grid-gutter-width / 2));
+
+    &.payment-fixed{
+      position: fixed;
+      top: 0;
+      z-index: 9;
+      box-shadow: 0 6px 2em rgba(#000,.2);
+    }
   }
+
 
   .woocommerce-NoticeGroup{
     @include make-md-column(12);
