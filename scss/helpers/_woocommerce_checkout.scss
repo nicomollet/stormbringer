@@ -35,6 +35,11 @@ All pages
 Checkout
  */
 
+form.checkout_coupon {
+  p{
+    display: inline-block;
+  }
+}
 
 .woocommerce-checkout{
 
@@ -295,15 +300,9 @@ Cart
       vertical-align: top;
     }
 
-    #coupon_code{
-      display: inline-block;
-      width: auto;
-    }
+
   }
-  .checkout_coupon #coupon_code{
-    display: inline-block;
-    width: auto;
-  }
+
 
   .qty{
     width: 60px;
@@ -327,6 +326,11 @@ Cart
 
 }
 
+#coupon_code{
+  display: inline;
+  width: auto;
+  vertical-align: inherit;
+}
 
 /**
  Account

@@ -561,3 +561,22 @@ function stormbringer_gridlist_toggle_button_output($output, $grid_view, $list_v
 	return $output;
 }
 add_filter( 'gridlist_toggle_button_output', 'stormbringer_gridlist_toggle_button_output',10, 3 );
+
+
+
+/**
+ * WooCOmmerce product list item before
+ */
+function stormbringer_woocommerce_before_shop_loop_item(){
+	echo '<div class="product-loop-inner">';
+}
+add_action('woocommerce_before_shop_loop_item', 'stormbringer_woocommerce_before_shop_loop_item', -999);
+
+
+/**
+ * WooCOmmerce product list item after
+ */
+function stormbringer_woocommerce_after_shop_loop_item(){
+	echo '</div>';
+}
+add_action('woocommerce_after_shop_loop_item', 'stormbringer_woocommerce_after_shop_loop_item', 999);
