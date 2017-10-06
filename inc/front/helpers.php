@@ -53,5 +53,12 @@ function stormbringer_bootstrap_grid(&$counter_posts = 0, $args = array(), $elem
     return $clearfix;
 }
 
-
-
+/**
+ * Display Yoast Breadcrumb
+ *
+ * @hooked stormbringer_content_before
+ */
+function stormbringer_breadcrumb(){
+	if ( function_exists( 'yoast_breadcrumb' ) ) : yoast_breadcrumb(); endif;
+}
+add_action('stormbringer_content_before', 'stormbringer_breadcrumb', 10);

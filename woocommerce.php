@@ -12,9 +12,23 @@
 
 	<div id="content" role="main">
 
-		<?php if (function_exists('yoast_breadcrumb')) : yoast_breadcrumb(); endif; ?>
+		<?php
+		/**
+		 * stormbringer_content_before hook.
+		 *
+		 * @hooked stormbringer_breadcrumb - 10
+		 */
+		do_action( 'stormbringer_content_before' );
+		?>
 
 		<?php woocommerce_content(); ?>
+
+		<?php
+		/**
+		 * stormbringer_content_after hook.
+		 */
+		do_action( 'stormbringer_content_after' );
+		?>
 
 	</div>
 	<!-- /#content -->
