@@ -1,5 +1,19 @@
 ### Unreleased
-* **New** - Lazy Load effect
+
+
+### 0.4.0: October 6th, 2017
+* **New** - Lazy Load: disable on carousels
+* **New** - Lazy Load: effect when showing 
+* **New** - Hooks before content and after content 
+* **Tweak** - Menu .active class for current item
+* **Tweak** - Well last paragraph margin
+* **Tweak** - WooCommerce: align coupon code input
+* **Tweak** - WooCommerce: tabs panel styling
+* **Tweak** - WooCommerce: adjust padding on widget cart
+* **Tweak** - Hide empty sidebar message (sidebars: blog main shop)
+* **Fix** - Gravity Forms: Hide hidden sublabels
+* **Fix** - Gravity Forms: Remove submission to Analytics event
+* **Fix** - Bug showing adminbar
 
 ### 0.3.9: September 19th, 2017
 * Up version fix
