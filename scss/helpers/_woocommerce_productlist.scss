@@ -1,4 +1,3 @@
-
 /**
 Misc
  */
@@ -60,12 +59,18 @@ Layout
     margin-left: 0;
     text-align: center;
     position: relative;
-    @include make-sm-column(12);
-    @include make-md-column(4);
     margin-bottom: $line-height-computed;
 
     &.first{
-      clear: both;
+      @media (min-width: $screen-md-min) {
+        clear: both;
+      }
+    }
+
+    &:nth-child( 2n +1 ){
+      @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        clear: both;
+      }
     }
 
     .onsale {
@@ -79,27 +84,58 @@ Layout
       font-weight: 800;
     }
 
-
     a{
       position: relative;
       display: block;
     }
-
   }
 }
 
+.woocommerce-product-columns-2{
+  ul.products{
+    li.product{
+      @include make-sm-column(6);
+      @include make-md-column(6);
+    }
+  }
+}
 
+.woocommerce-product-columns-3{
+  ul.products{
+    li.product{
+      @include make-sm-column(6);
+      @include make-md-column(4);
+    }
+  }
+}
+
+.woocommerce-product-columns-4{
+  ul.products{
+    li.product{
+      @include make-sm-column(6);
+      @include make-md-column(3);
+    }
+  }
+}
+
+.woocommerce-product-columns-6{
+  .woocommerce ul.products{
+    li.product{
+      @include make-sm-column(6);
+      @include make-md-column(2);
+    }
+  }
+}
 
 /**
 Mobile
  */
-@media (max-width: 450px) {
+@media (max-width: $screen-xs-max) {
   .woocommerce ul.products li.product{
     float: none !important;
     width:100% !important;
   }
 }
-
 
 /**
 Grid/List toggle
@@ -108,4 +144,5 @@ Grid/List toggle
   float: right;
   padding: 0;
   margin-bottom: ($line-height-computed / 1);
+  margin-top: ceil( -1 * ($input-height-base + $line-height-computed));
 }

@@ -65,11 +65,35 @@ function stormbringer_wc_add_to_cart_message( $message ) {
  * @return int
  */
 function stormbringer_loop_columns() {
-	return 3; // 3 products per row
+	return get_theme_mod('woocommerce_columns', 4); // 4 products per row
 }
 
 add_filter( 'loop_shop_columns', 'stormbringer_loop_columns', 1, 10 );
 
+/**
+ * Woocommerce: Related products number
+ *
+ * @param $args
+ *
+ * @return mixed
+ */
+function stormbringer_related_products_args( $args ) {
+	$args['posts_per_page'] = get_theme_mod('woocommerce_columns', 4); // 4 related products
+	$args['columns'] = get_theme_mod('woocommerce_columns', 4); // arranged in 4 columns
+	return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'stormbringer_related_products_args' );
+
+/**
+ * WooCommerce pre_get_posts for number of products per page, based on number of columns
+ * @param $query
+ */
+function stormbringer_woocommerce_products_per_page( $query ) {
+	if ( (is_shop() || is_product_category() || is_product()) && $query->is_main_query() ) {
+		$query->set( 'posts_per_page', 3 * get_theme_mod('woocommerce_columns', 4) );
+	}
+}
+add_action( 'pre_get_posts', 'stormbringer_woocommerce_products_per_page' );
 
 /**
  * Woocommerce: Replace the 'x' in WooCommerce cart.php with text because 'x' is not helpfull at all for screenreader users
@@ -518,19 +542,7 @@ function woocommerce_account_link_shortcode( $atts ) {
 }
 add_shortcode( 'woocommerce_account_link', 'woocommerce_account_link_shortcode' );
 
-/**
- * Woocommerce: Related products number
- *
- * @param $args
- *
- * @return mixed
- */
-function stormbringer_related_products_args( $args ) {
-	$args['posts_per_page'] = 3; // 3 related products
-	$args['columns'] = 3; // arranged in 3 columns
-	return $args;
-}
-add_filter( 'woocommerce_output_related_products_args', 'stormbringer_related_products_args' );
+
 
 /**
  * Woocommerce Grid/List Toggle: style

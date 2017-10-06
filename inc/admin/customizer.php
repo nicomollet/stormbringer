@@ -109,7 +109,7 @@ function stormbringer_customize_register( $wp_customize ) {
 		'priority' => 10,
 	) );
 
-	// library
+	// Library
 	if(current_theme_supports('libraries')) :
 		$libraries = get_theme_support('libraries')[0];
 
@@ -255,6 +255,24 @@ function stormbringer_customize_register( $wp_customize ) {
         )
     );
 
+	// WooCommerce grid, number of columns for MD-LG
+	$wp_customize->add_setting(
+		'woocommerce_columns',
+		array(
+			'default'		=> '4',
+			'transport'		=> 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field'
+		)
+	);
+	$wp_customize->add_control(
+		'woocommerce_columns',
+		array(
+			'section'		=> 'misc',
+			'std'		=> '4',
+			'label'			=> __( 'WooCommerce number of columns', 'stormbringer' ),
+			'type'			=> 'text'
+		)
+	);
 
 
 	// Bootstrap ****************************

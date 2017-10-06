@@ -1917,6 +1917,30 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
 })(window, document);
 jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
 
+  // Fullscreenform
+  $('.fullscreenform-form-switch').each(function(){
+    fullscreenform = $(this).closest('.fullscreenform');
+    $('input[name=form]', fullscreenform).on('change', function () {
+      $('.fullscreenform-row').hide();
+      $('.fullscreenform-row-'+$(this).val()).show();
+    });
+  });
+  $('.fullscreenform-open').on('click', function(event){
+    event.preventDefault();
+    searchclass = 'fullscreenform-open-';
+    fullscreenformid = $(this).attr('class').substring($(this).attr('class').indexOf(searchclass) + searchclass.length);
+    if(fullscreenformid.indexOf(' ') > 0){
+      fullscreenformid = fullscreenformid.substring(0, fullscreenformid.indexOf(' '));
+    }
+    $('#'+fullscreenformid).addClass('fullscreenform fullscreenform-show');
+    $('#'+fullscreenformid+' .fullscreenform-form-switch input[type=radio]:first').first().trigger('click').prop('checked', true);
+    $('body').addClass('fullscreenform-show');
+  });
+  $('.fullscreenform-btn-close').on('click', function(event){
+    event.preventDefault();
+    $(this).closest('.fullscreenform').removeClass('fullscreenform-show');
+    $('body').removeClass('fullscreenform-show');
+  });
 
   // Navbar stuck on scrolltop
   if($('#navigation').hasClass('navbar-stuckonscrolltop')){
@@ -2006,6 +2030,13 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
   $('input[data-disabled="1"],textarea[data-disabled="1"]').each(function (e) {
     if($(this).val()!='')
       $(this).attr('readonly','readonly');
+  });
+
+  // Tracking event for Gravity Forms submission
+  $(document).bind('gform_confirmation_loaded', function(event, formId){
+    if (typeof ga === 'function') {
+      ga('send', 'event', 'Forms', 'Submission', 'formid_'+formId);
+    }
   });
 
   // Email obfuscation
@@ -2141,7 +2172,6 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
 
   // Woocommerce: Make the order review element stick to the top of the browser window.
   if (  $( '#order_review_heading' ).length &&  $( 'form.woocommerce-checkout' ).length &&  $( '#customer_details' ).length ) {
-    console.log('sticky');
     function stickyPayment() {
       var tallestPaymentBox = -1;
       jQuery('.payment_box').each(function () {
