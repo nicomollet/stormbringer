@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.1.0
+ * @version 3.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span><?php _e( 'Login', 'woocommerce' ); ?></span>
 			</div>
 			<div class="panel-body">
-				<form class="woocomerce-form woocommerce-form-login login form form-horizontal" method="post">
+				<form class="woocommerce-form woocommerce-form-login login form form-horizontal" method="post">
 
 					<?php do_action( 'woocommerce_login_form_start' ); ?>
 
@@ -137,11 +137,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<?php endif; ?>
 
-					<!-- Spam Trap -->
-					<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;"><label for="trap"><?php _e( 'Anti-spam', 'woocommerce' ); ?></label><input type="text" name="email_2" id="trap" tabindex="-1" autocomplete="off" /></div>
-
 					<?php do_action( 'woocommerce_register_form' ); ?>
-
 
 					<div class="form-actions">
 						<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
@@ -152,9 +148,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				</form>
 			</div>
-
-
-
 
 	</div>
 
