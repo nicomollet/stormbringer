@@ -1,5 +1,5 @@
 ### Unreleased
-
+* **Tweak** - WooCommerce: update templates for 3.2.0
 
 ### 0.4.0: October 6th, 2017
 * **New** - Lazy Load: disable on carousels
