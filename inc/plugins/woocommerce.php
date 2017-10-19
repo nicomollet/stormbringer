@@ -341,7 +341,7 @@ if ( ! function_exists( 'stormbringer_handheld_footer_bar_cart_link' ) ) {
 	 */
 	function stormbringer_handheld_footer_bar_cart_link() {
 		?>
-		<a class="footer-cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e(
+		<a class="footer-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e(
 			'View your shopping cart', 'stormbringer'
 		); ?>">
 			<span class="glyphicon glyphicon-shopping-cart"></span>
@@ -489,7 +489,7 @@ function woocommerce_cart_count_shortcode( $atts ) {
 						)
 					).')';
 			}
-			$link_url = esc_url(WC()->cart->get_cart_url());
+			$link_url = esc_url(wc_get_cart_url());
 		} else {
 			$woocommerce_shop_page_id = get_option( 'woocommerce_shop_page_id' );
 			$link_url = get_permalink( $woocommerce_shop_page_id );

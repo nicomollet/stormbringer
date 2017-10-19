@@ -90,6 +90,9 @@ iframe{border: 0}
 .bootstrap-select a:focus{
   outline: 0 !important;
 }
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+  width: auto;
+}
 
 // Comments
 .edit-comment{
