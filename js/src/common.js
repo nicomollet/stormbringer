@@ -245,6 +245,7 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
   // Woocommerce: handheld footer bar
   $( '.stormbringer-handheld-footer-bar .search > a' ).click( function(e) {
     $( this ).parent().toggleClass( 'active' );
+    $( this ).parent().find('.search-field').focus();
     e.preventDefault();
   });
 
