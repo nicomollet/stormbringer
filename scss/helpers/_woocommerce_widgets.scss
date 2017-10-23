@@ -19,6 +19,9 @@ Price Filter Widget
     .button {
       float: left;
     }
+    #min_price, #max_price{
+      display: none;
+    }
   }
 
   .ui-slider {
