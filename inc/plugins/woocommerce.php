@@ -284,7 +284,7 @@ if ( ! function_exists( 'stormbringer_handheld_footer_bar' ) ) {
 			),
 			'cart'       => array(
 				'priority' => 30,
-				'callback' => 'stormbringer_handheld_footer_bar_cart_link',
+				'callback' => 'stormbringer_cart_items_number',
 			),
 		);
 
@@ -330,24 +330,6 @@ if ( ! function_exists( 'stormbringer_handheld_footer_bar_search' ) ) {
 		echo '<a href=""><span class="glyphicon glyphicon-search"></span><span class="text-hide">' . esc_attr__( 'Search', 'stormbringer' )
 		     . '</span></a>';
 		stormbringer_product_search();
-	}
-}
-
-if ( ! function_exists( 'stormbringer_handheld_footer_bar_cart_link' ) ) {
-	/**
-	 * The cart callback function for the handheld footer bar
-	 *
-	 * @since 2.0.0
-	 */
-	function stormbringer_handheld_footer_bar_cart_link() {
-		?>
-		<a class="footer-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e(
-			'View your shopping cart', 'stormbringer'
-		); ?>">
-			<span class="glyphicon glyphicon-shopping-cart"></span>
-			<span class="badge badge-count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() ); ?></span>
-		</a>
-		<?php
 	}
 }
 
@@ -592,3 +574,58 @@ function stormbringer_woocommerce_after_shop_loop_item(){
 }
 add_action('woocommerce_after_shop_loop_item', 'stormbringer_woocommerce_after_shop_loop_item', 999);
 add_action('woocommerce_after_subcategory', 'stormbringer_woocommerce_after_shop_loop_item', 999);
+
+/**
+ * WooCommerce Cart Fragments
+ * Ensure cart contents update when products are added to the cart via AJAX
+ *
+ * @param  array $fragments Fragments to refresh via AJAX.
+ * @return array            Fragments to refresh via AJAX
+ */
+function stormbringer_cart_fragment( $fragments ) {
+	global $woocommerce;
+
+	ob_start();
+	stormbringer_cart_contents();
+	$fragments['a.cart-contents'] = ob_get_clean();
+
+	ob_start();
+	stormbringer_cart_items_number();
+	$fragments['a.cart-items-number'] = ob_get_clean();
+
+	return $fragments;
+}
+add_filter( 'add_to_cart_fragments', 'stormbringer_cart_fragment' );
+
+
+/**
+ * WooCommerce Cart Link
+ * Displayed a link to the cart including the number of items present and the cart total
+ *
+ * @return void
+ * @since  1.0.0
+ */
+function stormbringer_cart_items_number() {
+	?>
+	<a class="cart-items-number" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'stormbringer' ); ?>">
+		<span class="glyphicon glyphicon-shopping-cart"></span>
+		<span class="badge badge-count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
+	</a>
+	<?php
+}
+
+
+/**
+ * WooCommerce Cart Contents
+ * Displayed a link to the cart including the number of items present and the cart total
+ *
+ * @return void
+ * @since  1.0.0
+ */
+function stormbringer_cart_contents() {
+	?>
+	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'stormbringer' ); ?>">
+		<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() ) );?></span>
+	</a>
+	<?php
+}
