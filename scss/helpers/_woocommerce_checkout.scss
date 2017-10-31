@@ -346,6 +346,11 @@ Cart
 
 .woocommerce-account {
 
+  .woocommerce-order-downloads{
+    .download-expires{
+      white-space: nowrap;
+    }
+  }
 
   #customer_login{
     .control-label, .form-input {
