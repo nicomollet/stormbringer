@@ -1,5 +1,16 @@
 ### Unreleased
+
+
+### 0.4.1: October 31st, 2017
+* **New** - Empty WP Rocket cache on save product
+* **New** - WooCommerce: cart items refreshed by ajax (compatible with cache plugins like WP Rocket)
+* **Tweak** - WooCommerce: Style woocommerce-notice
 * **Tweak** - WooCommerce: update templates for 3.2.0
+* **Tweak** - WooCommerce: product inner also on subcategories
+* **Tweak** - WooCommerce: widget price, hide input
+* **Tweak** - WooCommerce: replace deprecated WC_Cart::get_cart_url by wc_get_cart_url()
+* **Tweak** - WooCommerce: focus search input in handheld bar
+* **Tweak** - Grunt assets filename fix with minutes and seconds
 
 ### 0.4.0: October 6th, 2017
 * **New** - Lazy Load: disable on carousels
