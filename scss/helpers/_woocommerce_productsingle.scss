@@ -39,6 +39,10 @@ Variations
  */
 table.variations{
 
+  input[type=radio]{
+    margin-left: 0;
+  }
+
   //width:100%;
   margin-bottom: $line-height-computed;
 

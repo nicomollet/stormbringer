@@ -1,17 +1,19 @@
 // alerts
-.alert, .woocommerce-message{}
-.alert-success, .woocommerce-message {}
+.alert, .woocommerce-message, .woocommerce-error, .woocommerce-info, .woocommerce-notice {
+.alert-success, .woocommerce-message, .woocommerce-notice {
+.alert-danger, .woocommerce-error {
+}
 
 // buttons
-.btn, .button{}
+.btn, .button{
 
 // tables
-.table, .shop_table {}
-.table-striped, .shop_table {}
-.table-hover, .shop_table {}
+.table, .shop_table {
+.table-striped, .shop_table {
+.table-hover, .shop_table {
 
 // forms
 
 // tabs
-.nav, .woocommerce-tabs .tabs {}
-.nav-tabs, .woocommerce-tabs .tabs  {}
+.nav, .woocommerce-tabs .tabs {
+.nav-tabs, .woocommerce-tabs .tabs  {
