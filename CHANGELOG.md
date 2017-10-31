@@ -10,7 +10,7 @@
 * **Tweak** - WooCommerce: widget price, hide input
 * **Tweak** - WooCommerce: replace deprecated WC_Cart::get_cart_url by wc_get_cart_url()
 * **Tweak** - WooCommerce: focus search input in handheld bar
-* **Tweak** - Grunt assets filename fix with minutes and seconds
+* **Fix** - Grunt assets filename fix with minutes and seconds
 
 ### 0.4.0: October 6th, 2017
 * **New** - Lazy Load: disable on carousels
