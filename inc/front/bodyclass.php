@@ -112,7 +112,7 @@ function stormbringer_body_class_context() {
 
 	// Woocommerce
 	if(get_theme_support('woocommerce')){
-		if ( is_shop() || is_product_category() || is_product() ){
+		if ( is_shop() || is_product_category() || is_product() || is_product_tag() ){
 			$classes[] = 'shop';
 			$columns = 4;
 			$columns = apply_filters( 'loop_shop_columns', $columns );
