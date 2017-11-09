@@ -595,7 +595,7 @@ function stormbringer_cart_fragment( $fragments ) {
 
 	return $fragments;
 }
-add_filter( 'add_to_cart_fragments', 'stormbringer_cart_fragment' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'stormbringer_cart_fragment' );
 
 
 /**
