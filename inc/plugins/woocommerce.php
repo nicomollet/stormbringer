@@ -90,10 +90,11 @@ add_filter( 'woocommerce_output_related_products_args', 'stormbringer_related_pr
  */
 function stormbringer_woocommerce_products_per_page( $query ) {
 	if(!is_admin()){
-		if ( (is_shop() || is_product_category() || is_product()) && $query->is_main_query() ) {
+		if ( (is_shop() || is_product_category() || is_product_tag() || is_product()) && $query->is_main_query() ) {
 			$query->set( 'posts_per_page', 3 * get_theme_mod('woocommerce_columns', 4) );
 		}
 	}
+
 }
 add_action( 'pre_get_posts', 'stormbringer_woocommerce_products_per_page' );
 
