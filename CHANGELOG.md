@@ -1,5 +1,12 @@
 ### Unreleased
+N/A
 
+### 0.4.2: November 20th, 2017
+* **Fix** - WooCommerce: number of products in admin
+* **Tweak** - WooCommerce: replace deprecated add_to_cart_fragments with woocommerce_add_to_cart_fragments
+* **Tweak** - WooCommerce: columns for product_tag in body class
+* **Tweak** - Assets: remove version number
+* **Tweak** - WooCommerce: nowrap download expires cell
 
 ### 0.4.1: October 31st, 2017
 * **New** - Empty WP Rocket cache on save product
