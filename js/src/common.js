@@ -28,14 +28,13 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
   // Navbar stuck on scrolltop
   if($('#navigation').hasClass('navbar-stuckonscrolltop')){
     var lastScrollTop = 0;
-    var headerHeight = $('#navigation').height() + $('#header').height() + $('#header-above').height() + $('#header-below').height();
-    var navHeight = $('#navigation').height();
+    var navHeight = $('#navigation').height() + 100;
     $(window).scroll(function(event){
       var st = $(this).scrollTop();
-      if (st > headerHeight && st > lastScrollTop){
+      if (st > navHeight && st > lastScrollTop){
         $('#navigation').addClass('navbar-outofview').addClass('navbar-stuck');
       }
-      if(st <= (headerHeight)){
+      if(st <= (navHeight)){
         $('#navigation').removeClass('navbar-stuck');
       }
       if (st > lastScrollTop){ // going down
