@@ -1,6 +1,7 @@
 ### Unreleased
 * **Fix** - Nav Stuck To Top: adjust to #navigation height, not #header height
 * **Fix** - WooCommerce: products per page on product_tag 
+* **Tweak** - Woocommerce Grid/List Toggle: change position of html description (after title, instead of after price)
 
 ### 0.4.2: November 20th, 2017
 * **Fix** - WooCommerce: number of products in admin

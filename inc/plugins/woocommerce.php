@@ -108,11 +108,11 @@ add_action( 'pre_get_posts', 'stormbringer_woocommerce_products_per_page' );
  *
  * @return string
  */
-function wsis_woocommerce_remove_item( $wsis_html, $cart_item_key ) {
+function woocommerce_woocommerce_remove_item( $wsis_html, $cart_item_key ) {
 	$button    = __( 'Remove this item', 'woocommerce' );
 	$button    = '<span class="glyphicon glyphicon-remove"></span>';
 	$wsis_html = sprintf(
-		'<a href="%s" class="remove" title="%s"><span class="wsis-remove-item">%s</span></a>',
+		'<a href="%s" class="remove" title="%s"><span class="remove-item">%s</span></a>',
 		esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
 		__( 'Remove this item', 'woocommerce' ), $button
 	);
@@ -120,7 +120,7 @@ function wsis_woocommerce_remove_item( $wsis_html, $cart_item_key ) {
 	return $wsis_html;
 }
 
-add_filter( 'woocommerce_cart_item_remove_link', 'wsis_woocommerce_remove_item', 10, 2 );
+add_filter( 'woocommerce_cart_item_remove_link', 'woocommerce_woocommerce_remove_item', 10, 2 );
 
 /**
  * Woocommerce: Customize form fields
