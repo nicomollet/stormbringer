@@ -560,6 +560,18 @@ function stormbringer_gridlist_toggle_button_output($output, $grid_view, $list_v
 add_filter( 'gridlist_toggle_button_output', 'stormbringer_gridlist_toggle_button_output',10, 3 );
 
 /**
+ * Woocommerce Grid/List Toggle: change position of html description (after title, instead of after price)
+ */
+function aquatonic_wp(){
+	if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
+		remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_single_excerpt', 5);
+		add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_single_excerpt', 8);
+	}
+}
+add_action( 'wp' , 'aquatonic_wp' , 30);
+
+
+/**
  * WooCommerce product list item before
  */
 function stormbringer_woocommerce_before_shop_loop_item(){
