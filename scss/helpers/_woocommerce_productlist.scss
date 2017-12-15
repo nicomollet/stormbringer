@@ -54,6 +54,7 @@ Layout
   padding: 0;
   @include make-row;
 
+
   li.product{
     list-style: none;
     margin-left: 0;
@@ -89,6 +90,9 @@ Layout
       display: block;
     }
   }
+}
+.woocommerce .infinite-wrap ul.products {
+  margin: 0; // jetpack infinitve scroll margins
 }
 
 .woocommerce-product-columns-2{
