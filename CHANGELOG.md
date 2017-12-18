@@ -1,4 +1,7 @@
 ### Unreleased
+
+
+### 0.4.4: December 18th, 2017
 * **Tweak** - Jetpack: Infinite Scroll compatibility in product archive
 * **Tweak** - Navbarscrolltotop: compatibility with WooCommerce checkout page
 
