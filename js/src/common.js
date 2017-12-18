@@ -40,7 +40,9 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
       if (st > lastScrollTop){ // going down
         //$('#navigation').addClass('navbar-outofview'); // nico 2017/05/23 testing without this line to check behaviour
       } else { // going up
-        $('#navigation').removeClass('navbar-outofview'); //up
+        if(!$('body').hasClass('woocommerce-checkout')){ // on woocommerce-checkout does not display navbar
+          $('#navigation').removeClass('navbar-outofview');
+        }
       }
       lastScrollTop = st;
     });

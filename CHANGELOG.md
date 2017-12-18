@@ -1,5 +1,6 @@
 ### Unreleased
 * **Tweak** - Jetpack: Infinite Scroll compatibility in product archive
+* **Tweak** - Navbarscrolltotop: compatibility with WooCommerce checkout page
 
 ### 0.4.3: December 13th, 2017
 * **Fix** - Nav Stuck To Top: adjust to #navigation height, not #header height
