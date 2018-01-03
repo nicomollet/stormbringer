@@ -1,5 +1,5 @@
 ### Unreleased
-
+* **Tweak** - Body class template independant of post type
 
 ### 0.4.4: December 18th, 2017
 * **Tweak** - Jetpack: Infinite Scroll compatibility in product archive

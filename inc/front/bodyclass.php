@@ -185,6 +185,7 @@ function stormbringer_body_class_context() {
 			get_post_meta($object_id, "_wp_{$object->post_type}_template", true)
 		);
 		if ( ! empty($template)) {
+			$classes[] = "template-{$template}";
 			$classes[] = "{$object->post_type}-template-{$template}";
 		}
 
