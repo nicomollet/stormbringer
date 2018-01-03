@@ -382,7 +382,7 @@ html.noscroll {
 
 
 // Page template: fullwidth
-body.page-template-fullwidth, body.page-template-fullwidthnotitle{
+body.template-fullwidth, body.template-fullwidthnotitle{
   #main, .main-inner{
     padding: 0;
     margin: 0;
@@ -391,7 +391,7 @@ body.page-template-fullwidth, body.page-template-fullwidthnotitle{
 }
 
 // Page template: fullwidthnotitle
-body.page-template-fullwidthnotitle{
+body.template-fullwidthnotitle{
   #content{
     .page-header, .entry-meta, .breadcrumb{
       display: none;
