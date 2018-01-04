@@ -319,6 +319,11 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
         htmlClass = htmlClass.replace(/([.]*)/,'wf-error $1');
       }
     }
-    ,1000);
+    , 1000);
+  window.setTimeout (
+    function(){
+      document.documentElement.className += ' wf-inactive';
+    }
+    , 5000);
 
 });

@@ -17,17 +17,14 @@ $script = <<<EOS
 WebFontConfig = {
   {$google_fonts}{$typekit_id}
   timeout: 2000,
-  loading: function() {console.log('WF loading')},
-  active: function() {console.log('WF active');
+  active: function() {
     sessionStorage.fonts = true;
     window.setTimeout (
     function(){
-      console.log('WF active real')
       document.documentElement.className += ' wf-active-real';
     }
     ,500);
     },
-  inactive: function() {console.log('WF inactive')},
 };
 (function(d, t) {
 var wf = d.createElement(t),s = d.getElementsByTagName(t)[0];

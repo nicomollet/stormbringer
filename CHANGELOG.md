@@ -1,5 +1,5 @@
 ### Unreleased
-
+* **Fix** - Webfontloader: force loading after 5 seconds
 
 ### 0.4.5: January 4th, 2018
 * **Tweak** - Webfontloader: prevent FOUT
