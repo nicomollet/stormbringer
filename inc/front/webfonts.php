@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Load Webfont launcher
+ */
 function stormbringer_webfonts() {
 
 $google_fonts = get_theme_mod( 'google_fonts' );
@@ -22,5 +25,16 @@ EOS;
 endif;
 echo $script;
 }
+add_action( 'wp_footer', 'stormbringer_webfonts', -20 );
 
-add_action( 'wp_footer', 'stormbringer_webfonts', 30 );
+/**
+ * Webfont Nojs fallback
+ */
+function stormbringer_webfonts_nojs(){
+echo '<noscript><style>
+  .wf-active *, .wf-inactive *{
+    visibility: visible;
+}
+</style></noscript>';
+}
+add_action( 'stormbringer_footer_before', 'stormbringer_webfonts_nojs', 0 );
