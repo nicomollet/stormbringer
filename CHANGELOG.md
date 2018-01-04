@@ -1,4 +1,8 @@
 ### Unreleased
+
+
+### 0.4.5: January 4th, 2018
+* **Tweak** - Webfontloader: prevent FOUT
 * **Tweak** - Body class template independant of post type
 
 ### 0.4.4: December 18th, 2017
