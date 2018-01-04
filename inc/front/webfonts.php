@@ -14,10 +14,25 @@ if($google_fonts)$google_fonts= 'google:{families:'.$google_fonts.'},';
 if($typekit_id)$typekit_id= 'typekit:{id:\''.$typekit_id.'\'},';
 $script = <<<EOS
 <script>
-WebFontConfig = {{$google_fonts}{$typekit_id}};
+WebFontConfig = {
+  {$google_fonts}{$typekit_id}
+  timeout: 2000,
+  loading: function() {console.log('WF loading')},
+  active: function() {console.log('WF active');
+    sessionStorage.fonts = true;
+    window.setTimeout (
+    function(){
+      console.log('WF active real')
+      document.documentElement.className += ' wf-active-real';
+    }
+    ,500);
+    },
+  inactive: function() {console.log('WF inactive')},
+};
 (function(d, t) {
 var wf = d.createElement(t),s = d.getElementsByTagName(t)[0];
 wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+wf.async = true;
 s.parentNode.insertBefore(wf, s);
 })( document, 'script')
 </script>
@@ -25,16 +40,17 @@ EOS;
 endif;
 echo $script;
 }
-add_action( 'wp_footer', 'stormbringer_webfonts', -20 );
+add_action( 'wp_footer', 'stormbringer_webfonts', 20 );
 
 /**
- * Webfont Nojs fallback
+ * Webfont loader fallback
  */
 function stormbringer_webfonts_nojs(){
-echo '<noscript><style>
-  .wf-active *, .wf-inactive *{
-    visibility: visible;
+$script = <<<EOS
+<script>
+(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
+</script>
+EOS;
+echo $script;
 }
-</style></noscript>';
-}
-add_action( 'stormbringer_footer_before', 'stormbringer_webfonts_nojs', 0 );
+add_action( 'wp_head', 'stormbringer_webfonts_nojs', 0 );

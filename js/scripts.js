@@ -1945,20 +1945,21 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
   // Navbar stuck on scrolltop
   if($('#navigation').hasClass('navbar-stuckonscrolltop')){
     var lastScrollTop = 0;
-    var headerHeight = $('#navigation').height() + $('#header').height() + $('#header-above').height() + $('#header-below').height();
-    var navHeight = $('#navigation').height();
+    var navHeight = $('#navigation').height() + 100;
     $(window).scroll(function(event){
       var st = $(this).scrollTop();
-      if (st > headerHeight && st > lastScrollTop){
+      if (st > navHeight && st > lastScrollTop){
         $('#navigation').addClass('navbar-outofview').addClass('navbar-stuck');
       }
-      if(st <= (headerHeight)){
+      if(st <= (navHeight)){
         $('#navigation').removeClass('navbar-stuck');
       }
       if (st > lastScrollTop){ // going down
         //$('#navigation').addClass('navbar-outofview'); // nico 2017/05/23 testing without this line to check behaviour
       } else { // going up
-        $('#navigation').removeClass('navbar-outofview'); //up
+        if(!$('body').hasClass('woocommerce-checkout')){ // on woocommerce-checkout does not display navbar
+          $('#navigation').removeClass('navbar-outofview');
+        }
       }
       lastScrollTop = st;
     });
@@ -2162,6 +2163,7 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
   // Woocommerce: handheld footer bar
   $( '.stormbringer-handheld-footer-bar .search > a' ).click( function(e) {
     $( this ).parent().toggleClass( 'active' );
+    $( this ).parent().find('.search-field').focus();
     e.preventDefault();
   });
 
@@ -2225,6 +2227,16 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
       stickyPayment();
     });
   }
+
+  // Webfontloader: Timeout or after you know fonts should have loaded
+  window.setTimeout (
+    function(){
+      var htmlClass = document.documentElement.className;
+      if (htmlClass.indexOf('wf-') === -1) {
+        htmlClass = htmlClass.replace(/([.]*)/,'wf-error $1');
+      }
+    }
+    ,1000);
 
 });
 jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed

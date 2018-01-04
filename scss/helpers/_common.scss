@@ -355,13 +355,12 @@ nav.pagination {
 // Typekit loading avoid FOUT
 h1, h2, h3, h4, h5, h6, p, ul, a{
 
-  .wf-start &, .wf-loading &{
+  .js &{
     visibility: hidden;
   }
-  .wf-active &, .wf-inactive &{
+  .wf-active &, .wf-inactive &, .wf-error &, .no-js &{
     visibility: visible;
   }
-
   // For Hustle Popups
   .wph-modal &, .inc_opt_popup &{
     visibility: hidden;

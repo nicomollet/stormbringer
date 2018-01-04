@@ -6560,27 +6560,28 @@ a.thumbnail.active {
   border-color: #006f71;
 }
 
-.alert, .woocommerce-message, .woocommerce-error, .woocommerce-info {
+.alert, .woocommerce-message, .woocommerce-error, .woocommerce-info, .woocommerce-notice {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 0px;
 }
-.alert h4, .woocommerce-message h4, .woocommerce-error h4, .woocommerce-info h4 {
+.alert h4, .woocommerce-message h4, .woocommerce-error h4, .woocommerce-info h4, .woocommerce-notice h4 {
   margin-top: 0;
   color: inherit;
 }
-.alert .alert-link, .woocommerce-message .alert-link, .woocommerce-error .alert-link, .woocommerce-info .alert-link {
+.alert .alert-link, .woocommerce-message .alert-link, .woocommerce-error .alert-link, .woocommerce-info .alert-link, .woocommerce-notice .alert-link {
   font-weight: bold;
 }
 .alert > p,
 .alert > ul, .woocommerce-message > p,
 .woocommerce-message > ul, .woocommerce-error > p,
 .woocommerce-error > ul, .woocommerce-info > p,
-.woocommerce-info > ul {
+.woocommerce-info > ul, .woocommerce-notice > p,
+.woocommerce-notice > ul {
   margin-bottom: 0;
 }
-.alert > p + p, .woocommerce-message > p + p, .woocommerce-error > p + p, .woocommerce-info > p + p {
+.alert > p + p, .woocommerce-message > p + p, .woocommerce-error > p + p, .woocommerce-info > p + p, .woocommerce-notice > p + p {
   margin-top: 5px;
 }
 
@@ -6596,15 +6597,15 @@ a.thumbnail.active {
   color: inherit;
 }
 
-.alert-success, .woocommerce-message {
+.alert-success, .woocommerce-message, .woocommerce-notice {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #3c763d;
 }
-.alert-success hr, .woocommerce-message hr {
+.alert-success hr, .woocommerce-message hr, .woocommerce-notice hr {
   border-top-color: #c9e2b3;
 }
-.alert-success .alert-link, .woocommerce-message .alert-link {
+.alert-success .alert-link, .woocommerce-message .alert-link, .woocommerce-notice .alert-link {
   color: #2b542c;
 }
 
@@ -8984,6 +8985,10 @@ iframe {
   outline: 0 !important;
 }
 
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: auto;
+}
+
 .edit-comment {
   color: #fff;
 }
@@ -9219,10 +9224,10 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
   left: 0;
 }
 
-.wf-start h1, .wf-loading h1, .wf-start h2, .wf-loading h2, .wf-start h3, .wf-loading h3, .wf-start h4, .wf-loading h4, .wf-start h5, .wf-loading h5, .wf-start h6, .wf-loading h6, .wf-start p, .wf-loading p, .wf-start ul, .wf-loading ul, .wf-start a, .wf-loading a {
+.js h1, .js h2, .js h3, .js h4, .js h5, .js h6, .js p, .js ul, .js a {
   visibility: hidden;
 }
-.wf-active h1, .wf-inactive h1, .wf-active h2, .wf-inactive h2, .wf-active h3, .wf-inactive h3, .wf-active h4, .wf-inactive h4, .wf-active h5, .wf-inactive h5, .wf-active h6, .wf-inactive h6, .wf-active p, .wf-inactive p, .wf-active ul, .wf-inactive ul, .wf-active a, .wf-inactive a {
+.wf-active h1, .wf-inactive h1, .wf-error h1, .no-js h1, .wf-active h2, .wf-inactive h2, .wf-error h2, .no-js h2, .wf-active h3, .wf-inactive h3, .wf-error h3, .no-js h3, .wf-active h4, .wf-inactive h4, .wf-error h4, .no-js h4, .wf-active h5, .wf-inactive h5, .wf-error h5, .no-js h5, .wf-active h6, .wf-inactive h6, .wf-error h6, .no-js h6, .wf-active p, .wf-inactive p, .wf-error p, .no-js p, .wf-active ul, .wf-inactive ul, .wf-error ul, .no-js ul, .wf-active a, .wf-inactive a, .wf-error a, .no-js a {
   visibility: visible;
 }
 .wph-modal h1, .inc_opt_popup h1, .wph-modal h2, .inc_opt_popup h2, .wph-modal h3, .inc_opt_popup h3, .wph-modal h4, .inc_opt_popup h4, .wph-modal h5, .inc_opt_popup h5, .wph-modal h6, .inc_opt_popup h6, .wph-modal p, .inc_opt_popup p, .wph-modal ul, .inc_opt_popup ul, .wph-modal a, .inc_opt_popup a {
@@ -9238,13 +9243,13 @@ html.noscroll, html.noscroll body {
   height: 100% !important;
 }
 
-body.page-template-fullwidth #main, body.page-template-fullwidth .main-inner, body.page-template-fullwidthnotitle #main, body.page-template-fullwidthnotitle .main-inner {
+body.template-fullwidth #main, body.template-fullwidth .main-inner, body.template-fullwidthnotitle #main, body.template-fullwidthnotitle .main-inner {
   padding: 0;
   margin: 0;
   width: 100%;
 }
 
-body.page-template-fullwidthnotitle #content .page-header, body.page-template-fullwidthnotitle #content .entry-meta, body.page-template-fullwidthnotitle #content .breadcrumb {
+body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnotitle #content .entry-meta, body.template-fullwidthnotitle #content .breadcrumb {
   display: none;
 }
 
@@ -9941,6 +9946,15 @@ Forms
   color: #a94442;
 }
 
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
 /**
 Misc
  */
@@ -10026,6 +10040,10 @@ Layout
 .woocommerce ul.products li.product a {
   position: relative;
   display: block;
+}
+
+.woocommerce .infinite-wrap ul.products {
+  margin: 0;
 }
 
 .woocommerce-product-columns-2 ul.products li.product {
@@ -10193,6 +10211,9 @@ table.variations {
     width:auto;
     display: inline;
   }*/
+}
+table.variations input[type=radio] {
+  margin-left: 0;
 }
 table.variations th,
 table.variations td {
@@ -10465,6 +10486,9 @@ Price Filter Widget
 }
 .widget_price_filter .price_slider_amount .button {
   float: left;
+}
+.widget_price_filter .price_slider_amount #min_price, .widget_price_filter .price_slider_amount #max_price {
+  display: none;
 }
 .widget_price_filter .ui-slider {
   position: relative;
@@ -11132,6 +11156,9 @@ Cart
 /**
  Account
   */
+.woocommerce-account .woocommerce-order-downloads .download-expires {
+  white-space: nowrap;
+}
 .woocommerce-account #customer_login .control-label, .woocommerce-account #customer_login .form-input {
   position: relative;
   min-height: 1px;

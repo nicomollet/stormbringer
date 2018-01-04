@@ -311,4 +311,14 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
     });
   }
 
+  // Webfontloader: Timeout or after you know fonts should have loaded
+  window.setTimeout (
+    function(){
+      var htmlClass = document.documentElement.className;
+      if (htmlClass.indexOf('wf-') === -1) {
+        htmlClass = htmlClass.replace(/([.]*)/,'wf-error $1');
+      }
+    }
+    ,1000);
+
 });
