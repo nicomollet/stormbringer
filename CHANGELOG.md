@@ -1,4 +1,8 @@
 ### Unreleased
+
+
+### 0.4.6: January 5th, 2018
+* **Tweak** Webfontloader: disable completely FOUT effect
 * **Fix** - Webfontloader: force loading after 5 seconds
 
 ### 0.4.5: January 4th, 2018

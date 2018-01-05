@@ -356,10 +356,10 @@ nav.pagination {
 h1, h2, h3, h4, h5, h6, p, ul, a{
 
   .js &{
-    visibility: hidden;
+    //visibility: hidden;
   }
   .wf-active &, .wf-inactive &, .wf-error &, .no-js &{
-    visibility: visible;
+    //visibility: visible;
   }
   // For Hustle Popups
   .wph-modal &, .inc_opt_popup &{
