@@ -9224,12 +9224,6 @@ nav.pagination span.current, nav.pagination span.current:hover, nav.pagination s
   left: 0;
 }
 
-.js h1, .js h2, .js h3, .js h4, .js h5, .js h6, .js p, .js ul, .js a {
-  visibility: hidden;
-}
-.wf-active h1, .wf-inactive h1, .wf-error h1, .no-js h1, .wf-active h2, .wf-inactive h2, .wf-error h2, .no-js h2, .wf-active h3, .wf-inactive h3, .wf-error h3, .no-js h3, .wf-active h4, .wf-inactive h4, .wf-error h4, .no-js h4, .wf-active h5, .wf-inactive h5, .wf-error h5, .no-js h5, .wf-active h6, .wf-inactive h6, .wf-error h6, .no-js h6, .wf-active p, .wf-inactive p, .wf-error p, .no-js p, .wf-active ul, .wf-inactive ul, .wf-error ul, .no-js ul, .wf-active a, .wf-inactive a, .wf-error a, .no-js a {
-  visibility: visible;
-}
 .wph-modal h1, .inc_opt_popup h1, .wph-modal h2, .inc_opt_popup h2, .wph-modal h3, .inc_opt_popup h3, .wph-modal h4, .inc_opt_popup h4, .wph-modal h5, .inc_opt_popup h5, .wph-modal h6, .inc_opt_popup h6, .wph-modal p, .inc_opt_popup p, .wph-modal ul, .inc_opt_popup ul, .wph-modal a, .inc_opt_popup a {
   visibility: hidden;
 }
