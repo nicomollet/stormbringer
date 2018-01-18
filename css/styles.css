@@ -9257,10 +9257,6 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
     transform: rotate(359deg);
   }
 }
-.well *:last-child {
-  margin-bottom: 0;
-}
-
 .form-horizontal .control-label {
   position: relative;
   min-height: 1px;
