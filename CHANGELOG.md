@@ -1,5 +1,6 @@
 ### Unreleased
 * Remove automatic last-child bottom 
+* Remove SelectWoo from enqueued scripts
 
 ### 0.4.6: January 5th, 2018
 * **Tweak** Webfontloader: disable completely FOUT effect
