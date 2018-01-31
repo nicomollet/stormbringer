@@ -13,11 +13,11 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.2.0
+ * @version 3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
 ?>
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<span><?php _e( 'Login', 'woocommerce' ); ?></span>
+				<span><?php esc_html_e( 'Login', 'woocommerce' ); ?></span>
 			</div>
 			<div class="panel-body">
 				<form class="woocommerce-form woocommerce-form-login login form form-horizontal" method="post">
@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<div class="form-group">
 
-						<label for="username" class="control-label"><?php _e( 'Username or email address', 'woocommerce' ); ?> <span class="required">*</span></label>
+						<label for="username" class="control-label"><?php esc_html_e( 'Username or email address', 'woocommerce' ); ?> <span class="required">*</span></label>
 						<div class="form-input">
 							<input type="text" class="woocommerce-Input woocommerce-Input--text form-control" name="username" id="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( $_POST['username'] ) : ''; ?>" />
 						</div>
@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 
 					<div class="form-group">
-						<label for="password" class="control-label"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
+						<label for="password" class="control-label"><?php esc_html_e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 						<div class="form-input">
 							<input class="woocommerce-Input woocommerce-Input--text form-control" type="password" name="password" id="password" />
 						</div>
@@ -65,7 +65,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="form-group">
 						<div class="form-actions">
 							<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
-								<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php _e( 'Remember me', 'woocommerce' ); ?></span>
+								<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e( 'Remember me', 'woocommerce' ); ?></span>
 							</label>
 						</div>
 					</div>
@@ -80,7 +80,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<div class="form-group">
 						<div class="woocommerce-LostPassword lost_password form-actions">
-							<a class="btn-link" href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
+							<a class="btn-link" href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'woocommerce' ); ?></a>
 						</div>
 					</div>
 
@@ -100,7 +100,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<span><?php _e( 'Register', 'woocommerce' ); ?></span>
+				<span><?php esc_html_e( 'Register', 'woocommerce' ); ?></span>
 			</div>
 			<div class="panel-body">
 				<form method="post" class="register form form-horizontal">
@@ -110,7 +110,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
 
 						<div class="form-group">
-							<label for="reg_username" class="control-label"><?php _e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>
+							<label for="reg_username" class="control-label"><?php esc_html_e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>
 							<div class="form-input">
 								<input type="text" class="woocommerce-Input woocommerce-Input--text form-control" name="username" id="reg_username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( $_POST['username'] ) : ''; ?>" />
 							</div>
@@ -120,7 +120,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php endif; ?>
 
 					<div class="form-group">
-						<label for="reg_email" class="control-label"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
+						<label for="reg_email" class="control-label"><?php esc_html_e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
 						<div class="form-input">
 							<input type="email" class="woocommerce-Input woocommerce-Input--text form-control" name="email" id="reg_email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( $_POST['email'] ) : ''; ?>" />
 						</div>
@@ -129,7 +129,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
 						<div class="form-group">
-							<label for="reg_password" class="control-label"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
+							<label for="reg_password" class="control-label"><?php esc_html_e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 							<div class="form-input">
 								<input type="password" class="woocommerce-Input woocommerce-Input--text form-control" name="password" id="reg_password" />
 							</div>
