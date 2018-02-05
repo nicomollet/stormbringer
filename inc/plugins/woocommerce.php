@@ -120,7 +120,7 @@ function woocommerce_woocommerce_remove_item( $wsis_html, $cart_item_key ) {
 	$button    = '<span class="glyphicon glyphicon-remove"></span>';
 	$wsis_html = sprintf(
 		'<a href="%s" class="remove" title="%s"><span class="remove-item">%s</span></a>',
-		esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+		esc_url(wc_get_cart_remove_url( $cart_item_key ) ),
 		__( 'Remove this item', 'woocommerce' ), $button
 	);
 
