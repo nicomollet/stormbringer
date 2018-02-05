@@ -1,4 +1,5 @@
 ### Unreleased
+* Fix obsolete function calls
 
 ### 0.4.7: January 31st, 2018
 * **Tweak** - Remove automatic last-child bottom 
