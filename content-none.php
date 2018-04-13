@@ -14,7 +14,7 @@
     </header>
 
     <div class="entry-content">
-        <p><?php _e('The content your are looking for is not here.', 'stormbringer'); ?></p>
+        <p><?php _e('The content you are looking for is not here.', 'stormbringer'); ?></p>
     </div>
 
     <footer class="entry-meta">
