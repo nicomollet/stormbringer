@@ -4,12 +4,14 @@
  * Remove Select2 / SelectWoo styles & scripts on the frontend
  */
 function stormbringer_dequeue_select2() {
-	wp_dequeue_style( 'select2' );
-	wp_deregister_style( 'select2' );
-	wp_dequeue_script( 'select2' );
-	wp_deregister_script( 'select2' );
-	wp_dequeue_script( 'selectWoo' );
-	wp_deregister_script( 'selectWoo' );
+	if ( !wp_style_is( 'editor-preview', 'enqueued' ) ) {
+		wp_dequeue_style( 'select2' );
+		wp_deregister_style( 'select2' );
+		wp_dequeue_script( 'select2' );
+		wp_deregister_script( 'select2' );
+		wp_dequeue_script( 'selectWoo' );
+		wp_deregister_script( 'selectWoo' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'stormbringer_dequeue_select2', 100 );
 
