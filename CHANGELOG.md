@@ -1,5 +1,7 @@
 ### Unreleased
 
+### 0.4.9: May 11th, 2018
+Version update
 
 ### 0.4.8: May 11th, 2018
 * Fix obsolete function calls
