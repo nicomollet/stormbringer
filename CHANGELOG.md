@@ -1,6 +1,10 @@
 ### Unreleased
+
+
+### 0.4.8: May 11th, 2018
 * Fix obsolete function calls
 * Fix conflict in Elementor
+* Fix missing viewport
 
 ### 0.4.7: January 31st, 2018
 * **Tweak** - Remove automatic last-child bottom 

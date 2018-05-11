@@ -84,6 +84,17 @@ function stormbringer_livereload(){
 }
 add_action( 'wp_head', 'stormbringer_livereload' );
 
+/**
+ * Viewport
+ */
+function stormbringer_viewport(){
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
+}
+add_action( 'wp_head', 'stormbringer_viewport' );
+
+/**
+ * Theme Libraries CSS
+ */
 function stormbringer_css() {
 
 	if(current_theme_supports('libraries')) {
