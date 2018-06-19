@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.3.0
+ * @version 3.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<label for="username" class="control-label"><?php esc_html_e( 'Username or email address', 'woocommerce' ); ?> <span class="required">*</span></label>
 						<div class="form-input">
-							<input type="text" class="woocommerce-Input woocommerce-Input--text form-control" name="username" id="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( $_POST['username'] ) : ''; ?>" />
+							<input type="text" class="woocommerce-Input woocommerce-Input--text form-control" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( $_POST['username'] ) : ''; ?>" />
 						</div>
 
 					</div>
@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="form-group">
 						<label for="password" class="control-label"><?php esc_html_e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 						<div class="form-input">
-							<input class="woocommerce-Input woocommerce-Input--text form-control" type="password" name="password" id="password" />
+							<input class="woocommerce-Input woocommerce-Input--text form-control" type="password" name="password" id="password" autocomplete="current-password" />
 						</div>
 					</div>
 
@@ -103,7 +103,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span><?php esc_html_e( 'Register', 'woocommerce' ); ?></span>
 			</div>
 			<div class="panel-body">
-				<form method="post" class="register form form-horizontal">
+				<form method="post" class="woocommerce-form woocommerce-form-register register form form-horizontal">
 
 					<?php do_action( 'woocommerce_register_form_start' ); ?>
 
@@ -112,7 +112,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="form-group">
 							<label for="reg_username" class="control-label"><?php esc_html_e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>
 							<div class="form-input">
-								<input type="text" class="woocommerce-Input woocommerce-Input--text form-control" name="username" id="reg_username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( $_POST['username'] ) : ''; ?>" />
+								<input type="text" class="woocommerce-Input woocommerce-Input--text form-control" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( $_POST['username'] ) : ''; ?>" />
 							</div>
 						</div>
 
@@ -122,7 +122,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="form-group">
 						<label for="reg_email" class="control-label"><?php esc_html_e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
 						<div class="form-input">
-							<input type="email" class="woocommerce-Input woocommerce-Input--text form-control" name="email" id="reg_email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( $_POST['email'] ) : ''; ?>" />
+							<input type="email" class="woocommerce-Input woocommerce-Input--text form-control" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( $_POST['email'] ) : ''; ?>" />
 						</div>
 					</div>
 
@@ -131,7 +131,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="form-group">
 							<label for="reg_password" class="control-label"><?php esc_html_e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 							<div class="form-input">
-								<input type="password" class="woocommerce-Input woocommerce-Input--text form-control" name="password" id="reg_password" />
+								<input type="password" class="woocommerce-Input woocommerce-Input--text form-control" name="password" id="reg_password" autocomplete="new-password" />
 							</div>
 						</div>
 
