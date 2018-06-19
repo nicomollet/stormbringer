@@ -71,7 +71,7 @@ add_filter('gform_submit_button', 'stormbringer_gform_submit_button', 10, 2);
 
 function stormbringer_gform_next_button($button, $form)
 {
-    return '<div class="form-actions form-actions-next">'.str_replace('gform_next_button button','btn btn-primary',$button).'</div>';
+    return '<div class="form-actions form-actions-next">'.str_replace('gform_next_button button','gform_next_button button btn btn-primary',$button).'</div>';
 }
 add_filter('gform_next_button', 'stormbringer_gform_next_button', 10, 2);
 
