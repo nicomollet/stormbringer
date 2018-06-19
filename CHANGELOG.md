@@ -1,14 +1,14 @@
 ### Unreleased
-* Fix bug with Gravity Forms multi page forms
-* Template compatibility with WooCommerce 3.4.0
+* **Fix** - bug with Gravity Forms multi page forms
+* **Tweak** - Template compatibility with WooCommerce 3.4.0
 
 ### 0.4.9: May 11th, 2018
-Version update
+* **Fix** - Version update
 
 ### 0.4.8: May 11th, 2018
-* Fix obsolete function calls
-* Fix conflict in Elementor
-* Fix missing viewport
+* **Fix** - obsolete function calls
+* **Fix** - conflict in Elementor
+* **Fix** - missing viewport
 
 ### 0.4.7: January 31st, 2018
 * **Tweak** - Remove automatic last-child bottom 
