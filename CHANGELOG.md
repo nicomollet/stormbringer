@@ -1,4 +1,6 @@
 ### Unreleased
+* Fix bug with Gravity Forms multi page forms
+* Template compatibility with WooCommerce 3.4.0
 
 ### 0.4.9: May 11th, 2018
 Version update
