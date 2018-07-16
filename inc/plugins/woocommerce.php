@@ -95,15 +95,29 @@ add_filter( 'woocommerce_output_related_products_args', 'stormbringer_related_pr
 
 /**
  * WooCommerce pre_get_posts for number of products per page, based on number of columns
- * @param $query
+ * @param WP_Query $query
  */
 function stormbringer_woocommerce_products_per_page( $query ) {
-	if(!is_admin()){
-		if ( (is_shop() || is_product_category() || is_product_tag() || is_product()) && $query->is_main_query() ) {
-			$query->set( 'posts_per_page', 3 * get_theme_mod('woocommerce_columns', 4) );
-		}
+
+	$front_page_id        = get_option( 'page_on_front' );
+	$current_page_id      = $query->get( 'page_id' );
+	$shop_page_id         = apply_filters( 'woocommerce_get_shop_page_id' , get_option( 'woocommerce_shop_page_id' ) );
+	$is_static_front_page = 'page' == get_option( 'show_on_front' );
+
+	if ( $is_static_front_page && $front_page_id == $current_page_id  ) {
+		$is_shop_page = ( $current_page_id == $shop_page_id ) ? true : false;
+	} else {
+		$is_shop_page = is_shop();
 	}
 
+	if(!is_admin()){
+		if($query->is_main_query()){
+			if ( $is_shop_page || is_product_category() || is_product_tag() || is_product() ) {
+				$query->set( 'posts_per_page', 3 * get_theme_mod('woocommerce_columns', 4) );
+			}
+		}
+
+	}
 }
 add_action( 'pre_get_posts', 'stormbringer_woocommerce_products_per_page' );
 
