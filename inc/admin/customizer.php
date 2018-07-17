@@ -285,7 +285,7 @@ function stormbringer_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('bootstrap_preprocessor', [
 		'default' => 'scss',
 		'transport'		=> 'postMessage',
-		'sanitize_callback' => 'absint'
+		'sanitize_callback' => 'sanitize_text_field'
 		]
 	);
 	$wp_customize->add_control('bootstrap_preprocessor', array(

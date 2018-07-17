@@ -3,7 +3,7 @@
 
 function stormbringer_preprocessor() {
 
-	$preprocessor = get_theme_mod('bootstrap_preprocessor', true);
+	$preprocessor = get_theme_mod('bootstrap_preprocessor', 'scss');
 
 	$cssfile = 'css/styles.css';
 
