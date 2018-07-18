@@ -1,6 +1,10 @@
 ### Unreleased
-* **Fix** - bug with Gravity Forms multi page forms
+
+### 0.5.0: July 189th, 2018
+* **Fix** - Bug with Gravity Forms multi page forms
 * **Tweak** - Template compatibility with WooCommerce 3.4.0
+* **Tweak**- Correct sanitize of preprocessor mod
+* **Tweak** - Avoid PHP notices
 
 ### 0.4.9: May 11th, 2018
 * **Fix** - Version update
