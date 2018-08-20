@@ -27,7 +27,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php wc_product_class(); ?>>
+<li <?php if(function_exists('wc_product_class')) wc_product_class(); else post_class(); ?>>
 	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.

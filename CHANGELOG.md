@@ -1,5 +1,6 @@
-### Unreleased
+### 0.5.1: August 20th, 2018
 * **Fix** - Style WooCommerce notices
+* **Fix** - Retro-compatibility for WooCommerce versions < 3.4.0
 
 ### 0.5.0: July 19th, 2018
 * **Fix** - Bug with Gravity Forms multi page forms
