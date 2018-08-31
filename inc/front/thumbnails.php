@@ -41,7 +41,7 @@ function give_linked_images_class( $html, $id, $caption, $title, $align, $url, $
 			$html = preg_replace( '/(<a.*?)>/', '$1 class="' . $classes . '" >', $html );
 		}
 	} // separated by spaces, e.g. 'img image-link'
-	$html = str_replace( "wp-image", "thumbnail wp-image", $html );
+	$html = str_replace( "wp-image", "wp-image", $html );
 	$html = str_replace( '<a', '<a data-title="' . $caption . '" title="' . $caption . '"', $html );
 
 	return $html;

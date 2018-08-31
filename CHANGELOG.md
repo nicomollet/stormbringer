@@ -1,3 +1,6 @@
+### 0.5.2: September 1st, 2018
+* **Tweak** - Remove `thumbnail` class from images inserted in editor
+
 ### 0.5.1: August 20th, 2018
 * **Fix** - Style WooCommerce notices
 * **Fix** - Retro-compatibility for WooCommerce versions < 3.4.0
