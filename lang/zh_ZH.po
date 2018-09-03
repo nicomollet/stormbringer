@@ -1,19 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: StormBringer Wordpress theme\n"
-"POT-Creation-Date: 2017-08-31 09:46+0200\n"
-"PO-Revision-Date: 2017-08-31 09:49+0200\n"
+"POT-Creation-Date: 2018-09-03 09:56+0200\n"
+"PO-Revision-Date: 2018-09-03 09:56+0200\n"
+"Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language-Team: Nicolas Mollet <nico.mollet@gmail.com>\n"
+"Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.8\n"
 "X-Poedit-KeywordsList: _e;__;_n:1,2;_x:1,2c;esc_attr__;esc_attr_e;"
 "esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Last-Translator: \n"
-"Language: zh\n"
 "X-Poedit-SearchPath-0: lang\n"
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Google Plus:"
 msgstr ""
 
-#: archive.php:27
+#: archive.php:32
 msgid "Posts by:"
 msgstr ""
 
@@ -217,8 +217,8 @@ msgid "Page not found"
 msgstr "找不到网页"
 
 #: content-none.php:17
-msgid "The content your are looking for is not here."
-msgstr ""
+msgid "The content you are looking for is not here."
+msgstr "找不到网页"
 
 #: footer.php:29
 msgid "Toggle navigation"
@@ -228,11 +228,13 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: footer.php:94 inc/plugins/woocommerce.php:321
+#: footer.php:94 inc/plugins/woocommerce.php:648
+#: inc/plugins/woocommerce.php:665
 msgid "View your shopping cart"
 msgstr ""
 
-#: footer.php:99 inc/plugins/woocommerce.php:465
+#: footer.php:99 inc/plugins/woocommerce.php:495
+#: inc/plugins/woocommerce.php:666
 #, php-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -439,19 +441,23 @@ msgstr ""
 msgid "Load Cuztom library"
 msgstr ""
 
-#: inc/admin/customizer.php:262
-msgid "Bootstrap"
-msgstr ""
-
-#: inc/admin/customizer.php:274
-msgid "Preprocessor"
-msgstr ""
-
-#: inc/admin/customizer.php:279
-msgid "Scss"
+#: inc/admin/customizer.php:272
+msgid "WooCommerce number of columns"
 msgstr ""
 
 #: inc/admin/customizer.php:280
+msgid "Bootstrap"
+msgstr ""
+
+#: inc/admin/customizer.php:292
+msgid "Preprocessor"
+msgstr ""
+
+#: inc/admin/customizer.php:297
+msgid "Scss"
+msgstr ""
+
+#: inc/admin/customizer.php:298
 msgid "Less"
 msgstr ""
 
@@ -533,7 +539,7 @@ msgstr ""
 msgid "H:i"
 msgstr ""
 
-#: inc/front/menu.php:279
+#: inc/front/menu.php:324
 msgid "Add a menu"
 msgstr ""
 
@@ -801,7 +807,7 @@ msgid "Forgot your password"
 msgstr ""
 
 #: inc/plugins/thememylogin.php:14 woocommerce/myaccount/form-login.php:103
-#: woocommerce/myaccount/form-login.php:148
+#: woocommerce/myaccount/form-login.php:144
 msgid "Register"
 msgstr ""
 
@@ -825,43 +831,43 @@ msgstr ""
 msgid "Error!"
 msgstr ""
 
-#: inc/plugins/woocommerce.php:85 inc/plugins/woocommerce.php:90
+#: inc/plugins/woocommerce.php:135 inc/plugins/woocommerce.php:140
 msgid "Remove this item"
 msgstr ""
 
-#: inc/plugins/woocommerce.php:306 searchform.php:12
+#: inc/plugins/woocommerce.php:356 searchform.php:12
 msgid "Search"
 msgstr "搜索"
 
-#: inc/plugins/woocommerce.php:339
+#: inc/plugins/woocommerce.php:371
 msgid "My Account"
 msgstr ""
 
-#: page-sitemap.php:31
+#: page-sitemap.php:38
 msgid "Pages"
 msgstr ""
 
-#: page-timeline.php:80
+#: page-timeline.php:87
 msgid "F j\\<\\s\\u\\p\\>S\\<\\/\\s\\u\\p\\>"
 msgstr ""
 
-#: page-timeline.php:83
+#: page-timeline.php:90
 msgid "0"
 msgstr ""
 
-#: page-timeline.php:83
+#: page-timeline.php:90
 msgid "1"
 msgstr ""
 
-#: page-timeline.php:83
+#: page-timeline.php:90
 msgid "%"
 msgstr ""
 
-#: page.php:27
+#: page.php:34
 msgid "Pages:"
 msgstr ""
 
-#: search.php:17
+#: search.php:24
 #, php-format
 msgid "Search results: %s"
 msgstr "搜索结果: %s"
@@ -901,8 +907,4 @@ msgstr ""
 
 #: woocommerce/myaccount/form-login.php:123
 msgid "Email address"
-msgstr ""
-
-#: woocommerce/myaccount/form-login.php:141
-msgid "Anti-spam"
 msgstr ""

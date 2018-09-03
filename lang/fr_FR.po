@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: StormBringer Wordpress theme\n"
-"POT-Creation-Date: 2018-04-13 14:23+0200\n"
-"PO-Revision-Date: 2018-04-13 14:24+0200\n"
+"POT-Creation-Date: 2018-09-03 09:54+0200\n"
+"PO-Revision-Date: 2018-09-03 09:54+0200\n"
 "Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language-Team: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.0.8\n"
 "X-Poedit-KeywordsList: _e;__;_n:1,2;_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -228,8 +228,8 @@ msgstr "Afficher/Masquer la navigation"
 msgid "Menu"
 msgstr "Menu"
 
-#: footer.php:99 inc/plugins/woocommerce.php:479
-#: inc/plugins/woocommerce.php:650
+#: footer.php:99 inc/plugins/woocommerce.php:495
+#: inc/plugins/woocommerce.php:666
 #, php-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -813,7 +813,7 @@ msgstr "Succès"
 msgid "Error!"
 msgstr "Erreur !"
 
-#: inc/plugins/woocommerce.php:119 inc/plugins/woocommerce.php:124
+#: inc/plugins/woocommerce.php:135 inc/plugins/woocommerce.php:140
 msgid "Remove this item"
 msgstr "Enlever cet item"
 
