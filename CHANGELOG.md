@@ -1,3 +1,5 @@
+* **Fix** - Remove woocommerce-info 0 padding
+
 ### 0.5.2: September 1st, 2018
 * **Tweak** - Remove `thumbnail` class from images inserted in editor
 
