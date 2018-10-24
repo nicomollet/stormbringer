@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: StormBringer Wordpress theme\n"
-"POT-Creation-Date: 2018-09-03 09:54+0200\n"
-"PO-Revision-Date: 2018-09-03 09:54+0200\n"
+"POT-Creation-Date: 2018-10-24 09:28+0200\n"
+"PO-Revision-Date: 2018-10-24 09:28+0200\n"
 "Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language-Team: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language: fr\n"
@@ -10,7 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.8\n"
-"X-Poedit-KeywordsList: _e;__;_n:1,2;_x:1,2c\n"
+"X-Poedit-KeywordsList: _e;__;_n:1,2;_x:1,2c;esc_attr__;esc_attr_e;"
+"esc_html__\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: lang\n"
@@ -164,6 +165,15 @@ msgstr "Envoyer le commentaire"
 msgid "Edit"
 msgstr "Modifier"
 
+#: content-image.php:27 content.php:41
+#, php-format
+msgid "Link to %s"
+msgstr "Lien vers %s"
+
+#: content-image.php:39 content.php:51 inc/front/comments.php:33
+msgid "F j, Y"
+msgstr "j F Y"
+
 #: content-image.php:43 content.php:55
 msgid "By"
 msgstr "Par"
@@ -215,8 +225,6 @@ msgid "Page not found"
 msgstr "Page non trouvée"
 
 #: content-none.php:17
-#, fuzzy
-#| msgid "The content your are looking for is not here."
 msgid "The content you are looking for is not here."
 msgstr "Le contenu que vous cherchez n'est pas ici."
 
@@ -227,6 +235,11 @@ msgstr "Afficher/Masquer la navigation"
 #: footer.php:30
 msgid "Menu"
 msgstr "Menu"
+
+#: footer.php:94 inc/plugins/woocommerce.php:648
+#: inc/plugins/woocommerce.php:665
+msgid "View your shopping cart"
+msgstr "Voir votre panier"
 
 #: footer.php:99 inc/plugins/woocommerce.php:495
 #: inc/plugins/woocommerce.php:666
@@ -361,6 +374,10 @@ msgstr "Confirmez le nouveau mot de passe"
 msgid "Strength indicator"
 msgstr "Indicateur de force"
 
+#: form-resetpass.php:38
+msgid "Reset Password"
+msgstr "Réinitialiser le mot de passe"
+
 #: header.php:41
 msgid ""
 "You are using an outdated browser. Please <a class=\"alert-link\" href="
@@ -437,7 +454,7 @@ msgstr "Charger la librairie Cuztom"
 
 #: inc/admin/customizer.php:272
 msgid "WooCommerce number of columns"
-msgstr ""
+msgstr "Nombre de colonnes WooCommerce"
 
 #: inc/admin/customizer.php:280
 msgid "Bootstrap"
@@ -532,9 +549,21 @@ msgstr "Votre commentaire est en attente de modération."
 msgid "at"
 msgstr "à"
 
+#: inc/front/comments.php:33
+msgid "H:i"
+msgstr "H:i"
+
 #: inc/front/menu.php:324
 msgid "Add a menu"
 msgstr "Ajouter un menu"
+
+#: inc/front/owlcarousel.php:59
+msgid "Owlcarousel"
+msgstr "Owlcarousel"
+
+#: inc/front/owlcarousel.php:213
+msgid "Click to view owlcarousel."
+msgstr "Cliquer pour voir le owlcarousel."
 
 #: inc/front/password.php:11
 msgid "This content is protected by a password, type the password below:"
@@ -545,6 +574,10 @@ msgstr ""
 #: inc/front/password.php:15 inc/front/password.php:17
 msgid "Password:"
 msgstr "Mot de passe :"
+
+#: inc/front/password.php:18
+msgid "Send"
+msgstr "Envoyer"
 
 #: inc/init.php:126
 msgid "Sidebar"
@@ -591,7 +624,7 @@ msgstr "Région de widgets pour au dessous de l’entête %d."
 #: inc/init.php:190
 #, php-format
 msgid "Above Footer %d"
-msgstr "AU dessus du pied de page %d"
+msgstr "Au dessus du pied de page %d"
 
 #: inc/init.php:192
 #, php-format
@@ -789,7 +822,7 @@ msgstr "Montrer tout %s"
 msgid "Forgot your password"
 msgstr "Mot de passe oublié"
 
-#: inc/plugins/thememylogin.php:14
+#: inc/plugins/thememylogin.php:14 woocommerce/myaccount/form-login.php:144
 msgid "Register"
 msgstr "Crèer un compte"
 
@@ -816,6 +849,14 @@ msgstr "Erreur !"
 #: inc/plugins/woocommerce.php:135 inc/plugins/woocommerce.php:140
 msgid "Remove this item"
 msgstr "Enlever cet item"
+
+#: inc/plugins/woocommerce.php:356 searchform.php:12
+msgid "Search"
+msgstr "Rechercher"
+
+#: inc/plugins/woocommerce.php:371
+msgid "My Account"
+msgstr "Mon compte"
 
 #: page-sitemap.php:38
 msgid "Pages"
@@ -846,6 +887,10 @@ msgstr "Pages :"
 msgid "Search results: %s"
 msgstr "Résultats de la recherche : %s"
 
+#: searchform.php:12
+msgid "Search &hellip;"
+msgstr "Rechercher &hellip;"
+
 #: sidebar-blog.php:16
 msgid "Enable widgets in Sidebar Blog"
 msgstr "Activer des widgets dans la Sidebar Blog"
@@ -862,45 +907,13 @@ msgstr "Activer des widgets dans la colonne latérale"
 msgid "Enable widgets in Sidebar"
 msgstr "Activer des widgets dans la Sidebar"
 
+#: woocommerce/global/form-login.php:55 woocommerce/myaccount/form-login.php:76
+msgid "Login"
+msgstr "Connexion"
+
 #: woocommerce/global/form-login.php:67
 msgid "Lost your password?"
 msgstr "Mot de passe oublié ?"
-
-#~ msgid "Link to %s"
-#~ msgstr "Lien vers %s"
-
-#~ msgid "F j, Y"
-#~ msgstr "j F Y"
-
-#~ msgid "View your shopping cart"
-#~ msgstr "Voir votre panier"
-
-#~ msgid "Reset Password"
-#~ msgstr "Réinitialiser le mot de passe"
-
-#~ msgid "H:i"
-#~ msgstr "H:i"
-
-#~ msgid "Owlcarousel"
-#~ msgstr "Owlcarousel"
-
-#~ msgid "Click to view owlcarousel."
-#~ msgstr "Cliquer pour voir le owlcarousel."
-
-#~ msgid "Send"
-#~ msgstr "Envoyer"
-
-#~ msgid "Search"
-#~ msgstr "Rechercher"
-
-#~ msgid "My Account"
-#~ msgstr "Mon compte"
-
-#~ msgid "Search &hellip;"
-#~ msgstr "Rechercher &hellip;"
-
-#~ msgid "Login"
-#~ msgstr "Connexion"
 
 #~ msgid "Username or email address"
 #~ msgstr "Nom d'utilisateur ou email"
