@@ -1,6 +1,7 @@
 * **Fix** - Remove woocommerce-info 0 padding
 * **Fix** - FR Localization missing keywords in pot file
 * **Fix** - Prevent Owl Images from being "Lazy Image"
+* **Tweak** - Remove FOUT fixes for Hustle
 
 ### 0.5.2: September 1st, 2018
 * **Tweak** - Remove `thumbnail` class from images inserted in editor

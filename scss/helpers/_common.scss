@@ -363,10 +363,10 @@ h1, h2, h3, h4, h5, h6, p, ul, a{
   }
   // For Hustle Popups
   .wph-modal &, .inc_opt_popup &{
-    visibility: hidden;
+    //visibility: hidden;
   }
   .wph-modal-show &, .wpoi-show &{
-    visibility: visible;
+    //visibility: visible;
   }
 }
 
