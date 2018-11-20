@@ -1,3 +1,4 @@
+### 0.5.3: November 20th, 2018
 * **Fix** - Remove woocommerce-info 0 padding
 * **Fix** - FR Localization missing keywords in pot file
 * **Fix** - Prevent Owl Images from being "Lazy Image"
