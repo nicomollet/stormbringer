@@ -269,7 +269,7 @@ class Jetpack_Owlcarousel_Shortcode {
 
 
 			$output .= '<div data-menuorder="'.$item->menu_order.'" class="item-' . $item->id . '" class="' . ( ( $i == 0 ) ? "active" : "" ) . ' item">';
-			$output .= '<img src="' . $item->src . '" width="' . $item->width . '" alt="' . $item->alt . '"/>';
+			$output .= '<img src="' . $item->src . '" width="' . $item->width . '" alt="' . $item->alt . '" class="owl-image" data-no-lazy="true" />';
 
 			$output .= '<div class="carousel-caption">';
 
