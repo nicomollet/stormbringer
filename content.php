@@ -48,7 +48,7 @@ $edit_link = '';
 
 		<p class="entry-date">
 			<i class="glyphicon glyphicon-calendar"></i>
-			<time datetime="<?php echo the_time( 'c' ); ?>" class="updated"><?php echo get_the_date( esc_attr__( 'F j, Y', 'stormbringer' ) ); ?></time>
+			<time datetime="<?php echo the_time( 'c' ); ?>" class="<?php echo (is_singular('post')? 'updated' : 'date' );?>"><?php echo get_the_date( esc_attr__( 'F j, Y', 'stormbringer' ) ); ?></time>
 		</p>
 
 		<p class="entry-author">
