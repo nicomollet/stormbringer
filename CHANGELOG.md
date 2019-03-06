@@ -1,4 +1,5 @@
 * **Tweak** - Remove Hustle ads
+* **Tweak** - HTML rich text type: WebPage
 
 ### 0.5.3: November 20th, 2018
 * **Fix** - Remove woocommerce-info 0 padding
