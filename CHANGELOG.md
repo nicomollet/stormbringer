@@ -1,6 +1,8 @@
+### 0.5.4: April 12th, 2019
 * **Tweak** - Remove Hustle ads
 * **Tweak** - HTML rich text type: WebPage
 * **Tweak** - Updated class only for posts
+* **Fix** - WooCommerce templates for 3.5.0
 
 ### 0.5.3: November 20th, 2018
 * **Fix** - Remove woocommerce-info 0 padding
