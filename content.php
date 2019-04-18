@@ -84,7 +84,13 @@ $edit_link = '';
 
 	<div class="entry-content">
 		<?php if ( is_archive() || is_search() ) { ?>
-			<?php the_post_thumbnail(); ?>
+			<?php
+			if(get_the_post_thumbnail()){
+				echo '<a href="'.get_permalink().'">';
+				the_post_thumbnail();
+				echo '</a>';
+			}
+			?>
 			<?php echo get_the_excerpt(); ?>
 		<?php } else { ?>
 			<?php the_content(); ?>

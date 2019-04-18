@@ -1,3 +1,5 @@
+* **Tweak** - Archives: add link to post thumbnail
+
 ### 0.5.4: April 12th, 2019
 * **Tweak** - Remove Hustle ads
 * **Tweak** - HTML rich text type: WebPage
