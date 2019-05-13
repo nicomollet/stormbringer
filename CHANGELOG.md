@@ -1,3 +1,4 @@
+### 0.5.5: May 13th, 2019
 * **Tweak** - Update templates for WooCommerce 3.6
 * **Tweak** - Archives: add link to post thumbnail
 
