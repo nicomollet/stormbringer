@@ -13,18 +13,14 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.5.0
+ * @version 3.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-?>
-
-<?php wc_print_notices(); ?>
-
-<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
+do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
@@ -32,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="u-column1 col-1">
 
-		<?php endif; ?>
+<?php endif; ?>
 
 
 		<div class="panel panel-primary">
@@ -48,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<label for="username" class="control-label"><?php esc_html_e( 'Username or email address', 'woocommerce' ); ?> <span class="required">*</span></label>
 						<div class="form-input">
-							<input type="text" class="woocommerce-Input woocommerce-Input--text form-control" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( $_POST['username'] ) : ''; ?>" />
+							<input type="text" class="woocommerce-Input woocommerce-Input--text form-control" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" />
 						</div>
 
 					</div>
@@ -64,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<div class="form-group">
 						<div class="form-actions">
-							<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
+							<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme inline">
 								<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e( 'Remember me', 'woocommerce' ); ?></span>
 							</label>
 						</div>
@@ -73,8 +69,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="form-group">
 						<div class="form-actions">
 							<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-							<input type="submit" class="woocommerce-Button btn btn-primary" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
-
+							<button type="submit" class="woocommerce-button button woocommerce-form-login__submit btn btn-primary" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Log in', 'woocommerce' ); ?></button>
 						</div>
 					</div>
 
@@ -135,13 +130,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 						</div>
 
+					<?php else : ?>
+
+						<p><?php esc_html_e( 'A password will be sent to your email address.', 'woocommerce' ); ?></p>
+
 					<?php endif; ?>
 
 					<?php do_action( 'woocommerce_register_form' ); ?>
 
 					<div class="form-actions">
 						<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-						<input type="submit" class="woocommerce-Button btn btn-primary" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" />
+						<button type="submit" class="woocommerce-Button  btn btn-primary" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
 					</div>
 
 					<?php do_action( 'woocommerce_register_form_end' ); ?>

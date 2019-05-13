@@ -13,7 +13,7 @@
  * @see           https://docs.woocommerce.com/document/template-structure/
  * @author        WooThemes
  * @package       WooCommerce/Templates
- * @version       3.3.0
+ * @version       3.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,14 +36,14 @@ if ( is_user_logged_in() ) {
 			<div class="form-group">
 				<label for="username" class="control-label"><?php _e( 'Username or email', 'woocommerce' ); ?> <span class="required">*</span></label>
 				<div class="form-input">
-				<input type="text" class="form-control" name="username" id="username" />
+				<input type="text" class="form-control" name="username" id="username" autocomplete="username" />
 
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="password" class="control-label"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 				<div class="form-input">
-					<input class="form-control" type="password" name="password" id="password" />
+					<input class="form-control" type="password" name="password" id="password" autocomplete="current-password" />
 				</div>
 			</div>
 
@@ -52,10 +52,10 @@ if ( is_user_logged_in() ) {
 			<div class="form-group">
 				<div class="form-actions">
 					<?php wp_nonce_field( 'woocommerce-login' ); ?>
-					<input type="submit" class="btn btn-primary" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
+					<button type="submit" class="btn btn-primary woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>"><?php esc_html_e( 'Login', 'woocommerce' ); ?></button>
 					<input type="hidden" name="redirect" value="<?php echo esc_url( $redirect ) ?>" />
 					<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
-						<input class="woocommerce-form__input woocommerce-form__input-checkbox btn btn-primary" name="rememberme" type="checkbox" id="rememberme" value="forever" />
+						<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" />
 						<span><?php _e( 'Remember me', 'woocommerce' ); ?></span>
 					</label>
 				</div>
@@ -68,7 +68,6 @@ if ( is_user_logged_in() ) {
 					</p>
 				</div>
 			</div>
-
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
 		</div>
