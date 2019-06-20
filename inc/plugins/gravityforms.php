@@ -257,6 +257,13 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
 		$content = str_replace('type=\'text\'', 'type="text" class="form-control"', $content);
 	}
 
+	if ($field["type"] == 'email') {
+		$content = str_replace("class=''", "", $content);
+		$content = str_replace("type='email'", "type='email' class='form-control'", $content);
+	}
+
+
+
     return $content;
 }
 add_filter("gform_field_content", "stormbringer_gform_field_content", 10, 5);
