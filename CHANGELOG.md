@@ -1,3 +1,4 @@
+### 0.5.6: June 20th, 2019
 * **Fix** - Gravity Forms: Email confirmation field alignment
 
 ### 0.5.5: May 13th, 2019
