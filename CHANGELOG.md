@@ -1,3 +1,5 @@
+* **Fix** - WooCommerce Availability Text class was visibile even when available
+
 ### 0.5.7: August 21st, 2019
 * **Tweak** - WooCommerce: HTML for Availability Text, create alert
 * **Tweak** - Now requires PHP 7.0
