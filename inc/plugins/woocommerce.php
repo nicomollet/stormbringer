@@ -667,3 +667,19 @@ function stormbringer_cart_contents() {
 	</a>
 	<?php
 }
+
+/**
+ * WooCommerce: HTML for Availability Text
+ *
+ * @param string     $html
+ * @param string      $availability
+ * @param WC_Product $product
+ *
+ * @return string
+ */
+function stormbringer_woocommerce_stock_html(string $html, string $availability, WC_Product $product){
+
+	$html = '<div class="alert alert-danger">' . $html . '</div>';
+	return $html;
+}
+add_filter( 'woocommerce_stock_html', 'stormbringer_woocommerce_stock_html', 10, 3 );
