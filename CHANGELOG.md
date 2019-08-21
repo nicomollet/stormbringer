@@ -1,3 +1,6 @@
+* **Tweak** - WooCommerce: HTML for Availability Text, create alert
+* **Tweak** - Now requires PHP 7.0
+
 ### 0.5.6: June 20th, 2019
 * **Fix** - Gravity Forms: Email confirmation field alignment
 

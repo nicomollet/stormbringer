@@ -20,6 +20,7 @@ Features
 * Gallery with caption over the thumbnail
 * JS and CSS libraries are called from cdnjs
 * Includes Lightbox for Bootstrap 3 by @ashleydw
+* Minimum PHP: 7.0
 
 Installation
 -----------
