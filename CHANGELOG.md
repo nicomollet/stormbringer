@@ -1,3 +1,4 @@
+### 0.5.8: October 29th, 2019
 * **Fix** - WooCommerce Availability Text class was visibile even when available
 
 ### 0.5.7: August 21st, 2019
