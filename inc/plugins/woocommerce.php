@@ -672,7 +672,6 @@ function stormbringer_cart_contents() {
  * WooCommerce: HTML for Availability Text
  *
  * @param string     $html
- * @param string      $availability
  * @param WC_Product $product
  *
  * @return string
