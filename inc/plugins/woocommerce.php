@@ -677,9 +677,10 @@ function stormbringer_cart_contents() {
  *
  * @return string
  */
-function stormbringer_woocommerce_stock_html(string $html, string $availability, WC_Product $product){
+function stormbringer_woocommerce_stock_html(string $html, WC_Product $product){
 
 	$html = str_replace('stock out-of-stock','stock out-of-stock alert alert-danger', $html);
 	return $html;
+
 }
-add_filter( 'woocommerce_stock_html', 'stormbringer_woocommerce_stock_html', 10, 3 );
+add_filter( 'woocommerce_get_stock_html', 'stormbringer_woocommerce_stock_html', 10, 3 );

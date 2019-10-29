@@ -1,3 +1,5 @@
+* **Fix** - Update obsolete filter woocommerce_stock_html by woocommerce_get_stock_html
+
 ### 0.5.8: October 29th, 2019
 * **Fix** - WooCommerce Availability Text class was visibile even when available
 
