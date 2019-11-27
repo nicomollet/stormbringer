@@ -28,7 +28,7 @@ function stormbringer_meta() {
 
     }
 }
-//add_action( 'init', 'stormbringer_meta');
+add_action( 'init', 'stormbringer_meta');
 
 /**
  * Stormbringer support
