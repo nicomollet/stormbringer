@@ -1,3 +1,4 @@
+### 0.5.9: December 5th, 2019
 * **Fix** - Update obsolete filter woocommerce_stock_html by woocommerce_get_stock_html
 * **Fix** - Enable again the bottom description field
 
