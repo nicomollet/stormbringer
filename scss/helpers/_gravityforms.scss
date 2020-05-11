@@ -11,6 +11,11 @@
 }
 
 .gform_wrapper {
+  .gf_invisible, .gfield_visibility_hidden{
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+  }
   .ginput_complex {
 
     &.ginput_container_name {
