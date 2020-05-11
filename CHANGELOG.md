@@ -1,3 +1,4 @@
+### 0.6.0: May 11h, 2020
 * **Fix** - Gravity Forms hidden fields were still visible
 
 ### 0.5.9: December 5th, 2019
