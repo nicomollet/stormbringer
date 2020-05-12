@@ -46,10 +46,12 @@ $edit_link = '';
 
 	<footer class="entry-meta">
 
-		<p class="entry-date">
-			<i class="glyphicon glyphicon-calendar"></i>
-			<time datetime="<?php echo the_time( 'c' ); ?>" class="<?php echo (is_singular('post')? 'updated' : 'date' );?>"><?php echo get_the_date( esc_attr__( 'F j, Y', 'stormbringer' ) ); ?></time>
-		</p>
+		<?php if ( ( is_author() || is_category() || is_tag() || is_date() || is_home() || is_single() ) && 'post' == get_post_type() ) { // Exclude Date from SERP ?>
+			<p class="entry-date">
+				<i class="glyphicon glyphicon-calendar"></i>
+				<time datetime="<?php echo the_time( 'c' ); ?>"  class="updated"><?php echo get_the_date( esc_attr__( 'F j, Y', 'stormbringer' ) ); ?></time>
+			</p>
+		<?php } ?>
 
 		<p class="entry-author">
 			<i class="glyphicon glyphicon-user"></i> <?php _e( 'By', 'stormbringer' ); ?> <span class="vcard author"><span class="fn"><?php echo get_the_author(); ?></span></span>

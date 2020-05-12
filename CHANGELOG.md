@@ -1,3 +1,5 @@
+* **Tweak** - content.php template tweak: exclude date from SERP
+
 ### 0.6.1: May 11h, 2020
 * **Fix** - Gravity Forms hidden labels were still visible
 
