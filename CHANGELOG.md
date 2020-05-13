@@ -1,3 +1,4 @@
+### 0.6.3: May 13th, 2020
 * **Tweak** - Update WooCommerce template compatibility to 4.1.0
 
 ### 0.6.2: May 12th, 2020
