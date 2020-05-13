@@ -1,3 +1,5 @@
+* **Tweak** - Update WooCommerce template compatibility to 4.1.0
+
 ### 0.6.2: May 12th, 2020
 * **Tweak** - content.php template tweak: exclude date from SERP
 
