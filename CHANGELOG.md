@@ -1,3 +1,4 @@
+### 0.6.4: August 06th, 2020
 * **Tweak** - Gravity Forms handle ginput_left and ginput_right classes
 
 ### 0.6.3: May 13th, 2020
