@@ -1,3 +1,4 @@
+### 0.6.5: August 06th, 2020
 * **Tweak** - Gravity Forms handle gf_list_inline
 
 ### 0.6.4: August 06th, 2020
