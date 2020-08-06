@@ -2,8 +2,6 @@
   @extend .list-unstyled;
 }
 
-
-
 .gform_validation_container {
   display: none!important;
   position: absolute!important;
@@ -15,6 +13,15 @@
   .gfield_required{
     display: inline-block;
     margin-left: 4px;
+  }
+
+  .gf_list_inline .ginput_container_checkbox .checkbox,
+  .gf_list_inline .ginput_container_radio .radio {
+    width: auto !important;
+    float: none !important;
+    margin: 0 8px 10px 0;
+    display: -moz-inline-stack;
+    display: inline-block;
   }
 
   .top_label{

@@ -9260,6 +9260,14 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
   display: inline-block;
   margin-left: 4px;
 }
+.gform_wrapper .gf_list_inline .ginput_container_checkbox .checkbox,
+.gform_wrapper .gf_list_inline .ginput_container_radio .radio {
+  width: auto !important;
+  float: none !important;
+  margin: 0 8px 10px 0;
+  display: -moz-inline-stack;
+  display: inline-block;
+}
 @media (min-width: 768px) {
   .gform_wrapper .top_label .gfield.ginput_left,
   .gform_wrapper .top_label .gfield.ginput_right {
