@@ -9256,17 +9256,49 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
   left: -9000px;
 }
 
+.gform_wrapper .gfield_required {
+  display: inline-block;
+  margin-left: 4px;
+}
+@media (min-width: 768px) {
+  .gform_wrapper .top_label .gfield.ginput_left,
+  .gform_wrapper .top_label .gfield.ginput_right {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    padding-right: 16px;
+    float: none;
+  }
+}
+@media (min-width: 768px) {
+  .gform_wrapper .top_label .gfield.ginput_left:before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+@media (min-width: 768px) {
+  .gform_wrapper .top_label .gfield.ginput_right:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
 .gform_wrapper .gf_invisible, .gform_wrapper .gfield_visibility_hidden {
   visibility: hidden;
   position: absolute;
   left: -9999px;
 }
-.gform_wrapper .ginput_complex.ginput_container_name span {
-  display: inline-block;
-  vertical-align: top;
+.gform_wrapper .ginput_complex.ginput_container_name > span {
+  display: block;
+  margin-bottom: 15px;
 }
 @media (min-width: 768px) {
-  .gform_wrapper .ginput_complex.ginput_container_name span {
+  .gform_wrapper .ginput_complex.ginput_container_name > span {
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: top;
     padding-right: 16px;
     margin-right: -4px;
   }
@@ -9280,7 +9312,7 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
 }
 @media (min-width: 768px) {
   .gform_wrapper .ginput_complex.ginput_container.gf_name_has_1, .gform_wrapper .ginput_complex.ginput_container.gf_name_has_2, .gform_wrapper .ginput_complex.ginput_container.gf_name_has_3 {
-    width: calc(100% + 15px);
+    width: 100%;
   }
 }
 @media (min-width: 768px) {

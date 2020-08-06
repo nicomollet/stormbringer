@@ -1,3 +1,5 @@
+* **Tweak** - Gravity Forms handle ginput_left and ginput_right classes
+
 ### 0.6.3: May 13th, 2020
 * **Tweak** - Update WooCommerce template compatibility to 4.1.0
 

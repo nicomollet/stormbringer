@@ -11,6 +11,49 @@
 }
 
 .gform_wrapper {
+
+  .gfield_required{
+    display: inline-block;
+    margin-left: 4px;
+  }
+
+  .top_label{
+
+    .gfield.ginput_left,
+    .gfield.ginput_right {
+
+      @media (min-width: $screen-sm-min) {
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        padding-right: 16px;
+        float: none;
+      }
+
+    }
+    .gfield.ginput_left:before {
+      @media (min-width: $screen-sm-min) {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+    }
+    .gfield.ginput_right:after {
+      @media (min-width: $screen-sm-min) {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+    }
+
+
+
+  }
+
+
   .gf_invisible, .gfield_visibility_hidden{
     visibility: hidden;
     position: absolute;
@@ -19,10 +62,16 @@
   .ginput_complex {
 
     &.ginput_container_name {
-      span {
-        display: inline-block;
-        vertical-align: top;
+
+      > span {
+
+        display: block;
+        margin-bottom: $form-group-margin-bottom;
+
         @media (min-width: $screen-sm-min) {
+          margin-bottom: 0;
+          display: inline-block;
+          vertical-align: top;
           padding-right: 16px;
           margin-right: -4px;
         }
@@ -41,7 +90,8 @@
       &.gf_name_has_2,
       &.gf_name_has_3 {
         @media (min-width: $screen-sm-min) {
-          width: calc(100% + 15px);
+          //width: calc(100% + 15px);
+          width: 100%;
         }
 
       }
