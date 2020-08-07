@@ -263,8 +263,10 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
 	}
 
 
+	$content = preg_replace("#\r|\n#", "", $content);
+	$content = preg_replace('/\>\s+\</m', '><', $content);
 
-    return $content;
+	return $content;
 }
 add_filter("gform_field_content", "stormbringer_gform_field_content", 10, 5);
 

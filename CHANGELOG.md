@@ -1,3 +1,5 @@
+* **Tweak** - Gravity Forms CSS refactoring
+
 ### 0.6.5: August 06th, 2020
 * **Tweak** - Gravity Forms handle gf_list_inline
 
