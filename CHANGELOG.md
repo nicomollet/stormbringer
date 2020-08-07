@@ -1,3 +1,4 @@
+### 0.6.6: August 07th, 2020
 * **Tweak** - Gravity Forms CSS refactoring
 
 ### 0.6.5: August 06th, 2020
