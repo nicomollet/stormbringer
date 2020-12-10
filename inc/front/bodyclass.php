@@ -176,23 +176,23 @@ function stormbringer_body_class_context() {
 	// Singular views
 	elseif ( is_singular() ) {
 		$classes[] = 'singular';
-		$classes[] = "singular-{$object->post_type}";
-		$classes[] = "singular-{$object->post_type}-{$object_id}";
+		$classes[] = sanitize_html_class("singular-{$object->post_type}");
+		$classes[] = sanitize_html_class("singular-{$object->post_type}-{$object_id}");
 
 		// Checks for custom template
-		$template = str_replace(
-			array("{$object->post_type}-template-", "{$object->post_type}-", '.php'), '',
-			get_post_meta($object_id, "_wp_{$object->post_type}_template", true)
+		$template = sanitize_html_class( str_replace(
+				array( "{$object->post_type}-template-", "{$object->post_type}-", '.php' ), '',
+				get_post_meta( $object_id, "_wp_{$object->post_type}_template", true ) )
 		);
 		if ( ! empty($template)) {
 			$classes[] = "template-{$template}";
-			$classes[] = "{$object->post_type}-template-{$template}";
+			$classes[] = sanitize_html_class("{$object->post_type}-template-{$template}");
 		}
 
 		// Post format
 		if (current_theme_supports('post-formats') && post_type_supports($object->post_type, 'post-formats')) {
 			$post_format = get_post_format(get_queried_object_id());
-			$classes[]   = ((empty($post_format) || is_wp_error($post_format)) ? "{$object->post_type}-format-standard"
+			$classes[]   = sanitize_html_class((empty($post_format) || is_wp_error($post_format)) ? "{$object->post_type}-format-standard"
 				: "{$object->post_type}-format-{$post_format}");
 		}
 
@@ -205,17 +205,17 @@ function stormbringer_body_class_context() {
 		// parents top level
 		$parents = array();
 		$parents = get_post_ancestors($object_id);
-		$classes[] = (end($parents) > 0 ? "level1-page-" . end($parents) : "level1-page-{$object_id}");
+		$classes[] = sanitize_html_class(end($parents) > 0 ? "level1-page-" . end($parents) : "level1-page-{$object_id}");
 
 		// category
 		foreach ((get_the_category($post->ID)) as $category):
-			$classes[] = 'post-taxonomy-category-' . $category->category_nicename;
+			$classes[] = sanitize_html_class('post-taxonomy-category-' . $category->category_nicename);
 		endforeach;
 
 		// Attachment mime types
 		if ( is_attachment() ) {
 			foreach ( explode( '/', get_post_mime_type() ) as $type )
-				$classes[] = "attachment-{$type}";
+				$classes[] = sanitize_html_class("attachment-{$type}");
 		}
 	}
 
@@ -226,14 +226,14 @@ function stormbringer_body_class_context() {
 		// Taxonomy archives
 		if ( is_tax() || is_category() || is_tag() ) {
 			$classes[] = 'taxonomy';
-			$classes[] = "taxonomy-{$object->taxonomy}";
-			$classes[] = "taxonomy-{$object->taxonomy}-" . sanitize_html_class( $object->slug, $object->term_id );
+			$classes[] = sanitize_html_class("taxonomy-{$object->taxonomy}");
+			$classes[] = sanitize_html_class("taxonomy-{$object->taxonomy}-" . sanitize_html_class( $object->slug, $object->term_id ));
 		}
 
 		// Post type archives
 		elseif ( is_post_type_archive() ) {
 			$post_type = get_post_type_object( get_query_var( 'post_type' ) );
-			$classes[] = "archive-{$post_type->name}";
+			$classes[] = sanitize_html_class("archive-{$post_type->name}");
 		}
 
 		// User/author archives

@@ -1,3 +1,5 @@
+* **Fix** - Security Fix
+
 ### 0.6.6: August 07th, 2020
 * **Tweak** - Gravity Forms CSS refactoring
 
