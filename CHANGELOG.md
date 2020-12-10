@@ -1,3 +1,4 @@
+### 0.6.7: December 10th, 2020
 * **Fix** - Security Fix
 
 ### 0.6.6: August 07th, 2020
