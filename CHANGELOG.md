@@ -1,3 +1,6 @@
+### 0.7.1: January 11th, 2020
+* **Fix** - Version number
+
 ### 0.7.0: December 29th, 2020
 * **Tweak** - Update Bootstrap JS to 3.3.7 for Jquery 3 compatibility (since WordPress 5.6)
 
