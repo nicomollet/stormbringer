@@ -1,3 +1,5 @@
+* **Fix** - Gravity Forms "actions" buttons alignment
+
 ### 0.7.1: January 11th, 2020
 * **Fix** - Version number
 
