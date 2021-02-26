@@ -1,8 +1,9 @@
+### 0.7.2: February 26th, 2021
 * **Fix** - Gravity Forms "actions" buttons alignment
 * **Fix** - Gravity Forms "time" field input styling and auto width
 * **Fix** - Gravity Forms "complex name" field columns
 
-### 0.7.1: January 11th, 2020
+### 0.7.1: January 11th, 2021
 * **Fix** - Version number
 
 ### 0.7.0: December 29th, 2020
