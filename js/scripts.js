@@ -159,7 +159,7 @@
           } else {
             // cast to a Boolean, if not one already
             if (Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
-              Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]]);
+              Modernizr[featureNameSplit[0]] = Boolean(Modernizr[featureNameSplit[0]]);
             }
 
             Modernizr[featureNameSplit[0]][featureNameSplit[1]] = result;
@@ -448,7 +448,7 @@
       } else {
         // cast to a Boolean, if not one already
         if (Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
-          Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]]);
+          Modernizr[featureNameSplit[0]] = Boolean(Modernizr[featureNameSplit[0]]);
         }
 
         Modernizr[featureNameSplit[0]][featureNameSplit[1]] = test;
@@ -746,7 +746,7 @@
     }).replace(/^-/, '');
   }
 
-  ;
+  
 
   // testProps is a generic CSS / DOM property test.
 
@@ -896,7 +896,7 @@
     };
   }
 
-  ;
+  
 /*!
 {
   "name": "Cookies",
@@ -1857,7 +1857,7 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
     return a - 1 === b || a === b || a + 1 === b;
   }
 
-  ;
+  
 /*!
 {
   "name": "CSS vh unit",
@@ -1941,7 +1941,7 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
   window.Modernizr = Modernizr;
 
 
-;
+
 
 })(window, document);
 

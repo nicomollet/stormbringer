@@ -262,6 +262,10 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
 		$content = str_replace("type='email'", "type='email' class='form-control'", $content);
 	}
 
+	if ($field["type"] == 'time') {
+		$content = str_replace("class=''", "", $content);
+		$content = str_replace("type='number'", "type='number' class='form-control form-control-auto'", $content);
+	}
 
 	$content = preg_replace("#\r|\n#", "", $content);
 	$content = preg_replace('/\>\s+\</m', '><', $content);

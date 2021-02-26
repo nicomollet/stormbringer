@@ -1,4 +1,5 @@
 * **Fix** - Gravity Forms "actions" buttons alignment
+* **Fix** - Gravity Forms "time"  field input styling and auto width
 
 ### 0.7.1: January 11th, 2020
 * **Fix** - Version number
