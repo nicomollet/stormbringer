@@ -9269,7 +9269,7 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
   display: inline-block;
 }
 @media (min-width: 768px) {
-  .gform_wrapper .gfield.ginput_right, .gform_wrapper .gfield .ginput_right {
+  .gform_wrapper .gfield.ginput_right, .gform_wrapper .gfield .ginput_right, .gform_wrapper .gfield .name_last {
     padding-left: 16px;
   }
 }
@@ -9285,6 +9285,8 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
   float: none;
 }
 @media (min-width: 768px) {
+  .gform_wrapper .gfield .name_first,
+  .gform_wrapper .gfield .name_last,
   .gform_wrapper .gfield.ginput_left,
   .gform_wrapper .gfield.ginput_right,
   .gform_wrapper .gfield .ginput_left,
@@ -9297,6 +9299,7 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
   }
 }
 @media (min-width: 768px) {
+  .gform_wrapper .gfield .name_first:before,
   .gform_wrapper .gfield.ginput_left:before,
   .gform_wrapper .gfield .ginput_left:before {
     content: "";
@@ -9305,6 +9308,7 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
   }
 }
 @media (min-width: 768px) {
+  .gform_wrapper .gfield .name_last:before,
   .gform_wrapper .gfield .ginput_right:after,
   .gform_wrapper .gfield.ginput_right:after {
     content: "";

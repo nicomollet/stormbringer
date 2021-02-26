@@ -25,7 +25,7 @@
   }
 
 
-  .gfield.ginput_right, .gfield .ginput_right{
+  .gfield.ginput_right, .gfield .ginput_right, .gfield .name_last{
     @media (min-width: $screen-sm-min) {
       padding-left: 16px;
     }
@@ -45,6 +45,8 @@
     float: none;
   }
 
+  .gfield .name_first,
+  .gfield .name_last,
   .gfield.ginput_left,
   .gfield.ginput_right,
   .gfield .ginput_left,
@@ -59,6 +61,7 @@
     }
   }
 
+  .gfield .name_first:before,
   .gfield.ginput_left:before,
   .gfield .ginput_left:before {
     @media (min-width: $screen-sm-min) {
@@ -68,6 +71,7 @@
     }
   }
 
+  .gfield .name_last:before,
   .gfield .ginput_right:after,
   .gfield.ginput_right:after {
     @media (min-width: $screen-sm-min) {

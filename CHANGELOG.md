@@ -1,5 +1,6 @@
 * **Fix** - Gravity Forms "actions" buttons alignment
-* **Fix** - Gravity Forms "time"  field input styling and auto width
+* **Fix** - Gravity Forms "time" field input styling and auto width
+* **Fix** - Gravity Forms "complex name" field columns
 
 ### 0.7.1: January 11th, 2020
 * **Fix** - Version number
