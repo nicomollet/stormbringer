@@ -9507,8 +9507,14 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
 .gform_wrapper .form-horizontal .form-input-offset .checkbox {
   margin-left: 20px;
 }
+.gform_wrapper .form-actions {
+  display: inline-block;
+}
 .gform_wrapper .form-fields {
   overflow: hidden;
+}
+.gform_wrapper .form-control-auto {
+  width: auto;
 }
 
 .field_sublabel_hidden_label .hidden_sub_label {
