@@ -1,3 +1,5 @@
+* **Fix** - Conflict with Complianz Google Maps integration
+
 ### 0.7.2: February 26th, 2021
 * **Fix** - Gravity Forms "actions" buttons alignment
 * **Fix** - Gravity Forms "time" field input styling and auto width

@@ -186,7 +186,7 @@ function stormbringer_modal() {
     echo '<h4 class="modal-title"></h4>' . "\n";
     echo '</div>' . "\n";
     echo '<div class="modal-body in-frame">' . "\n";
-    echo '<iframe id="modal-frame" name="modal-frame" src="" sandbox="allow-same-origin allow-forms allow-popups"></iframe>' . "\n";
+    echo '<iframe id="modal-frame" name="modal-frame" src="//" sandbox="allow-same-origin allow-forms allow-popups"></iframe>' . "\n";
     echo '</div>' . "\n";
     echo '</div>' . "\n";
     echo '</div>' . "\n";
