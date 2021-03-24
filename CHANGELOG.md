@@ -1,3 +1,4 @@
+### 0.7.3: March 24th, 2021
 * **Fix** - Conflict with Complianz Google Maps integration
 
 ### 0.7.2: February 26th, 2021
