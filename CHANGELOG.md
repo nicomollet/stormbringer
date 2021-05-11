@@ -1,3 +1,4 @@
+### 0.7.4: May 11th, 2021
 * **Fix** - Grunt vulnerabilities
 * **Tweak** - Grunt modules update
 
