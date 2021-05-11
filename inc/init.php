@@ -56,7 +56,6 @@ function stormbringer_support() {
 
 	// Front only
 	if ( ! is_admin() ) {
-		locate_template( 'inc/front/gruntassets.php', true );    // Grunt Assets
 		locate_template( 'inc/front/styles.php', true );         // Load CSS
 		locate_template( 'inc/front/scripts.php', true );        // Load BJS
 		locate_template( 'inc/front/carousel.php', true );       // Load Carousel shortcode

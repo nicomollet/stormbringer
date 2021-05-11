@@ -39,27 +39,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Clean old files
-    clean: {
-      js: ['js/scripts.min.*.js', '!js/scripts.min.' + grunt.template.today('yyyymm') + '*.js'],
-      css: ['css/styles.min.*.css', '!css/styles.min.' + grunt.template.today('yyyymm') + '*.css']
-    },
-
-    // Versioning
-    assets_versioning: {
-      deployment: {
-        options: {
-          dateFormat: 'YYYYMMDDHHmmss',
-          tag: 'date',
-          versionsMapFile: 'inc/front/gruntassets.php',
-          versionsMapTemplate: 'inc/front/gruntassets.tpl',
-        },
-        files: {
-          'css/styles.min.css': ['css/styles.min.css'],
-          'js/scripts.min.js': ['js/scripts.min.js'],
-        }
-      }
-    },
 
     // Combine javascript
     concat: {
@@ -131,12 +110,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-assets-versioning');
-  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-modernizr');
 
 
   // Tasks registration
-  grunt.registerTask('default', ['modernizr', 'concat', 'uglify', 'sass', 'cssmin', 'watch', 'assets_versioning', 'clean']);
+  grunt.registerTask('default', ['modernizr', 'concat', 'uglify', 'sass', 'cssmin', 'watch']);
 
 };

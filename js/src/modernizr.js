@@ -1,5 +1,5 @@
 /*!
- * modernizr v3.7.1
+ * modernizr v3.11.7
  * Build https://modernizr.com/download?-backgroundblendmode-backgroundcliptext-backgroundsize-bgpositionshorthand-bgpositionxy-bgsizecover-borderradius-boxshadow-cookies-cssanimations-csstransforms-cssvhunit-cssvwunit-flexbox-mediaqueries-objectfit-pointerevents-svg-touchevents-addtest-fnbind-setclasses-testprop-dontmin
  *
  * Copyright (c)
@@ -23,7 +23,7 @@
  * of control over the experience.
 */
 
-;(function(window, document, undefined){
+;(function(scriptGlobalObject, window, document, undefined){
 
   var tests = [];
   
@@ -35,8 +35,7 @@
    * @access public
    */
   var ModernizrProto = {
-    // The current version, dummy
-    _version: '3.7.1',
+    _version: '3.11.7',
 
     // Any settings that don't work as separate modules
     // can go in here as configuration.
@@ -157,9 +156,9 @@
           if (featureNameSplit.length === 1) {
             Modernizr[featureNameSplit[0]] = result;
           } else {
-            // cast to a Boolean, if not one already
-            if (Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
-              Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]]);
+            // cast to a Boolean, if not one already or if it doesnt exist yet (like inputtypes)
+            if (!Modernizr[featureNameSplit[0]] || Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
+              Modernizr[featureNameSplit[0]] = Boolean(Modernizr[featureNameSplit[0]]);
             }
 
             Modernizr[featureNameSplit[0]][featureNameSplit[1]] = result;
@@ -356,11 +355,11 @@
    * @optionProp addTest
    * @access public
    * @function addTest
-   * @param {string|Object} feature - The string name of the feature detect, or an
+   * @param {string|object} feature - The string name of the feature detect, or an
    * object of feature detect names and test
    * @param {Function|boolean} test - Function returning true if feature is supported,
    * false if not. Otherwise a boolean representing the results of a feature detection
-   * @returns {Object} the Modernizr object to allow chaining
+   * @returns {object} the Modernizr object to allow chaining
    * @example
    *
    * The most common way of creating your own feature detects is by calling
@@ -448,7 +447,7 @@
       } else {
         // cast to a Boolean, if not one already
         if (Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
-          Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]]);
+          Modernizr[featureNameSplit[0]] = Boolean(Modernizr[featureNameSplit[0]]);
         }
 
         Modernizr[featureNameSplit[0]][featureNameSplit[1]] = test;
@@ -621,7 +620,7 @@
 
     ret = callback(div, rule);
     // If this is done after page load we don't want to remove the body so check if body exists
-    if (body.fake) {
+    if (body.fake && body.parentNode) {
       body.parentNode.removeChild(body);
       docElement.style.overflow = docOverflow;
       // Trigger layout so kinetic scrolling isn't disabled in iOS6+
@@ -637,13 +636,13 @@
   ;
 
   /**
-   * domToCSS takes a camelCase string and converts it to kebab-case
+   * domToCSS takes a camelCase string and converts it to hyphen-case
    * e.g. boxSizing -> box-sizing
    *
    * @access private
    * @function domToCSS
    * @param {string} name - String name of camelCase prop we want to convert
-   * @returns {string} The kebab-case version of the supplied name
+   * @returns {string} The hyphen-case version of the supplied name
    */
   function domToCSS(name) {
     return name.replace(/([A-Z])/g, function(str, m1) {
@@ -697,7 +696,7 @@
    *
    * @access private
    * @function nativeTestProps
-   * @param {array} props - An array of property names
+   * @param {Array} props - An array of property names
    * @param {string} value - A string representing the value we want to check via @supports
    * @returns {boolean|undefined} A boolean when @supports exists, undefined otherwise
    */
@@ -732,12 +731,12 @@
   ;
 
   /**
-   * cssToDOM takes a kebab-case string and converts it to camelCase
+   * cssToDOM takes a hyphen-case string and converts it to camelCase
    * e.g. box-sizing -> boxSizing
    *
    * @access private
    * @function cssToDOM
-   * @param {string} name - String name of kebab-case prop we want to convert
+   * @param {string} name - String name of hyphen-case prop we want to convert
    * @returns {string} The camelCase version of the supplied name
    */
   function cssToDOM(name) {
@@ -746,7 +745,7 @@
     }).replace(/^-/, '');
   }
 
-  ;
+  
 
   // testProps is a generic CSS / DOM property test.
 
@@ -759,7 +758,7 @@
   // on our modernizr element, but instead just testing undefined vs
   // empty string.
 
-  // Property names can be provided in either camelCase or kebab-case.
+  // Property names can be provided in either camelCase or hyphen-case.
 
   function testProps(props, prefixed, value, skipValueTest) {
     skipValueTest = is(skipValueTest, 'undefined') ? false : skipValueTest;
@@ -776,12 +775,12 @@
     var afterInit, i, propsLength, prop, before;
 
     // If we don't have a style element, that means we're running async or after
-    // the core tests, so we'll need to create our own elements to use
+    // the core tests, so we'll need to create our own elements to use.
 
-    // inside of an SVG element, in certain browsers, the `style` element is only
+    // Inside of an SVG element, in certain browsers, the `style` element is only
     // defined for valid tags. Therefore, if `modernizr` does not have one, we
     // fall back to a less used element and hope for the best.
-    // for strict XHTML browsers the hardly used samp element is used
+    // For strict XHTML browsers the hardly used samp element is used.
     var elems = ['modernizr', 'tspan', 'samp'];
     while (!mStyle.style && elems.length) {
       afterInit = true;
@@ -844,7 +843,7 @@
 
   /**
    * testProp() investigates whether a given style property is recognized
-   * Property names can be provided in either camelCase or kebab-case.
+   * Property names can be provided in either camelCase or hyphen-case.
    *
    * @memberOf Modernizr
    * @name Modernizr.testProp
@@ -887,7 +886,7 @@
    * @access private
    * @function fnBind
    * @param {Function} fn - a function you want to change `this` reference to
-   * @param {Object} that - the `this` you want to call the function with
+   * @param {object} that - the `this` you want to call the function with
    * @returns {Function} The wrapped version of the supplied function
    */
   function fnBind(fn, that) {
@@ -896,7 +895,7 @@
     };
   }
 
-  ;
+  
 /*!
 {
   "name": "Cookies",
@@ -973,7 +972,7 @@ Detects support for SVG in `<embed>` or `<object>` elements.
    *
    * Modernizr._prefixes is the internal list of prefixes that we test against
    * inside of things like [prefixed](#modernizr-prefixed) and [prefixedCSS](#-code-modernizr-prefixedcss). It is simply
-   * an array of kebab-case vendor prefixes you can use within your code.
+   * an array of hyphen-case vendor prefixes you can use within your code.
    *
    * Some common use cases include
    *
@@ -1058,9 +1057,7 @@ Detects support for SVG in `<embed>` or `<object>` elements.
       var bool = false;
 
       injectElementWithStyles('@media ' + mq + ' { #modernizr { position: absolute; } }', function(node) {
-        bool = (window.getComputedStyle ?
-          window.getComputedStyle(node, null) :
-          node.currentStyle).position === 'absolute';
+        bool = computedStyle(node, null, 'position') === 'absolute';
       });
 
       return bool;
@@ -1081,6 +1078,7 @@ Detects support for SVG in `<embed>` or `<object>` elements.
     "href": "https://www.w3.org/TR/2013/WD-touch-events-20130124/"
   }],
   "warnings": [
+    "** DEPRECATED see https://github.com/Modernizr/Modernizr/pull/2432 **",
     "Indicates if the browser supports the Touch Events spec, and does not necessarily reflect a touchscreen device"
   ],
   "knownBugs": [
@@ -1125,11 +1123,11 @@ This test will also return `true` for Firefox 4 Multitouch support.
    *   elem.style.WebkitBorderRadius
    * instead of something like the following (which is technically incorrect):
    *   elem.style.webkitBorderRadius
-
+   *
    * WebKit ghosts their properties in lowercase but Opera & Moz do not.
    * Microsoft uses a lowercase `ms` instead of the correct `Ms` in IE8+
    *   erik.eae.net/archives/2008/03/10/21.48.10/
-
+   *
    * More here: github.com/Modernizr/Modernizr/issues/issue/21
    *
    * @access private
@@ -1149,7 +1147,7 @@ This test will also return `true` for Firefox 4 Multitouch support.
    * @example
    *
    * Modernizr._domPrefixes is exactly the same as [_prefixes](#modernizr-_prefixes), but rather
-   * than kebab-case properties, all properties are their Capitalized variant
+   * than hyphen-case properties, all properties are their Capitalized variant
    *
    * ```js
    * Modernizr._domPrefixes === [ "Moz", "O", "ms", "Webkit" ];
@@ -1157,6 +1155,27 @@ This test will also return `true` for Firefox 4 Multitouch support.
    */
   var domPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.toLowerCase().split(' ') : []);
   ModernizrProto._domPrefixes = domPrefixes;
+  
+
+  /**
+   * List of JavaScript DOM values used for tests including a NON-prefix
+   *
+   * @memberOf Modernizr
+   * @name Modernizr._domPrefixesAll
+   * @optionName Modernizr._domPrefixesAll
+   * @optionProp domPrefixesAll
+   * @access public
+   * @example
+   *
+   * Modernizr._domPrefixesAll is exactly the same as [_domPrefixes](#modernizr-_domPrefixes), but also
+   * adds an empty string in the array to test for a non-prefixed value
+   *
+   * ```js
+   * Modernizr._domPrefixesAll === [ "", "Moz", "O", "ms", "Webkit" ];
+   * ```
+   */
+  var domPrefixesAll = [''].concat(domPrefixes);
+  ModernizrProto._domPrefixesAll = domPrefixesAll;
   
 
   /**
@@ -1235,17 +1254,18 @@ This test will also return `true` for Firefox 4 Multitouch support.
 {
   "name": "DOM Pointer Events API",
   "property": "pointerevents",
+  "caniuse": "pointer",
   "tags": ["input"],
   "authors": ["Stu Cox"],
   "notes": [{
-      "name": "W3C Spec (Pointer Events)",
-      "href": "https://www.w3.org/TR/pointerevents/"
-    },{
-      "name": "W3C Spec (Pointer Events Level 2)",
-      "href": "https://www.w3.org/TR/pointerevents2/"
-    },{
-      "name": "MDN Docs",
-      "href": "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent"
+    "name": "W3C Spec (Pointer Events)",
+    "href": "https://www.w3.org/TR/pointerevents/"
+  }, {
+    "name": "W3C Spec (Pointer Events Level 2)",
+    "href": "https://www.w3.org/TR/pointerevents2/"
+  }, {
+    "name": "MDN Docs",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent"
   }],
   "warnings": ["This property name now refers to W3C DOM PointerEvents: https://github.com/Modernizr/Modernizr/issues/548#issuecomment-12812099"],
   "polyfills": ["pep"]
@@ -1259,18 +1279,12 @@ Detects support for the DOM Pointer Events API, which provides a unified event i
   // Now refers to W3C DOM PointerEvents spec rather than the CSS pointer-events property.
   Modernizr.addTest('pointerevents', function() {
     // Cannot use `.prefixed()` for events, so test each prefix
-    var bool = false,
-      i = domPrefixes.length;
-
-    // Don't forget un-prefixed...
-    bool = Modernizr.hasEvent('pointerdown');
-
-    while (i-- && !bool) {
-      if (hasEvent(domPrefixes[i] + 'pointerdown')) {
-        bool = true;
+    for (var i = 0, len = domPrefixesAll.length; i < len; i++) {
+      if (hasEvent(domPrefixesAll[i] + 'pointerdown')) {
+        return true;
       }
     }
-    return bool;
+    return false;
   });
 
 
@@ -1285,9 +1299,9 @@ Detects support for the DOM Pointer Events API, which provides a unified event i
    * @access private
    * @function testDOMProps
    * @param {Array<string>} props - An array of properties to test for
-   * @param {Object} obj - An object or Element you want to use to test the parameters again
-   * @param {boolean|Object} elem - An Element to bind the property lookup again. Use `false` to prevent the check
-   * @returns {false|*} returns false if the prop is unsupported, otherwise the value that is supported
+   * @param {object} obj - An object or Element you want to use to test the parameters again
+   * @param {boolean|object} elem - An Element to bind the property lookup again. Use `false` to prevent the check
+   * @returns {boolean|*} returns `false` if the prop is unsupported, otherwise the value that is supported
    */
   function testDOMProps(props, obj, elem) {
     var item;
@@ -1326,11 +1340,11 @@ Detects support for the DOM Pointer Events API, which provides a unified event i
    * @access private
    * @function testPropsAll
    * @param {string} prop - A string of the property to test for
-   * @param {string|Object} [prefixed] - An object to check the prefixed properties on. Use a string to skip
+   * @param {string|object} [prefixed] - An object to check the prefixed properties on. Use a string to skip
    * @param {HTMLElement|SVGElement} [elem] - An element used to test the property and value against
    * @param {string} [value] - A string of a css value
    * @param {boolean} [skipValueTest] - An boolean representing if you want to test if value sticks when set
-   * @returns {false|string} returns the string version of the property, or false if it is unsupported
+   * @returns {string|boolean} returns the string version of the property, or `false` if it is unsupported
    */
   function testPropsAll(prop, prefixed, elem, value, skipValueTest) {
 
@@ -1366,10 +1380,10 @@ Detects support for the DOM Pointer Events API, which provides a unified event i
    * @optionProp testAllProps
    * @access public
    * @function testAllProps
-   * @param {string} prop - String naming the property to test (either camelCase or kebab-case)
+   * @param {string} prop - String naming the property to test (either camelCase or hyphen-case)
    * @param {string} [value] - String of the value to test
    * @param {boolean} [skipValueTest=false] - Whether to skip testing that the value is supported when using non-native detection
-   * @returns {false|string} returns the string version of the property, or false if it is unsupported
+   * @returns {string|boolean} returns the string version of the property, or `false` if it is unsupported
    * @example
    *
    * testAllProps determines whether a given CSS property, in some prefixed form,
@@ -1497,14 +1511,14 @@ Detects whether or not elements can be animated using CSS
    * @access public
    * @function prefixed
    * @param {string} prop - String name of the property to test for
-   * @param {Object} [obj] - An object to test for the prefixed properties on
+   * @param {object} [obj] - An object to test for the prefixed properties on
    * @param {HTMLElement} [elem] - An element used to test specific properties against
-   * @returns {string|false} The string representing the (possibly prefixed) valid
+   * @returns {string|boolean} The string representing the (possibly prefixed) valid
    * version of the property, or `false` when it is unsupported.
    * @example
    *
    * Modernizr.prefixed takes a string css value in the DOM style camelCase (as
-   * opposed to the css style kebab-case) form and returns the (possibly prefixed)
+   * opposed to the css style hyphen-case) form and returns the (possibly prefixed)
    * version of that property that the browser actually supports.
    *
    * For example, in older Firefox...
@@ -1549,7 +1563,7 @@ Detects whether or not elements can be animated using CSS
    * var transEndEventName = transEndEventNames[ Modernizr.prefixed('transition') ];
    * ```
    *
-   * If you want a similar lookup, but in kebab-case, you can use [prefixedCSS](#modernizr-prefixedcss).
+   * If you want a similar lookup, but in hyphen-case, you can use [prefixedCSS](#modernizr-prefixedcss).
    */
   var prefixed = ModernizrProto.prefixed = function(prop, obj, elem) {
     if (prop.indexOf('@') === 0) {
@@ -1557,7 +1571,7 @@ Detects whether or not elements can be animated using CSS
     }
 
     if (prop.indexOf('-') !== -1) {
-      // Convert kebab-case to camelCase
+      // Convert hyphen-case to camelCase
       prop = cssToDOM(prop);
     }
     if (!obj) {
@@ -1576,11 +1590,11 @@ Detects whether or not elements can be animated using CSS
   "caniuse": "css-backgroundblendmode",
   "tags": ["css"],
   "notes": [{
-      "name": "CSS Blend Modes could be the next big thing in Web Design",
-      "href": "https://medium.com/@bennettfeely/css-blend-modes-could-be-the-next-big-thing-in-web-design-6b51bf53743a"
-    },{
-      "name": "Demo",
-      "href": "https://bennettfeely.com/gradients/"
+    "name": "CSS Blend Modes could be the next big thing in Web Design",
+    "href": "https://medium.com/@bennettfeely/css-blend-modes-could-be-the-next-big-thing-in-web-design-6b51bf53743a"
+  }, {
+    "name": "Demo",
+    "href": "https://bennettfeely.com/gradients/"
   }]
 }
 !*/
@@ -1597,14 +1611,14 @@ Detects the ability for the browser to composite backgrounds using blending mode
   "authors": ["ausi"],
   "tags": ["css"],
   "notes": [{
-      "name": "CSS Tricks Article",
-      "href": "https://css-tricks.com/image-under-text/"
-    },{
-      "name": "MDN Docs",
-      "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip"
-    },{
-      "name": "Related Github Issue",
-      "href": "https://github.com/Modernizr/Modernizr/issues/199"
+    "name": "CSS Tricks Article",
+    "href": "https://css-tricks.com/image-under-text/"
+  }, {
+    "name": "MDN Docs",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip"
+  }, {
+    "name": "Related Github Issue",
+    "href": "https://github.com/Modernizr/Modernizr/issues/199"
   }]
 }
 !*/
@@ -1621,6 +1635,7 @@ extends beyond its border in CSS
 {
   "name": "Background Position Shorthand",
   "property": "bgpositionshorthand",
+  "caniuse": "css-background-offsets",
   "tags": ["css"],
   "builderAliases": ["css_backgroundposition_shorthand"],
   "notes": [{
@@ -1779,7 +1794,7 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
 !*/
 
   Modernizr.addTest('csstransforms', function() {
-    // Android < 3.0 is buggy, so we sniff and blacklist
+    // Android < 3.0 is buggy, so we sniff and reject it
     // https://github.com/Modernizr/Modernizr/issues/903
     return navigator.userAgent.indexOf('Android 2.') === -1 &&
            testAllProps('transform', 'scale(1)', true);
@@ -1796,7 +1811,7 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
    * @access public
    * @function testStyles
    * @param {string} rule - String representing a css rule
-   * @param {function} callback - A function that is used to test the injected element
+   * @param {Function} callback - A function that is used to test the injected element
    * @param {number} [nodes] - An integer representing the number of additional nodes you want injected
    * @param {string[]} [testnames] - An array of strings that are used as ids for the additional nodes
    * @returns {boolean}
@@ -1843,6 +1858,28 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
    */
   var testStyles = ModernizrProto.testStyles = injectElementWithStyles;
   
+/*!
+{
+  "name": "CSS vh unit",
+  "property": "cssvhunit",
+  "caniuse": "viewport-units",
+  "tags": ["css"],
+  "builderAliases": ["css_vhunit"],
+  "notes": [{
+    "name": "Related Modernizr Issue",
+    "href": "https://github.com/Modernizr/Modernizr/issues/572"
+  }, {
+    "name": "Similar JSFiddle",
+    "href": "https://jsfiddle.net/FWeinb/etnYC/"
+  }]
+}
+!*/
+
+  testStyles('#modernizr { height: 50vh; max-height: 10px; }', function(elem) {
+    var compStyle = parseInt(computedStyle(elem, null, 'height'), 10);
+    Modernizr.addTest('cssvhunit', compStyle === 10);
+  });
+
 
   /**
    * roundedEquals takes two integers and checks if the first is within 1 of the second
@@ -1857,31 +1894,7 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
     return a - 1 === b || a === b || a + 1 === b;
   }
 
-  ;
-/*!
-{
-  "name": "CSS vh unit",
-  "property": "cssvhunit",
-  "caniuse": "viewport-units",
-  "tags": ["css"],
-  "builderAliases": ["css_vhunit"],
-  "notes": [{
-    "name": "Related Modernizr Issue",
-    "href": "https://github.com/Modernizr/Modernizr/issues/572"
-  },{
-    "name": "Similar JSFiddle",
-    "href": "https://jsfiddle.net/FWeinb/etnYC/"
-  }]
-}
-!*/
-
-  testStyles('#modernizr { height: 50vh; }', function(elem) {
-    var height = parseInt(window.innerHeight / 2, 10);
-    var compStyle = parseInt(computedStyle(elem, null, 'height'), 10);
-
-    Modernizr.addTest('cssvhunit', roundedEquals(compStyle, height));
-  });
-
+  
 /*!
 {
   "name": "CSS vw unit",
@@ -1892,7 +1905,7 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
   "notes": [{
     "name": "Related Modernizr Issue",
     "href": "https://github.com/Modernizr/Modernizr/issues/572"
-  },{
+  }, {
     "name": "JSFiddle Example",
     "href": "https://jsfiddle.net/FWeinb/etnYC/"
   }]
@@ -1938,9 +1951,9 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
   }
 
   // Leak Modernizr namespace
-  window.Modernizr = Modernizr;
+  scriptGlobalObject.Modernizr = Modernizr;
 
 
-;
 
-})(window, document);
+
+})(window, window, document);

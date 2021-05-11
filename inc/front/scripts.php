@@ -17,15 +17,10 @@ function stormbringer_js_theme() {
 	}
 
 	if ( $preprocessor === 'scss' || $preprocessor == 1 ) {
-		$grunt_assets = get_theme_mod( 'grunt_assets' );
 		if ( current_user_can( 'administrator' ) || @$_GET['scsscompile'] == '1' ) {
 			$version = null; //time()
 		} else {
 			$jsfile = 'js/scripts.min.js';
-
-			if ( isset( $grunt_assets[ $jsfile ] ) ) {
-				$jsfile = $grunt_assets[ $jsfile ];
-			}
 		}
 	}
 	wp_enqueue_script( 'theme', get_stylesheet_directory_uri() . '/' . $jsfile, array( 'jquery' ), $version, true );

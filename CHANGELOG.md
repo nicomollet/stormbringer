@@ -1,3 +1,6 @@
+* **Fix** - Grunt vulnerabilities
+* **Tweak** - Grunt modules update
+
 ### 0.7.3: March 24th, 2021
 * **Fix** - Conflict with Complianz Google Maps integration
 
