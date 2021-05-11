@@ -90,14 +90,14 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ['js/src/*.js'],
-        tasks: ['concat', 'uglify', 'clean', 'assets_versioning'],
+        tasks: ['concat', 'uglify'],
         options: {
           spawn: false,
         },
       },
       css: {
         files: ['scss/*.scss', 'scss/bootstrap/*.scss', 'scss/helpers/*.scss'],
-        tasks: ['sass', 'cssmin', 'clean', 'assets_versioning'],
+        tasks: ['sass', 'cssmin'],
         options: {
           spawn: false,
         }

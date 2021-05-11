@@ -745,7 +745,7 @@
     }).replace(/^-/, '');
   }
 
-
+  
 
   // testProps is a generic CSS / DOM property test.
 
@@ -895,7 +895,7 @@
     };
   }
 
-
+  
 /*!
 {
   "name": "Cookies",
@@ -1894,7 +1894,7 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
     return a - 1 === b || a === b || a + 1 === b;
   }
 
-
+  
 /*!
 {
   "name": "CSS vw unit",

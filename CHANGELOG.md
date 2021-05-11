@@ -1,3 +1,6 @@
+### 0.7.5: May 11th, 2021
+* **Tweak** - Remove Grunt clean and assets_versionning calls
+
 ### 0.7.4: May 11th, 2021
 * **Fix** - Grunt vulnerabilities
 * **Tweak** - Grunt modules update
