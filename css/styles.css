@@ -9462,6 +9462,9 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
       }
     }*/
 }
+.gform_wrapper .ginput_complex label {
+  font-weight: normal;
+}
 .gform_wrapper .ginput_complex > span {
   display: block;
   margin-bottom: 15px;
