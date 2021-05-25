@@ -9277,7 +9277,7 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
   display: block;
   width: 100%;
 }
-.gform_wrapper .gfield select, .gform_wrapper .gfield .bootstrap-select, .gform_wrapper .gfield .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+.gform_wrapper .gfield .bootstrap-select, .gform_wrapper .gfield .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
   display: block;
   width: 100% !important;
 }
