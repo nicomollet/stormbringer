@@ -36,7 +36,9 @@
     width: 100%;
   }
 
-  .gfield select, .gfield .bootstrap-select, .gfield .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  //.gfield select, // removed 2021-05-05 conflict on bootstrap select on mobile
+  .gfield .bootstrap-select,
+  .gfield .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
     display: block;
     width: 100% !important;
   }

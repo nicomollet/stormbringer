@@ -1,3 +1,5 @@
+* Bootstrap select rules for Gravity Forms are conflicting on mobile
+
 ### 0.7.6: May 20th, 2021
 * Gravity Forms sub labels are now thin text not bold
 
