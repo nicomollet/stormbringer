@@ -1,3 +1,4 @@
+### 0.7.8: June 14th, 2021
 * Better Gravity Forms compatibility with bootstrap-datepicker
 
 ### 0.7.7: May 25th, 2021
