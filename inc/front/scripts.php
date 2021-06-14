@@ -128,6 +128,13 @@ function stormbringer_js_libraries_footer() {
 
 		if ( @$libraries['bootstrap-datepicker'] && get_theme_mod( 'libraries_bootstrap-datepicker', true ) ) {
 
+			wp_dequeue_script( 'gform_datepicker_init' );
+			wp_dequeue_script( 'gform-datepicker-init' );
+			wp_dequeue_script( 'jquery-ui-datepicker' );
+			wp_deregister_script( 'gform_datepicker_init' );
+			wp_deregister_script( 'gform-datepicker-init' );
+			wp_deregister_script( 'jquery-ui-datepicker' );
+
 			$lang_datepicker = ($lang == 'zh' ? 'zh-CN' : $lang);
 
 			wp_enqueue_script( 'bootstrap-datepicker',

@@ -347,11 +347,13 @@ function stormbringer_gform_get_form_filter($content)
     //$content = preg_replace('/<ul class=\'gfield_checkbox\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
     //$content = preg_replace('/<ul class=\'gfield_radio\'(.*?)>(.*?)<\/ul>/', '\\2', $content);
 
-    $content = str_replace('<li ', '<div ', $content);
-    $content = str_replace('<ul ', '<div ', $content);
-    $content = str_replace('</li>', '</div>', $content);
-    $content = str_replace('</ul>', '</div>', $content);
-
+	$content = str_replace( '<li ', '<div ', $content );
+	$content = str_replace( '<ul ', '<div ', $content );
+	$content = str_replace( '</li>', '</div>', $content );
+	$content = str_replace( '</ul>', '</div>', $content );
+	$content = str_replace( 'hasDatepicker', '', $content );
+	$content = str_replace( 'datepicker_no_icon', '', $content );
+	$content = str_replace( 'datepicker', '', $content );
 
     return $content;
 }

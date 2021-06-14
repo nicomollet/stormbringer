@@ -1,3 +1,5 @@
+* Better Gravity Forms compatibility with bootstrap-datepicker
+
 ### 0.7.7: May 25th, 2021
 * Bootstrap select rules for Gravity Forms are conflicting on mobile
 
