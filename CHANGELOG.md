@@ -1,11 +1,12 @@
+* **Tweak** - Update Bootstrap Datepicker to 1.9.0
+
 ### 0.7.8: June 14th, 2021
 * Better Gravity Forms compatibility with bootstrap-datepicker
-
 ### 0.7.7: May 25th, 2021
-* Bootstrap select rules for Gravity Forms are conflicting on mobile
+* **Tweak** - Bootstrap select rules for Gravity Forms are conflicting on mobile
 
 ### 0.7.6: May 20th, 2021
-* Gravity Forms sub labels are now thin text not bold
+* **Tweak** - Gravity Forms sub labels are now thin text not bold
 
 ### 0.7.5: May 11th, 2021
 * **Tweak** - Remove Grunt clean and assets_versionning calls
