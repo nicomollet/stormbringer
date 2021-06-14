@@ -121,7 +121,7 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
     $content = str_replace('gfield_checkbox', 'gfield_checkbox', $content);
     $content = str_replace('gfield_radio', 'gfield_radio', $content);
     $content = str_replace('gfield_error', 'gfield_error has-error', $content);
-    $content = str_replace('validation_message', 'help-inline', $content);
+    $content = str_replace('validation_message', 'help-block', $content);
     $content = str_replace('ginput_container', 'form-input ginput_container', $content);
     $content = str_replace('small', 'form-control input-sm', $content);
     $content = str_replace('medium', 'form-control input-md', $content);
