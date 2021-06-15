@@ -1,5 +1,7 @@
+### 0.8.0: June 15th, 2021
+* Update changelog
+
 ### 0.7.9: June 14th, 2021
-* **New** - Gravity Forms phone number validation
 * **Tweak** - Update Bootstrap Datepicker to 1.9.0
 * **Tweak** - Gravity Forms better styling of validations errors
 
