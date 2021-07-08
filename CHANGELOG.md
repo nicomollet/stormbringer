@@ -1,3 +1,5 @@
+* Gravity Forms 2.5 compatibility
+
 ### 0.8.0: June 15th, 2021
 * Update changelog
 
