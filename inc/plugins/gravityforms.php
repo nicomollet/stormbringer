@@ -26,7 +26,7 @@ add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 // This filter can be used to dynamically add/remove CSS classes to a field
 function stormbringer_gform_field_css_class($classes, $field, $form)
 {
-	$form_css = $form['cssClass'];
+	$form_css = $form['cssClass'] ?? '';
 
 	$classes = str_replace('input-mini', '', $classes);
 	$classes = str_replace('input-max', '', $classes);
@@ -113,7 +113,7 @@ function stormbringer_gform_field_content($content, $field, $value, $lead_id, $f
 	if(!$form_css){
 		$form_css='';
 		$forminfo = RGFormsModel::get_form_meta($form_id);
-		$form_css = $forminfo['cssClass'];
+		$form_css = $forminfo['cssClass'] ?? '';
 	}
 
 	//$content = str_replace('gfield_label', 'gfield_label control-label', $content);
