@@ -404,7 +404,6 @@ function stormbringer_get_product_search_form( $ob_get_clean ) {
 	return $ob_get_clean;
 }
 
-;
 add_filter( 'get_product_search_form', 'stormbringer_get_product_search_form', 10, 1 );
 
 /**
@@ -481,7 +480,7 @@ function woocommerce_cart_count_shortcode( $atts ) {
 
 	$cart_count_html = "";
 	$cart_amount_html = "";
-	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && ! empty ( WC()->cart )) {
 
 		if ( true == $atts['show_amount'] ) {
 			$cart_amount_html = wp_kses_data(WC()->cart->get_cart_subtotal());
