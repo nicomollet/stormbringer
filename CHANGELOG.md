@@ -1,3 +1,4 @@
+### 0.8.4: October 11th, 2021
 * Update CSS styles
 
 ### 0.8.3: October 11th, 2021
