@@ -51,28 +51,28 @@ img.lazyloaded {
 }
 
 .gallery-columns-4 {
-  li {
+  li, .gallery-item {
     @include make-xs-column(6);
     @include make-sm-column(3);
   }
 }
 
 .gallery-columns-3 {
-  li {
+  li, .gallery-item {
     @include make-xs-column(6);
     @include make-sm-column(4);
   }
 }
 
 .gallery-columns-6 {
-  li {
+  li, .gallery-item {
     @include make-xs-column(4);
     @include make-sm-column(2);
   }
 }
 
 .gallery-columns-2 {
-  li {
+  li, .gallery-item {
     @include make-xs-column(12);
     @include make-sm-column(6);
   }
