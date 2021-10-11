@@ -1,3 +1,5 @@
+* Update dependencies
+
 ### 0.8.2: October 11th, 2021
 * Gallery: use .gallery-item instead of li
 
