@@ -9277,7 +9277,8 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
   display: block;
   width: 100%;
 }
-.gform_wrapper .gfield .bootstrap-select, .gform_wrapper .gfield .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+.gform_wrapper .gfield .bootstrap-select,
+.gform_wrapper .gfield .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
   display: block;
   width: 100% !important;
 }
@@ -9660,7 +9661,7 @@ img.lazyloaded {
   clear: both;
 }
 
-.gallery-columns-4 li {
+.gallery-columns-4 li, .gallery-columns-4 .gallery-item {
   position: relative;
   float: left;
   width: 50%;
@@ -9673,13 +9674,13 @@ img.lazyloaded {
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .gallery-columns-4 li {
+  .gallery-columns-4 li, .gallery-columns-4 .gallery-item {
     float: left;
     width: 25%;
   }
 }
 
-.gallery-columns-3 li {
+.gallery-columns-3 li, .gallery-columns-3 .gallery-item {
   position: relative;
   float: left;
   width: 50%;
@@ -9692,13 +9693,13 @@ img.lazyloaded {
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .gallery-columns-3 li {
+  .gallery-columns-3 li, .gallery-columns-3 .gallery-item {
     float: left;
     width: 33.33333%;
   }
 }
 
-.gallery-columns-6 li {
+.gallery-columns-6 li, .gallery-columns-6 .gallery-item {
   position: relative;
   float: left;
   width: 33.33333%;
@@ -9711,13 +9712,13 @@ img.lazyloaded {
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .gallery-columns-6 li {
+  .gallery-columns-6 li, .gallery-columns-6 .gallery-item {
     float: left;
     width: 16.66667%;
   }
 }
 
-.gallery-columns-2 li {
+.gallery-columns-2 li, .gallery-columns-2 .gallery-item {
   position: relative;
   float: left;
   width: 100%;
@@ -9730,7 +9731,7 @@ img.lazyloaded {
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .gallery-columns-2 li {
+  .gallery-columns-2 li, .gallery-columns-2 .gallery-item {
     float: left;
     width: 50%;
   }
