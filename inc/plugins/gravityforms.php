@@ -86,18 +86,22 @@ add_filter('gform_previous_button', 'stormbringer_gform_previous_button', 10, 2)
 //This filter is executed when the form is displayed and can be used to completely change
 //the form tag (i.e. <form method="post">).
 
-function stormbringer_gform_form_tag($form_tag, $form)
-{
-	$class = "form ";
-	if ($form["labelPlacement"] == "right_label") $class .= "form-horizontal";
-	if ($form["labelPlacement"] == "top_label") $class .= "form-vertical";
-	if ($form["labelPlacement"] == "left_label") $class .= "form-horizontal form-horizontal-leftlabel";
-	$class .= ' ' . $form['cssClass'];
-	//$form_tag = preg_replace("|action='(.*?)'|", "action='custom_handler.php'", $form_tag);
-	//$form_tag = str_replace("<form",'<form class="'.$class.' '.$form['cssClass'].'"',$form_tag);
-	//$form_tag = preg_replace("|class='(.*?)'|", "class='" . $class . "'", $form_tag);
-	$form_tag = preg_replace("|class='(.*?)'|", "", $form_tag);
-	$form_tag = str_replace("<form",'<form class="'.$class.'"',$form_tag);
+function stormbringer_gform_form_tag( $form_tag, $form ) {
+	$form_css = $form['cssClass'] ?? '';
+	$class    = "form ";
+	if ( $form["labelPlacement"] == "right_label" ) {
+		$class .= "form-horizontal";
+	}
+	if ( $form["labelPlacement"] == "top_label" ) {
+		$class .= "form-vertical";
+	}
+	if ( $form["labelPlacement"] == "left_label" ) {
+		$class .= "form-horizontal form-horizontal-leftlabel";
+	}
+	$class    .= ' ' . $form_css;
+	$form_tag = preg_replace( "|class='(.*?)'|", "", $form_tag );
+	$form_tag = str_replace( "<form", '<form class="' . $class . '"', $form_tag );
+
 	return $form_tag;
 }
 add_filter("gform_form_tag", "stormbringer_gform_form_tag", 10, 2);
