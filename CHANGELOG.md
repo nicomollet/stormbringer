@@ -1,3 +1,5 @@
+* Images: align center even with webp images (picture, figure tags)
+
 ### 0.8.4: October 11th, 2021
 * Update CSS styles
 
