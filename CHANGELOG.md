@@ -1,3 +1,5 @@
+* Navbar: Disable show on goingup on WooCommerce Checkout and when page content has a form (Gravity Forms or not)
+
 ### 0.8.5: October 28th, 2021
 * Images: align center even with webp images (picture, figure tags)
 
