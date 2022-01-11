@@ -1,3 +1,4 @@
+### 0.8.6: January 11th, 2022
 * Navbar: Disable show on goingup on WooCommerce Checkout and when page content has a form (Gravity Forms or not)
 * Gravity Forms: refactoring, and disable JS in footer since it is now default to true in the plugin
 
