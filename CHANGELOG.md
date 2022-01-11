@@ -1,4 +1,5 @@
 * Navbar: Disable show on goingup on WooCommerce Checkout and when page content has a form (Gravity Forms or not)
+* Gravity Forms: refactoring, and disable JS in footer since it is now default to true in the plugin
 
 ### 0.8.5: October 28th, 2021
 * Images: align center even with webp images (picture, figure tags)
