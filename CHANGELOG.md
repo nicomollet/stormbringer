@@ -1,18 +1,20 @@
+* **Tweak** - Update CDNJS library versions
+
 ### 0.8.6: January 11th, 2022
-* Navbar: Disable show on goingup on WooCommerce Checkout and when page content has a form (Gravity Forms or not)
-* Gravity Forms: refactoring, and disable JS in footer since it is now default to true in the plugin
+* **Tweak** - Navbar: Disable show on goingup on WooCommerce Checkout and when page content has a form (Gravity Forms or not)
+* **Tweak** - Gravity Forms: refactoring, and disable JS in footer since it is now default to true in the plugin
 
 ### 0.8.5: October 28th, 2021
-* Images: align center even with webp images (picture, figure tags)
+* **Tweak** - Images: align center even with webp images (picture, figure tags)
 
 ### 0.8.4: October 11th, 2021
-* Update CSS styles
+* **Tweak** - Update CSS styles
 
 ### 0.8.3: October 11th, 2021
-* Update dependencies
+* **Tweak** - Update dependencies
 
 ### 0.8.2: October 11th, 2021
-* Gallery: use .gallery-item instead of li
+* **Tweak** - Gallery: use .gallery-item instead of li
 
 ### 0.8.1: July 8th, 2021
 * **Tweak** - Gravity Forms 2.5 compatibility
