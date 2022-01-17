@@ -1,3 +1,4 @@
+### 0.8.7: January 17th, 2022
 * **Tweak** - Update CDNJS library versions
 
 ### 0.8.6: January 11th, 2022
