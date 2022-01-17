@@ -1,3 +1,5 @@
+* **Fix** - Update markdown-it vulnerable versions
+
 ### 0.8.7: January 17th, 2022
 * **Tweak** - Update CDNJS library versions
 
