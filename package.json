@@ -19,6 +19,6 @@
     "grunt-modernizr": "^3.0.2",
     "grunt-shell": "^1.1.2",
     "markdown-it": ">=12.3.2",
-    "modernizr": "^3.11.8"
+    "modernizr": "^3.12.0"
   }
 }
