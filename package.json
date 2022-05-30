@@ -13,7 +13,7 @@
     "grunt": "^1.4.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-cssmin": "^4.0.0",
-    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-sass": "^2.0.0",
     "grunt-contrib-uglify": "^5.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-modernizr": "^3.0.2",

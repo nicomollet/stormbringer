@@ -2000,7 +2000,8 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
       if (st > lastScrollTop){ // going down
         //$('#navigation').addClass('navbar-outofview'); // nico 2017/05/23 testing without this line to check behaviour
       } else { // going up
-        if(!$('body').hasClass('woocommerce-checkout')){ // on woocommerce-checkout does not display navbar
+        // Disable show on goingup on WooCommerce Checkout and when page content has a form (Gravity Forms or not)
+        if(!$('body').hasClass('woocommerce-checkout') && $('#content form').length === 0 ){
           $('#navigation').removeClass('navbar-outofview');
         }
       }
