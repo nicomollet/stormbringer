@@ -1,6 +1,6 @@
 {
   "name": "stormbringer",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "description": "WordPress theme",
   "license": "Apache-2.0",
   "keywords": [],
@@ -10,13 +10,15 @@
     "url": "http://github.com/nicomollet/stormbringer.git"
   },
   "devDependencies": {
-    "grunt": "^1.4.0",
+    "grunt": "^1.5.3",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-cssmin": "^4.0.0",
-    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-sass": "^2.0.0",
     "grunt-contrib-uglify": "^5.0.0",
     "grunt-contrib-watch": "^1.1.0",
+    "grunt-modernizr": "^3.0.2",
     "grunt-shell": "^1.1.2",
-    "grunt-modernizr": "^3.0.2"
+    "markdown-it": ">=12.3.2",
+    "modernizr": "^3.12.0"
   }
 }

@@ -1,3 +1,4 @@
+### 0.8.8: May 30th, 2022
 * **Fix** - Update markdown-it and modernizr vulnerable versions
 * **Fix** - Update vulnerable packages
 
