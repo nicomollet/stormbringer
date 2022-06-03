@@ -107,7 +107,7 @@ figure {
   }
 }
 
-figure, img {
+figure, img, picture {
 
   @media (min-width: $screen-sm-min) {
 
@@ -167,4 +167,3 @@ figure, img {
     max-width: 100%;
   }
 }
-

@@ -9766,11 +9766,11 @@ figure {
 }
 
 @media (min-width: 768px) {
-  figure.alignleft, img.alignleft {
+  figure.alignleft, img.alignleft, picture.alignleft {
     margin-right: 20px;
     margin-bottom: 20px;
   }
-  figure.alignright, img.alignright {
+  figure.alignright, img.alignright, picture.alignright {
     margin-left: 20px;
     margin-bottom: 20px;
   }
