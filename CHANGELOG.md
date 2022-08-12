@@ -1,4 +1,5 @@
 * **Tweak** - Images: alignment on images (picture tag)
+* **Fix** - Unparenthesized `a ? b : c ? d : e` is deprecated. Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)` depreciation
 
 ### 0.8.8: May 30th, 2022
 * **Fix** - Update markdown-it and modernizr vulnerable versions
