@@ -4,7 +4,7 @@
  * Remove Select2 / SelectWoo styles & scripts on the frontend
  */
 function stormbringer_dequeue_select2() {
-	if ( !wp_style_is( 'editor-preview', 'enqueued' ) ) {
+	if ( ! wp_style_is( 'editor-preview', 'enqueued' ) ) {
 		wp_dequeue_style( 'select2' );
 		wp_deregister_style( 'select2' );
 		wp_dequeue_script( 'select2' );
@@ -13,6 +13,7 @@ function stormbringer_dequeue_select2() {
 		wp_deregister_script( 'selectWoo' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'stormbringer_dequeue_select2', 100 );
 
 /**
@@ -28,6 +29,7 @@ function stormbringer_dequeue_gridlist() {
 		wp_deregister_style( 'dashicons' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'stormbringer_dequeue_gridlist', 100 );
 
 /**
@@ -74,7 +76,7 @@ function stormbringer_wc_add_to_cart_message( $message ) {
  * @return int
  */
 function stormbringer_loop_columns() {
-	return get_theme_mod('woocommerce_columns', 4); // 4 products per row
+	return get_theme_mod( 'woocommerce_columns', 4 ); // 4 products per row
 }
 
 add_filter( 'loop_shop_columns', 'stormbringer_loop_columns', 1, 10 );
@@ -87,38 +89,42 @@ add_filter( 'loop_shop_columns', 'stormbringer_loop_columns', 1, 10 );
  * @return mixed
  */
 function stormbringer_related_products_args( $args ) {
-	$args['posts_per_page'] = get_theme_mod('woocommerce_columns', 4); // 4 related products
-	$args['columns'] = get_theme_mod('woocommerce_columns', 4); // arranged in 4 columns
+	$args['posts_per_page'] = get_theme_mod( 'woocommerce_columns', 4 ); // 4 related products
+	$args['columns']        = get_theme_mod( 'woocommerce_columns', 4 ); // arranged in 4 columns
+
 	return $args;
 }
+
 add_filter( 'woocommerce_output_related_products_args', 'stormbringer_related_products_args' );
 
 /**
  * WooCommerce pre_get_posts for number of products per page, based on number of columns
+ *
  * @param WP_Query $query
  */
 function stormbringer_woocommerce_products_per_page( $query ) {
 
 	$front_page_id        = get_option( 'page_on_front' );
 	$current_page_id      = $query->get( 'page_id' );
-	$shop_page_id         = apply_filters( 'woocommerce_get_shop_page_id' , get_option( 'woocommerce_shop_page_id' ) );
+	$shop_page_id         = apply_filters( 'woocommerce_get_shop_page_id', get_option( 'woocommerce_shop_page_id' ) );
 	$is_static_front_page = 'page' == get_option( 'show_on_front' );
 
-	if ( $is_static_front_page && $front_page_id == $current_page_id  ) {
+	if ( $is_static_front_page && $front_page_id == $current_page_id ) {
 		$is_shop_page = ( $current_page_id == $shop_page_id ) ? true : false;
 	} else {
 		$is_shop_page = is_shop();
 	}
 
-	if(!is_admin()){
-		if($query->is_main_query()){
-			if ( $is_shop_page || is_product_category() || is_product_tag() || is_product() ) {
-				$query->set( 'posts_per_page', 3 * get_theme_mod('woocommerce_columns', 4) );
+	if ( ! is_admin() ) {
+		if ( $query->is_main_query() ) {
+			if ( $is_shop_page || is_product_category() || is_product_tag() || is_singular( 'product' ) ) {
+				$query->set( 'posts_per_page', 3 * get_theme_mod( 'woocommerce_columns', 4 ) );
 			}
 		}
 
 	}
 }
+
 add_action( 'pre_get_posts', 'stormbringer_woocommerce_products_per_page' );
 
 /**
@@ -136,7 +142,7 @@ function woocommerce_woocommerce_remove_item( $wsis_html, $cart_item_key ) {
 	$button    = '<span class="glyphicon glyphicon-remove"></span>';
 	$wsis_html = sprintf(
 		'<a href="%s" class="remove" title="%s"><span class="remove-item">%s</span></a>',
-		esc_url(wc_get_cart_remove_url( $cart_item_key ) ),
+		esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 		__( 'Remove this item', 'woocommerce' ), $button
 	);
 
@@ -157,8 +163,7 @@ add_filter( 'woocommerce_cart_item_remove_link', 'woocommerce_woocommerce_remove
 function stormbringer_form_field_args( $args, $key, $value = null ) {
 
 	/*********************************************************************************************/
-	/** This is not meant to be here, but it serves as a reference
-	 * /** of what is possible to be changed. /**
+	/** of what is possible to be changed. /**
 	 *
 	 * $defaults = array(
 	 * 'type'              => 'text',
@@ -181,13 +186,13 @@ function stormbringer_form_field_args( $args, $key, $value = null ) {
 
 	// Start field type switch case
 
-	$args['class'][] = 'formfield-'.$args['type'];
+	$args['class'][] = 'formfield-' . $args['type'];
 
 	switch ( $args['type'] ) {
 
 
 		case "select" :  /* Targets all select input type elements, except the country and state select input types */
-			$args['class'][] = 'form-group'; // Add a class to the field's html element wrapper
+			$args['class'][]     = 'form-group'; // Add a class to the field's html element wrapper
 			$args['input_class'] = array( 'form-control', 'input-lgg' ); // Add a class to the form input itself
 			//$args['custom_attributes']['data-plugin'] = 'select2';
 			$args['label_class']       = array( 'control-label' );
@@ -246,6 +251,7 @@ function stormbringer_form_field_args( $args, $key, $value = null ) {
 
 	return $args;
 }
+
 add_filter( 'woocommerce_form_field_args', 'stormbringer_form_field_args', 10, 3 );
 
 
@@ -321,14 +327,15 @@ if ( ! function_exists( 'stormbringer_handheld_footer_bar' ) ) {
 		if ( wc_get_page_id( 'cart' ) === - 1 ) {
 			unset( $links['cart'] );
 		}
-		if(!is_woocommerce()){
+		if ( ! is_woocommerce() ) {
 			$links = [];
 		}
 
 		$links = apply_filters( 'stormbringer_handheld_footer_bar_links', $links );
-		if(count($links)>0):
+		if ( count( $links ) > 0 ):
 			?>
-			<div class="stormbringer-handheld-footer-bar <?php echo (WC()->cart->get_cart_contents_count() == 0?'cart-empty':'cart-notempty'); ?>" >
+			<div class="stormbringer-handheld-footer-bar <?php echo( WC()->cart->get_cart_contents_count() == 0 ? 'cart-empty'
+				: 'cart-notempty' ); ?>">
 				<ul class="columns-<?php echo count( $links ); ?>">
 					<?php foreach ( $links as $key => $link ) : ?>
 						<li class="<?php echo esc_attr( $key ); ?>">
@@ -341,7 +348,7 @@ if ( ! function_exists( 'stormbringer_handheld_footer_bar' ) ) {
 					<?php endforeach; ?>
 				</ul>
 			</div>
-			<?php
+		<?php
 		endif;
 	}
 }
@@ -378,9 +385,9 @@ if ( ! function_exists( 'stormbringer_product_search' ) ) {
 	/**
 	 * Display Product Search
 	 *
-	 * @since  1.0.0
-	 * @uses   is_woocommerce_activated() check if WooCommerce is activated
 	 * @return void
+	 * @uses   is_woocommerce_activated() check if WooCommerce is activated
+	 * @since  1.0.0
 	 */
 	function stormbringer_product_search() { ?>
 		<div class="site-search">
@@ -418,6 +425,7 @@ function stormbringer_woocommerce_dropdown_variation_attribute_options_args( $ar
 
 	return $args;
 }
+
 add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'stormbringer_woocommerce_dropdown_variation_attribute_options_args' );
 
 /**
@@ -434,6 +442,7 @@ function stormbringer_woocommerce_dequeue_styles( $enqueue_styles ) {
 
 	return $enqueue_styles;
 }
+
 add_filter( 'woocommerce_enqueue_styles', 'stormbringer_woocommerce_dequeue_styles' );
 
 /**
@@ -447,11 +456,13 @@ add_filter( 'woocommerce_enqueue_styles', 'stormbringer_woocommerce_dequeue_styl
  */
 function stormbringer_woocommerce_pages_menu_item_classes( $classes, $item, $args ) {
 	$woocommerce_shop_page_id = get_option( 'woocommerce_shop_page_id' );
-	if( (is_cart() || is_checkout() ) && $item->object == 'page' && $item->object_id == $woocommerce_shop_page_id) {
+	if ( ( is_cart() || is_checkout() ) && $item->object == 'page' && $item->object_id == $woocommerce_shop_page_id ) {
 		$classes[] = 'current-menu-item active';
 	}
+
 	return array_unique( $classes );
 }
+
 add_filter( 'nav_menu_css_class', 'stormbringer_woocommerce_pages_menu_item_classes', 10, 3 );
 
 
@@ -463,51 +474,55 @@ add_filter( 'nav_menu_css_class', 'stormbringer_woocommerce_pages_menu_item_clas
  * @return string
  */
 function woocommerce_cart_count_shortcode( $atts ) {
-	if(is_admin()) return '';
+	if ( is_admin() ) {
+		return '';
+	}
 
 	$defaults = array(
-		'icon_class'         => 'glyphicon glyphicon-shopping-cart',
-		'show_count'         => true,
-		'show_amount'        => true,
-		'link_class'         => 'link-cart',
+		'icon_class'  => 'glyphicon glyphicon-shopping-cart',
+		'show_count'  => true,
+		'show_amount' => true,
+		'link_class'  => 'link-cart',
 	);
-	$atts = shortcode_atts( $defaults, $atts );
+	$atts     = shortcode_atts( $defaults, $atts );
 
-	$icon_html = '<span class="'.$atts['icon_class'] . '"></span>';
+	$icon_html = '<span class="' . $atts['icon_class'] . '"></span>';
 
 	$link_class = $atts['link_class'];
-	$link_url = "";
+	$link_url   = "";
 
-	$cart_count_html = "";
+	$cart_count_html  = "";
 	$cart_amount_html = "";
-	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && ! empty ( WC()->cart )) {
+	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && ! empty ( WC()->cart ) ) {
 
 		if ( true == $atts['show_amount'] ) {
-			$cart_amount_html = wp_kses_data(WC()->cart->get_cart_subtotal());
+			$cart_amount_html = wp_kses_data( WC()->cart->get_cart_subtotal() );
 		}
 
 
 		if ( WC()->cart->get_cart_contents_count() > 0 ) {
 			if ( true == $atts['show_count'] ) {
-				$cart_count_html = '('.wp_kses_data(
+				$cart_count_html = '(' . wp_kses_data(
 						sprintf(
-							_n('%d item', '%d items', WC()->cart->get_cart_contents_count(), 'stormbringer'),
+							_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'stormbringer' ),
 							WC()->cart->get_cart_contents_count()
 						)
-					).')';
+					) . ')';
 			}
-			$link_url = esc_url(wc_get_cart_url());
+			$link_url = esc_url( wc_get_cart_url() );
 		} else {
 			$woocommerce_shop_page_id = get_option( 'woocommerce_shop_page_id' );
-			$link_url = get_permalink( $woocommerce_shop_page_id );
+			$link_url                 = get_permalink( $woocommerce_shop_page_id );
 		}
 	}
 
-	$html  = '<a href="' . $link_url .'" class="'.$link_class.'">';
-	$html .= $icon_html . ' <span class="amount">'.$cart_amount_html .'</span> <span class="count">'. $cart_count_html.'</span>';
+	$html = '<a href="' . $link_url . '" class="' . $link_class . '">';
+	$html .= $icon_html . ' <span class="amount">' . $cart_amount_html . '</span> <span class="count">' . $cart_count_html . '</span>';
 	$html .= '</a>';
+
 	return $html;
 }
+
 add_shortcode( 'woocommerce_cart_link', 'woocommerce_cart_count_shortcode' );
 
 /**
@@ -518,37 +533,40 @@ add_shortcode( 'woocommerce_cart_link', 'woocommerce_cart_count_shortcode' );
  * @return string
  */
 function woocommerce_account_link_shortcode( $atts ) {
-	if(is_admin()) return '';
+	if ( is_admin() ) {
+		return '';
+	}
 
 	$defaults = array(
 		'icon_class' => 'glyphicon glyphicon-user',
 		'link_class' => 'link-account',
 	);
-	$atts = shortcode_atts( $defaults, $atts );
+	$atts     = shortcode_atts( $defaults, $atts );
 
-	$icon_html = '<span class="'.$atts['icon_class'] . '"></span>';
+	$icon_html = '<span class="' . $atts['icon_class'] . '"></span>';
 
 	$link_class = $atts['link_class'];
-	$link_url = "";
-	$page_name = "";
+	$link_url   = "";
+	$page_name  = "";
 
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 
 		$woocommerce_account_page_id = get_option( 'woocommerce_myaccount_page_id' );
-		$link_url = get_permalink( $woocommerce_account_page_id );
-		$page = get_post( $woocommerce_account_page_id );
-		if(!empty($page)){
-			$page_name = esc_html($page->post_title);
+		$link_url                    = get_permalink( $woocommerce_account_page_id );
+		$page                        = get_post( $woocommerce_account_page_id );
+		if ( ! empty( $page ) ) {
+			$page_name = esc_html( $page->post_title );
 		}
 	}
 
-	$html  = '<a href="' . $link_url .'" class="'.$link_class.'">';
-	$html .= $icon_html . ' '. $page_name;
+	$html = '<a href="' . $link_url . '" class="' . $link_class . '">';
+	$html .= $icon_html . ' ' . $page_name;
 	$html .= '</a>';
+
 	return $html;
 }
-add_shortcode( 'woocommerce_account_link', 'woocommerce_account_link_shortcode' );
 
+add_shortcode( 'woocommerce_account_link', 'woocommerce_account_link_shortcode' );
 
 
 /**
@@ -560,16 +578,19 @@ add_shortcode( 'woocommerce_account_link', 'woocommerce_account_link_shortcode' 
  *
  * @return string
  */
-function stormbringer_gridlist_toggle_button_output($output, $grid_view, $list_view){
-	$output = sprintf( '<nav class="gridlist-toggle"><a href="#" id="grid" title="%1$s"><span class="dashicons dashicons-grid-view"></span> <em>%1$s</em></a><a href="#" id="list" title="%2$s"><span class="dashicons dashicons-exerpt-view"></span> <em>%2$s</em></a></nav>', $grid_view, $list_view );
+function stormbringer_gridlist_toggle_button_output( $output, $grid_view, $list_view ) {
+	$output
+		= sprintf( '<nav class="gridlist-toggle"><a href="#" id="grid" title="%1$s"><span class="dashicons dashicons-grid-view"></span> <em>%1$s</em></a><a href="#" id="list" title="%2$s"><span class="dashicons dashicons-exerpt-view"></span> <em>%2$s</em></a></nav>',
+		$grid_view, $list_view );
 
-	$output= '';
-	$output.=sprintf( '
+	$output = '';
+	$output .= sprintf( '
 	  <div class="btn-group gridlist-toggle" role="group">
 	  <a href="#" type="button" class="btn btn-default" id="grid" title="%1$s"><span class="glyphicon glyphicon-th"></span><span class="hide">  %1$s</span></a>
 	  <a href="#" type="button" class="btn btn-default" id="list" title="%2$s"><span class="glyphicon glyphicon-list"></span><span class="hide">%2$s</span></a>
 	  </div>
 	', $grid_view, $list_view );
+
 	/*$output.=sprintf( '
 	  <div class="btn-group gridlist-toggle" role="group">
 	  <button type="button" class="btn btn-default" id="grid" title="%1$s"><span class="glyphicon glyphicon-th"></span><span class="hide">  %1$s</span></button>
@@ -579,44 +600,49 @@ function stormbringer_gridlist_toggle_button_output($output, $grid_view, $list_v
 
 	return $output;
 }
-add_filter( 'gridlist_toggle_button_output', 'stormbringer_gridlist_toggle_button_output',10, 3 );
+
+add_filter( 'gridlist_toggle_button_output', 'stormbringer_gridlist_toggle_button_output', 10, 3 );
 
 /**
  * Woocommerce Grid/List Toggle: change position of html description (after title, instead of after price)
  */
-function stormbringer_woocommerce_template_single_excerpt(){
-	if ( current_theme_supports('woocommerce') && ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() )) {
-		remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_single_excerpt', 5);
-		add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_single_excerpt', 8);
+function stormbringer_woocommerce_template_single_excerpt() {
+	if ( current_theme_supports( 'woocommerce' ) && ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) ) {
+		remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_single_excerpt', 5 );
+		add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_single_excerpt', 8 );
 	}
 }
-add_action( 'wp' , 'stormbringer_woocommerce_template_single_excerpt' , 30);
+
+add_action( 'wp', 'stormbringer_woocommerce_template_single_excerpt', 30 );
 
 
 /**
  * WooCommerce product list item before
  */
-function stormbringer_woocommerce_before_shop_loop_item(){
+function stormbringer_woocommerce_before_shop_loop_item() {
 	echo '<div class="product-loop-inner">';
 }
-add_action('woocommerce_before_shop_loop_item', 'stormbringer_woocommerce_before_shop_loop_item', -999);
-add_action('woocommerce_before_subcategory', 'stormbringer_woocommerce_before_shop_loop_item', -999);
+
+add_action( 'woocommerce_before_shop_loop_item', 'stormbringer_woocommerce_before_shop_loop_item', - 999 );
+add_action( 'woocommerce_before_subcategory', 'stormbringer_woocommerce_before_shop_loop_item', - 999 );
 
 
 /**
  * WooCommerce product list item after
  */
-function stormbringer_woocommerce_after_shop_loop_item(){
+function stormbringer_woocommerce_after_shop_loop_item() {
 	echo '</div>';
 }
-add_action('woocommerce_after_shop_loop_item', 'stormbringer_woocommerce_after_shop_loop_item', 999);
-add_action('woocommerce_after_subcategory', 'stormbringer_woocommerce_after_shop_loop_item', 999);
+
+add_action( 'woocommerce_after_shop_loop_item', 'stormbringer_woocommerce_after_shop_loop_item', 999 );
+add_action( 'woocommerce_after_subcategory', 'stormbringer_woocommerce_after_shop_loop_item', 999 );
 
 /**
  * WooCommerce Cart Fragments
  * Ensure cart contents update when products are added to the cart via AJAX
  *
- * @param  array $fragments Fragments to refresh via AJAX.
+ * @param array $fragments Fragments to refresh via AJAX.
+ *
  * @return array            Fragments to refresh via AJAX
  */
 function stormbringer_cart_fragment( $fragments ) {
@@ -632,6 +658,7 @@ function stormbringer_cart_fragment( $fragments ) {
 
 	return $fragments;
 }
+
 add_filter( 'woocommerce_add_to_cart_fragments', 'stormbringer_cart_fragment' );
 
 
@@ -644,9 +671,10 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'stormbringer_cart_fragment' );
  */
 function stormbringer_cart_items_number() {
 	?>
-	<a class="cart-items-number" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'stormbringer' ); ?>">
+	<a class="cart-items-number" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart',
+		'stormbringer' ); ?>">
 		<span class="glyphicon glyphicon-shopping-cart"></span>
-		<span class="badge badge-count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
+		<span class="badge badge-count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() ); ?></span>
 	</a>
 	<?php
 }
@@ -661,8 +689,11 @@ function stormbringer_cart_items_number() {
  */
 function stormbringer_cart_contents() {
 	?>
-	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'stormbringer' ); ?>">
-		<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() ) );?></span>
+	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart',
+		'stormbringer' ); ?>">
+		<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
+		<span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront' ),
+				WC()->cart->get_cart_contents_count() ) ); ?></span>
 	</a>
 	<?php
 }
@@ -675,10 +706,12 @@ function stormbringer_cart_contents() {
  *
  * @return string
  */
-function stormbringer_woocommerce_stock_html(string $html, WC_Product $product){
+function stormbringer_woocommerce_stock_html( string $html, WC_Product $product ) {
 
-	$html = str_replace('stock out-of-stock','stock out-of-stock alert alert-danger', $html);
+	$html = str_replace( 'stock out-of-stock', 'stock out-of-stock alert alert-danger', $html );
+
 	return $html;
 
 }
+
 add_filter( 'woocommerce_get_stock_html', 'stormbringer_woocommerce_stock_html', 10, 3 );

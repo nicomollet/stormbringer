@@ -1,3 +1,5 @@
+* **Tweak** - WooCommerce avoid error "Attempt to read property post_type on null" by avoiding usage of is_product is pre_get_posts
+
 ### 0.8.9: August 12th, 2022
 * **Tweak** - Images: alignment on images (picture tag)
 * **Fix** - Unparenthesized `a ? b : c ? d : e` is deprecated. Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)` depreciation
