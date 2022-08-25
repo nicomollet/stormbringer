@@ -117,8 +117,8 @@ function stormbringer_woocommerce_products_per_page( $query ) {
 
 	if ( ! is_admin() ) {
 		if ( $query->is_main_query() ) {
-			if ( $is_shop_page || is_product_category() || is_product_tag() || is_singular( 'product' ) ) {
-				$query->set( 'posts_per_page', 3 * get_theme_mod( 'woocommerce_columns', 4 ) );
+			if ( $is_shop_page || $query->post_type == 'product' ) {
+				$query->set( 'posts_per_page', 3 * get_theme_mod('woocommerce_columns', 4) );
 			}
 		}
 
