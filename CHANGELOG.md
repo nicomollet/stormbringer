@@ -1,3 +1,4 @@
+### 0.9.0: August 12th, 2022
 * **Tweak** - WooCommerce avoid error "Attempt to read property post_type on null" by avoiding usage of is_product is pre_get_posts
 
 ### 0.8.9: August 12th, 2022
