@@ -1,3 +1,4 @@
+### 0.9.1: September 14th, 2022
 * **Tweak** - Gravity Forms: overflow hidden prevented select dropdowns to display fully
 
 ### 0.9.0: August 12th, 2022
