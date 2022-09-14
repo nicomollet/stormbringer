@@ -266,7 +266,7 @@
     display: inline-block;
   }
   .form-fields{
-    overflow: hidden;
+    //overflow: hidden; // disabled on September 14th, 2022 since it prevented select dropdowns to display fully
   }
   .form-control-auto{
     width: auto;
