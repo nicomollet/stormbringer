@@ -1,3 +1,5 @@
+* **Tweak** - Gravity Forms: sometimes (Elementor Modals) gf_wrapper was hidden
+
 ### 0.9.1: September 14th, 2022
 * **Tweak** - Gravity Forms: overflow hidden prevented select dropdowns to display fully
 

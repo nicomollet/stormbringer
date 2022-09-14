@@ -1,16 +1,25 @@
-.gform_wrapper ul {
-  @extend .list-unstyled;
-}
-
 .gform_validation_container {
-  display: none!important;
-  position: absolute!important;
+  display: none !important;
+  position: absolute !important;
   left: -9000px;
 }
 
 .gform_wrapper {
+  display: inherit !important;
 
-  .gfield_required{
+  .hidden_label .gfield_label {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+  ul {
+    @extend .list-unstyled;
+  }
+
+  .gfield_required {
     display: inline-block;
     margin-left: 4px;
   }
@@ -25,13 +34,13 @@
   }
 
 
-  .gfield.ginput_right, .gfield .ginput_right, .gfield .name_last{
+  .gfield.ginput_right, .gfield .ginput_right, .gfield .name_last {
     @media (min-width: $screen-sm-min) {
       padding-left: 16px;
     }
   }
 
-  .gfield .ginput_full{
+  .gfield .ginput_full {
     display: block;
     width: 100%;
   }
@@ -43,7 +52,7 @@
     width: 100% !important;
   }
 
-  .gfield .btn-group > .btn{
+  .gfield .btn-group > .btn {
     float: none;
   }
 
@@ -52,8 +61,7 @@
   .gfield.ginput_left,
   .gfield.ginput_right,
   .gfield .ginput_left,
-  .gfield .ginput_right
-  {
+  .gfield .ginput_right {
     @media (min-width: $screen-sm-min) {
       display: -moz-inline-stack;
       display: inline-block;
@@ -83,7 +91,7 @@
     }
   }
 
-  .gf_invisible, .gfield_visibility_hidden{
+  .gf_invisible, .gfield_visibility_hidden {
     visibility: hidden;
     position: absolute;
     left: -9999px;
@@ -91,14 +99,14 @@
 
   .ginput_complex {
 
-      label{
-        font-weight: normal;
-      }
+    label {
+      font-weight: normal;
+    }
 
-      > span {
-        display: block;
-        margin-bottom: $form-group-margin-bottom;
-      }
+    > span {
+      display: block;
+      margin-bottom: $form-group-margin-bottom;
+    }
 
 
     /*&.ginput_container_email,
@@ -244,64 +252,44 @@
     }*/
   }
 
-  .form-horizontal{
+  .form-horizontal {
 
-    .control-label{
+    .control-label {
       @include make-sm-column(3);
       text-align: right;
     }
-    .form-input{
-      @include  make-sm-column(9);
+
+    .form-input {
+      @include make-sm-column(9);
     }
-    .help-block, .form-actions, .form-input-offset{
+
+    .help-block, .form-actions, .form-input-offset {
       @include make-sm-column(9);
       @include make-sm-column-offset(3);
     }
-    .form-input-offset .checkbox{
+
+    .form-input-offset .checkbox {
       margin-left: 20px;
     }
   }
 
-  .form-actions{
+  .form-actions {
     display: inline-block;
   }
-  .form-fields{
+
+  .form-fields {
     //overflow: hidden; // disabled on September 14th, 2022 since it prevented select dropdowns to display fully
   }
-  .form-control-auto{
+
+  .form-control-auto {
     width: auto;
   }
 
 }
 
 
-.field_sublabel_hidden_label{
-  .hidden_sub_label{
+.field_sublabel_hidden_label {
+  .hidden_sub_label {
     display: none;
   }
 }
-
-.gform_wrapper .hidden_label .gfield_label {
-  clip: rect(1px,1px,1px,1px);
-  position: absolute!important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-
-
-/* hide the honeypot field  ------------------------------------------------------*/
-
-/*
-.gform_validation_container,
-.gform_wrapper .gform_validation_container,
-body .gform_wrapper li.gform_validation_container,
-body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container,
-body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
-  display: none !important;
-  position: absolute !important;
-  left: -9000px;
-}
-*/
-
-/* Menu icon */
