@@ -9518,9 +9518,6 @@ body.template-fullwidthnotitle #content .page-header, body.template-fullwidthnot
 .gform_wrapper .form-actions {
   display: inline-block;
 }
-.gform_wrapper .form-fields {
-  overflow: hidden;
-}
 .gform_wrapper .form-control-auto {
   width: auto;
 }
