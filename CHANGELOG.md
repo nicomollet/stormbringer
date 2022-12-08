@@ -1,3 +1,4 @@
+### 0.9.2: December 8th, 2022
 * **Tweak** - Gravity Forms: sometimes (Elementor Modals) gf_wrapper was hidden
 * Dependencies: qs from 6.10.1 to 6.11.0
 
